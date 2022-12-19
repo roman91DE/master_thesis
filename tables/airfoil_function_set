@@ -1,0 +1,5 @@
+function,arity
+addition,2
+subtraction,2
+multiplication,2
+analytic_quotient,2

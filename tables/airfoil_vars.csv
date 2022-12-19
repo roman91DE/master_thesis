@@ -1,0 +1,7 @@
+Type,Name,Description,Unit
+input,x1,"Frequency",Hertz
+input,x2,"Angle of attack",Degree
+input,x3,"Chord length",meters
+input,x4,"Free-stream velocity",meters/second
+input,x5,"Suction side displacement thickness",meters
+output,y,"Scaled sound pressure level",decibels

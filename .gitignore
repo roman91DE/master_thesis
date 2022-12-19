@@ -1,0 +1,6 @@
+*.DS*
+.Rproj.user
+private
+.Rhistory
+*.pdf
+*.png
