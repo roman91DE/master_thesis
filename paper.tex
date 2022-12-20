@@ -75,16 +75,6 @@
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\usepackage{longtable,booktabs,array}
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -158,7 +148,9 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming
+\title{Pre-Trained Denoising Autoencoders Long Short-Term Memory
+Networks as probabilistic Models for Estimation of Distribution Genetic
+Programming
 
 --------------------------------------------------------
 
@@ -180,17 +172,13 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2022-12-18}
+\date{\vspace{-2.5em}Date of Submission: 2022-12-19}
 
 \begin{document}
 \maketitle
 
 \thispagestyle{empty} \newpage{}
 
-{
-\setcounter{tocdepth}{2}
-\tableofcontents
-}
 \setcounter{page}{1}
 \tableofcontents
 \thispagestyle{empty}
@@ -208,89 +196,167 @@ Johannes Gutenberg University Mainz}
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Denoising Autoencoder Genetic Programming (DAE-GP) is a novel variation of an genetic programming based Estimation of Distribution Algorithm (EDA-GP) that uses a denoising autoencoders long short-term memory network (DAE-LSTMs) as a probabilistic model to sample new candidate solutions {[}18{]}.
+Denoising Autoencoder Genetic Programming (DAE-GP) is a novel variation
+of an genetic programming based Estimation of Distribution Algorithm
+(EDA-GP) that uses a denoising autoencoders long short-term memory
+network (DAE-LSTMs) as a probabilistic model to sample new candidate
+solutions {[}18{]}.
 
-DAE-LSTMs are recurrent neural networks (RNNs) that can be trained in an unsupervised learning environment to minimize a reconstruction error for encoding input data into a compressed representation and subsequently decoding the compressed representation back to the input dimension.
-In DAE-GP, DAE-LSTMs are trained with a subset of high-fitness solutions selected from a parent population with the aim to capture their promising qualities.
-The resulting model is then used to sample new offspring solutions by propagating partially mutated solutions from the parent population through the DAE-LSTMS {[}18{]}.
-In previous work DAE-GP has been shown to outperform GP for both a generalized version of the royal tree problem {[}18{]} as well as for a real-world symbolic regression problem {[}17{]}.
+DAE-LSTMs are recurrent neural networks (RNNs) that can be trained in an
+unsupervised learning environment to minimize a reconstruction error for
+encoding input data into a compressed representation and subsequently
+decoding the compressed representation back to the input dimension. In
+DAE-GP, DAE-LSTMs are trained with a subset of high-fitness solutions
+selected from a parent population with the aim to capture their
+promising qualities. The resulting model is then used to sample new
+offspring solutions by propagating partially mutated solutions from the
+parent population through the DAE-LSTMS {[}18{]}. In previous work
+DAE-GP has been shown to outperform GP for both a generalized version of
+the royal tree problem {[}18{]} as well as for a real-world symbolic
+regression problem {[}17{]}.
 
-The DAE-GP algorithm first described by {[}18{]} trains a DAE-LSTMs for each generation \(g\) of the search from scratch.
-{[}17{]} and {[}16{]} suggests the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the model quality of DAE-GP.
-The key idea is to pre-train an initial DAE-LSTM on a large population of candidate solutions and to use the weights of this initial model in each generation of the search as a starting point.
-This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence in generalization behavior and the overall quality of solutions found by DAE-GP. The aim of this study is to answer the question if a pre-training strategy can help to improve generalization in DAE-GP and if so, analyze how this improved generalization ability benefits the overall performance of DAE-GP.
+The DAE-GP algorithm first described by {[}18{]} trains a DAE-LSTMs for
+each generation \(g\) of the search from scratch. {[}17{]} and {[}16{]}
+suggests the incorporation of a pre-training strategy into the
+evolutionary search as a possible way of improving the model quality of
+DAE-GP. The key idea is to pre-train an initial DAE-LSTM on a large
+population of candidate solutions and to use the weights of this initial
+model in each generation of the search as a starting point. This thesis
+studies the influence of using pre-trained DAE-LSTMs in DAE-GP for
+symbolic regression, especially looking at the influence in
+generalization behavior and the overall quality of solutions found by
+DAE-GP. The aim of this study is to answer the question if a
+pre-training strategy can help to improve generalization in DAE-GP and
+if so, analyze how this improved generalization ability benefits the
+overall performance of DAE-GP.
 
 \ldots{}
 
 \hypertarget{theoretical-foundations}{%
 \section{Theoretical Foundations}\label{theoretical-foundations}}
 
-\emph{This section describes the relevant concepts that are necessary for the understanding and classification of DAE-GP as well as the concept of pre-training in artificial neural networks}
+\emph{This section describes the relevant concepts that are necessary
+for the understanding and classification of DAE-GP as well as the
+concept of pre-training in artificial neural networks}
 
 \hypertarget{denoising-autoencoder-genetic-programming}{%
-\subsection{Denoising Autoencoder Genetic Programming}\label{denoising-autoencoder-genetic-programming}}
+\subsection{Denoising Autoencoder Genetic
+Programming}\label{denoising-autoencoder-genetic-programming}}
 
-DAE-GP is an EDA-GP algorithm that uses DAE-LSTM networks as a probabilistic model to sample new offspring solutions {[}18{]}.
+DAE-GP is an EDA-GP algorithm that uses DAE-LSTM networks as a
+probabilistic model to sample new offspring solutions {[}18{]}.
 
 \hypertarget{evolutionary-computation}{%
-\subsubsection{Evolutionary Computation}\label{evolutionary-computation}}
+\subsubsection{Evolutionary
+Computation}\label{evolutionary-computation}}
 
-As a variant of GP, DAE-GP can be classified as a meta-heuristic that belongs to the field of evolutionary computation (EC).
-EC based meta-heuristics are optimization methods that simulate the process of Darwinian evolution to search for high quality solutions by applying selection and variation operators to a population of candidate solutions.
-Examples of EC include genetic algorithms (GA), evolutionary strategies (ES) and GP.
-In EC, the quality of a solution is commonly measured as fitness and the time steps of the search are called generations.
-Another important concept in EC is the distinction between genotypes and phenotypes of solutions, the genotype contains the information that is necessary to construct the phenotype, the outer appearance of a particular solution on which we measure the overall quality of solutions.
-The representation of a solution is therefore defined by the mapping of genotypes to phenotypes {[}12{]}.
-Genetic operators, such as mutation or recombination are usually applied to the genotype of solutions.
+As a variant of GP, DAE-GP can be classified as a meta-heuristic that
+belongs to the field of evolutionary computation (EC). EC based
+meta-heuristics are optimization methods that simulate the process of
+Darwinian evolution to search for high quality solutions by applying
+selection and variation operators to a population of candidate
+solutions. Examples of EC include genetic algorithms (GA), evolutionary
+strategies (ES) and GP. In EC, the quality of a solution is commonly
+measured as fitness and the time steps of the search are called
+generations. Another important concept in EC is the distinction between
+genotypes and phenotypes of solutions, the genotype contains the
+information that is necessary to construct the phenotype, the outer
+appearance of a particular solution on which we measure the overall
+quality of solutions. The representation of a solution is therefore
+defined by the mapping of genotypes to phenotypes {[}12{]}. Genetic
+operators, such as mutation or recombination are usually applied to the
+genotype of solutions.
 
 \hypertarget{genetic-programming}{%
 \subsubsection{Genetic Programming}\label{genetic-programming}}
 
-GP follows the same basic evolutionary principle of EC but searches for more general, hierarchical computer programs of dynamically varying size and shape {[}8{]}.
-The computer programs that are at the center of the evolutionary search in GP are commonly represented by tree structures at the level of their phenotype {[}12{]}.
-Since GP searches for high fitness computer programs that produce a desired output for some input, it can be applied to various different problem domains such as symbolic regression, automatic programming, or evolving game-playing strategies {[}8{]}.
-An important quality of GP is the ability to search for solutions of variable length and structure.
-GP is an especially useful meta heuristic for problems where no a priori knowledge about the final form of good solutions is available.
-GPs ability to optimize solutions for their structure as well as for their parameters led to it being one of the most prevalent methods used symbolic regression {[}10{]}.
+GP follows the same basic evolutionary principle of EC but searches for
+more general, hierarchical computer programs of dynamically varying size
+and shape {[}8{]}. The computer programs that are at the center of the
+evolutionary search in GP are commonly represented by tree structures at
+the level of their phenotype {[}12{]}. Since GP searches for high
+fitness computer programs that produce a desired output for some input,
+it can be applied to various different problem domains such as symbolic
+regression, automatic programming, or evolving game-playing strategies
+{[}8{]}. An important quality of GP is the ability to search for
+solutions of variable length and structure. GP is an especially useful
+meta heuristic for problems where no a priori knowledge about the final
+form of good solutions is available. GPs ability to optimize solutions
+for their structure as well as for their parameters led to it being one
+of the most prevalent methods used symbolic regression {[}10{]}.
 
 \hypertarget{estimation-of-distribution-algorithms}{%
-\subsubsection{Estimation of Distribution Algorithms}\label{estimation-of-distribution-algorithms}}
+\subsubsection{Estimation of Distribution
+Algorithms}\label{estimation-of-distribution-algorithms}}
 
-The aim of Estimation of distribution algorithms (EDA) is to replace the standard variation operators used in GA by building probabilistic models that can capture complex dependencies between different decision variables of an optimization problem {[}12{]}.
-EDAs use this probabilistic model to sample new offspring solutions inside an evolutionary search to replace crossover and/or mutation operators.
+The aim of Estimation of distribution algorithms (EDA) is to replace the
+standard variation operators used in GA by building probabilistic models
+that can capture complex dependencies between different decision
+variables of an optimization problem {[}12{]}. EDAs use this
+probabilistic model to sample new offspring solutions inside an
+evolutionary search to replace crossover and/or mutation operators.
 
 \hypertarget{denoising-autoencoders}{%
 \subsubsection{Denoising Autoencoders}\label{denoising-autoencoders}}
 
-One possible way of model building in EDA proposed by {[}11{]} is to use denoising autoencoders (DAEs) as generative models to capture complex probability distributions of decision variables.
+One possible way of model building in EDA proposed by {[}11{]} is to use
+denoising autoencoders (DAEs) as generative models to capture complex
+probability distributions of decision variables.
 
-DAE, a variation of the autoencoders (AE), are a widely used type of neural networks in the domain of unsupervized machine learning that maps \(n\) input variables to \(n\) output variables using a hidden representation.
+DAE, a variation of the autoencoders (AE), are a widely used type of
+neural networks in the domain of unsupervized machine learning that maps
+\(n\) input variables to \(n\) output variables using a hidden
+representation.
 
-AE were introduced by {[}6{]} to compress high-dimensional data into lower-dimensions. An AE consists of two different subunits:
+AE were introduced by {[}6{]} to compress high-dimensional data into
+lower-dimensions. An AE consists of two different subunits:
 
 \begin{itemize}
 \tightlist
 \item
   Encoder \(g(x)\): Encode input data to a smaller cental layer \(h\)
 \item
-  Decoder \(d(h)\): Decode and output the the encoded data back to its original dimension
+  Decoder \(d(h)\): Decode and output the the encoded data back to its
+  original dimension
 \end{itemize}
 
-The AE is trained to reduce the reconstruction error between input and output data, after the training procedure is finished the network is able to reduce the dimensionality of input data to a compressed representation{[}6{]}.
+The AE is trained to reduce the reconstruction error between input and
+output data, after the training procedure is finished the network is
+able to reduce the dimensionality of input data to a compressed
+representation{[}6{]}.
 
-DAE was first introduced by {[}14{]} as an improved AE with the ability to learn new representations of data that is especially robust to partially corrupted input data. DAE modifies the AE by using partially corrupted input data for the AE and training it to reconstruct the uncorrupted, original version of the input data.
+DAE was first introduced by {[}14{]} as an improved AE with the ability
+to learn new representations of data that is especially robust to
+partially corrupted input data. DAE modifies the AE by using partially
+corrupted input data for the AE and training it to reconstruct the
+uncorrupted, original version of the input data.
 
-Since the hidden representation of DAE captures the dependency structure of the input data it can therefore also be used to generate new solutions in the context of GAs {[}11{]}.
+Since the hidden representation of DAE captures the dependency structure
+of the input data it can therefore also be used to generate new
+solutions in the context of GAs {[}11{]}.
 
-DAE-GP builds upon the concept of using DAEs in EDAs described by {[}11{]} and transfers the concept to the domain of GP.
-The mutation and crossover operators of standard GP are replaced by sampling new solutions from a probabilistic model that is build by training a DAEs long short-term memory (LSTM) network on a subset of high fitness solutions from the current population {[}18{]}.
-LSTMs are a variant of recurrent neural networks first introduced by {[}7{]} that can store learned information over en extended time period while avoiding the problem of vanishing and/or exploding gradients. Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps \(T\) is equal to sum of the length of the input solution and the output solution {[}18{]}.
+DAE-GP builds upon the concept of using DAEs in EDAs described by
+{[}11{]} and transfers the concept to the domain of GP. The mutation and
+crossover operators of standard GP are replaced by sampling new
+solutions from a probabilistic model that is build by training a DAEs
+long short-term memory (LSTM) network on a subset of high fitness
+solutions from the current population {[}18{]}. LSTMs are a variant of
+recurrent neural networks first introduced by {[}7{]} that can store
+learned information over en extended time period while avoiding the
+problem of vanishing and/or exploding gradients. Since DAE-GP encodes
+candidate solutions as linear strings in prefix notation, the DAE in
+DAE-GP uses LSTMs for both encoding and decoding where the total amount
+of time steps \(T\) is equal to sum of the length of the input solution
+and the output solution {[}18{]}.
 
 \hypertarget{pre-training}{%
 \subsection{Pre-Training}\label{pre-training}}
 
-The strategy of pre-training artificial neural networks is based on the idea of transfer learning.
-Transfer learning in the field of machine learning aims at retaining previously learned knowledge from one task to re-use it for another task {[}5{]} {[}9{]}. Transfer learning traditionally follows a two phase approach:
+The strategy of pre-training artificial neural networks is based on the
+idea of transfer learning. Transfer learning in the field of machine
+learning aims at retaining previously learned knowledge from one task to
+re-use it for another task {[}5{]} {[}9{]}. Transfer learning
+traditionally follows a two phase approach:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -301,51 +367,98 @@ Transfer learning in the field of machine learning aims at retaining previously 
   Fine-Tuning Phase: Transfer knowledge to the target task
 \end{enumerate}
 
-where source task and target task are usually similar but may differ in their feature space and the distribution of training data {[}9{]}.
-One of the main motivations for using transfer learning in real world machine learning tasks is the ability to reduce the need for large amounts of training data which can often be unavailable or too expensive to collect.
+where source task and target task are usually similar but may differ in
+their feature space and the distribution of training data {[}9{]}. One
+of the main motivations for using transfer learning in real world
+machine learning tasks is the ability to reduce the need for large
+amounts of training data which can often be unavailable or too expensive
+to collect.
 
-Pre-Training is a commonly used strategy in deep architectures that has been shown to improve both the optimization process itself as well as the generalization behavior if compared to randomly initialized parameters {[}3{]}.
+Pre-Training is a commonly used strategy in deep architectures that has
+been shown to improve both the optimization process itself as well as
+the generalization behavior if compared to randomly initialized
+parameters {[}3{]}.
 
-\ldots describe different pre-training strategies, e.g.~few shot, perpetual, re-using\ldots{}
+\ldots describe different pre-training strategies, e.g.~few shot,
+perpetual, re-using\ldots{}
 
 -- describe unsupervized vs supervized pre-training\ldots{}
 
 \hypertarget{pre-training-in-dae-gp}{%
 \section{Pre-Training in DAE-GP}\label{pre-training-in-dae-gp}}
 
-The pre-training strategy used in this thesis is applied to the DAE-LSTM model \(M_g\) that are used in each DAE-GP generation \(g\) for \(g\in{1,...,g_{max}}\).
-Instead of initializing and optimizing each model from scratch as done in previous work (e.g. {[}18{]} {[}17{]}), a separate DAE-LSTM network \(\hat{M}\) will be trained on a large population of randomly initialized solutions.\\
-The optimal parameters obtained after finishing the training procedure of \(\hat{M}\) are then used as the starting parameters for each following DAE-LSTM model \(M_g\) for \(g\in{1,...,g_{max}}\).
+The pre-training strategy used in this thesis is applied to the DAE-LSTM
+model \(M_g\) that are used in each DAE-GP generation \(g\) for
+\(g\in{1,...,g_{max}}\). Instead of initializing and optimizing each
+model from scratch as done in previous work (e.g. {[}18{]} {[}17{]}), a
+separate DAE-LSTM network \(\hat{M}\) will be trained on a large
+population of randomly initialized solutions.\\
+The optimal parameters obtained after finishing the training procedure
+of \(\hat{M}\) are then used as the starting parameters for each
+following DAE-LSTM model \(M_g\) for \(g\in{1,...,g_{max}}\).
 
-The motivation for incorporating pre-training into DAE-GP is based on the following suspected mechanisms of improvement:
+The motivation for incorporating pre-training into DAE-GP is based on
+the following suspected mechanisms of improvement:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Improve overall performance of DAE-GP by improving either run time and/or solution quality
+  Improve overall performance of DAE-GP by improving either run time
+  and/or solution quality
 \item
   Reduce the need for large population sizes to avoid sampling error
 \item
   Improve model robustness and generalization ability
 \end{enumerate}
 
-The probably most obvious motivation for using a pre-training strategy in DAE-GP is based on the fact, that initializing \(M_g\) with pre-trained weights from \(\hat{M}\) is likely to reduce the amount of training epochs that are necessary until the point of training error convergence is reached.
+The probably most obvious motivation for using a pre-training strategy
+in DAE-GP is based on the fact, that initializing \(M_g\) with
+pre-trained weights from \(\hat{M}\) is likely to reduce the amount of
+training epochs that are necessary until the point of training error
+convergence is reached.
 
-Early research on pre-training for DAE by {[}3{]} comes to the conclusion that besides adding robustness to models the strategy also results in improved generalization and better performing models. The authors describe that unsupervised pre-training behaves like a regulizer on DAE networks, the mean test error and it's variance are reduced for DAE networks that are initialized from pre-trained weights if compared to the same architectures that use random initialization.
+Early research on pre-training for DAE by {[}3{]} comes to the
+conclusion that besides adding robustness to models the strategy also
+results in improved generalization and better performing models. The
+authors describe that unsupervised pre-training behaves like a regulizer
+on DAE networks, the mean test error and it's variance are reduced for
+DAE networks that are initialized from pre-trained weights if compared
+to the same architectures that use random initialization.
 
-Another important finding by {[}3{]} is that the positive effect of pre-training described above is dependent on both the depth of the network as well as the size of layers - while increasingly larger networks benefit increasingly more from pre-training the final performance of small architectures tends to be worse with pre-training than with randomized weight initialization. The authors find evidence that pre-training DAE is especially usefull for optimizing the parameters of the lower layers of the network.
+Another important finding by {[}3{]} is that the positive effect of
+pre-training described above is dependent on both the depth of the
+network as well as the size of layers - while increasingly larger
+networks benefit increasingly more from pre-training the final
+performance of small architectures tends to be worse with pre-training
+than with randomized weight initialization. The authors find evidence
+that pre-training DAE is especially usefull for optimizing the
+parameters of the lower layers of the network.
 
-Another motivation for introducing pre-training into DAE-GP is the prevalence of sampling error for small GP populations sizes.
-{[}13{]} finds that sampling error, non-systematic errors that are caused by observing only a small subset of the statistical population, is a severe problem in the domain of GP since the initial population may not be a representative sample of all possible solutions.
-{[}13{]} also introduces a method for calculating optimal population sizes to minimize the presence of sampling error.
-Since DAE-LSTM of DAE-GP learns the properties of it's training population and reuses the acquired knowledge in the sampling procedure, using the parameters obtained from training \(\hat{M}\) on a sufficiently large training population might reduce the need for large population sizes in the following generations of the search if \(\hat{M}\) already implicitly captured the properties of a representative sample of solutions.
-If this mechanism can be applied successfully it would benefit the performance of DAE-GP by increasing the population diversity (resulting in better solution quality) as well as by reducing the need for large population sizes which require computational resources.
+Another motivation for introducing pre-training into DAE-GP is the
+prevalence of sampling error for small GP populations sizes. {[}13{]}
+finds that sampling error, non-systematic errors that are caused by
+observing only a small subset of the statistical population, is a severe
+problem in the domain of GP since the initial population may not be a
+representative sample of all possible solutions. {[}13{]} also
+introduces a method for calculating optimal population sizes to minimize
+the presence of sampling error. Since DAE-LSTM of DAE-GP learns the
+properties of it's training population and reuses the acquired knowledge
+in the sampling procedure, using the parameters obtained from training
+\(\hat{M}\) on a sufficiently large training population might reduce the
+need for large population sizes in the following generations of the
+search if \(\hat{M}\) already implicitly captured the properties of a
+representative sample of solutions. If this mechanism can be applied
+successfully it would benefit the performance of DAE-GP by increasing
+the population diversity (resulting in better solution quality) as well
+as by reducing the need for large population sizes which require
+computational resources.
 
 \hypertarget{implementation}{%
 \subsection{Implementation}\label{implementation}}
 
-The DAE-GP algorithm, first described by {[}18{]}, is described by algorithm 1
+The DAE-GP algorithm, first described by {[}18{]}, is described by
+algorithm 1
 
 \begin{Shaded}
 \begin{Highlighting}[numbers=left,,]
@@ -356,30 +469,58 @@ The DAE-GP algorithm, first described by {[}18{]}, is described by algorithm 1
 \end{Highlighting}
 \end{Shaded}
 
-One difficulty in the implementation of a pre-training strategy into DAE-GP has been the detemination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP {[}18{]} used a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
-For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM. To allow for the sharing of weights and biases from the pre-trained model \(\hat{M}\) to each \(M_g\) for \(g\in{1,...,g_{max}}\) I experimented with two different strategies:
+One difficulty in the implementation of a pre-training strategy into
+DAE-GP has been the detemination of the number of hidden neurons in side
+the DAE-LSTMs hidden layers. The original description of DAE-GP {[}18{]}
+used a strategy where the number of hidden neurons for each hidden layer
+is dynamically set per generation to the maximum individual size inside
+the current population. For a pre-training implementation, this strategy
+can not be easily adapted since it leads to a changing number of neurons
+at each generation resulting in different dimensions of the DAE-LSTM. To
+allow for the sharing of weights and biases from the pre-trained model
+\(\hat{M}\) to each \(M_g\) for \(g\in{1,...,g_{max}}\) I experimented
+with two different strategies:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Set the number of hidden neurons per hidden layer for each generation to the maximum individual size inside the pre-training population
+  Set the number of hidden neurons per hidden layer for each generation
+  to the maximum individual size inside the pre-training population
 \item
   (dependent on the terminal/function set)
 \end{enumerate}
 
-The framework that was used to conduct all experiments of this thesis was provided by the supervisor David Wittenberg and uses the python programming language in conjunction with the baseline libraries \texttt{Keras} {[}1{]} for deep neural networks and \texttt{deap} {[}4{]} for evolutionary computation.
+The framework that was used to conduct all experiments of this thesis
+was provided by the supervisor David Wittenberg and uses the python
+programming language in conjunction with the baseline libraries
+\texttt{Keras} {[}1{]} for deep neural networks and \texttt{deap}
+{[}4{]} for evolutionary computation.
 
 \hypertarget{benchmark-problem}{%
 \subsection{Benchmark Problem}\label{benchmark-problem}}
 
-To test pre-training in DAE-GP this thesis focuses on the domain of real-world symbolic regression problems. Symbolic Regression problems have been one of the first GP applications {[}8{]} and are an actively studied and highly relevant research area. The goal in symbolic regression is to find a mathematical model for a given set of data points {[}10{]}, in real-world symbolic regression these data points are sourced from real-world observations which in contrast to synthetic symbolic regression problem are more likely to contain random noise and bias. Another important challenge in solving real-world symbolic regression problems is the ability for a given model to generalize, we want the final model to show high accuracy in predicting outcomes for previously unseen cases.
+To test pre-training in DAE-GP this thesis focuses on the domain of
+real-world symbolic regression problems. Symbolic Regression problems
+have been one of the first GP applications {[}8{]} and are an actively
+studied and highly relevant research area. The goal in symbolic
+regression is to find a mathematical model for a given set of data
+points {[}10{]}, in real-world symbolic regression these data points are
+sourced from real-world observations which in contrast to synthetic
+symbolic regression problem are more likely to contain random noise and
+bias. Another important challenge in solving real-world symbolic
+regression problems is the ability for a given model to generalize, we
+want the final model to show high accuracy in predicting outcomes for
+previously unseen cases.
 
-The main experiments conducted in this thesis uses the NASA Airfoil Self-Noise Data Set which is part of the UCI machine learning repository {[}2{]}. The dataset consists of 5 input variables and 1 output variable that are listed in table 1.
+The main experiments conducted in this thesis uses the NASA Airfoil
+Self-Noise Data Set which is part of the UCI machine learning repository
+{[}2{]}. The dataset consists of 5 input variables and 1 output variable
+that are listed in table 1.
 
 \begin{table}[!h]
 
-\caption{(\#tab:airfoil_dataset_description)Airfoil - Dataset Description}
+\caption{\label{tab:airfoil_dataset_description}Airfoil - Dataset Description}
 \centering
 \begin{tabular}[t]{l|l|l|l}
 \hline
@@ -400,11 +541,16 @@ output & y & Scaled sound pressure level & decibels\\
 \end{tabular}
 \end{table}
 
-The objective of the airfoil problem is to find a function that accurately predicts the output variable \(y\) by taking in a subset of the input variables \(x1,x2,x3,x4,x5\). The function set used by all DAE-GP variations for the airfoil problem is summarized in table 2, the terminal set consists of the 5 input variables \(x1,x2,x3,x4,x5\) and ephemeral random integers in the range of \([{}-5,..,5]\) {[}17{]}.
+The objective of the airfoil problem is to find a function that
+accurately predicts the output variable \(y\) by taking in a subset of
+the input variables \(x1,x2,x3,x4,x5\). The function set used by all
+DAE-GP variations for the airfoil problem is summarized in table 2, the
+terminal set consists of the 5 input variables \(x1,x2,x3,x4,x5\) and
+ephemeral random integers in the range of \([{}-5,..,5]\) {[}17{]}.
 
 \begin{table}[!h]
 
-\caption{(\#tab:airfoil_function_set)Airfoil - Function Set}
+\caption{\label{tab:airfoil_function_set}Airfoil - Function Set}
 \centering
 \begin{tabular}[t]{l|r}
 \hline
@@ -427,7 +573,14 @@ analytic\_quotient & 2\\
 \hypertarget{exploratory-phase}{%
 \subsection{Exploratory Phase}\label{exploratory-phase}}
 
-In a first exploratory experiment DAE-GP was tested on the Aifoil dataset to perform a symbolic regression task. The aim of this initial experiment is to search for differences in behavior between an algorithm that uses a pre-training strategy and regular DAE-GP. The parameters for the experiment are summarized in table 2, the average results for fitness, number of fitness evaluations, average tree size of the population and the unique rate of the population are summarized in plot 1.
+In a first exploratory experiment DAE-GP was tested on the Aifoil
+dataset to perform a symbolic regression task. The aim of this initial
+experiment is to search for differences in behavior between an algorithm
+that uses a pre-training strategy and regular DAE-GP. The parameters for
+the experiment are summarized in table 2, the average results for
+fitness, number of fitness evaluations, average tree size of the
+population and the unique rate of the population are summarized in plot
+1.
 
 \begin{table}[!h]
 
@@ -456,45 +609,126 @@ Tournament Size & 7\\
 \caption{Airfoil - First Results}
 \end{figure}
 
-In this first experiment, the average quality of solutions produced by the pre-trained algorithm shows to be lower than that produced by regular DAE-GP. Differences in fitness start to show at generation 5 where regular DAE-GP starts to reduces RMSE more efficiently than the pre-trained version. The gap in average fitness grows larger until the end of the evolutionary search between both algorithms. Observing the gap between RMSE on the training dataset and the testing dataset shows no major differences, the training error is slightly lower than the testing error for both algorithms and indicates a similar generalization behavior.
+In this first experiment, the average quality of solutions produced by
+the pre-trained algorithm shows to be lower than that produced by
+regular DAE-GP. Differences in fitness start to show at generation 5
+where regular DAE-GP starts to reduces RMSE more efficiently than the
+pre-trained version. The gap in average fitness grows larger until the
+end of the evolutionary search between both algorithms. Observing the
+gap between RMSE on the training dataset and the testing dataset shows
+no major differences, the training error is slightly lower than the
+testing error for both algorithms and indicates a similar generalization
+behavior.
 
-Another interesting metric to investigate is the population's average tree size, in general smaller solutions are preferable to their larger counterparts because of improved interpretability. The results show, that average tree size is reduced strongly in generations 1-5 for both algorithms and than slowly increases back. Differences between regular DAE-GP and the pre-trained DAE-GP start to show at generation 2, where the average population tree size is continuously lower for regular DAE-GP.
+Another interesting metric to investigate is the population's average
+tree size, in general smaller solutions are preferable to their larger
+counterparts because of improved interpretability. The results show,
+that average tree size is reduced strongly in generations 1-5 for both
+algorithms and than slowly increases back. Differences between regular
+DAE-GP and the pre-trained DAE-GP start to show at generation 2, where
+the average population tree size is continuously lower for regular
+DAE-GP.
 
-It can also be observed that the population diversity, measured by the normalized levenshtein distance, is different between both DAE-GP variants. Both algorithms start at a unique rate of about 0.8 in the 0.th generation and lower rapidly to an average of about 0.45 in the 7.th generation. In the following generations, the diversity of pre-trained DAE-GP keeps lowering steadily while regular DAE-GP slowly increases the population diversity to a normalized levenshtein distance of about 0.55. This could be a first explanation for the better performance of regular DAE-GP in this experiment, by creating more diverse populations over the later generations of the search the algorithm is better at exploiting the search space than the pre-trained DAE-GP algorithm.
+It can also be observed that the population diversity, measured by the
+normalized levenshtein distance, is different between both DAE-GP
+variants. Both algorithms start at a unique rate of about 0.8 in the
+0.th generation and lower rapidly to an average of about 0.45 in the
+7.th generation. In the following generations, the diversity of
+pre-trained DAE-GP keeps lowering steadily while regular DAE-GP slowly
+increases the population diversity to a normalized levenshtein distance
+of about 0.55. This could be a first explanation for the better
+performance of regular DAE-GP in this experiment, by creating more
+diverse populations over the later generations of the search the
+algorithm is better at exploiting the search space than the pre-trained
+DAE-GP algorithm.
 
 \hypertarget{effect-on-generalisation}{%
 \subsection{Effect on Generalisation}\label{effect-on-generalisation}}
 
-To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted, again using the airfoil dataset for symbolic regression, and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
+To gather a deeper understanding about the effect of pre-training
+DAE-LSTM in DAE-GP a series of experiments was conducted, again using
+the airfoil dataset for symbolic regression, and different parameter
+configurations for the number of hidden layers as well as the number of
+hidden neurons per hidden layer.
 
-To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus soley on the reconstruction error that is produced during the training of each the DAE-LSTM. The reconstruction error is measured for two separate populations, a training population \(train\_pop\) that is used to train our DAE-LSTM as well as a hold-out validation population \(test\_pop\). For the pre-trained DAE-GP two additional, separate populations \(\hat{train\_pop}\) and \(\hat{test\_pop}\) are used only for pre-training.
+To study generalization behavior this series of experiments is conducted
+using DAE-GP with only a single generation until the search terminates.
+I disregard the fitness of solutions found and focus soley on the
+reconstruction error that is produced during the training of each the
+DAE-LSTM. The reconstruction error is measured for two separate
+populations, a training population \(train\_pop\) that is used to train
+our DAE-LSTM as well as a hold-out validation population \(test\_pop\).
+For the pre-trained DAE-GP two additional, separate populations
+\(\hat{train\_pop}\) and \(\hat{test\_pop}\) are used only for
+pre-training.
 
 DAE-GP is tested in two different configurations:
 
 \begin{itemize}
 \tightlist
 \item
-  Variable number of hidden neurons (50, 100, 200) with a single hidden layer
+  Variable number of hidden neurons (50, 100, 200) with a single hidden
+  layer
 \item
-  Fixed number of hidden neurons (100) per hidden layer with variable number of hidden layers (1, 2, 3)
+  Fixed number of hidden neurons (100) per hidden layer with variable
+  number of hidden layers (1, 2, 3)
 \end{itemize}
 
-For each configuration I tested traditional DAE-GP as well as a pre-trained DAE-GP resulting in 12 total sub experiments that were each based on 10 individual runs (total number of runs=\(120\)). To avoid creating biased results through the presence of sampling error inside the pre-training population (see {[}13{]}), the population size for the pre-training phase is chosen very high with \(\hat{pop\_size}=20000\) where 50\% of \(\hat{pop}\) is used for the training population \(\hat{train\_pop}\) and the remaining 50\% are used for the hold-out validation population \(\hat{test\_pop}\). The training of DAE-LSTM uses a fixed number of 1000 epochs until termination and uses Adam optimization for gradient descent. The reason for using a high amount of 1000 fixed training epochs is to deliberately force the DAE-LSTM to overfit to the training data.
+For each configuration I tested traditional DAE-GP as well as a
+pre-trained DAE-GP resulting in 12 total sub experiments that were each
+based on 10 individual runs (total number of runs=\(120\)). To avoid
+creating biased results through the presence of sampling error inside
+the pre-training population (see {[}13{]}), the population size for the
+pre-training phase is chosen very high with \(\hat{pop\_size}=20000\)
+where 50\% of \(\hat{pop}\) is used for the training population
+\(\hat{train\_pop}\) and the remaining 50\% are used for the hold-out
+validation population \(\hat{test\_pop}\). The training of DAE-LSTM uses
+a fixed number of 1000 epochs until termination and uses Adam
+optimization for gradient descent. The reason for using a high amount of
+1000 fixed training epochs is to deliberately force the DAE-LSTM to
+overfit to the training data.
 
-In general I expect that with a growing number of model parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population \(train\_pop\) resulting in a small reconstruction error for the training population and a large one for the validation population \(train\_pop\). The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases {[}15{]}.
+In general I expect that with a growing number of model parameters
+(either by adding more hidden layers or more hidden neurons per layer)
+the DAE-LSTM will be more prone to overfit to the training population
+\(train\_pop\) resulting in a small reconstruction error for the
+training population and a large one for the validation population
+\(train\_pop\). The reason for this effect is that a larger network
+trained over an extended period of time (without the use of strategies
+like early stopping), has much more potential to learn noise from the
+training dataset than a smaller network, which is more likely to result
+in worsening performance for previously unseen cases {[}15{]}.
 
-Based on the review of {[}3{]} I also expect that pre-training will have an insignificant or even negative influence on small DAE-LSTM instances while improving the networks generalization ability with growing size.
+Based on the review of {[}3{]} I also expect that pre-training will have
+an insignificant or even negative influence on small DAE-LSTM instances
+while improving the networks generalization ability with growing size.
 
 \begin{figure}
 \centering
 \includegraphics{./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png}
-\caption{Airfoil - First Generation Median Training Error for variable number of hidden Neurons}
+\caption{Airfoil - First Generation Median Training Error for variable
+number of hidden Neurons}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.png}
-\caption{Airfoil - First Generation final Training Error for variable number of hidden Neurons}
+\caption{Airfoil - First Generation final Training Error for variable
+number of hidden Neurons}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png}
+\caption{Airfoil - First Generation Median Training Error for variable
+number of hidden Layers}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.png}
+\caption{Airfoil - First Generation final Training Error for variable
+number of hidden Layers}
 \end{figure}
 
 \hypertarget{discussion}{%
@@ -503,12 +737,15 @@ Based on the review of {[}3{]} I also expect that pre-training will have an insi
 \ldots{}
 
 \hypertarget{limitations-and-open-questions}{%
-\section{Limitations and open Questions}\label{limitations-and-open-questions}}
+\section{Limitations and open
+Questions}\label{limitations-and-open-questions}}
 
 \hypertarget{further-questions}{%
 \subsection{Further Questions}\label{further-questions}}
 
-{[}3{]}: Pre-Training effect especially usefull for lower-level layers -\textgreater{} Only adapt weights from low layers or embedd the pre-trained model?
+{[}3{]}: Pre-Training effect especially usefull for lower-level layers
+-\textgreater{} Only adapt weights from low layers or embedd the
+pre-trained model?
 
 Different pre-training strategies?
 
@@ -522,75 +759,135 @@ Different pre-training strategies?
 \begin{CSLReferences}{0}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-chollet2015keras}{}}%
 \CSLLeftMargin{{[}1{]} }%
-\CSLRightInline{Francois Chollet and others. 2015. Keras. Retrieved from \url{https://github.com/fchollet/keras}}
+\CSLRightInline{Francois Chollet and others. 2015. Keras. Retrieved from
+\url{https://github.com/fchollet/keras}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-machine_learning_repo}{}}%
 \CSLLeftMargin{{[}2{]} }%
-\CSLRightInline{Dheeru Dua and Casey Graff. 2017. {UCI} machine learning repository. Retrieved from \url{http://archive.ics.uci.edu/ml}}
+\CSLRightInline{Dheeru Dua and Casey Graff. 2017. {UCI} machine learning
+repository. Retrieved from \url{http://archive.ics.uci.edu/ml}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-pmlr-v5-erhan09a}{}}%
 \CSLLeftMargin{{[}3{]} }%
-\CSLRightInline{Dumitru Erhan, Pierre-Antoine Manzagol, Yoshua Bengio, Samy Bengio, and Pascal Vincent. 2009. The difficulty of training deep architectures and the effect of unsupervised pre-training. In \emph{Proceedings of the twelth international conference on artificial intelligence and statistics} (Proceedings of machine learning research), PMLR, Hilton Clearwater Beach Resort, Clearwater Beach, Florida USA, 153--160. Retrieved from \url{https://proceedings.mlr.press/v5/erhan09a.html}}
+\CSLRightInline{Dumitru Erhan, Pierre-Antoine Manzagol, Yoshua Bengio,
+Samy Bengio, and Pascal Vincent. 2009. The difficulty of training deep
+architectures and the effect of unsupervised pre-training. In
+\emph{Proceedings of the twelth international conference on artificial
+intelligence and statistics} (Proceedings of machine learning research),
+PMLR, Hilton Clearwater Beach Resort, Clearwater Beach, Florida USA,
+153--160. Retrieved from
+\url{https://proceedings.mlr.press/v5/erhan09a.html}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-DEAP_JMLR2012}{}}%
 \CSLLeftMargin{{[}4{]} }%
-\CSLRightInline{Félix-Antoine Fortin, François-Michel De Rainville, Marc-André Gardner, Marc Parizeau, and Christian Gagné. 2012. {DEAP}: Evolutionary algorithms made easy. \emph{Journal of Machine Learning Research} 13, (2012), 2171--2175.}
+\CSLRightInline{Félix-Antoine Fortin, François-Michel De Rainville,
+Marc-André Gardner, Marc Parizeau, and Christian Gagné. 2012. {DEAP}:
+Evolutionary algorithms made easy. \emph{Journal of Machine Learning
+Research} 13, (2012), 2171--2175.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-HAN2021225}{}}%
 \CSLLeftMargin{{[}5{]} }%
-\CSLRightInline{Xu Han, Zhengyan Zhang, Ning Ding, Yuxian Gu, Xiao Liu, Yuqi Huo, Jiezhong Qiu, Yuan Yao, Ao Zhang, Liang Zhang, Wentao Han, Minlie Huang, Qin Jin, Yanyan Lan, Yang Liu, Zhiyuan Liu, Zhiwu Lu, Xipeng Qiu, Ruihua Song, Jie Tang, Ji-Rong Wen, Jinhui Yuan, Wayne Xin Zhao, and Jun Zhu. 2021. Pre-trained models: Past, present and future. \emph{AI Open} 2, (2021), 225--250. DOI:https://doi.org/\url{https://doi.org/10.1016/j.aiopen.2021.08.002}}
+\CSLRightInline{Xu Han, Zhengyan Zhang, Ning Ding, Yuxian Gu, Xiao Liu,
+Yuqi Huo, Jiezhong Qiu, Yuan Yao, Ao Zhang, Liang Zhang, Wentao Han,
+Minlie Huang, Qin Jin, Yanyan Lan, Yang Liu, Zhiyuan Liu, Zhiwu Lu,
+Xipeng Qiu, Ruihua Song, Jie Tang, Ji-Rong Wen, Jinhui Yuan, Wayne Xin
+Zhao, and Jun Zhu. 2021. Pre-trained models: Past, present and future.
+\emph{AI Open} 2, (2021), 225--250.
+DOI:https://doi.org/\url{https://doi.org/10.1016/j.aiopen.2021.08.002}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-ae_orig}{}}%
 \CSLLeftMargin{{[}6{]} }%
-\CSLRightInline{G. E. Hinton and R. R. Salakhutdinov. 2006. Reducing the dimensionality of data with neural networks. \emph{Science} 313, 5786 (2006), 504--507. DOI:https://doi.org/\href{https://doi.org/10.1126/science.1127647}{10.1126/science.1127647}}
+\CSLRightInline{G. E. Hinton and R. R. Salakhutdinov. 2006. Reducing the
+dimensionality of data with neural networks. \emph{Science} 313, 5786
+(2006), 504--507.
+DOI:https://doi.org/\href{https://doi.org/10.1126/science.1127647}{10.1126/science.1127647}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-lstm_orig}{}}%
 \CSLLeftMargin{{[}7{]} }%
-\CSLRightInline{Sepp Hochreiter and Jürgen Schmidhuber. 1997. Long short-term memory. \emph{Neural computation} 9, (December 1997), 1735--80. DOI:https://doi.org/\href{https://doi.org/10.1162/neco.1997.9.8.1735}{10.1162/neco.1997.9.8.1735}}
+\CSLRightInline{Sepp Hochreiter and Jürgen Schmidhuber. 1997. Long
+short-term memory. \emph{Neural computation} 9, (December 1997),
+1735--80.
+DOI:https://doi.org/\href{https://doi.org/10.1162/neco.1997.9.8.1735}{10.1162/neco.1997.9.8.1735}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-Koza1993GeneticP}{}}%
 \CSLLeftMargin{{[}8{]} }%
-\CSLRightInline{John R. Koza. 1993. Genetic programming - on the programming of computers by means of natural selection. In \emph{Complex adaptive systems}.}
+\CSLRightInline{John R. Koza. 1993. Genetic programming - on the
+programming of computers by means of natural selection. In \emph{Complex
+adaptive systems}.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-survey_transfer_learning}{}}%
 \CSLLeftMargin{{[}9{]} }%
-\CSLRightInline{Sinno Jialin Pan and Qiang Yang. 2010. A survey on transfer learning. \emph{IEEE Transactions on Knowledge and Data Engineering} 22, 10 (2010), 1345--1359. DOI:https://doi.org/\href{https://doi.org/10.1109/TKDE.2009.191}{10.1109/TKDE.2009.191}}
+\CSLRightInline{Sinno Jialin Pan and Qiang Yang. 2010. A survey on
+transfer learning. \emph{IEEE Transactions on Knowledge and Data
+Engineering} 22, 10 (2010), 1345--1359.
+DOI:https://doi.org/\href{https://doi.org/10.1109/TKDE.2009.191}{10.1109/TKDE.2009.191}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-10.1007ux2f978-3-540-24621-3_22}{}}%
 \CSLLeftMargin{{[}10{]} }%
-\CSLRightInline{Grégory Paris, Denis Robilliard, and Cyril Fonlupt. 2004. Exploring overfitting in genetic programming. In \emph{Artificial evolution}, Springer Berlin Heidelberg, Berlin, Heidelberg, 267--277.}
+\CSLRightInline{Grégory Paris, Denis Robilliard, and Cyril Fonlupt.
+2004. Exploring overfitting in genetic programming. In \emph{Artificial
+evolution}, Springer Berlin Heidelberg, Berlin, Heidelberg, 267--277.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-harmless_overfitting_eda}{}}%
 \CSLLeftMargin{{[}11{]} }%
-\CSLRightInline{Malte Probst and Franz Rothlauf. 2020. Harmless overfitting: Using denoising autoencoders in estimation of distribution algorithms. \emph{Journal of Machine Learning Research} 21, 78 (2020), 1--31. Retrieved from \url{http://jmlr.org/papers/v21/16-543.html}}
+\CSLRightInline{Malte Probst and Franz Rothlauf. 2020. Harmless
+overfitting: Using denoising autoencoders in estimation of distribution
+algorithms. \emph{Journal of Machine Learning Research} 21, 78 (2020),
+1--31. Retrieved from \url{http://jmlr.org/papers/v21/16-543.html}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-design_of_modern_heuristics}{}}%
 \CSLLeftMargin{{[}12{]} }%
-\CSLRightInline{Franz Rothlauf. 2011. \emph{Design of modern heuristics: Principles and application}. DOI:https://doi.org/\href{https://doi.org/10.1007/978-3-540-72962-4}{10.1007/978-3-540-72962-4}}
+\CSLRightInline{Franz Rothlauf. 2011. \emph{Design of modern heuristics:
+Principles and application}.
+DOI:https://doi.org/\href{https://doi.org/10.1007/978-3-540-72962-4}{10.1007/978-3-540-72962-4}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-sampling_err_gp}{}}%
 \CSLLeftMargin{{[}13{]} }%
-\CSLRightInline{Dirk Schweim, David Wittenberg, and Franz Rothlauf. 2021. On sampling error in genetic programming. \emph{Natural computing} 2021, (2021). DOI:https://doi.org/\url{http://doi.org/10.25358/openscience-5820}}
+\CSLRightInline{Dirk Schweim, David Wittenberg, and Franz Rothlauf.
+2021. On sampling error in genetic programming. \emph{Natural computing}
+2021, (2021).
+DOI:https://doi.org/\url{http://doi.org/10.25358/openscience-5820}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-10.1145ux2f1390156.1390294}{}}%
 \CSLLeftMargin{{[}14{]} }%
-\CSLRightInline{Pascal Vincent, Hugo Larochelle, Yoshua Bengio, and Pierre-Antoine Manzagol. 2008. Extracting and composing robust features with denoising autoencoders. In \emph{Proceedings of the 25th international conference on machine learning} (ICML '08), Association for Computing Machinery, New York, NY, USA, 1096--1103. DOI:https://doi.org/\href{https://doi.org/10.1145/1390156.1390294}{10.1145/1390156.1390294}}
+\CSLRightInline{Pascal Vincent, Hugo Larochelle, Yoshua Bengio, and
+Pierre-Antoine Manzagol. 2008. Extracting and composing robust features
+with denoising autoencoders. In \emph{Proceedings of the 25th
+international conference on machine learning} (ICML '08), Association
+for Computing Machinery, New York, NY, USA, 1096--1103.
+DOI:https://doi.org/\href{https://doi.org/10.1145/1390156.1390294}{10.1145/1390156.1390294}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-weigend1994overfitting}{}}%
 \CSLLeftMargin{{[}15{]} }%
-\CSLRightInline{Andreas Weigend. 1994. On overfitting and the effective number of hidden units. In \emph{Proceedings of the 1993 connectionist models summer school}, 335--342.}
+\CSLRightInline{Andreas Weigend. 1994. On overfitting and the effective
+number of hidden units. In \emph{Proceedings of the 1993 connectionist
+models summer school}, 335--342.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-daegp_explore_exploit}{}}%
 \CSLLeftMargin{{[}16{]} }%
-\CSLRightInline{David Wittenberg. 2022. Using denoising autoencoder genetic programming to~control exploration and~exploitation in~search. In \emph{Genetic programming}, Springer International Publishing, Cham, 102--117.}
+\CSLRightInline{David Wittenberg. 2022. Using denoising autoencoder
+genetic programming to~control exploration and~exploitation in~search.
+In \emph{Genetic programming}, Springer International Publishing, Cham,
+102--117.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dae-gp_2022_symreg}{}}%
 \CSLLeftMargin{{[}17{]} }%
-\CSLRightInline{David Wittenberg and Franz Rothlauf. 2022. Denoising autoencoder genetic programming for real-world symbolic regression. In \emph{Proceedings of the genetic and evolutionary computation conference companion} (GECCO '22), Association for Computing Machinery, New York, NY, USA, 612--614. DOI:https://doi.org/\href{https://doi.org/10.1145/3520304.3528921}{10.1145/3520304.3528921}}
+\CSLRightInline{David Wittenberg and Franz Rothlauf. 2022. Denoising
+autoencoder genetic programming for real-world symbolic regression. In
+\emph{Proceedings of the genetic and evolutionary computation conference
+companion} (GECCO '22), Association for Computing Machinery, New York,
+NY, USA, 612--614.
+DOI:https://doi.org/\href{https://doi.org/10.1145/3520304.3528921}{10.1145/3520304.3528921}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dae-gp_2020_rtree}{}}%
 \CSLLeftMargin{{[}18{]} }%
-\CSLRightInline{David Wittenberg, Franz Rothlauf, and Dirk Schweim. 2020. DAE-GP: Denoising autoencoder LSTM networks as probabilistic models in estimation of distribution genetic programming. In \emph{Proceedings of the 2020 genetic and evolutionary computation conference} (GECCO '20), Association for Computing Machinery, New York, NY, USA, 1037--1045. DOI:https://doi.org/\href{https://doi.org/10.1145/3377930.3390180}{10.1145/3377930.3390180}}
+\CSLRightInline{David Wittenberg, Franz Rothlauf, and Dirk Schweim.
+2020. DAE-GP: Denoising autoencoder LSTM networks as probabilistic
+models in estimation of distribution genetic programming. In
+\emph{Proceedings of the 2020 genetic and evolutionary computation
+conference} (GECCO '20), Association for Computing Machinery, New York,
+NY, USA, 1037--1045.
+DOI:https://doi.org/\href{https://doi.org/10.1145/3377930.3390180}{10.1145/3377930.3390180}}
 
 \end{CSLReferences}
 

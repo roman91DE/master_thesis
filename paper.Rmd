@@ -311,9 +311,9 @@ Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will 
 
 <!--- analyzing by layers -->
 
-![Airfoil - First Generation Median Training Error for variable number of hidden Neurons](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png)
+![Airfoil - First Generation Median Training Error for variable number of hidden Layers](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png)
 
-![Airfoil - First Generation final Training Error for variable number of hidden Neurons](./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.png)
+![Airfoil - First Generation final Training Error for variable number of hidden Layers](./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.png)
 
 # Discussion
 
