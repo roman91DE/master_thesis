@@ -335,7 +335,7 @@ Regarding the hidden neurons, the dimension of each hidden layer, I used two dif
 ![Airfoil - Fitness Distribution Boxplot](./img/airfoil_FullRun_30gens/final_fit_boxplot.png)
 
 ![Airfoil - Average Population Diversity](./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png)
-Since @dae-gp_2022_symreg finds, that DAE-GP finds higher quality and smaller sized solutions smaller than average GP for a given number of 10.000 the airfoil problem 
+Since @dae-gp_2022_symreg shows, that DAE-GP finds higher quality that are also smaller in size than those found by average GP for a given number of 10.000 fitness evaluations, I also studied the differences in average solution size between pre-trained and regular DAE-GP.
 
 ![Airfoil - Average Solution Size](./img/airfoil_FullRun_30gens/mean_Size_byGens.png)
 

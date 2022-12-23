@@ -116,15 +116,6 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \usepackage{float}
-\usepackage[numbers]{natbib}
-\let\origfigure\figure
-\let\endorigfigure\endfigure
-\renewenvironment{figure}[1][2] {
-    \expandafter\origfigure\expandafter[H]
-} {
-    \endorigfigure
-}
-\usepackage{float}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -667,9 +658,8 @@ After closely examining the effect of pre-training on DAE-GPs
 generalization behaviour another series of experiments is conducted to
 study how pre-training influences the overall search behaviour of
 DAE-GP. Again the Airfoil problem was selected as a first benchmark
-problem to test pre-trained DAE-GP against traditional DAE-GP
-{[}\textbf{gp\_2022\_symreg?}{]}, the parameters are described in table
-\(A\)
+problem to test pre-trained DAE-GP against traditional DAE-GP {[}17{]},
+the parameters are described in table \(A\)
 
 \begin{table}[!h]
 
@@ -702,13 +692,44 @@ Pre-Training TrainingMode & Early Stopping\\
 
 Regarding the hidden neurons, the dimension of each hidden layer, I used
 two different strategies: Regular DAE-GP uses the same strategy as
-described by earlier work (see {[}\textbf{gp\_2022\_symreg?}{]} or
-{[}18{]}), the number of hidden neurons is dynamically set at each
-generation to the maximum length of all solutions inside the current
-training population. For pre-trained DAE-GP another strategy had to be
-used, we use a fixed number of hidden neurons for each run that is set
-equal to the maximum length of all individuals that are present in the
-initial pre-training population.
+described by earlier work (see {[}17{]} or {[}18{]}), the number of
+hidden neurons is dynamically set at each generation to the maximum
+length of all solutions inside the current training population. For
+pre-trained DAE-GP another strategy had to be used, we use a fixed
+number of hidden neurons for each run that is set equal to the maximum
+length of all individuals that are present in the initial pre-training
+population. I decided to take this aproach instead of using a fixed
+number of hidden neurons for the fact that it simplifies the adjustment
+of the parameter for later experiments on different problems. It should
+nonetheless be mentioned that this strategy does give pre-training on
+average more hidden neurons per layer resulting in a more complex
+network (since the pre-training population is much larger than the
+regular population, the chances for larger individuals inside it are
+also higher).
+
+\begin{figure}
+\centering
+\includegraphics{./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png}
+\caption{Airfoil - Best Fitness over 30 Generations}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{./img/airfoil_FullRun_30gens/final_fit_boxplot.png}
+\caption{Airfoil - Fitness Distribution Boxplot}
+\end{figure}
+
+\includegraphics{./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png}
+Since {[}17{]} shows, that DAE-GP finds higher quality that are also
+smaller in size than those found by average GP for a given number of
+10.000 fitness evaluations, I also studied the differences in average
+solution size between pre-trained and regular DAE-GP.
+
+\begin{figure}
+\centering
+\includegraphics{./img/airfoil_FullRun_30gens/mean_Size_byGens.png}
+\caption{Airfoil - Average Solution Size}
+\end{figure}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
