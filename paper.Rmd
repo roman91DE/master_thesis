@@ -332,6 +332,10 @@ Regarding the hidden neurons, the dimension of each hidden layer, I used two dif
 
 ![Airfoil - Best Fitness over 30 Generations](./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png)
 
+````{python3}
+
+````
+
 ![Airfoil - Fitness Distribution Boxplot](./img/airfoil_FullRun_30gens/final_fit_boxplot.png)
 
 ![Airfoil - Average Population Diversity](./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png)
