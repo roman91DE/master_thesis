@@ -261,7 +261,7 @@ knitr::kable(
 
 # Results
 
-
+<!---
 ## Exploratory Phase
 
 In a first exploratory experiment DAE-GP was tested on the Aifoil dataset to perform a symbolic regression task. The aim of this initial experiment is to search for differences in behavior between an algorithm that uses a pre-training strategy and regular DAE-GP. The parameters for the experiment are summarized in table 2, the average results for fitness, number of fitness evaluations, average tree size of the population and the unique rate of the population are summarized in plot 1.
@@ -282,11 +282,11 @@ In this first experiment, the average quality of solutions produced by the pre-t
 Another interesting metric to investigate is the population's average tree size, in general smaller solutions are preferable to their larger counterparts because of improved interpretability. The results show, that average tree size is reduced strongly in generations 1-5 for both algorithms and than slowly increases back. Differences between regular DAE-GP and the pre-trained DAE-GP start to show at generation 2, where the average population tree size is continuously lower for regular DAE-GP.
 
 It can also be observed that the population diversity, measured by the normalized levenshtein distance, is different between both DAE-GP variants. Both algorithms start at a unique rate of about 0.8 in the 0.th generation and lower rapidly to an average of about 0.45 in the 7.th generation. In the following generations, the diversity of pre-trained DAE-GP keeps lowering steadily while regular DAE-GP slowly increases the population diversity to a normalized levenshtein distance of about 0.55. This could be a first explanation for the better performance of regular DAE-GP in this experiment, by creating more diverse populations over the later generations of the search the algorithm is better at exploiting the search space than the pre-trained DAE-GP algorithm.
-
+-->
 
 ## Effect on Generalisation
 
-To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted, again using the airfoil dataset for symbolic regression, and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
+To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
 
 To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus soley on the reconstruction error that is produced during the training of each the DAE-LSTM. The reconstruction error is measured for two separate populations, a training population $train\_pop$ that is used to train our DAE-LSTM as well as a hold-out validation population $test\_pop$. For the pre-trained DAE-GP two additional, separate populations $\hat{train\_pop}$ and  $\hat{test\_pop}$ are used only for pre-training. 
 
@@ -314,6 +314,31 @@ Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will 
 ![Airfoil - First Generation Median Training Error for variable number of hidden Layers](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png)
 
 ![Airfoil - First Generation final Training Error for variable number of hidden Layers](./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.png)
+
+## Effect on search performance
+
+After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. Again the Airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP [@dae-gp_2022_symreg], the parameters are described in table $A$
+
+```{r airfoil_fullRun_2hl_maxIndSize_params, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+fig.pos="H"
+knitr::kable(
+  read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
+  caption="Airfoil - Parameter for full Run"
+)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+Regarding the hidden neurons, the dimension of each hidden layer, I used two different strategies: Regular DAE-GP uses the same strategy as described by earlier work (see [@dae-gp_2022_symreg] or [@dae-gp_2020_rtree]), the number of hidden neurons is dynamically set at each generation to the maximum length of all solutions inside the current training population. For pre-trained DAE-GP another strategy had to be used, we use a fixed number of hidden neurons for each run that is set equal to the maximum length of all individuals that are present in the initial pre-training population. I decided to take this aproach instead of using a fixed number of hidden neurons for the fact that it simplifies the adjustment of the parameter for later experiments on different problems. It should nonetheless be mentioned that this strategy does give pre-training on average more hidden neurons per layer resulting in a more complex network (since the pre-training population is much larger than the regular population, the chances for larger individuals inside it are also higher).
+
+
+![Airfoil - Best Fitness over 30 Generations](./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png)
+
+![Airfoil - Fitness Distribution Boxplot](./img/airfoil_FullRun_30gens/final_fit_boxplot.png)
+
+![Airfoil - Average Population Diversity](./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png)
+Since @dae-gp_2022_symreg finds, that DAE-GP finds higher quality and smaller sized solutions smaller than average GP for a given number of 10.000 the airfoil problem 
+
+![Airfoil - Average Solution Size](./img/airfoil_FullRun_30gens/mean_Size_byGens.png)
+
 
 # Discussion
 

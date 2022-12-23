@@ -172,7 +172,7 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2022-12-19}
+\date{\vspace{-2.5em}Date of Submission: 2022-12-23}
 
 \begin{document}
 \maketitle
@@ -570,86 +570,14 @@ analytic\_quotient & 2\\
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-\hypertarget{exploratory-phase}{%
-\subsection{Exploratory Phase}\label{exploratory-phase}}
-
-In a first exploratory experiment DAE-GP was tested on the Aifoil
-dataset to perform a symbolic regression task. The aim of this initial
-experiment is to search for differences in behavior between an algorithm
-that uses a pre-training strategy and regular DAE-GP. The parameters for
-the experiment are summarized in table 2, the average results for
-fitness, number of fitness evaluations, average tree size of the
-population and the unique rate of the population are summarized in plot
-1.
-
-\begin{table}[!h]
-
-\caption{\label{tab:unnamed-chunk-1}Airfoil - Configuration}
-\centering
-\begin{tabular}[t]{l|l}
-\hline
-\textbf{Hyperparameter} & \textbf{Value}\\
-\hline
-Training/Testing Split & 50:50\\
-\hline
-Pre-Training Population Size & 10000\\
-\hline
-Number of Hidden Layers & 1\\
-\hline
-Selection & Tournament\\
-\hline
-Tournament Size & 7\\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{figure}
-\centering
-\includegraphics{./img/airfoil_exploratory/airfoil_exploratory.png}
-\caption{Airfoil - First Results}
-\end{figure}
-
-In this first experiment, the average quality of solutions produced by
-the pre-trained algorithm shows to be lower than that produced by
-regular DAE-GP. Differences in fitness start to show at generation 5
-where regular DAE-GP starts to reduces RMSE more efficiently than the
-pre-trained version. The gap in average fitness grows larger until the
-end of the evolutionary search between both algorithms. Observing the
-gap between RMSE on the training dataset and the testing dataset shows
-no major differences, the training error is slightly lower than the
-testing error for both algorithms and indicates a similar generalization
-behavior.
-
-Another interesting metric to investigate is the population's average
-tree size, in general smaller solutions are preferable to their larger
-counterparts because of improved interpretability. The results show,
-that average tree size is reduced strongly in generations 1-5 for both
-algorithms and than slowly increases back. Differences between regular
-DAE-GP and the pre-trained DAE-GP start to show at generation 2, where
-the average population tree size is continuously lower for regular
-DAE-GP.
-
-It can also be observed that the population diversity, measured by the
-normalized levenshtein distance, is different between both DAE-GP
-variants. Both algorithms start at a unique rate of about 0.8 in the
-0.th generation and lower rapidly to an average of about 0.45 in the
-7.th generation. In the following generations, the diversity of
-pre-trained DAE-GP keeps lowering steadily while regular DAE-GP slowly
-increases the population diversity to a normalized levenshtein distance
-of about 0.55. This could be a first explanation for the better
-performance of regular DAE-GP in this experiment, by creating more
-diverse populations over the later generations of the search the
-algorithm is better at exploiting the search space than the pre-trained
-DAE-GP algorithm.
-
 \hypertarget{effect-on-generalisation}{%
 \subsection{Effect on Generalisation}\label{effect-on-generalisation}}
 
 To gather a deeper understanding about the effect of pre-training
-DAE-LSTM in DAE-GP a series of experiments was conducted, again using
-the airfoil dataset for symbolic regression, and different parameter
-configurations for the number of hidden layers as well as the number of
-hidden neurons per hidden layer.
+DAE-LSTM in DAE-GP a series of experiments was conducted using the
+airfoil dataset for symbolic regression while using and different
+parameter configurations for the number of hidden layers as well as the
+number of hidden neurons per hidden layer.
 
 To study generalization behavior this series of experiments is conducted
 using DAE-GP with only a single generation until the search terminates.
@@ -730,6 +658,57 @@ number of hidden Layers}
 \caption{Airfoil - First Generation final Training Error for variable
 number of hidden Layers}
 \end{figure}
+
+\hypertarget{effect-on-search-performance}{%
+\subsection{Effect on search
+performance}\label{effect-on-search-performance}}
+
+After closely examining the effect of pre-training on DAE-GPs
+generalization behaviour another series of experiments is conducted to
+study how pre-training influences the overall search behaviour of
+DAE-GP. Again the Airfoil problem was selected as a first benchmark
+problem to test pre-trained DAE-GP against traditional DAE-GP
+{[}\textbf{gp\_2022\_symreg?}{]}, the parameters are described in table
+\(A\)
+
+\begin{table}[!h]
+
+\caption{\label{tab:airfoil_fullRun_2hl_maxIndSize_params}Airfoil - Parameter for full Run}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+\textbf{parameter} & \textbf{value}\\
+\hline
+populationSize & 500\\
+\hline
+generations & 30\\
+\hline
+fitness & RMSE\\
+\hline
+TrainingMode & Convergence\\
+\hline
+SamplingSteps & 2\\
+\hline
+hiddenLayers & 2\\
+\hline
+Selection & Binary Tournament Selection\\
+\hline
+Pre-Training PopulationSize(Training/Validation) & 10000/100000\\
+\hline
+Pre-Training TrainingMode & Early Stopping\\
+\hline
+\end{tabular}
+\end{table}
+
+Regarding the hidden neurons, the dimension of each hidden layer, I used
+two different strategies: Regular DAE-GP uses the same strategy as
+described by earlier work (see {[}\textbf{gp\_2022\_symreg?}{]} or
+{[}18{]}), the number of hidden neurons is dynamically set at each
+generation to the maximum length of all solutions inside the current
+training population. For pre-trained DAE-GP another strategy had to be
+used, we use a fixed number of hidden neurons for each run that is set
+equal to the maximum length of all individuals that are present in the
+initial pre-training population.
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
