@@ -37,15 +37,17 @@ library(kableExtra)
 library(magrittr)
 library(reticulate)
 
-EXPERIMENT_DIR<-("../eda-gp-2020/experiments")
 
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(fig.pos = "!H")
 
+reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
+
 
 ```
 
-```{python pytest, , echo=FALSE, include=FALSE}
+
+```{python pytest, echo=FALSE}
 from sys import version, executable
 print(f"Python Version: {version} \nPath: {executable}")
 ```
@@ -333,7 +335,13 @@ Regarding the hidden neurons, the dimension of each hidden layer, I used two dif
 ![Airfoil - Best Fitness over 30 Generations](./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png)
 
 ````{python3}
+import json
 
+S = json.load(open("./data/airfoil_FullRun_30gens/MWU-BestFitnessByGen.json", "r", encoding="utf-8"))
+statistic_mwu_fitness = S["statistic"]
+pval_mwu_fitness = S["p-value"]
+
+print(pval_mwu_fitness)
 ````
 
 ![Airfoil - Fitness Distribution Boxplot](./img/airfoil_FullRun_30gens/final_fit_boxplot.png)
