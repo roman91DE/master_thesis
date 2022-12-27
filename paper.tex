@@ -116,6 +116,15 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \usepackage{float}
+\usepackage[numbers]{natbib}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
+\usepackage{float}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -163,12 +172,17 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2022-12-23}
+\date{\vspace{-2.5em}Date of Submission: 2022-12-24}
 
 \begin{document}
 \maketitle
 
 \thispagestyle{empty} \newpage{}
+
+\begin{verbatim}
+## Python Version: 3.10.8 (main, Nov 24 2022, 08:10:26) [Clang 14.0.6 ] 
+## Path: /Users/rmn/miniconda3/envs/dataScience/bin/python
+\end{verbatim}
 
 \setcounter{page}{1}
 \tableofcontents
@@ -712,6 +726,8 @@ also higher).
 \includegraphics{./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png}
 \caption{Airfoil - Best Fitness over 30 Generations}
 \end{figure}
+
+The result of the MWU test is 0!
 
 \begin{figure}
 \centering
