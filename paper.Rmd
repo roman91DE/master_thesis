@@ -1,6 +1,7 @@
 ---
 title: |
   <center>Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming</center>
+  <center>Master Thesis - M.Sc. Business Education</center>
   <center>--------------------------------------------------------</center>
   <center>Student: Roman Höhn</center>
   <center>Date of Birth: 1991-04-14</center>
@@ -15,7 +16,7 @@ title: |
 date: "Date of Submission: `r Sys.Date()`"
 output:
   pdf_document:
-    keep_tex: true
+    # keep_tex: true
     extra_dependencies: ["float"]
     fig_caption: yes
     number_sections: true

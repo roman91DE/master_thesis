@@ -1,0 +1,47 @@
+---
+title: "Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming"
+subtitle: "Kolloquium zur Masterarbeit im M.Sc. Wirtschaftspädagogik "
+author: "Roman Hoehn"
+institute: "JGU Mainz "
+date: "Datum: `r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    fig_width: 12
+    fig_height: 10
+    # keep_tex: true
+    fig_caption: yes
+    number_sections: true
+    slide_level: 2
+toc: yes
+bibliography: ref/ref.bib
+csl: csl/association-for-computing-machinery.csl
+includes:
+      in_header: [header_files/slides.tex]
+---
+
+
+```{r setup, include=FALSE}
+library(magrittr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Introduction
+
+## Research Question
+
+## Denoising Autoencoder Genetic Programming
+
+## Pre-Training
+
+
+# References {.allowframebreaks} 
+
+
+
+
+
+
+
