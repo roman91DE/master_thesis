@@ -48,12 +48,19 @@ reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 
 
 
-```{bash ipythonRunner}
-# Find all *.ipynb files in subdirectories recursively
-for file in $(find . -type f -name "*.ipynb"); do
+```{bash ipythonRunner, include=FALSE}
+
+# Set the base directory
+EXPDIR="/Users/rmn/masterThesis/eda-gp-2020"
+
+# Find all *.ipynb files in subdirectories of EXPDIR, including sub-sub directories, etc., but exclude files that contain the word "checkpoint" in the filename
+for file in $(find "$EXPDIR" -type f -name "*.ipynb" ! -name "*checkpoint*"); do
+  # Change to the directory containing the IPython notebook file
+  cd "$(dirname "$file")"
   # Execute the IPython notebook file using the jupyter nbconvert command
-  jupyter nbconvert --execute "${file}"
+  ipython "$(basename "$file")"
 done
+
 ```
 
 ```{python pytest, echo=FALSE}
@@ -177,16 +184,18 @@ Pre-training has several benefits. It can help improve the performance of the mo
 Overall, pre-training is an important technique in deep learning that can help improve model performance and efficiency. It is commonly used in natural language processing and computer vision applications, where large amounts of labeled data are available.
 -->
 
-The strategy of pre-training artificial neural networks is based on the idea of transfer learning. 
-Transfer learning in the field of machine learning aims at retaining previously learned knowledge from one task to re-use it for another task [@HAN2021225] [@survey_transfer_learning]. Transfer learning traditionally follows a two phase approach:
+Pre-Training describes the concept of initially training a neural network on a large dataset before using it to solve a more specific task. It is a commonly used strategy in deep architectures that has been shown to improve both the optimization process itself as well as the generalization behavior if compared to the standard approach of using randomly initialized parameters [@pmlr-v5-erhan09a].
+
+The strategy of pre-training artificial neural networks is based on the idea of transfer learning that aims at retaining previously learned knowledge from one task to re-use it for another task [@HAN2021225] [@survey_transfer_learning]. Transfer learning traditionally follows a two phase approach:
 
 1. Pre-Training Phase: Capture knowledge from source task
 2. Fine-Tuning Phase: Transfer knowledge to the target task
 
 where source task and target task are usually similar but may differ in their feature space and the distribution of training data [@survey_transfer_learning].
-One of the main motivations for using transfer learning in real world machine learning tasks is the ability to reduce the need for large amounts of training data which can often be unavailable or too expensive to collect.
 
-Pre-Training is a commonly used strategy in deep architectures that has been shown to improve both the optimization process itself as well as the generalization behavior if compared to randomly initialized parameters [@pmlr-v5-erhan09a].
+Some of the main motivations for using pre-training is the ability to reduce the need for large amounts of training data which can often be unavailable or too expensive to collect as well as an improved performance by either reducing the computational effort that is necessary to train a model to solve a specific task or by improving the models generalisation ability. 
+
+
 
 ...describe different pre-training strategies, e.g. few shot, perpetual, re-using...
 
