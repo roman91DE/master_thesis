@@ -50,7 +50,6 @@ reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 
 
 ```{bash ipythonRunner, include=FALSE}
-
 # Set the base directory
 EXPDIR="/Users/rmn/masterThesis/eda-gp-2020"
 
