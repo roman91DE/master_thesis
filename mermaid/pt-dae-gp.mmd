@@ -1,5 +1,6 @@
 graph TD
-    subgraph Pre-Training
+subgraph Pre-Trained DAE-GP
+    subgraph Pre-Training Phase
         pt_start([Start])
         -->
         pt_init_pop[initialize pre-training population P&#770] 
@@ -10,7 +11,7 @@ graph TD
         -->
         pt_model_return([save the state of M&#770])
     end
-    subgraph DAE-GP
+    subgraph DAE-GP Phase
         start([Start])
         -->
         init_gen[g = 0] 
@@ -39,3 +40,4 @@ graph TD
     end
     pt_model_return-->start
     pt_model_return -.-> model_loading
+end

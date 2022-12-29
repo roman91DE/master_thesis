@@ -13,7 +13,7 @@ title: |
   <center>FB 03: Chair of Business Administration and Computer Science</center>
   <center>Johannes Gutenberg University Mainz</center>
   |
-date: "Date of Submission: `r Sys.Date()`"
+date: "Date of Submission: 2022-12-29"
 output:
   pdf_document:
     # keep_tex: true
@@ -33,53 +33,14 @@ include-before: '`\thispagestyle{empty} \newpage{}`{=latex}'
 
 <!-- Python/R Setup -->
 
-```{r setup, include=FALSE}
-library(kableExtra)
-library(magrittr)
-library(reticulate)
 
 
-knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(fig.pos = "!H")
-
-reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
-
-```
-
-```{bash compile_mermaid, include=FALSE}
-# compile all *.mmd files in the mermaid directory
-
-WIDTH=3200
-HEIGHT=2400
-THEME="neutral"
-BACKGROUND="white"
-
-for file in ./mermaid/*.mmd
-do
-  mmdc -i "$file" -o ./img/flowcharts/$(basename "$file" .mmd).png -t $THEME -w $WIDTH -H $HEIGHT -b $BACKGROUND 
-done
-
-```
 
 
-```{bash ipythonRunner, eval=FALSE, include=FALSE}
-# Set the base directory
-EXPDIR="/Users/rmn/masterThesis/eda-gp-2020"
 
-# Find all *.ipynb files in subdirectories of EXPDIR, including sub-sub directories, etc., but exclude files that contain the word "checkpoint" in the filename
-for file in $(find "$EXPDIR" -type f -name "*.ipynb" ! -name "*checkpoint*"); do
-  # Change to the directory containing the IPython notebook file
-  cd "$(dirname "$file")"
-  # Execute the IPython notebook file using the jupyter nbconvert command
-  ipython "$(basename "$file")"
-done
 
-```
 
-```{python pytest, echo=FALSE, include=FALSE}
-from sys import version, executable
-print(f"Python Version: {version} \nPath: {executable}")
-```
+
 
 
 
@@ -273,23 +234,49 @@ To test pre-training in DAE-GP this thesis focuses on the domain of real-world s
 <!--- airfoil dataset -->
 The main experiments conducted in this thesis uses the NASA Airfoil Self-Noise Data Set which is part of the UCI machine learning repository [@machine_learning_repo]. The dataset consists of 5 input variables and 1 output variable that are listed in table 1.
 
-```{r airfoil_dataset_description, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("./tables/airfoil_vars.csv"),
-  caption="Airfoil - Dataset Description"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
-```
+\begin{table}[!h]
+
+\caption{\label{tab:airfoil_dataset_description}Airfoil - Dataset Description}
+\centering
+\begin{tabular}[t]{l|l|l|l}
+\hline
+\textbf{Type} & \textbf{Name} & \textbf{Description} & \textbf{Unit}\\
+\hline
+input & x1 & Frequency & Hertz\\
+\hline
+input & x2 & Angle of attack & Degree\\
+\hline
+input & x3 & Chord length & meters\\
+\hline
+input & x4 & Free-stream velocity & meters/second\\
+\hline
+input & x5 & Suction side displacement thickness & meters\\
+\hline
+output & y & Scaled sound pressure level & decibels\\
+\hline
+\end{tabular}
+\end{table}
 
 The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for the airfoil problem is summarized in table 2, the terminal set consists of the 5 input variables $x1,x2,x3,x4,x5$ and ephemeral random integers in the range of $[{}-5,..,5]$ [@dae-gp_2022_symreg].
 
-```{r airfoil_function_set, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("./tables/airfoil_function_set"),
-  caption="Airfoil - Function Set"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
-```
+\begin{table}[!h]
+
+\caption{\label{tab:airfoil_function_set}Airfoil - Function Set}
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+\textbf{function.} & \textbf{arity}\\
+\hline
+addition & 2\\
+\hline
+subtraction & 2\\
+\hline
+multiplication & 2\\
+\hline
+analytic\_quotient & 2\\
+\hline
+\end{tabular}
+\end{table}
 
 
 <!--- energy heating dataset -->
@@ -301,14 +288,26 @@ knitr::kable(
 
 In a first exploratory experiment DAE-GP was tested on the Aifoil dataset to perform a symbolic regression task. The aim of this initial experiment is to search for differences in behavior between an algorithm that uses a pre-training strategy and regular DAE-GP. The parameters for the experiment are summarized in table 2, the average results for fitness, number of fitness evaluations, average tree size of the population and the unique rate of the population are summarized in plot 1.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("/Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_ptdaegp-daegp_rwsr_1hl/parameters.csv"),
-  digits=3,
-  caption="Airfoil - Configuration"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
-```
+\begin{table}[!h]
+
+\caption{\label{tab:unnamed-chunk-1}Airfoil - Configuration}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+\textbf{Hyperparameter} & \textbf{Value}\\
+\hline
+Training/Testing Split & 50:50\\
+\hline
+Pre-Training Population Size & 10000\\
+\hline
+Number of Hidden Layers & 1\\
+\hline
+Selection & Tournament\\
+\hline
+Tournament Size & 7\\
+\hline
+\end{tabular}
+\end{table}
 
 ![Airfoil - First Results](./img/airfoil_exploratory/airfoil_exploratory.png)
 
@@ -354,29 +353,43 @@ Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will 
 
 After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. Again the Airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP [@dae-gp_2022_symreg], the parameters are described in table $A$
 
-```{r airfoil_fullRun_2hl_maxIndSize_params, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
-  caption="Airfoil - Parameter for full Run"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
-```
+\begin{table}[!h]
+
+\caption{\label{tab:airfoil_fullRun_2hl_maxIndSize_params}Airfoil - Parameter for full Run}
+\centering
+\begin{tabular}[t]{l|l}
+\hline
+\textbf{parameter} & \textbf{value}\\
+\hline
+populationSize & 500\\
+\hline
+generations & 30\\
+\hline
+fitness & RMSE\\
+\hline
+TrainingMode & Convergence\\
+\hline
+SamplingSteps & 2\\
+\hline
+hiddenLayers & 2\\
+\hline
+Selection & Binary Tournament Selection\\
+\hline
+Pre-Training PopulationSize(Training/Validation) & 10000/100000\\
+\hline
+Pre-Training TrainingMode & Early Stopping\\
+\hline
+\end{tabular}
+\end{table}
 
 Regarding the hidden neurons, the dimension of each hidden layer, I used two different strategies: Regular DAE-GP uses the same strategy as described by earlier work (see [@dae-gp_2022_symreg] or [@dae-gp_2020_rtree]), the number of hidden neurons is dynamically set at each generation to the maximum length of all solutions inside the current training population. For pre-trained DAE-GP another strategy had to be used, I used a fixed number of hidden neurons for each run that is set equal to the maximum length of all individuals that are present in the initial pre-training population. I decided to take this aproach instead of using a fixed number of hidden neurons for the fact that it simplifies the adjustment of the parameter for later experiments on different problems. It should nonetheless be mentioned that this strategy does give pre-training on average more hidden neurons per layer resulting in a more complex network (since the pre-training population is much larger than the regular population, the chances for larger individuals inside it are also higher).
 
 
 ![Best Fitness over 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png){height=800px width=200px}
 
-```{python, load_MWU, include=FALSE}
-from json import load
 
-S = load(open("./data/airfoil_FullRun_30gens/MWU-BestFitnessByGen.json", "r", encoding="utf-8"))
-statistic_mwu_fitness = S["statistic"]
-pval_mwu_fitness = round(S["p-value"], 4)
-print(pval_mwu_fitness)
-```
 
-The result of the MWU test is `r py$pval_mwu_fitness`
+The result of the MWU test is 0
 
 
 ![Best Fitness Distribution after 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/final_fit_boxplot.png){height=800px width=200px}
