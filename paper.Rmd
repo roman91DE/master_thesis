@@ -47,12 +47,16 @@ reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 ```
 
 ```{bash compile_mermaid, include=FALSE}
-# Loop through all files with the .mmd extension in the current directory
+# compile all *.mmd files in the mermaid directory
+
+WIDTH=1600
+HEIGHT=1200
+THEME="neutral"
+BACKGROUND="transparent"
 
 for file in ./mermaid/*.mmd
 do
-  # Call PROG on the current file, saving the output as a .png file
-  mmdc -i "$file" -o ./img/flowcharts/$(basename "$file" .mmd).png -t light -b transparent 
+  mmdc -i "$file" -o ./img/flowcharts/$(basename "$file" .mmd).png -t $THEME -w $WIDTH -H $HEIGHT -b $BACKGROUND 
 done
 
 ````
