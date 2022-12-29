@@ -165,6 +165,7 @@ Since the hidden representation of DAE captures the dependency structure of the 
 
 DAE-GP builds upon the concept of using DAEs in EDAs described by @harmless_overfitting_eda and transfers the concept to the domain of GP. 
 The mutation and crossover operators of standard GP are replaced by sampling new solutions from a probabilistic model that is build by training a DAEs long short-term memory (LSTM) network on a subset of high fitness solutions from the current population [@dae-gp_2020_rtree]. 
+
 LSTMs are a variant of recurrent neural networks first introduced by @lstm_orig that can store learned information over en extended time period while avoiding the problem of vanishing and/or exploding gradients. Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps $T$ is equal to sum of the length of the input solution and the output solution [@dae-gp_2020_rtree].
 
 
@@ -232,14 +233,12 @@ If this mechanism can be applied successfully it would benefit the performance o
 
 <!--- Explain algorithm and pre-training strategy in pseudo code -->
 
-The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is described by algorithm 1 
+The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized by chart 1.
 
-```{.numberLines}
-WHILE NOT termination_criterion
-  DO 
-END WHILE
-RETURN
-```
+![DAE-GP - Flowchart](./img/flowcharts/dae-gp.png)
+
+
+
 
 One difficulty in the implementation of a pre-training strategy into DAE-GP has been the detemination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP [@dae-gp_2020_rtree] used a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
 For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM. To allow for the sharing of weights and biases from the pre-trained model $\hat{M}$ to each $M_g$ for $g\in{1,...,g_{max}}$ I experimented with two different strategies:
@@ -352,16 +351,16 @@ Regarding the hidden neurons, the dimension of each hidden layer, I used two dif
 
 ![Airfoil - Best Fitness over 30 Generations](./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png)
 
-```{python load_MWU_ include=FALSE}
+```{python, load_MWU, include=FALSE}
 from json import load
 
 S = load(open("./data/airfoil_FullRun_30gens/MWU-BestFitnessByGen.json", "r", encoding="utf-8"))
 statistic_mwu_fitness = S["statistic"]
 pval_mwu_fitness = round(S["p-value"], 4)
 print(pval_mwu_fitness)
+```
 
-````
-The result of the MWU test is `r py$pval_mwu_fitness`!
+The result of the MWU test is `r py$pval_mwu_fitness`
 
 
 ![Airfoil - Fitness Distribution Boxplot](./img/airfoil_FullRun_30gens/final_fit_boxplot.png)
@@ -370,6 +369,8 @@ The result of the MWU test is `r py$pval_mwu_fitness`!
 Since @dae-gp_2022_symreg shows, that DAE-GP finds higher quality that are also smaller in size than those found by average GP for a given number of 10.000 fitness evaluations, I also studied the differences in average solution size between pre-trained and regular DAE-GP.
 
 ![Airfoil - Average Solution Size](./img/airfoil_FullRun_30gens/mean_Size_byGens.png)
+
+
 
 
 # Discussion

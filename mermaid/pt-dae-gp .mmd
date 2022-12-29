@@ -8,7 +8,7 @@ graph TD
         -->
         pt_model_building[train DAE-LSTM model M&#770 to learn the properties of P&#770<sub>train</sub> until validation error for P&#770<sub>test</sub> converges]
         -->
-        pt_model_return(save the state of M&#770)
+        pt_model_return([save the state of M&#770])
     end
     subgraph DAE-GP
         start([Start])
@@ -35,5 +35,7 @@ graph TD
                 next_gen[g += 1]
                 -->
                 main_loop
-        pt_model_return -.-> model_loading
+        
     end
+    pt_model_return-->start
+    pt_model_return -.-> model_loading
