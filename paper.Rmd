@@ -44,12 +44,21 @@ knitr::opts_chunk$set(fig.pos = "!H")
 
 reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 
-
 ```
 
+```{bash compile_mermaid, include=FALSE}
+# Loop through all files with the .mmd extension in the current directory
+
+for file in ./mermaid/*.mmd
+do
+  # Call PROG on the current file, saving the output as a .png file
+  mmdc -i "$file" -o ./img/flowcharts/$(basename "$file" .mmd).png -t light -b transparent 
+done
+
+````
 
 
-```{bash ipythonRunner, include=FALSE}
+```{bash ipythonRunner, eval=FALSE, include=FALSE}
 # Set the base directory
 EXPDIR="/Users/rmn/masterThesis/eda-gp-2020"
 
@@ -63,7 +72,7 @@ done
 
 ```
 
-```{python pytest, echo=FALSE}
+```{python pytest, echo=FALSE, include=FALSE}
 from sys import version, executable
 print(f"Python Version: {version} \nPath: {executable}")
 ```
@@ -233,11 +242,14 @@ If this mechanism can be applied successfully it would benefit the performance o
 
 <!--- Explain algorithm and pre-training strategy in pseudo code -->
 
-The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized by chart 1.
+The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized by figure 1.
 
-![DAE-GP - Flowchart](./img/flowcharts/dae-gp.png)
+![DAE-GP - Algorithm](./img/flowcharts/dae-gp.png)
 
 
+The pre-training strategy implemented is visualized by figure 2.
+
+![DAE-GP - Algorithm](./img/flowcharts/pt-dae-gp.png)
 
 
 One difficulty in the implementation of a pre-training strategy into DAE-GP has been the detemination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP [@dae-gp_2020_rtree] used a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
