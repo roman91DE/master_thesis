@@ -335,6 +335,11 @@ It can also be observed that the population diversity, measured by the normalize
 
 ## Effect on Generalisation
 
+```{bash compile_firstGenResults, include=FALSE}
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluate_airfoilFirstGen.sh
+```
+
+
 To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
 
 To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus soley on the reconstruction error that is produced during the training of each the DAE-LSTM. The reconstruction error is measured for two separate populations, a training population $train\_pop$ that is used to train our DAE-LSTM as well as a hold-out validation population $test\_pop$. For the pre-trained DAE-GP two additional, separate populations $\hat{train\_pop}$ and  $\hat{test\_pop}$ are used only for pre-training. 
