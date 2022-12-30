@@ -2,12 +2,12 @@
 title: "Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming"
 subtitle: "Kolloquium zur Masterarbeit im M.Sc. Wirtschaftspädagogik "
 author: "Roman Hoehn"
-institute: "JGU Mainz "
+institute: "Johannes Gutenberg-Universität Mainz"
 date: "Datum: `r Sys.Date()`"
 output:
   beamer_presentation:
-    theme: "Madrid"
-    fonttheme: "structurebold"
+    #theme: "Madrid"
+    #fonttheme: "structurebold"
     fig_width: 12
     fig_height: 10
     # keep_tex: true
@@ -16,7 +16,7 @@ output:
     slide_level: 2
 toc: yes
 bibliography: ref/ref.bib
-csl: csl/association-for-computing-machinery.csl
+csl: csl/harvard-cite-them-right.csl
 includes:
       in_header: [header_files/slides.tex]
 ---
@@ -28,13 +28,37 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-# Introduction
+# Einführung
 
-## Research Question
+## Forschungsfrage
+
+*Kann das Suchverhalten der Denoising Autoencoder Genetic Programming (DAE-GP) Metaheuristik durch den Einsatz von einer Pre-Training Strategie optimiert werden?*
+
+
+Welchen Effekt hat Pre-Training auf:
+
+  1. das Generalisierungsverhalten von DAE-GP?
+  2. die Qualität der gefundenen Programme?
+  3. die Populationsdiversität?
+  4. das Laufzeitverhalten?
+  
+Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
+  
+
 
 ## Denoising Autoencoder Genetic Programming
 
 ## Pre-Training
+
+## Implementation
+
+# Experimente
+
+## Symbolische Regression
+
+## Generalisierungsverhalten
+
+## Lösungs
 
 
 # References {.allowframebreaks} 

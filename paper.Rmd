@@ -310,28 +310,6 @@ knitr::kable(
 
 # Results
 
-<!---
-## Exploratory Phase
-
-In a first exploratory experiment DAE-GP was tested on the Aifoil dataset to perform a symbolic regression task. The aim of this initial experiment is to search for differences in behavior between an algorithm that uses a pre-training strategy and regular DAE-GP. The parameters for the experiment are summarized in table 2, the average results for fitness, number of fitness evaluations, average tree size of the population and the unique rate of the population are summarized in plot 1.
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("/Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_ptdaegp-daegp_rwsr_1hl/parameters.csv"),
-  digits=3,
-  caption="Airfoil - Configuration"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
-```
-
-![Airfoil - First Results](./img/airfoil_exploratory/airfoil_exploratory.png)
-
-In this first experiment, the average quality of solutions produced by the pre-trained algorithm shows to be lower than that produced by regular DAE-GP. Differences in fitness start to show at generation 5 where regular DAE-GP starts to reduces RMSE more efficiently than the pre-trained version. The gap in average fitness grows larger until the end of the evolutionary search between both algorithms. Observing the gap between RMSE on the training dataset and the testing dataset shows no major differences, the training error is slightly lower than the testing error for both algorithms and indicates a similar generalization behavior.
-
-Another interesting metric to investigate is the population's average tree size, in general smaller solutions are preferable to their larger counterparts because of improved interpretability. The results show, that average tree size is reduced strongly in generations 1-5 for both algorithms and than slowly increases back. Differences between regular DAE-GP and the pre-trained DAE-GP start to show at generation 2, where the average population tree size is continuously lower for regular DAE-GP.
-
-It can also be observed that the population diversity, measured by the normalized levenshtein distance, is different between both DAE-GP variants. Both algorithms start at a unique rate of about 0.8 in the 0.th generation and lower rapidly to an average of about 0.45 in the 7.th generation. In the following generations, the diversity of pre-trained DAE-GP keeps lowering steadily while regular DAE-GP slowly increases the population diversity to a normalized levenshtein distance of about 0.55. This could be a first explanation for the better performance of regular DAE-GP in this experiment, by creating more diverse populations over the later generations of the search the algorithm is better at exploiting the search space than the pre-trained DAE-GP algorithm.
--->
 
 ## Effect on Generalisation
 
@@ -358,12 +336,11 @@ Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will 
 <!--- analyze results 1 hidden layer and variable number of hidden neurons -->
 
 
-
 ![First Generation Median Training Error for variable number of hidden Neurons - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png)
 
 ![First Generation final Training Error for variable number of hidden Neurons - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.png)
 
-<!--- analyzing by layers -->
+<!--- analyzing the results for variable number of layers -->
 
 ![First Generation Median Training Error for variable number of hidden Layers - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png)
 
