@@ -2,6 +2,10 @@
 .Rproj.user
 private
 .Rhistory
+
+# ignore large files
 *.pdf
 *.png
-paper.log
+
+# ignore knitter's temporary files
+^(paper|slides).*\.(log|aux|lof|lot|tex|toc)$
