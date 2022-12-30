@@ -48,35 +48,7 @@ reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 
 ```
 
-```{bash compile_mermaid, include=FALSE}
-# compile all *.mmd files in the mermaid directory
 
-WIDTH=3200
-HEIGHT=2400
-THEME="neutral"
-BACKGROUND="white"
-
-for file in ./mermaid/*.mmd
-do
-  mmdc -i "$file" -o ./img/flowcharts/$(basename "$file" .mmd).png -t $THEME -w $WIDTH -H $HEIGHT -b $BACKGROUND 
-done
-
-```
-
-
-```{bash ipythonRunner, eval=FALSE, include=FALSE}
-# Set the base directory
-EXPDIR="/Users/rmn/masterThesis/eda-gp-2020"
-
-# Find all *.ipynb files in subdirectories of EXPDIR, including sub-sub directories, etc., but exclude files that contain the word "checkpoint" in the filename
-for file in $(find "$EXPDIR" -type f -name "*.ipynb" ! -name "*checkpoint*"); do
-  # Change to the directory containing the IPython notebook file
-  cd "$(dirname "$file")"
-  # Execute the IPython notebook file using the jupyter nbconvert command
-  ipython "$(basename "$file")"
-done
-
-```
 
 ```{python pytest, echo=FALSE, include=FALSE}
 from sys import version, executable
@@ -249,6 +221,21 @@ If this mechanism can be applied successfully it would benefit the performance o
 
 ## Implementation
 
+```{bash compile_mermaid, include=FALSE}
+# compile all *.mmd files in the mermaid directory
+
+WIDTH=3200
+HEIGHT=2400
+THEME="neutral"
+BACKGROUND="white"
+
+for file in ./mermaid/*.mmd
+do
+  mmdc -i "$file" -o ./img/flowcharts/$(basename "$file" .mmd).png -t $THEME -w $WIDTH -H $HEIGHT -b $BACKGROUND 
+done
+
+```
+
 <!--- Explain algorithm and implementation of the pre-training strategy  -->
 
 The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in figure 1. 
@@ -257,7 +244,7 @@ For each generation $g$ the fitness of all new individuals in $P_g$ is evaluated
 The trained model $M_g$ is then used for model sampling, partially mutated solutions from $P_G$ are propagated through $M_g$ to create a new population $P_{g+1}$. 
 This process is repeated until the termination criteria is met and DAE-GP returns the highest fitness solutions.
 
-![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png){height=900px width=200px}
+![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png)
 
 
 The pre-training strategy implemented for all experiments in this thesis is visualized as another flowchart in figure 2.
@@ -267,7 +254,7 @@ After the training for $\hat{M}$ is stopped, we freeze the current state of $\ha
 During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm described in figure 1 is during model building: We initialize $M_g$ with the weights and biases of $\hat{M}$ before training it to learn the properties of $X_g$.
 
 
-![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png){height=800px width=200px}
+![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png)
 
 
 One difficulty in the implementation of a pre-training strategy into DAE-GP has been the detemination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP [@dae-gp_2020_rtree] used a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
@@ -347,6 +334,11 @@ Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will 
 ![First Generation final Training Error for variable number of hidden Layers - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.png)
 
 ## Effect on search performance
+
+```{bash compile_airfoil_2hl_maxIndSize_fullRun_30gens, include=FALSE}
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_2hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_2hl_maxIndSize_30gen.sh
+```
+
 
 After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. Again the Airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP [@dae-gp_2022_symreg], the parameters are described in table $A$
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  30 DEC 2022 20:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  30 DEC 2022 22:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -966,7 +966,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
 Here is how much of TeX's memory you used:
  23945 strings out of 478268
  463943 string characters out of 5846348
- 748718 words of memory out of 5000000
+ 748774 words of memory out of 5000000
  41624 multiletter control sequences out of 15000+600000
  488091 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -976,7 +976,7 @@ c}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/lo
 cal/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texliv
 e/2022/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/lm/lmsso10.pfb>
-Output written on slides.pdf (12 pages, 90901 bytes).
+Output written on slides.pdf (12 pages, 94153 bytes).
 PDF statistics:
  134 PDF objects out of 1000 (max. 8388607)
  104 compressed objects within 2 object streams

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  30 DEC 2022 20:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  30 DEC 2022 22:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -674,15 +674,18 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 441.
-(pdftex.def)             Requested size: 150.55753pt x 199.21454pt.
-[6]
-<./img/flowcharts/pt-dae-gp.png, id=126, 1031.855pt x 1616.0375pt>
+(pdftex.def)             Requested size: 469.75801pt x 621.57385pt.
+[6] [7 <./img/flowcharts/dae-gp.png>]
+<./img/flowcharts/pt-dae-gp.png, id=131, 1031.855pt x 1616.0375pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 462
 .
-(pdftex.def)             Requested size: 150.55196pt x 235.78662pt.
-[7 <./img/flowcharts/dae-gp.png> <./img/flowcharts/pt-dae-gp.png>]
+(pdftex.def)             Requested size: 415.30109pt x 650.42293pt.
+[8]
+Overfull \vbox (25.72206pt too high) has occurred while \output is active []
+
+[9 <./img/flowcharts/pt-dae-gp.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
 91.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -691,9 +694,9 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8] [9]
+[10] [11]
 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png, 
-id=148, 1011.78pt x 867.24pt>
+id=156, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.
 png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.p
@@ -702,7 +705,7 @@ Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
 g_error_by_neurons.png  used on input line 630.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.png,
- id=149, 867.24pt x 1156.32pt>
+ id=157, 867.24pt x 1156.32pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons
 .png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.
@@ -710,14 +713,14 @@ png>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_traini
 ng_error_by_neurons.png  used on input line 637.
 (pdftex.def)             Requested size: 469.75827pt x 626.34435pt.
-[10 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.p
+[12 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.p
 ng>]
 Overfull \vbox (1.64348pt too high) has occurred while \output is active []
 
-[11 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.
+[13 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.
 png>]
 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png, id=
-160, 1011.78pt x 867.24pt>
+169, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png
  Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
@@ -726,7 +729,7 @@ Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_
 error_by_layers.png  used on input line 644.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.png, i
-d=161, 867.24pt x 1156.32pt>
+d=170, 867.24pt x 1156.32pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.p
 ng Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.pn
@@ -734,13 +737,13 @@ g>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_traini
 ng_error_by_layer.png  used on input line 651.
 (pdftex.def)             Requested size: 469.75827pt x 626.34435pt.
-[12 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
+[14 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
 ]
 Overfull \vbox (1.64348pt too high) has occurred while \output is active []
 
-[13 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.pn
+[15 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.pn
 g>]
-<./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png, id=173, 1011.78pt
+<./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png, id=181, 1011.78pt
  x 867.24pt>
 File: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png Graphic file 
 (type png)
@@ -748,8 +751,8 @@ File: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png Graphic file
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGen
 s.png  used on input line 715.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[14]
-<./img/airfoil_FullRun_30gens/final_fit_boxplot.png, id=179, 1011.78pt x 867.24
+[16]
+<./img/airfoil_FullRun_30gens/final_fit_boxplot.png, id=187, 1011.78pt x 867.24
 pt>
 File: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png Graphic file (type png
 )
@@ -757,8 +760,8 @@ File: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png Graphic file (type png
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png  us
 ed on input line 721.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[15 <./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>]
-<./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png, id=185, 1011.78pt x
+[17 <./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>]
+<./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png, id=193, 1011.78pt x
  867.24pt>
 File: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png Graphic file (t
 ype png)
@@ -766,8 +769,8 @@ ype png)
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.
 png  used on input line 724.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[16 <./img/airfoil_FullRun_30gens/final_fit_boxplot.png>]
-<./img/airfoil_FullRun_30gens/mean_Size_byGens.png, id=191, 1011.78pt x 867.24p
+[18 <./img/airfoil_FullRun_30gens/final_fit_boxplot.png>]
+<./img/airfoil_FullRun_30gens/mean_Size_byGens.png, id=200, 1011.78pt x 867.24p
 t>
 File: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png Graphic file (type png)
 
@@ -775,7 +778,7 @@ File: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png Graphic file (type png)
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png  use
 d on input line 732.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[17 <./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>] [18 <./img/air
+[19 <./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>] [20 <./img/air
 foil_FullRun_30gens/mean_Size_byGens.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 762--766
 
@@ -862,7 +865,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 868--874
 
  []
 
-[19]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 875--883
 
  []
@@ -872,11 +875,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 884--893
 
  []
 
-[20] (./paper.aux) ) 
+[22] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 15643 strings out of 478268
- 250652 string characters out of 5846348
- 585150 words of memory out of 5000000
+ 15645 strings out of 478268
+ 250666 string characters out of 5846348
+ 585155 words of memory out of 5000000
  33307 multiletter control sequences out of 15000+600000
  524473 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -896,10 +899,10 @@ fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
 public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
 lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 >
-Output written on paper.pdf (21 pages, 4749202 bytes).
+Output written on paper.pdf (23 pages, 1062069 bytes).
 PDF statistics:
- 387 PDF objects out of 1000 (max. 8388607)
- 316 compressed objects within 4 object streams
- 99 named destinations out of 1000 (max. 500000)
+ 395 PDF objects out of 1000 (max. 8388607)
+ 322 compressed objects within 4 object streams
+ 101 named destinations out of 1000 (max. 500000)
  30923 words of extra memory for PDF output out of 35830 (max. 10000000)
 
