@@ -23,7 +23,7 @@ subgraph Pre-Trained DAE-GP
                 return([return best solution found])
         main_loop{termination criteria met?}    
             --False--> 
-                fitness_eval[Evaluate fitness for each solution in P<sub>g</sub>]
+                fitness_eval[Evaluate fitness for each new solution in P<sub>g</sub>]
                 --> 
                 selection[select solutions from P<sub>g</sub> for the training population X<sub>g</sub>]
                 --> 
