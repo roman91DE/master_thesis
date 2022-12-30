@@ -25,6 +25,8 @@ output:
 indent: false
 fontsize: 11pt
 bibliography: ref/ref.bib
+fig.width: 4in
+fig.height: 3in
 csl: csl/association-for-computing-machinery.csl
 #csl: csl/harvard-cite-them-right.csl
 #csl: csl/springer-science-reviews.csl
@@ -247,7 +249,7 @@ If this mechanism can be applied successfully it would benefit the performance o
 
 ## Implementation
 
-<!--- Explain algorithm and pre-training strategy in pseudo code -->
+<!--- Explain algorithm and implementation of the pre-training strategy  -->
 
 The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in figure 1. 
 After setting the generation counter $g$ to $0$ and creating the initial population of solutions $P_0$, DAE-GP enters the main loop that checks if a termination criteria is satisfied (i.e. maximum number of generations or fitness evaluations is reached).
@@ -255,7 +257,7 @@ For each generation $g$ the fitness of all new individuals in $P_g$ is evaluated
 The trained model $M_g$ is then used for model sampling, partially mutated solutions from $P_G$ are propagated through $M_g$ to create a new population $P_{g+1}$. 
 This process is repeated until the termination criteria is met and DAE-GP returns the highest fitness solutions.
 
-![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png){height=800px width=200px}
+![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png){height=900px width=200px}
 
 
 The pre-training strategy implemented for all experiments in this thesis is visualized as another flowchart in figure 2.
