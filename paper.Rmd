@@ -117,7 +117,8 @@ In previous work DAE-GP has been shown to outperform GP for both a generalized v
 The DAE-GP algorithm first described by [@dae-gp_2020_rtree] trains a DAE-LSTMs for each generation $g$ of the search from scratch.
 @dae-gp_2022_symreg and @daegp_explore_exploit suggests the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the model quality of DAE-GP.
 The key idea is to pre-train an initial DAE-LSTM on a large population of candidate solutions and to use the weights of this initial model in each generation of the search as a starting point.
-This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence in generalization behavior and the overall quality of solutions found by DAE-GP. The aim of this study is to answer the question if a pre-training strategy can help to improve generalization in DAE-GP and if so, analyze how this improved generalization ability benefits the overall performance of DAE-GP.
+This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence in generalization behavior and the overall quality of solutions found by DAE-GP. 
+The aim of this study is to answer the question if a pre-training strategy can help to improve generalization in DAE-GP and if so, analyze how this improved generalization ability benefits the overall performance of DAE-GP.
 
 
 <!--- Gang der Untersuchung -->
@@ -136,7 +137,7 @@ DAE-GP is an EDA-GP algorithm that uses DAE-LSTM networks as a probabilistic mod
 
 ### Evolutionary Computation
 
-As a variant of GP, DAE-GP can be classified as a meta-heuristic that belongs to the field of evolutionary computation (EC). 
+As a variant of GP, DAE-GP can be classified as a meta-heuristic that belongs to the field of evolutionary computation (EC).
 EC based meta-heuristics are optimization methods that simulate the process of Darwinian evolution to search for high quality solutions by applying selection and variation operators to a population of candidate solutions. 
 Examples of EC include genetic algorithms (GA), evolutionary strategies (ES) and GP. 
 In EC, the quality of a solution is commonly measured as fitness and the time steps of the search are called generations. 
@@ -151,7 +152,7 @@ The computer programs that are at the center of the evolutionary search in GP ar
 Since GP searches for high fitness computer programs that produce a desired output for some input, it can be applied to various different problem domains such as symbolic regression, automatic programming, or evolving game-playing strategies [@Koza1993GeneticP]. 
 An important quality of GP is the ability to search for solutions of variable length and structure. 
 GP is an especially useful meta heuristic for problems where no a priori knowledge about the final form of good solutions is available.
-GPs ability to optimize solutions for their structure as well as for their parameters led to it being one of the most prevalent methods used symbolic regression [@10.1007/978-3-540-24621-3_22].
+GPs ability to optimize solutions for their structure as well as for their parameters led to it being one of the most prevalent methods used for symbolic regression [@10.1007/978-3-540-24621-3_22].
 
 ### Estimation of Distribution Algorithms
 
@@ -161,7 +162,6 @@ EDAs use this probabilistic model to sample new offspring solutions inside an ev
 ### Denoising Autoencoders
 
 One possible way of model building in EDA proposed by @harmless_overfitting_eda is to use denoising autoencoders (DAEs) as generative models to capture complex probability distributions of decision variables. 
-
 DAE, a variation of the autoencoders (AE), are a widely used type of neural networks in the domain of unsupervized machine learning that maps $n$ input variables to $n$ output variables using a hidden representation.
 
 AE were introduced by @ae_orig to compress high-dimensional data into lower-dimensions. An AE consists of two different subunits:
@@ -198,9 +198,11 @@ Pre-training has several benefits. It can help improve the performance of the mo
 Overall, pre-training is an important technique in deep learning that can help improve model performance and efficiency. It is commonly used in natural language processing and computer vision applications, where large amounts of labeled data are available.
 -->
 
-Pre-Training describes the concept of initially training a neural network on a large dataset before using it to solve a more specific task. It is a commonly used strategy in deep architectures that has been shown to improve both the optimization process itself as well as the generalization behavior if compared to the standard approach of using randomly initialized parameters [@pmlr-v5-erhan09a].
+Pre-Training describes the concept of initially training a neural network on a large dataset before using it to solve a more specific task. 
+It is a commonly used strategy in deep architectures that has been shown to improve both the optimization process itself as well as the generalization behavior if compared to the standard approach of using randomly initialized parameters [@pmlr-v5-erhan09a].
 
-The strategy of pre-training artificial neural networks is based on the idea of transfer learning that aims at retaining previously learned knowledge from one task to re-use it for another task [@HAN2021225] [@survey_transfer_learning]. Transfer learning traditionally follows a two phase approach:
+The strategy of pre-training artificial neural networks is based on the idea of transfer learning that aims at retaining previously learned knowledge from one task to re-use it for another task [@HAN2021225] [@survey_transfer_learning]. 
+Transfer learning traditionally follows a two phase approach:
 
 1. Pre-Training Phase: Capture knowledge from source task
 2. Fine-Tuning Phase: Transfer knowledge to the target task
@@ -233,7 +235,8 @@ The probably most obvious motivation for using a pre-training strategy in DAE-GP
 
 Early research on pre-training for DAE by @pmlr-v5-erhan09a comes to the conclusion that besides adding robustness to models the strategy also results in improved generalization and better performing models. The authors describe that unsupervised pre-training behaves like a regulizer on DAE networks, the mean test error and it's variance are reduced for DAE networks that are initialized from pre-trained weights if compared to the same architectures that use random initialization.
 
-Another important finding by @pmlr-v5-erhan09a is that the positive effect of pre-training described above is dependent on both the depth of the network as well as the size of layers - while increasingly larger networks benefit increasingly more from pre-training the final performance of small architectures tends to be worse with pre-training than with randomized weight initialization. The authors find evidence that pre-training DAE is especially usefull for optimizing the parameters of the lower layers of the network. 
+Another important finding by @pmlr-v5-erhan09a is that the positive effect of pre-training described above is dependent on both the depth of the network as well as the size of layers - while increasingly larger networks benefit increasingly more from pre-training the final performance of small architectures tends to be worse with pre-training than with randomized weight initialization. 
+The authors find evidence that pre-training DAE is especially usefull for optimizing the parameters of the lower layers of the network. 
 
 Another motivation for introducing pre-training into DAE-GP is the prevalence of sampling error for small GP populations sizes.
 [@sampling_err_gp] finds that sampling error, non-systematic errors that are caused by observing only a small subset of the statistical population, is a severe problem in the domain of GP since the initial population may not be a representative sample of all possible solutions.
@@ -246,12 +249,17 @@ If this mechanism can be applied successfully it would benefit the performance o
 
 <!--- Explain algorithm and pre-training strategy in pseudo code -->
 
-The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized by figure 1.
+The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in figure 1. 
+After setting the generation counter $g$ to $0$ and creating the initial population of solutions $P_0$, DAE-GP enters the main loop that checks if a termination criteria is satisfied (i.e. maximum number of generations or fitness evaluations is reached).
+For each generation $g$ the fitness of all new individuals in $P_g$ is evaluated. During model building, DAE-GP selects a subset $X_g$ of the current population that is used as training data for the DAE-LSTM model $M_g$ which is trained to learn the properties of $X_g$. 
+The trained model $M_g$ is then used for model sampling, partially mutated solutions from $P_G$ are propagated through $M_g$ to create a new population $P_{g+1}$. 
+This process is repeated until the termination criteria is met and DAE-GP returns the highest fitness solutions.
 
 ![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png){height=800px width=200px}
 
 
-The pre-training strategy implemented is visualized by figure 2.
+The pre-training strategy implemented for all experiments in this thesis is visualized as another flowchart in figure 2.
+The main difference to regular DAE-GP is the inclusion of an initial pre-training phase where a separate population $\hat{P}$ is first initialized and then randomly split by half into $\hat{P_{train}}$ and $\hat{P_{test}}$. A DAE-LSTM model $\hat{M}$
 
 ![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png){height=800px width=200px}
 
