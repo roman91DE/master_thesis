@@ -40,7 +40,7 @@ library(reticulate)
 
 
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(fig.pos = "!H")
+#knitr::opts_chunk$set(fig.pos = "!H")
 
 reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 
