@@ -375,7 +375,11 @@ Since @dae-gp_2022_symreg shows, that DAE-GP finds higher quality that are also 
 
 ![Average Solution Size over 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/mean_Size_byGens.png)
 
+<!-- Results for Energy Cooling Dataset  -->
 
+```{bash compile_energyCooling_2hl_maxIndSize_fullRun_30gens, include=FALSE}
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_maxIndSize_fullRun_30gens/re_evaluate_energyCooling_2hl_maxIndSize_fullRun_30gens.sh
+```
 
 
 # Discussion
