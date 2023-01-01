@@ -90,7 +90,7 @@ In previous work DAE-GP has been shown to outperform GP for both a generalized v
 
 The DAE-GP algorithm first described by [@dae-gp_2020_rtree] trains a DAE-LSTMs for each generation $g$ of the search from scratch.
 @dae-gp_2022_symreg and @daegp_explore_exploit suggests the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the model quality of DAE-GP.
-The key idea is to pre-train an initial DAE-LSTM on a large population of candidate solutions and to use the weights of this initial model in each generation of the search as a starting point.
+The key idea is to pre-train an initial DAE-LSTM on a large population of candidate solutions and to use the pre-trained parameters of this initial model in each generation of the search as starting parameters for the current generation DAE-LSTM.
 This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence in generalization behavior and the overall quality of solutions found by DAE-GP. 
 The aim of this study is to answer the question if a pre-training strategy can help to improve generalization in DAE-GP and if so, analyze how this improved generalization ability benefits the overall performance of DAE-GP.
 
@@ -197,7 +197,7 @@ Some of the main motivations for using pre-training is the ability to reduce the
 
 The pre-training strategy used in this thesis is applied to the DAE-LSTM model $M_g$ that are used in each DAE-GP generation $g$ for $g\in{1,...,g_{max}}$. 
 Instead of initializing and optimizing each model from scratch as done in previous work (e.g. [@dae-gp_2020_rtree] [@dae-gp_2022_symreg]), a separate DAE-LSTM network $\hat{M}$ will be trained on a large population of randomly initialized solutions.  
-The optimal parameters obtained after finishing the training procedure of $\hat{M}$ are then used as the starting parameters for each following DAE-LSTM model $M_g$ for $g\in{1,...,g_{max}}$.
+The trainable parameters $\theta_{\hat{M}}$ obtained after finishing the training procedure of $\hat{M}$ are then used as the starting parameters for each following DAE-LSTM model $M_g$ for $g\in{1,...,g_{max}}$.
 
 The motivation for incorporating pre-training into DAE-GP is based on the following suspected mechanisms of improvement:
 
@@ -205,7 +205,7 @@ The motivation for incorporating pre-training into DAE-GP is based on the follow
 2. Reduce the need for large population sizes to avoid sampling error
 3. Improve model robustness and generalization ability
 
-The probably most obvious motivation for using a pre-training strategy in DAE-GP is based on the fact, that initializing $M_g$ with pre-trained weights from $\hat{M}$ is likely to reduce the amount of training epochs that are necessary until the point of training error convergence is reached. 
+The probably most obvious motivation for using a pre-training strategy in DAE-GP is based on the fact, that initializing $M_g$ with pre-trained weights $\theta_{\hat{M}}$ is likely to reduce the amount of training epochs that are necessary until the point of training error convergence is reached. 
 
 Early research on pre-training for DAE by @pmlr-v5-erhan09a comes to the conclusion that besides adding robustness to models the strategy also results in improved generalization and better performing models. The authors describe that unsupervised pre-training behaves like a regulizer on DAE networks, the mean test error and it's variance are reduced for DAE networks that are initialized from pre-trained weights if compared to the same architectures that use random initialization.
 
@@ -238,7 +238,7 @@ done
 
 <!--- Explain algorithm and implementation of the pre-training strategy  -->
 
-The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in figure 1. 
+The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in figure §. 
 After setting the generation counter $g$ to $0$ and creating the initial population of solutions $P_0$, DAE-GP enters the main loop that checks if a termination criteria is satisfied (i.e. maximum number of generations or fitness evaluations is reached).
 For each generation $g$ the fitness of all new individuals in $P_g$ is evaluated. During model building, DAE-GP selects a subset $X_g$ of the current population that is used as training data for the DAE-LSTM model $M_g$ which is trained to learn the properties of $X_g$. 
 The trained model $M_g$ is then used for model sampling, partially mutated solutions from $P_G$ are propagated through $M_g$ to create a new population $P_{g+1}$. 
@@ -247,11 +247,12 @@ This process is repeated until the termination criteria is met and DAE-GP return
 ![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png)
 
 
-The pre-training strategy implemented for all experiments in this thesis is visualized as another flowchart in figure 2.
+The pre-training strategy implemented for all experiments in this thesis is visualized as another flowchart in figure §.
 The main difference to regular DAE-GP is the inclusion of an initial pre-training phase where a separate population $\hat{P}$ is first initialized and then randomly split by half into $\hat{P_{train}}$ and $\hat{P_{test}}$. 
 A DAE-LSTM model $\hat{M}$ is then trained to learn the properties of $\hat{P_{train}}$ using an early stopping training mode where we stop training as soon as the validation error for $\hat{P_{test}}$ converges. 
-After the training for $\hat{M}$ is stopped, we freeze the current state of $\hat{M}$ and terminate the pre-training phase to start the DAE-GP phase. 
-During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm described in figure 1 is during model building: We initialize $M_g$ with the weights and biases of $\hat{M}$ before training it to learn the properties of $X_g$.
+After the training for $\hat{M}$ is stopped, the current state of $\hat{M}$ is frozen and the optimized trainable parameters $\theta_{\hat{M}}$ are saved before terminating the pre-training phase to start the DAE-GP phase. 
+During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm described in figure § is during model building: We initialize $M_g$ with $\theta_{\hat{M}}$ before training it to learn the properties of $X_g$.
+
 
 
 ![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png)
@@ -303,7 +304,6 @@ knitr::kable(
 ```{bash compile_firstGenResults, include=FALSE}
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluate_airfoilFirstGen.sh
 ```
-
 
 To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
 

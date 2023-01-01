@@ -38,7 +38,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Welchen Effekt hat Pre-Training auf:
 
   1. das Generalisierungsverhalten von DAE-GP?
-  2. die Qualität der gefundenen Programme?
+  2. die Qualität der gefundenen Programme (Fitness/Programmlänge)?
   3. die Populationsdiversität?
   4. das Laufzeitverhalten?
   
@@ -47,6 +47,26 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
 
 
 ## Denoising Autoencoder Genetic Programming
+
+* Metaheuristik basierend auf genetischer Programmierung (GP)
+* Einsatz von künstlichen, neuronalen Netzen zur Optimierung des GP Suchverhaltens
+* Aktueller Forschungsstand:
+  1. 
+  2. 
+
+
+
+## Estimation of Distribution Genetic Programming (EDA-GP)
+
+
+* Ersetzt die genetische Operatoren Mutation und Rekombination durch den Einsatz von probabilistischen Modellen
+
+2 Phase Ansatz:
+
+  1. Model Building: 
+  2. Model Sampling: 
+
+
 
 ## Pre-Training
 
