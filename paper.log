@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  30 DEC 2022 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  2 JAN 2023 16:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -666,28 +666,28 @@ l.147 \newpage
 
 [2] [3]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-77.
+78.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4] [5]
-<./img/flowcharts/dae-gp.png, id=114, 757.83125pt x 1002.74625pt>
+<./img/flowcharts/dae-gp.png, id=115, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 441.
+Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 443.
 (pdftex.def)             Requested size: 469.75801pt x 621.57385pt.
 [6] [7 <./img/flowcharts/dae-gp.png>]
-<./img/flowcharts/pt-dae-gp.png, id=131, 1031.855pt x 1616.0375pt>
+<./img/flowcharts/pt-dae-gp.png, id=131, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 462
+Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 465
 .
-(pdftex.def)             Requested size: 415.30109pt x 650.42293pt.
+(pdftex.def)             Requested size: 414.27768pt x 650.43208pt.
 [8]
-Overfull \vbox (25.72206pt too high) has occurred while \output is active []
+Overfull \vbox (25.73122pt too high) has occurred while \output is active []
 
 [9 <./img/flowcharts/pt-dae-gp.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-91.
+94.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -702,7 +702,7 @@ png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.p
 ng>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
-g_error_by_neurons.png  used on input line 630.
+g_error_by_neurons.png  used on input line 633.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.png,
  id=157, 867.24pt x 1156.32pt>
@@ -711,7 +711,7 @@ File: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons
 <use ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.
 png>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_traini
-ng_error_by_neurons.png  used on input line 637.
+ng_error_by_neurons.png  used on input line 640.
 (pdftex.def)             Requested size: 469.75827pt x 626.34435pt.
 [12 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.p
 ng>]
@@ -726,7 +726,7 @@ File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png
 <use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
 
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_
-error_by_layers.png  used on input line 644.
+error_by_layers.png  used on input line 647.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.png, i
 d=170, 867.24pt x 1156.32pt>
@@ -735,7 +735,7 @@ ng Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.pn
 g>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_traini
-ng_error_by_layer.png  used on input line 651.
+ng_error_by_layer.png  used on input line 654.
 (pdftex.def)             Requested size: 469.75827pt x 626.34435pt.
 [14 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
 ]
@@ -749,7 +749,7 @@ File: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png Graphic file
 (type png)
 <use ./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGen
-s.png  used on input line 715.
+s.png  used on input line 718.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [16]
 <./img/airfoil_FullRun_30gens/final_fit_boxplot.png, id=187, 1011.78pt x 867.24
@@ -758,7 +758,7 @@ File: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png Graphic file (type png
 )
 <use ./img/airfoil_FullRun_30gens/final_fit_boxplot.png>
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png  us
-ed on input line 721.
+ed on input line 724.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [17 <./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>]
 <./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png, id=193, 1011.78pt x
@@ -767,111 +767,111 @@ File: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png Graphic file (t
 ype png)
 <use ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.
-png  used on input line 724.
+png  used on input line 727.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [18 <./img/airfoil_FullRun_30gens/final_fit_boxplot.png>]
-<./img/airfoil_FullRun_30gens/mean_Size_byGens.png, id=200, 1011.78pt x 867.24p
-t>
+<./img/airfoil_FullRun_30gens/mean_Size_byGens.png, id=200, 722.7pt x 578.16pt>
+
 File: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png Graphic file (type png)
 
 <use ./img/airfoil_FullRun_30gens/mean_Size_byGens.png>
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png  use
-d on input line 732.
-(pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
+d on input line 735.
+(pdftex.def)             Requested size: 469.76045pt x 375.80836pt.
 [19 <./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>] [20 <./img/air
 foil_FullRun_30gens/mean_Size_byGens.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 762--766
+Underfull \hbox (badness 10000) in paragraph at lines 765--769
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 767--771
+Underfull \hbox (badness 10000) in paragraph at lines 770--774
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--782
+Underfull \hbox (badness 10000) in paragraph at lines 775--785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 783--789
+Underfull \hbox (badness 10000) in paragraph at lines 786--792
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 790--799
+Underfull \hbox (badness 10000) in paragraph at lines 793--802
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 800--806
+Underfull \hbox (badness 10000) in paragraph at lines 803--809
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 807--813
+Underfull \hbox (badness 10000) in paragraph at lines 810--816
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 814--819
+Underfull \hbox (badness 10000) in paragraph at lines 817--822
 
  []
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 825--825
+Underfull \hbox (badness 3690) in paragraph at lines 828--828
 []\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
 rans-fer learn-ing.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 820--826
+Underfull \hbox (badness 10000) in paragraph at lines 823--829
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 827--832
+Underfull \hbox (badness 10000) in paragraph at lines 830--835
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 833--839
+Underfull \hbox (badness 10000) in paragraph at lines 836--842
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 840--845
+Underfull \hbox (badness 10000) in paragraph at lines 843--848
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 846--852
+Underfull \hbox (badness 10000) in paragraph at lines 849--855
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 853--861
+Underfull \hbox (badness 10000) in paragraph at lines 856--864
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 862--867
+Underfull \hbox (badness 10000) in paragraph at lines 865--870
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 868--874
+Underfull \hbox (badness 10000) in paragraph at lines 871--877
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 875--883
+Underfull \hbox (badness 10000) in paragraph at lines 878--886
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 884--893
+Underfull \hbox (badness 10000) in paragraph at lines 887--896
 
  []
 
@@ -899,7 +899,7 @@ fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
 public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
 lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 >
-Output written on paper.pdf (23 pages, 1062069 bytes).
+Output written on paper.pdf (23 pages, 1057338 bytes).
 PDF statistics:
  395 PDF objects out of 1000 (max. 8388607)
  322 compressed objects within 4 object streams

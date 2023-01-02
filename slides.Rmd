@@ -7,9 +7,9 @@ date: "Datum: 25.01.2023"
 fontsize: 11pt
 output:
   beamer_presentation:
-    color: "beaver"
-    theme: "Szeged"
-    #fonttheme: "structurebold"
+    # color: "beaver"
+    # theme: "Szeged"
+    # fonttheme: "structurebold"
     fig_width: 12
     fig_height: 10
     # keep_tex: true
@@ -66,7 +66,7 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
 
 ## DAE-EDA
 
-Idee: Einsatz von Denoising Autoencoders (DAE) als probabilistisches Modell für EDA [@harmless_overfitting_eda]
+Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistisches Modell für EDA ^[@harmless_overfitting_eda]
 
 2 Phase Ansatz:
 
