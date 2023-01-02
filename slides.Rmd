@@ -6,10 +6,12 @@ institute: "Johannes Gutenberg-Universität Mainz"
 date: "Datum: `r Sys.Date()`"
 output:
   beamer_presentation:
-    #theme: "Madrid"
+    color: "beaver"
+    theme: "Szeged"
     #fonttheme: "structurebold"
     fig_width: 12
     fig_height: 10
+    fontsize: 11pt
     # keep_tex: true
     fig_caption: yes
     number_sections: true
@@ -28,11 +30,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-# Einführung
+# Einleitung
 
 ## Forschungsfrage
 
-*Kann das Suchverhalten der Denoising Autoencoder Genetic Programming (DAE-GP) Metaheuristik durch den Einsatz von einer Pre-Training Strategie optimiert werden?*
+*Kann das Suchverhalten der Denoising Autoencoder Genetic Programming (DAE-GP) Metaheuristik durch den Einsatz einer Pre-Training Strategie optimiert werden?*
 
 
 Welchen Effekt hat Pre-Training auf:
@@ -45,19 +47,22 @@ Welchen Effekt hat Pre-Training auf:
 Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
   
 
+## Ausblick
 
-## Denoising Autoencoder Genetic Programming
+...
+
+
+
+# Denoising Autoencoder Genetic Programming
+
+## Übersicht
 
 * Metaheuristik basierend auf genetischer Programmierung (GP)
 * Einsatz von künstlichen, neuronalen Netzen zur Optimierung des GP Suchverhaltens
-* Aktueller Forschungsstand:
-  1. 
-  2. 
-
+* Variante des Estimation of Distribution-GP (EDA-GP)
 
 
 ## Estimation of Distribution Genetic Programming (EDA-GP)
-
 
 * Ersetzt die genetische Operatoren Mutation und Rekombination durch den Einsatz von probabilistischen Modellen
 
@@ -65,6 +70,30 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
 
   1. Model Building: 
   2. Model Sampling: 
+  
+
+
+
+## Aktueller Forschungsstand
+
+### Generalisiertes Royal Tree Problem (GRT)^[@dae-gp_2020_rtree]:
+
+  * Einfaches Suchproblem mit hoher Lokalität
+  * DAE-GP erzeugt durch Model Sampling Lösungskandidaten mit höherer Fitness als GP 
+  * Hohe Güte der erzeugten Lösungskandidaten resultiert in besserer Performance
+  * Perfomance Vorteil steigt mit zunehmender Komplexität des GRT Problems
+  
+  
+### Symbolische Regression^[@dae-gp_2022_symreg]:
+
+  * Airfoil Datensatz für Real-World symbolische Regression
+  * DAE-GP erzeugt für eine vorgegebene Anzahl von Fitness Evaluationen im Vergleich zu GP:
+  
+    1.) Lösungen mit höherer Fitness
+    2.) Lösungen  mit geringerer Größe
+    
+
+  
 
 
 
