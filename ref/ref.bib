@@ -18,6 +18,7 @@
 	numpages     = 9,
 	keywords     = {denoising autoencoders, estimation of distribution algorithms, genetic programming, long short-term memory networks}
 }
+
 @inproceedings{dae-gp_2022_symreg,
 	title        = {Denoising Autoencoder Genetic Programming for Real-World Symbolic Regression},
 	author       = {Wittenberg, David and Rothlauf, Franz},
@@ -35,6 +36,7 @@
 	numpages     = 3,
 	keywords     = {denoising autoencoders, symbolic regression, genetic programming, estimation of distribution algorithms}
 }
+
 @inproceedings{daegp_explore_exploit,
 	title        = {Using Denoising Autoencoder Genetic Programming to Control Exploration and Exploitation in Search},
 	author       = {Wittenberg, David},
@@ -47,6 +49,7 @@
 	editor       = {Medvet, Eric and Pappa, Gisele and Xue, Bing},
 	abstract     = {Denoising Autoencoder Genetic Programming (DAE-GP) is a novel neural network-based estimation of distribution genetic programming (EDA-GP) algorithm that uses denoising autoencoder long short-term memory networks as a probabilistic model to replace the standard mutation and recombination operators of genetic programming (GP). At each generation, the idea is to flexibly identify promising properties of the parent population and to transfer these properties to the offspring where the DAE-GP uses denoising to make the model robust to noise that is present in the parent population. Denoising partially corrupts candidate solutions that are used as input to the model. The stronger the corruption, the stronger the generalization of the model. In this work, we study how corruption strength affects the exploration and exploitation behavior of the DAE-GP. For a generalization of the royal tree problem (high-locality problem), we find that the stronger the corruption, the stronger the exploration of the solution space. For the given problem, weak corruption resulting in a stronger exploitation of the solution space performs best. However, in more rugged fitness landscapes (low-locality problems), we expect that a stronger corruption resulting in a stronger exploration will be helpful. Choosing the right denoising strategy can therefore help to control the exploration and exploitation behavior in search, leading to an improved search quality.}
 }
+
 @article{sampling_err_gp,
 	title        = {On sampling error in genetic programming},
 	author       = {Dirk Schweim and David Wittenberg and Franz Rothlauf},
@@ -60,6 +63,7 @@
 	language     = {eng},
 	abstract     = {The initial population in genetic programming (GP) should form a representative sample of all possible solutions (the search space). While large populations accurately approximate the distribution of possible solutions, small populations tend to incorporate a sampling error. This paper analyzes how the size of a GP population affects the sampling error and contributes to answering the question of how to size initial GP populations. First, we present a probabilistic model of the expected number of subtrees for GP populations initialized with full, grow, or ramped half-and-half. Second, based on our frequency model, we present a model that estimates the sampling error for a given GP population size. We validate our models empirically and show that, compared to smaller population sizes, our recommended population sizes largely reduce the sampling error of measured fitness values. Increasing the population sizes even more, however, does not considerably reduce the sampling error of fitness values. Last, we recommend population sizes for some widely used benchmark problem instances that result in a low sampling error. A low sampling error at initialization is necessary (but not sufficient) for a reliable search since lowering the sampling error means that the overall random variations in a random sample are reduced. Our results indicate that sampling error is a severe problem for GP, making large initial population sizes necessary to obtain a low sampling error. Our model allows practitioners of GP to determine a minimum initial population size so that the sampling error is lower than a threshold, given a confidence level.}
 }
+
 @article{harmless_overfitting_eda,
 	title        = {Harmless Overfitting: Using Denoising Autoencoders in Estimation of Distribution Algorithms},
 	author       = {Malte Probst and Franz Rothlauf},
@@ -70,6 +74,7 @@
 	pages        = {1--31},
 	url          = {http://jmlr.org/papers/v21/16-543.html}
 }
+
 @article{article,
 	title        = {Franz Rothlauf: Design of Modern Heuristics},
 	author       = {Landa-Silva, Dario},
@@ -80,6 +85,7 @@
 	pages        = {},
 	doi          = {10.1007/s10710-012-9170-9}
 }
+
 @book{design_of_modern_heuristics,
 	title        = {Design of Modern Heuristics: Principles and Application},
 	author       = {Rothlauf, Franz},
@@ -91,6 +97,7 @@
 	doi          = {10.1007/978-3-540-72962-4},
 	isbn         = 3540729623
 }
+
 ---
 !Symbolic Regression
 ---
@@ -105,6 +112,7 @@
 	pages        = {793–805},
 	doi          = {10.1557/mrc.2019.85}
 }
+
 @inproceedings{10.1007/978-3-540-24621-3_22,
 	title        = {Exploring Overfitting in Genetic Programming},
 	author       = {Paris, Gr{\'e}gory and Robilliard, Denis and Fonlupt, Cyril},
@@ -117,6 +125,7 @@
 	editor       = {Liardet, Pierre and Collet, Pierre and Fonlupt, Cyril and Lutton, Evelyne and Schoenauer, Marc},
 	abstract     = {The problem of overfitting (focusing closely on examples at the loss of generalization power) is encountered in all supervised machine learning schemes. This study is dedicated to explore some aspects of overfitting in the particular case of genetic programming. After recalling the causes usually invoked to explain overfitting such as hypothesis complexity or noisy learning examples, we test and compare the resistance to overfitting on three variants of genetic programming algorithms (basic GP, sizefair crossover GP and GP with boosting) on two benchmarks, a symbolic regression and a classification problem. We propose guidelines based on these results to help reduce overfitting with genetic programming.}
 }
+
 --- 
 !Genetic Programming
 ---
@@ -126,6 +135,7 @@
 	year         = 1993,
 	booktitle    = {Complex Adaptive Systems}
 }
+
 ---
 !EDA(GP)
 ---
@@ -139,6 +149,17 @@
 	pages        = {},
 	doi          = {10.1007/s10710-013-9205-x}
 }
+
+@inproceedings{edaOrig1996,
+	title        = {From Recombination of Genes to the Estimation of Distributions I. Binary Parameters.},
+	author       = {Mühlenbein, Heinz and Paass, Gerhard},
+	year         = 1996,
+	month        = {01},
+	journal      = {From Recombination of Genes to the Estimation of Distributions I. Binary Parameters},
+	volume       = 1141,
+	pages        = {178--187}
+}
+
 ---
 !(Denoising) Autoencoders
 ---
@@ -155,6 +176,7 @@
 	eprint       = {https://www.science.org/doi/pdf/10.1126/science.1127647},
 	abstract     = {High-dimensional data can be converted to low-dimensional codes by training a multilayer neural network with a small central layer to reconstruct high-dimensional input vectors. Gradient descent can be used for fine-tuning the weights in such “autoencoder” networks, but this works well only if the initial weights are close to a good solution. We describe an effective way of initializing the weights that allows deep autoencoder networks to learn low-dimensional codes that work much better than principal components analysis as a tool to reduce the dimensionality of data.}
 }
+
 @inproceedings{inproceedings,
 	title        = {Extracting and composing robust features with denoising autoencoders},
 	author       = {Vincent, Pascal and Larochelle, Hugo and Bengio, Y. and Manzagol, Pierre-Antoine},
@@ -164,6 +186,7 @@
 	pages        = {1096--1103},
 	doi          = {10.1145/1390156.1390294}
 }
+
 @article{royal_tree_article,
 	title        = {The Royal Tree Problem, a Benchmark for Single and Multi-population Genetic Programming},
 	author       = {Kinnear, Kim and Punch, Bill and Zongker, Doug and Goodman, Erik},
@@ -171,6 +194,7 @@
 	month        = {09},
 	pages        = {}
 }
+
 @inproceedings{Wang_2014_CVPR_Workshops,
 	title        = {Generalized Autoencoder: A Neural Network Framework for Dimensionality Reduction},
 	author       = {Wang, Wei and Huang, Yan and Wang, Yizhou and Wang, Liang},
@@ -178,6 +202,7 @@
 	month        = {June},
 	booktitle    = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshops}
 }
+
 @inproceedings{10.1145/1390156.1390294,
 	title        = {Extracting and Composing Robust Features with Denoising Autoencoders},
 	author       = {Vincent, Pascal and Larochelle, Hugo and Bengio, Yoshua and Manzagol, Pierre-Antoine},
@@ -194,6 +219,7 @@
 	abstract     = {Previous work has shown that the difficulties in learning deep generative or discriminative models can be overcome by an initial unsupervised learning step that maps inputs to useful intermediate representations. We introduce and motivate a new training principle for unsupervised learning of a representation based on the idea of making the learned representations robust to partial corruption of the input pattern. This approach can be used to train autoencoders, and these denoising autoencoders can be stacked to initialize deep architectures. The algorithm can be motivated from a manifold learning and information theoretic perspective or from a generative model perspective. Comparative experiments clearly show the surprising advantage of corrupting the input of autoencoders on a pattern classification benchmark suite.},
 	numpages     = 8
 }
+
 @misc{https://doi.org/10.48550/arxiv.1908.11553,
 	title        = {Credit Card Fraud Detection Using Autoencoder Neural Network},
 	author       = {Zou, Junyi and Zhang, Jinliang and Jiang, Ping},
@@ -204,6 +230,7 @@
 	copyright    = {Creative Commons Zero v1.0 Universal},
 	keywords     = {Machine Learning (cs.LG), Machine Learning (stat.ML), FOS: Computer and information sciences, FOS: Computer and information sciences}
 }
+
 @article{DBLP:journals/corr/abs-1908-00734,
 	title        = {Detection of Accounting Anomalies in the Latent Space using Adversarial Autoencoder Neural Networks},
 	author       = {Marco Schreyer and Timur Sattarov and Christian Schulze and Bernd Reimer and Damian Borth},
@@ -217,6 +244,7 @@
 	biburl       = {https://dblp.org/rec/journals/corr/abs-1908-00734.bib},
 	bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
+
 @misc{https://doi.org/10.48550/arxiv.1406.1078,
 	title        = {Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation},
 	author       = {Cho, Kyunghyun and van Merrienboer, Bart and Gulcehre, Caglar and Bahdanau, Dzmitry and Bougares, Fethi and Schwenk, Holger and Bengio, Yoshua},
@@ -227,6 +255,7 @@
 	copyright    = {arXiv.org perpetual, non-exclusive license},
 	keywords     = {Computation and Language (cs.CL), Machine Learning (cs.LG), Neural and Evolutionary Computing (cs.NE), Machine Learning (stat.ML), FOS: Computer and information sciences, FOS: Computer and information sciences}
 }
+
 ---
 !Long Short Term Memory
 ---
@@ -240,6 +269,7 @@
 	pages        = {1735--80},
 	doi          = {10.1162/neco.1997.9.8.1735}
 }
+
 @inproceedings{pmlr-v37-srivastava15,
 	title        = {Unsupervised Learning of Video Representations using LSTMs},
 	author       = {Srivastava, Nitish and Mansimov, Elman and Salakhudinov, Ruslan},
@@ -256,6 +286,7 @@
 	pdf          = {http://proceedings.mlr.press/v37/srivastava15.pdf},
 	abstract     = {We use Long Short Term Memory (LSTM) networks to learn representations of video sequences. Our model uses an encoder LSTM to map an input sequence into a fixed length representation. This representation is decoded using single or multiple decoder LSTMs to perform different tasks, such as reconstructing the input sequence, or predicting the future sequence. We experiment with two kinds of input sequences – patches of image pixels and high-level representations (“percepts") of video frames extracted using a pretrained convolutional net. We explore different design choices such as whether the decoder LSTMs should condition on the generated output. We analyze the outputs of the model qualitatively to see how well the model can extrapolate the learned video representation into the future and into the past. We further evaluate the representations by finetuning them for a supervised learning problem – human action recognition on the UCF-101 and HMDB-51 datasets. We show that the representations help improve classification accuracy, especially when there are only few training examples. Even models pretrained on unrelated datasets (300 hours of YouTube videos) can help action recognition performance.}
 }
+
 ---
 !Pre-Training
 ---
@@ -273,6 +304,7 @@
 	url          = {https://europepmc.org/articles/PMC6911101},
 	abstract     = {Currently, most real-world time series datasets are multivariate and are rich in dynamical information of the underlying system. Such datasets are attracting much attention; therefore, the need for accurate modelling of such high-dimensional datasets is increasing. Recently, the deep architecture of the recurrent neural network (RNN) and its variant long short-term memory (LSTM) have been proven to be more accurate than traditional statistical methods in modelling time series data. Despite the reported advantages of the deep LSTM model, its performance in modelling multivariate time series (MTS) data has not been satisfactory, particularly when attempting to process highly non-linear and long-interval MTS datasets. The reason is that the supervised learning approach initializes the neurons randomly in such recurrent networks, disabling the neurons that ultimately must properly learn the latent features of the correlated variables included in the MTS dataset. In this paper, we propose a pre-trained LSTM-based stacked autoencoder (LSTM-SAE) approach in an unsupervised learning fashion to replace the random weight initialization strategy adopted in deep LSTM recurrent networks. For evaluation purposes, two different case studies that include real-world datasets are investigated, where the performance of the proposed approach compares favourably with the deep LSTM approach. In addition, the proposed approach outperforms several reference models investigating the same case studies. Overall, the experimental results clearly show that the unsupervised pre-training approach improves the performance of deep LSTM and leads to better and faster convergence than other models.}
 }
+
 @inproceedings{pmlr-v5-erhan09a,
 	title        = {The Difficulty of Training Deep Architectures and the Effect of Unsupervised Pre-Training},
 	author       = {Erhan, Dumitru and Manzagol, Pierre-Antoine and Bengio, Yoshua and Bengio, Samy and Vincent, Pascal},
@@ -289,6 +321,7 @@
 	pdf          = {http://proceedings.mlr.press/v5/erhan09a/erhan09a.pdf},
 	abstract     = {Whereas theoretical work suggests that deep architectures might be more efficient at representing highly-varying functions, training deep architectures  was unsuccessful until the recent advent of algorithms based on unsupervised pre-training. Even though these new algorithms have enabled training deep models, many questions remain as to the nature of this difficult learning problem. Answering these questions is important if learning in deep architectures is to be further improved. We attempt to shed some light on these questions through extensive simulations. The experiments confirm and clarify the advantage of unsupervised pre-training. They demonstrate the robustness of the training procedure with respect to the random initialization, the positive  effect of pre-training in terms of optimization and its role as a kind of regularizer. We show the influence of architecture depth, model capacity, and number of training examples.}
 }
+
 @inproceedings{pmlr-v9-erhan10a,
 	title        = {Why Does Unsupervised Pre-training Help Deep Learning?},
 	author       = {Erhan, Dumitru and Courville, Aaron and Bengio, Yoshua and Vincent, Pascal},
@@ -305,6 +338,7 @@
 	pdf          = {http://proceedings.mlr.press/v9/erhan10a/erhan10a.pdf},
 	abstract     = {Much recent research has been devoted to learning algorithms for deep architectures such as Deep Belief Networks and stacks of auto-encoder   variants with impressive results being obtained in several areas, mostly   on vision and language datasets.  The best results obtained on supervised   learning tasks often involve an unsupervised learning component, usually   in an unsupervised pre-training phase. The main question investigated   here is the following: why does unsupervised pre-training work so well?   Through extensive experimentation, we explore several possible   explanations discussed in the literature including its action as a   regularizer (Erhan et al. 2009) and as an aid to optimization   (Bengio et al. 2007).  Our results build on the work of   Erhan et al. 2009, showing that unsupervised pre-training appears to   play predominantly a regularization role in subsequent supervised   training. However our results in an online setting, with a virtually unlimited   data stream, point to a somewhat more nuanced interpretation of the roles   of optimization and regularization in the unsupervised pre-training   effect.}
 }
+
 @article{HAN2021225,
 	title        = {Pre-trained models: Past, present and future},
 	author       = {Xu Han and Zhengyan Zhang and Ning Ding and Yuxian Gu and Xiao Liu and Yuqi Huo and Jiezhong Qiu and Yuan Yao and Ao Zhang and Liang Zhang and Wentao Han and Minlie Huang and Qin Jin and Yanyan Lan and Yang Liu and Zhiyuan Liu and Zhiwu Lu and Xipeng Qiu and Ruihua Song and Jie Tang and Ji-Rong Wen and Jinhui Yuan and Wayne Xin Zhao and Jun Zhu},
@@ -318,6 +352,7 @@
 	keywords     = {Pre-trained models, Language models, Transfer learning, Self-supervised learning, Natural language processing, Multimodal processing, Artificial intelligence},
 	abstract     = {Large-scale pre-trained models (PTMs) such as BERT and GPT have recently achieved great success and become a milestone in the field of artificial intelligence (AI). Owing to sophisticated pre-training objectives and huge model parameters, large-scale PTMs can effectively capture knowledge from massive labeled and unlabeled data. By storing knowledge into huge parameters and fine-tuning on specific tasks, the rich knowledge implicitly encoded in huge parameters can benefit a variety of downstream tasks, which has been extensively demonstrated via experimental verification and empirical analysis. It is now the consensus of the AI community to adopt PTMs as backbone for downstream tasks rather than learning models from scratch. In this paper, we take a deep look into the history of pre-training, especially its special relation with transfer learning and self-supervised learning, to reveal the crucial position of PTMs in the AI development spectrum. Further, we comprehensively review the latest breakthroughs of PTMs. These breakthroughs are driven by the surge of computational power and the increasing availability of data, towards four important directions: designing effective architectures, utilizing rich contexts, improving computational efficiency, and conducting interpretation and theoretical analysis. Finally, we discuss a series of open problems and research directions of PTMs, and hope our view can inspire and advance the future study of PTMs.}
 }
+
 @article{survey_transfer_learning,
 	title        = {A Survey on Transfer Learning},
 	author       = {Pan, Sinno Jialin and Yang, Qiang},
@@ -328,6 +363,7 @@
 	pages        = {1345--1359},
 	doi          = {10.1109/TKDE.2009.191}
 }
+
 @inproceedings{pmlr-v97-hendrycks19a,
 	title        = {Using Pre-Training Can Improve Model Robustness and Uncertainty},
 	author       = {Hendrycks, Dan and Lee, Kimin and Mazeika, Mantas},
@@ -343,16 +379,17 @@
 	pdf          = {http://proceedings.mlr.press/v97/hendrycks19a/hendrycks19a.pdf},
 	abstract     = {He et al. (2018) have called into question the utility of pre-training by showing that training from scratch can often yield similar performance to pre-training. We show that although pre-training may not improve performance on traditional classification metrics, it improves model robustness and uncertainty estimates. Through extensive experiments on label corruption, class imbalance, adversarial examples, out-of-distribution detection, and confidence calibration, we demonstrate large gains from pre-training and complementary effects with task-specific methods. We show approximately a 10% absolute improvement over the previous state-of-the-art in adversarial robustness. In some cases, using pre-training without task-specific methods also surpasses the state-of-the-art, highlighting the need for pre-training when evaluating future methods on robustness and uncertainty tasks.}
 }
+
 ---
 !Overfitting/Generalization
 ---
 @inproceedings{weigend1994overfitting,
-  title={On overfitting and the effective number of hidden units},
-  author={Weigend, Andreas},
-  booktitle={Proceedings of the 1993 connectionist models summer school},
-  volume={1},
-  pages={335--342},
-  year={1994}
+	title        = {On overfitting and the effective number of hidden units},
+	author       = {Weigend, Andreas},
+	year         = 1994,
+	booktitle    = {Proceedings of the 1993 connectionist models summer school},
+	volume       = 1,
+	pages        = {335--342}
 }
 
 ---
@@ -366,6 +403,7 @@
 	pages        = {},
 	isbn         = {978-3-11-067090-5}
 }
+
 @misc{https://doi.org/10.48550/arxiv.1409.3215,
 	title        = {Sequence to Sequence Learning with Neural Networks},
 	author       = {Sutskever, Ilya and Vinyals, Oriol and Le, Quoc V.},
@@ -374,31 +412,35 @@
 	url          = {https://arxiv.org/abs/1409.3215},
 	keywords     = {Computation and Language (cs.CL), Machine Learning (cs.LG), FOS: Computer and information sciences, FOS: Computer and information sciences}
 }
+
 ---
 !Software
 ---
 @online{chollet2015keras,
-  title={Keras},
-  author={Chollet, Francois and others},
-  year={2015},
-  publisher={GitHub},
-  url={https://github.com/fchollet/keras},
+	title        = {Keras},
+	author       = {Chollet, Francois and others},
+	year         = 2015,
+	publisher    = {GitHub},
+	url          = {https://github.com/fchollet/keras}
 }
+
 @article{DEAP_JMLR2012,
-    author    = " F\'elix-Antoine Fortin and Fran\c{c}ois-Michel {De Rainville} and Marc-Andr\'e Gardner and Marc Parizeau and Christian Gagn\'e ",
-    title     = { {DEAP}: Evolutionary Algorithms Made Easy },
-    pages     = { 2171--2175 },
-    volume    = { 13 },
-    month     = { jul },
-    year      = { 2012 },
-    journal   = { Journal of Machine Learning Research }
+	title        = {{DEAP}: Evolutionary Algorithms Made Easy},
+	author       = { F\'elix-Antoine Fortin and Fran\c{c}ois-Michel {De Rainville} and Marc-Andr\'e Gardner and Marc Parizeau and Christian Gagn\'e },
+	year         = {2012},
+	month        = {jul},
+	journal      = {Journal of Machine Learning Research},
+	volume       = {13},
+	pages        = {2171--2175}
 }
+
 ---
 !Datasets
 ---
-@misc{machine_learning_repo ,
-author = "Dua, Dheeru and Graff, Casey",
-year = "2017",
-title = "{UCI} Machine Learning Repository",
-url = "http://archive.ics.uci.edu/ml",
-institution = "University of California, Irvine, School of Information and Computer Sciences" }
+@misc{machine_learning_repo,
+	title        = {{UCI} Machine Learning Repository},
+	author       = {Dua, Dheeru and Graff, Casey},
+	year         = 2017,
+	url          = {http://archive.ics.uci.edu/ml},
+	institution  = {University of California, Irvine, School of Information and Computer Sciences}
+}
