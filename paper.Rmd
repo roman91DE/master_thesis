@@ -336,7 +336,16 @@ Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will 
 ## Effect on search performance
 
 ```{bash compile_airfoil_2hl_maxIndSize_fullRun_30gens, include=FALSE}
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_1hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_1hl_maxIndSize_30gen.sh
+
+
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_2hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_2hl_maxIndSize_30gen.sh
+
+
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_maxIndSize_fullRun_30gens/re_evaluate_energyCooling_2hl_maxIndSize_fullRun_30gens.sh
+
+# add new experiments for full runs here!
+# ...
 ```
 
 
