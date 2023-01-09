@@ -248,8 +248,8 @@ This process is repeated until the termination criteria is met and DAE-GP return
 
 
 The pre-training strategy implemented for all experiments in this thesis is visualized as another flowchart in figure §.
-The main difference to regular DAE-GP is the inclusion of an initial pre-training phase where a separate population $\hat{P}$ is first initialized and then randomly split by half into $\hat{P_{train}}$ and $\hat{P_{test}}$. 
-A DAE-LSTM model $\hat{M}$ is then trained to learn the properties of $\hat{P_{train}}$ using an early stopping training mode where we stop training as soon as the validation error for $\hat{P_{test}}$ converges. 
+The main difference to regular DAE-GP is the inclusion of an initial pre-training phase where a separate population $\hat{P}$ is first initialized and then randomly split by half into $\hat{P}_{train}$ and $\hat{P}_{test}$. 
+A DAE-LSTM model $\hat{M}$ is then trained to learn the properties of $\hat{P}_{train}$ using an early stopping training mode where we stop training as soon as the validation error for $\hat{P}_{test}$ converges. 
 After the training for $\hat{M}$ is stopped, the current state of $\hat{M}$ is frozen and the optimized trainable parameters $\theta_{\hat{M}}$ are saved before terminating the pre-training phase to start the DAE-GP phase. 
 During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm described in figure § is during model building: We initialize $M_g$ with $\theta_{\hat{M}}$ before training it to learn the properties of $X_g$.
 

@@ -56,6 +56,7 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
 * Metaheuristik basierend auf genetischer Programmierung (GP)
 * Erweiterung von GP durch künstliche, neuronalen Netzen zur Optimierung des Suchverhaltens
 * Variante des Estimation of Distribution-GP (EDA-GP)
+* Der Einsatz einer Pre-Training Strategie wurde in mehreren Publikationen als möglicher Weg für eine weitere Optimierung vorgeschlagen^[@dae-gp_2022_symreg]^[@daegp_explore_exploit)
 
 
 ## Estimation of Distribution Algorithmen (EDA)
@@ -115,11 +116,40 @@ Mögliche Vorteile durch Pre-Training^[@pmlr-v5-erhan09a]:
     2. Lösungen  mit geringerer Größe
 
 
-## Pre-Training für Denoising Autoencoders
+## Pre-Training für Denoising Autoencoders^[@pmlr-v5-erhan09a]
+
+### Positive Wirkung von Pre-Training auf DAE
+
+1. Gesteigerte Modell Performance (sinkender Testfehler)
+2. Besserer Generalisierungsfähigkeit
+3. Erhöhter Robustness des Algorithmus (sinkende Varianz des Testfehlers)
+
+
+### Einfluss der Modell Architektur
+
+* Positiver Effekt steigt mit zunehmender Komplexitität des DAE
+* Je mehr versteckte Layer oder die Anzahl an Neuronen pro verstecktem Layer vorhanden sind, desto besserer Effekt des Pre-Trainings
+* Für sehr kleine DAE, zeigt Pre-Training jedoch inverse, negative Auswirkung auf die Modell Performance
 
 
 
-## Implementation
+# Implementation
+
+## Überblick
+
+Gewählte Pre-Training Strategie: 
+
+* (Klassisches) Pre-Training: Einmaliges Training eines DAE-LSTM mit einer großen Population aus Lösungskandidaten $\hat{P}_{train}$
+
+* Trainingsmethode Early Stopping: Abbruch des Trainings sobald der Testfehler für eine seperate Population $\hat{P}_{test}$ konvergiert
+
+**Ausschluss anderer Pre-Training Strategien wie Re-Use Learning, Few-Shot Learning**
+
+## Pre-Trained DAE-GP Ablauf
+
+![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png){height=75%}
+
+
 
 # Experimente
 
