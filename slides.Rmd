@@ -66,15 +66,21 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
 
 ## DAE-EDA
 
-Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistisches Modell für EDA ^[@harmless_overfitting_eda]
+Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistisches Modell für genetische Algorithmen ^[@harmless_overfitting_eda]
 
 2 Phase Ansatz:
 
-  1. Model Building: Modell "lernt" die Eigenschaften von ausgewählten Lösungen hoher Güte
+  1. Model Building: Modell "lernt" die Eigenschaften von ausgewählten Lösungen hoher Güte durch das Trainieren eines DAEs
   2. Model Sampling: Neue Lösungen werden erzeugt durch das propagieren von bestehenden, mutierten Lösungen durch das erlernte Modell 
   
 
 ## DAE-GP
+
+* Adaptierung der DAE-EDA Strategie auf GP
+
+
+
+
 
 
 
