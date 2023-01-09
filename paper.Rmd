@@ -25,6 +25,7 @@ output:
 indent: false
 fontsize: 11pt
 bibliography: ref/ref.bib
+link-citations: true
 fig.width: 4in
 fig.height: 3in
 csl: csl/association-for-computing-machinery.csl

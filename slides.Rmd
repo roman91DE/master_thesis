@@ -5,6 +5,7 @@ author: "Roman Hoehn"
 institute: "Johannes Gutenberg-Universität Mainz"
 date: "Datum: 25.01.2023"
 fontsize: 11pt
+link-citations: true
 output:
   beamer_presentation:
     # color: "beaver"
@@ -56,7 +57,7 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
 * Metaheuristik basierend auf genetischer Programmierung (GP)
 * Erweiterung von GP durch künstliche, neuronalen Netzen zur Optimierung des Suchverhaltens
 * Variante des Estimation of Distribution-GP (EDA-GP)
-* Der Einsatz einer Pre-Training Strategie wurde in mehreren Publikationen als möglicher Weg für eine weitere Optimierung vorgeschlagen^[@dae-gp_2022_symreg]^[@daegp_explore_exploit)
+* Der Einsatz einer Pre-Training Strategie wurde in mehreren Publikationen als möglicher Weg für eine weitere Optimierung vorgeschlagen^[@dae-gp_2022_symreg] ^[@daegp_explore_exploit]
 
 
 ## Estimation of Distribution Algorithmen (EDA)

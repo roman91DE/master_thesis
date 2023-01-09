@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  9 JAN 2023 15:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  9 JAN 2023 16:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -944,7 +944,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-191.
+192.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -953,34 +953,34 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-91.
+92.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-191.
+192.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-191.
+192.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 191.
+(Font)              <10.95> on input line 192.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 191.
+(Font)              <8> on input line 192.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 191.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 191
+(Font)              <6> on input line 192.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 192
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 191
+LaTeX Font Info:    Trying to load font information for U+msb on input line 192
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -988,31 +988,30 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 191.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 192.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 191.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 192.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 192.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 192.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 192.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 192.
 [6
 
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 210.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 210.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 210.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 210.
-[7
+] [7
 
 ] [8
 
 ] [9
 
 ]
-<./img/flowcharts/dae-gp.png, id=88, 757.83125pt x 1002.74625pt>
+<./img/flowcharts/dae-gp.png, id=100, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 253.
+Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 257.
 (pdftex.def)             Requested size: 162.7224pt x 215.31082pt.
 [10
 
@@ -1022,17 +1021,17 @@ Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 253.
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 295.
+(Font)              <14.4> on input line 299.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 295.
+(Font)              <10> on input line 299.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 295.
+(Font)              <7> on input line 299.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 295.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 299.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 295.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 299.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 295.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 299.
 [13
 
 ] [14
@@ -1044,10 +1043,10 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
 ] [17
 
 ]
-<./img/flowcharts/pt-dae-gp.png, id=145, 1031.855pt x 1620.0525pt>
+<./img/flowcharts/pt-dae-gp.png, id=163, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 376
+Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 380
 .
 (pdftex.def)             Requested size: 128.55644pt x 201.83862pt.
 [18
@@ -1070,8 +1069,10 @@ Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 376
 
 ] [27
 
-
 ] [28
+
+
+] [29
 
 
 ]
@@ -1086,11 +1087,11 @@ Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 376
 
 (./slides.aux) ) 
 Here is how much of TeX's memory you used:
- 24573 strings out of 478268
- 475548 string characters out of 5846348
+ 24572 strings out of 478268
+ 475503 string characters out of 5846348
  755913 words of memory out of 5000000
- 42029 multiletter control sequences out of 15000+600000
- 560868 words of font info for 156 fonts, out of 8000000 for 9000
+ 42030 multiletter control sequences out of 15000+600000
+ 557898 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1003b,616s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
@@ -1099,14 +1100,13 @@ texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/20
 22/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2022/texmf-d
 ist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
 ype1/public/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
-/lm/lmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss
-o10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/
-texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on slides.pdf (28 pages, 327128 bytes).
+/lm/lmsso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso
+8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on slides.pdf (29 pages, 302576 bytes).
 PDF statistics:
- 319 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
- 91 named destinations out of 1000 (max. 500000)
- 55413 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 330 PDF objects out of 1000 (max. 8388607)
+ 269 compressed objects within 3 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 53365 words of extra memory for PDF output out of 61914 (max. 10000000)
 
