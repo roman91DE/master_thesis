@@ -307,31 +307,29 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluat
 
 To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
 
-To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus soley on the reconstruction error that is produced during the training of each the DAE-LSTM. The reconstruction error is measured for two separate populations, a training population $train\_pop$ that is used to train our DAE-LSTM as well as a hold-out validation population $test\_pop$. For the pre-trained DAE-GP two additional, separate populations $\hat{train\_pop}$ and  $\hat{test\_pop}$ are used only for pre-training. 
+To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus soley on the reconstruction error that is produced during the training of each the DAE-LSTM. The reconstruction error is measured for two separate populations, a training population $P_{train}$ that is used to train our DAE-LSTM as well as a hold-out validation population $P_{test}$. For the pre-trained DAE-GP two additional, separate populations $\hat{P}_{train}$ and  $\hat{P}_{test}$ are used exclusively for pre-training. 
 
 DAE-GP is tested in two different configurations: 
 
 * Variable number of hidden neurons (50, 100, 200) with a single hidden layer
 * Fixed number of hidden neurons (100) per hidden layer with variable number of hidden layers (1, 2, 3)
 
-For each configuration I tested traditional DAE-GP as well as a pre-trained DAE-GP resulting in 12 total sub experiments that were each based on 10 individual runs (total number of runs=$120$). To avoid creating biased results through the presence of sampling error inside the pre-training population (see @sampling_err_gp), the population size for the pre-training phase is chosen very high with $\hat{pop\_size}=20000$ where 50% of $\hat{pop}$ is used for the training population $\hat{train\_pop}$ and the remaining 50% are used for the hold-out validation population $\hat{test\_pop}$. The training of DAE-LSTM uses a fixed number of 1000 epochs until termination and uses Adam optimization for gradient descent. The reason for using a high amount of 1000 fixed training epochs is to deliberately force the DAE-LSTM to overfit to the training data. 
+For each configuration I tested traditional DAE-GP as well as a pre-trained DAE-GP resulting in 12 total sub experiments that were each based on 10 individual runs (total number of runs=$120$). To avoid creating biased results through the presence of sampling error inside the pre-training population (see @sampling_err_gp), the population size for the pre-training phase is chosen very high with the size of $\hat{P}$ =20000 where 50% of $\hat{P}$ is used for the training population $\hat{P}_{train}$ and the remaining 50% are used for the hold-out validation population $\hat{P}_{test}$. The training of DAE-LSTM uses a fixed number of 1000 epochs until termination and uses Adam optimization for gradient descent. The reason for using a high amount of 1000 fixed training epochs is to deliberately force the DAE-LSTM to overfit to the training data. 
 
-In general I expect that with a growing number of model parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population $train\_pop$ resulting in a small reconstruction error for the training population and a large one for the validation population $train\_pop$. The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases [@weigend1994overfitting].
+In general I expect that with a growing number of model parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population $P_{train}$ resulting in a small reconstruction error for the training population and a large one for the validation population $P_{test}$. The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases [@weigend1994overfitting].
 
 Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will have an insignificant or even negative influence on small DAE-LSTM instances while improving the networks generalization ability with growing size.
 
 <!--- analyze results 1 hidden layer and variable number of hidden neurons -->
 
+![First Generation Median Training Error for variable number of hidden Neurons - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png)
 
-![First Generation Median Training Error for variable number of hidden Neurons - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png)
 
-![First Generation final Training Error for variable number of hidden Neurons - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.png)
 
 <!--- analyzing the results for variable number of layers -->
 
 ![First Generation Median Training Error for variable number of hidden Layers - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png)
 
-![First Generation final Training Error for variable number of hidden Layers - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.png)
 
 ## Effect on search performance
 

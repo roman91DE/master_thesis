@@ -143,13 +143,15 @@ Gewählte Pre-Training Strategie:
 
 * Trainingsmethode Early Stopping: Abbruch des Trainings sobald der Testfehler für eine seperate Population $\hat{P}_{test}$ konvergiert
 
-**Ausschluss anderer Pre-Training Strategien wie Re-Use Learning, Few-Shot Learning**
+*Ausschluss anderer Pre-Training Strategien wie Re-Use Learning, Few-Shot Learning*
 
 ## Pre-Trained DAE-GP Ablauf
 
 ![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png){height=75%}
 
+## Herausforderungen
 
+... hidden neurons ... 
 
 # Experimente
 
