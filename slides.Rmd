@@ -10,8 +10,8 @@ output:
     # color: "beaver"
     # theme: "Szeged"
     # fonttheme: "structurebold"
-    fig_width: 12
-    fig_height: 10
+    # fig_width: 12
+    # fig_height: 10
     # keep_tex: true
     fig_caption: yes
     number_sections: true
@@ -49,7 +49,7 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
   
 
 
-# Denoising Autoencoder Genetic Programming
+# Denoising Autoencoder Genetic Programming 
 
 ## Übersicht
 
@@ -64,7 +64,7 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
 * Hypothese: Problemspezifische Abhängigkeiten zwischen einzelnen Entscheidungsvariablen können bei der Erzeugung neuer Lösungskandidaten besser berücksichtigt werden als bei traditionellen Rekombinationsoperatoren^[@edaOrig1996]
 * Weitere Verbreitung im Bereich der genetischen Algorithmen (GA) als für GP
 
-## DAE-EDA
+## Denoising Autoencoder Estimation of Distribution Algorithmen (DAE-EDA)
 
 Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistisches Modell für genetische Algorithmen ^[@harmless_overfitting_eda]
 
@@ -74,14 +74,15 @@ Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistis
   2. Model Sampling: Neue Lösungen werden erzeugt durch das propagieren von bestehenden, mutierten Lösungen durch das erlernte Modell 
   
 
-## DAE-GP
+## Denoising Autoencoder Genetic Programming (DAE-GP)
 
-* Adaptierung der DAE-EDA Strategie auf GP
+* Adaptierung des DAE-EDA Algorithmus auf GP
+* Linearisierung von GP Individuen als strings in prefix Notation
+* seq2seq learning Problem: Einsatz von DAE - Long Short Term Memory Netzwerken (DAE-LSTM)
 
+## DAE-GP Ablauf
 
-
-
-
+![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png){height=80%}
 
 
 # Aktueller Forschungsstand
@@ -103,11 +104,19 @@ Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistis
     2. Lösungen  mit geringerer Größe
     
 
-  
-
 
 
 ## Pre-Training
+
+Idee: Modelle werden vor ihrem eigentlichen Einsatz zum Lösen eines Problems auf möglichst großen Datensätzen vortrainiert
+
+Mögliche Vorteile durch Pre-Training^[@pmlr-v5-erhan09a]: 
+
+1. Geringere Bedarf an Trainings Daten für vortrainierte Modelle
+2. Reduktion der Trainingszeiten/Laufzeiten
+3. Verbesserung der Güte des Modells
+4. Verbessertes Generalisierungsverhalten des Modells
+
 
 ## Implementation
 
