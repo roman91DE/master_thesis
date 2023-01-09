@@ -84,6 +84,17 @@ Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistis
 
 ![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png){height=80%}
 
+## Pre-Training
+
+Idee: Modelle werden vor ihrem eigentlichen Einsatz zum Lösen eines Problems auf möglichst großen Datensätzen vortrainiert
+
+Mögliche Vorteile durch Pre-Training^[@pmlr-v5-erhan09a]: 
+
+1. Geringere Bedarf an Trainings Daten für vortrainierte Modelle
+2. Reduktion der Trainingszeiten/Laufzeiten
+3. Verbesserung der Güte des Modells
+4. Verbessertes Generalisierungsverhalten des Modells
+
 
 # Aktueller Forschungsstand
 
@@ -102,20 +113,10 @@ Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistis
   
     1. Lösungen mit höherer Fitness
     2. Lösungen  mit geringerer Größe
-    
 
 
+## Pre-Training für Denoising Autoencoders
 
-## Pre-Training
-
-Idee: Modelle werden vor ihrem eigentlichen Einsatz zum Lösen eines Problems auf möglichst großen Datensätzen vortrainiert
-
-Mögliche Vorteile durch Pre-Training^[@pmlr-v5-erhan09a]: 
-
-1. Geringere Bedarf an Trainings Daten für vortrainierte Modelle
-2. Reduktion der Trainingszeiten/Laufzeiten
-3. Verbesserung der Güte des Modells
-4. Verbessertes Generalisierungsverhalten des Modells
 
 
 ## Implementation
