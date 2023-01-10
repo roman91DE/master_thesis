@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  10 JAN 2023 10:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  10 JAN 2023 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -670,13 +670,13 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4] [5]
-<./img/flowcharts/dae-gp.png, id=165, 757.83125pt x 1002.74625pt>
+<./img/flowcharts/dae-gp.png, id=163, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 472.
 (pdftex.def)             Requested size: 469.75801pt x 621.57385pt.
 [6] [7 <./img/flowcharts/dae-gp.png>]
-<./img/flowcharts/pt-dae-gp.png, id=182, 1031.855pt x 1620.0525pt>
+<./img/flowcharts/pt-dae-gp.png, id=180, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 494
@@ -696,7 +696,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [10]
 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png, id
-=214, 1011.78pt x 867.24pt>
+=212, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.pn
 g Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png
@@ -706,7 +706,7 @@ error_by_neurons.png  used on input line 673.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [11]
 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png, id=
-221, 1011.78pt x 867.24pt>
+219, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png
  Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
@@ -721,7 +721,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [13 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
 ]
-<./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png, id=237, 1011.78pt
+<./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png, id=235, 1011.78pt
  x 867.24pt>
 File: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png Graphic file 
 (type png)
@@ -730,7 +730,7 @@ Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGen
 s.png  used on input line 747.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [14]
-<./img/airfoil_FullRun_30gens/final_fit_boxplot.png, id=242, 1011.78pt x 867.24
+<./img/airfoil_FullRun_30gens/final_fit_boxplot.png, id=240, 1011.78pt x 867.24
 pt>
 File: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png Graphic file (type png
 )
@@ -739,7 +739,7 @@ Package pdftex.def Info: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png  us
 ed on input line 751.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [15 <./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>]
-<./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png, id=248, 1011.78pt x
+<./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png, id=246, 1011.78pt x
  867.24pt>
 File: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png Graphic file (t
 ype png)
@@ -748,7 +748,7 @@ Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.
 png  used on input line 754.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [16 <./img/airfoil_FullRun_30gens/final_fit_boxplot.png>]
-<./img/airfoil_FullRun_30gens/mean_Size_byGens.png, id=255, 722.7pt x 578.16pt>
+<./img/airfoil_FullRun_30gens/mean_Size_byGens.png, id=253, 722.7pt x 578.16pt>
 
 File: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png Graphic file (type png)
 
@@ -757,24 +757,35 @@ Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png  use
 d on input line 763.
 (pdftex.def)             Requested size: 469.76045pt x 375.80836pt.
 [17 <./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 793.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 793.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [18 <./img/airfoil_FullRun_30gens/mean_Size_byGens.png>] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 865--869
+Underfull \hbox (badness 10000) in paragraph at lines 848--852
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 870--874
+Underfull \hbox (badness 10000) in paragraph at lines 853--857
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 875--885
+Underfull \hbox (badness 10000) in paragraph at lines 858--868
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--875
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 876--885
 
  []
 
@@ -784,109 +795,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 886--892
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 893--902
+Underfull \hbox (badness 10000) in paragraph at lines 893--899
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 903--909
+Underfull \hbox (badness 10000) in paragraph at lines 900--905
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 910--916
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 917--922
-
- []
-
-
-Underfull \hbox (badness 3690) in paragraph at lines 928--928
+Underfull \hbox (badness 3690) in paragraph at lines 911--911
 []\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
 rans-fer learn-ing.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 923--929
+Underfull \hbox (badness 10000) in paragraph at lines 906--912
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 930--935
+Underfull \hbox (badness 10000) in paragraph at lines 913--918
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 936--942
+Underfull \hbox (badness 10000) in paragraph at lines 919--925
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 943--948
+Underfull \hbox (badness 10000) in paragraph at lines 926--931
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--955
+Underfull \hbox (badness 10000) in paragraph at lines 932--938
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 956--964
+Underfull \hbox (badness 10000) in paragraph at lines 939--947
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 965--970
+Underfull \hbox (badness 10000) in paragraph at lines 948--953
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 971--977
+Underfull \hbox (badness 10000) in paragraph at lines 954--960
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 978--986
+Underfull \hbox (badness 10000) in paragraph at lines 961--969
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 987--996
+Underfull \hbox (badness 10000) in paragraph at lines 970--979
 
  []
 
 [21] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 15620 strings out of 478268
- 249538 string characters out of 5846348
- 585402 words of memory out of 5000000
- 33294 multiletter control sequences out of 15000+600000
- 518167 words of font info for 131 fonts, out of 8000000 for 9000
+ 15680 strings out of 478268
+ 250277 string characters out of 5846348
+ 585322 words of memory out of 5000000
+ 33323 multiletter control sequences out of 15000+600000
+ 535963 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,9n,77p,1002b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-e
-c.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/lo
-cal/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texliv
-e/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/tex
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-m
+athit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/us
+r/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texliv
+e/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/tex
 mf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts
 /type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
 lic/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmm
 i10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/
-fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
-public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
-lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
->
-Output written on paper.pdf (22 pages, 925092 bytes).
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/
+fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
+/public/lm/lmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/l
+mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on paper.pdf (22 pages, 971296 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 371 compressed objects within 4 object streams
+ 457 PDF objects out of 1000 (max. 8388607)
+ 382 compressed objects within 4 object streams
  101 named destinations out of 1000 (max. 500000)
- 26817 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 37057 words of extra memory for PDF output out of 42996 (max. 10000000)
 
