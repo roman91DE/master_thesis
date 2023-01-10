@@ -197,7 +197,7 @@ Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe
 
 ## Interpretation
 
-# Experiment Suchverhalten Airfoil Datensatz
+# Experimente Suchverhalten Symbolische Regression
 
 ## Fragestellung
 
@@ -254,10 +254,53 @@ Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer?
 
 ![Airfoil Datensatz - 1 HL - Lösungsgüte über Generationen](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png)
 
+## Anwendung auf weiteren Datensätzen
+
+Airfoil Datensatz: Ergebnis deuten bei einer ausreichenden Anzahl von Hidden Layern auf einen postitiven Effekt der Pre-Training Strategie hin:
+
+* Höhere Fitness der gefundenen Lösungen
+* Kleinere Größe der gefundenen Lösungen
+
+Daher: Ausweitung des Experiments auf weitere Datensätze
+
+## Übersicht Datensätze
+
+```{r full_run_realWorldSymReg_problems, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+fig.pos="H"
+knitr::kable(
+  read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
+  #caption="Overview - Real World Symbolic Regression Benchmark Problems"
+)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+## Zusammenfassung Experimente zur symbolischen Regression
 
 
+```{r full_run_realWorldSymReg_performance, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
 
-Anwendung
+# Create a sample data frame
+df <- read.csv("/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv", sep=",")
+print(df)
+
+# Create a function to format the values
+bold_min <- function(x, y){
+  if(x <= y) return(paste0("**", x, "**"))
+  else return(x)
+}
+
+# Apply the function to the data frame
+df$DAE.GP <- mapply(bold_min, df$DAE_GP, df$Pre_Trained_DAE_GP)
+)
+
+fig.pos="H"
+knitr::kable(
+  df,
+  #caption="Performance - Real World Symbolic Regression Benchmark Problems"
+)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+```
+
 
 ## Generalisierungsverhalten
 
