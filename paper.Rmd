@@ -389,7 +389,7 @@ knitr::kable(
   caption="Overview - Real World Symbolic Regression Benchmark Problems"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-Table X summarizes the median best fitness achieved after running each algorithm for 30 runs using a population size of 500 individuals.^[P-Values are marked with asteriks (1,2,3) for ($\alpha$) (0.1, 0.05 and 0.01)].
+Table X summarizes the median best fitness achieved after running each algorithm for 10 runs using a population size of 500 individuals for 30 generations.^[P-Values are marked with asteriks (1,2,3) for ($\alpha$)-levels of $0.1$, $0.05$ and $0.01$].
 
 ``` {bash recreate_csv_file_benchmarkRWSymReg, include=FALSE}
 /Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_finalFitness.py

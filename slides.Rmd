@@ -158,6 +158,8 @@ Gewählte Pre-Training Strategie:
 
 ## Symbolische Regression
 
+Anwendung
+
 ## Generalisierungsverhalten
 
 ## Lösungsqualität
