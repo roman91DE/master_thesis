@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  10 JAN 2023 15:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  10 JAN 2023 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1011,7 +1011,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
 <./img/flowcharts/dae-gp.png, id=102, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 257.
+Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 253.
 (pdftex.def)             Requested size: 162.7224pt x 215.31082pt.
 [10
 
@@ -1021,17 +1021,17 @@ Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 257.
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 299.
+(Font)              <14.4> on input line 295.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 299.
+(Font)              <10> on input line 295.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 299.
+(Font)              <7> on input line 295.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 299.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 295.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 299.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 295.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 299.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 295.
 [13
 
 ] [14
@@ -1046,7 +1046,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
 <./img/flowcharts/pt-dae-gp.png, id=165, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 380
+Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 372
 .
 (pdftex.def)             Requested size: 128.55644pt x 201.83862pt.
 [18
@@ -1056,7 +1056,7 @@ Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 380
 ] [20
 
 ]
-Overfull \vbox (14.86447pt too high) detected at line 421
+Overfull \vbox (14.86447pt too high) detected at line 413
  []
 
 [21
@@ -1069,8 +1069,8 @@ ng Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers.pn
 g>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
-g_error_by_layers.png  used on input line 431.
-(pdftex.def)             Requested size: 235.49887pt x 201.85617pt.
+g_error_by_layers.png  used on input line 418.
+(pdftex.def)             Requested size: 266.90077pt x 228.7721pt.
 [22
 
  <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers.png>]
@@ -1081,8 +1081,8 @@ png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.p
 ng>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
-g_error_by_neurons.png  used on input line 437.
-(pdftex.def)             Requested size: 235.49887pt x 201.85617pt.
+g_error_by_neurons.png  used on input line 423.
+(pdftex.def)             Requested size: 266.90077pt x 228.7721pt.
 [23
 
  <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png>
@@ -1090,35 +1090,113 @@ g_error_by_neurons.png  used on input line 437.
 
 ] [25
 
+] [26
+
 ]
-Overfull \hbox (75.36938pt too wide) in paragraph at lines 493--493
+Overfull \hbox (75.36938pt too wide) in paragraph at lines 485--485
  [] 
  []
 
-[26
-
-] [27
+[27
 
 ] [28
 
-] [29
+]
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/
+mean_median_fitness_byGens.png, id=242, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wi
+thGP/mean_median_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wit
+hGP/mean_median_fitness_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens_withGP/mean_median_fitness_byGens.png  used on input line 512.
 
-] [30
+(pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
+[29
 
-] [31
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
+ns_withGP/mean_median_fitness_byGens.png>]
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_f
+it_boxplot.png, id=250, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/fi
+nal_fit_boxplot.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/fin
+al_fit_boxplot.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens/final_fit_boxplot.png  used on input line 517.
+(pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
+[30
 
-] [32
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
+ns/final_fit_boxplot.png>]
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/
+mean_Size_byGens.png, id=258, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wi
+thGP/mean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wit
+hGP/mean_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens_withGP/mean_Size_byGens.png  used on input line 522.
+(pdftex.def)             Requested size: 307.2923pt x 245.83385pt.
 
-] [33
+Overfull \vbox (0.56071pt too high) detected at line 522
+ []
 
-] [34
+[31
 
-] [35
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
+ns_withGP/mean_Size_byGens.png>] [32
+
+]
+<~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_me
+dian_fitness_byGens.png, id=273, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/me
+an_median_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mea
+n_median_fitness_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
+e_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 534.
+(pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
+
+Overfull \vbox (18.1165pt too high) detected at line 534
+ []
+
+[33
+
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30ge
+ns/mean_median_fitness_byGens.png>]
+<~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_f
+it_boxplot.png, id=281, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/fi
+nal_fit_boxplot.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/fin
+al_fit_boxplot.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
+e_fullRun_30gens/final_fit_boxplot.png  used on input line 541.
+(pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
+
+Overfull \vbox (40.64565pt too high) detected at line 541
+ []
+
+[34
+
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30ge
+ns/final_fit_boxplot.png>] [35
 
 ] [36
 
-
 ] [37
+
+] [38
+
+] [39
+
+] [40
+
+] [41
+
+
+] [42
 
 
 ]
@@ -1133,11 +1211,11 @@ Overfull \hbox (75.36938pt too wide) in paragraph at lines 493--493
 
 (./slides.aux) ) 
 Here is how much of TeX's memory you used:
- 24648 strings out of 478268
- 477382 string characters out of 5846348
- 755009 words of memory out of 5000000
- 42068 multiletter control sequences out of 15000+600000
- 561070 words of font info for 158 fonts, out of 8000000 for 9000
+ 24705 strings out of 478268
+ 481154 string characters out of 5846348
+ 756045 words of memory out of 5000000
+ 42106 multiletter control sequences out of 15000+600000
+ 560969 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1003b,616s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
@@ -1150,10 +1228,10 @@ ype1/public/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 o10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on slides.pdf (37 pages, 571190 bytes).
+Output written on slides.pdf (42 pages, 2650900 bytes).
 PDF statistics:
- 404 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
- 120 named destinations out of 1000 (max. 500000)
- 55431 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 447 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 135 named destinations out of 1000 (max. 500000)
+ 55456 words of extra memory for PDF output out of 61914 (max. 10000000)
 

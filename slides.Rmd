@@ -11,10 +11,10 @@ output:
     # color: "beaver"
     # theme: "Szeged"
     # fonttheme: "structurebold"
-    # fig_width: 12
-    # fig_height: 10
+    # fig_width: 7
+    # fig_height: 5
     # keep_tex: true
-    fig_caption: yes
+    fig_caption: no
     number_sections: true
     slide_level: 2
 toc: yes
@@ -232,15 +232,27 @@ knitr::kable(
 
 ## Lösungsgüte Airfoil
 
-![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png)
+![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png){height=90%}
 
 ## Verteilung Lösungsgüte Airfoil
 
-![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png)
+![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png){height=90%}
 
 ## Lösungsgröße Airfoil
 
 ![Airfoil Datensatz - Größe der besten Lösung über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_Size_byGens.png)
+
+## Kontrollexperiment: Reduzierung der DAE-LSTM Dimension Airfoil
+
+Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer?
+
+## Lösungsgüte Airfoil mit einem hidden Layer
+
+![Airfoil Datensatz - 1 HL - Lösungsgüte über Generationen](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
+
+## Verteilung Lösungsgüte Airfoil mit einem hidden Layer
+
+![Airfoil Datensatz - 1 HL - Lösungsgüte über Generationen](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png)
 
 
 
