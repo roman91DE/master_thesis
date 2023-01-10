@@ -1,5 +1,5 @@
 ---
-title: "Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming"
+#title: "Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming"
 subtitle: "Kolloquium zur Masterarbeit im M.Sc. Wirtschaftspädagogik "
 author: "Roman Hoehn"
 institute: "Johannes Gutenberg-Universität Mainz"
@@ -8,11 +8,10 @@ fontsize: 11pt
 link-citations: true
 output:
   beamer_presentation:
-    # color: "beaver"
-    # theme: "Szeged"
-    # fonttheme: "structurebold"
-    # fig_width: 7
-    # fig_height: 5
+    theme: "Madrid"
+    fonttheme: "structurebold"
+    fig_width: 12
+    fig_height: 10
     # keep_tex: true
     fig_caption: no
     number_sections: true
@@ -22,6 +21,7 @@ bibliography: ref/ref.bib
 csl: csl/harvard-cite-them-right.csl
 includes:
       in_header: [header_files/slides.tex]
+
 ---
 
 
@@ -283,7 +283,8 @@ library(dplyr)
 
 # Create the data frame from csv
 df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv",
+  "/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv",
+  # "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",  -> Use this path to summarize by median
   sep=",",
   colClasses = c("character", "numeric", "character", "numeric", "numeric", "character")
 )

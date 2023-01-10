@@ -402,7 +402,8 @@ library(dplyr)
 
 # Create the data frame from csv
 df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv",
+  "/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv",
+  # "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",  -> Use this path to summarize by median
   sep=",",
   colClasses = c("character", "numeric", "character", "numeric", "numeric", "character")
 )
@@ -428,8 +429,8 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "c",
- caption = "Symbolic Regression Overview - Mean final Fitness"
+ align = "c"
+ #caption = "Symbolic Regression Overview - Mean final Fitness"
 ) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
