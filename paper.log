@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  2 JAN 2023 16:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  10 JAN 2023 10:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -666,222 +666,206 @@ l.147 \newpage
 
 [2] [3]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-78.
+92.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4] [5]
-<./img/flowcharts/dae-gp.png, id=115, 757.83125pt x 1002.74625pt>
+<./img/flowcharts/dae-gp.png, id=165, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 443.
+Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 472.
 (pdftex.def)             Requested size: 469.75801pt x 621.57385pt.
 [6] [7 <./img/flowcharts/dae-gp.png>]
-<./img/flowcharts/pt-dae-gp.png, id=131, 1031.855pt x 1620.0525pt>
+<./img/flowcharts/pt-dae-gp.png, id=182, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 465
+Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 494
 .
 (pdftex.def)             Requested size: 414.27768pt x 650.43208pt.
 [8]
 Overfull \vbox (25.73122pt too high) has occurred while \output is active []
 
 [9 <./img/flowcharts/pt-dae-gp.png>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-94.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+24.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10] [11]
-<./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png, 
-id=156, 1011.78pt x 867.24pt>
-File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.
-png Graphic file (type png)
-<use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.p
-ng>
-Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
-g_error_by_neurons.png  used on input line 633.
+[10]
+<./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png, id
+=214, 1011.78pt x 867.24pt>
+File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.pn
+g Graphic file (type png)
+<use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png
+>
+Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_
+error_by_neurons.png  used on input line 673.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-<./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.png,
- id=157, 867.24pt x 1156.32pt>
-File: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons
-.png Graphic file (type png)
-<use ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.
-png>
-Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_traini
-ng_error_by_neurons.png  used on input line 640.
-(pdftex.def)             Requested size: 469.75827pt x 626.34435pt.
-[12 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.p
-ng>]
-Overfull \vbox (1.64348pt too high) has occurred while \output is active []
-
-[13 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_neurons.
-png>]
+[11]
 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png, id=
-169, 1011.78pt x 867.24pt>
+221, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png
  Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
 
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_
-error_by_layers.png  used on input line 647.
+error_by_layers.png  used on input line 680.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-<./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.png, i
-d=170, 867.24pt x 1156.32pt>
-File: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.p
-ng Graphic file (type png)
-<use ./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.pn
-g>
-Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_boxplot_traini
-ng_error_by_layer.png  used on input line 654.
-(pdftex.def)             Requested size: 469.75827pt x 626.34435pt.
-[14 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
-]
-Overfull \vbox (1.64348pt too high) has occurred while \output is active []
+[12 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png
+>]
 
-[15 <./img/airfoil_firstGen/airfoil_firstGen_boxplot_training_error_by_layer.pn
-g>]
-<./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png, id=181, 1011.78pt
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
+]
+<./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png, id=237, 1011.78pt
  x 867.24pt>
 File: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png Graphic file 
 (type png)
 <use ./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGen
-s.png  used on input line 718.
+s.png  used on input line 747.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[16]
-<./img/airfoil_FullRun_30gens/final_fit_boxplot.png, id=187, 1011.78pt x 867.24
+[14]
+<./img/airfoil_FullRun_30gens/final_fit_boxplot.png, id=242, 1011.78pt x 867.24
 pt>
 File: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png Graphic file (type png
 )
 <use ./img/airfoil_FullRun_30gens/final_fit_boxplot.png>
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png  us
-ed on input line 724.
+ed on input line 751.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[17 <./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>]
-<./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png, id=193, 1011.78pt x
+[15 <./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>]
+<./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png, id=248, 1011.78pt x
  867.24pt>
 File: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png Graphic file (t
 ype png)
 <use ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.
-png  used on input line 727.
+png  used on input line 754.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[18 <./img/airfoil_FullRun_30gens/final_fit_boxplot.png>]
-<./img/airfoil_FullRun_30gens/mean_Size_byGens.png, id=200, 722.7pt x 578.16pt>
+[16 <./img/airfoil_FullRun_30gens/final_fit_boxplot.png>]
+<./img/airfoil_FullRun_30gens/mean_Size_byGens.png, id=255, 722.7pt x 578.16pt>
 
 File: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png Graphic file (type png)
 
 <use ./img/airfoil_FullRun_30gens/mean_Size_byGens.png>
 Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png  use
-d on input line 735.
+d on input line 763.
 (pdftex.def)             Requested size: 469.76045pt x 375.80836pt.
-[19 <./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>] [20 <./img/air
-foil_FullRun_30gens/mean_Size_byGens.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 765--769
+[17 <./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[18 <./img/airfoil_FullRun_30gens/mean_Size_byGens.png>] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 865--869
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 770--774
+Underfull \hbox (badness 10000) in paragraph at lines 870--874
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 775--785
+Underfull \hbox (badness 10000) in paragraph at lines 875--885
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 786--792
+Underfull \hbox (badness 10000) in paragraph at lines 886--892
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 793--802
+Underfull \hbox (badness 10000) in paragraph at lines 893--902
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 803--809
+Underfull \hbox (badness 10000) in paragraph at lines 903--909
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 810--816
+Underfull \hbox (badness 10000) in paragraph at lines 910--916
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 817--822
+Underfull \hbox (badness 10000) in paragraph at lines 917--922
 
  []
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 828--828
+Underfull \hbox (badness 3690) in paragraph at lines 928--928
 []\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
 rans-fer learn-ing.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 823--829
+Underfull \hbox (badness 10000) in paragraph at lines 923--929
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 830--835
+Underfull \hbox (badness 10000) in paragraph at lines 930--935
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 836--842
+Underfull \hbox (badness 10000) in paragraph at lines 936--942
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 843--848
+Underfull \hbox (badness 10000) in paragraph at lines 943--948
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 849--855
+Underfull \hbox (badness 10000) in paragraph at lines 949--955
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 856--864
+Underfull \hbox (badness 10000) in paragraph at lines 956--964
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 865--870
+Underfull \hbox (badness 10000) in paragraph at lines 965--970
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 871--877
+Underfull \hbox (badness 10000) in paragraph at lines 971--977
 
  []
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 878--886
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 978--986
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 887--896
+Underfull \hbox (badness 10000) in paragraph at lines 987--996
 
  []
 
-[22] (./paper.aux) ) 
+[21] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 15645 strings out of 478268
- 250666 string characters out of 5846348
- 585155 words of memory out of 5000000
- 33307 multiletter control sequences out of 15000+600000
- 524473 words of font info for 137 fonts, out of 8000000 for 9000
+ 15620 strings out of 478268
+ 249538 string characters out of 5846348
+ 585402 words of memory out of 5000000
+ 33294 multiletter control sequences out of 15000+600000
+ 518167 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,9n,77p,1002b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-e
@@ -899,10 +883,10 @@ fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
 public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/
 lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt10.pfb
 >
-Output written on paper.pdf (23 pages, 1057338 bytes).
+Output written on paper.pdf (22 pages, 925092 bytes).
 PDF statistics:
- 395 PDF objects out of 1000 (max. 8388607)
- 322 compressed objects within 4 object streams
+ 439 PDF objects out of 1000 (max. 8388607)
+ 371 compressed objects within 4 object streams
  101 named destinations out of 1000 (max. 500000)
- 30923 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 26817 words of extra memory for PDF output out of 29859 (max. 10000000)
 

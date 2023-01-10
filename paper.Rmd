@@ -367,16 +367,7 @@ Regarding the hidden neurons, the dimension of each hidden layer, I used two dif
 
 ![Best Fitness over 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png)
 
-```{python, load_MWU, include=FALSE}
-from json import load
 
-S = load(open("./data/airfoil_FullRun_30gens/MWU-BestFitnessByGen.json", "r", encoding="utf-8"))
-statistic_mwu_fitness = S["statistic"]
-pval_mwu_fitness = round(S["p-value"], 4)
-print(pval_mwu_fitness)
-```
-
-The result of the MWU test is `r py$pval_mwu_fitness`
 
 
 ![Best Fitness Distribution after 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/final_fit_boxplot.png)
@@ -395,26 +386,23 @@ To gather more confidence in the previous results, the pre-training strategy for
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
-  caption="Overview Real World Symbolic Regression Benchmark Problems"
+  caption="Overview - Real World Symbolic Regression Benchmark Problems"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-Table X summarizes the median best fitness achieved after running each algorithm for 30 runs using a population size of 500 individuals. Statistically significant differences are marked by using asteriks for ($\alpha$) 0.1, 0.05 and 0.01.
+Table X summarizes the median best fitness achieved after running each algorithm for 30 runs using a population size of 500 individuals.^[P-Values are marked with asteriks (1,2,3) for ($\alpha$) (0.1, 0.05 and 0.01)].
 
-```{python createCSV_final_fitness_benchmark}
-DIRS=[
-  
-]
-
+``` {bash recreate_csv_file_benchmarkRWSymReg, include=FALSE}
+/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_finalFitness.py
 ```
 
-
-```{r summarize_final_fitness_benchmarkSymReg, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r full_run_realWorldSymReg_performance, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 fig.pos="H"
 knitr::kable(
-  read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
-  caption="Overview Real World Symbolic Regression Benchmark Problems"
+  read.csv("/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv", sep=","),
+  caption="Performance - Real World Symbolic Regression Benchmark Problems"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
+
 
 
 <!-- Results for Energy Cooling Dataset  -->
