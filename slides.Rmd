@@ -1,5 +1,5 @@
 ---
-#title: "Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming"
+title: "Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming"
 subtitle: "Kolloquium zur Masterarbeit im M.Sc. Wirtschaftspädagogik "
 author: "Roman Hoehn"
 institute: "Johannes Gutenberg-Universität Mainz"
@@ -8,7 +8,7 @@ fontsize: 11pt
 link-citations: true
 output:
   beamer_presentation:
-    theme: "Madrid"
+    #theme: "Madrid"
     fonttheme: "structurebold"
     fig_width: 12
     fig_height: 10
@@ -32,7 +32,7 @@ library(reticulate)
 
 
 knitr::opts_chunk$set(echo = TRUE)
-#knitr::opts_chunk$set(fig.pos = "!H")
+knitr::opts_chunk$set(fig.pos = "!H")
 
 reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 
@@ -85,7 +85,7 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
 
 Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistisches Modell für genetische Algorithmen ^[@harmless_overfitting_eda]
 
-2 Phase Ansatz:
+2 Phasen Ansatz:
 
   1. Model Building: Modell "lernt" die Eigenschaften von ausgewählten Lösungen hoher Güte durch das Trainieren eines DAEs
   2. Model Sampling: Neue Lösungen werden erzeugt durch das propagieren von bestehenden, mutierten Lösungen durch das erlernte Modell 
