@@ -279,26 +279,30 @@ knitr::kable(
 ```{r full_run_realWorldSymReg_performance, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
+library(dplyr)
 
-# Create a sample data frame
+# Create the data frame from csv
 df <- read.csv("/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv", sep=",")
 
+# Create a new dataframe with the modified values of the two columns,
+df_bold <- df 
 
-# Create a function to format the values
-bold_min <- function(x, y){
-  if(x <= y) return(paste0("**", x, "**"))
-  else return(x)
+for(i in 1:nrow(df)){
+  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"])
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(df_bold[i, "DAE.GP"]))
+  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"])
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(df_bold[i, "Pre.Trained_DAE.GP"]))
 }
 
-# Apply the function to the data frame
-df <- mapply(bold_min, df$DAE_GP, df$Pre_Trained_DAE_GP)
-#print(df)
-
-fig.pos="H"
+# 
 knitr::kable(
-  df,
-  #caption="Performance - Real World Symbolic Regression Benchmark Problems"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+ df_bold,
+ format = "markdown",
+ digits = 3,
+ caption="Performance - Real World Symbolic Regression Benchmark Problems"
+)
+%>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+
 ```
 
 
