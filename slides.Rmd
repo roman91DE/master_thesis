@@ -140,7 +140,7 @@ Mögliche Vorteile durch Pre-Training^[@pmlr-v5-erhan09a]:
 
 Gewählte Pre-Training Strategie: 
 
-* (Klassisches) Pre-Training: Einmaliges Training eines DAE-LSTM mit einer großen Population aus Lösungskandidaten $\hat{P}_{train}$
+* (Klassisches) Pre-Training: Einmaliges Pre-Training eines DAE-LSTM mit einer großen Population aus Lösungskandidaten $\hat{P}_{train}$
 
 * Trainingsmethode Early Stopping: Abbruch des Trainings sobald der Testfehler für eine seperate Population $\hat{P}_{test}$ konvergiert
 
