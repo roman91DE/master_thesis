@@ -220,13 +220,13 @@ knitr::kable(
   caption="Hyperparameter"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-## Funktions Set
+## Funktions Set Symbolische Regression
 
 ```{r airfoil_function_set, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/airfoil_function_set"),
-  caption="Funktions Set"
+  #caption="Funktions Set"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
@@ -273,7 +273,7 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-## Zusammenfassung Experimente zur symbolischen Regression
+## Mean RMSE - Übersicht
 
 
 ```{r full_run_realWorldSymReg_performance, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
@@ -282,35 +282,55 @@ library(kableExtra)
 library(dplyr)
 
 # Create the data frame from csv
-df <- read.csv("/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv", sep=",")
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv",
+  sep=",",
+  colClasses = c("character", "numeric", "character", "numeric", "numeric", "character")
+)
 
 # Create a new dataframe with the modified values of the two columns,
 df_bold <- df 
 
 for(i in 1:nrow(df)){
-  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"])
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(df_bold[i, "DAE.GP"]))
-  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"])
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(df_bold[i, "Pre.Trained_DAE.GP"]))
+  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],4)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],4))
+    }
+  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],4)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],4))
+  }
 }
+# shorten column names
+col_names <- c("Problem", "Hid.Layers", "Set", "DAE-GP", "Pre-Trained", "P-Value")
 
-# 
+
 knitr::kable(
  df_bold,
  format = "markdown",
- digits = 3,
- caption="Performance - Real World Symbolic Regression Benchmark Problems"
-)
-%>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+ col.names = col_names,
+ align = "c"
+ #caption = "Symbolic Regression Overview - Mean final Fitness"
+) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
+## Fitness - Energy Cooling Datensatz
+
+![Energy (Cooling) Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/mean_median_fitness_byGens.png)
+
+## Fitness - Boston Housing Datensatz
+
+![Boston Housing Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
+
+## Auswertung
+
+Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf die erzielte Lösungsqualität in den durchgeführten Experimenten!
 
 
-## Generalisierungsverhalten
 
-## Lösungsqualität
 
-# Resultate
+
+
 
 # Weitere Ansätze
 

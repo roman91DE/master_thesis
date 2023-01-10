@@ -396,11 +396,42 @@ Table X summarizes the median best fitness achieved after running each algorithm
 ```
 
 ```{r full_run_realWorldSymReg_performance, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv",
+  sep=",",
+  colClasses = c("character", "numeric", "character", "numeric", "numeric", "character")
+)
+
+# Create a new dataframe with the modified values of the two columns,
+df_bold <- df 
+
+for(i in 1:nrow(df)){
+  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],4)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],4))
+    }
+  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],4)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],4))
+  }
+}
+# shorten column names
+col_names <- c("Problem", "Hid.Layers", "Set", "DAE-GP", "Pre-Trained", "P-Value")
+
+
 knitr::kable(
-  read.csv("/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv", sep=","),
-  caption="Performance - Real World Symbolic Regression Benchmark Problems"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
+ df_bold,
+ format = "markdown",
+ col.names = col_names,
+ align = "c",
+ caption = "Symbolic Regression Overview - Mean final Fitness"
+) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+
 ```
 
 
