@@ -387,6 +387,36 @@ Since @dae-gp_2022_symreg shows, that DAE-GP finds higher quality that are also 
 
 ![Average Solution Size over 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/mean_Size_byGens.png)
 
+<!-- Overview Real World SymReg  -->
+
+To gather more confidence in the previous results, the pre-training strategy for DAE-GP was tested for various real world symbolic regression problems taken from @machine_learning_repo. Are brief summary of the benchmark problems is given in table X
+
+```{r full_run_realWorldSymReg_problems, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+fig.pos="H"
+knitr::kable(
+  read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
+  caption="Overview Real World Symbolic Regression Benchmark Problems"
+)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
+```
+Table X summarizes the median best fitness achieved after running each algorithm for 30 runs using a population size of 500 individuals. Statistically significant differences are marked by using asteriks for ($\alpha$) 0.1, 0.05 and 0.01.
+
+```{python createCSV_final_fitness_benchmark}
+DIRS=[
+  
+]
+
+```
+
+
+```{r summarize_final_fitness_benchmarkSymReg, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+fig.pos="H"
+knitr::kable(
+  read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
+  caption="Overview Real World Symbolic Regression Benchmark Problems"
+)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+
 <!-- Results for Energy Cooling Dataset  -->
 
 ```{bash compile_energyCooling_2hl_maxIndSize_fullRun_30gens, include=FALSE}
