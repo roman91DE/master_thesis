@@ -282,7 +282,7 @@ library(kableExtra)
 
 # Create a sample data frame
 df <- read.csv("/Users/rmn/github/master_thesis/data/summary_table_final_fit.csv", sep=",")
-print(df)
+
 
 # Create a function to format the values
 bold_min <- function(x, y){
@@ -291,8 +291,8 @@ bold_min <- function(x, y){
 }
 
 # Apply the function to the data frame
-df$DAE.GP <- mapply(bold_min, df$DAE_GP, df$Pre_Trained_DAE_GP)
-)
+df <- mapply(bold_min, df$DAE_GP, df$Pre_Trained_DAE_GP)
+#print(df)
 
 fig.pos="H"
 knitr::kable(
