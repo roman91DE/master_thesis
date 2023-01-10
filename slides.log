@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  9 JAN 2023 16:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  10 JAN 2023 14:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1055,13 +1055,46 @@ Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 380
 
 ] [20
 
-] [21
+]
+Overfull \vbox (14.86447pt too high) detected at line 423
+ []
 
-] [22
+[21
 
-] [23
+]
+<./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png, id=
+190, 1011.78pt x 867.24pt>
+File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png
+ Graphic file (type png)
+<use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
 
-] [24
+Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_
+error_by_layers.png  used on input line 433.
+(pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
+
+Overfull \vbox (58.06093pt too high) detected at line 433
+ []
+
+[22
+
+ <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>]
+<./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png, id
+=198, 1011.78pt x 867.24pt>
+File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.pn
+g Graphic file (type png)
+<use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png
+>
+Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_
+error_by_neurons.png  used on input line 445.
+(pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
+
+Overfull \vbox (78.64565pt too high) detected at line 445
+ []
+
+[23
+
+ <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png>] 
+[24
 
 ] [25
 
@@ -1071,8 +1104,12 @@ Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 380
 
 ] [28
 
-
 ] [29
+
+] [30
+
+
+] [31
 
 
 ]
@@ -1087,11 +1124,11 @@ Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 380
 
 (./slides.aux) ) 
 Here is how much of TeX's memory you used:
- 24572 strings out of 478268
- 475503 string characters out of 5846348
- 755913 words of memory out of 5000000
- 42030 multiletter control sequences out of 15000+600000
- 557898 words of font info for 153 fonts, out of 8000000 for 9000
+ 24601 strings out of 478268
+ 476763 string characters out of 5846348
+ 754913 words of memory out of 5000000
+ 42046 multiletter control sequences out of 15000+600000
+ 558100 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1003b,616s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
@@ -1103,10 +1140,10 @@ ype1/public/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /lm/lmsso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso
 8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></us
 r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on slides.pdf (29 pages, 302576 bytes).
+Output written on slides.pdf (31 pages, 541136 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
- 94 named destinations out of 1000 (max. 500000)
- 53365 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 281 compressed objects within 3 object streams
+ 100 named destinations out of 1000 (max. 500000)
+ 53375 words of extra memory for PDF output out of 61914 (max. 10000000)
 
