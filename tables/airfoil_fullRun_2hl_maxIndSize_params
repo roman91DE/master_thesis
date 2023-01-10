@@ -3,7 +3,7 @@ populationSize,500
 generations,30
 fitness,RMSE
 TrainingMode,Convergence
-SamplingSteps,2
+SamplingSteps,1
 hiddenLayers,2
 Selection,Binary Tournament Selection
 Pre-Training PopulationSize(Training/Validation),10000/100000

@@ -26,8 +26,23 @@ includes:
 
 
 ```{r setup, include=FALSE}
+library(kableExtra)
 library(magrittr)
+library(reticulate)
+
+
 knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(fig.pos = "!H")
+
+reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
+
+```
+
+
+
+```{python pytest, echo=FALSE, include=FALSE}
+from sys import version, executable
+print(f"Python Version: {version} \nPath: {executable}")
 ```
 
 
@@ -154,15 +169,16 @@ Gewählte Pre-Training Strategie:
 
 ... hidden neurons ... 
 
-# Experimente
 
-## Generalisierungsverhalten 
+# Experiment Generalisierungsverhalten 
 
-Fragestellung: Welchen Einfluss hat die Dimension der eingesetzten DAE-LSTMs auf das Generalisierungsverhalten von DAE-GP in Kombination mit Pre-Training?
+## Fragestellung
+
+Welchen Einfluss hat die Dimension der eingesetzten DAE-LSTMs auf das Generalisierungsverhalten von DAE-GP in Kombination mit Pre-Training?
 
 Experimenteller Aufbau: 
 
-* Ausschließliche Betrachtung des Rekonstruktionsfehlers der ersten Generation der DAE-GP Läufe  
+* Ausschließliche Betrachtung des Rekonstruktionsfehlers der ersten Generation (Nutzung von seperaten Test- und Trainingspopulationen)
 * DAE-LSTM Training erfolgt über eine fixe Anzahl von $5000$ Epochen (kein frühzeitiger Abbruch bei Konvergenz des Testfehlers)
 
 Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe):
@@ -173,11 +189,61 @@ Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe
 
 ## Einfluss der Anzahl von Hidden Layers
 
-![First Generation Median Training Error for variable number of hidden Layers - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers.png){height=75%}
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers.png){height=85%}
 
 ## Einfluss der Anzahl von Hidden Neurons
 
-![First Generation Median Training Error for variable number of hidden Neurons - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png){height=75%}
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png){height=85%}
+
+## Interpretation
+
+# Experiment Suchverhalten Airfoil Datensatz
+
+## Fragestellung
+
+Welchen Einfluss hat die Verwendung einer Pre-Training Strategie auf das Suchverhalten von DAE-GP bei der Anwendung auf dem Airfoil Datensatz für symbolische Regressionsprobleme?
+
+Aufbau: Betrachtung des Suchverhalten über je 10 Gesamtduchläufe für DAE-GP, pre-trained DAE-GP und reguläres GP ($30$ Durchläufe gesamt)
+
+Fokus insbesondere auf:
+
+* Lösungsgüte
+* Größe der gefundenen Lösungen
+* Populationsdiversität
+
+## Hyperparameter
+
+```{r airfoil_fullRun_2hl_maxIndSize_params, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+fig.pos="H"
+knitr::kable(
+  read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
+  caption="Hyperparameter"
+)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
+```
+## Funktions Set
+
+```{r airfoil_function_set, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+fig.pos="H"
+knitr::kable(
+  read.csv("./tables/airfoil_function_set"),
+  caption="Funktions Set"
+)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
+```
+
+## Lösungsgüte Airfoil
+
+![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png)
+
+## Verteilung Lösungsgüte Airfoil
+
+![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png)
+
+## Lösungsgröße Airfoil
+
+![Airfoil Datensatz - Größe der besten Lösung über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_Size_byGens.png)
+
+
+
 
 Anwendung
 
