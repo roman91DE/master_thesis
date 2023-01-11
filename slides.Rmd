@@ -219,7 +219,7 @@ Fokus insbesondere auf:
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
-  caption="Hyperparameter"
+  # caption="Hyperparameter"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 ## Funktions Set Symbolische Regression
@@ -228,7 +228,7 @@ knitr::kable(
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/airfoil_function_set"),
-  #caption="Funktions Set"
+  # caption="Funktions Set"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
