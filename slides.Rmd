@@ -385,15 +385,14 @@ knitr::kable(
 \includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
 \includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} \\
 \includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png}
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png}
 \end{tabular}
 
 
 
-
-
-
 # Weitere Ansätze
+
+...
 
 
 # References {.allowframebreaks} 

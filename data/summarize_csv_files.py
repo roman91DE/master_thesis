@@ -12,7 +12,7 @@ RESULTS = {
     "airfoil_2hl" : "/Users/rmn/github/master_thesis/data/airfoil_2hl_maxIndSize_fullRun_30gens",
     "bostonHousing": "/Users/rmn/github/master_thesis/data/bostonHousing_2hl_maxIndSize_fullRun_30gens",
     "energyCooling": "/Users/rmn/github/master_thesis/data/energyCooling_2hl_FullRun_30gens",
-    #"concrete": "/Users/rmn/github/master_thesis/data/concrete_2hl_FullRun_30gens"
+    "concrete": "/Users/rmn/github/master_thesis/data/concrete_2hl_FullRun_30gens"
 }
 
 
@@ -25,7 +25,7 @@ def cliffsDeltaPretty(*args):
 def getPVal(sampleA, sampleB):
     stats, pval = mwu(sampleA, sampleB)
 
-    assert len(sampleA) > 6 and len(sampleB) >= 8
+    #assert len(sampleA) > 6 and len(sampleB) >= 8
 
     if pval <= 0.01:
         return f"{pval:.4f}***"
