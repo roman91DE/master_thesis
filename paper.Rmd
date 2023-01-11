@@ -321,15 +321,19 @@ In general I expect that with a growing number of model parameters (either by ad
 
 Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will have an insignificant or even negative influence on small DAE-LSTM instances while improving the networks generalization ability with growing size.
 
+```{bash executeFirstGenNBs, include=FALSE}
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluate_airfoilFirstGen.sh
+```
+
 <!--- analyze results 1 hidden layer and variable number of hidden neurons -->
 
-![First Generation Median Training Error for variable number of hidden Neurons - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png)
+![First Generation Median Training Error for variable number of hidden Neurons - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6plots.png)
 
 
 
 <!--- analyzing the results for variable number of layers -->
 
-![First Generation Median Training Error for variable number of hidden Layers - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png)
+![First Generation Median Training Error for variable number of hidden Layers - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6plot.png)
 
 
 ## Effect on search performance
@@ -347,7 +351,9 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_maxIndSiz
 # boston housing
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_maxIndSize_fullRun_30gens/re_evaluate_bostonHousing_2hl_maxIndSize_fullRun_30gens.sh
 
-# add new experiments for full runs here!
+# concrete
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_fullRun_30gens/re_evaluate_concrete_2hl_maxIndSize_fullRun_30gens.sh
+
 # ...
 ```
 
@@ -392,10 +398,12 @@ knitr::kable(
 Table X summarizes the median best fitness achieved after running each algorithm for 10 runs using a population size of 500 individuals for 30 generations.^[P-Values are marked with asteriks (1,2,3) for ($\alpha$)-levels of $0.1$, $0.05$ and $0.01$].
 
 ``` {bash recreate_csv_file_benchmarkRWSymReg, include=FALSE}
-/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_finalFitness.py
+/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_csv_files.py
 ```
 
-```{r full_run_realWorldSymReg_performance, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+
+
+```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -405,7 +413,7 @@ df <- read.csv(
   "/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv",
   # "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",  -> Use this path to summarize by median
   sep=",",
-  colClasses = c("character", "numeric", "character", "numeric", "numeric", "character")
+  colClasses = c("character", "numeric", "character", "numeric", "numeric", "character", "character")
 )
 
 # Create a new dataframe with the modified values of the two columns,
@@ -422,7 +430,7 @@ for(i in 1:nrow(df)){
   }
 }
 # shorten column names
-col_names <- c("Problem", "Hid.Layers", "Set", "DAE-GP", "Pre-Trained", "P-Value")
+col_names <- c("Problem", "Hidden-Layers", "Set", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
 
 
 knitr::kable(
@@ -431,17 +439,61 @@ knitr::kable(
  col.names = col_names,
  align = "c"
  #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+) %>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 
 ```
 
+## Solution Size in Symbolic Regression
+
+<!-- Overview Table  -->
+
+```{r full_run_realWorldSymReg_best_solution_size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv",
+  sep=",",
+  colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
+)
+
+# Create a new dataframe with the modified values of the two columns,
+df_bold <- df 
+
+for(i in 1:nrow(df)){
+  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],4)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],4))
+    }
+  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],4)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],4))
+  }
+}
+# shorten column names
+col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
 
 
-<!-- Results for Energy Cooling Dataset  -->
+knitr::kable(
+ df_bold,
+ format = "markdown",
+ col.names = col_names,
+ align = "c"
+ #caption = "Symbolic Regression Overview - Mean final Fitness"
+) %>% row_spec(0,bold=FALSE) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
-```{bash compile_energyCooling_2hl_maxIndSize_fullRun_30gens, include=FALSE}
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_maxIndSize_fullRun_30gens/re_evaluate_energyCooling_2hl_maxIndSize_fullRun_30gens.sh
 ```
+
+<!-- Overview Plots  -->
+
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} \\
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png}
+\end{tabular}
 
 
 # Discussion
