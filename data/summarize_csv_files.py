@@ -2,6 +2,7 @@ import json
 from scipy.stats import mannwhitneyu as mwu
 from scipy.stats import normaltest
 from vargha_delahni_A import VD_A
+from cliffs_delta import cliffs_delta
 
 from os.path import join
 import numpy as np
@@ -16,6 +17,10 @@ RESULTS = {
 
 
 FILENAME="best_final_fitness.json"
+
+def cliffsDeltaPretty(*args):
+    val,desc = cliffs_delta(*args)
+    return f"{val}"
 
 def getPVal(sampleA, sampleB):
     stats, pval = mwu(sampleA, sampleB)
@@ -36,7 +41,7 @@ def getPVal(sampleA, sampleB):
 # ---
 
 # summarize by mean
-csv_string = "Problem,Hidden_Layer,Dataset,DAE-GP,Pre-Trained_DAE-GP,P_Value,VDA\n"
+csv_string = "Problem,Hidden_Layer,Dataset,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
 
 for problem,path in RESULTS.items():
 
@@ -62,7 +67,7 @@ for problem,path in RESULTS.items():
     assert d["DAE-GP (test)"] != d["Pre-Trained (test)"]
 
 
-    csv_string += f"{d['problem']},{d['hiddenLayer']},Train,{reg_mean_train},{pt_mean_train},{getPVal(d['DAE-GP (train)'], d['Pre-Trained (train)'])},{VD_A(d['DAE-GP (train)'], d['Pre-Trained (train)'])}\n,{d['hiddenLayer']},Test,{reg_mean_test},{pt_mean_test},{getPVal(d['DAE-GP (test)'], d['Pre-Trained (test)'])},{VD_A(d['DAE-GP (test)'], d['Pre-Trained (test)'])}\n"
+    csv_string += f"{d['problem']},{d['hiddenLayer']},Train,{reg_mean_train},{pt_mean_train},{getPVal(d['DAE-GP (train)'], d['Pre-Trained (train)'])},{cliffsDeltaPretty(d['Pre-Trained (train)'], d['DAE-GP (train)'])}\n,{d['hiddenLayer']},Test,{reg_mean_test},{pt_mean_test},{getPVal(d['DAE-GP (test)'], d['Pre-Trained (test)'])},{cliffsDeltaPretty(d['Pre-Trained (test)'], d['DAE-GP (test)'])}\n"
 
 
 with open("/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv", "w", encoding="utf-8") as f:
@@ -70,7 +75,7 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv
 
 
 # summarize by median
-csv_string = "Problem,Hidden_Layer,Dataset,DAE-GP,Pre-Trained_DAE-GP,P_Value\n"
+csv_string = "Problem,Hidden_Layer,Dataset,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
 
 for problem,path in RESULTS.items():
 
@@ -85,7 +90,7 @@ for problem,path in RESULTS.items():
     assert d["DAE-GP (test)"] != d["Pre-Trained (test)"]
 
 
-    csv_string += f"{d['problem']},{d['hiddenLayer']},Train,{reg_med_train},{pt_med_train},{getPVal(d['DAE-GP (train)'], d['Pre-Trained (train)'])}\n,{d['hiddenLayer']},Test,{reg_med_test},{pt_med_test},{getPVal(d['DAE-GP (test)'], d['Pre-Trained (test)'])}\n"
+    csv_string += f"{d['problem']},{d['hiddenLayer']},Train,{reg_med_train},{pt_med_train},{getPVal(d['DAE-GP (train)'], d['Pre-Trained (train)'])},{cliffsDeltaPretty(d['Pre-Trained (train)'], d['DAE-GP (train)'])}\n,{d['hiddenLayer']},Test,{reg_med_test},{pt_med_test},{getPVal(d['DAE-GP (test)'], d['Pre-Trained (test)'])},{cliffsDeltaPretty(d['Pre-Trained (test)'], d['DAE-GP (test)'])}\n"
 
 
 with open("/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv", "w", encoding="utf-8") as f:
@@ -99,7 +104,7 @@ FILENAME_SIZE = "size_best_solution.json"
 # ---
 
 # summarize by mean
-csv_string = "Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value\n"
+csv_string = "Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
 
 for problem,path in RESULTS.items():
 
@@ -110,7 +115,7 @@ for problem,path in RESULTS.items():
     pt_mean = np.mean(d["Pre-Trained"])
 
 
-    csv_string += f"{d['problem']},{d['hiddenLayer']},{reg_mean},{pt_mean},{getPVal(d['DAE-GP'], d['Pre-Trained'])}\n"
+    csv_string += f"{d['problem']},{d['hiddenLayer']},{reg_mean},{pt_mean},{getPVal(d['DAE-GP'], d['Pre-Trained'])},{cliffsDeltaPretty(d['Pre-Trained'], d['DAE-GP'])}\n"
 
 
 with open("/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv", "w", encoding="utf-8") as f:

@@ -4,7 +4,7 @@ subtitle: "Kolloquium zur Masterarbeit im M.Sc. Wirtschaftspädagogik "
 author: "Roman Hoehn"
 institute: "Johannes Gutenberg-Universität Mainz"
 date: "Datum: 25.01.2023"
-fontsize: 11pt
+#fontsize: 11pt
 link-citations: true
 output:
   beamer_presentation:
@@ -32,7 +32,7 @@ library(reticulate)
 
 
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(fig.pos = "!H")
+knitr::opts_chunk$set(fig.pos = "H")
 
 reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 
@@ -231,10 +231,20 @@ knitr::kable(
   # caption="Funktions Set"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-
-## Lösungsgüte Airfoil
+## Airfoil Vergleich GP
 
 ![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png){height=90%}
+
+
+## Ergebnisse - Lösungsgüte Airfoil
+
+\begin{tabular}{c}
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_meadian_fitness_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png} \\
+
+\end{tabular}
+
+
 
 ## Verteilung Lösungsgüte Airfoil
 
@@ -288,7 +298,7 @@ df <- read.csv(
   "/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv",
   # "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",  -> Use this path to summarize by median
   sep=",",
-  colClasses = c("character", "numeric", "character", "numeric", "numeric", "character")
+  colClasses = c("character", "numeric", "character", "numeric", "numeric", "character", "character")
 )
 
 # Create a new dataframe with the modified values of the two columns,
@@ -305,7 +315,7 @@ for(i in 1:nrow(df)){
   }
 }
 # shorten column names
-col_names <- c("Problem", "Hid.Layers", "Set", "DAE-GP", "Pre-Trained", "P-Value")
+col_names <- c("Problem", "Hidden-Layers", "Set", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
 
 
 knitr::kable(
@@ -314,10 +324,9 @@ knitr::kable(
  col.names = col_names,
  align = "c"
  #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+) %>% row_spec(0,bold=FALSE, font_size=7 ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size=7)
 
 ```
-*P-Werte sind markiert mit (1,2,3) Sternen für $\alpha$ gleich ($0.1$, $0.05$ and $0.01$), Statistischer Test: Mann-Whitney U [@]*
 
 
 
@@ -350,7 +359,7 @@ library(dplyr)
 df <- read.csv(
   "/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv",
   sep=",",
-  colClasses = c("character", "numeric", "numeric", "numeric", "character")
+  colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
 )
 
 # Create a new dataframe with the modified values of the two columns,
@@ -367,7 +376,7 @@ for(i in 1:nrow(df)){
   }
 }
 # shorten column names
-col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value")
+col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
 
 
 knitr::kable(
@@ -376,7 +385,7 @@ knitr::kable(
  col.names = col_names,
  align = "c"
  #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+) %>% row_spec(0,bold=FALSE) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
 ## Durchschnittliche Lösungsgröße - Symbolische Regression
