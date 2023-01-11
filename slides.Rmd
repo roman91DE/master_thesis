@@ -317,6 +317,8 @@ knitr::kable(
 ) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
+^[P-Werte markiert mit (*,**,***) für $\alpha$ ($0.1$, $0.05$ and $0.01$), Statistischer Test: Mann-Whitney U]
+
 ## Fitness - Energy Cooling Datensatz
 
 ![Energy (Cooling) Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/mean_median_fitness_byGens.png)
@@ -335,7 +337,7 @@ Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf
 * Concrete: 
 
 
-## Auswertung Lösungsgröße - Symbolische Regression
+## Auswertung Mean der Größe der besten Individuen - Symbolische Regression
 
 ```{r full_run_realWorldSymReg_best_solution_size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
