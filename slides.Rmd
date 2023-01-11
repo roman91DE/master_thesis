@@ -317,7 +317,9 @@ knitr::kable(
 ) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
-^[P-Werte markiert mit (*,**,***) für $\alpha$ ($0.1$, $0.05$ and $0.01$), Statistischer Test: Mann-Whitney U]
+*P-Werte sind markiert mit (1,2,3) Sternen für $\alpha$ gleich ($0.1$, $0.05$ and $0.01$), Statistischer Test: Mann-Whitney U [@]*
+
+
 
 ## Fitness - Energy Cooling Datensatz
 
@@ -377,6 +379,17 @@ knitr::kable(
 ) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
+## Durchschnittliche Lösungsgröße - Symbolische Regression
+
+
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} \\
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png}
+\end{tabular}
+
+
 
 
 

@@ -1,6 +1,7 @@
 import json
 from scipy.stats import mannwhitneyu as mwu
 from scipy.stats import normaltest
+from vargha_delahni_A import VD_A
 
 from os.path import join
 import numpy as np
@@ -35,7 +36,7 @@ def getPVal(sampleA, sampleB):
 # ---
 
 # summarize by mean
-csv_string = "Problem,Hidden_Layer,Dataset,DAE-GP,Pre-Trained_DAE-GP,P_Value\n"
+csv_string = "Problem,Hidden_Layer,Dataset,DAE-GP,Pre-Trained_DAE-GP,P_Value,VDA\n"
 
 for problem,path in RESULTS.items():
 
@@ -61,7 +62,7 @@ for problem,path in RESULTS.items():
     assert d["DAE-GP (test)"] != d["Pre-Trained (test)"]
 
 
-    csv_string += f"{d['problem']},{d['hiddenLayer']},Train,{reg_mean_train},{pt_mean_train},{getPVal(d['DAE-GP (train)'], d['Pre-Trained (train)'])}\n,{d['hiddenLayer']},Test,{reg_mean_test},{pt_mean_test},{getPVal(d['DAE-GP (test)'], d['Pre-Trained (test)'])}\n"
+    csv_string += f"{d['problem']},{d['hiddenLayer']},Train,{reg_mean_train},{pt_mean_train},{getPVal(d['DAE-GP (train)'], d['Pre-Trained (train)'])},{VD_A(d['DAE-GP (train)'], d['Pre-Trained (train)'])}\n,{d['hiddenLayer']},Test,{reg_mean_test},{pt_mean_test},{getPVal(d['DAE-GP (test)'], d['Pre-Trained (test)'])},{VD_A(d['DAE-GP (test)'], d['Pre-Trained (test)'])}\n"
 
 
 with open("/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv", "w", encoding="utf-8") as f:

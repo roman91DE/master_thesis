@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  11 JAN 2023 10:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  11 JAN 2023 13:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1168,7 +1168,7 @@ g_error_by_neurons.png  used on input line 433.
 ] [26
 
 ]
-Overfull \hbox (75.76938pt too wide) in paragraph at lines 496--496
+Overfull \hbox (75.76938pt too wide) in paragraph at lines 494--494
  [] 
  []
 
@@ -1178,13 +1178,13 @@ Overfull \hbox (75.76938pt too wide) in paragraph at lines 496--496
 
 ]
 <~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/
-mean_median_fitness_byGens.png, id=241, 1011.78pt x 867.24pt>
+mean_median_fitness_byGens.png, id=240, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wi
 thGP/mean_median_fitness_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wit
 hGP/mean_median_fitness_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens_withGP/mean_median_fitness_byGens.png  used on input line 521.
+e_fullRun_30gens_withGP/mean_median_fitness_byGens.png  used on input line 519.
 
 (pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
 [29
@@ -1192,29 +1192,29 @@ e_fullRun_30gens_withGP/mean_median_fitness_byGens.png  used on input line 521.
  </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
 ns_withGP/mean_median_fitness_byGens.png>]
 <~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_f
-it_boxplot.png, id=249, 1011.78pt x 867.24pt>
+it_boxplot.png, id=248, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/fi
 nal_fit_boxplot.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/fin
 al_fit_boxplot.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens/final_fit_boxplot.png  used on input line 526.
+e_fullRun_30gens/final_fit_boxplot.png  used on input line 524.
 (pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
 [30
 
  </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
 ns/final_fit_boxplot.png>]
 <~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/
-mean_Size_byGens.png, id=257, 722.7pt x 578.16pt>
+mean_Size_byGens.png, id=256, 722.7pt x 578.16pt>
 File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wi
 thGP/mean_Size_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wit
 hGP/mean_Size_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens_withGP/mean_Size_byGens.png  used on input line 531.
+e_fullRun_30gens_withGP/mean_Size_byGens.png  used on input line 529.
 (pdftex.def)             Requested size: 307.2923pt x 245.83385pt.
 
-Overfull \vbox (0.16069pt too high) detected at line 531
+Overfull \vbox (0.16069pt too high) detected at line 529
  []
 
 [31
@@ -1224,16 +1224,16 @@ ns_withGP/mean_Size_byGens.png>] [32
 
 ]
 <~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_me
-dian_fitness_byGens.png, id=272, 1011.78pt x 867.24pt>
+dian_fitness_byGens.png, id=271, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/me
 an_median_fitness_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mea
 n_median_fitness_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
-e_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 543.
+e_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 541.
 (pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
 
-Overfull \vbox (17.71648pt too high) detected at line 543
+Overfull \vbox (17.71648pt too high) detected at line 541
  []
 
 [33
@@ -1241,16 +1241,16 @@ Overfull \vbox (17.71648pt too high) detected at line 543
  </Users/rmn/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30ge
 ns/mean_median_fitness_byGens.png>]
 <~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_f
-it_boxplot.png, id=280, 1011.78pt x 867.24pt>
+it_boxplot.png, id=279, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/fi
 nal_fit_boxplot.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/fin
 al_fit_boxplot.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
-e_fullRun_30gens/final_fit_boxplot.png  used on input line 548.
+e_fullRun_30gens/final_fit_boxplot.png  used on input line 546.
 (pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
 
-Overfull \vbox (35.71648pt too high) detected at line 548
+Overfull \vbox (35.71648pt too high) detected at line 546
  []
 
 [34
@@ -1261,44 +1261,47 @@ ns/final_fit_boxplot.png>] [35
 ] [36
 
 ]
-Overfull \hbox (5.32419pt too wide) in paragraph at lines 622--622
+Overfull \hbox (5.32419pt too wide) in paragraph at lines 623--623
  []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
  []
 
 
-Overfull \hbox (6.19052pt too wide) in paragraph at lines 622--622
+Overfull \hbox (6.19052pt too wide) in paragraph at lines 623--623
  []|\T1/lmss/m/n/10.95 (-20) 0.0171**| 
  []
 
 
-Overfull \hbox (16.28519pt too wide) in paragraph at lines 622--622
+Overfull \hbox (16.28519pt too wide) in paragraph at lines 623--623
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (14.59216pt too wide) in paragraph at lines 622--622
+Overfull \hbox (14.59216pt too wide) in paragraph at lines 623--623
  []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
 
-Overfull \hbox (6.19052pt too wide) in paragraph at lines 622--622
+Overfull \hbox (6.19052pt too wide) in paragraph at lines 623--623
  []|\T1/lmss/m/n/10.95 (-20) 0.0188**| 
  []
+
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <9> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 623.
 
 [37
 
 ]
 <~/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/mean_median_
-fitness_byGens.png, id=308, 1011.78pt x 867.24pt>
+fitness_byGens.png, id=309, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/mean_me
 dian_fitness_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/mean_med
 ian_fitness_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_Ful
-lRun_30gens/mean_median_fitness_byGens.png  used on input line 627.
+lRun_30gens/mean_median_fitness_byGens.png  used on input line 628.
 (pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
 
-Overfull \vbox (17.71648pt too high) detected at line 627
+Overfull \vbox (17.71648pt too high) detected at line 628
  []
 
 [38
@@ -1306,16 +1309,16 @@ Overfull \vbox (17.71648pt too high) detected at line 627
  </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/me
 an_median_fitness_byGens.png>]
 <~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
-ean_median_fitness_byGens.png, id=316, 1011.78pt x 867.24pt>
+ean_median_fitness_byGens.png, id=317, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
 ens/mean_median_fitness_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
 ns/mean_median_fitness_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
-IndSize_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 632.
+IndSize_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 633.
 (pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
 
-Overfull \vbox (17.71648pt too high) detected at line 632
+Overfull \vbox (17.71648pt too high) detected at line 633
  []
 
 [39
@@ -1325,16 +1328,61 @@ n_30gens/mean_median_fitness_byGens.png>] [40
 
 ] [41
 
-] [42
+]
+<~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/m
+ean_Size_byGens.png, id=337, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30g
+ens/mean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30ge
+ns/mean_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_max
+IndSize_fullRun_30gens/mean_Size_byGens.png  used on input line 678.
+(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
+<~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
+ean_Size_byGens.png, id=338, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
+ens/mean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
+ns/mean_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
+IndSize_fullRun_30gens/mean_Size_byGens.png  used on input line 678.
+(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Si
+ze_byGens.png, id=339, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/me
+an_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mea
+n_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens/mean_Size_byGens.png  used on input line 678.
+(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/me
+an_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mea
+n_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens/mean_Size_byGens.png  used on input line 678.
+(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
 
-] [43
+Overfull \vbox (1.725pt too high) detected at line 678
+ []
+
+[42
+
+ </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRu
+n_30gens/mean_Size_byGens.png> </Users/rmn/masterThesis/master_thesis/img/bosto
+nHousing_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png> </Users/rmn/master
+Thesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens
+.png>] [43
 
 ] [44
 
 ] [45
 
-
 ] [46
+
+
+] [47
 
 
 ]
@@ -1349,27 +1397,29 @@ n_30gens/mean_median_fitness_byGens.png>] [40
 
 (./slides.aux) ) 
 Here is how much of TeX's memory you used:
- 26401 strings out of 478268
- 515778 string characters out of 5846348
- 790996 words of memory out of 5000000
- 43750 multiletter control sequences out of 15000+600000
- 569934 words of font info for 167 fonts, out of 8000000 for 9000
+ 26408 strings out of 478268
+ 517311 string characters out of 5846348
+ 791957 words of memory out of 5000000
+ 43747 multiletter control sequences out of 15000+600000
+ 573107 words of font info for 171 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1003b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
-c}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/
-texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/20
-22/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2022/texmf-di
-st/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/ty
-pe1/public/lm/lmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
-ic/lm/lmsso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lms
-so8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
-b>
-Output written on slides.pdf (46 pages, 3330726 bytes).
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathi
+t.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/lo
+cal/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/20
+22/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2022/texmf-dist/fonts/t
+ype1/public/lm/lmss8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
+/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbo1
+0.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local
+/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2
+022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/texlive/2022/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on slides.pdf (47 pages, 4124677 bytes).
 PDF statistics:
- 471 PDF objects out of 1000 (max. 8388607)
- 374 compressed objects within 4 object streams
- 146 named destinations out of 1000 (max. 500000)
- 61602 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 493 PDF objects out of 1000 (max. 8388607)
+ 385 compressed objects within 4 object streams
+ 148 named destinations out of 1000 (max. 500000)
+ 63665 words of extra memory for PDF output out of 74296 (max. 10000000)
 
