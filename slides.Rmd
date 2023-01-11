@@ -189,11 +189,11 @@ Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe
 
 ## Einfluss der Anzahl von Hidden Layers
 
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers.png){height=85%}
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6plots.png){height=85%}
 
 ## Einfluss der Anzahl von Hidden Neurons
 
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png){height=85%}
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png){height=85%}
 
 ## Interpretation
 
@@ -322,7 +322,7 @@ knitr::kable(
 
 ## Fitness - Energy Cooling Datensatz
 
-![Energy (Cooling) Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/mean_median_fitness_byGens.png)
+![Energy (Cooling) Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
 
 ## Fitness - Boston Housing Datensatz
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  11 JAN 2023 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  11 JAN 2023 22:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,8 +497,7 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count313
 \l__pdf_internal_box=\box73
-)
-No file paper.aux.
+) (./paper.aux)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 149.
@@ -648,7 +647,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./pape
+r.toc
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 4.
+)
 \tf@toc=\write3
 \openout3 = `paper.toc'.
 
@@ -658,29 +661,27 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.157 \newpage
-               [1]
+               [1] (./paper.lot)
 \tf@lot=\write4
 \openout4 = `paper.lot'.
 
+(./paper.lof)
 \tf@lof=\write5
 \openout5 = `paper.lof'.
 
-[2]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 195.
-[3]
+[2] [3]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 02.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4] [5]
-<./img/flowcharts/dae-gp.png, id=112, 757.83125pt x 1002.74625pt>
+<./img/flowcharts/dae-gp.png, id=165, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 482.
 (pdftex.def)             Requested size: 469.75801pt x 621.57385pt.
 [6] [7 <./img/flowcharts/dae-gp.png>]
-<./img/flowcharts/pt-dae-gp.png, id=131, 1031.855pt x 1620.0525pt>
+<./img/flowcharts/pt-dae-gp.png, id=182, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 504
@@ -700,7 +701,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [10]
 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6plots.
-png, id=167, 1011.78pt x 867.24pt>
+png, id=214, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6p
 lots.png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6pl
@@ -710,7 +711,7 @@ error_by_neurons_6plots.png  used on input line 683.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [11]
 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6plot.pn
-g, id=177, 1011.78pt x 867.24pt>
+g, id=221, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6pl
 ot.png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6plo
@@ -726,7 +727,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [13 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6plo
 t.png>]
 <./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.
-png, id=196, 1011.78pt x 867.24pt>
+png, id=237, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_by
 Gens.png Graphic file (type png)
 <use ./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byG
@@ -735,7 +736,7 @@ Package pdftex.def Info: ./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mea
 n_median_fitness_byGens.png  used on input line 757.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [14]
-<./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png, id=202, 101
+<./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png, id=242, 101
 1.78pt x 867.24pt>
 File: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png Graphic
  file (type png)
@@ -745,27 +746,222 @@ boxplot.png  used on input line 761.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [15 <./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byG
 ens.png>]
+<./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens.png, id=2
+48, 1011.78pt x 867.24pt>
+File: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens.png 
+Graphic file (type png)
+<use ./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens.png>
+Package pdftex.def Info: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_popDi
+versity_byGens.png  used on input line 764.
+(pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
+[16 <./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png>]
+<./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png, id=255, 722.
+7pt x 578.16pt>
+File: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png Graphic 
+file (type png)
+<use ./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png>
+Package pdftex.def Info: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_
+byGens.png  used on input line 773.
+(pdftex.def)             Requested size: 469.76045pt x 375.80836pt.
+[17 <./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens.png>]
+<./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png, id
+=261, 1011.78pt x 867.24pt>
+File: ./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.pn
+g Graphic file (type png)
+<use ./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png
+>
+Package pdftex.def Info: ./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_media
+n_fitness_byGens.png  used on input line 782.
+(pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
+[18 <./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png>]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 816.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 816.
 
-LaTeX Warning: File `./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png'
- not found on input line 764.
+Overfull \hbox (8.22394pt too wide) in paragraph at lines 848--848
+ []|\T1/lmr/m/n/10.95 (-20) Boston_Housing| 
+ []
 
 
-! Package pdftex.def Error: File `./img/airfoil_FullRun_30gens/mean_popDiversit
-y_byGens.png' not found: using draft setting.
+Overfull \hbox (7.24677pt too wide) in paragraph at lines 851--851
+ []|\T1/lmr/m/n/10.95 (-20) Energy(Cooling)| 
+ []
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.764 ...lRun_30gens/mean_popDiversity_byGens.png}
-                                                   
+
+Overfull \hbox (7.16708pt too wide) in paragraph at lines 855--856
+ \T1/lmr/m/n/10.95 (-20) 0.6666666666666666| 
+ []
+
+[19 <./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png
+>]
+<~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/m
+ean_Size_byGens.png, id=275, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30g
+ens/mean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30ge
+ns/mean_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_max
+IndSize_fullRun_30gens/mean_Size_byGens.png  used on input line 897.
+(pdftex.def)             Requested size: 211.38614pt x 169.1089pt.
+<~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
+ean_Size_byGens.png, id=276, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
+ens/mean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
+ns/mean_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
+IndSize_fullRun_30gens/mean_Size_byGens.png  used on input line 898.
+(pdftex.def)             Requested size: 211.38614pt x 169.1089pt.
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Si
+ze_byGens.png, id=277, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/me
+an_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mea
+n_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens/mean_Size_byGens.png  used on input line 899.
+(pdftex.def)             Requested size: 211.38614pt x 169.1089pt.
+<~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/mean_S
+ize_byGens.png, id=278, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/m
+ean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/me
+an_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSi
+ze_fullRun_30gens/mean_Size_byGens.png  used on input line 900.
+(pdftex.def)             Requested size: 211.38614pt x 169.1089pt.
+[20] [21 </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSiz
+e_fullRun_30gens/mean_Size_byGens.png> </Users/rmn/masterThesis/master_thesis/i
+mg/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png> </Users/rm
+n/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Siz
+e_byGens.png> </Users/rmn/masterThesis/master_thesis/img/concrete_2hl_maxIndSiz
+e_fullRun_30gens/mean_Size_byGens.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 929--933
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 934--938
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 939--949
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 950--956
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 957--966
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 967--973
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 974--980
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 981--986
+
+ []
+
+
+Underfull \hbox (badness 3690) in paragraph at lines 992--992
+[]\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
+rans-fer learn-ing.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 987--993
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 994--999
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1000--1006
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1012
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1019
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1020--1028
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1029--1034
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1041
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 1042--1050
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1051--1060
+
+ []
+
+[23] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 15690 strings out of 478268
- 252855 string characters out of 5846348
- 582083 words of memory out of 5000000
- 33389 multiletter control sequences out of 15000+600000
- 517221 words of font info for 123 fonts, out of 8000000 for 9000
+ 15836 strings out of 478268
+ 256576 string characters out of 5846348
+ 598679 words of memory out of 5000000
+ 33462 multiletter control sequences out of 15000+600000
+ 535963 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,9n,77p,1002b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,77p,1002b,433s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-r
+m.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/us
+r/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texliv
+e/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/tex
+mf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts
+/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
+lic/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmm
+i10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/
+fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
+/public/lm/lmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/l
+mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022
+/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on paper.pdf (24 pages, 5270514 bytes).
+PDF statistics:
+ 487 PDF objects out of 1000 (max. 8388607)
+ 399 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 37090 words of extra memory for PDF output out of 42996 (max. 10000000)
 
-!  ==> Fatal error occurred, no output PDF file produced!

@@ -366,10 +366,10 @@ Regarding the hidden neurons, the dimension of each hidden layer, I used two dif
 ![Best Fitness Distribution after 30 Generations - Airfoil](./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png)
 lalal
 
-![Population Diversity over 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png)
+![Population Diversity over 30 Generations - Airfoil](./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens.png)
 Since @dae-gp_2022_symreg shows, that DAE-GP finds higher quality that are also smaller in size than those found by average GP for a given number of 10.000 fitness evaluations, I also studied the differences in average solution size between pre-trained and regular DAE-GP.
 
-![Average Solution Size over 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/mean_Size_byGens.png)
+![Average Solution Size over 30 Generations - Airfoil](./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png)
 
 The experiments was repeated using the same setup with the only difference being a reduction from two hidden layers to 1 hidden layer.
 
@@ -473,7 +473,7 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "c"
+ align = "l"
  #caption = "Symbolic Regression Overview - Mean final Fitness"
 ) %>% row_spec(0,bold=FALSE) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
