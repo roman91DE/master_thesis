@@ -231,24 +231,14 @@ knitr::kable(
   # caption="Funktions Set"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-## Airfoil Vergleich GP
+## Airfoil Übersicht
 
 ![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png){height=90%}
 
 
-## Ergebnisse - Lösungsgüte Airfoil
-
-\begin{tabular}{c}
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_meadian_fitness_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png} \\
-
-\end{tabular}
-
-
-
 ## Verteilung Lösungsgüte Airfoil
 
-![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png){height=90%}
+![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/final_fit_boxplot.png){height=90%}
 
 ## Lösungsgröße Airfoil
 
@@ -264,7 +254,7 @@ Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer?
 
 ## Verteilung Lösungsgüte Airfoil mit einem hidden Layer
 
-![Airfoil Datensatz - 1 HL - Lösungsgüte über Generationen](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png)
+![Airfoil Datensatz - 1 HL - Lösungsgüte über Generationen](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png){height=90%}
 
 ## Anwendung auf weiteren Datensätzen
 
