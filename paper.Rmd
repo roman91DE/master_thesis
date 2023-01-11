@@ -159,19 +159,6 @@ LSTMs are a variant of recurrent neural networks first introduced by @lstm_orig 
 
 ## Pre-Training
 
-<!--- 
-chatGPT
----
-
-Q: what is pre-training in deep learning?
-A: Pre-training in deep learning refers to the process of training a deep learning model on a large dataset before using it for a specific task. The goal of pre-training is to create a model that has a strong general understanding of the data and can be fine-tuned for a specific task.
-
-Pre-training can be done in two ways: unsupervised pre-training and supervised pre-training. In unsupervised pre-training, the model is trained on a large dataset without labels, using techniques such as self-supervised learning or generative adversarial networks (GANs) to learn the underlying patterns in the data. In supervised pre-training, the model is trained on a large dataset with labels, using a supervised learning algorithm to learn the relationship between the input data and the corresponding labels.
-
-Pre-training has several benefits. It can help improve the performance of the model on the target task by providing it with a better initial set of weights. It can also speed up training by reducing the amount of data and computational resources needed to train the model from scratch. Additionally, pre-trained models can be used as a starting point for transfer learning, allowing you to leverage the knowledge and experience of the pre-trained model for a new task.
-
-Overall, pre-training is an important technique in deep learning that can help improve model performance and efficiency. It is commonly used in natural language processing and computer vision applications, where large amounts of labeled data are available.
--->
 
 Pre-Training describes the concept of initially training a neural network on a large dataset before using it to solve a more specific task. 
 It is a commonly used strategy in deep architectures that has been shown to improve both the optimization process itself as well as the generalization behavior if compared to the standard approach of using randomly initialized parameters [@pmlr-v5-erhan09a].
@@ -338,7 +325,7 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluat
 
 ## Effect on search performance
 
-```{bash compile_airfoil_2hl_maxIndSize_fullRun_30gens, include=FALSE}
+```{bash compile_symReg_fullRun_30gens, include=FALSE}
 
 # airfoil
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_1hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_1hl_maxIndSize_30gen.sh
@@ -371,18 +358,24 @@ knitr::kable(
 Regarding the hidden neurons, the dimension of each hidden layer, I used two different strategies: Regular DAE-GP uses the same strategy as described by earlier work (see [@dae-gp_2022_symreg] or [@dae-gp_2020_rtree]), the number of hidden neurons is dynamically set at each generation to the maximum length of all solutions inside the current training population. For pre-trained DAE-GP another strategy had to be used, I used a fixed number of hidden neurons for each run that is set equal to the maximum length of all individuals that are present in the initial pre-training population. I decided to take this aproach instead of using a fixed number of hidden neurons for the fact that it simplifies the adjustment of the parameter for later experiments on different problems. It should nonetheless be mentioned that this strategy does give pre-training on average more hidden neurons per layer resulting in a more complex network (since the pre-training population is much larger than the regular population, the chances for larger individuals inside it are also higher).
 
 
-![Best Fitness over 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png)
+![Best Fitness over 30 Generations - Airfoil](./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png)
 
 
 
 
-![Best Fitness Distribution after 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/final_fit_boxplot.png)
+![Best Fitness Distribution after 30 Generations - Airfoil](./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png)
 lalal
 
 ![Population Diversity over 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png)
 Since @dae-gp_2022_symreg shows, that DAE-GP finds higher quality that are also smaller in size than those found by average GP for a given number of 10.000 fitness evaluations, I also studied the differences in average solution size between pre-trained and regular DAE-GP.
 
 ![Average Solution Size over 30 Generations - Airfoil](./img/airfoil_FullRun_30gens/mean_Size_byGens.png)
+
+The experiments was repeated using the same setup with the only difference being a reduction from two hidden layers to 1 hidden layer.
+
+![Best Fitness over 30 Generations - 1 hidden Layer - Airfoil](./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
+
+...
 
 <!-- Overview Real World SymReg  -->
 
@@ -525,6 +518,5 @@ Different pre-training strategies?
 # II - Statutory Declaration {.unnumbered #II}
 
 ![Statutory Declaration](./private/erklaerung.pdf)\
-
 -->
 

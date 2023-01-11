@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  10 JAN 2023 11:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  11 JAN 2023 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -207,6 +207,69 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen155
 \Gm@layoutvoffset=\dimen156
 \Gm@dimlist=\toks25
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip53
+\LTright=\skip54
+\LTpre=\skip55
+\LTpost=\skip56
+\LTchunksize=\count277
+\LTcapwidth=\dimen157
+\LT@head=\box53
+\LT@firsthead=\box54
+\LT@foot=\box55
+\LT@lastfoot=\box56
+\LT@gbox=\box57
+\LT@cols=\count278
+\LT@rows=\count279
+\c@LT@tables=\count280
+\c@LT@chunks=\count281
+\LT@p@ftn=\toks26
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen158
+\lightrulewidth=\dimen159
+\cmidrulewidth=\dimen160
+\belowrulesep=\dimen161
+\belowbottomsep=\dimen162
+\aboverulesep=\dimen163
+\abovetopsep=\dimen164
+\cmidrulesep=\dimen165
+\cmidrulekern=\dimen166
+\defaultaddspace=\dimen167
+\@cmidla=\count282
+\@cmidlb=\count283
+\@aboverulesep=\dimen168
+\@belowrulesep=\dimen169
+\@thisruleclass=\count284
+\@lastruleclass=\count285
+\@thisrulewidth=\dimen170
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen171
+\ar@mcellbox=\box58
+\extrarowheight=\dimen172
+\NC@list=\toks27
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box59
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count286
+\calc@Bcount=\count287
+\calc@Adimen=\dimen173
+\calc@Bdimen=\dimen174
+\calc@Askip=\skip59
+\calc@Bskip=\skip60
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count288
+\calc@Cskip=\skip61
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/footnotehyper/footnotehyper.sty
+Package: footnotehyper 2021/08/13 v1.1e hyperref aware footnote.sty (JFB)
+\FNH@notes=\box60
+\FNH@width=\dimen175
+\FNH@toks=\toks28
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
@@ -218,99 +281,41 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen157
-\Gin@req@width=\dimen158
+\Gin@req@height=\dimen176
+\Gin@req@width=\dimen177
 )
-\cslhangindent=\skip53
-\csllabelwidth=\skip54
-\cslentryspacingunit=\skip55
-(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count277
-\calc@Bcount=\count278
-\calc@Adimen=\dimen159
-\calc@Bdimen=\dimen160
-\calc@Askip=\skip56
-\calc@Bskip=\skip57
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count279
-\calc@Cskip=\skip58
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty
+\cslhangindent=\skip62
+\csllabelwidth=\skip63
+\cslentryspacingunit=\skip64
+(/usr/local/texlive/2022/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count280
-\float@exts=\toks26
-\float@box=\box53
-\@float@everytoks=\toks27
-\@floatcapt=\box54
+\c@float@type=\count289
+\float@exts=\toks29
+\float@box=\box61
+\@float@everytoks=\toks30
+\@floatcapt=\box62
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip59
-\bibsep=\skip60
+\bibhang=\skip65
+\bibsep=\skip66
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count281
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen161
-\lightrulewidth=\dimen162
-\cmidrulewidth=\dimen163
-\belowrulesep=\dimen164
-\belowbottomsep=\dimen165
-\aboverulesep=\dimen166
-\abovetopsep=\dimen167
-\cmidrulesep=\dimen168
-\cmidrulekern=\dimen169
-\defaultaddspace=\dimen170
-\@cmidla=\count282
-\@cmidlb=\count283
-\@aboverulesep=\dimen171
-\@belowrulesep=\dimen172
-\@thisruleclass=\count284
-\@lastruleclass=\count285
-\@thisrulewidth=\dimen173
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip61
-\LTright=\skip62
-\LTpre=\skip63
-\LTpost=\skip64
-\LTchunksize=\count286
-\LTcapwidth=\dimen174
-\LT@head=\box55
-\LT@firsthead=\box56
-\LT@foot=\box57
-\LT@lastfoot=\box58
-\LT@gbox=\box59
-\LT@cols=\count287
-\LT@rows=\count288
-\c@LT@tables=\count289
-\c@LT@chunks=\count290
-\LT@p@ftn=\toks28
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty
-Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen175
-\ar@mcellbox=\box60
-\extrarowheight=\dimen176
-\NC@list=\toks29
-\extratabsurround=\skip65
-\backup@length=\skip66
-\ar@cellbox=\box61
+\c@NAT@ctr=\count290
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip67
 \multirow@cntb=\count291
 \multirow@dima=\skip68
-\bigstrutjot=\dimen177
+\bigstrutjot=\dimen178
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen178
-\WF@size=\dimen179
+\wrapoverhang=\dimen179
+\WF@size=\dimen180
 \c@WF@wrappedlines=\count292
-\WF@box=\box62
-\WF@everypar=\toks30
+\WF@box=\box63
+\WF@everypar=\toks31
 Package: wrapfig 2003/01/31  v 3.6
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks31
+\everycr=\toks32
 \minrowclearance=\skip69
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -322,10 +327,10 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box63
+\@vwid@box=\box64
 \sift@deathcycles=\count293
-\@vwid@loff=\dimen180
-\@vwid@roff=\dimen181
+\@vwid@loff=\dimen181
+\@vwid@roff=\dimen182
 )
 \c@taburow=\count294
 \tabu@nbcols=\count295
@@ -333,26 +338,26 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \tabu@Xcol=\count297
 \tabu@alloc=\count298
 \tabu@nested=\count299
-\tabu@target=\dimen182
-\tabu@spreadtarget=\dimen183
-\tabu@naturalX=\dimen184
-\tabucolX=\dimen185
-\tabu@Xsum=\dimen186
-\extrarowdepth=\dimen187
-\abovetabulinesep=\dimen188
-\belowtabulinesep=\dimen189
-\tabustrutrule=\dimen190
-\tabu@thebody=\toks32
-\tabu@footnotes=\toks33
-\tabu@box=\box64
-\tabu@arstrutbox=\box65
-\tabu@hleads=\box66
-\tabu@vleads=\box67
+\tabu@target=\dimen183
+\tabu@spreadtarget=\dimen184
+\tabu@naturalX=\dimen185
+\tabucolX=\dimen186
+\tabu@Xsum=\dimen187
+\extrarowdepth=\dimen188
+\abovetabulinesep=\dimen189
+\belowtabulinesep=\dimen190
+\tabustrutrule=\dimen191
+\tabu@thebody=\toks33
+\tabu@footnotes=\toks34
+\tabu@box=\box65
+\tabu@arstrutbox=\box66
+\tabu@hleads=\box67
+\tabu@vleads=\box68
 \tabu@cellskip=\skip70
 )
 (/usr/local/texlive/2022/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box68
+\@tempboxb=\box69
 )
 (/usr/local/texlive/2022/texmf-dist/tex/latex/threeparttablex/threeparttablex.s
 ty
@@ -364,21 +369,21 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 \TPTL@width=\skip71
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box69
-\UL@hyphenbox=\box70
+\UL@box=\box70
+\UL@hyphenbox=\box71
 \UL@skip=\skip72
-\UL@hook=\toks34
-\UL@height=\dimen191
+\UL@hook=\toks35
+\UL@height=\dimen192
 \UL@pe=\count300
-\UL@pixel=\dimen192
-\ULC@box=\box71
+\UL@pixel=\dimen193
+\ULC@box=\box72
 Package: ulem 2019/11/18
-\ULdepth=\dimen193
+\ULdepth=\dimen194
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen194
+\rotheadsize=\dimen195
 \c@nlinenum=\count301
-\TeXr@lab=\toks35
+\TeXr@lab=\toks36
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -403,7 +408,7 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen195
+\@linkdim=\dimen196
 \Hy@linkcounter=\count302
 \Hy@pagecounter=\count303
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -435,7 +440,7 @@ Package hyperref Info: Bookmarks ON on input line 4390.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4749.
-\XeTeXLinkMargin=\dimen196
+\XeTeXLinkMargin=\dimen197
 (/usr/local/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (/usr/local/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
@@ -443,8 +448,8 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count306
-\Field@Width=\dimen197
-\Fld@charsize=\dimen198
+\Field@Width=\dimen198
+\Fld@charsize=\dimen199
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -491,40 +496,41 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count313
-\l__pdf_internal_box=\box72
-) (./paper.aux)
+\l__pdf_internal_box=\box73
+)
+No file paper.aux.
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Info: Redefining \microtypecontext on input line 139.
-Package microtype Info: Applying patch `item' on input line 139.
-Package microtype Info: Applying patch `toc' on input line 139.
-Package microtype Info: Applying patch `eqnum' on input line 139.
-Package microtype Info: Applying patch `footnote' on input line 139.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 149.
+LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 149.
+LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 149.
+LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 149.
+LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 149.
+LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 149.
+LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 149.
+LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 149.
+LaTeX Font Info:    ... okay on input line 149.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 149.
+LaTeX Font Info:    ... okay on input line 149.
+LaTeX Info: Redefining \microtypecontext on input line 149.
+Package microtype Info: Applying patch `item' on input line 149.
+Package microtype Info: Applying patch `toc' on input line 149.
+Package microtype Info: Applying patch `eqnum' on input line 149.
+Package microtype Info: Applying patch `footnote' on input line 149.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 139.
+LaTeX Info: Redefining \showhyphens on input line 149.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -534,16 +540,16 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 ) (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count314
-\scratchdimen=\dimen199
-\scratchbox=\box73
+\scratchdimen=\dimen256
+\scratchbox=\box74
 \nofMPsegments=\count315
 \nofMParguments=\count316
-\everyMPshowfont=\toks36
+\everyMPshowfont=\toks37
 \MPscratchCnt=\count317
-\MPscratchDim=\dimen256
+\MPscratchDim=\dimen257
 \MPnumerator=\count318
 \makeMPintoPDFobject=\count319
-\everyMPtoPDFconversion=\toks37
+\everyMPtoPDFconversion=\toks38
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -586,7 +592,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 139.
+Package hyperref Info: Link coloring OFF on input line 149.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -598,43 +604,43 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 139.
-LaTeX Info: Redefining \pageref on input line 139.
-LaTeX Info: Redefining \nameref on input line 139.
+LaTeX Info: Redefining \ref on input line 149.
+LaTeX Info: Redefining \pageref on input line 149.
+LaTeX Info: Redefining \nameref on input line 149.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-41.
+51.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-41.
+51.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-141.
+151.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-141.
+151.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 141.
+(Font)              <12> on input line 151.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 141.
+(Font)              <8> on input line 151.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 141.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 141
+(Font)              <6> on input line 151.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 151
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 141
+LaTeX Font Info:    Trying to load font information for U+msb on input line 151
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -642,11 +648,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./pape
-r.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 4.
-)
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 \tf@toc=\write3
 \openout3 = `paper.toc'.
 
@@ -655,31 +657,33 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.147 \newpage
-               [1] (./paper.lot)
+l.157 \newpage
+               [1]
 \tf@lot=\write4
 \openout4 = `paper.lot'.
 
-(./paper.lof)
 \tf@lof=\write5
 \openout5 = `paper.lof'.
 
-[2] [3]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-92.
+[2]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 195.
+[3]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+02.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4] [5]
-<./img/flowcharts/dae-gp.png, id=163, 757.83125pt x 1002.74625pt>
+<./img/flowcharts/dae-gp.png, id=112, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 472.
+Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 482.
 (pdftex.def)             Requested size: 469.75801pt x 621.57385pt.
 [6] [7 <./img/flowcharts/dae-gp.png>]
-<./img/flowcharts/pt-dae-gp.png, id=180, 1031.855pt x 1620.0525pt>
+<./img/flowcharts/pt-dae-gp.png, id=131, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 494
+Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 504
 .
 (pdftex.def)             Requested size: 414.27768pt x 650.43208pt.
 [8]
@@ -687,7 +691,7 @@ Overfull \vbox (25.73122pt too high) has occurred while \output is active []
 
 [9 <./img/flowcharts/pt-dae-gp.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-24.
+34.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -695,201 +699,73 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [10]
-<./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png, id
-=212, 1011.78pt x 867.24pt>
-File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.pn
-g Graphic file (type png)
-<use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png
->
+<./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6plots.
+png, id=167, 1011.78pt x 867.24pt>
+File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6p
+lots.png Graphic file (type png)
+<use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6pl
+ots.png>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_
-error_by_neurons.png  used on input line 673.
+error_by_neurons_6plots.png  used on input line 683.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [11]
-<./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png, id=
-219, 1011.78pt x 867.24pt>
-File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png
- Graphic file (type png)
-<use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
-
+<./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6plot.pn
+g, id=177, 1011.78pt x 867.24pt>
+File: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6pl
+ot.png Graphic file (type png)
+<use ./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6plo
+t.png>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_mean_training_
-error_by_layers.png  used on input line 680.
+error_by_layers_6plot.png  used on input line 690.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[12 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons.png
->]
+[12 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6pl
+ots.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers.png>
-]
-<./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png, id=235, 1011.78pt
- x 867.24pt>
-File: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png Graphic file 
-(type png)
-<use ./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>
-Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_median_fitness_byGen
-s.png  used on input line 747.
+[13 <./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6plo
+t.png>]
+<./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.
+png, id=196, 1011.78pt x 867.24pt>
+File: ./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_by
+Gens.png Graphic file (type png)
+<use ./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byG
+ens.png>
+Package pdftex.def Info: ./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mea
+n_median_fitness_byGens.png  used on input line 757.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [14]
-<./img/airfoil_FullRun_30gens/final_fit_boxplot.png, id=240, 1011.78pt x 867.24
-pt>
-File: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png Graphic file (type png
-)
-<use ./img/airfoil_FullRun_30gens/final_fit_boxplot.png>
-Package pdftex.def Info: ./img/airfoil_FullRun_30gens/final_fit_boxplot.png  us
-ed on input line 751.
+<./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png, id=202, 101
+1.78pt x 867.24pt>
+File: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png Graphic
+ file (type png)
+<use ./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png>
+Package pdftex.def Info: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_
+boxplot.png  used on input line 761.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[15 <./img/airfoil_FullRun_30gens/mean_median_fitness_byGens.png>]
-<./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png, id=246, 1011.78pt x
- 867.24pt>
-File: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png Graphic file (t
-ype png)
-<use ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>
-Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.
-png  used on input line 754.
-(pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[16 <./img/airfoil_FullRun_30gens/final_fit_boxplot.png>]
-<./img/airfoil_FullRun_30gens/mean_Size_byGens.png, id=253, 722.7pt x 578.16pt>
+[15 <./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byG
+ens.png>]
 
-File: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png Graphic file (type png)
-
-<use ./img/airfoil_FullRun_30gens/mean_Size_byGens.png>
-Package pdftex.def Info: ./img/airfoil_FullRun_30gens/mean_Size_byGens.png  use
-d on input line 763.
-(pdftex.def)             Requested size: 469.76045pt x 375.80836pt.
-[17 <./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 793.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 793.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[18 <./img/airfoil_FullRun_30gens/mean_Size_byGens.png>] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 848--852
-
- []
+LaTeX Warning: File `./img/airfoil_FullRun_30gens/mean_popDiversity_byGens.png'
+ not found on input line 764.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 853--857
+! Package pdftex.def Error: File `./img/airfoil_FullRun_30gens/mean_popDiversit
+y_byGens.png' not found: using draft setting.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 858--868
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 869--875
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 876--885
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 886--892
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 893--899
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 900--905
-
- []
-
-
-Underfull \hbox (badness 3690) in paragraph at lines 911--911
-[]\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
-rans-fer learn-ing.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 906--912
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 913--918
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 919--925
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 926--931
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 932--938
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 939--947
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 948--953
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 954--960
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 961--969
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 970--979
-
- []
-
-[21] (./paper.aux) ) 
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.764 ...lRun_30gens/mean_popDiversity_byGens.png}
+                                                   
 Here is how much of TeX's memory you used:
- 15680 strings out of 478268
- 250277 string characters out of 5846348
- 585322 words of memory out of 5000000
- 33323 multiletter control sequences out of 15000+600000
- 535963 words of font info for 154 fonts, out of 8000000 for 9000
+ 15690 strings out of 478268
+ 252855 string characters out of 5846348
+ 582083 words of memory out of 5000000
+ 33389 multiletter control sequences out of 15000+600000
+ 517221 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,9n,77p,1002b,389s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-m
-athit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/us
-r/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texliv
-e/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/tex
-mf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts
-/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
-lic/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmm
-i10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/
-fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
-/public/lm/lmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/l
-mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022
-/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (22 pages, 971296 bytes).
-PDF statistics:
- 457 PDF objects out of 1000 (max. 8388607)
- 382 compressed objects within 4 object streams
- 101 named destinations out of 1000 (max. 500000)
- 37057 words of extra memory for PDF output out of 42996 (max. 10000000)
 
+!  ==> Fatal error occurred, no output PDF file produced!
