@@ -70,15 +70,15 @@ Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
 ## Übersicht
 
 * Metaheuristik basierend auf genetischer Programmierung (GP)
-* Erweiterung von GP durch künstliche, neuronalen Netzen zur Optimierung des Suchverhaltens
+* Ersetzung der Variationsoperatoren von GP durch künstliche, neuronalen Netzen zur Optimierung des Suchverhaltens^[@dae-gp_2020_rtree]
 * Variante des Estimation of Distribution-GP (EDA-GP)
-* Der Einsatz einer Pre-Training Strategie wurde in mehreren Publikationen als möglicher Weg für eine weitere Optimierung vorgeschlagen^[@dae-gp_2022_symreg] ^[@daegp_explore_exploit]
+* Einsatz von Pre-Training in mehreren Publikationen als möglicher Weg für eine weitere Optimierung vorgeschlagen^[@dae-gp_2022_symreg] ^[@daegp_explore_exploit]
 
 
 ## Estimation of Distribution Algorithmen (EDA)
 
 * Entwicklung neuer Rekombinationsoperatoren für evolutionäre Algorithmen basierend auf dem Einsatz von probabilistischen Modellen^[@design_of_modern_heuristics]
-* Hypothese: Problemspezifische Abhängigkeiten zwischen einzelnen Entscheidungsvariablen können bei der Erzeugung neuer Lösungskandidaten besser berücksichtigt werden als bei traditionellen Rekombinationsoperatoren^[@edaOrig1996]
+* Hypothese: Problemspezifische Abhängigkeiten zwischen Entscheidungsvariablen können bei der Erzeugung neuer Individuen besser berücksichtigt werden als bei traditionellen Rekombinationsoperatoren^[@edaOrig1996]
 * Weitere Verbreitung im Bereich der genetischen Algorithmen (GA) als für GP
 
 ## Denoising Autoencoder Estimation of Distribution Algorithmen (DAE-EDA)
@@ -94,7 +94,7 @@ Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistis
 ## Denoising Autoencoder Genetic Programming (DAE-GP)
 
 * Adaptierung des DAE-EDA Algorithmus auf GP
-* Linearisierung von GP Individuen als strings in prefix Notation
+* Darstellung von Individuen als Zeichenketten in prefix Notation
 * seq2seq learning Problem: Einsatz von DAE - Long Short Term Memory Netzwerken (DAE-LSTM)
 
 ## DAE-GP Ablauf
@@ -197,11 +197,13 @@ Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe
 
 ## Interpretation
 
+...
+
 # Experimente Suchverhalten Symbolische Regression
 
 ## Fragestellung
 
-Welchen Einfluss hat die Verwendung einer Pre-Training Strategie auf das Suchverhalten von DAE-GP bei der Anwendung auf dem Airfoil Datensatz für symbolische Regressionsprobleme?
+Welchen Einfluss hat die Verwendung einer Pre-Training Strategie auf das Suchverhalten von DAE-GP bei der Anwendung auf symbolische Regressionsprobleme?
 
 Aufbau: Betrachtung des Suchverhalten über je 10 Gesamtduchläufe für DAE-GP, pre-trained DAE-GP und reguläres GP ($30$ Durchläufe gesamt)
 

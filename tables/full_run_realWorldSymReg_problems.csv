@@ -1,4 +1,5 @@
 Problem,Observations,Features
 Airfoil,1503,5
-Boston.Housing,506,13
-Energy.Cooling,768,8
+Boston_Housing,506,13
+Energy_Cooling,768,8
+Concrete,8,1030
