@@ -210,7 +210,7 @@ Aufbau: Betrachtung des Suchverhalten über je 10 Gesamtduchläufe für DAE-GP, 
 Fokus insbesondere auf:
 
 * Lösungsgüte
-* Größe der gefundenen Lösungen
+* Größe der gefundenen Lösungen (=Anzahl an Knoten)
 * Populationsdiversität
 
 ## Hyperparameter
@@ -275,10 +275,10 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-## Mean RMSE - Übersicht
+## Auswertung Fitness - Symbolische Regression
 
 
-```{r full_run_realWorldSymReg_performance, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -325,12 +325,56 @@ knitr::kable(
 
 ![Boston Housing Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
 
-## Auswertung
+## Zusammenfassung Fitness - Symbolische Regression
 
 Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf die erzielte Lösungsqualität in den durchgeführten Experimenten!
 
+* Airfoil:
+* Energy Cooling:
+* Boston Housing: 
+* Concrete: 
 
 
+## Auswertung Lösungsgröße - Symbolische Regression
+
+```{r full_run_realWorldSymReg_best_solution_size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv",
+  sep=",",
+  colClasses = c("character", "numeric", "numeric", "numeric", "character")
+)
+
+# Create a new dataframe with the modified values of the two columns,
+df_bold <- df 
+
+for(i in 1:nrow(df)){
+  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],4)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],4))
+    }
+  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],4)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],4))
+  }
+}
+# shorten column names
+col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value")
+
+
+knitr::kable(
+ df_bold,
+ format = "markdown",
+ col.names = col_names,
+ align = "c"
+ #caption = "Symbolic Regression Overview - Mean final Fitness"
+) %>% row_spec(0,bold=FALSE ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+
+```
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  10 JAN 2023 22:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  11 JAN 2023 10:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1019,7 +1019,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-200.
+202.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1028,34 +1028,34 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-00.
+02.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-200.
+202.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-200.
+202.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 200.
+(Font)              <10.95> on input line 202.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 200.
+(Font)              <8> on input line 202.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 200.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 200
+(Font)              <6> on input line 202.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 202
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 200
+LaTeX Font Info:    Trying to load font information for U+msb on input line 202
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1063,17 +1063,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 200.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 202.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 200.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 202.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 200.
+(Font)              <9> on input line 202.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 200.
+(Font)              <5> on input line 202.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 200.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 202.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 200.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 202.
 [6
 
 ] [7
@@ -1083,10 +1083,10 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
 ] [9
 
 ]
-<./img/flowcharts/dae-gp.png, id=101, 757.83125pt x 1002.74625pt>
+<./img/flowcharts/dae-gp.png, id=103, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 261.
+Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 263.
 (pdftex.def)             Requested size: 162.7224pt x 215.31082pt.
 [10
 
@@ -1096,17 +1096,17 @@ Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 261.
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 303.
+(Font)              <14.4> on input line 305.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 303.
+(Font)              <10> on input line 305.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 303.
+(Font)              <7> on input line 305.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 303.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 305.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 303.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 305.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 303.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 305.
 [13
 
 ] [14
@@ -1118,10 +1118,10 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
 ] [17
 
 ]
-<./img/flowcharts/pt-dae-gp.png, id=164, 1031.855pt x 1620.0525pt>
+<./img/flowcharts/pt-dae-gp.png, id=165, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 380
+Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 382
 .
 (pdftex.def)             Requested size: 128.55644pt x 201.83862pt.
 [18
@@ -1131,32 +1131,32 @@ Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 380
 ] [20
 
 ]
-Overfull \vbox (14.46445pt too high) detected at line 421
+Overfull \vbox (14.46445pt too high) detected at line 423
  []
 
 [21
 
 ]
 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers.png, i
-d=191, 1011.78pt x 867.24pt>
+d=192, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers.p
 ng Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers.pn
 g>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
-g_error_by_layers.png  used on input line 426.
+g_error_by_layers.png  used on input line 428.
 (pdftex.def)             Requested size: 266.90077pt x 228.7721pt.
 [22
 
  <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers.png>]
 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.png, 
-id=199, 1011.78pt x 867.24pt>
+id=200, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.
 png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons.p
 ng>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
-g_error_by_neurons.png  used on input line 431.
+g_error_by_neurons.png  used on input line 433.
 (pdftex.def)             Requested size: 266.90077pt x 228.7721pt.
 [23
 
@@ -1168,7 +1168,7 @@ g_error_by_neurons.png  used on input line 431.
 ] [26
 
 ]
-Overfull \hbox (75.76938pt too wide) in paragraph at lines 493--493
+Overfull \hbox (75.76938pt too wide) in paragraph at lines 496--496
  [] 
  []
 
@@ -1178,13 +1178,13 @@ Overfull \hbox (75.76938pt too wide) in paragraph at lines 493--493
 
 ]
 <~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/
-mean_median_fitness_byGens.png, id=240, 1011.78pt x 867.24pt>
+mean_median_fitness_byGens.png, id=241, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wi
 thGP/mean_median_fitness_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wit
 hGP/mean_median_fitness_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens_withGP/mean_median_fitness_byGens.png  used on input line 518.
+e_fullRun_30gens_withGP/mean_median_fitness_byGens.png  used on input line 521.
 
 (pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
 [29
@@ -1192,29 +1192,29 @@ e_fullRun_30gens_withGP/mean_median_fitness_byGens.png  used on input line 518.
  </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
 ns_withGP/mean_median_fitness_byGens.png>]
 <~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_f
-it_boxplot.png, id=248, 1011.78pt x 867.24pt>
+it_boxplot.png, id=249, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/fi
 nal_fit_boxplot.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/fin
 al_fit_boxplot.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens/final_fit_boxplot.png  used on input line 523.
+e_fullRun_30gens/final_fit_boxplot.png  used on input line 526.
 (pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
 [30
 
  </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
 ns/final_fit_boxplot.png>]
 <~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/
-mean_Size_byGens.png, id=256, 722.7pt x 578.16pt>
+mean_Size_byGens.png, id=257, 722.7pt x 578.16pt>
 File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wi
 thGP/mean_Size_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wit
 hGP/mean_Size_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens_withGP/mean_Size_byGens.png  used on input line 528.
+e_fullRun_30gens_withGP/mean_Size_byGens.png  used on input line 531.
 (pdftex.def)             Requested size: 307.2923pt x 245.83385pt.
 
-Overfull \vbox (0.16069pt too high) detected at line 528
+Overfull \vbox (0.16069pt too high) detected at line 531
  []
 
 [31
@@ -1224,16 +1224,16 @@ ns_withGP/mean_Size_byGens.png>] [32
 
 ]
 <~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_me
-dian_fitness_byGens.png, id=271, 1011.78pt x 867.24pt>
+dian_fitness_byGens.png, id=272, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/me
 an_median_fitness_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mea
 n_median_fitness_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
-e_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 540.
+e_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 543.
 (pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
 
-Overfull \vbox (17.71648pt too high) detected at line 540
+Overfull \vbox (17.71648pt too high) detected at line 543
  []
 
 [33
@@ -1241,16 +1241,16 @@ Overfull \vbox (17.71648pt too high) detected at line 540
  </Users/rmn/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30ge
 ns/mean_median_fitness_byGens.png>]
 <~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_f
-it_boxplot.png, id=279, 1011.78pt x 867.24pt>
+it_boxplot.png, id=280, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/fi
 nal_fit_boxplot.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/fin
 al_fit_boxplot.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
-e_fullRun_30gens/final_fit_boxplot.png  used on input line 545.
+e_fullRun_30gens/final_fit_boxplot.png  used on input line 548.
 (pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
 
-Overfull \vbox (35.71648pt too high) detected at line 545
+Overfull \vbox (35.71648pt too high) detected at line 548
  []
 
 [34
@@ -1261,27 +1261,27 @@ ns/final_fit_boxplot.png>] [35
 ] [36
 
 ]
-Overfull \hbox (5.32419pt too wide) in paragraph at lines 617--617
+Overfull \hbox (5.32419pt too wide) in paragraph at lines 622--622
  []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
  []
 
 
-Overfull \hbox (6.19052pt too wide) in paragraph at lines 617--617
+Overfull \hbox (6.19052pt too wide) in paragraph at lines 622--622
  []|\T1/lmss/m/n/10.95 (-20) 0.0171**| 
  []
 
 
-Overfull \hbox (16.28519pt too wide) in paragraph at lines 617--617
+Overfull \hbox (16.28519pt too wide) in paragraph at lines 622--622
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (14.59216pt too wide) in paragraph at lines 617--617
+Overfull \hbox (14.59216pt too wide) in paragraph at lines 622--622
  []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
 
-Overfull \hbox (6.19052pt too wide) in paragraph at lines 617--617
+Overfull \hbox (6.19052pt too wide) in paragraph at lines 622--622
  []|\T1/lmss/m/n/10.95 (-20) 0.0188**| 
  []
 
@@ -1289,16 +1289,16 @@ Overfull \hbox (6.19052pt too wide) in paragraph at lines 617--617
 
 ]
 <~/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/mean_median_
-fitness_byGens.png, id=307, 1011.78pt x 867.24pt>
+fitness_byGens.png, id=308, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/mean_me
 dian_fitness_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/mean_med
 ian_fitness_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_Ful
-lRun_30gens/mean_median_fitness_byGens.png  used on input line 622.
+lRun_30gens/mean_median_fitness_byGens.png  used on input line 627.
 (pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
 
-Overfull \vbox (17.71648pt too high) detected at line 622
+Overfull \vbox (17.71648pt too high) detected at line 627
  []
 
 [38
@@ -1306,16 +1306,16 @@ Overfull \vbox (17.71648pt too high) detected at line 622
  </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_FullRun_30gens/me
 an_median_fitness_byGens.png>]
 <~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
-ean_median_fitness_byGens.png, id=315, 1011.78pt x 867.24pt>
+ean_median_fitness_byGens.png, id=316, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
 ens/mean_median_fitness_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
 ns/mean_median_fitness_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
-IndSize_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 627.
+IndSize_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 632.
 (pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
 
-Overfull \vbox (17.71648pt too high) detected at line 627
+Overfull \vbox (17.71648pt too high) detected at line 632
  []
 
 [39
@@ -1331,8 +1331,10 @@ n_30gens/mean_median_fitness_byGens.png>] [40
 
 ] [44
 
-
 ] [45
+
+
+] [46
 
 
 ]
@@ -1347,11 +1349,11 @@ n_30gens/mean_median_fitness_byGens.png>] [40
 
 (./slides.aux) ) 
 Here is how much of TeX's memory you used:
- 26393 strings out of 478268
- 515598 string characters out of 5846348
- 790915 words of memory out of 5000000
- 43747 multiletter control sequences out of 15000+600000
- 569833 words of font info for 166 fonts, out of 8000000 for 9000
+ 26401 strings out of 478268
+ 515778 string characters out of 5846348
+ 790996 words of memory out of 5000000
+ 43750 multiletter control sequences out of 15000+600000
+ 569934 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1003b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
@@ -1364,10 +1366,10 @@ ic/lm/lmsso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lms
 so8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
 b>
-Output written on slides.pdf (45 pages, 3310007 bytes).
+Output written on slides.pdf (46 pages, 3330726 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 366 compressed objects within 4 object streams
- 143 named destinations out of 1000 (max. 500000)
+ 471 PDF objects out of 1000 (max. 8388607)
+ 374 compressed objects within 4 object streams
+ 146 named destinations out of 1000 (max. 500000)
  61602 words of extra memory for PDF output out of 61914 (max. 10000000)
 
