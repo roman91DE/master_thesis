@@ -28,13 +28,13 @@ def getPVal(sampleA, sampleB):
     #assert len(sampleA) > 6 and len(sampleB) >= 8
 
     if pval <= 0.01:
-        return f"{pval:.4f}***"
+        return f"{pval:.2f}***"
     elif pval <= 0.05:
-        return f"{pval:.4f}**"
+        return f"{pval:.2f}**"
     elif pval <= 0.1:
-        return f"{pval:.4f}*"
+        return f"{pval:.2f}*"
     else:
-        return f"{pval:.4f}"
+        return f"{pval:.2f}"
 
 
 # Fitness

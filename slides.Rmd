@@ -254,19 +254,19 @@ knitr::kable(
 
 ![Airfoil Datensatz - Größe der besten Lösung über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_Size_byGens.png)
 
-## Kontrollexperiment: Reduzierung der DAE-LSTM Dimension Airfoil
+## Kontrollexperiment: Reduzierung der DAE-LSTM Dimension für Airfoil Datensatz
 
-Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer?
+Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer (HL)?
 
-## Airfoil - Entwicklung der Fitness über Generationen
+## Airfoil - Entwicklung der Fitness über Generationen (1 HL)
 
-![Airfoil Datensatz - 1 Hidden Layer - Lösungsgüte über Generationen](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
+![Airfoil - Entwicklung der Fitness über Generationen (1 HL)](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
 
-## Verteilung Lösungsgüte Airfoil mit einem hidden Layer
+## Airfoil - Verteilung der finalen Fitness (1HL)
 
-![Airfoil Datensatz - 1 HL - Lösungsgüte über Generationen](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png){height=90%}
+![Airfoil - Verteilung der finalen Fitness (1HL)](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png){height=90%}
 
-## Anwendung auf weiteren Datensätzen
+# Anwendung auf weitere Datensätzen
 
 Airfoil Datensatz: Ergebnis deuten bei einer ausreichenden Anzahl von Hidden Layern auf einen postitiven Effekt der Pre-Training Strategie hin:
 
@@ -285,7 +285,7 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-## Auswertung Fitness - Symbolische Regression
+## Symbolische Regression - Ergebnisübersicht
 
 
 ```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
@@ -306,12 +306,12 @@ df_bold <- df
 
 for(i in 1:nrow(df)){
   if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],4)))
-    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],4))
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
     }
   else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],4)))
-  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],4))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
   }
 }
 # shorten column names
@@ -322,21 +322,27 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "c"
+ align = "l"
  #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% row_spec(0,bold=FALSE, font_size=7 ) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size=7)
+) %>% 
+  kableExtra::kable_styling(latex_options = "scale_down", font_size=7)
 
 ```
 
 
 
-## Fitness - Energy Cooling Datensatz
+## Symbolische Regression - Übersicht Fitness
 
-![Energy (Cooling) Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} \\
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png}
+\end{tabular}
 
-## Fitness - Boston Housing Datensatz
 
-![Boston Housing Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
+
+
 
 ## Zusammenfassung Fitness - Symbolische Regression
 
@@ -367,12 +373,12 @@ df_bold <- df
 
 for(i in 1:nrow(df)){
   if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],4)))
-    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],4))
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
     }
   else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],4)))
-  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],4))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
   }
 }
 # shorten column names
@@ -383,9 +389,9 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "c"
+ align = "l"
  #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% row_spec(0,bold=FALSE) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
+) %>% kableExtra::kable_styling(latex_options = "scale_down", font_size = 7) 
 
 ```
 ## Durchschnittliche Lösungsgröße - Symbolische Regression
