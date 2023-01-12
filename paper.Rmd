@@ -57,6 +57,50 @@ print(f"Python Version: {version} \nPath: {executable}")
 ```
 
 
+```{bash recompile_results, include=FALSE}
+
+# compile mermaid diagrams
+# ---
+WIDTH=3200
+HEIGHT=2400
+THEME="neutral"
+BACKGROUND="white"
+
+for file in ./mermaid/*.mmd
+do
+  mmdc -i "$file" -o ./img/flowcharts/$(basename "$file" .mmd).png -t $THEME -w $WIDTH -H $HEIGHT -b $BACKGROUND 
+done
+
+# Airfoil First Gen
+# ---
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluate_airfoilFirstGen.sh
+
+
+# Real World SymReg Full Runs
+# ---
+
+# airfoil
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_1hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_1hl_maxIndSize_30gen.sh
+
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_2hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_2hl_maxIndSize_30gen.sh
+
+# energy (cooling)
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_maxIndSize_fullRun_30gens/re_evaluate_energyCooling_2hl_maxIndSize_fullRun_30gens.sh
+
+# boston housing
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_maxIndSize_fullRun_30gens/re_evaluate_bostonHousing_2hl_maxIndSize_fullRun_30gens.sh
+
+# concrete
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_fullRun_30gens/re_evaluate_concrete_2hl_maxIndSize_fullRun_30gens.sh
+
+# summarize csv files for full run experiments
+/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_csv_files.py
+
+```
+
+
+
+
 
 <!-- LaTeX Setup -->
 \setcounter{page}{1}
@@ -209,20 +253,6 @@ If this mechanism can be applied successfully it would benefit the performance o
 
 ## Implementation
 
-```{bash compile_mermaid, include=FALSE}
-# compile all *.mmd files in the mermaid directory
-
-WIDTH=3200
-HEIGHT=2400
-THEME="neutral"
-BACKGROUND="white"
-
-for file in ./mermaid/*.mmd
-do
-  mmdc -i "$file" -o ./img/flowcharts/$(basename "$file" .mmd).png -t $THEME -w $WIDTH -H $HEIGHT -b $BACKGROUND 
-done
-
-```
 
 <!--- Explain algorithm and implementation of the pre-training strategy  -->
 
@@ -289,9 +319,6 @@ knitr::kable(
 
 ## Effect on Generalisation
 
-```{bash compile_firstGenResults, include=FALSE}
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluate_airfoilFirstGen.sh
-```
 
 To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
 
@@ -308,9 +335,7 @@ In general I expect that with a growing number of model parameters (either by ad
 
 Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will have an insignificant or even negative influence on small DAE-LSTM instances while improving the networks generalization ability with growing size.
 
-```{bash executeFirstGenNBs, include=FALSE}
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluate_airfoilFirstGen.sh
-```
+
 
 <!--- analyze results 1 hidden layer and variable number of hidden neurons -->
 
@@ -324,25 +349,6 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluat
 
 
 ## Effect on search performance
-
-```{bash compile_symReg_fullRun_30gens, include=FALSE}
-
-# airfoil
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_1hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_1hl_maxIndSize_30gen.sh
-
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_2hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_2hl_maxIndSize_30gen.sh
-
-# energy (cooling)
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_maxIndSize_fullRun_30gens/re_evaluate_energyCooling_2hl_maxIndSize_fullRun_30gens.sh
-
-# boston housing
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_maxIndSize_fullRun_30gens/re_evaluate_bostonHousing_2hl_maxIndSize_fullRun_30gens.sh
-
-# concrete
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_fullRun_30gens/re_evaluate_concrete_2hl_maxIndSize_fullRun_30gens.sh
-
-# ...
-```
 
 
 After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. Again the Airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP [@dae-gp_2022_symreg], the parameters are described in table $A$
@@ -390,9 +396,6 @@ knitr::kable(
 ```
 Table X summarizes the median best fitness achieved after running each algorithm for 10 runs using a population size of 500 individuals for 30 generations.^[P-Values are marked with asteriks (1,2,3) for ($\alpha$)-levels of $0.1$, $0.05$ and $0.01$].
 
-``` {bash recreate_csv_file_benchmarkRWSymReg, include=FALSE}
-/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_csv_files.py
-```
 
 
 
