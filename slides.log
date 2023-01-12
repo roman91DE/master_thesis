@@ -818,8 +818,7 @@ Package: xurl 2022/01/09 v 0.10 modify URL breaks
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count356
 \l__pdf_internal_box=\box84
-)
-No file slides.aux.
+) (./slides.aux)
 \openout1 = `slides.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
@@ -1004,12 +1003,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-No file slides.nav.
-[1
+(./slides.nav) [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-No file slides.toc.
-[2
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./slid
+es.toc) [2
 
 ] [3
 
@@ -1058,4 +1055,454 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U
+LaTeX Font Info:    Trying to load font information for U+msb on input line 201
+.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 201.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 201.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 201.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 201.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 201.
+[6
+
+] [7
+
+] [8
+
+] [9
+
+]
+<./img/flowcharts/dae-gp.png, id=103, 757.83125pt x 1002.74625pt>
+File: ./img/flowcharts/dae-gp.png Graphic file (type png)
+<use ./img/flowcharts/dae-gp.png>
+Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 262.
+(pdftex.def)             Requested size: 162.7224pt x 215.31082pt.
+[10
+
+ <./img/flowcharts/dae-gp.png>] [11
+
+] [12
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 305.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 305.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 305.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 305.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 305.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 305.
+[13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
+]
+<./img/flowcharts/pt-dae-gp.png, id=165, 1031.855pt x 1620.0525pt>
+File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
+<use ./img/flowcharts/pt-dae-gp.png>
+Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 382
+.
+(pdftex.def)             Requested size: 128.55644pt x 201.83862pt.
+[18
+
+ <./img/flowcharts/pt-dae-gp.png>] [19
+
+] [20
+
+]
+Overfull \vbox (14.46445pt too high) detected at line 423
+ []
+
+[21
+
+]
+<./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6plots
+.png, id=192, 1011.78pt x 867.24pt>
+File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6
+plots.png Graphic file (type png)
+<use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6p
+lots.png>
+Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
+g_error_by_layers_6plots.png  used on input line 428.
+(pdftex.def)             Requested size: 266.90077pt x 228.7721pt.
+[22
+
+ <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6plot
+s.png>]
+<./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots
+.png, id=200, 1011.78pt x 867.24pt>
+File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3
+plots.png Graphic file (type png)
+<use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3p
+lots.png>
+Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
+g_error_by_layers_3plots.png  used on input line 433.
+(pdftex.def)             Requested size: 266.90077pt x 228.7721pt.
+[23
+
+ <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plot
+s.png>]
+<./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plot
+s.png, id=208, 1011.78pt x 867.24pt>
+File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_
+6plots.png Graphic file (type png)
+<use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6
+plots.png>
+Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
+g_error_by_neurons_6plots.png  used on input line 438.
+(pdftex.def)             Requested size: 266.90077pt x 228.7721pt.
+[24
+
+ <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plo
+ts.png>]
+File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_
+6plots.png Graphic file (type png)
+<use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6
+plots.png>
+Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
+g_error_by_neurons_6plots.png  used on input line 443.
+(pdftex.def)             Requested size: 266.90077pt x 228.7721pt.
+[25
+
+] [26
+
+] [27
+
+] [28
+
+] [29
+
+] [30
+
+]
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/
+mean_median_fitness_byGens.png, id=254, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wi
+thGP/mean_median_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wit
+hGP/mean_median_fitness_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens_withGP/mean_median_fitness_byGens.png  used on input line 532.
+
+(pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
+[31
+
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
+ns_withGP/mean_median_fitness_byGens.png>]
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_f
+it_boxplot.png, id=263, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/fi
+nal_fit_boxplot.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/fin
+al_fit_boxplot.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens/final_fit_boxplot.png  used on input line 537.
+(pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
+[32
+
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
+ns/final_fit_boxplot.png>]
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/
+mean_Size_byGens.png, id=271, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wi
+thGP/mean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_wit
+hGP/mean_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens_withGP/mean_Size_byGens.png  used on input line 542.
+(pdftex.def)             Requested size: 307.2923pt x 245.83385pt.
+
+Overfull \vbox (0.16069pt too high) detected at line 542
+ []
+
+[33
+
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30ge
+ns_withGP/mean_Size_byGens.png>] [34
+
+]
+<~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_me
+dian_fitness_byGens.png, id=285, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/me
+an_median_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mea
+n_median_fitness_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
+e_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 554.
+(pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
+
+Overfull \vbox (17.71648pt too high) detected at line 554
+ []
+
+[35
+
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30ge
+ns/mean_median_fitness_byGens.png>]
+<~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_f
+it_boxplot.png, id=294, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/fi
+nal_fit_boxplot.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/fin
+al_fit_boxplot.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
+e_fullRun_30gens/final_fit_boxplot.png  used on input line 559.
+(pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
+[36
+
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30ge
+ns/final_fit_boxplot.png>]
+<~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_Si
+ze_byGens.png, id=302, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/me
+an_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mea
+n_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
+e_fullRun_30gens/mean_Size_byGens.png  used on input line 564.
+(pdftex.def)             Requested size: 302.78206pt x 242.22565pt.
+[37
+
+ </Users/rmn/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30ge
+ns/mean_Size_byGens.png>] [38
+
+] [39
+
+]
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 643--643
+ []|\T1/lmss/m/n/10.95 (-20) Train| 
+ []
+
+
+Overfull \hbox (5.17206pt too wide) in paragraph at lines 643--643
+ []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
+ []
+
+
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 643--643
+ []|\T1/lmss/m/n/10.95 (-20) Train| 
+ []
+
+
+Overfull \hbox (28.15501pt too wide) in paragraph at lines 643--643
+ []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
+ []
+
+
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 643--643
+ []|\T1/lmss/m/n/10.95 (-20) Train| 
+ []
+
+
+Overfull \hbox (26.46199pt too wide) in paragraph at lines 643--643
+ []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
+ []
+
+
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 643--643
+ []|\T1/lmss/m/n/10.95 (-20) Train| 
+ []
+
+
+Overfull \hbox (5.17206pt too wide) in paragraph at lines 643--643
+ []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
+ []
+
+
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 643--643
+ []|\T1/lmss/m/n/10.95 (-20) Train| 
+ []
+
+[40
+
+]
+<~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/m
+edian_fitness_byGens.png, id=329, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30g
+ens/median_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30ge
+ns/median_fitness_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_max
+IndSize_fullRun_30gens/median_fitness_byGens.png  used on input line 653.
+(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
+<~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
+edian_fitness_byGens.png, id=330, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
+ens/median_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
+ns/median_fitness_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
+IndSize_fullRun_30gens/median_fitness_byGens.png  used on input line 653.
+(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_
+fitness_byGens.png, id=331, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/me
+dian_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/med
+ian_fitness_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens/median_fitness_byGens.png  used on input line 653.
+(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
+<~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median
+_fitness_byGens.png, id=332, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/m
+edian_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/me
+dian_fitness_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSi
+ze_fullRun_30gens/median_fitness_byGens.png  used on input line 653.
+(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
+[41
+
+ </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRu
+n_30gens/median_fitness_byGens.png> </Users/rmn/masterThesis/master_thesis/img/
+bostonHousing_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png> </Users/
+rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median
+_fitness_byGens.png> </Users/rmn/masterThesis/master_thesis/img/concrete_2hl_ma
+xIndSize_fullRun_30gens/median_fitness_byGens.png>] [42
+
+]
+Overfull \hbox (7.5014pt too wide) in paragraph at lines 707--707
+ []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
+ []
+
+
+Overfull \hbox (0.5309pt too wide) in paragraph at lines 707--707
+ []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
+ []
+
+
+Overfull \hbox (19.35292pt too wide) in paragraph at lines 707--707
+ []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
+ []
+
+
+Overfull \hbox (17.6599pt too wide) in paragraph at lines 707--707
+ []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
+ []
+
+
+Overfull \hbox (0.5309pt too wide) in paragraph at lines 707--707
+ []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
+ []
+
+[43
+
+]
+<~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/m
+ean_Size_byGens.png, id=356, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30g
+ens/mean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30ge
+ns/mean_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_max
+IndSize_fullRun_30gens/mean_Size_byGens.png  used on input line 717.
+(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
+<~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
+ean_Size_byGens.png, id=357, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
+ens/mean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
+ns/mean_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
+IndSize_fullRun_30gens/mean_Size_byGens.png  used on input line 717.
+(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
+<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Si
+ze_byGens.png, id=358, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/me
+an_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mea
+n_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
+e_fullRun_30gens/mean_Size_byGens.png  used on input line 717.
+(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
+<~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/mean_S
+ize_byGens.png, id=359, 722.7pt x 578.16pt>
+File: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/m
+ean_Size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/me
+an_Size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSi
+ze_fullRun_30gens/mean_Size_byGens.png  used on input line 717.
+(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
+
+Overfull \vbox (1.725pt too high) detected at line 717
+ []
+
+[44
+
+ </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRu
+n_30gens/mean_Size_byGens.png> </Users/rmn/masterThesis/master_thesis/img/bosto
+nHousing_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png> </Users/rmn/master
+Thesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens
+.png> </Users/rmn/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRu
+n_30gens/mean_Size_byGens.png>] [45
+
+] [46
+
+] [47
+
+] [48
+
+] [49
+
+
+] [50
+
+
+]
+\tf@nav=\write5
+\openout5 = `slides.nav'.
+
+\tf@toc=\write6
+\openout6 = `slides.toc'.
+
+\tf@snm=\write7
+\openout7 = `slides.snm'.
+
+(./slides.aux) ) 
+Here is how much of TeX's memory you used:
+ 26452 strings out of 478268
+ 520690 string characters out of 5846348
+ 797967 words of memory out of 5000000
+ 43782 multiletter control sequences out of 15000+600000
+ 573005 words of font info for 171 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,11n,122p,1003b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
+c}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/20
+22/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/ty
+pe1/public/lm/lmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
+ic/lm/lmsso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lms
+so8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
+b>
+Output written on slides.pdf (50 pages, 7489077 bytes).
+PDF statistics:
+ 511 PDF objects out of 1000 (max. 8388607)
+ 394 compressed objects within 4 object streams
+ 156 named destinations out of 1000 (max. 500000)
+ 63690 words of extra memory for PDF output out of 74296 (max. 10000000)
+

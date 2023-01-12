@@ -9,3 +9,5 @@ private
 
 # ignore knitter's temporary files
 ^(paper|slides).*\.(log|aux|lof|lot|tex|toc)$
+slides.log
+slides.log
