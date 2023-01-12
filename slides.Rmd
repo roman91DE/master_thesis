@@ -170,7 +170,7 @@ Gewählte Pre-Training Strategie:
 ... hidden neurons ... 
 
 
-# Experiment Generalisierungsverhalten 
+# Untersuchung des Generalisierungsverhalten 
 
 ## Fragestellung
 
@@ -189,31 +189,32 @@ Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe
 
 ## Einfluss der Anzahl von Hidden Layers (1/2)
 
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6plots.png){height=85%}
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer (1/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6plots.png){height=85%}
+
 ## Einfluss der Anzahl von Hidden Layers (2/2)
 
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots.png){height=85%}
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots.png){height=85%}
+
 ## Einfluss der Anzahl von Hidden Neurons (1/2)
 
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons (1/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png){height=85%}
 
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png){height=85%}
 ## Einfluss der Anzahl von Hidden Neurons (2/2)
 
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png){height=85%}
 
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png){height=85%}
 
-
-## Interpretation
+## Fazit Generalisierungsverhalten
 
 ...
 
-# Experimente Suchverhalten Symbolische Regression
+# Untersuchung des Suchverhaltens bei symbolischer Regression
 
 ## Fragestellung
 
 Welchen Einfluss hat die Verwendung einer Pre-Training Strategie auf das Suchverhalten von DAE-GP bei der Anwendung auf symbolische Regressionsprobleme?
 
-Aufbau: Betrachtung des Suchverhalten über je 10 Gesamtduchläufe für DAE-GP, pre-trained DAE-GP und reguläres GP ($30$ Durchläufe gesamt)
+Aufbau: Betrachtung des Suchverhalten über je $10$ Gesamtduchläufe für DAE-GP und pre-trained DAE-GP
 
 Fokus insbesondere auf:
 
@@ -239,16 +240,17 @@ knitr::kable(
   # caption="Funktions Set"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-# Ergebnisse Airfoil Datensatz
+## Ergebnisse Airfoil Datensatz
 
 ## Airfoil - Entwicklung der Fitness über Generationen
 
 ![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png){height=90%}
 
 
+
 ## Airfoil - Verteilung der finalen Fitness
 
-![Airfoil Datensatz - Verteilung der finale Fitness](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/final_fit_boxplot.png){height=90%}
+![Airfoil Datensatz - Verteilung der finale Fitness](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png){height=90%}
 
 ## Airfoil - Größe der besten Lösungskandidaten über Generationen
 
@@ -322,7 +324,7 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "l"
+ align = "c"
  #caption = "Symbolic Regression Overview - Mean final Fitness"
 ) %>% 
   kableExtra::kable_styling(latex_options = "scale_down", font_size=7)
@@ -331,7 +333,7 @@ knitr::kable(
 
 
 
-## Symbolische Regression - Übersicht Fitness
+## Symbolische Regression - Übersicht Median Fitness
 
 \begin{tabular}{cc}
 \includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
@@ -339,7 +341,6 @@ knitr::kable(
 \includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
 \includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png}
 \end{tabular}
-
 
 
 
@@ -354,7 +355,7 @@ Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf
 * Concrete: 
 
 
-## Auswertung Mean der Größe der besten Individuen - Symbolische Regression
+## Auswertung Größe der besten Individuen - Symbolische Regression
 
 ```{r full_run_realWorldSymReg_best_solution_size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
