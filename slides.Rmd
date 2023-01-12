@@ -179,7 +179,7 @@ Welchen Einfluss hat die Dimension der eingesetzten DAE-LSTMs auf das Generalisi
 Experimenteller Aufbau: 
 
 * Ausschließliche Betrachtung des Rekonstruktionsfehlers der ersten Generation (Nutzung von seperaten Test- und Trainingspopulationen)
-* DAE-LSTM Training erfolgt über eine fixe Anzahl von $5000$ Epochen (kein frühzeitiger Abbruch bei Konvergenz des Testfehlers)
+* DAE-LSTM Training erfolgt über eine fixe Anzahl von $1000$ Epochen (kein frühzeitiger Abbruch bei Konvergenz des Testfehlers)
 
 Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe):
 
@@ -187,13 +187,21 @@ Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe
 * Variable Anzahl von Hidden Layers (1, 2, 3) mit 100 Hidden Neurons
 * (normales) DAE-GP und pre-trained DAE-GP
 
-## Einfluss der Anzahl von Hidden Layers
+## Einfluss der Anzahl von Hidden Layers (1/2)
 
 ![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6plots.png){height=85%}
+## Einfluss der Anzahl von Hidden Layers (2/2)
 
-## Einfluss der Anzahl von Hidden Neurons
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots.png){height=85%}
+## Einfluss der Anzahl von Hidden Neurons (1/2)
+
 
 ![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png){height=85%}
+## Einfluss der Anzahl von Hidden Neurons (2/2)
+
+
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png){height=85%}
+
 
 ## Interpretation
 
@@ -209,8 +217,8 @@ Aufbau: Betrachtung des Suchverhalten über je 10 Gesamtduchläufe für DAE-GP, 
 
 Fokus insbesondere auf:
 
-* Lösungsgüte
-* Größe der gefundenen Lösungen (=Anzahl an Knoten)
+* Lösungsqualität (Fitness)
+* Größe der gefundenen Lösungen (Anzahl an Knoten)
 * Populationsdiversität
 
 ## Hyperparameter
@@ -231,16 +239,18 @@ knitr::kable(
   # caption="Funktions Set"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-## Airfoil Übersicht
+# Ergebnisse Airfoil Datensatz
+
+## Airfoil - Entwicklung der Fitness über Generationen
 
 ![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png){height=90%}
 
 
-## Verteilung Lösungsgüte Airfoil
+## Airfoil - Verteilung der finalen Fitness
 
-![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/final_fit_boxplot.png){height=90%}
+![Airfoil Datensatz - Verteilung der finale Fitness](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/final_fit_boxplot.png){height=90%}
 
-## Lösungsgröße Airfoil
+## Airfoil - Größe der besten Lösungskandidaten über Generationen
 
 ![Airfoil Datensatz - Größe der besten Lösung über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_Size_byGens.png)
 
@@ -248,9 +258,9 @@ knitr::kable(
 
 Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer?
 
-## Lösungsgüte Airfoil mit einem hidden Layer
+## Airfoil - Entwicklung der Fitness über Generationen
 
-![Airfoil Datensatz - 1 HL - Lösungsgüte über Generationen](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
+![Airfoil Datensatz - 1 Hidden Layer - Lösungsgüte über Generationen](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
 
 ## Verteilung Lösungsgüte Airfoil mit einem hidden Layer
 
