@@ -121,3 +121,30 @@ for problem,path in RESULTS.items():
 with open("/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv", "w", encoding="utf-8") as f:
     f.write(csv_string)
 
+
+
+FILENAME_EPOCHS="epochs_trained_perGen.json"
+
+# Epochs Trained
+# ---
+
+# summarize by mean
+csv_string = "Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
+
+for problem,path in RESULTS.items():
+
+    d = json.load(open(join(path, FILENAME_EPOCHS),"r",encoding="utf-8"))
+
+    
+    reg_mean = np.mean(np.array(d["DAE-GP"]), axis=0)
+    pt_mean = np.mean(np.array(d["Pre-Trained"]), axis=0)
+
+    mean_reg_mean = np.mean(reg_mean)
+    mean_pt_mean = np.mean(pt_mean)
+
+
+    csv_string += f"{d['problem']},{d['hiddenLayer']},{mean_reg_mean},{mean_pt_mean},{getPVal(reg_mean, pt_mean)},{cliffsDeltaPretty(pt_mean, reg_mean)}\n"
+
+
+with open("/Users/rmn/github/master_thesis/data/summary_table_mean_epochsTrained.csv", "w", encoding="utf-8") as f:
+    f.write(csv_string)
