@@ -3,9 +3,48 @@ from scipy.stats import mannwhitneyu as mwu
 from scipy.stats import normaltest
 from vargha_delahni_A import VD_A
 from cliffs_delta import cliffs_delta
-
-from os.path import join
+from matplotlib import pyplot as plt
 import numpy as np
+from matplotlib import style as mpl_style
+from os.path import join, exists
+from os import makedirs
+from json import load
+
+
+# matplotlib setup
+MPL_CONFIG = load(
+    open("/Users/rmn/masterThesis/eda-gp-2020/experiments/matplotlib_config.json", "r", encoding="utf-8")
+)
+
+mpl_style.use(MPL_CONFIG["mpl_style"])
+
+# font sizes
+SMALL=MPL_CONFIG["fonts"]["small"]
+MID=MPL_CONFIG["fonts"]["mid"]
+BIG=MPL_CONFIG["fonts"]["big"]
+
+# color codes
+C_REG=MPL_CONFIG["colors"]["dae-gp"]
+C_PT=MPL_CONFIG["colors"]["pt_dae-gp"]
+
+# marker codes
+M_TRAIN=MPL_CONFIG["marker"]["train"]
+M_TEST=MPL_CONFIG["marker"]["test"]
+
+TRAIN_LINESTYLE=MPL_CONFIG["train_line_style"]
+
+DPI=MPL_CONFIG["dpi"]
+
+
+IMG_PATH=f"{MPL_CONFIG['image_base_path']}/symbolicRegressionSummarized"
+
+def create_dir(dir_name):
+    if not exists(dir_name):
+        makedirs(dir_name)
+
+create_dir(IMG_PATH)
+BASE_TITLE="symbolicRegressionSummarized"
+
 
 RESULTS = {
     "airfoil_1hl" : "/Users/rmn/github/master_thesis/data/airfoil_1hl_maxIndSize_fullRun_30gens",
@@ -14,6 +53,17 @@ RESULTS = {
     "energyCooling": "/Users/rmn/github/master_thesis/data/energyCooling_2hl_FullRun_30gens",
     "concrete": "/Users/rmn/github/master_thesis/data/concrete_2hl_FullRun_30gens"
 }
+
+RESULTS_2hl = {
+    "airfoil_2hl" : "/Users/rmn/github/master_thesis/data/airfoil_2hl_maxIndSize_fullRun_30gens",
+    "bostonHousing": "/Users/rmn/github/master_thesis/data/bostonHousing_2hl_maxIndSize_fullRun_30gens",
+    "energyCooling": "/Users/rmn/github/master_thesis/data/energyCooling_2hl_FullRun_30gens",
+    "concrete": "/Users/rmn/github/master_thesis/data/concrete_2hl_FullRun_30gens"
+}
+
+
+gens = [x for x in range(0, 31)]
+
 
 
 
@@ -45,31 +95,48 @@ FILENAME="best_final_fitness.json"
 # summarize by mean
 csv_string = "Problem,Hidden_Layer,Dataset,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
 
+
+
+
 for problem,path in RESULTS.items():
 
     d = json.load(open(join(path, FILENAME),"r",encoding="utf-8"))
 
-    # test for normal distribution ?
-    # ----
-    # reg_train = d["DAE-GP (train)"]
-    # pt_train = d["Pre-Trained (train)"]
-    # reg_test = d["DAE-GP (test)"]
-    # pt_test = d["Pre-Trained (test)"]
-
-    # for vals in (reg_train, pt_train, reg_test, pt_test):
-    #     s, p = normaltest(vals)
-    #     print("p_val:", p)
+    # write csv data
 
     reg_mean_train = np.mean(d["DAE-GP (train)"])
     pt_mean_train = np.mean(d["Pre-Trained (train)"])
     reg_mean_test = np.mean(d["DAE-GP (test)"])
     pt_mean_test = np.mean(d["Pre-Trained (test)"])
 
+    print(reg_mean_train)
+
     assert d["DAE-GP (train)"] != d["Pre-Trained (train)"]
     assert d["DAE-GP (test)"] != d["Pre-Trained (test)"]
 
 
     csv_string += f"{d['problem']},{d['hiddenLayer']},Train,{reg_mean_train},{pt_mean_train},{getPVal(d['DAE-GP (train)'], d['Pre-Trained (train)'])},{cliffsDeltaPretty(d['Pre-Trained (train)'], d['DAE-GP (train)'])}\n,{d['hiddenLayer']},Test,{reg_mean_test},{pt_mean_test},{getPVal(d['DAE-GP (test)'], d['Pre-Trained (test)'])},{cliffsDeltaPretty(d['Pre-Trained (test)'], d['DAE-GP (test)'])}\n"
+
+    
+FILE_FULL_FITNESS_DATA = "full_fitness_data.json"
+
+fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=True, dpi=DPI)
+fig.set_size_inches(14,12)
+fig.suptitle(f"{BASE_TITLE} - Mean Best Fitness by generation", fontsize=BIG)
+fig.supxlabel("Generations", fontsize=MID)
+fig.supylabel("RMSE", fontsize=MID)
+
+for (problem,path), ax in zip(RESULTS_2hl.items(), (ul, ur, dl, dr)):
+
+    d = json.load(open(join(path, FILE_FULL_FITNESS_DATA),"r",encoding="utf-8"))
+    ax.set_title(problem)
+    ax.plot(gens, np.mean(d["DAE-GP (train)"], axis=0), color=C_REG, marker=M_TRAIN, linestyle=TRAIN_LINESTYLE, label="DAE-GP(Train)")
+    ax.plot(gens, np.mean(d["DAE-GP (test)"], axis=0), color=C_REG, marker=M_TEST, label="DAE-GP(Test)")
+    ax.plot(gens, np.mean(d["Pre-Trained (train)"], axis=0), color=C_PT, marker=M_TRAIN, linestyle=TRAIN_LINESTYLE, label="Pre-Trained(Train)")
+    ax.plot(gens, np.mean(d["Pre-Trained (test)"], axis=0), color=C_PT, marker=M_TEST, label="Pre-Trained(Test)")
+
+fig.savefig(f"{IMG_PATH}/median_fitness_byGens.png")
+
 
 
 with open("/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv", "w", encoding="utf-8") as f:
