@@ -16,11 +16,11 @@ RESULTS = {
 }
 
 
-FILENAME="best_final_fitness.json"
+
 
 def cliffsDeltaPretty(*args):
     val,desc = cliffs_delta(*args)
-    return f"{val}"
+    return f"{val:.2f}"
 
 def getPVal(sampleA, sampleB):
     stats, pval = mwu(sampleA, sampleB)
@@ -39,6 +39,8 @@ def getPVal(sampleA, sampleB):
 
 # Fitness
 # ---
+
+FILENAME="best_final_fitness.json"
 
 # summarize by mean
 csv_string = "Problem,Hidden_Layer,Dataset,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
@@ -98,10 +100,12 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.c
 
 
 
-FILENAME_SIZE = "size_best_solution.json"
 
 # Solution Size
 # ---
+
+FILENAME_SIZE = "size_best_solution.json"
+
 
 # summarize by mean
 csv_string = "Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
@@ -123,10 +127,12 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv
 
 
 
-FILENAME_EPOCHS="epochs_trained_perGen.json"
-
 # Epochs Trained
 # ---
+
+
+FILENAME_EPOCHS="epochs_trained_perGen.json"
+
 
 # summarize by mean
 csv_string = "Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
@@ -147,4 +153,60 @@ for problem,path in RESULTS.items():
 
 
 with open("/Users/rmn/github/master_thesis/data/summary_table_mean_epochsTrained.csv", "w", encoding="utf-8") as f:
+    f.write(csv_string)
+
+
+
+
+
+# Population Diversity (norm. Levenshtein Edit Distance)
+# ---
+
+# by mean
+
+FILENAME_LEVDIV="lev_div_ovrGens.json"
+
+# summarize by mean
+csv_string = "Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
+
+for problem,path in RESULTS.items():
+
+    d = json.load(open(join(path, FILENAME_LEVDIV),"r",encoding="utf-8"))
+
+    
+    reg_mean = np.mean(np.array(d["DAE-GP"]), axis=0)
+    pt_mean = np.mean(np.array(d["Pre-Trained"]), axis=0)
+
+    mean_reg_mean = np.mean(reg_mean)
+    mean_pt_mean = np.mean(pt_mean)
+
+
+    csv_string += f"{d['problem']},{d['hiddenLayer']},{mean_reg_mean},{mean_pt_mean},{getPVal(reg_mean, pt_mean)},{cliffsDeltaPretty(pt_mean, reg_mean)}\n"
+
+
+with open("/Users/rmn/github/master_thesis/data/summary_table_mean_LevDistance.csv", "w", encoding="utf-8") as f:
+    f.write(csv_string)
+
+
+# by median
+
+
+csv_string = "Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
+
+for problem,path in RESULTS.items():
+
+    d = json.load(open(join(path, FILENAME_LEVDIV),"r",encoding="utf-8"))
+
+    
+    reg_mean = np.median(np.array(d["DAE-GP"]), axis=0)
+    pt_mean = np.median(np.array(d["Pre-Trained"]), axis=0)
+
+    mean_reg_mean = np.median(reg_mean)
+    mean_pt_mean = np.median(pt_mean)
+
+
+    csv_string += f"{d['problem']},{d['hiddenLayer']},{mean_reg_mean},{mean_pt_mean},{getPVal(reg_mean, pt_mean)},{cliffsDeltaPretty(pt_mean, reg_mean)}\n"
+
+
+with open("/Users/rmn/github/master_thesis/data/summary_table_median_LevDistance.csv", "w", encoding="utf-8") as f:
     f.write(csv_string)
