@@ -39,7 +39,7 @@ reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 ```
 
 
-```{bash recompile_results, eval=TRUE, include=FALSE}
+```{bash recompile_results, eval=FALSE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
@@ -80,7 +80,7 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_maxIndSiz
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_fullRun_30gens/re_evaluate_concrete_2hl_maxIndSize_fullRun_30gens.sh
 
 # summarize csv files for full run experiments
-/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_csv_files.py
+/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_data.py
 
 ```
 
@@ -303,7 +303,7 @@ Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer (HL)?
 
 ## Airfoil - Verteilung der finalen Fitness (1HL)
 
-![Airfoil - Verteilung der finalen Fitness (1HL)](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png){height=90%}
+![Airfoil - Verteilung der finalen Fitness (1HL)](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png){height=75%}
 
 ## Airfoil - Größe der besten Lösungskandidaten(1HL)
 
@@ -332,13 +332,8 @@ knitr::kable(
 
 ## Übersicht Median Fitness - Symbolische Regression
 
-\begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} \\
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png}
-\end{tabular}
 
+![Übersicht Median Fitness - Symbolische Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png){height=80%}
 
 
 ## Auswertung Fitness (Median) - Symbolische Regression
@@ -398,13 +393,7 @@ Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf
 ## Übersicht Lösungsgröße (Median) - Symbolische Regression
 
 
-\begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_Size_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_Size_byGens.png} \\
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_Size_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_Size_byGens.png}
-\end{tabular}
-
+![Übersicht Lösungsgröße (Median) - Symbolische Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png){height=80%}
 
 
 ## Auswertung Lösungsgröße (Median) - Symbolische Regression
@@ -452,14 +441,9 @@ knitr::kable(
 
 ## Übersicht Populationsdiversität (Median) - Symbolische Regression
 
-\begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png} \\
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png}
-\end{tabular}
+![Übersicht Populationsdiversität (Median) - Symbolische Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistance_byGen.png){height=80%}
 
-## Auswertung Populationsdiversität - Symbolische Regression
+## Auswertung Populationsdiversität (Median) - Symbolische Regression
 
 
 ```{r full_run_realWorldSymReg_popDiversity, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
@@ -504,12 +488,7 @@ knitr::kable(
 
 ## Übersicht Trainingsepochen pro Generation (Median) - Symbolische Regression
 
-\begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen.png} \\
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen.png}
-\end{tabular}
+![Übersicht Trainingsepochen pro Generation (Median) - Symbolische Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTrained.png){height=80%}
 
 ## Auswertung Trainingsepochen pro Generation (Median) - Symbolische Regression
 

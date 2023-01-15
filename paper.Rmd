@@ -57,7 +57,7 @@ print(f"Python Version: {version} \nPath: {executable}")
 ```
 
 
-```{bash recompile_results, include=FALSE}
+```{bash recompile_results, include=FALSE, eval=FALSE}
 
 # compile mermaid diagrams
 # ---
@@ -94,7 +94,7 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_maxIndSiz
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_fullRun_30gens/re_evaluate_concrete_2hl_maxIndSize_fullRun_30gens.sh
 
 # summarize csv files for full run experiments
-/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_csv_files.py
+/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_data.py
 
 ```
 
@@ -398,7 +398,6 @@ Table X summarizes the median best fitness achieved after running each algorithm
 
 
 
-
 ```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
@@ -441,7 +440,11 @@ knitr::kable(
 
 ## Solution Size in Symbolic Regression
 
-<!-- Overview Table  -->
+Next I studied the size of solutions based on using a pre-training strategy. Plot X shows the median size of the best solutions aggregated of all benchmark problems for symbolic regression
+
+![Median Solution Size - Symbolic Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png){height=80%}
+
+Table X summarizes the results of the statistical tests.
 
 ```{r full_run_realWorldSymReg_best_solution_size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
@@ -482,14 +485,6 @@ knitr::kable(
 
 ```
 
-<!-- Overview Plots  -->
-
-\begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} \\
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png}
-\end{tabular}
 
 
 # Discussion

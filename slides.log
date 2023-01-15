@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  15 JAN 2023 13:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  15 JAN 2023 15:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1267,7 +1267,7 @@ nal_fit_boxplot.png Graphic file (type png)
 al_fit_boxplot.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
 e_fullRun_30gens/final_fit_boxplot.png  used on input line 559.
-(pdftex.def)             Requested size: 282.60173pt x 242.23006pt.
+(pdftex.def)             Requested size: 235.49887pt x 201.85617pt.
 [36
 
  </Users/rmn/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30ge
@@ -1289,91 +1289,60 @@ ns/mean_Size_byGens.png>] [38
 ] [39
 
 ]
-<~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/m
-edian_fitness_byGens.png, id=323, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30g
-ens/median_fitness_byGens.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30ge
-ns/median_fitness_byGens.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_max
-IndSize_fullRun_30gens/median_fitness_byGens.png  used on input line 611.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-<~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
-edian_fitness_byGens.png, id=324, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
-ens/median_fitness_byGens.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
-ns/median_fitness_byGens.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
-IndSize_fullRun_30gens/median_fitness_byGens.png  used on input line 611.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_
-fitness_byGens.png, id=325, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/me
-dian_fitness_byGens.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/med
-ian_fitness_byGens.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens/median_fitness_byGens.png  used on input line 611.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-<~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median
-_fitness_byGens.png, id=326, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/m
-edian_fitness_byGens.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/me
-dian_fitness_byGens.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSi
-ze_fullRun_30gens/median_fitness_byGens.png  used on input line 611.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
+<~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_b
+yGens.png, id=323, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitn
+ess_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitne
+ss_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
+marized/median_fitness_byGens.png  used on input line 606.
+(pdftex.def)             Requested size: 251.19983pt x 215.31413pt.
 [40
 
- </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRu
-n_30gens/median_fitness_byGens.png> </Users/rmn/masterThesis/master_thesis/img/
-bostonHousing_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png> </Users/
-rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median
-_fitness_byGens.png> </Users/rmn/masterThesis/master_thesis/img/concrete_2hl_ma
-xIndSize_fullRun_30gens/median_fitness_byGens.png>]
-Overfull \hbox (4.16772pt too wide) in paragraph at lines 653--653
+ </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/median
+_fitness_byGens.png>]
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 648--648
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
 
-Overfull \hbox (5.17206pt too wide) in paragraph at lines 653--653
+Overfull \hbox (5.17206pt too wide) in paragraph at lines 648--648
  []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
  []
 
 
-Overfull \hbox (4.16772pt too wide) in paragraph at lines 653--653
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 648--648
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
 
-Overfull \hbox (28.15501pt too wide) in paragraph at lines 653--653
+Overfull \hbox (28.15501pt too wide) in paragraph at lines 648--648
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (4.16772pt too wide) in paragraph at lines 653--653
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 648--648
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
 
-Overfull \hbox (26.46199pt too wide) in paragraph at lines 653--653
+Overfull \hbox (26.46199pt too wide) in paragraph at lines 648--648
  []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
 
-Overfull \hbox (4.16772pt too wide) in paragraph at lines 653--653
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 648--648
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
 
-Overfull \hbox (5.17206pt too wide) in paragraph at lines 653--653
+Overfull \hbox (5.17206pt too wide) in paragraph at lines 648--648
  []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
  []
 
 
-Overfull \hbox (4.16772pt too wide) in paragraph at lines 653--653
+Overfull \hbox (4.16772pt too wide) in paragraph at lines 648--648
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
@@ -1382,283 +1351,170 @@ Overfull \hbox (4.16772pt too wide) in paragraph at lines 653--653
 ] [42
 
 ]
-<~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/m
-edian_Size_byGens.png, id=349, 722.7pt x 578.16pt>
-File: ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30g
-ens/median_Size_byGens.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30ge
-ns/median_Size_byGens.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_max
-IndSize_fullRun_30gens/median_Size_byGens.png  used on input line 682.
-(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
-<~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
-edian_Size_byGens.png, id=350, 722.7pt x 578.16pt>
-File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
-ens/median_Size_byGens.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
-ns/median_Size_byGens.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
-IndSize_fullRun_30gens/median_Size_byGens.png  used on input line 682.
-(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
-<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_
-Size_byGens.png, id=351, 722.7pt x 578.16pt>
-File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/me
-dian_Size_byGens.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/med
-ian_Size_byGens.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens/median_Size_byGens.png  used on input line 682.
-(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
-<~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median
-_Size_byGens.png, id=352, 722.7pt x 578.16pt>
-File: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/m
-edian_Size_byGens.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/me
-dian_Size_byGens.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSi
-ze_fullRun_30gens/median_Size_byGens.png  used on input line 682.
-(pdftex.def)             Requested size: 138.27382pt x 110.61905pt.
-
-Overfull \vbox (1.725pt too high) detected at line 682
- []
-
+<~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_s
+ize_byGens.png, id=343, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_best
+Sol_size_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestS
+ol_size_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
+marized/median_bestSol_size_byGens.png  used on input line 672.
+(pdftex.def)             Requested size: 251.19983pt x 215.31413pt.
 [43
 
- </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRu
-n_30gens/median_Size_byGens.png> </Users/rmn/masterThesis/master_thesis/img/bos
-tonHousing_2hl_maxIndSize_fullRun_30gens/median_Size_byGens.png> </Users/rmn/ma
-sterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_Size_
-byGens.png> </Users/rmn/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_
-fullRun_30gens/median_Size_byGens.png>]
-Overfull \hbox (7.5014pt too wide) in paragraph at lines 716--716
+ </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/median
+_bestSol_size_byGens.png>]
+Overfull \hbox (7.5014pt too wide) in paragraph at lines 706--706
  []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
  []
 
 
-Overfull \hbox (0.5309pt too wide) in paragraph at lines 716--716
+Overfull \hbox (0.5309pt too wide) in paragraph at lines 706--706
  []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
  []
 
 
-Overfull \hbox (19.35292pt too wide) in paragraph at lines 716--716
+Overfull \hbox (19.35292pt too wide) in paragraph at lines 706--706
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (17.6599pt too wide) in paragraph at lines 716--716
+Overfull \hbox (17.6599pt too wide) in paragraph at lines 706--706
  []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
 
-Overfull \hbox (0.5309pt too wide) in paragraph at lines 716--716
+Overfull \hbox (0.5309pt too wide) in paragraph at lines 706--706
  []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
  []
 
 [44
 
 ]
-<~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/m
-edian_popDiversity_byGens_levOnly.png, id=370, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30g
-ens/median_popDiversity_byGens_levOnly.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30ge
-ns/median_popDiversity_byGens_levOnly.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_max
-IndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png  used on input li
-ne 727.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-<~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
-edian_popDiversity_byGens_levOnly.png, id=371, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
-ens/median_popDiversity_byGens_levOnly.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
-ns/median_popDiversity_byGens_levOnly.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
-IndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png  used on input li
-ne 727.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_
-popDiversity_byGens_levOnly.png, id=372, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/me
-dian_popDiversity_byGens_levOnly.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/med
-ian_popDiversity_byGens_levOnly.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens/median_popDiversity_byGens_levOnly.png  used on input line 727
-.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-<~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median
-_popDiversity_byGens_levOnly.png, id=373, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/m
-edian_popDiversity_byGens_levOnly.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/me
-dian_popDiversity_byGens_levOnly.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSi
-ze_fullRun_30gens/median_popDiversity_byGens_levOnly.png  used on input line 72
-7.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-
-Overfull \vbox (17.51639pt too high) detected at line 727
- []
-
+<~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistan
+ce_byGen.png, id=358, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levD
+istance_byGen.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDi
+stance_byGen.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
+marized/median_levDistance_byGen.png  used on input line 712.
+(pdftex.def)             Requested size: 251.19983pt x 215.31413pt.
 [45
 
- </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRu
-n_30gens/median_popDiversity_byGens_levOnly.png> </Users/rmn/masterThesis/maste
-r_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_popDiversity_by
-Gens_levOnly.png> </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxInd
-Size_fullRun_30gens/median_popDiversity_byGens_levOnly.png> </Users/rmn/masterT
-hesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_popDivers
-ity_byGens_levOnly.png>]
-Overfull \hbox (6.98068pt too wide) in paragraph at lines 761--761
+ </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/median
+_levDistance_byGen.png>]
+Overfull \hbox (6.98068pt too wide) in paragraph at lines 747--747
  []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
  []
 
 
-Overfull \hbox (5.5002pt too wide) in paragraph at lines 761--761
+Overfull \hbox (5.5002pt too wide) in paragraph at lines 747--747
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (18.60957pt too wide) in paragraph at lines 761--761
+Overfull \hbox (18.60957pt too wide) in paragraph at lines 747--747
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (5.5002pt too wide) in paragraph at lines 761--761
+Overfull \hbox (5.5002pt too wide) in paragraph at lines 747--747
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (16.91655pt too wide) in paragraph at lines 761--761
+Overfull \hbox (16.91655pt too wide) in paragraph at lines 747--747
  []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
 
-Overfull \hbox (5.5002pt too wide) in paragraph at lines 761--761
+Overfull \hbox (5.5002pt too wide) in paragraph at lines 747--747
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (5.5002pt too wide) in paragraph at lines 761--761
+Overfull \hbox (5.5002pt too wide) in paragraph at lines 747--747
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 [46
 
 ]
-<~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/m
-edian_epochs_trained_perGen.png, id=390, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30g
-ens/median_epochs_trained_perGen.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30ge
-ns/median_epochs_trained_perGen.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/energyCooling_2hl_max
-IndSize_fullRun_30gens/median_epochs_trained_perGen.png  used on input line 772
-.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-<~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/m
-edian_epochs_trained_perGen.png, id=391, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30g
-ens/median_epochs_trained_perGen.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30ge
-ns/median_epochs_trained_perGen.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/bostonHousing_2hl_max
-IndSize_fullRun_30gens/median_epochs_trained_perGen.png  used on input line 772
-.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-<~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_
-epochs_trained_perGen.png, id=392, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/me
-dian_epochs_trained_perGen.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/med
-ian_epochs_trained_perGen.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSiz
-e_fullRun_30gens/median_epochs_trained_perGen.png  used on input line 772.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-<~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median
-_epochs_trained_perGen.png, id=393, 1011.78pt x 867.24pt>
-File: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/m
-edian_epochs_trained_perGen.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/me
-dian_epochs_trained_perGen.png>
-Package pdftex.def Info: ~/masterThesis/master_thesis/img/concrete_2hl_maxIndSi
-ze_fullRun_30gens/median_epochs_trained_perGen.png  used on input line 772.
-(pdftex.def)             Requested size: 138.2672pt x 118.51474pt.
-
-Overfull \vbox (17.51639pt too high) detected at line 772
- []
-
+<~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTra
+ined.png, id=372, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoc
+hsTrained.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoch
+sTrained.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
+marized/median_epochsTrained.png  used on input line 753.
+(pdftex.def)             Requested size: 251.19983pt x 215.31413pt.
 [47
 
- </Users/rmn/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRu
-n_30gens/median_epochs_trained_perGen.png> </Users/rmn/masterThesis/master_thes
-is/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen
-.png> </Users/rmn/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun
-_30gens/median_epochs_trained_perGen.png> </Users/rmn/masterThesis/master_thesi
-s/img/concrete_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen.png>]
-
-Overfull \hbox (5.32419pt too wide) in paragraph at lines 807--807
+ </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/median
+_epochsTrained.png>]
+Overfull \hbox (5.32419pt too wide) in paragraph at lines 788--788
  []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
  []
 
 
-Overfull \hbox (2.33456pt too wide) in paragraph at lines 807--807
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 190.93| 
  []
 
 
-Overfull \hbox (4.26254pt too wide) in paragraph at lines 807--807
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (2.33456pt too wide) in paragraph at lines 807--807
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 151.87| 
  []
 
 
-Overfull \hbox (4.26254pt too wide) in paragraph at lines 807--807
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (19.7227pt too wide) in paragraph at lines 807--807
+Overfull \hbox (19.7227pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (2.33456pt too wide) in paragraph at lines 807--807
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 182.84| 
  []
 
 
-Overfull \hbox (4.26254pt too wide) in paragraph at lines 807--807
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (16.83746pt too wide) in paragraph at lines 807--807
+Overfull \hbox (16.83746pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) Energy_Cooling| 
  []
 
 
-Overfull \hbox (2.33456pt too wide) in paragraph at lines 807--807
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 169.39| 
  []
 
 
-Overfull \hbox (4.26254pt too wide) in paragraph at lines 807--807
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (2.33456pt too wide) in paragraph at lines 807--807
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 171.69| 
  []
 
 
-Overfull \hbox (4.26254pt too wide) in paragraph at lines 807--807
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 788--788
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
@@ -1690,10 +1546,10 @@ Overfull \hbox (4.26254pt too wide) in paragraph at lines 807--807
 
 (./slides.aux) ) 
 Here is how much of TeX's memory you used:
- 26527 strings out of 478268
- 526810 string characters out of 5846348
+ 26453 strings out of 478268
+ 518417 string characters out of 5846348
  798163 words of memory out of 5000000
- 43840 multiletter control sequences out of 15000+600000
+ 43768 multiletter control sequences out of 15000+600000
  573106 words of font info for 172 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,11n,122p,1003b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1707,10 +1563,10 @@ ic/lm/lmsso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lms
 so8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
 b>
-Output written on slides.pdf (54 pages, 9941829 bytes).
+Output written on slides.pdf (54 pages, 7554571 bytes).
 PDF statistics:
- 554 PDF objects out of 1000 (max. 8388607)
+ 530 PDF objects out of 1000 (max. 8388607)
  416 compressed objects within 5 object streams
  168 named destinations out of 1000 (max. 500000)
- 63730 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 63670 words of extra memory for PDF output out of 74296 (max. 10000000)
 
