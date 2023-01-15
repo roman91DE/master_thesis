@@ -126,6 +126,24 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv
     f.write(csv_string)
 
 
+# summarize by median
+csv_string = "Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
+
+for problem,path in RESULTS.items():
+
+    d = json.load(open(join(path, FILENAME_SIZE),"r",encoding="utf-8"))
+
+    
+    reg_mean = np.median(d["DAE-GP"])
+    pt_mean = np.median(d["Pre-Trained"])
+
+
+    csv_string += f"{d['problem']},{d['hiddenLayer']},{reg_mean},{pt_mean},{getPVal(d['DAE-GP'], d['Pre-Trained'])},{cliffsDeltaPretty(d['Pre-Trained'], d['DAE-GP'])}\n"
+
+
+with open("/Users/rmn/github/master_thesis/data/summary_table_best_size_median.csv", "w", encoding="utf-8") as f:
+    f.write(csv_string)
+
 
 # Epochs Trained
 # ---
@@ -156,6 +174,26 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_mean_epochsTrained
     f.write(csv_string)
 
 
+# summarize by median
+csv_string = "Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta\n"
+
+for problem,path in RESULTS.items():
+
+    d = json.load(open(join(path, FILENAME_EPOCHS),"r",encoding="utf-8"))
+
+    
+    reg_mean = np.median(np.array(d["DAE-GP"]), axis=0)
+    pt_mean = np.median(np.array(d["Pre-Trained"]), axis=0)
+
+    mean_reg_mean = np.mean(reg_mean)
+    mean_pt_mean = np.mean(pt_mean)
+
+
+    csv_string += f"{d['problem']},{d['hiddenLayer']},{mean_reg_mean},{mean_pt_mean},{getPVal(reg_mean, pt_mean)},{cliffsDeltaPretty(pt_mean, reg_mean)}\n"
+
+
+with open("/Users/rmn/github/master_thesis/data/summary_table_median_epochsTrained.csv", "w", encoding="utf-8") as f:
+    f.write(csv_string)
 
 
 

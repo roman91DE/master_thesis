@@ -329,7 +329,19 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-## Symbolische Regression - Ergebnisübersicht
+
+## Übersicht Median Fitness - Symbolische Regression
+
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} \\
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png}
+\end{tabular}
+
+
+
+## Auswertung Fitness (Median) - Symbolische Regression
 
 
 ```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
@@ -339,8 +351,7 @@ library(dplyr)
 
 # Create the data frame from csv
 df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv",
-  # "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",  -> Use this path to summarize by median
+  "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",
   sep=",",
   colClasses = c("character", "numeric", "character", "numeric", "numeric", "character", "character")
 )
@@ -374,19 +385,6 @@ knitr::kable(
 ```
 
 
-
-## Symbolische Regression - Übersicht Median Fitness
-
-\begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} \\
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png}
-\end{tabular}
-
-
-
-
 ## Zusammenfassung Fitness - Symbolische Regression
 
 Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf die erzielte Lösungsqualität in den durchgeführten Experimenten!
@@ -397,7 +395,19 @@ Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf
 * Concrete: 
 
 
-## Auswertung Größe der besten Individuen - Symbolische Regression
+## Übersicht Lösungsgröße (Median) - Symbolische Regression
+
+
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_Size_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_Size_byGens.png} \\
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_Size_byGens.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_Size_byGens.png}
+\end{tabular}
+
+
+
+## Auswertung Lösungsgröße (Median) - Symbolische Regression
 
 ```{r full_run_realWorldSymReg_best_solution_size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
@@ -406,7 +416,7 @@ library(dplyr)
 
 # Create the data frame from csv
 df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv",
+  "/Users/rmn/github/master_thesis/data/summary_table_best_size_median.csv",
   sep=",",
   colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
 )
@@ -438,37 +448,80 @@ knitr::kable(
   kable_styling(latex_options = "scale_down", font_size = 7)
 
 ```
-## Durchschnittliche Lösungsgröße - Symbolische Regression
 
 
-\begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} \\
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png}
-\end{tabular}
-
-
-## Populationsdiversität - Symbolische Regression
+## Übersicht Populationsdiversität (Median) - Symbolische Regression
 
 \begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens_levOnly.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens_levOnly.png} \\
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens_levOnly.png} &
-\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens_levOnly.png}
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png} \\
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_popDiversity_byGens_levOnly.png}
 \end{tabular}
 
 ## Auswertung Populationsdiversität - Symbolische Regression
 
 
-```{r full_run_realWorldSymReg_best_solution_size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r full_run_realWorldSymReg_popDiversity, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
 library(dplyr)
 
 # Create the data frame from csv
 df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_mean_LevDistance.csv",
+  "/Users/rmn/github/master_thesis/data/summary_table_median_LevDistance.csv",
+  sep=",",
+  colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
+)
+
+# Create a new dataframe with the modified values of the two columns,
+df_bold <- df 
+
+for(i in 1:nrow(df)){
+  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
+    }
+  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
+  }
+}
+# shorten column names
+col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
+
+
+knitr::kable(
+ df_bold,
+ format = "markdown",
+ col.names = col_names,
+ align = "c"
+ #caption = "Symbolic Regression Overview - Mean final Fitness"
+) %>% 
+  kable_styling(latex_options = "scale_down", font_size = 7)
+
+```
+
+## Übersicht Trainingsepochen pro Generation (Median) - Symbolische Regression
+
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/energyCooling_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/bostonHousing_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen.png} \\
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen.png} &
+\includegraphics[width=0.45\textwidth]{~/masterThesis/master_thesis/img/concrete_2hl_maxIndSize_fullRun_30gens/median_epochs_trained_perGen.png}
+\end{tabular}
+
+## Auswertung Trainingsepochen pro Generation (Median) - Symbolische Regression
+
+
+```{r full_run_realWorldSymReg_epochsPerGen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_table_mean_epochsTrained.csv",
   sep=",",
   colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
 )
