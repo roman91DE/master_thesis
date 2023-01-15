@@ -118,7 +118,7 @@ FILE_FULL_FITNESS_DATA = "full_fitness_data.json"
 
 fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=False, dpi=DPI, layout="constrained")
 fig.set_size_inches(14,12)
-fig.suptitle(f"{BASE_TITLE} - Mean Best Fitness", fontsize=BIG)
+# fig.suptitle(f"{BASE_TITLE} - Mean Best Fitness", fontsize=BIG)
 fig.supxlabel("Generations", fontsize=MID)
 fig.supylabel("RMSE", fontsize=MID)
 
@@ -160,7 +160,7 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.c
 
 fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=False, dpi=DPI, layout="constrained")
 fig.set_size_inches(14,12)
-fig.suptitle(f"{BASE_TITLE} - Median Best Fitness", fontsize=BIG)
+#fig.suptitle(f"{BASE_TITLE} - Median Best Fitness", fontsize=BIG)
 fig.supxlabel("Generations", fontsize=MID)
 fig.supylabel("RMSE", fontsize=MID)
 
@@ -206,7 +206,7 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv
 
 fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=False, dpi=DPI, layout="constrained")
 fig.set_size_inches(14,12)
-fig.suptitle(f"{BASE_TITLE} - Mean Size of best Solution", fontsize=BIG)
+#fig.suptitle(f"{BASE_TITLE} - Mean Size of best Solution", fontsize=BIG)
 fig.supxlabel("Generations", fontsize=MID)
 fig.supylabel("Size", fontsize=MID)
 
@@ -242,7 +242,7 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_best_size_median.c
 
 fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=False, dpi=DPI, layout="constrained")
 fig.set_size_inches(14,12)
-fig.suptitle(f"{BASE_TITLE} - Median Size of best Solution", fontsize=BIG)
+#fig.suptitle(f"{BASE_TITLE} - Median Size of best Solution", fontsize=BIG)
 fig.supxlabel("Generations", fontsize=MID)
 fig.supylabel("Size", fontsize=MID)
 
@@ -289,7 +289,7 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_mean_epochsTrained
 
 fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=True, dpi=DPI, layout="constrained")
 fig.set_size_inches(14,12)
-fig.suptitle(f"{BASE_TITLE} - Mean Epochs Trained", fontsize=BIG)
+#fig.suptitle(f"{BASE_TITLE} - Mean Epochs Trained", fontsize=BIG)
 fig.supxlabel("Generations", fontsize=MID)
 fig.supylabel("Epochs trained", fontsize=MID)
 
@@ -329,7 +329,7 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_median_epochsTrain
 
 fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=True, dpi=DPI, layout="constrained")
 fig.set_size_inches(14,12)
-fig.suptitle(f"{BASE_TITLE} - Median Epochs Trained", fontsize=BIG)
+#fig.suptitle(f"{BASE_TITLE} - Median Epochs Trained", fontsize=BIG)
 fig.supxlabel("Generations", fontsize=MID)
 fig.supylabel("Epochs trained", fontsize=MID)
 
@@ -375,7 +375,7 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_mean_LevDistance.c
 
 fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=True, dpi=DPI, layout="constrained")
 fig.set_size_inches(14,12)
-fig.suptitle(f"{BASE_TITLE} - Mean Population Diversity", fontsize=BIG)
+#fig.suptitle(f"{BASE_TITLE} - Mean Population Diversity", fontsize=BIG)
 fig.supxlabel("Generations", fontsize=MID)
 fig.supylabel("Norm. Levenshtein Distance", fontsize=MID)
 
@@ -417,7 +417,7 @@ with open("/Users/rmn/github/master_thesis/data/summary_table_median_LevDistance
 
 fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=True, dpi=DPI, layout="constrained")
 fig.set_size_inches(14,12)
-fig.suptitle(f"{BASE_TITLE} - Median Population Diversity", fontsize=BIG)
+#fig.suptitle(f"{BASE_TITLE} - Median Population Diversity", fontsize=BIG)
 fig.supxlabel("Generations", fontsize=MID)
 fig.supylabel("Norm. Levenshtein Distance", fontsize=MID)
 

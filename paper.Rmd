@@ -394,7 +394,7 @@ knitr::kable(
   caption="Overview - Real World Symbolic Regression Benchmark Problems"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-Table X summarizes the median best fitness achieved after running each algorithm for 10 runs using a population size of 500 individuals for 30 generations.^[P-Values are marked with asteriks (1,2,3) for ($\alpha$)-levels of $0.1$, $0.05$ and $0.01$].
+Table X summarizes the median best fitness achieved after running each algorithm for 10 runs using a population size of 500 individuals for 30 generations.^[P-Values are marked with asteriks (1,2,3) for ($\alpha$)-levels of $0.1$, $0.05$ and $0.01$]. The median best fitness over all 30 generations are visualized in figure X.
 
 
 
@@ -432,15 +432,17 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "c"
- #caption = "Symbolic Regression Overview - Mean final Fitness"
+ align = "c",
+ caption = "Median Best Fitness - Symbolic Regression"
 ) %>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 
 ```
 
+![Median Best Fitness - Symbolic Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png){height=80%}
+
 ## Solution Size in Symbolic Regression
 
-Next I studied the size of solutions based on using a pre-training strategy. Plot X shows the median size of the best solutions aggregated of all benchmark problems for symbolic regression
+Next I studied the size of solutions based on using a pre-training strategy. Figure X shows the median size of the best solutions aggregated of all benchmark problems for symbolic regression
 
 ![Median Solution Size - Symbolic Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png){height=80%}
 
@@ -479,12 +481,107 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "l"
- #caption = "Symbolic Regression Overview - Mean final Fitness"
+ align = "l",
+ caption = "Median Solution Size - Symbolic Regression"
 ) %>% row_spec(0,bold=FALSE) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
+## Population Diversity
 
+Another interesting metric to examine in EC based metaheuristics is the diversity of the current generations population. Since the individual solutions in DAE-GP are computer programs in the form ob parse trees, I selected the normalized Levenshtein edit distance as my primary metric for tracking population diversity. figure X shows how the median population diversity develops over the full number of generations for all benchmark problems. 
+
+![Median Population Diversity over Generations](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistance_byGen.png){height=80%}
+
+
+Testing for statistical differences in the underlying distributions yields the P-Values listed in table X.
+
+```{r full_run_realWorldSymReg_popDiversity, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_table_median_LevDistance.csv",
+  sep=",",
+  colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
+)
+
+# Create a new dataframe with the modified values of the two columns,
+df_bold <- df 
+
+for(i in 1:nrow(df)){
+  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
+    }
+  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
+  }
+}
+# shorten column names
+col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
+
+
+knitr::kable(
+ df_bold,
+ format = "markdown",
+ col.names = col_names,
+ align = "c",
+ caption = "Median Population Diversity over Generations - Symbolic Regression"
+) %>% 
+  kable_styling(latex_options = "scale_down", font_size = 7)
+
+```
+
+
+
+## Training epochs per Generation
+
+One important argument for using pre-training is the reduction of runtime and computational ressources for DAE-GP. An important factor in this, is the number of epochs that each DAE-LSTM has to be trained per generation. I studied the median number of training epochs that each generations DAE-LSTM $M_g$ (excluding the pre-training DAE-LSTM model $\hat{M}$) was trained until the training was stopped. The results are visualized in figure X and summarized in table X
+
+![Median Number of Training Epochs per Generation - Symbolic Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTrained.png){height=80%}
+
+```{r full_run_realWorldSymReg_epochsPerGen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_table_mean_epochsTrained.csv",
+  sep=",",
+  colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
+)
+
+# Create a new dataframe with the modified values of the two columns,
+df_bold <- df 
+
+for(i in 1:nrow(df)){
+  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
+    }
+  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
+  }
+}
+# shorten column names
+col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
+
+
+knitr::kable(
+ df_bold,
+ format = "markdown",
+ col.names = col_names,
+ align = "c",
+ caption = "Median Number of Training Epochs per Generation - Symbolic Regression"
+) %>% 
+  kable_styling(latex_options = "scale_down", font_size = 7)
+
+```
 
 
 # Discussion
