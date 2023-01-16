@@ -207,11 +207,6 @@ Gewählte Pre-Training Strategie:
 
 ![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png){height=70%}
 
-## Herausforderung - DAE-LSTM Dimension
-
-* Im Verlaufe des DAE-GP algorithmus passt sich die Dimension der DAE-LSTM Netzwerke $M_{g}$ dynamisch an die aktuelle Population an
-* Anzahl der versteckten Neuronen pro verstecktem Layer in generation $g$ <- maximum der Länge aller Individuen aus $P_{g-1}$  
-
 
 
 # Untersuchung des Generalisierungsverhalten 
@@ -285,6 +280,31 @@ knitr::kable(
   # caption="Funktions Set"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
+
+
+## Herausforderung - DAE-LSTM Dimension
+
+* Im Verlaufe des DAE-GP algorithmus passt sich die Dimension der DAE-LSTM Netzwerke $M_{g}$ dynamisch an die aktuelle Population an
+
+> Anzahl der versteckten Neuronen pro verstecktem Layer in generation $g$ = Maximum der Länge aller Individuen aus $P_{g-1}$ 
+
+Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anzahl an Neuronen. Zwei Ansätze verfolgt:
+
+1. DAE-GP mit dynamischer Anpassung, Pre-Trained DAE-GP mit konstanter Anzahl (maximale Länge innerhalb von $\hat{P}$)
+
+  * Vorteil: DAE-GP Performance konsistent mit bisherigen Publikationen, deutliche Reduktion der Laufzeit
+  * Nachteil: Erschwerte Vergleichbarkeit beider Algorithmen
+  
+2. Beide Algorithmen mit einer fixen Anzahl von versteckten Neuronen
+
+  * Vorteil: Bessere Vergleichbarkeit zwischen beiden Algorithmen
+  * Nachteile: Starke erhöhung der Laufzeit für DAE-GP algorithmus 
+
+
+## Airfoil - Entwicklung DAE-LSTM Dimension
+
+![Airfoil - Entwicklung DAE-LSTM Dimension](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_hiddenNeurons_perGen.png){height=90%}
+
 
 ## Airfoil - Entwicklung der Fitness über Generationen
 
