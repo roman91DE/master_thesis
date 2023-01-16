@@ -25,68 +25,10 @@ includes:
 ---
 
 
-```{r setup, include=FALSE}
-library(kableExtra)
-library(magrittr)
-library(reticulate)
 
 
-knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(fig.pos = "H")
 
 
-reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
-
-```
-
-
-```{bash recompile_results, eval=FALSE, include=FALSE}
-
-# set eval to TRUE to recompile all results, plots etc.
-# Warning: This will take some time...
-
-
-# compile mermaid diagrams
-# ---
-WIDTH=3200
-HEIGHT=2400
-THEME="neutral"
-BACKGROUND="white"
-
-for file in ./mermaid/*.mmd
-do
-  mmdc -i "$file" -o ./img/flowcharts/$(basename "$file" .mmd).png -t $THEME -w $WIDTH -H $HEIGHT -b $BACKGROUND 
-done
-
-# Airfoil First Gen
-# ---
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_firstGen/re_evaluate_airfoilFirstGen.sh
-
-
-# Real World SymReg Full Runs
-# ---
-
-# airfoil
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_1hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_1hl_maxIndSize_30gen.sh
-
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_2hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_2hl_maxIndSize_30gen.sh
-
-# energy (cooling)
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_maxIndSize_fullRun_30gens/re_evaluate_energyCooling_2hl_maxIndSize_fullRun_30gens.sh
-
-# boston housing
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_maxIndSize_fullRun_30gens/re_evaluate_bostonHousing_2hl_maxIndSize_fullRun_30gens.sh
-
-# concrete
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_fullRun_30gens/re_evaluate_concrete_2hl_maxIndSize_fullRun_30gens.sh
-
-# summarize csv files and plots for full run experiments
-/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_data.py
-
-# 2nd generation Pre-Training
-/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/masterThesis/eda-gp-2020/experiments/2ndGenPT_airfoil_2hl_150hn_fullRun/re_evaluate_2ndGenPT_airfoil_2hl_150hn_fullRun.sh
-
-```
 
 
 # Einleitung
@@ -205,9 +147,8 @@ Gewählte Pre-Training Strategie:
 
 ## Pre-Trained DAE-GP Ablauf
 
-```{r, echo=FALSE, fig.align='center', fig.width=14, fig.height=12}
-knitr::include_graphics("./img/flowcharts/pt-dae-gp.png")
-```
+
+\begin{center}\includegraphics[width=14.28in]{./img/flowcharts/pt-dae-gp} \end{center}
 
 ## Herausforderungen
 
@@ -269,22 +210,53 @@ Fokus insbesondere auf:
 
 ## Hyperparameter
 
-```{r airfoil_fullRun_2hl_maxIndSize_params, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
-  # caption="Hyperparameter"
-)%>% row_spec(0,bold=TRUE ) %>% kable_styling(latex_options = "scale_down", font_size = 7)
-```
+\begin{table}
+\centering\begingroup\fontsize{7}{9}\selectfont
+
+\resizebox{\linewidth}{!}{
+\begin{tabular}{l|l}
+\hline
+\textbf{parameter} & \textbf{value}\\
+\hline
+populationSize & 500\\
+\hline
+generations & 30\\
+\hline
+fitness & RMSE\\
+\hline
+TrainingMode & Convergence\\
+\hline
+SamplingSteps & 2\\
+\hline
+hiddenLayers & 2\\
+\hline
+Selection & Binary Tournament Selection\\
+\hline
+Pre-Training PopulationSize(Training/Validation) & 10000/100000\\
+\hline
+Pre-Training TrainingMode & Early Stopping\\
+\hline
+\end{tabular}}
+\endgroup{}
+\end{table}
 ## Funktions Set Symbolische Regression
 
-```{r airfoil_function_set, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("./tables/airfoil_function_set"),
-  # caption="Funktions Set"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
-```
+\begin{table}[!h]
+\centering
+\begin{tabular}{l|r}
+\hline
+\textbf{function.} & \textbf{arity}\\
+\hline
+addition & 2\\
+\hline
+subtraction & 2\\
+\hline
+multiplication & 2\\
+\hline
+analytic\_quotient & 2\\
+\hline
+\end{tabular}
+\end{table}
 
 ## Airfoil - Entwicklung der Fitness über Generationen
 
@@ -328,13 +300,22 @@ Daher: Ausweitung des Experiments auf weitere Datensätze
 
 ## Übersicht Datensätze
 
-```{r full_run_realWorldSymReg_problems, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
-  #caption="Overview - Real World Symbolic Regression Benchmark Problems"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
-```
+\begin{table}[!h]
+\centering
+\begin{tabular}{l|r|r}
+\hline
+\textbf{Problem} & \textbf{Observations} & \textbf{Features}\\
+\hline
+Airfoil & 1503 & 5\\
+\hline
+Boston\_Housing & 506 & 13\\
+\hline
+Energy\_Cooling & 768 & 8\\
+\hline
+Concrete & 1030 & 8\\
+\hline
+\end{tabular}
+\end{table}
 
 
 ## Übersicht Median Fitness - Symbolische Regression
@@ -346,45 +327,19 @@ knitr::kable(
 ## Auswertung Fitness (Median) - Symbolische Regression
 
 
-```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-library(knitr)
-library(kableExtra)
-library(dplyr)
 
-# Create the data frame from csv
-df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",
-  sep=",",
-  colClasses = c("character", "numeric", "character", "numeric", "numeric", "character", "character")
-)
-
-# Create a new dataframe with the modified values of the two columns,
-df_bold <- df 
-
-for(i in 1:nrow(df)){
-  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
-    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
-    }
-  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
-  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
-  }
-}
-# shorten column names
-col_names <- c("Problem", "Hidden-Layers", "Set", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
-
-
-knitr::kable(
- df_bold,
- format = "markdown",
- col.names = col_names,
- align = "c"
- #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% 
-  kable_styling(latex_options = "scale_down", font_size = 7)
-
-```
+|     Problem     | Hidden-Layers |  Set  |  DAE-GP   | Pre-Trained | P-Value | Cliffs-Delta |
+|:---------------:|:-------------:|:-----:|:---------:|:-----------:|:-------:|:------------:|
+|     Airfoil     |       1       | Train | **33.55** |    35.11    | 0.02**  |     0.64     |
+|                 |       1       | Test  | **34.03** |    35.81    |  0.14   |     0.40     |
+|     Airfoil     |       2       | Train |   11.64   |  **8.24**   |  0.31   |    -0.28     |
+|                 |       2       | Test  |   11.34   |  **8.06**   |  0.57   |    -0.16     |
+| Boston_Housing  |       2       | Train |   8.23    |  **7.84**   |  0.29   |    -0.29     |
+|                 |       2       | Test  |   8.04    |    **8**    |  0.71   |    -0.11     |
+| Energy(Cooling) |       2       | Train | **4.42**  |    4.65     | 0.02**  |     0.63     |
+|                 |       2       | Test  | **4.61**  |    4.86     |  0.29   |     0.29     |
+|    Concrete     |       2       | Train | **16.58** |    16.83    |  0.97   |     0.02     |
+|                 |       2       | Test  | **16.62** |    16.64    |  0.52   |     0.18     |
 
 
 ## Zusammenfassung Fitness - Symbolische Regression
@@ -405,45 +360,14 @@ Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf
 
 ## Auswertung Lösungsgröße (Median) - Symbolische Regression
 
-```{r full_run_realWorldSymReg_best_solution_size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-library(knitr)
-library(kableExtra)
-library(dplyr)
 
-# Create the data frame from csv
-df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_best_size_median.csv",
-  sep=",",
-  colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
-)
-
-# Create a new dataframe with the modified values of the two columns,
-df_bold <- df 
-
-for(i in 1:nrow(df)){
-  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
-    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
-    }
-  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
-  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
-  }
-}
-# shorten column names
-col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
-
-
-knitr::kable(
- df_bold,
- format = "markdown",
- col.names = col_names,
- align = "c"
- #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% 
-  kable_styling(latex_options = "scale_down", font_size = 7)
-
-```
+|     Problem     | Hid.Layers |  DAE-GP   | Pre-Trained | P-Value | Cliffs-Delta |
+|:---------------:|:----------:|:---------:|:-----------:|:-------:|:------------:|
+|     Airfoil     |     1      | **33.55** |    35.11    | 0.02**  |     0.64     |
+|     Airfoil     |     2      |   11.64   |  **8.24**   |  0.31   |    -0.28     |
+| Boston_Housing  |     2      |   8.23    |  **7.84**   |  0.29   |    -0.29     |
+| Energy(Cooling) |     2      | **4.42**  |    4.65     | 0.02**  |     0.63     |
+|    Concrete     |     2      | **16.58** |    16.83    |  0.97   |     0.02     |
 
 
 ## Übersicht Populationsdiversität (Median) - Symbolische Regression
@@ -453,45 +377,14 @@ knitr::kable(
 ## Auswertung Populationsdiversität (Median) - Symbolische Regression
 
 
-```{r full_run_realWorldSymReg_popDiversity, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-library(knitr)
-library(kableExtra)
-library(dplyr)
 
-# Create the data frame from csv
-df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_median_LevDistance.csv",
-  sep=",",
-  colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
-)
-
-# Create a new dataframe with the modified values of the two columns,
-df_bold <- df 
-
-for(i in 1:nrow(df)){
-  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
-    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
-    }
-  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
-  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
-  }
-}
-# shorten column names
-col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
-
-
-knitr::kable(
- df_bold,
- format = "markdown",
- col.names = col_names,
- align = "c"
- #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% 
-  kable_styling(latex_options = "scale_down", font_size = 7)
-
-```
+|     Problem     | Hid.Layers |  DAE-GP  | Pre-Trained | P-Value | Cliffs-Delta |
+|:---------------:|:----------:|:--------:|:-----------:|:-------:|:------------:|
+|     Airfoil     |     1      | **0.34** |    0.49     | 0.02**  |     0.36     |
+|     Airfoil     |     2      | **0.91** |    0.93     | 0.00*** |     0.88     |
+| Boston_Housing  |     2      | **0.94** |    0.95     | 0.00*** |     0.82     |
+| Energy(Cooling) |     2      | **0.93** |    0.94     | 0.00*** |     0.80     |
+|    Concrete     |     2      | **0.93** |    0.94     | 0.00*** |     0.88     |
 
 ## Übersicht Trainingsepochen pro Generation (Median) - Symbolische Regression
 
@@ -500,45 +393,14 @@ knitr::kable(
 ## Auswertung Trainingsepochen pro Generation (Median) - Symbolische Regression
 
 
-```{r full_run_realWorldSymReg_epochsPerGen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-library(knitr)
-library(kableExtra)
-library(dplyr)
 
-# Create the data frame from csv
-df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_mean_epochsTrained.csv",
-  sep=",",
-  colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
-)
-
-# Create a new dataframe with the modified values of the two columns,
-df_bold <- df 
-
-for(i in 1:nrow(df)){
-  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
-    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
-    }
-  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
-  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
-  }
-}
-# shorten column names
-col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
-
-
-knitr::kable(
- df_bold,
- format = "markdown",
- col.names = col_names,
- align = "c"
- #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% 
-  kable_styling(latex_options = "scale_down", font_size = 7)
-
-```
+|    Problem     | Hid.Layers | DAE-GP | Pre-Trained | P-Value | Cliffs-Delta |
+|:--------------:|:----------:|:------:|:-----------:|:-------:|:------------:|
+|    Airfoil     |     1      | 190.93 |   **60**    | 0.00*** |    -0.94     |
+|    Airfoil     |     2      | 151.87 |  **64.95**  | 0.00*** |    -0.88     |
+| Boston_Housing |     2      | 182.84 |  **67.27**  | 0.00*** |    -0.88     |
+| Energy_Cooling |     2      | 169.39 |  **69.87**  | 0.00*** |    -0.90     |
+|    concrete    |     2      | 171.69 |  **64.9**   | 0.00*** |    -0.92     |
 
 
 

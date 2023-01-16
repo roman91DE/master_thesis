@@ -1,0 +1,888 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usefonttheme{structurebold}
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\newif\ifbibliography
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming},
+  pdfauthor={Roman Hoehn},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Pre-Trained Denoising Autoencoders Long Short-Term Memory
+Networks as probabilistic Models for Estimation of Distribution Genetic
+Programming}
+\subtitle{Kolloquium zur Masterarbeit im M.Sc. Wirtschaftspädagogik}
+\author{Roman Hoehn}
+\date{Datum: 25.01.2023}
+\institute{Johannes Gutenberg-Universität Mainz}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}[allowframebreaks]
+  \tableofcontents[hideallsubsections]
+\end{frame}
+\hypertarget{einleitung}{%
+\section{Einleitung}\label{einleitung}}
+
+\begin{frame}{Forschungsfrage}
+\protect\hypertarget{forschungsfrage}{}
+\emph{Kann das Suchverhalten der Denoising Autoencoder Genetic
+Programming (DAE-GP) Metaheuristik durch den Einsatz einer Pre-Training
+Strategie optimiert werden?}
+
+Welchen Effekt hat Pre-Training auf:
+
+\begin{enumerate}
+\tightlist
+\item
+  das Generalisierungsverhalten von DAE-GP?
+\item
+  die Qualität der gefundenen Programme (Fitness/Programmlänge)?
+\item
+  die Populationsdiversität?
+\item
+  das Laufzeitverhalten?
+\end{enumerate}
+
+Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil
+Datensatz
+\end{frame}
+
+\hypertarget{denoising-autoencoder-genetic-programming}{%
+\section{Denoising Autoencoder Genetic
+Programming}\label{denoising-autoencoder-genetic-programming}}
+
+\begin{frame}{Übersicht}
+\protect\hypertarget{uxfcbersicht}{}
+\begin{itemize}
+\tightlist
+\item
+  Metaheuristik basierend auf genetischer Programmierung (GP)
+\item
+  Ersetzung der Variationsoperatoren von GP durch künstliche, neuronale
+  Netze zur Optimierung des Suchverhaltens\footnote<.->{Wittenberg,
+    Rothlauf and Schweim
+    (\protect\hyperlink{ref-dae-gp_2020_rtree}{2020})}
+\item
+  Variante des Estimation of Distribution-GP (EDA-GP)
+\item
+  Einsatz von Pre-Training in mehreren Publikationen als möglicher Weg
+  für eine weitere Optimierung vorgeschlagen\footnote<.->{Wittenberg and
+    Rothlauf (\protect\hyperlink{ref-dae-gp_2022_symreg}{2022})}
+  \footnote<.->{Wittenberg
+    (\protect\hyperlink{ref-daegp_explore_exploit}{2022})}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Estimation of Distribution Algorithmen (EDA)}
+\protect\hypertarget{estimation-of-distribution-algorithmen-eda}{}
+\begin{itemize}
+\tightlist
+\item
+  Entwicklung neuer Rekombinationsoperatoren für evolutionäre
+  Algorithmen basierend auf dem Einsatz von probabilistischen
+  Modellen\footnote<.->{Rothlauf
+    (\protect\hyperlink{ref-design_of_modern_heuristics}{2011})}
+\item
+  Hypothese: Problemspezifische Abhängigkeiten zwischen
+  Entscheidungsvariablen können bei der Erzeugung neuer Individuen
+  besser berücksichtigt werden als bei traditionellen
+  Rekombinationsoperatoren\footnote<.->{Mühlenbein and Paass
+    (\protect\hyperlink{ref-edaOrig1996}{1996})}
+\item
+  Weitere Verbreitung im Bereich der genetischen Algorithmen (GA) als
+  für GP
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Denoising Autoencoder Estimation of Distribution
+Algorithmen (DAE-EDA)}
+\protect\hypertarget{denoising-autoencoder-estimation-of-distribution-algorithmen-dae-eda}{}
+Idee: Einsatz von Denoising Autoencoders\footnote<.->{Vincent \emph{et
+  al.} (\protect\hyperlink{ref-dae_orig2008}{2008})} (DAE) als
+probabilistisches Modell für genetische Algorithmen \footnote<.->{Probst
+  and Rothlauf (\protect\hyperlink{ref-harmless_overfitting_eda}{2020})}
+
+2 Phasen Ansatz:
+
+\begin{enumerate}
+\tightlist
+\item
+  Model Building: Modell ``lernt'' die Eigenschaften von ausgewählten
+  Lösungen hoher Güte durch das Trainieren eines DAEs
+\item
+  Model Sampling: Neue Lösungen werden erzeugt durch das propagieren von
+  bestehenden, mutierten Lösungen durch das erlernte Modell
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Denoising Autoencoder Genetic Programming (DAE-GP)}
+\protect\hypertarget{denoising-autoencoder-genetic-programming-dae-gp}{}
+\begin{itemize}
+\tightlist
+\item
+  Adaptierung des DAE-EDA Algorithmus auf GP
+\item
+  Darstellung von Individuen als Zeichenketten in prefix Notation
+\item
+  seq2seq learning Problem: Einsatz von DAE - Long Short Term Memory
+  Netzwerken (DAE-LSTM)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{DAE-GP Ablauf}
+\protect\hypertarget{dae-gp-ablauf}{}
+\includegraphics[width=\textwidth,height=0.8\textheight]{./img/flowcharts/dae-gp.png}
+\end{frame}
+
+\begin{frame}{Pre-Training}
+\protect\hypertarget{pre-training}{}
+Idee: Modelle werden vor ihrem eigentlichen Einsatz zum Lösen eines
+Problems auf möglichst großen Datensätzen vortrainiert
+
+Mögliche Vorteile durch Pre-Training\footnote<.->{Erhan \emph{et al.}
+  (\protect\hyperlink{ref-pmlr-v5-erhan09a}{2009})}:
+
+\begin{enumerate}
+\tightlist
+\item
+  Geringere Bedarf an Trainings Daten für vortrainierte Modelle
+\item
+  Reduktion der Trainingszeiten/Laufzeiten
+\item
+  Verbesserung der Güte des Modells
+\item
+  Verbessertes Generalisierungsverhalten des Modells
+\end{enumerate}
+\end{frame}
+
+\hypertarget{aktueller-forschungsstand}{%
+\section{Aktueller Forschungsstand}\label{aktueller-forschungsstand}}
+
+\begin{frame}{Generalisiertes Royal Tree Problem\footnote<.->{Wittenberg,
+  Rothlauf and Schweim (\protect\hyperlink{ref-dae-gp_2020_rtree}{2020})}
+(GRT):}
+\protect\hypertarget{generalisiertes-royal-tree-problem-grt}{}
+\begin{itemize}
+\tightlist
+\item
+  Einfaches Suchproblem mit hoher Lokalität
+\item
+  DAE-GP erzeugt durch Model Sampling Lösungskandidaten mit höherer
+  Fitness als GP
+\item
+  Hohe Güte der erzeugten Lösungskandidaten resultiert in besserer
+  Performance
+\item
+  Perfomance Vorteil steigt mit zunehmender Komplexität des GRT Problems
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Symbolische Regression\footnote<.->{Wittenberg and
+  Rothlauf (\protect\hyperlink{ref-dae-gp_2022_symreg}{2022})}:}
+\protect\hypertarget{symbolische-regression}{}
+\begin{itemize}
+\item
+  Airfoil Datensatz für Real-World symbolische Regression
+\item
+  DAE-GP erzeugt für eine vorgegebene Anzahl von Fitness Evaluationen im
+  Vergleich zu GP:
+
+  \begin{enumerate}
+  \tightlist
+  \item
+    Lösungen mit höherer Fitness
+  \item
+    Lösungen mit geringerer Größe
+  \end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Pre-Training für Denoising Autoencoders\footnote<.->{Erhan
+  \emph{et al.} (\protect\hyperlink{ref-pmlr-v5-erhan09a}{2009})}}
+\protect\hypertarget{pre-training-fuxfcr-denoising-autoencoders}{}
+\begin{block}{Positive Wirkung von Pre-Training auf DAE}
+\protect\hypertarget{positive-wirkung-von-pre-training-auf-dae}{}
+\begin{enumerate}
+\tightlist
+\item
+  Gesteigerte Modell Performance (sinkender Testfehler)
+\item
+  Besserer Generalisierungsfähigkeit
+\item
+  Erhöhter Robustness des Algorithmus (sinkende Varianz des Testfehlers)
+\end{enumerate}
+\end{block}
+
+\begin{block}{Einfluss der Modell Architektur}
+\protect\hypertarget{einfluss-der-modell-architektur}{}
+\begin{itemize}
+\tightlist
+\item
+  Positiver Effekt steigt mit zunehmender Komplexitität des DAE
+\item
+  Je mehr versteckte Layer oder Neuronen pro verstecktem Layer vorhanden
+  sind, desto besserer Effekt des Pre-Trainings
+\item
+  Für sehr kleine DAE, zeigt Pre-Training jedoch inverse, negative
+  Auswirkung auf die Modell Performance
+\end{itemize}
+\end{block}
+\end{frame}
+
+\hypertarget{implementation}{%
+\section{Implementation}\label{implementation}}
+
+\begin{frame}{Überblick}
+\protect\hypertarget{uxfcberblick}{}
+Gewählte Pre-Training Strategie:
+
+\begin{itemize}
+\item
+  (Klassisches) Pre-Training: Einmaliges Pre-Training eines DAE-LSTM mit
+  einer großen Population aus Lösungskandidaten \(\hat{P}_{train}\)
+  (ramped Half and Half Initialisierung)
+\item
+  Trainingsmethode Early Stopping: Abbruch des Trainings sobald der
+  Testfehler für eine seperate Population \(\hat{P}_{test}\) konvergiert
+\end{itemize}
+
+\emph{Ausschluss weiterer Pre-Training Strategien wie Re-Use Learning,
+Few-Shot Learning}
+\end{frame}
+
+\begin{frame}{Pre-Trained DAE-GP Ablauf}
+\protect\hypertarget{pre-trained-dae-gp-ablauf}{}
+\begin{center}\includegraphics[width=14.28in]{./img/flowcharts/pt-dae-gp} \end{center}
+\end{frame}
+
+\begin{frame}{Herausforderungen}
+\protect\hypertarget{herausforderungen}{}
+\ldots{} hidden neurons \ldots{}
+\end{frame}
+
+\hypertarget{untersuchung-des-generalisierungsverhalten}{%
+\section{Untersuchung des
+Generalisierungsverhalten}\label{untersuchung-des-generalisierungsverhalten}}
+
+\begin{frame}{Fragestellung}
+\protect\hypertarget{fragestellung}{}
+Welchen Einfluss hat die Dimension der eingesetzten DAE-LSTMs auf das
+Generalisierungsverhalten von DAE-GP in Kombination mit Pre-Training?
+
+Experimenteller Aufbau:
+
+\begin{itemize}
+\tightlist
+\item
+  Ausschließliche Betrachtung des Rekonstruktionsfehlers der ersten
+  Generation (Nutzung von seperaten Test- und Trainingspopulationen)
+\item
+  DAE-LSTM Training erfolgt über eine fixe Anzahl von \(1000\) Epochen
+  (kein frühzeitiger Abbruch bei Konvergenz des Testfehlers)
+\end{itemize}
+
+Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen (\(120\)
+Gesamtdurchläufe):
+
+\begin{itemize}
+\tightlist
+\item
+  Variable Anzahl von Hidden Neurons (50, 100, 200) mit einem Hidden
+  Layer
+\item
+  Variable Anzahl von Hidden Layers (1, 2, 3) mit 100 Hidden Neurons
+\item
+  (normales) DAE-GP und pre-trained DAE-GP
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Einfluss der Anzahl von Hidden Layers (1/2)}
+\protect\hypertarget{einfluss-der-anzahl-von-hidden-layers-12}{}
+\includegraphics[width=\textwidth,height=0.85\textheight]{./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6plots.png}
+\end{frame}
+
+\begin{frame}{Einfluss der Anzahl von Hidden Layers (2/2)}
+\protect\hypertarget{einfluss-der-anzahl-von-hidden-layers-22}{}
+\includegraphics[width=\textwidth,height=0.85\textheight]{./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots.png}
+\end{frame}
+
+\begin{frame}{Einfluss der Anzahl von Hidden Neurons (1/2)}
+\protect\hypertarget{einfluss-der-anzahl-von-hidden-neurons-12}{}
+\includegraphics[width=\textwidth,height=0.85\textheight]{./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png}
+\end{frame}
+
+\begin{frame}{Einfluss der Anzahl von Hidden Neurons (2/2)}
+\protect\hypertarget{einfluss-der-anzahl-von-hidden-neurons-22}{}
+\includegraphics[width=\textwidth,height=0.85\textheight]{./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png}
+\end{frame}
+
+\begin{frame}{Fazit Generalisierungsverhalten}
+\protect\hypertarget{fazit-generalisierungsverhalten}{}
+\ldots{}
+\end{frame}
+
+\hypertarget{untersuchung-des-suchverhaltens-bei-symbolischer-regression}{%
+\section{Untersuchung des Suchverhaltens bei symbolischer
+Regression}\label{untersuchung-des-suchverhaltens-bei-symbolischer-regression}}
+
+\begin{frame}{Fragestellung}
+\protect\hypertarget{fragestellung-1}{}
+Welchen Einfluss hat die Verwendung einer Pre-Training Strategie auf das
+Suchverhalten von DAE-GP bei der Anwendung auf symbolische
+Regressionsprobleme?
+
+Aufbau: Betrachtung des Suchverhalten über je \(10\) Gesamtduchläufe für
+DAE-GP und pre-trained DAE-GP
+
+Fokus insbesondere auf:
+
+\begin{itemize}
+\tightlist
+\item
+  Lösungsqualität (Fitness)
+\item
+  Größe der gefundenen Lösungen (Anzahl an Knoten)
+\item
+  Populationsdiversität
+\item
+  Anzahl an Trainingsepochen pro Generation
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Hyperparameter}
+\protect\hypertarget{hyperparameter}{}
+\begin{table}
+\centering\begingroup\fontsize{7}{9}\selectfont
+
+\resizebox{\linewidth}{!}{
+\begin{tabular}{l|l}
+\hline
+\textbf{parameter} & \textbf{value}\\
+\hline
+populationSize & 500\\
+\hline
+generations & 30\\
+\hline
+fitness & RMSE\\
+\hline
+TrainingMode & Convergence\\
+\hline
+SamplingSteps & 2\\
+\hline
+hiddenLayers & 2\\
+\hline
+Selection & Binary Tournament Selection\\
+\hline
+Pre-Training PopulationSize(Training/Validation) & 10000/100000\\
+\hline
+Pre-Training TrainingMode & Early Stopping\\
+\hline
+\end{tabular}}
+\endgroup{}
+\end{table}
+\end{frame}
+
+\begin{frame}{Funktions Set Symbolische Regression}
+\protect\hypertarget{funktions-set-symbolische-regression}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}{l|r}
+\hline
+\textbf{function.} & \textbf{arity}\\
+\hline
+addition & 2\\
+\hline
+subtraction & 2\\
+\hline
+multiplication & 2\\
+\hline
+analytic\_quotient & 2\\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Airfoil - Entwicklung der Fitness über Generationen}
+\protect\hypertarget{airfoil---entwicklung-der-fitness-uxfcber-generationen}{}
+\includegraphics[width=\textwidth,height=0.9\textheight]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png}
+\end{frame}
+
+\begin{frame}{Airfoil - Verteilung der finalen Fitness}
+\protect\hypertarget{airfoil---verteilung-der-finalen-fitness}{}
+\includegraphics[width=\textwidth,height=0.9\textheight]{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png}
+\end{frame}
+
+\begin{frame}{Airfoil - Größe der besten Lösungskandidaten}
+\protect\hypertarget{airfoil---gruxf6uxdfe-der-besten-luxf6sungskandidaten}{}
+\includegraphics{~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_Size_byGens.png}
+\end{frame}
+
+\begin{frame}{Kontrollexperiment: Reduzierung der DAE-LSTM Dimension für
+Airfoil Datensatz}
+\protect\hypertarget{kontrollexperiment-reduzierung-der-dae-lstm-dimension-fuxfcr-airfoil-datensatz}{}
+Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden
+Layer (HL)?
+\end{frame}
+
+\begin{frame}{Airfoil - Entwicklung der Fitness (1 HL)}
+\protect\hypertarget{airfoil---entwicklung-der-fitness-1-hl}{}
+\includegraphics{~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png}
+\end{frame}
+
+\begin{frame}{Airfoil - Verteilung der finalen Fitness (1HL)}
+\protect\hypertarget{airfoil---verteilung-der-finalen-fitness-1hl}{}
+\includegraphics[width=\textwidth,height=0.75\textheight]{~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png}
+\end{frame}
+
+\begin{frame}{Airfoil - Größe der besten Lösungskandidaten(1HL)}
+\protect\hypertarget{airfoil---gruxf6uxdfe-der-besten-luxf6sungskandidaten1hl}{}
+\includegraphics[width=\textwidth,height=0.9\textheight]{~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png}
+\end{frame}
+
+\begin{frame}{Anwendung auf weitere Datensätzen}
+\protect\hypertarget{anwendung-auf-weitere-datensuxe4tzen}{}
+Airfoil Datensatz: Ergebnis deuten bei einer ausreichenden Anzahl von
+Hidden Layern auf einen postitiven Effekt der Pre-Training Strategie
+hin:
+
+\begin{itemize}
+\tightlist
+\item
+  Höhere Fitness der gefundenen Lösungen
+\item
+  Kleinere Größe der gefundenen Lösungen
+\end{itemize}
+
+Daher: Ausweitung des Experiments auf weitere Datensätze
+\end{frame}
+
+\begin{frame}{Übersicht Datensätze}
+\protect\hypertarget{uxfcbersicht-datensuxe4tze}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}{l|r|r}
+\hline
+\textbf{Problem} & \textbf{Observations} & \textbf{Features}\\
+\hline
+Airfoil & 1503 & 5\\
+\hline
+Boston\_Housing & 506 & 13\\
+\hline
+Energy\_Cooling & 768 & 8\\
+\hline
+Concrete & 1030 & 8\\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Übersicht Median Fitness - Symbolische Regression}
+\protect\hypertarget{uxfcbersicht-median-fitness---symbolische-regression}{}
+\includegraphics[width=\textwidth,height=0.8\textheight]{~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png}
+\end{frame}
+
+\begin{frame}{Auswertung Fitness (Median) - Symbolische Regression}
+\protect\hypertarget{auswertung-fitness-median---symbolische-regression}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1977}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1744}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0814}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1279}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1512}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1047}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1628}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Problem
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Hidden-Layers
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Set
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+DAE-GP
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Pre-Trained
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+P-Value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Cliffs-Delta
+\end{minipage} \\
+\midrule()
+\endhead
+Airfoil & 1 & Train & \textbf{33.55} & 35.11 & 0.02** & 0.64 \\
+& 1 & Test & \textbf{34.03} & 35.81 & 0.14 & 0.40 \\
+Airfoil & 2 & Train & 11.64 & \textbf{8.24} & 0.31 & -0.28 \\
+& 2 & Test & 11.34 & \textbf{8.06} & 0.57 & -0.16 \\
+Boston\_Housing & 2 & Train & 8.23 & \textbf{7.84} & 0.29 & -0.29 \\
+& 2 & Test & 8.04 & \textbf{8} & 0.71 & -0.11 \\
+Energy(Cooling) & 2 & Train & \textbf{4.42} & 4.65 & 0.02** & 0.63 \\
+& 2 & Test & \textbf{4.61} & 4.86 & 0.29 & 0.29 \\
+Concrete & 2 & Train & \textbf{16.58} & 16.83 & 0.97 & 0.02 \\
+& 2 & Test & \textbf{16.62} & 16.64 & 0.52 & 0.18 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Zusammenfassung Fitness - Symbolische Regression}
+\protect\hypertarget{zusammenfassung-fitness---symbolische-regression}{}
+Keine Evidenz für einen statistisch signifikanten Einfluss von
+Pre-Training auf die erzielte Lösungsqualität in den durchgeführten
+Experimenten!
+
+\begin{itemize}
+\tightlist
+\item
+  Airfoil:
+\item
+  Energy Cooling:
+\item
+  Boston Housing:
+\item
+  Concrete:
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Übersicht Lösungsgröße (Median) - Symbolische Regression}
+\protect\hypertarget{uxfcbersicht-luxf6sungsgruxf6uxdfe-median---symbolische-regression}{}
+\includegraphics[width=\textwidth,height=0.8\textheight]{~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png}
+\end{frame}
+
+\begin{frame}{Auswertung Lösungsgröße (Median) - Symbolische Regression}
+\protect\hypertarget{auswertung-luxf6sungsgruxf6uxdfe-median---symbolische-regression}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2237}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1579}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1447}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1711}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1184}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1842}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Problem
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Hid.Layers
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+DAE-GP
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Pre-Trained
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+P-Value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Cliffs-Delta
+\end{minipage} \\
+\midrule()
+\endhead
+Airfoil & 1 & \textbf{33.55} & 35.11 & 0.02** & 0.64 \\
+Airfoil & 2 & 11.64 & \textbf{8.24} & 0.31 & -0.28 \\
+Boston\_Housing & 2 & 8.23 & \textbf{7.84} & 0.29 & -0.29 \\
+Energy(Cooling) & 2 & \textbf{4.42} & 4.65 & 0.02** & 0.63 \\
+Concrete & 2 & \textbf{16.58} & 16.83 & 0.97 & 0.02 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Übersicht Populationsdiversität (Median) - Symbolische
+Regression}
+\protect\hypertarget{uxfcbersicht-populationsdiversituxe4t-median---symbolische-regression}{}
+\includegraphics[width=\textwidth,height=0.8\textheight]{~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistance_byGen.png}
+\end{frame}
+
+\begin{frame}{Auswertung Populationsdiversität (Median) - Symbolische
+Regression}
+\protect\hypertarget{auswertung-populationsdiversituxe4t-median---symbolische-regression}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2267}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1600}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1333}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1733}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1200}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1867}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Problem
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Hid.Layers
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+DAE-GP
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Pre-Trained
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+P-Value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Cliffs-Delta
+\end{minipage} \\
+\midrule()
+\endhead
+Airfoil & 1 & \textbf{0.34} & 0.49 & 0.02** & 0.36 \\
+Airfoil & 2 & \textbf{0.91} & 0.93 & 0.00*** & 0.88 \\
+Boston\_Housing & 2 & \textbf{0.94} & 0.95 & 0.00*** & 0.82 \\
+Energy(Cooling) & 2 & \textbf{0.93} & 0.94 & 0.00*** & 0.80 \\
+Concrete & 2 & \textbf{0.93} & 0.94 & 0.00*** & 0.88 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Übersicht Trainingsepochen pro Generation (Median) -
+Symbolische Regression}
+\protect\hypertarget{uxfcbersicht-trainingsepochen-pro-generation-median---symbolische-regression}{}
+\includegraphics[width=\textwidth,height=0.8\textheight]{~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTrained.png}
+\end{frame}
+
+\begin{frame}{Auswertung Trainingsepochen pro Generation (Median) -
+Symbolische Regression}
+\protect\hypertarget{auswertung-trainingsepochen-pro-generation-median---symbolische-regression}{}
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2222}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1806}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1944}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Problem
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Hid.Layers
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+DAE-GP
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Pre-Trained
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+P-Value
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Cliffs-Delta
+\end{minipage} \\
+\midrule()
+\endhead
+Airfoil & 1 & 190.93 & \textbf{60} & 0.00*** & -0.94 \\
+Airfoil & 2 & 151.87 & \textbf{64.95} & 0.00*** & -0.88 \\
+Boston\_Housing & 2 & 182.84 & \textbf{67.27} & 0.00*** & -0.88 \\
+Energy\_Cooling & 2 & 169.39 & \textbf{69.87} & 0.00*** & -0.90 \\
+concrete & 2 & 171.69 & \textbf{64.9} & 0.00*** & -0.92 \\
+\bottomrule()
+\end{longtable}
+\end{frame}
+
+\hypertarget{weitere-verfolgte-ansuxe4tze}{%
+\section{Weitere verfolgte Ansätze}\label{weitere-verfolgte-ansuxe4tze}}
+
+\begin{frame}{Eingeschobenes Pre-Training in der 2. Generation}
+\protect\hypertarget{eingeschobenes-pre-training-in-der-2.-generation}{}
+Ansatz: Deutliche Fitnessverbesserung finden oft bereits in der ersten
+Generationen der evolutionären Suche statt
+
+\begin{itemize}
+\tightlist
+\item
+  Sampling des DAE-LSTMs der ersten Generation \(M_1\) zur
+  Initialisierung der Pre-Training Population \(\hat{P}\)
+\item
+  Training des pre-training modells \(\hat{M}\) mit \(\hat{P}\) nach
+  Abschluss der ersten Generation
+\item
+  DAE-LSTM Modelle werden ab Generation 2 mit den Parametern von
+  \(\hat{M}\) initialisiert
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Eingeschobenes Pre-Training in der 2. Generation - Airfoil
+Datensatz}
+\protect\hypertarget{eingeschobenes-pre-training-in-der-2.-generation---airfoil-datensatz}{}
+\includegraphics[width=\textwidth,height=0.8\textheight]{~/masterThesis/master_thesis/img/2ndGenPT_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png}
+\end{frame}
+
+\begin{frame}{Grow Initialisierung der Pre-Training Population}
+\protect\hypertarget{grow-initialisierung-der-pre-training-population}{}
+\end{frame}
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\begin{frame}[allowframebreaks]{References}
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-pmlr-v5-erhan09a}{}}%
+Erhan, D. \emph{et al.} (2009) {`The difficulty of training deep
+architectures and the effect of unsupervised pre-training'}, in D. van
+Dyk and M. Welling (eds) \emph{Proceedings of the twelth international
+conference on artificial intelligence and statistics}. Hilton Clearwater
+Beach Resort, Clearwater Beach, Florida USA: PMLR (Proceedings of
+machine learning research), pp. 153--160. Available at:
+\url{https://proceedings.mlr.press/v5/erhan09a.html}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-edaOrig1996}{}}%
+Mühlenbein, H. and Paass, G. (1996) {`From recombination of genes to the
+estimation of distributions i. Binary parameters.'}, in \emph{From
+Recombination of Genes to the Estimation of Distributions I. Binary
+Parameters}, pp. 178--187.
+
+\leavevmode\vadjust pre{\hypertarget{ref-harmless_overfitting_eda}{}}%
+Probst, M. and Rothlauf, F. (2020) {`Harmless overfitting: Using
+denoising autoencoders in estimation of distribution algorithms'},
+\emph{Journal of Machine Learning Research}, 21(78), pp. 1--31.
+Available at: \url{http://jmlr.org/papers/v21/16-543.html}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-design_of_modern_heuristics}{}}%
+Rothlauf, F. (2011) \emph{Design of modern heuristics: Principles and
+application}, \emph{Natural Computing Series}. Available at:
+\url{https://doi.org/10.1007/978-3-540-72962-4}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dae_orig2008}{}}%
+Vincent, P. \emph{et al.} (2008) {`Extracting and composing robust
+features with denoising autoencoders'}, in \emph{Proceedings of the 25th
+International Conference on Machine Learning}, pp. 1096--1103. Available
+at: \url{https://doi.org/10.1145/1390156.1390294}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-daegp_explore_exploit}{}}%
+Wittenberg, D. (2022) {`Using denoising autoencoder genetic programming
+to~control exploration and~exploitation in~search'}, in E. Medvet, G.
+Pappa, and B. Xue (eds) \emph{Genetic programming}. Cham: Springer
+International Publishing, pp. 102--117.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dae-gp_2022_symreg}{}}%
+Wittenberg, D. and Rothlauf, F. (2022) {`Denoising autoencoder genetic
+programming for real-world symbolic regression'}, in \emph{Proceedings
+of the genetic and evolutionary computation conference companion}. New
+York, NY, USA: Association for Computing Machinery (GECCO '22), pp.
+612--614. Available at: \url{https://doi.org/10.1145/3520304.3528921}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-dae-gp_2020_rtree}{}}%
+Wittenberg, D., Rothlauf, F. and Schweim, D. (2020) {`DAE-GP: Denoising
+autoencoder LSTM networks as probabilistic models in estimation of
+distribution genetic programming'}, in \emph{Proceedings of the 2020
+genetic and evolutionary computation conference}. New York, NY, USA:
+Association for Computing Machinery (GECCO '20), pp. 1037--1045.
+Available at: \url{https://doi.org/10.1145/3377930.3390180}.
+
+\end{CSLReferences}
+\end{frame}
+
+\end{document}

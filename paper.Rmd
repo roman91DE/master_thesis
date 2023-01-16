@@ -96,6 +96,9 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_ful
 # summarize csv files for full run experiments
 /Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_data.py
 
+# 2nd generation Pre-Training
+/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/masterThesis/eda-gp-2020/experiments/2ndGenPT_airfoil_2hl_150hn_fullRun/re_evaluate_2ndGenPT_airfoil_2hl_150hn_fullRun.sh
+
 ```
 
 
