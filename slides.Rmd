@@ -79,7 +79,7 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_maxIndSiz
 # concrete
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_fullRun_30gens/re_evaluate_concrete_2hl_maxIndSize_fullRun_30gens.sh
 
-# summarize csv files for full run experiments
+# summarize csv files and plots for full run experiments
 /Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_data.py
 
 ```
