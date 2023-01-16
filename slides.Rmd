@@ -207,9 +207,11 @@ Gewählte Pre-Training Strategie:
 
 ![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png){height=70%}
 
-## Herausforderungen
+## Herausforderung - DAE-LSTM Dimension
 
-... hidden neurons ... 
+* Im Verlaufe des DAE-GP algorithmus passt sich die Dimension der DAE-LSTM Netzwerke $M_{g}$ dynamisch an die aktuelle Population an
+* Anzahl der versteckten Neuronen pro verstecktem Layer in generation $g$ <- maximum der Länge aller Individuen aus $P_{g-1}$  
+
 
 
 # Untersuchung des Generalisierungsverhalten 
@@ -243,7 +245,7 @@ Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe
 
 ## Einfluss der Anzahl von Hidden Neurons (2/2)
 
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png){height=85%}
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3plots.png){height=85%}
 
 
 ## Fazit Generalisierungsverhalten
