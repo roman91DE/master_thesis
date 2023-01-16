@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  16 JAN 2023 11:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  16 JAN 2023 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1123,11 +1123,7 @@ File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 383
 .
-(pdftex.def)             Requested size: 171.41383pt x 269.1264pt.
-
-Overfull \vbox (23.45325pt too high) detected at line 383
- []
-
+(pdftex.def)             Requested size: 119.99126pt x 188.39096pt.
 [18
 
  <./img/flowcharts/pt-dae-gp.png>] [19
@@ -1246,23 +1242,19 @@ Overfull \vbox (0.16069pt too high) detected at line 545
 ns_withGP/mean_Size_byGens.png>] [34
 
 ]
-<~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_me
-dian_fitness_byGens.png, id=285, 1011.78pt x 867.24pt>
+<~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/median_
+fitness_byGens.png, id=285, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/me
-an_median_fitness_byGens.png Graphic file (type png)
-<use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mea
-n_median_fitness_byGens.png>
+dian_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/med
+ian_fitness_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSiz
-e_fullRun_30gens/mean_median_fitness_byGens.png  used on input line 557.
-(pdftex.def)             Requested size: 307.28789pt x 263.38963pt.
-
-Overfull \vbox (17.71648pt too high) detected at line 557
- []
-
+e_fullRun_30gens/median_fitness_byGens.png  used on input line 557.
+(pdftex.def)             Requested size: 266.90077pt x 228.7721pt.
 [35
 
  </Users/rmn/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30ge
-ns/mean_median_fitness_byGens.png>]
+ns/median_fitness_byGens.png>]
 <~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_f
 it_boxplot.png, id=294, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/fi
@@ -1389,4 +1381,203 @@ Overfull \hbox (17.6599pt too wide) in paragraph at lines 709--709
 
 
 Overfull \hbox (0.5309pt too wide) in paragraph at lines 709--709
- []|\T1/lmss/m/n/1
+ []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
+ []
+
+[44
+
+]
+<~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistan
+ce_byGen.png, id=358, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levD
+istance_byGen.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDi
+stance_byGen.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
+marized/median_levDistance_byGen.png  used on input line 715.
+(pdftex.def)             Requested size: 251.19983pt x 215.31413pt.
+[45
+
+ </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/median
+_levDistance_byGen.png>]
+Overfull \hbox (6.98068pt too wide) in paragraph at lines 750--750
+ []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
+ []
+
+
+Overfull \hbox (5.5002pt too wide) in paragraph at lines 750--750
+ []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
+ []
+
+
+Overfull \hbox (18.60957pt too wide) in paragraph at lines 750--750
+ []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
+ []
+
+
+Overfull \hbox (5.5002pt too wide) in paragraph at lines 750--750
+ []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
+ []
+
+
+Overfull \hbox (16.91655pt too wide) in paragraph at lines 750--750
+ []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
+ []
+
+
+Overfull \hbox (5.5002pt too wide) in paragraph at lines 750--750
+ []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
+ []
+
+
+Overfull \hbox (5.5002pt too wide) in paragraph at lines 750--750
+ []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
+ []
+
+[46
+
+]
+<~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTra
+ined.png, id=372, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoc
+hsTrained.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoch
+sTrained.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
+marized/median_epochsTrained.png  used on input line 756.
+(pdftex.def)             Requested size: 251.19983pt x 215.31413pt.
+[47
+
+ </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/median
+_epochsTrained.png>]
+Overfull \hbox (5.32419pt too wide) in paragraph at lines 791--791
+ []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
+ []
+
+
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 190.93| 
+ []
+
+
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
+ []
+
+
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 151.87| 
+ []
+
+
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
+ []
+
+
+Overfull \hbox (19.7227pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
+ []
+
+
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 182.84| 
+ []
+
+
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
+ []
+
+
+Overfull \hbox (16.83746pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) Energy_Cooling| 
+ []
+
+
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 169.39| 
+ []
+
+
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
+ []
+
+
+Overfull \hbox (2.33456pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 171.69| 
+ []
+
+
+Overfull \hbox (4.26254pt too wide) in paragraph at lines 791--791
+ []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
+ []
+
+[48
+
+] [49
+
+] [50
+
+]
+<~/masterThesis/master_thesis/img/2ndGenPT_airfoil_2hl_150hn_fullRun/median_fit
+ness_byGens.png, id=399, 1011.78pt x 867.24pt>
+File: ~/masterThesis/master_thesis/img/2ndGenPT_airfoil_2hl_150hn_fullRun/media
+n_fitness_byGens.png Graphic file (type png)
+<use ~/masterThesis/master_thesis/img/2ndGenPT_airfoil_2hl_150hn_fullRun/median
+_fitness_byGens.png>
+Package pdftex.def Info: ~/masterThesis/master_thesis/img/2ndGenPT_airfoil_2hl_
+150hn_fullRun/median_fitness_byGens.png  used on input line 819.
+(pdftex.def)             Requested size: 251.19983pt x 215.31413pt.
+[51
+
+ </Users/rmn/masterThesis/master_thesis/img/2ndGenPT_airfoil_2hl_150hn_fullRun/
+median_fitness_byGens.png>] [52
+
+] [53
+
+] [54
+
+] [55
+
+
+] [56
+
+
+]
+\tf@nav=\write5
+\openout5 = `slides.nav'.
+
+\tf@toc=\write6
+\openout6 = `slides.toc'.
+
+\tf@snm=\write7
+\openout7 = `slides.snm'.
+
+(./slides.aux) ) 
+Here is how much of TeX's memory you used:
+ 26473 strings out of 478268
+ 519310 string characters out of 5846348
+ 798163 words of memory out of 5000000
+ 43778 multiletter control sequences out of 15000+600000
+ 573207 words of font info for 173 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,11n,122p,1003b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
+c}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/
+texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/20
+22/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2022/texmf-di
+st/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/ty
+pe1/public/lm/lmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/publ
+ic/lm/lmsso10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lms
+so8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
+b>
+Output written on slides.pdf (56 pages, 7748321 bytes).
+PDF statistics:
+ 548 PDF objects out of 1000 (max. 8388607)
+ 430 compressed objects within 5 object streams
+ 175 named destinations out of 1000 (max. 500000)
+ 63675 words of extra memory for PDF output out of 74296 (max. 10000000)
+

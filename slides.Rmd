@@ -32,7 +32,7 @@ library(reticulate)
 
 
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(fig.pos = "H")
+knitr::opts_chunk$set(fig.pos = "c")
 
 
 reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
@@ -205,9 +205,7 @@ Gewählte Pre-Training Strategie:
 
 ## Pre-Trained DAE-GP Ablauf
 
-```{r, echo=FALSE, fig.align='center', fig.width=14, fig.height=12}
-knitr::include_graphics("./img/flowcharts/pt-dae-gp.png")
-```
+![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png){height=70%}
 
 ## Herausforderungen
 
@@ -306,7 +304,7 @@ Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer (HL)?
 
 ## Airfoil - Entwicklung der Fitness (1 HL)
 
-![Airfoil - Entwicklung der Fitness über Generationen (1 HL)](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
+![Airfoil - Entwicklung der Fitness über Generationen (1 HL)](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png){height=85%}
 
 ## Airfoil - Verteilung der finalen Fitness (1HL)
 
