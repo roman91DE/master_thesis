@@ -1,7 +1,0 @@
-\beamer@sectionintoc {1}{Einleitung}{3}{0}{1}
-\beamer@sectionintoc {2}{Denoising Autoencoder Genetic Programming}{5}{0}{2}
-\beamer@sectionintoc {3}{Aktueller Forschungsstand}{12}{0}{3}
-\beamer@sectionintoc {4}{Implementation}{16}{0}{4}
-\beamer@sectionintoc {5}{Untersuchung des Generalisierungsverhalten}{20}{0}{5}
-\beamer@sectionintoc {6}{Untersuchung des Suchverhaltens bei symbolischer Regression}{27}{0}{6}
-\beamer@sectionintoc {7}{Weitere verfolgte Ansätze}{49}{0}{7}
