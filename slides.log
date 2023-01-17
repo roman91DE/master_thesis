@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  17 JAN 2023 12:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  17 JAN 2023 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1626,7 +1626,7 @@ lRun/mean_epochs_trained_perGen.png>] [60
 (./slides.aux) ) 
 Here is how much of TeX's memory you used:
  26579 strings out of 478268
- 523938 string characters out of 5846348
+ 523950 string characters out of 5846348
  798483 words of memory out of 5000000
  43845 multiletter control sequences out of 15000+600000
  573782 words of font info for 178 fonts, out of 8000000 for 9000
@@ -1643,7 +1643,7 @@ o10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/202
 2/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on slides.pdf (64 pages, 10066916 bytes).
+Output written on slides.pdf (64 pages, 10097375 bytes).
 PDF statistics:
  618 PDF objects out of 1000 (max. 8388607)
  480 compressed objects within 5 object streams

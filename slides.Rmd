@@ -320,6 +320,10 @@ Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anz
 
 ![Airfoil Datensatz - Größe der besten Lösung über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_Size_byGens.png)
 
+## Airfoil - Laufzeit
+
+...
+
 ## Kontrollexperiment: Reduzierung der DAE-LSTM Dimension für Airfoil Datensatz
 
 Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer (HL)?
