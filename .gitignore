@@ -11,3 +11,10 @@ private
 ^(paper|slides).*\.(log|aux|lof|lot|tex|toc)$
 slides.log
 slides.log
+
+slides.aux
+slides.knit.md
+slides.nav
+slides.snm
+slides.tex
+slides.toc
