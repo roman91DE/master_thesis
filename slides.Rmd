@@ -226,19 +226,13 @@ Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe
 * Variable Anzahl von Hidden Layers (1, 2, 3) mit 100 Hidden Neurons
 * (normales) DAE-GP und pre-trained DAE-GP
 
-## Einfluss der Anzahl von Hidden Layers (1/2)
 
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer (1/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_6plots.png){height=85%}
-
-## Einfluss der Anzahl von Hidden Layers (2/2)
+## Einfluss der Anzahl von Hidden Layers
 
 ![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots.png){height=85%}
 
-## Einfluss der Anzahl von Hidden Neurons (1/2)
 
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons (1/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_6plots.png){height=85%}
-
-## Einfluss der Anzahl von Hidden Neurons (2/2)
+## Einfluss der Anzahl von Hidden Neurons
 
 ![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3plots.png){height=85%}
 
@@ -276,32 +270,24 @@ knitr::kable(
 ```{r airfoil_function_set, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 fig.pos="H"
 knitr::kable(
-  read.csv("./tables/airfoil_function_set"),
-  # caption="Funktions Set"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
+  read.csv("./tables/airfoil_function_set", sep = ","),
+) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
 
 ## Herausforderung - DAE-LSTM Dimension
 
-* Im Verlaufe des DAE-GP algorithmus passt sich die Dimension der DAE-LSTM Netzwerke $M_{g}$ dynamisch an die aktuelle Population an
+* Im Verlaufe des DAE-GP Algorithmus passt sich die Dimension der DAE-LSTM Netzwerke $M_{g}$ dynamisch an die aktuelle Population an
 
 > Anzahl der versteckten Neuronen pro verstecktem Layer in generation $g$ = Maximum der Länge aller Individuen aus $P_{g-1}$ 
 
 Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anzahl an Neuronen. Zwei Ansätze verfolgt:
 
 1. DAE-GP mit dynamischer Anpassung, Pre-Trained DAE-GP mit konstanter Anzahl (maximale Länge innerhalb von $\hat{P}$)
-
-  * Vorteil: DAE-GP Performance konsistent mit bisherigen Publikationen, deutliche Reduktion der Laufzeit
-  * Nachteil: Erschwerte Vergleichbarkeit beider Algorithmen
-  
 2. Beide Algorithmen mit einer fixen Anzahl von versteckten Neuronen
 
-  * Vorteil: Bessere Vergleichbarkeit zwischen beiden Algorithmen
-  * Nachteile: Starke erhöhung der Laufzeit für DAE-GP algorithmus 
 
-
-## Airfoil - Entwicklung DAE-LSTM Dimension
+## DAE-GP - Entwicklung DAE-LSTM Dimension
 
 ![Airfoil - Entwicklung DAE-LSTM Dimension](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_hiddenNeurons_perGen.png){height=90%}
 
@@ -328,6 +314,9 @@ Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anz
 
 Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer (HL)?
 
+Erwartung: Negativer Einfluss von Pre-Training auf die Güte der gefundenen Lösungen (Fitness/Größe) durch sinkenden Modell Performance der DAE-LSTMs^[@pmlr-v5-erhan09a]
+
+
 ## Airfoil - Entwicklung der Fitness (1 HL)
 
 ![Airfoil - Entwicklung der Fitness über Generationen (1 HL)](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png){height=85%}
@@ -343,7 +332,7 @@ Frage: Welchen Einfluss hat die Reduktion der DAE-LSTM auf 1 hidden Layer (HL)?
 
 ## Anwendung auf weitere Datensätzen
 
-Airfoil Datensatz: Ergebnis deuten bei einer ausreichenden Anzahl von Hidden Layern auf einen postitiven Effekt der Pre-Training Strategie hin:
+Airfoil Datensatz: Erste Ergebnis deuten bei einer ausreichenden Anzahl von Hidden Layern auf einen postitiven Effekt der Pre-Training Strategie hin:
 
 * Höhere Fitness der gefundenen Lösungen
 * Kleinere Größe der gefundenen Lösungen
@@ -410,15 +399,6 @@ knitr::kable(
 
 ```
 
-
-## Zusammenfassung Fitness - Symbolische Regression
-
-Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf die erzielte Lösungsqualität in den durchgeführten Experimenten!
-
-* Airfoil:
-* Energy Cooling:
-* Boston Housing: 
-* Concrete: 
 
 
 ## Übersicht Lösungsgröße (Median) - Symbolische Regression
@@ -565,6 +545,14 @@ knitr::kable(
 ```
 
 
+## Zusammenfassung- Symbolische Regression
+
+Keine Evidenz für einen statistisch signifikanten Einfluss von Pre-Training auf die erzielte Lösungsqualität oder die erzielte Lösungsgröße in den durchgeführten Experimenten!
+
+Vorteile durch Pre-Training:
+
+1. Signifikante Erhöhung der Populationsdiversität in allen Experimenten
+2. Signifikante Reduktion der Anzahl an Trainingsepochen pro Generationen in allen Experimenten
 
 
 # Weitere verfolgte Ansätze
@@ -711,8 +699,21 @@ knitr::kable(
   kable_styling(latex_options = "scale_down", font_size = 7)
 
 ```
+# Fazit (vorläufig)
 
+## Vorteile
 
+Der Einsatz von Pre-Training dient:
+
+* der Erhöhung der Populationsdiversität (mögliche Strategie zur Kontrolle des Explore/Exploit Verhaltens von DAE-GP?)
+
+* der Reduktion der Trainingsepochen pro Generation (Reduktion der Rechenleistung, insbesondere bei komplexen DAE-LSTM nützlich?)
+
+## Nachteile
+
+* DAE-GP verliert durch Einsatz von Pre-Training die Möglichkeit die Anzahl künstlicher Neuronen pro verstecktem Layer anzupassen
+
+* Keine signifikanten Vorteile für die Qualität der gefundenen Lösungen
 
 
 # References {.allowframebreaks} 
