@@ -586,14 +586,127 @@ Hintergrund: Vermutlich geringer Informationsgewinn aus dem Lernen von vollen L�
 ![Übersicht Fitness pro Generation (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png){height=80%}
 
 
+## Auswertung Fitness (Median) - Weitere Ansätze
+
+```{r full_run_PT_Strat_Fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_median_Fitness_lastGen_PT_Strategies_Airfoil_2hl_150hn.csv",
+  sep=","
+)
+
+col_names <- c("Set", "DAE-GP", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+
+knitr::kable(
+ df,
+ format = "markdown",
+ align = "l",
+ digits=2,
+ col.names = col_names,
+ #caption = "Symbolic Regression Overview - Mean final Fitness"
+) %>% 
+  kable_styling(latex_options = "scale_down", font_size = 7)
+
+```
+
+## Übersicht Lösungsgröße (Median) - Weitere Ansätze
+
+![Übersicht Lösungsgröße der besten Individuen (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png){height=80%}
 
 
+## Auswertung Lösungsgröße (Median) - Weitere Ansätze
 
-![2nd Gen Pre-Training - Fitness - Airfoil Datensatz](~/masterThesis/master_thesis/img/2ndGenPT_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png){height=80%}
+```{r full_run_PT_Strat_BestSize, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_median_Size_best_Solution_PT_Strategies_Airfoil_2hl_150hn.csv",
+  sep=","
+)
+
+col_names <- c("DAE-GP", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+
+knitr::kable(
+ df,
+ format = "markdown",
+ align = "l",
+ digits=2,
+ col.names = col_names,
+ #caption = "Symbolic Regression Overview - Mean final Fitness"
+) %>% 
+  kable_styling(latex_options = "scale_down", font_size = 7)
+
+```
+
+## Übersicht Populationsdiversität (Median) - Weitere Ansätze
+
+![Übersicht Populationsdiversität (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_popDiversity_byGens_levOnly.png){height=80%}
 
 
+## Auswertung Populationsdiversität (Median) - Weitere Ansätze
 
-## Grow Initialisierung der Pre-Training Population
+```{r full_run_PT_Strat_LevDiv, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_median_Norm._Levenshtein_Distance_PT_Strategies_Airfoil_2hl_150hn.csv",
+  sep=","
+)
+
+col_names <- c("DAE-GP", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+
+knitr::kable(
+ df,
+ format = "markdown",
+ align = "l",
+ digits=2,
+ col.names = col_names,
+ #caption = "Symbolic Regression Overview - Mean final Fitness"
+) %>% 
+  kable_styling(latex_options = "scale_down", font_size = 7)
+
+```
+## Übersicht Trainingsepochen (Median) - Weitere Ansätze
+
+![Übersicht Trainingsepochen (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png){height=80%}
+
+
+## Auswertung Trainingsepochen (Median) - Weitere Ansätze
+
+```{r full_run_PT_Strat_EpochsTrained, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+# Create the data frame from csv
+df <- read.csv(
+  "/Users/rmn/github/master_thesis/data/summary_median_Training_Epochs_PT_Strategies_Airfoil_2hl_150hn.csv",
+  sep=","
+)
+
+col_names <- c("DAE-GP", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+
+knitr::kable(
+ df,
+ format = "markdown",
+ align = "l",
+ digits=2,
+ col.names = col_names,
+ #caption = "Symbolic Regression Overview - Mean final Fitness"
+) %>% 
+  kable_styling(latex_options = "scale_down", font_size = 7)
+
+```
 
 
 
