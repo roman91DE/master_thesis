@@ -431,3 +431,104 @@ for (problem,path), ax in zip(RESULTS_2hl.items(), (ul, ur, dl, dr)):
 
 ur.legend(fontsize=MID)
 fig.savefig(f"{IMG_PATH}/median_levDistance_byGen.png")
+
+
+
+PT_STRATEGIES_PATH = "/Users/rmn/github/master_thesis/data/PT_Strategies_airfoil_2hl_150hn_fullRun"
+
+FILES = {
+    "Norm._Levenshtein_Distance" : "lev_div_overGens.json",
+    "Size_best_Solution" : "size_best_solution.json",
+    "Fitness_lastGen" : "fitness_per_gen.json",
+    "Training_Epochs" : "epochs_trained_perGen.json"
+}  
+
+
+# summarize by mean
+
+for metric, filename in FILES.items():
+
+    d = json.load(open(join(PT_STRATEGIES_PATH, filename),"r",encoding="utf-8"))
+
+    if metric == "Fitness_lastGen":
+        csv_string = "Set,DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+
+        reg_mean_train = np.mean(np.array(list(sublist[-1] for sublist in d["DAE-GP(train)"])))
+        sec_pt_mean_train = np.mean(np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(train)"])))
+        grow_pt_mean_train = np.mean(np.array(list(sublist[-1] for sublist in d["Grow-PT(train)"])))
+
+        reg_mean_test = np.mean(np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"])))
+        sec_pt_mean_test = np.mean(np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"])))
+        grow_pt_mean_test = np.mean(np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"])))
+
+        csv_string += f"Train,{np.mean(reg_mean_train)},{np.mean(sec_pt_mean_train)},{getPVal(reg_mean_train, sec_pt_mean_train)},{np.mean(grow_pt_mean_train)},{getPVal(reg_mean_train, grow_pt_mean_train)}\n"
+        csv_string += f"Test,{np.mean(reg_mean_test)},{np.mean(sec_pt_mean_test)},{getPVal(reg_mean_test, sec_pt_mean_test)},{np.mean(grow_pt_mean_test)},{getPVal(reg_mean_test, grow_pt_mean_test)}\n"
+
+    
+    elif metric == "Size_best_Solution":
+        csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+
+        reg_mean = np.mean(np.array(list(sublist[-1] for sublist in d["DAE-GP"])))
+        sec_pt_mean = np.mean(np.array(list(sublist[-1] for sublist in d["2nd.Gen-Pre-Trained"])))
+        grow_pt_mean = np.mean(np.array(list(sublist[-1] for sublist in d["Grow-Pre-Trained"])))
+
+
+        csv_string += f"{np.mean(reg_mean)},{np.mean(sec_pt_mean)},{getPVal(reg_mean, sec_pt_mean)},{np.mean(grow_pt_mean)},{getPVal(reg_mean, grow_pt_mean)}\n"
+
+    else:
+        csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+    
+        reg_mean = np.mean(np.array(d["DAE-GP"]), axis=0)
+        sec_pt_mean = np.mean(np.array(d["2nd.Gen-Pre-Trained"]), axis=0)
+        grow_pt_mean = np.mean(np.array(d["Grow-Pre-Trained"]), axis=0) 
+
+        csv_string += f"{np.mean(reg_mean)},{np.mean(sec_pt_mean)},{getPVal(reg_mean, sec_pt_mean)},{np.mean(grow_pt_mean)},{getPVal(reg_mean, grow_pt_mean)}\n"
+        
+
+    with open(f"/Users/rmn/github/master_thesis/data/summary_mean_{metric}_PT_Strategies_Airfoil_2hl_150hn.csv", "w", encoding="utf-8") as f:
+        f.write(csv_string)
+
+# summarize by median
+
+for metric, filename in FILES.items():
+
+    d = json.load(open(join(PT_STRATEGIES_PATH, filename),"r",encoding="utf-8"))
+
+    if metric == "Fitness_lastGen":
+        csv_string = "Set,DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+
+        reg_median_train = np.median(np.array(list(sublist[-1] for sublist in d["DAE-GP(train)"])))
+        sec_pt_median_train = np.median(np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(train)"])))
+        grow_pt_median_train = np.median(np.array(list(sublist[-1] for sublist in d["Grow-PT(train)"])))
+
+        reg_median_test = np.median(np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"])))
+        sec_pt_median_test = np.median(np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"])))
+        grow_pt_median_test = np.median(np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"])))
+
+        csv_string += f"Train,{np.median(reg_median_train)},{np.median(sec_pt_median_train)},{getPVal(reg_median_train, sec_pt_median_train)},{np.median(grow_pt_median_train)},{getPVal(reg_median_train, grow_pt_median_train)}\n"
+        csv_string += f"Test,{np.median(reg_median_test)},{np.median(sec_pt_median_test)},{getPVal(reg_median_test, sec_pt_median_test)},{np.median(grow_pt_median_test)},{getPVal(reg_median_test, grow_pt_median_test)}\n"
+
+    
+    elif metric == "Size_best_Solution":
+        csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+
+        reg_median = np.median(np.array(list(sublist[-1] for sublist in d["DAE-GP"])))
+        sec_pt_median = np.median(np.array(list(sublist[-1] for sublist in d["2nd.Gen-Pre-Trained"])))
+        grow_pt_median = np.median(np.array(list(sublist[-1] for sublist in d["Grow-Pre-Trained"])))
+
+
+        csv_string += f"{np.median(reg_median)},{np.median(sec_pt_median)},{getPVal(reg_median, sec_pt_median)},{np.median(grow_pt_median)},{getPVal(reg_median, grow_pt_median)}\n"
+
+    else:
+        csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+    
+        reg_median = np.median(np.array(d["DAE-GP"]), axis=0)
+        sec_pt_median = np.median(np.array(d["2nd.Gen-Pre-Trained"]), axis=0)
+        grow_pt_median = np.median(np.array(d["Grow-Pre-Trained"]), axis=0) 
+
+        csv_string += f"{np.median(reg_median)},{np.median(sec_pt_median)},{getPVal(reg_median, sec_pt_median)},{np.median(grow_pt_median)},{getPVal(reg_median, grow_pt_median)}\n"
+        
+
+    with open(f"/Users/rmn/github/master_thesis/data/summary_median_{metric}_PT_Strategies_Airfoil_2hl_150hn.csv", "w", encoding="utf-8") as f:
+        f.write(csv_string)
+

@@ -574,7 +574,20 @@ Ansatz: Deutliche Fitnessverbesserung finden oft bereits in der ersten Generatio
 * DAE-LSTM Modelle werden ab Generation 2 mit den Parametern von $\hat{M}$ initialisiert
 
 
-## Eingeschobenes Pre-Training in der 2. Generation - Airfoil Datensatz
+## Grow Initialisierung der Pre-Training Population 
+
+Ansatz: Initialisierung von $\hat{P}$ ausschließlich mit der Grow Methode anstelle von ramped Half and Half 
+
+Hintergrund: Vermutlich geringer Informationsgewinn aus dem Lernen von vollen Lösungsbäume aus $\hat{P}$ mit den gesampleten Populationen der späteren Generationen
+
+
+## Übersicht Fitness (Median) - Weitere Ansätze
+
+![Übersicht Fitness pro Generation (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png){height=80%}
+
+
+
+
 
 ![2nd Gen Pre-Training - Fitness - Airfoil Datensatz](~/masterThesis/master_thesis/img/2ndGenPT_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png){height=80%}
 
