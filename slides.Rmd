@@ -40,7 +40,7 @@ reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 ```
 
 
-```{bash recompile_results, eval=FALSE, include=FALSE}
+```{bash recompile_results, echo=TRUE, eval=FALSE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
@@ -84,8 +84,9 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_ful
 /Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_data.py
 
 # 2nd generation Pre-Training
-/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/masterThesis/eda-gp-2020/experiments/2ndGenPT_airfoil_2hl_150hn_fullRun/re_evaluate_2ndGenPT_airfoil_2hl_150hn_fullRun.sh
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/2ndGenPT_airfoil_2hl_150hn_fullRun/re_evaluate_2ndGenPT_airfoil_2hl_150hn_fullRun.sh
 
+echo Done recompiling Results, Plots, Diagrams, etc!
 
 ```
 
@@ -255,10 +256,12 @@ Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anz
 1. DAE-GP mit dynamischer Anpassung, Pre-Trained DAE-GP mit konstanter Anzahl (maximale Länge innerhalb von $\hat{P}$)
 2. Beide Algorithmen mit einer fixen Anzahl von versteckten Neuronen
 
-
+<!--
 ## DAE-GP - Entwicklung DAE-LSTM Dimension
 
 ![Airfoil - Entwicklung DAE-LSTM Dimension](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_hiddenNeurons_perGen.png){height=90%}
+
+--->
 
 
 ## Airfoil - Entwicklung der Fitness über Generationen
