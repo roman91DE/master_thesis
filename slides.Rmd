@@ -209,37 +209,6 @@ Gewählte Pre-Training Strategie:
 
 
 
-# Untersuchung des Generalisierungsverhalten 
-
-## Fragestellung
-
-Welchen Einfluss hat die Dimension der eingesetzten DAE-LSTMs auf das Generalisierungsverhalten von DAE-GP in Kombination mit Pre-Training?
-
-Experimenteller Aufbau: 
-
-* Ausschließliche Betrachtung des Rekonstruktionsfehlers der ersten Generation (Nutzung von seperaten Test- und Trainingspopulationen)
-* DAE-LSTM Training erfolgt über eine fixe Anzahl von $1000$ Epochen (kein frühzeitiger Abbruch bei Konvergenz des Testfehlers)
-
-Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe):
-
-* Variable Anzahl von Hidden Neurons (50, 100, 200) mit einem Hidden Layer
-* Variable Anzahl von Hidden Layers (1, 2, 3) mit 100 Hidden Neurons
-* (normales) DAE-GP und pre-trained DAE-GP
-
-
-## Einfluss der Anzahl von Hidden Layers
-
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots.png){height=85%}
-
-
-## Einfluss der Anzahl von Hidden Neurons
-
-![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3plots.png){height=85%}
-
-
-## Fazit Generalisierungsverhalten
-
-...
 
 # Untersuchung des Suchverhaltens bei symbolischer Regression
 
@@ -714,6 +683,38 @@ Der Einsatz von Pre-Training dient:
 * DAE-GP verliert durch Einsatz von Pre-Training die Möglichkeit die Anzahl künstlicher Neuronen pro verstecktem Layer anzupassen
 
 * Keine signifikanten Vorteile für die Qualität der gefundenen Lösungen
+
+
+<!--
+
+# Untersuchung des Generalisierungsverhalten 
+
+## Fragestellung
+
+Welchen Einfluss hat die Dimension der eingesetzten DAE-LSTMs auf das Generalisierungsverhalten von DAE-GP in Kombination mit Pre-Training?
+
+Experimenteller Aufbau: 
+
+* Ausschließliche Betrachtung des Rekonstruktionsfehlers der ersten Generation (Nutzung von seperaten Test- und Trainingspopulationen)
+* DAE-LSTM Training erfolgt über eine fixe Anzahl von $1000$ Epochen (kein frühzeitiger Abbruch bei Konvergenz des Testfehlers)
+
+Insgesamt 12 Subexperimente mit jeweils 10 Durchläufen ($120$ Gesamtdurchläufe):
+
+* Variable Anzahl von Hidden Neurons (50, 100, 200) mit einem Hidden Layer
+* Variable Anzahl von Hidden Layers (1, 2, 3) mit 100 Hidden Neurons
+* (normales) DAE-GP und pre-trained DAE-GP
+
+
+## Einfluss der Anzahl von Hidden Layers
+
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Layer (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots.png){height=85%}
+
+
+## Einfluss der Anzahl von Hidden Neurons
+
+![Airfoil - Erste Generation Median Trainingsfehler - Variable Anzahl Hidden Neurons (2/2)](./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3plots.png){height=85%}
+
+-->
 
 
 # References {.allowframebreaks} 
