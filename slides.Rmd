@@ -86,6 +86,7 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_ful
 # 2nd generation Pre-Training
 /Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/masterThesis/eda-gp-2020/experiments/2ndGenPT_airfoil_2hl_150hn_fullRun/re_evaluate_2ndGenPT_airfoil_2hl_150hn_fullRun.sh
 
+
 ```
 
 
@@ -98,12 +99,11 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_ful
 
 Welchen Effekt hat Pre-Training auf:
 
-  1. das Generalisierungsverhalten von DAE-GP?
-  2. die Qualität der gefundenen Programme (Fitness/Programmlänge)?
-  3. die Populationsdiversität?
-  4. das Laufzeitverhalten?
+  1. die Qualität der gefundenen Programme (Fitness/Programmlänge)?
+  2. die Populationsdiversität?
+  3. das Laufzeitverhalten?
   
-Anwendungsgebiet: Symbolische Regression, insbesondere am Aifoil Datensatz
+Anwendungsgebiet: Symbolische Regression, Fokus auf Aifoil Datensatz
   
 
 
@@ -223,7 +223,7 @@ Fokus insbesondere auf:
 * Lösungsqualität (Fitness)
 * Größe der gefundenen Lösungen (Anzahl an Knoten)
 * Populationsdiversität
-* Anzahl an Trainingsepochen pro Generation
+* Laufzeit
 
 ## Hyperparameter
 
@@ -263,8 +263,7 @@ Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anz
 
 ## Airfoil - Entwicklung der Fitness über Generationen
 
-![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png){height=90%}
-
+![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_fitness_byGens.png){height=90%}
 
 
 ## Airfoil - Verteilung der finalen Fitness
@@ -273,11 +272,26 @@ Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anz
 
 ## Airfoil - Größe der besten Lösungskandidaten
 
-![Airfoil Datensatz - Größe der besten Lösung über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_Size_byGens.png)
+![Airfoil Datensatz - Größe der besten Lösung über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_best_Size_byGens.png)
 
-## Airfoil - Laufzeit
+## Airfoil - Populationsdiversität
 
-...
+![Airfoil - Populationsdiversität](/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_popDiversity_byGens_levOnly_withGP.png){height=90%}
+
+
+## Airfoil - Laufzeit (Gesamt)
+
+![Airfoil - Laufzeit](/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_runtime.png){height=90%}
+
+
+## Airfoil - Laufzeit (Trainingsepochen)
+
+![Airfoil - Laufzeit](/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_training_epochs.png){height=90%}
+
+## Airfoil - Laufzeit (Sampling Time)
+
+![Airfoil - Laufzeit](/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_sampleTime.png){height=90%}
+
 
 ## Kontrollexperiment: Reduzierung der DAE-LSTM Dimension für Airfoil Datensatz
 
