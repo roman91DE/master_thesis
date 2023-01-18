@@ -40,7 +40,7 @@ reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 ```
 
 
-```{bash recompile_results, echo=TRUE, eval=TRUE, include=FALSE}
+```{bash recompile_results, echo=TRUE, eval=FALSE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
@@ -214,6 +214,25 @@ Gewählte Pre-Training Strategie:
 ![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png){height=70%}
 
 
+## Herausforderung - DAE-LSTM Dimension
+
+* Im Verlaufe des DAE-GP Algorithmus passt sich die Dimension der DAE-LSTM Netzwerke $M_{g}$ dynamisch an die aktuelle Population an
+
+> Anzahl der versteckten Neuronen pro verstecktem Layer in generation $g$ = Maximum der Länge aller Individuen aus $P_{g-1}$ 
+
+Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anzahl an Neuronen. Zwei Ansätze verfolgt:
+
+1. DAE-GP mit dynamischer Anpassung, Pre-Trained DAE-GP mit konstanter Anzahl (maximale Länge innerhalb von $\hat{P}$)
+2. Beide Algorithmen mit einer fixen Anzahl von versteckten Neuronen
+
+
+<!--
+## DAE-GP - Entwicklung DAE-LSTM Dimension
+
+![Airfoil - Entwicklung DAE-LSTM Dimension](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_hiddenNeurons_perGen.png){height=90%}
+
+--->
+
 
 
 # Untersuchung des Suchverhaltens bei symbolischer Regression
@@ -250,23 +269,7 @@ knitr::kable(
 ```
 
 
-## Herausforderung - DAE-LSTM Dimension
 
-* Im Verlaufe des DAE-GP Algorithmus passt sich die Dimension der DAE-LSTM Netzwerke $M_{g}$ dynamisch an die aktuelle Population an
-
-> Anzahl der versteckten Neuronen pro verstecktem Layer in generation $g$ = Maximum der Länge aller Individuen aus $P_{g-1}$ 
-
-Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anzahl an Neuronen. Zwei Ansätze verfolgt:
-
-1. DAE-GP mit dynamischer Anpassung, Pre-Trained DAE-GP mit konstanter Anzahl (maximale Länge innerhalb von $\hat{P}$)
-2. Beide Algorithmen mit einer fixen Anzahl von versteckten Neuronen
-
-<!--
-## DAE-GP - Entwicklung DAE-LSTM Dimension
-
-![Airfoil - Entwicklung DAE-LSTM Dimension](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/median_hiddenNeurons_perGen.png){height=90%}
-
---->
 
 
 ## Airfoil - Entwicklung der Fitness über Generationen
