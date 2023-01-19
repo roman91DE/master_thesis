@@ -321,7 +321,7 @@ Erwartung: Negativer Einfluss von Pre-Training auf die Güte der gefundenen Lös
 
 ## Airfoil - Größe der besten Lösungskandidaten(1HL)
 
-![Airfoil - Größe der besten Lösung über Generationen (1HL)](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png){height=90%}
+![Airfoil - Größe der besten Lösung über Generationen (1HL)](~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/median_Size_byGens.png){height=90%}
 
 
 ## Anwendung auf weitere Datensätzen
@@ -490,6 +490,11 @@ knitr::kable(
   kable_styling(latex_options = "scale_down", font_size = 7)
 
 ```
+
+## Übersicht Laufzeit - Symbolische Regression
+
+...
+
 
 ## Übersicht Trainingsepochen pro Generation (Median) - Symbolische Regression
 
