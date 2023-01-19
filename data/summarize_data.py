@@ -453,27 +453,29 @@ for metric, filename in FILES.items():
     if metric == "Fitness_lastGen":
         csv_string = "Set,DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
 
-        reg_mean_train = np.mean(np.array(list(sublist[-1] for sublist in d["DAE-GP(train)"])))
-        sec_pt_mean_train = np.mean(np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(train)"])))
-        grow_pt_mean_train = np.mean(np.array(list(sublist[-1] for sublist in d["Grow-PT(train)"])))
+        reg_train = np.array(list(sublist[-1] for sublist in d["DAE-GP(train)"]))
+        sec_pt_train = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(train)"]))
+        grow_pt_train = np.array(list(sublist[-1] for sublist in d["Grow-PT(train)"]))
 
-        reg_mean_test = np.mean(np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"])))
-        sec_pt_mean_test = np.mean(np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"])))
-        grow_pt_mean_test = np.mean(np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"])))
+        reg_test = np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"]))
+        sec_pt_test = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"]))
+        grow_pt_test = np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"]))
 
-        csv_string += f"Train,{np.mean(reg_mean_train)},{np.mean(sec_pt_mean_train)},{getPVal(reg_mean_train, sec_pt_mean_train)},{np.mean(grow_pt_mean_train)},{getPVal(reg_mean_train, grow_pt_mean_train)}\n"
-        csv_string += f"Test,{np.mean(reg_mean_test)},{np.mean(sec_pt_mean_test)},{getPVal(reg_mean_test, sec_pt_mean_test)},{np.mean(grow_pt_mean_test)},{getPVal(reg_mean_test, grow_pt_mean_test)}\n"
+
+
+        csv_string += f"Train,{np.mean(reg_train)},{np.mean(sec_pt_train)},{getPVal(reg_train, sec_pt_train)},{np.mean(grow_pt_train)},{getPVal(reg_train, grow_pt_train)}\n"
+        csv_string += f"Test,{np.mean(reg_test)},{np.mean(sec_pt_test)},{getPVal(reg_test, sec_pt_test)},{np.mean(grow_pt_test)},{getPVal(reg_test, grow_pt_test)}\n"
 
     
     elif metric == "Size_best_Solution":
         csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
 
-        reg_mean = np.mean(np.array(list(sublist[-1] for sublist in d["DAE-GP"])))
-        sec_pt_mean = np.mean(np.array(list(sublist[-1] for sublist in d["2nd.Gen-Pre-Trained"])))
-        grow_pt_mean = np.mean(np.array(list(sublist[-1] for sublist in d["Grow-Pre-Trained"])))
+        reg = np.array(list(sublist[-1] for sublist in d["DAE-GP"]))
+        sec_pt = np.array(list(sublist[-1] for sublist in d["2nd.Gen-Pre-Trained"]))
+        grow_pt = np.array(list(sublist[-1] for sublist in d["Grow-Pre-Trained"]))
 
 
-        csv_string += f"{np.mean(reg_mean)},{np.mean(sec_pt_mean)},{getPVal(reg_mean, sec_pt_mean)},{np.mean(grow_pt_mean)},{getPVal(reg_mean, grow_pt_mean)}\n"
+        csv_string += f"{np.mean(reg)},{np.mean(sec_pt)},{getPVal(reg, sec_pt)},{np.mean(grow_pt)},{getPVal(reg, grow_pt)}\n"
 
     else:
         csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
@@ -497,27 +499,29 @@ for metric, filename in FILES.items():
     if metric == "Fitness_lastGen":
         csv_string = "Set,DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
 
-        reg_median_train = np.median(np.array(list(sublist[-1] for sublist in d["DAE-GP(train)"])))
-        sec_pt_median_train = np.median(np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(train)"])))
-        grow_pt_median_train = np.median(np.array(list(sublist[-1] for sublist in d["Grow-PT(train)"])))
+        reg_train = np.array(list(sublist[-1] for sublist in d["DAE-GP(train)"]))
+        sec_pt_train = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(train)"]))
+        grow_pt_train = np.array(list(sublist[-1] for sublist in d["Grow-PT(train)"]))
 
-        reg_median_test = np.median(np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"])))
-        sec_pt_median_test = np.median(np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"])))
-        grow_pt_median_test = np.median(np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"])))
+        reg_test = np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"]))
+        sec_pt_test = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"]))
+        grow_pt_test = np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"]))
 
-        csv_string += f"Train,{np.median(reg_median_train)},{np.median(sec_pt_median_train)},{getPVal(reg_median_train, sec_pt_median_train)},{np.median(grow_pt_median_train)},{getPVal(reg_median_train, grow_pt_median_train)}\n"
-        csv_string += f"Test,{np.median(reg_median_test)},{np.median(sec_pt_median_test)},{getPVal(reg_median_test, sec_pt_median_test)},{np.median(grow_pt_median_test)},{getPVal(reg_median_test, grow_pt_median_test)}\n"
+
+
+        csv_string += f"Train,{np.median(reg_train)},{np.median(sec_pt_train)},{getPVal(reg_train, sec_pt_train)},{np.median(grow_pt_train)},{getPVal(reg_train, grow_pt_train)}\n"
+        csv_string += f"Test,{np.median(reg_test)},{np.median(sec_pt_test)},{getPVal(reg_test, sec_pt_test)},{np.median(grow_pt_test)},{getPVal(reg_test, grow_pt_test)}\n"
 
     
     elif metric == "Size_best_Solution":
         csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
 
-        reg_median = np.median(np.array(list(sublist[-1] for sublist in d["DAE-GP"])))
-        sec_pt_median = np.median(np.array(list(sublist[-1] for sublist in d["2nd.Gen-Pre-Trained"])))
-        grow_pt_median = np.median(np.array(list(sublist[-1] for sublist in d["Grow-Pre-Trained"])))
+        reg = np.array(list(sublist[-1] for sublist in d["DAE-GP"]))
+        sec_pt = np.array(list(sublist[-1] for sublist in d["2nd.Gen-Pre-Trained"]))
+        grow_pt = np.array(list(sublist[-1] for sublist in d["Grow-Pre-Trained"]))
 
 
-        csv_string += f"{np.median(reg_median)},{np.median(sec_pt_median)},{getPVal(reg_median, sec_pt_median)},{np.median(grow_pt_median)},{getPVal(reg_median, grow_pt_median)}\n"
+        csv_string += f"{np.median(reg)},{np.median(sec_pt)},{getPVal(reg, sec_pt)},{np.median(grow_pt)},{getPVal(reg, grow_pt)}\n"
 
     else:
         csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
