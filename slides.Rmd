@@ -2,13 +2,13 @@
 title: "Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming"
 subtitle: "Kolloquium zur Masterarbeit im M.Sc. Wirtschaftspädagogik "
 author: "Roman Hoehn"
-institute: "Johannes Gutenberg-Universität Mainz"
+institute: "JGU Mainz"
 date: "Datum: 25.01.2023"
 #fontsize: 11pt
 link-citations: true
 output:
   beamer_presentation:
-    #theme: "Madrid"
+    theme: "Madrid"
     fonttheme: "structurebold"
     fig_width: 12
     fig_height: 10
@@ -31,8 +31,12 @@ library(magrittr)
 library(reticulate)
 
 
-knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(fig.pos = "c")
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.pos = "c",
+  fig.align="center"
+  )
+
 
 
 reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
@@ -131,7 +135,7 @@ Anwendungsgebiet: Symbolische Regression, Fokus auf Aifoil Datensatz
 
 * Entwicklung neuer Rekombinationsoperatoren für evolutionäre Algorithmen basierend auf dem Einsatz von probabilistischen Modellen^[@design_of_modern_heuristics]
 * Hypothese: Problemspezifische Abhängigkeiten zwischen Entscheidungsvariablen können bei der Erzeugung neuer Individuen besser berücksichtigt werden als bei traditionellen Rekombinationsoperatoren^[@edaOrig1996]
-* Weitere Verbreitung im Bereich der genetischen Algorithmen (GA) als für GP
+
 
 ## Denoising Autoencoder Estimation of Distribution Algorithmen (DAE-EDA)
 
@@ -146,7 +150,7 @@ Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistis
 ## Denoising Autoencoder Genetic Programming (DAE-GP)
 
 * Adaptierung des DAE-EDA Algorithmus auf GP
-* Darstellung von Individuen als Zeichenketten in prefix Notation
+* Schwierigkeit: Variation von GP Lösungen in Länge und Baumstruktur
 * seq2seq learning Problem: Einsatz von DAE - Long Short Term Memory Netzwerken (DAE-LSTM)
 
 ## DAE-GP Ablauf
@@ -287,7 +291,7 @@ knitr::kable(
 
 ## Airfoil - Größe der besten Lösungskandidaten
 
-![Airfoil Datensatz - Größe der besten Lösung über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_best_Size_byGens.png)
+![Airfoil Datensatz - Größe der besten Lösung über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_best_Size_byGens.png){height=90%}
 
 ## Airfoil - Populationsdiversität
 
@@ -301,11 +305,16 @@ knitr::kable(
 
 ## Airfoil - Laufzeit (Trainingsepochen)
 
-![Airfoil - Laufzeit](/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_training_epochs.png){height=90%}
+![Airfoil - Trainingsepochen](/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_training_epochs.png){height=90%}
 
 ## Airfoil - Laufzeit (Sampling Time)
 
-![Airfoil - Laufzeit](/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_sampleTime.png){height=90%}
+![Airfoil - Sampling-Dauer](/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_sampleTime.png){height=90%}
+
+## Airfoil - Laufzeit (Profiling)
+
+![Airfoil - Profiling](/Users/rmn/github/master_thesis/img/Airfoil_RuntimeProfiling/Runtime_Bar.png){height=90%}
+
 
 
 ## Kontrollexperiment: Reduzierung der DAE-LSTM Dimension für Airfoil Datensatz
