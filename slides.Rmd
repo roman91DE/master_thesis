@@ -224,9 +224,7 @@ Gewählte Pre-Training Strategie:
 
 ## Herausforderung - DAE-LSTM Dimension
 
-* Im Verlaufe des DAE-GP Algorithmus passt sich die Dimension der DAE-LSTM Netzwerke $M_{g}$ dynamisch an die aktuelle Population an
-
-> Anzahl der versteckten Neuronen pro verstecktem Layer in generation $g$ = Maximum der Länge aller Individuen aus $P_{g-1}$ 
+* Im Verlaufe des DAE-GP Algorithmus passt sich die Dimension der DAE-LSTM Netzwerke $M_{g}$ dynamisch an die Größe der Individuen der aktuellen Population an (Dimension nimmt i.d.R. stark ab innerhalb der ersten Generationen)
 
 Der Einsatz der Pre-Training Strategie ist nur möglich bei einer konstanten Anzahl an Neuronen. Zwei Ansätze verfolgt:
 
