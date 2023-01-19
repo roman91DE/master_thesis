@@ -91,6 +91,10 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_ful
 # 2nd generation Pre-Training
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/2ndGenPT_airfoil_2hl_150hn_fullRun/re_evaluate_2ndGenPT_airfoil_2hl_150hn_fullRun.sh
 
+# create Plots from pstats (cProfile)
+JUPYTER="/Users/rmn/miniconda3/envs/dataScience/bin/jupyter"
+$JUPYTER nbconvert --to html --execute /Users/rmn/masterThesis/eda-gp-2020/cProfiler/eval.ipynb
+
 echo Done recompiling Results, Plots, Diagrams, etc!
 
 ```
