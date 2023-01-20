@@ -5,7 +5,8 @@ author: "Roman Hoehn"
 date: 'Datum: 25.01.2023'
 output:
   beamer_presentation:
-    theme: Madrid
+    theme: "Madrid"
+    # colortheme: "beaver"
     fonttheme: structurebold
     fig_caption: no
     number_sections: yes
@@ -128,10 +129,10 @@ Anwendungsgebiet: Symbolische Regression, Fokus auf Airfoil Datensatz
 * Einsatz von Pre-Training in mehreren Publikationen als möglicher Weg für eine weitere Optimierung vorgeschlagen^[@dae-gp_2022_symreg] ^[@daegp_explore_exploit]
 
 
-## Estimation of Distribution Algorithmen (EDA)
+## Estimation of Distribution Algorithmen^[@edaOrig1996] ^[@design_of_modern_heuristics] (EDA)
 
-* Entwicklung neuer Rekombinationsoperatoren für evolutionäre Algorithmen basierend auf dem Einsatz von probabilistischen Modellen^[@design_of_modern_heuristics]
-* Hypothese: Problemspezifische Abhängigkeiten zwischen Entscheidungsvariablen können bei der Erzeugung neuer Individuen besser berücksichtigt werden als bei traditionellen Rekombinationsoperatoren^[@edaOrig1996]
+* Entwicklung neuer Rekombinationsoperatoren für evolutionäre Algorithmen basierend auf dem Einsatz von probabilistischen Modellen
+* Hypothese: Problemspezifische Abhängigkeiten zwischen Entscheidungsvariablen können bei der Erzeugung neuer Individuen besser berücksichtigt werden als bei traditionellen Rekombinationsoperatoren
 
 
 ## Denoising Autoencoder Estimation of Distribution Algorithmen (DAE-EDA)
@@ -650,7 +651,7 @@ df <- read.csv(
   sep=","
 )
 
-col_names <- c("Set", "DAE-GP", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+col_names <- c("Set", "Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
 
 knitr::kable(
  df,
@@ -686,7 +687,7 @@ df <- read.csv(
   sep=","
 )
 
-col_names <- c("DAE-GP", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+col_names <- c("Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
 
 knitr::kable(
  df,
@@ -722,7 +723,7 @@ df <- read.csv(
   sep=","
 )
 
-col_names <- c("DAE-GP", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+col_names <- c("Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
 
 knitr::kable(
  df,
@@ -757,7 +758,7 @@ df <- read.csv(
   sep=","
 )
 
-col_names <- c("DAE-GP", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+col_names <- c("Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
 
 knitr::kable(
  df,

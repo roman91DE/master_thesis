@@ -511,7 +511,7 @@ for metric, filename in FILES.items():
         reg_test = np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"]))
         s_pt_test = np.array(list(sublist[-1] for sublist in d["Standard-PT(test)"]))
         sec_pt_test = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"]))
-        grow_pt_test = np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"])
+        grow_pt_test = np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"]))
 
 
 
