@@ -451,7 +451,7 @@ for metric, filename in FILES.items():
     d = json.load(open(join(PT_STRATEGIES_PATH, filename),"r",encoding="utf-8"))
 
     if metric == "Fitness_lastGen":
-        csv_string = "Set,DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+        csv_string = "Set,Standard-PT,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
 
         reg_train = np.array(list(sublist[-1] for sublist in d["DAE-GP(train)"]))
         s_pt_train = np.array(list(sublist[-1] for sublist in d["Standard-PT(train)"]))
@@ -459,34 +459,36 @@ for metric, filename in FILES.items():
         grow_pt_train = np.array(list(sublist[-1] for sublist in d["Grow-PT(train)"]))
 
         reg_test = np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"]))
-        s_pt_train = np.array(list(sublist[-1] for sublist in d["Standard-PT(test)"]))
+        s_pt_test = np.array(list(sublist[-1] for sublist in d["Standard-PT(test)"]))
         sec_pt_test = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"]))
         grow_pt_test = np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"]))
 
 
 
-        csv_string += f"Train,{np.mean(reg_train)},{np.mean(sec_pt_train)},{getPVal(reg_train, sec_pt_train)},{np.mean(grow_pt_train)},{getPVal(reg_train, grow_pt_train)}\n"
-        csv_string += f"Test,{np.mean(reg_test)},{np.mean(sec_pt_test)},{getPVal(reg_test, sec_pt_test)},{np.mean(grow_pt_test)},{getPVal(reg_test, grow_pt_test)}\n"
+        csv_string += f"Train,{np.mean(s_pt_train)},{np.mean(sec_pt_train)},{getPVal(s_pt_train, sec_pt_train)},{np.mean(grow_pt_train)},{getPVal(s_pt_train, grow_pt_train)}\n"
+        csv_string += f"Test,{np.mean(s_pt_test)},{np.mean(sec_pt_test)},{getPVal(s_pt_test, sec_pt_test)},{np.mean(grow_pt_test)},{getPVal(s_pt_test, grow_pt_test)}\n"
 
     
     elif metric == "Size_best_Solution":
-        csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+        csv_string = "Standard-PT,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
 
         reg = np.array(list(sublist[-1] for sublist in d["DAE-GP"]))
+        s_pt = np.array(list(sublist[-1] for sublist in d["Standard-Pre-Trained"]))
         sec_pt = np.array(list(sublist[-1] for sublist in d["2nd.Gen-Pre-Trained"]))
         grow_pt = np.array(list(sublist[-1] for sublist in d["Grow-Pre-Trained"]))
 
 
-        csv_string += f"{np.mean(reg)},{np.mean(sec_pt)},{getPVal(reg, sec_pt)},{np.mean(grow_pt)},{getPVal(reg, grow_pt)}\n"
+        csv_string += f"{np.mean(s_pt)},{np.mean(sec_pt)},{getPVal(s_pt, sec_pt)},{np.mean(grow_pt)},{getPVal(s_pt, grow_pt)}\n"
 
     else:
-        csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+        csv_string = "Standard-PT,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
     
         reg_mean = np.mean(np.array(d["DAE-GP"]), axis=0)
+        s_pt_mean = np.mean(np.array(d["Standard-Pre-Trained"]), axis=0)
         sec_pt_mean = np.mean(np.array(d["2nd.Gen-Pre-Trained"]), axis=0)
         grow_pt_mean = np.mean(np.array(d["Grow-Pre-Trained"]), axis=0) 
 
-        csv_string += f"{np.mean(reg_mean)},{np.mean(sec_pt_mean)},{getPVal(reg_mean, sec_pt_mean)},{np.mean(grow_pt_mean)},{getPVal(reg_mean, grow_pt_mean)}\n"
+        csv_string += f"{np.mean(s_pt_mean)},{np.mean(sec_pt_mean)},{getPVal(s_pt_mean, sec_pt_mean)},{np.mean(grow_pt_mean)},{getPVal(s_pt_mean, grow_pt_mean)}\n"
         
 
     with open(f"/Users/rmn/github/master_thesis/data/summary_mean_{metric}_PT_Strategies_Airfoil_2hl_150hn.csv", "w", encoding="utf-8") as f:
@@ -499,40 +501,44 @@ for metric, filename in FILES.items():
     d = json.load(open(join(PT_STRATEGIES_PATH, filename),"r",encoding="utf-8"))
 
     if metric == "Fitness_lastGen":
-        csv_string = "Set,DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+        csv_string = "Set,Standard-PT,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
 
         reg_train = np.array(list(sublist[-1] for sublist in d["DAE-GP(train)"]))
+        s_pt_train = np.array(list(sublist[-1] for sublist in d["Standard-PT(train)"]))
         sec_pt_train = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(train)"]))
         grow_pt_train = np.array(list(sublist[-1] for sublist in d["Grow-PT(train)"]))
 
         reg_test = np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"]))
+        s_pt_test = np.array(list(sublist[-1] for sublist in d["Standard-PT(test)"]))
         sec_pt_test = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"]))
-        grow_pt_test = np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"]))
+        grow_pt_test = np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"])
 
 
 
-        csv_string += f"Train,{np.median(reg_train)},{np.median(sec_pt_train)},{getPVal(reg_train, sec_pt_train)},{np.median(grow_pt_train)},{getPVal(reg_train, grow_pt_train)}\n"
-        csv_string += f"Test,{np.median(reg_test)},{np.median(sec_pt_test)},{getPVal(reg_test, sec_pt_test)},{np.median(grow_pt_test)},{getPVal(reg_test, grow_pt_test)}\n"
+        csv_string += f"Train,{np.median(s_pt_train)},{np.median(sec_pt_train)},{getPVal(s_pt_train, sec_pt_train)},{np.median(grow_pt_train)},{getPVal(s_pt_train, grow_pt_train)}\n"
+        csv_string += f"Test,{np.median(s_pt_test)},{np.median(sec_pt_test)},{getPVal(s_pt_test, sec_pt_test)},{np.median(grow_pt_test)},{getPVal(s_pt_test, grow_pt_test)}\n"
 
     
     elif metric == "Size_best_Solution":
-        csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+        csv_string = "Standard-PT,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
 
         reg = np.array(list(sublist[-1] for sublist in d["DAE-GP"]))
+        s_pt = np.array(list(sublist[-1] for sublist in d["Standard-Pre-Trained"]))
         sec_pt = np.array(list(sublist[-1] for sublist in d["2nd.Gen-Pre-Trained"]))
         grow_pt = np.array(list(sublist[-1] for sublist in d["Grow-Pre-Trained"]))
 
 
-        csv_string += f"{np.median(reg)},{np.median(sec_pt)},{getPVal(reg, sec_pt)},{np.median(grow_pt)},{getPVal(reg, grow_pt)}\n"
+        csv_string += f"{np.median(s_pt)},{np.median(sec_pt)},{getPVal(s_pt, sec_pt)},{np.median(grow_pt)},{getPVal(s_pt, grow_pt)}\n"
 
     else:
-        csv_string = "DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
+        csv_string = "Standard-PT,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
     
         reg_median = np.median(np.array(d["DAE-GP"]), axis=0)
+        s_pt_median = np.median(np.array(d["Standard-Pre-Trained"]), axis=0)
         sec_pt_median = np.median(np.array(d["2nd.Gen-Pre-Trained"]), axis=0)
         grow_pt_median = np.median(np.array(d["Grow-Pre-Trained"]), axis=0) 
 
-        csv_string += f"{np.median(reg_median)},{np.median(sec_pt_median)},{getPVal(reg_median, sec_pt_median)},{np.median(grow_pt_median)},{getPVal(reg_median, grow_pt_median)}\n"
+        csv_string += f"{np.median(s_pt_median)},{np.median(sec_pt_median)},{getPVal(s_pt_median, sec_pt_median)},{np.median(grow_pt_median)},{getPVal(s_pt_median, grow_pt_median)}\n"
         
 
     with open(f"/Users/rmn/github/master_thesis/data/summary_median_{metric}_PT_Strategies_Airfoil_2hl_150hn.csv", "w", encoding="utf-8") as f:

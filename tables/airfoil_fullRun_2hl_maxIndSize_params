@@ -1,4 +1,4 @@
-populationSize,500
+populationSize,"500"
 generations,30
 fitness,RMSE
 TrainingMode,Convergence
