@@ -6,5 +6,6 @@ TrainingMode,Convergence
 SamplingSteps,2
 hiddenLayers,2
 Selection,Binary Tournament Selection
-Pre-Training PopulationSize(Training/Validation),10000/100000
+Pre-Training PopulationSize,10000
+Pre-Training Train/Test Split,50%
 Pre-Training TrainingMode,Early Stopping

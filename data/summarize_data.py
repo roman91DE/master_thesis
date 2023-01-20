@@ -454,10 +454,12 @@ for metric, filename in FILES.items():
         csv_string = "Set,DAE-GP,2nd_Gen-PT,P_Value,Grow-PT,P_Value\n"
 
         reg_train = np.array(list(sublist[-1] for sublist in d["DAE-GP(train)"]))
+        s_pt_train = np.array(list(sublist[-1] for sublist in d["Standard-PT(train)"]))
         sec_pt_train = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(train)"]))
         grow_pt_train = np.array(list(sublist[-1] for sublist in d["Grow-PT(train)"]))
 
         reg_test = np.array(list(sublist[-1] for sublist in d["DAE-GP(test)"]))
+        s_pt_train = np.array(list(sublist[-1] for sublist in d["Standard-PT(test)"]))
         sec_pt_test = np.array(list(sublist[-1] for sublist in d["2nd.Gen-PT(test)"]))
         grow_pt_test = np.array(list(sublist[-1] for sublist in d["Grow-PT(test)"]))
 

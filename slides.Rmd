@@ -19,6 +19,7 @@ output:
 toc: yes
 bibliography: ref/ref.bib
 csl: csl/harvard-cite-them-right.csl
+lang: de
 includes:
       in_header: [header_files/slides.tex]
 
@@ -117,7 +118,7 @@ Welchen Effekt hat Pre-Training auf:
   2. die Populationsdiversität?
   3. das Laufzeitverhalten?
   
-Anwendungsgebiet: Symbolische Regression, Fokus auf Aifoil Datensatz
+Anwendungsgebiet: Symbolische Regression, Fokus auf Airfoil Datensatz
   
 
 
@@ -155,7 +156,10 @@ Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistis
 
 ## DAE-GP Ablauf
 
-![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png){height=80%}
+```{r, echo=FALSE, out.height="90%"}
+knitr::include_graphics("./img/flowcharts/dae-gp.png")
+```
+
 
 ## Pre-Training
 
@@ -219,7 +223,9 @@ Gewählte Pre-Training Strategie:
 
 ## Pre-Trained DAE-GP Ablauf
 
-![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png){height=70%}
+```{r, echo=FALSE, out.height="90%"}
+knitr::include_graphics("./img/flowcharts/pt-dae-gp.png")
+```
 
 
 ## Herausforderung - DAE-LSTM Dimension
@@ -265,6 +271,7 @@ knitr::kable(
   # caption="Hyperparameter"
 )%>% row_spec(0,bold=TRUE ) %>% kable_styling(latex_options = "scale_down", font_size = 7)
 ```
+
 ## Funktions Set Symbolische Regression
 
 ```{r airfoil_function_set, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
@@ -277,10 +284,13 @@ knitr::kable(
 
 
 
-
 ## Airfoil - Entwicklung der Fitness über Generationen
 
-![Airfoil Datensatz - Fitness über Generationen](~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_fitness_byGens.png){height=90%}
+```{r, echo=FALSE, out.height="90%"}
+knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_fitness_byGens.png")
+```
+
+<!-- ![Airfoil Datensatz - Fitness über Generationen](){height=90%} -->
 
 
 ## Airfoil - Verteilung der finalen Fitness
@@ -675,12 +685,12 @@ knitr::kable(
   kable_styling(latex_options = "scale_down", font_size = 7)
 
 ```
-## Übersicht Trainingsepochen (Median) - Weitere Ansätze
+## Übersicht Trainingsepochen (Median) - Alternative Ansätze
 
 ![Übersicht Trainingsepochen (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png){height=80%}
 
 
-## Auswertung Trainingsepochen (Median) - Weitere Ansätze
+## Auswertung Trainingsepochen (Median) - Alternative Ansätze
 
 ```{r full_run_PT_Strat_EpochsTrained, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
