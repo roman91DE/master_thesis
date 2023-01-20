@@ -18,11 +18,11 @@ subgraph Pre-Trained DAE-GP
         -->
         init_pop[initialize population P<sub>0</sub>]
         -->
-        main_loop{termination criteria holds?}
-            --True--> 
+        main_loop{termination criteria met?}
+            --Yes--> 
                 return([return best solution found])
         main_loop{termination criteria met?}    
-            --False--> 
+            --No--> 
                 fitness_eval[Evaluate fitness for each new solution in P<sub>g</sub>]
                 --> 
                 selection[select solutions from P<sub>g</sub> for the training population X<sub>g</sub>]
