@@ -41,7 +41,7 @@ reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 ```
 
 
-```{bash recompile_results, echo=TRUE, eval=TRUE, include=FALSE}
+```{bash recompile_results, echo=TRUE, eval=FALSE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
@@ -264,7 +264,7 @@ Fokus insbesondere auf:
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
-)%>% row_spec(0,bold=TRUE ) %>% kable_styling(latex_options = "scale_down", font_size = 6)
+)%>% kable_styling(latex_options = "scale_down", font_size = 6)
 ```
 
 
@@ -390,7 +390,7 @@ knitr::kable(
 ```
 
 
-## Übersicht Median Fitness - Symbolische Regression
+## Median Fitness - Symbolische Regression
 
 ```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png")
@@ -398,7 +398,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSumm
 <!-- ![Übersicht Median Fitness - Symbolische Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png){height=80%} -->
 
 
-## Auswertung Fitness (Median) - Symbolische Regression
+## Fitness (Median) - Symbolische Regression
 
 
 ```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE}
@@ -443,7 +443,7 @@ knitr::kable(
 
 
 
-## Übersicht Lösungsgröße (Median) - Symbolische Regression
+## Lösungsgröße (Median) - Symbolische Regression
 
 ```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png")
@@ -495,9 +495,9 @@ knitr::kable(
 ```
 
 
-## Übersicht Populationsdiversität (Median) - Symbolische Regression
+## Populationsdiversität (Median) - Symbolische Regression
 
-```{r, echo=FALSE, out.height="85%", out.width="80%"}
+```{r, echo=FALSE, out.height="80%", out.width="75%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistance_byGen.png")
 ```
 
@@ -548,9 +548,9 @@ knitr::kable(
 
 
 
-## Übersicht Trainingsepochen pro Generation (Median) - Symbolische Regression
+## Trainingsepochen pro Generation (Median) - Symbolische Regression
 
-```{r, echo=FALSE, out.height="85%", out.width="80%"}
+```{r, echo=FALSE, out.height="80%", out.width="75%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTrained.png")
 ```
 
@@ -628,7 +628,7 @@ Ansatz: Initialisierung von $\hat{P}$ ausschließlich mit der Grow Methode anste
 Hintergrund: Vermutlich geringer Informationsgewinn aus dem Lernen von vollen Lösungsbäume aus $\hat{P}$ mit den gesampleten Populationen der späteren Generationen
 
 
-## Übersicht Fitness (Median) - Alternative Ansätze
+## Fitness (Median) - Alternative Ansätze
 
 ```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png")
@@ -664,7 +664,7 @@ knitr::kable(
 
 ```
 
-## Übersicht Lösungsgröße (Median) - Alternative Ansätze
+## Lösungsgröße (Median) - Alternative Ansätze
 
 ```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png")
@@ -700,7 +700,7 @@ knitr::kable(
 
 ```
 
-## Übersicht Populationsdiversität (Median) - Alternative Ansätze
+## Populationsdiversität (Median) - Alternative Ansätze
 
 ```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png")
@@ -735,7 +735,7 @@ knitr::kable(
   kable_styling(latex_options = "scale_down", font_size = 7)
 
 ```
-## Übersicht Trainingsepochen (Median) - Alternative Ansätze
+## Trainingsepochen (Median) - Alternative Ansätze
 
 ```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png")
@@ -784,8 +784,9 @@ Der Einsatz von Pre-Training dient:
 
 * DAE-GP verliert durch Einsatz von Pre-Training die Möglichkeit die Anzahl künstlicher Neuronen pro verstecktem Layer anzupassen
 
-* Keine signifikanten Vorteile für die Qualität der gefundenen Lösungen
+* Erhöhung der Rechenzeit/Ressourcen: DAE-LSTMs müssen ausreichend dimensioniert sein (2+ Hidden Layer), aktuelle Publikationen nutzen nur einen einzelnen Hidden Layer^[@dae-gp_2022_symreg] ^[@daegp_explore_exploit].
 
+* Keine signifikanten Vorteile für die Qualität der gefundenen Lösungen
 
 <!--
 
