@@ -502,9 +502,6 @@ knitr::kable(
 
 ```
 
-## Übersicht Laufzeit - Symbolische Regression
-
-...
 
 
 ## Übersicht Trainingsepochen pro Generation (Median) - Symbolische Regression
@@ -565,7 +562,7 @@ Vorteile durch Pre-Training:
 2. Signifikante Reduktion der Anzahl an Trainingsepochen pro Generationen in allen Experimenten
 
 
-# Weitere verfolgte Ansätze
+# Alternative Pre-Training Strategien
 
 ## Eingeschobenes Pre-Training in der 2. Generation
 
@@ -583,12 +580,12 @@ Ansatz: Initialisierung von $\hat{P}$ ausschließlich mit der Grow Methode anste
 Hintergrund: Vermutlich geringer Informationsgewinn aus dem Lernen von vollen Lösungsbäume aus $\hat{P}$ mit den gesampleten Populationen der späteren Generationen
 
 
-## Übersicht Fitness (Median) - Weitere Ansätze
+## Übersicht Fitness (Median) - Alternative Ansätze
 
 ![Übersicht Fitness pro Generation (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png){height=80%}
 
 
-## Auswertung Fitness (Median) - Weitere Ansätze
+## Auswertung Fitness (Median) - Alternative Ansätze
 
 ```{r full_run_PT_Strat_Fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
@@ -615,12 +612,12 @@ knitr::kable(
 
 ```
 
-## Übersicht Lösungsgröße (Median) - Weitere Ansätze
+## Übersicht Lösungsgröße (Median) - Alternative Ansätze
 
 ![Übersicht Lösungsgröße der besten Individuen (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png){height=80%}
 
 
-## Auswertung Lösungsgröße (Median) - Weitere Ansätze
+## Auswertung Lösungsgröße (Median) - Alternative Ansätze
 
 ```{r full_run_PT_Strat_BestSize, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
@@ -647,12 +644,12 @@ knitr::kable(
 
 ```
 
-## Übersicht Populationsdiversität (Median) - Weitere Ansätze
+## Übersicht Populationsdiversität (Median) - Alternative Ansätze
 
 ![Übersicht Populationsdiversität (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_popDiversity_byGens_levOnly.png){height=80%}
 
 
-## Auswertung Populationsdiversität (Median) - Weitere Ansätze
+## Auswertung Populationsdiversität (Median) - Alternative Ansätze
 
 ```{r full_run_PT_Strat_LevDiv, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
