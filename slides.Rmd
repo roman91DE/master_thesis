@@ -1,28 +1,24 @@
 ---
-title: "Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming"
-subtitle: "Kolloquium zur Masterarbeit im M.Sc. Wirtschaftspädagogik "
+title: "Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic
+  Models for Estimation of Distribution Genetic Programming"
 author: "Roman Hoehn"
-institute: "JGU Mainz"
-date: "Datum: 25.01.2023"
-#fontsize: 11pt
-link-citations: true
+date: 'Datum: 25.01.2023'
 output:
   beamer_presentation:
-    theme: "Madrid"
-    fonttheme: "structurebold"
-    fig_width: 12
-    fig_height: 10
-    # keep_tex: true
+    theme: Madrid
+    fonttheme: structurebold
     fig_caption: no
-    number_sections: true
+    number_sections: yes
     slide_level: 2
+subtitle: 'Kolloquium zur Masterarbeit im M.Sc. Wirtschaftspädagogik '
+link-citations: yes
+institute: JGU Mainz
 toc: yes
 bibliography: ref/ref.bib
-csl: csl/harvard-cite-them-right.csl
+csl: "csl/harvard-cite-them-right.csl"
 lang: de
-includes:
-      in_header: [header_files/slides.tex]
-
+# includes:
+#   in_header: header_files/slides.tex
 ---
 
 
@@ -156,7 +152,7 @@ Idee: Einsatz von Denoising Autoencoders^[@dae_orig2008] (DAE) als probabilistis
 
 ## DAE-GP Ablauf
 
-```{r, echo=FALSE, out.height="90%"}
+```{r echo=FALSE, out.height="90%", out.width="50%"}
 knitr::include_graphics("./img/flowcharts/dae-gp.png")
 ```
 
@@ -223,7 +219,7 @@ Gewählte Pre-Training Strategie:
 
 ## Pre-Trained DAE-GP Ablauf
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="90%", out.width="50%"}
 knitr::include_graphics("./img/flowcharts/pt-dae-gp.png")
 ```
 
@@ -286,7 +282,7 @@ knitr::kable(
 
 ## Airfoil - Entwicklung der Fitness über Generationen
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_fitness_byGens.png")
 ```
 
@@ -295,7 +291,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize
 
 ## Airfoil - Verteilung der finalen Fitness
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png")
 ```
 
@@ -303,7 +299,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize
 
 ## Airfoil - Größe der besten Lösungskandidaten
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_best_Size_byGens.png")
 ```
 
@@ -311,7 +307,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_2hl_maxIndSize
 
 ## Airfoil - Populationsdiversität
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_popDiversity_byGens_levOnly_withGP.png")
 ```
 
@@ -320,7 +316,7 @@ knitr::include_graphics("/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndS
 
 ## Airfoil - Laufzeit (Gesamt)
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_runtime.png")
 ```
 
@@ -329,7 +325,7 @@ knitr::include_graphics("/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndS
 
 ## Airfoil - Laufzeit (Trainingsepochen)
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_training_epochs.png")
 ```
 
@@ -337,7 +333,7 @@ knitr::include_graphics("/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndS
 
 ## Airfoil - Laufzeit (Sampling Time)
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_sampleTime.png")
 ```
 
@@ -345,7 +341,7 @@ knitr::include_graphics("/Users/rmn/github/master_thesis/img/airfoil_2hl_maxIndS
 
 ## Airfoil - Laufzeit (Profiling)
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("/Users/rmn/github/master_thesis/img/Airfoil_RuntimeProfiling/Runtime_Bar.png")
 ```
 
@@ -363,7 +359,7 @@ Erwartung: Negativer Einfluss von Pre-Training auf die Güte der gefundenen Lös
 ## Airfoil - Entwicklung der Fitness (1 HL)
 
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png")
 ```
 
@@ -371,7 +367,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize
 
 ## Airfoil - Verteilung der finalen Fitness (1HL)
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png")
 ```
 
@@ -379,7 +375,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize
 
 ## Airfoil - Größe der besten Lösungskandidaten(1HL)
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/airfoil_1hl_maxIndSize_fullRun_30gens/median_Size_byGens.png")
 ```
 
@@ -408,7 +404,7 @@ knitr::kable(
 
 ## Übersicht Median Fitness - Symbolische Regression
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png")
 ```
 <!-- ![Übersicht Median Fitness - Symbolische Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png){height=80%} -->
@@ -417,7 +413,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSumm
 ## Auswertung Fitness (Median) - Symbolische Regression
 
 
-```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -461,7 +457,7 @@ knitr::kable(
 
 ## Übersicht Lösungsgröße (Median) - Symbolische Regression
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png")
 ```
 
@@ -513,7 +509,7 @@ knitr::kable(
 
 ## Übersicht Populationsdiversität (Median) - Symbolische Regression
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistance_byGen.png")
 ```
 
@@ -566,7 +562,7 @@ knitr::kable(
 
 ## Übersicht Trainingsepochen pro Generation (Median) - Symbolische Regression
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTrained.png")
 ```
 
@@ -646,7 +642,7 @@ Hintergrund: Vermutlich geringer Informationsgewinn aus dem Lernen von vollen L�
 
 ## Übersicht Fitness (Median) - Alternative Ansätze
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png")
 ```
 
@@ -682,7 +678,7 @@ knitr::kable(
 
 ## Übersicht Lösungsgröße (Median) - Alternative Ansätze
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png")
 ```
 
@@ -718,7 +714,7 @@ knitr::kable(
 
 ## Übersicht Populationsdiversität (Median) - Alternative Ansätze
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png")
 ```
 
@@ -753,7 +749,7 @@ knitr::kable(
 ```
 ## Übersicht Trainingsepochen (Median) - Alternative Ansätze
 
-```{r, echo=FALSE, out.height="90%"}
+```{r, echo=FALSE, out.height="85%", out.width="80%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png")
 ```
 

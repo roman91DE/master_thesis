@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  20 JAN 2023 12:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  20 JAN 2023 12:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1169,14 +1169,9 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 254.
-(pdftex.def)             Requested size: 758.11848pt x 234.17653pt.
+(pdftex.def)             Requested size: 171.14067pt x 234.17653pt.
 
-Overfull \hbox (415.82312pt too wide) in paragraph at lines 254--254
- [] 
- []
-
-
-Overfull \vbox (18.57672pt too high) detected at line 254
+Overfull \vbox (4.97672pt too high) detected at line 254
  []
 
 
@@ -1254,14 +1249,9 @@ File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 375
 .
-(pdftex.def)             Requested size: 1032.10439pt x 234.17236pt.
+(pdftex.def)             Requested size: 171.14618pt x 234.17236pt.
 
-Overfull \hbox (689.80902pt too wide) in paragraph at lines 375--375
- [] 
- []
-
-
-Overfull \vbox (18.57256pt too high) detected at line 375
+Overfull \vbox (4.97255pt too high) detected at line 375
  []
 
 
@@ -1315,16 +1305,7 @@ g Graphic file (type png)
 >
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/media
 n_fitness_byGens.png  used on input line 487.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
-
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 487--487
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 487
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1341,16 +1322,7 @@ ile (type png)
 <use img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_bo
 xplot.png  used on input line 492.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
-
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 492--492
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 492
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1367,16 +1339,7 @@ png Graphic file (type png)
 ng>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/media
 n_best_Size_byGens.png  used on input line 497.
-(pdftex.def)             Requested size: 4016.41391pt x 234.17998pt.
-
-Overfull \hbox (3674.11855pt too wide) in paragraph at lines 497--497
- [] 
- []
-
-
-Overfull \vbox (18.58017pt too high) detected at line 497
- []
-
+(pdftex.def)             Requested size: 273.83487pt x 221.17635pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1394,16 +1357,7 @@ ns_levOnly_withGP.png Graphic file (type png)
 s_levOnly_withGP.png>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/media
 n_popDiversity_byGens_levOnly_withGP.png  used on input line 502.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
-
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 502--502
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 502
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1421,16 +1375,7 @@ g Graphic file (type png)
 >
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmar
 k/median_runtime.png  used on input line 507.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
-
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 507--507
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 507
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1448,16 +1393,7 @@ pochs.png Graphic file (type png)
 ochs.png>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmar
 k/median_training_epochs.png  used on input line 512.
-(pdftex.def)             Requested size: 1404.96524pt x 234.1844pt.
-
-Overfull \hbox (1062.66988pt too wide) in paragraph at lines 512--512
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 512
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1475,16 +1411,7 @@ File: img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_sampleTime
 png>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmar
 k/median_sampleTime.png  used on input line 517.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
-
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 517--517
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 517
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1499,16 +1426,7 @@ File: img/Airfoil_RuntimeProfiling/Runtime_Bar.png Graphic file (type png)
 <use img/Airfoil_RuntimeProfiling/Runtime_Bar.png>
 Package pdftex.def Info: img/Airfoil_RuntimeProfiling/Runtime_Bar.png  used on 
 input line 522.
-(pdftex.def)             Requested size: 1404.96524pt x 234.1844pt.
-
-Overfull \hbox (1062.66988pt too wide) in paragraph at lines 522--522
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 522
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1531,16 +1449,7 @@ ic file (type png)
 <use img/airfoil_1hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png>
 Package pdftex.def Info: img/airfoil_1hl_maxIndSize_fullRun_30gens/median_fitne
 ss_byGens.png  used on input line 539.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
-
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 539--539
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 539
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1556,16 +1465,7 @@ ile (type png)
 <use img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png>
 Package pdftex.def Info: img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_bo
 xplot.png  used on input line 544.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
-
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 544--544
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 544
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1581,16 +1481,7 @@ file (type png)
 <use img/airfoil_1hl_maxIndSize_fullRun_30gens/median_Size_byGens.png>
 Package pdftex.def Info: img/airfoil_1hl_maxIndSize_fullRun_30gens/median_Size_
 byGens.png  used on input line 549.
-(pdftex.def)             Requested size: 4016.41391pt x 234.17998pt.
-
-Overfull \hbox (3674.11855pt too wide) in paragraph at lines 549--549
- [] 
- []
-
-
-Overfull \vbox (18.58017pt too high) detected at line 549
- []
-
+(pdftex.def)             Requested size: 273.83487pt x 221.17635pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1620,16 +1511,7 @@ type png)
 <use img/symbolicRegressionSummarized/median_fitness_byGens.png>
 Package pdftex.def Info: img/symbolicRegressionSummarized/median_fitness_byGens
 .png  used on input line 591.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
-
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 591--591
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 591
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1697,14 +1579,9 @@ ile (type png)
 <use img/symbolicRegressionSummarized/median_bestSol_size_byGens.png>
 Package pdftex.def Info: img/symbolicRegressionSummarized/median_bestSol_size_b
 yGens.png  used on input line 638.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 638--638
- [] 
- []
-
-
-Overfull \vbox (36.5846pt too high) detected at line 638
+Overfull \vbox (9.97655pt too high) detected at line 638
  []
 
 
@@ -1744,14 +1621,9 @@ e (type png)
 <use img/symbolicRegressionSummarized/median_levDistance_byGen.png>
 Package pdftex.def Info: img/symbolicRegressionSummarized/median_levDistance_by
 Gen.png  used on input line 678.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 678--678
- [] 
- []
-
-
-Overfull \vbox (36.5846pt too high) detected at line 678
+Overfull \vbox (9.97655pt too high) detected at line 678
  []
 
 
@@ -1811,14 +1683,9 @@ ype png)
 <use img/symbolicRegressionSummarized/median_epochsTrained.png>
 Package pdftex.def Info: img/symbolicRegressionSummarized/median_epochsTrained.
 png  used on input line 719.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 719--719
- [] 
- []
-
-
-Overfull \vbox (36.5846pt too high) detected at line 719
+Overfull \vbox (9.97655pt too high) detected at line 719
  []
 
 
@@ -1881,16 +1748,7 @@ phic file (type png)
 <use img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>
 Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fit
 ness_byGens.png  used on input line 810.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
-
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 810--810
- [] 
- []
-
-
-Overfull \vbox (18.5846pt too high) detected at line 810
- []
-
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1914,14 +1772,9 @@ File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png
 
 Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Siz
 e_best_solution.png  used on input line 828.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 828--828
- [] 
- []
-
-
-Overfull \vbox (36.5846pt too high) detected at line 828
+Overfull \vbox (9.97655pt too high) detected at line 828
  []
 
 
@@ -1947,14 +1800,9 @@ raphic file (type png)
 <use img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png>
 Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev
 _div_overGens.png  used on input line 846.
-(pdftex.def)             Requested size: 5622.70164pt x 234.1844pt.
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
-Overfull \hbox (5280.40628pt too wide) in paragraph at lines 846--846
- [] 
- []
-
-
-Overfull \vbox (36.5846pt too high) detected at line 846
+Overfull \vbox (9.97655pt too high) detected at line 846
  []
 
 
@@ -1980,14 +1828,9 @@ g Graphic file (type png)
 >
 Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epoch
 s_trained_perGen.png  used on input line 864.
-(pdftex.def)             Requested size: 1404.96524pt x 234.1844pt.
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
-Overfull \hbox (1062.66988pt too wide) in paragraph at lines 864--864
- [] 
- []
-
-
-Overfull \vbox (36.5846pt too high) detected at line 864
+Overfull \vbox (9.97655pt too high) detected at line 864
  []
 
 
@@ -2084,7 +1927,7 @@ ype1/public/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /lm/lmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss
 o10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb>
-Output written on slides.pdf (64 pages, 9338607 bytes).
+Output written on slides.pdf (64 pages, 9338629 bytes).
 PDF statistics:
  807 PDF objects out of 1000 (max. 8388607)
  602 compressed objects within 7 object streams
