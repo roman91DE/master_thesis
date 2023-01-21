@@ -624,7 +624,7 @@ Ansatz: Deutliche Fitnessverbesserung finden oft bereits in der ersten Generatio
 
 ## Grow Initialisierung der Pre-Training Population 
 
-Ansatz: Initialisierung von $\hat{P}$ ausschließlich mit der Grow Methode anstelle von ramped Half and Half 
+Ansatz: Initialisierung von $\hat{P}$ ausschließlich mit der Grow Methode^[@Koza1993GeneticP] anstelle von ramped Half and Half 
 
 Hintergrund: Vermutlich geringer Informationsgewinn aus dem Lernen von vollen Lösungsbäume aus $\hat{P}$ mit den gesampleten Populationen der späteren Generationen
 
