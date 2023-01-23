@@ -42,7 +42,7 @@ reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 ```
 
 
-```{bash recompile_results, echo=TRUE, eval=TRUE, include=FALSE}
+ ```{bash recompile_results, echo=TRUE, eval=TRUE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
