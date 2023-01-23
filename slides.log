@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  23 JAN 2023 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  23 JAN 2023 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1727,21 +1727,30 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 [48
 
  <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>]
+<img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png, id=
+549, 1011.78pt x 867.24pt>
+File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png
+ Graphic file (type png)
+<use img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png>
+
+Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Siz
+e_best_solution.png  used on input line 798.
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [49
 
-]
-<img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png, id=
-557, 1011.78pt x 867.24pt>
-File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png
- Graphic file (type png)
-<use img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png>
-
-Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Siz
-e_best_solution.png  used on input line 811.
+ <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png>]
+<img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png, id=55
+9, 1011.78pt x 867.24pt>
+File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png G
+raphic file (type png)
+<use img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png>
+Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev
+_div_overGens.png  used on input line 803.
 (pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
@@ -1750,7 +1759,16 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 
 [50
 
- <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png>]
+ <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png>]
+<img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png, id
+=568, 1011.78pt x 867.24pt>
+File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.pn
+g Graphic file (type png)
+<use img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png
+>
+Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epoch
+s_trained_perGen.png  used on input line 808.
+(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1758,23 +1776,15 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 
 [51
 
+ <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png>
 ]
-<img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png, id=57
-3, 1011.78pt x 867.24pt>
-File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png G
-raphic file (type png)
-<use img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png>
-Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev
-_div_overGens.png  used on input line 828.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
-
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [52
 
- <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png>]
+]
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1782,23 +1792,12 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 [53
 
 ]
-<img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png, id
-=589, 1011.78pt x 867.24pt>
-File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.pn
-g Graphic file (type png)
-<use img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png
->
-Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epoch
-s_trained_perGen.png  used on input line 846.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
-
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [54
 
- <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png>
 ]
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1820,41 +1819,13 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 
 [57
 
+
 ]
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [58
-
-]
-Overfull \hbox (291.24937pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[59
-
-]
-Overfull \hbox (291.24937pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[60
-
-]
-Overfull \hbox (291.24937pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[61
-
-
-]
-Overfull \hbox (291.24937pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[62
 
 
 ]
@@ -1869,11 +1840,11 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 
 (./slides.aux) ) 
 Here is how much of TeX's memory you used:
- 28060 strings out of 478268
- 558862 string characters out of 5846348
- 841948 words of memory out of 5000000
- 45308 multiletter control sequences out of 15000+600000
- 573071 words of font info for 172 fonts, out of 8000000 for 9000
+ 28028 strings out of 478268
+ 558159 string characters out of 5846348
+ 841628 words of memory out of 5000000
+ 45290 multiletter control sequences out of 15000+600000
+ 572970 words of font info for 171 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,1003b,924s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
@@ -1885,10 +1856,10 @@ ype1/public/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /lm/lmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss
 o10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb>
-Output written on slides.pdf (62 pages, 9249689 bytes).
+Output written on slides.pdf (58 pages, 9245134 bytes).
 PDF statistics:
- 796 PDF objects out of 1000 (max. 8388607)
- 596 compressed objects within 6 object streams
- 195 named destinations out of 1000 (max. 500000)
- 64091 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 762 PDF objects out of 1000 (max. 8388607)
+ 567 compressed objects within 6 object streams
+ 183 named destinations out of 1000 (max. 500000)
+ 64085 words of extra memory for PDF output out of 74296 (max. 10000000)
 
