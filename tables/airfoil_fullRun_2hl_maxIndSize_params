@@ -1,4 +1,5 @@
-populationSize,"500"
+Hyperparameter,Value
+popSize,500
 generations,30
 fitness,RMSE
 TrainingMode,Convergence
@@ -6,8 +7,7 @@ SamplingSteps,2
 hiddenLayers,2
 Selection,Binary Tournament Selection
 corruptionTechnique,Levenshtein Edit
-edit_training,5%
-edit_sampling,95%
+edit_prob(training/sampling),0.05/0.95
 functionSet,{+ ; - ; * ; aq}
 Pre-Training PopulationSize,10000
 Pre-Training Train/Test Split,50%
