@@ -638,32 +638,32 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_
 <!-- ![Übersicht Fitness pro Generation (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png){height=80%} -->
 
 
-## Auswertung Fitness (Median) - Alternative Ansätze
+<!-- ## Auswertung Fitness (Median) - Alternative Ansätze -->
 
-```{r full_run_PT_Strat_Fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-library(knitr)
-library(kableExtra)
-library(dplyr)
+<!-- ```{r full_run_PT_Strat_Fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE} -->
+<!-- library(knitr) -->
+<!-- library(kableExtra) -->
+<!-- library(dplyr) -->
 
-# Create the data frame from csv
-df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_median_Fitness_lastGen_PT_Strategies_Airfoil_2hl_150hn.csv",
-  sep=","
-)
+<!-- # Create the data frame from csv -->
+<!-- df <- read.csv( -->
+<!--   "/Users/rmn/github/master_thesis/data/summary_median_Fitness_lastGen_PT_Strategies_Airfoil_2hl_150hn.csv", -->
+<!--   sep="," -->
+<!-- ) -->
 
-col_names <- c("Set", "Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+<!-- col_names <- c("Set", "Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)") -->
 
-knitr::kable(
- df,
- format = "markdown",
- align = "l",
- digits=2,
- col.names = col_names,
- #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% 
-  kable_styling(latex_options = "scale_down", font_size = 7)
+<!-- knitr::kable( -->
+<!--  df, -->
+<!--  format = "markdown", -->
+<!--  align = "l", -->
+<!--  digits=2, -->
+<!--  col.names = col_names, -->
+<!--  #caption = "Symbolic Regression Overview - Mean final Fitness" -->
+<!-- ) %>%  -->
+<!--   kable_styling(latex_options = "scale_down", font_size = 7) -->
 
-```
+<!-- ``` -->
 
 ## Lösungsgröße (Median) - Alternative Ansätze
 
@@ -674,32 +674,32 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_
 <!-- ![Übersicht Lösungsgröße der besten Individuen (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png){height=80%} -->
 
 
-## Auswertung Lösungsgröße (Median) - Alternative Ansätze
+<!-- ## Auswertung Lösungsgröße (Median) - Alternative Ansätze -->
 
-```{r full_run_PT_Strat_BestSize, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-library(knitr)
-library(kableExtra)
-library(dplyr)
+<!-- ```{r full_run_PT_Strat_BestSize, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE} -->
+<!-- library(knitr) -->
+<!-- library(kableExtra) -->
+<!-- library(dplyr) -->
 
-# Create the data frame from csv
-df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_median_Size_best_Solution_PT_Strategies_Airfoil_2hl_150hn.csv",
-  sep=","
-)
+<!-- # Create the data frame from csv -->
+<!-- df <- read.csv( -->
+<!--   "/Users/rmn/github/master_thesis/data/summary_median_Size_best_Solution_PT_Strategies_Airfoil_2hl_150hn.csv", -->
+<!--   sep="," -->
+<!-- ) -->
 
-col_names <- c("Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+<!-- col_names <- c("Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)") -->
 
-knitr::kable(
- df,
- format = "markdown",
- align = "l",
- digits=2,
- col.names = col_names,
- #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% 
-  kable_styling(latex_options = "scale_down", font_size = 7)
+<!-- knitr::kable( -->
+<!--  df, -->
+<!--  format = "markdown", -->
+<!--  align = "l", -->
+<!--  digits=2, -->
+<!--  col.names = col_names, -->
+<!--  #caption = "Symbolic Regression Overview - Mean final Fitness" -->
+<!-- ) %>%  -->
+<!--   kable_styling(latex_options = "scale_down", font_size = 7) -->
 
-```
+<!-- ``` -->
 
 ## Populationsdiversität (Median) - Alternative Ansätze
 
@@ -710,32 +710,32 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_
 <!-- ![Übersicht Populationsdiversität (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_popDiversity_byGens_levOnly.png){height=80%} -->
 
 
-## Auswertung Populationsdiversität (Median) - Alternative Ansätze
+<!-- ## Auswertung Populationsdiversität (Median) - Alternative Ansätze -->
 
-```{r full_run_PT_Strat_LevDiv, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-library(knitr)
-library(kableExtra)
-library(dplyr)
+<!-- ```{r full_run_PT_Strat_LevDiv, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE} -->
+<!-- library(knitr) -->
+<!-- library(kableExtra) -->
+<!-- library(dplyr) -->
 
-# Create the data frame from csv
-df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_median_Norm._Levenshtein_Distance_PT_Strategies_Airfoil_2hl_150hn.csv",
-  sep=","
-)
+<!-- # Create the data frame from csv -->
+<!-- df <- read.csv( -->
+<!--   "/Users/rmn/github/master_thesis/data/summary_median_Norm._Levenshtein_Distance_PT_Strategies_Airfoil_2hl_150hn.csv", -->
+<!--   sep="," -->
+<!-- ) -->
 
-col_names <- c("Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+<!-- col_names <- c("Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)") -->
 
-knitr::kable(
- df,
- format = "markdown",
- align = "l",
- digits=2,
- col.names = col_names,
- #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% 
-  kable_styling(latex_options = "scale_down", font_size = 7)
+<!-- knitr::kable( -->
+<!--  df, -->
+<!--  format = "markdown", -->
+<!--  align = "l", -->
+<!--  digits=2, -->
+<!--  col.names = col_names, -->
+<!--  #caption = "Symbolic Regression Overview - Mean final Fitness" -->
+<!-- ) %>%  -->
+<!--   kable_styling(latex_options = "scale_down", font_size = 7) -->
 
-```
+<!-- ``` -->
 ## Trainingsepochen (Median) - Alternative Ansätze
 
 ```{r, echo=FALSE, out.height="85%", out.width="80%"}
@@ -745,33 +745,34 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/PT_Strategies_airfoil_
 <!-- ![Übersicht Trainingsepochen (Median) - Weitere Ansaetze](~/masterThesis/master_thesis/img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png){height=80%} -->
 
 
-## Auswertung Trainingsepochen (Median) - Alternative Ansätze
+<!-- ## Auswertung Trainingsepochen (Median) - Alternative Ansätze -->
 
-```{r full_run_PT_Strat_EpochsTrained, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-library(knitr)
-library(kableExtra)
-library(dplyr)
+<!-- ```{r full_run_PT_Strat_EpochsTrained, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE} -->
+<!-- library(knitr) -->
+<!-- library(kableExtra) -->
+<!-- library(dplyr) -->
 
-# Create the data frame from csv
-df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_median_Training_Epochs_PT_Strategies_Airfoil_2hl_150hn.csv",
-  sep=","
-)
+<!-- # Create the data frame from csv -->
+<!-- df <- read.csv( -->
+<!--   "/Users/rmn/github/master_thesis/data/summary_median_Training_Epochs_PT_Strategies_Airfoil_2hl_150hn.csv", -->
+<!--   sep="," -->
+<!-- ) -->
 
-col_names <- c("Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)")
+<!-- col_names <- c("Standard-PT", "2ndGen", "P-Val(1)" , "GrowInit", "P-Val(2)") -->
 
-knitr::kable(
- df,
- format = "markdown",
- align = "l",
- digits=2,
- col.names = col_names,
- #caption = "Symbolic Regression Overview - Mean final Fitness"
-) %>% 
-  kable_styling(latex_options = "scale_down", font_size = 7)
+<!-- knitr::kable( -->
+<!--  df, -->
+<!--  format = "markdown", -->
+<!--  align = "l", -->
+<!--  digits=2, -->
+<!--  col.names = col_names, -->
+<!--  #caption = "Symbolic Regression Overview - Mean final Fitness" -->
+<!-- ) %>%  -->
+<!--   kable_styling(latex_options = "scale_down", font_size = 7) -->
 
-```
-# Fazit (vorläufig)
+<!-- ``` -->
+
+# Fazit
 
 ## Vorteile
 
