@@ -208,7 +208,7 @@ fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=F
 fig.set_size_inches(14,12)
 #fig.suptitle(f"{BASE_TITLE} - Mean Size of best Solution", fontsize=BIG)
 fig.supxlabel("Generations", fontsize=MID)
-fig.supylabel("Size", fontsize=MID)
+fig.supylabel("Tree Size", fontsize=MID)
 
 for (problem,path), ax in zip(RESULTS_2hl.items(), (ul, ur, dl, dr)):
 
