@@ -411,15 +411,15 @@ The distribution of final fitness scores for pre-trained and regular DAE-GP are 
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png")
 ```
 
-Since previous work by @dae-gp_2022_symreg demonstrated that DAE-GP was capable of producing solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. 
-
-
-Since @dae-gp_2022_symreg shows, that DAE-GP finds higher quality that are also smaller in size than those found by average GP for a given number of 10.000 fitness evaluations, I also studied the differences in average solution size between pre-trained and regular DAE-GP. Figure \@ref(fig:airfoil-size-combined-30gens) shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.  
+Since previous work by @dae-gp_2022_symreg demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, was capable of producing solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \@ref(fig:airfoil-size-combined-30gens) shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.  
 
 ```{r airfoil-size-combined-30gens, echo=FALSE, fig.cap="Median Solution Size over 30 Generations - Airfoil (2HL)", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/size_combined_median.png")
 ```
 
+
+
+<!-- PopDiversity -->
 
 
 The experiments was repeated using the same setup with the only difference being a reduction from two hidden layers to 1 hidden layer.
