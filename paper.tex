@@ -153,7 +153,7 @@ Johannes Gutenberg University Mainz}
 \thispagestyle{empty} \newpage{}
 
 {
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 }
 \setcounter{page}{1}
@@ -523,9 +523,7 @@ The distribution of final fitness scores for pre-trained and regular DAE-GP are 
 \caption{Best Fitness after 30 Generations - Airfoil (2HL)}\label{fig:airfoil-distribution-fitness-30gens}
 \end{figure}
 
-Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demonstrated that DAE-GP was capable of producing solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP.
-
-Since {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} shows, that DAE-GP finds higher quality that are also smaller in size than those found by average GP for a given number of 10.000 fitness evaluations, I also studied the differences in average solution size between pre-trained and regular DAE-GP. Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.
+Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, was capable of producing solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.
 
 \begin{figure}[c]
 

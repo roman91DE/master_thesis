@@ -1,1 +1,1 @@
-{"problem": "Boston_Housing", "hiddenLayer": 2, "DAE-GP": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], "Pre-Trained": [5, 3, 5, 7, 3, 3, 5, 7, 7, 5]}
+{"problem": "Boston_Housing", "hiddenLayer": 2, "DAE-GP": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], "Pre-Trained": [3, 7, 5, 7, 5, 5, 3, 5, 7, 3]}

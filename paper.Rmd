@@ -20,6 +20,7 @@ output:
     extra_dependencies: ["float"]
     fig_caption: yes
     number_sections: true
+    toc_depth: 3
     includes:
       in_header: [header_files/settings.tex]
 indent: false
@@ -60,7 +61,7 @@ print(f"Python Version: {version} \nPath: {executable}")
 ```
 
 
-```{bash recompile-results, echo=TRUE, eval=FALSE, include=FALSE}
+```{bash recompile-results, echo=TRUE, eval=TRUE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
