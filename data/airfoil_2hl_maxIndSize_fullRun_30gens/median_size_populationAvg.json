@@ -1,1 +1,1 @@
-{"problem": "Airfoil", "hiddenLayer": 2, "DAE-GP": [1, 1, 1, 1, 2, 1, 1, 1, 1, 2], "Pre-Trained": [1, 1, 2, 2, 1, 1, 1, 3, 2, 5]}
+{"problem": "Airfoil", "hiddenLayer": 2, "DAE-GP": [2, 1, 1, 1, 1, 1, 2, 1, 1, 1], "Pre-Trained": [1, 2, 2, 1, 1, 3, 5, 1, 1, 2]}

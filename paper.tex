@@ -492,26 +492,48 @@ Based on the review of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{3}{]} I also 
 \hypertarget{effect-on-search-performance}{%
 \subsection{Effect on search performance}\label{effect-on-search-performance}}
 
-After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. Again the Airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]}, the parameters are described in table
+After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. The airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP.
 
 Regarding the hidden neurons, the dimension of each hidden layer, I used two different strategies: Regular DAE-GP uses the same strategy as described by earlier work (see {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} or {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{18}{]}), the number of hidden neurons is dynamically set at each generation to the maximum length of all solutions inside the current training population. For pre-trained DAE-GP another strategy had to be used, I used a fixed number of hidden neurons for each run that is set equal to the maximum length of all individuals that are present in the initial pre-training population. I decided to take this aproach instead of using a fixed number of hidden neurons for the fact that it simplifies the adjustment of the parameter for later experiments on different problems. It should nonetheless be mentioned that this strategy does give pre-training on average more hidden neurons per layer resulting in a more complex network (since the pre-training population is much larger than the regular population, the chances for larger individuals inside it are also higher).
 
-\begin{figure}
-\centering
-\includegraphics{./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png}
-\caption{Best Fitness over 30 Generations - Airfoil}
+\hypertarget{airfoil-dateset---2-hidden-layers}{%
+\subsubsection{Airfoil Dateset - 2 hidden Layers}\label{airfoil-dateset---2-hidden-layers}}
+
+Figure \ref{fig:airfoil-median-fitness-30gens} shows both the mean and median of the best fitness for each generation on both the test and training set of the airfoil dataset for using 2 hidden layers inside the DAE-LSTM networks. The results are aggregated for \(10\) individuals runs per algorithm and also include regular GP as a benchmark. For all three algorithms an improvement in the best found fitness can be observed during the evolutionary search but the results show that DAE-GP based algorithms, on average, find solutions with much higher fitness as traditional GP.
+
+The first interesting observation from this experiment is, that the pre-trained DAE-GP shows better mean and median performance than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behaviour.
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens} 
+
+}
+
+\caption{Best Fitness over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-median-fitness-30gens}
 \end{figure}
 
-\includegraphics{./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png}
-lalal
+The distribution of final fitness scores for pre-trained and regular DAE-GP are visualized as boxplots in figure \ref{fig:airfoil-distribution-fitness-30gens}. The distribution for pre-trained DAE-GP shows to be preferable to that of regular DAE-GP on both sets since it shows a lower median (med.) as well as less dispersion measured by the standard deviation (std.).
 
-\includegraphics{./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_popDiversity_byGens.png}
-Since {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} shows, that DAE-GP finds higher quality that are also smaller in size than those found by average GP for a given number of 10.000 fitness evaluations, I also studied the differences in average solution size between pre-trained and regular DAE-GP.
+\begin{figure}[c]
 
-\begin{figure}
-\centering
-\includegraphics{./img/airfoil_2hl_maxIndSize_fullRun_30gens/mean_Size_byGens.png}
-\caption{Average Solution Size over 30 Generations - Airfoil}
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot} 
+
+}
+
+\caption{Best Fitness after 30 Generations - Airfoil (2HL)}\label{fig:airfoil-distribution-fitness-30gens}
+\end{figure}
+
+Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demonstrated that DAE-GP was capable of producing solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP.
+
+Since {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} shows, that DAE-GP finds higher quality that are also smaller in size than those found by average GP for a given number of 10.000 fitness evaluations, I also studied the differences in average solution size between pre-trained and regular DAE-GP. Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens/size_combined_median} 
+
+}
+
+\caption{Median Solution Size over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-size-combined-30gens}
 \end{figure}
 
 The experiments was repeated using the same setup with the only difference being a reduction from two hidden layers to 1 hidden layer.
