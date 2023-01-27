@@ -277,7 +277,7 @@ If this mechanism can be applied successfully it would benefit the performance o
 
 <!--- Explain algorithm and implementation of the pre-training strategy  -->
 
-The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in \@ref(fig:daegp-flowchart).
+The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in figure \@ref(fig:daegp-flowchart).
 After setting the generation counter $g$ to $0$ and creating the initial population of solutions $P_0$, DAE-GP enters the main loop that checks if a termination criteria is satisfied (i.e. maximum number of generations or fitness evaluations is reached).
 For each generation $g$ the fitness of all new individuals in $P_g$ is evaluated. During model building, DAE-GP selects a subset $X_g$ of the current population that is used as training data for the DAE-LSTM model $M_g$ which is trained to learn the properties of $X_g$.
 The trained model $M_g$ is then used for model sampling, partially mutated solutions from $P_G$ are propagated through $M_g$ to create a new population $P_{g+1}$.
@@ -289,24 +289,32 @@ knitr::include_graphics("./img/flowcharts/dae-gp.png")
 ```
 
 
-The pre-training strategy implemented for all experiments in this thesis is visualized as another flowchart in figure §.
+The pre-training strategy implemented for all experiments in this thesis is visualized as another flowchart in figure \@ref(fig:pt-daegp-flowchart).
 The main difference to regular DAE-GP is the inclusion of an initial pre-training phase where a separate population $\hat{P}$ is first initialized and then randomly split by half into $\hat{P}_{train}$ and $\hat{P}_{test}$. 
 A DAE-LSTM model $\hat{M}$ is then trained to learn the properties of $\hat{P}_{train}$ using an early stopping training mode where we stop training as soon as the validation error for $\hat{P}_{test}$ converges. 
 After the training for $\hat{M}$ is stopped, the current state of $\hat{M}$ is frozen and the optimized trainable parameters $\theta_{\hat{M}}$ are saved before terminating the pre-training phase to start the DAE-GP phase. 
-During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm described in figure § is during model building: We initialize $M_g$ with $\theta_{\hat{M}}$ before training it to learn the properties of $X_g$.
+During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm described in figure \@ref(fig:daegp-flowchart) is during model building: We initialize $M_g$ with $\theta_{\hat{M}}$ before training it to learn the properties of $X_g$.
 
 
+```{r pt-daegp-flowchart, echo=FALSE, fig.cap="Pre-Trained DAE-GP Flowchart", out.height="90%", out.width="50%"}
+knitr::include_graphics("./img/flowcharts/pt-dae-gp.png")
+```
 
-![Flowchart - Pre-Trained DAE-GP](./img/flowcharts/pt-dae-gp.png)
 
+One difficulty in the implementation of a pre-training strategy into DAE-GP has been the detemination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP [@dae-gp_2020_rtree] uses a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
+For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM. To allow the sharing of the state of the pre-trained parameters $\theta_{\hat{M}}$ from the pre-trained model $\hat{M}$ to each $M_g$ for $g\in{1,...,g_{max}}$  I set the number of hidden neurons per hidden layer for all pre-trained runs statically to the maximum individual size inside the pre-training population $\hat{P}_{train}$
 
-One difficulty in the implementation of a pre-training strategy into DAE-GP has been the detemination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP [@dae-gp_2020_rtree] used a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
-For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM. To allow for the sharing of weights and biases from the pre-trained model $\hat{M}$ to each $M_g$ for $g\in{1,...,g_{max}}$ I experimented with two different strategies:
+If not stated otherwise, all experiments in this thesis use the hyperparameters listed in table \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params).
 
-1. Set the number of hidden neurons per hidden layer for each generation to the maximum individual size inside the pre-training population
-2. (dependent on the terminal/function set)
+```{r airfoil-fullRun-2hl-maxIndSize-params, echo=FALSE, message=FALSE, warning=FALSE}
+fig.pos="H"
+knitr::kable(
+  read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
+  caption = "DAE-GP - Hyperparameter"
+)%>% row_spec(0,bold=TRUE )
+```
 
-The framework that was used to conduct all experiments of this thesis was provided by the supervisor David Wittenberg and uses the python programming language in conjunction with the baseline libraries `Keras` [@chollet2015keras] for deep neural networks and `deap` [@DEAP_JMLR2012] for evolutionary computation.
+The framework that was used to conduct all experiments of this thesis was provided by the supervisor of this thesis David Wittenberg and uses the python programming language in conjunction with the baseline libraries `Keras` [@chollet2015keras] for deep neural networks and `deap` [@DEAP_JMLR2012] for evolutionary computation.
 
 
 ## Benchmark Problem
@@ -315,7 +323,7 @@ The framework that was used to conduct all experiments of this thesis was provid
 To test pre-training in DAE-GP this thesis focuses on the domain of real-world symbolic regression problems. Symbolic Regression problems have been one of the first GP applications [@Koza1993GeneticP] and are an actively studied and highly relevant research area. The goal in symbolic regression is to find a mathematical model for a given set of data points [@10.1007/978-3-540-24621-3_22], in real-world symbolic regression these data points are sourced from real-world observations which in contrast to synthetic symbolic regression problem are more likely to contain random noise and bias. Another important challenge in solving real-world symbolic regression problems is the ability for a given model to generalize, we want the final model to show high accuracy in predicting outcomes for previously unseen cases.
 
 <!--- airfoil dataset -->
-The main experiments conducted in this thesis uses the NASA Airfoil Self-Noise Data Set which is part of the UCI machine learning repository [@machine_learning_repo]. The dataset consists of 5 input variables and 1 output variable that are listed in table 1.
+The main experiments conducted in this thesis uses the NASA Airfoil Self-Noise Data Set which is part of the UCI machine learning repository [@machine_learning_repo]. The dataset consists of 5 input variables and 1 output variable that are listed in table \@ref(tab:airfoil-dataset-description).
 
 ```{r airfoil-dataset-description, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 fig.pos="H"
@@ -375,15 +383,10 @@ Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will 
 ## Effect on search performance
 
 
-After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. Again the Airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP [@dae-gp_2022_symreg], the parameters are described in table $A$
+After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. Again the Airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP [@dae-gp_2022_symreg], the parameters are described in table
 
-```{r airfoil-fullRun-2hl-maxIndSize-params, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
-  caption="Airfoil - Parameter for full Run"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
-```
+<!-- # TODO: Reformulate -->
+
 
 Regarding the hidden neurons, the dimension of each hidden layer, I used two different strategies: Regular DAE-GP uses the same strategy as described by earlier work (see [@dae-gp_2022_symreg] or [@dae-gp_2020_rtree]), the number of hidden neurons is dynamically set at each generation to the maximum length of all solutions inside the current training population. For pre-trained DAE-GP another strategy had to be used, I used a fixed number of hidden neurons for each run that is set equal to the maximum length of all individuals that are present in the initial pre-training population. I decided to take this aproach instead of using a fixed number of hidden neurons for the fact that it simplifies the adjustment of the parameter for later experiments on different problems. It should nonetheless be mentioned that this strategy does give pre-training on average more hidden neurons per layer resulting in a more complex network (since the pre-training population is much larger than the regular population, the chances for larger individuals inside it are also higher).
 

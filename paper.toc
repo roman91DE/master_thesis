@@ -13,10 +13,10 @@
 \contentsline {section}{\numberline {5}Results}{10}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Effect on Generalisation}{10}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Effect on search performance}{12}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Solution Size in Symbolic Regression}{20}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Population Diversity}{21}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Training epochs per Generation}{23}{subsection.5.5}%
-\contentsline {section}{\numberline {6}Discussion}{24}{section.6}%
-\contentsline {section}{\numberline {7}Limitations and open Questions}{24}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Further Questions}{24}{subsection.7.1}%
-\contentsline {section}{References}{25}{section*.5}%
+\contentsline {subsection}{\numberline {5.3}Solution Size in Symbolic Regression}{19}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Population Diversity}{20}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Training epochs per Generation}{22}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Discussion}{23}{section.6}%
+\contentsline {section}{\numberline {7}Limitations and open Questions}{23}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Further Questions}{23}{subsection.7.1}%
+\contentsline {section}{References}{24}{section*.5}%

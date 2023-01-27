@@ -1,11 +1,11 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Regular DAE-GP Flowchart}}{7}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Flowchart - Pre-Trained DAE-GP}}{8}{figure.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Pre-Trained DAE-GP Flowchart}}{8}{figure.2}%
 \contentsline {figure}{\numberline {3}{\ignorespaces First Generation Median Training Error for variable number of hidden Neurons - Airfoil}}{11}{figure.3}%
 \contentsline {figure}{\numberline {4}{\ignorespaces First Generation Median Training Error for variable number of hidden Layers - Airfoil}}{12}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Best Fitness over 30 Generations - Airfoil}}{14}{figure.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Average Solution Size over 30 Generations - Airfoil}}{17}{figure.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Best Fitness over 30 Generations - 1 hidden Layer - Airfoil}}{18}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Median Best Fitness - Symbolic Regression}}{20}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Median Solution Size - Symbolic Regression}}{21}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Median Population Diversity over Generations}}{22}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Median Number of Training Epochs per Generation - Symbolic Regression}}{23}{figure.11}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Best Fitness over 30 Generations - Airfoil}}{13}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Average Solution Size over 30 Generations - Airfoil}}{16}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Best Fitness over 30 Generations - 1 hidden Layer - Airfoil}}{17}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Median Best Fitness - Symbolic Regression}}{19}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Median Solution Size - Symbolic Regression}}{20}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Median Population Diversity over Generations}}{21}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Median Number of Training Epochs per Generation - Symbolic Regression}}{22}{figure.11}%
