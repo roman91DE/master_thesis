@@ -1,8 +1,7 @@
 \contentsline {table}{\numberline {1}{\ignorespaces DAE-GP - Hyperparameter}}{9}{table.1}%
 \contentsline {table}{\numberline {2}{\ignorespaces Airfoil - Dataset Description}}{9}{table.2}%
-\contentsline {table}{\numberline {3}{\ignorespaces Airfoil - Function Set}}{10}{table.3}%
-\contentsline {table}{\numberline {4}{\ignorespaces Overview - Real World Symbolic Regression Benchmark Problems}}{17}{table.4}%
-\contentsline {table}{\numberline {5}{Median Best Fitness - Symbolic Regression}}{18}{table.5}%
-\contentsline {table}{\numberline {6}{Median Solution Size - Symbolic Regression}}{20}{table.6}%
-\contentsline {table}{\numberline {7}{Median Population Diversity over Generations - Symbolic Regression}}{21}{table.7}%
-\contentsline {table}{\numberline {8}{Median Number of Training Epochs per Generation - Symbolic Regression}}{23}{table.8}%
+\contentsline {table}{\numberline {3}{\ignorespaces Real World Symbolic Regression Benchmark Problems}}{10}{table.3}%
+\contentsline {table}{\numberline {4}{Median Best Fitness - Symbolic Regression}}{18}{table.4}%
+\contentsline {table}{\numberline {5}{Median Solution Size - Symbolic Regression}}{19}{table.5}%
+\contentsline {table}{\numberline {6}{Median Population Diversity over Generations - Symbolic Regression}}{21}{table.6}%
+\contentsline {table}{\numberline {7}{Median Number of Training Epochs per Generation - Symbolic Regression}}{22}{table.7}%

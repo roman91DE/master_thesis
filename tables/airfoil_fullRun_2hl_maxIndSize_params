@@ -1,14 +1,14 @@
-Hyperparameter,Value
-popSize,500
-generations,30
-fitness,RMSE
-TrainingMode,Convergence
-SamplingSteps,2
-hiddenLayers,2
-Selection,Binary Tournament Selection
-corruptionTechnique,Levenshtein Edit
-edit_prob(training/sampling),0.05/0.95
-functionSet,{+ ; - ; * ; aq}
-Pre-Training PopulationSize,10000
-Pre-Training Train/Test Split,50%
-Pre-Training TrainingMode,Early Stopping
+Hyperparameter?Value
+Population_Size?500
+Generations?30
+Fitness_Metric?RMSE
+Training_Mode?Convergence
+Sampling_Steps?2
+Selection_Operator?Binary Tournament Selection
+Corruption_Operator?Levenshtein Edit
+Denoising_Edit_Probability(training/sampling)?0.05/0.95
+Function_Set?{+ , - , * , aq}
+Ephemeral_Constants?[-5,..,5]
+Pre-Training_Population_Size?10000
+Pre-Training_Train/Test_Split?50%
+Pre-Training_Training_Mode?Early Stopping

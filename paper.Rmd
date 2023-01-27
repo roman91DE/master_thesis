@@ -284,7 +284,7 @@ The trained model $M_g$ is then used for model sampling, partially mutated solut
 This process is repeated until the termination criteria is met and DAE-GP returns the highest fitness solutions.
 
 
-```{r daegp-flowchart, echo=FALSE, fig.cap="Regular DAE-GP Flowchart", out.height="90%", out.width="50%"}
+```{r daegp-flowchart, echo=FALSE, fig.cap="Regular DAE-GP Flowchart", out.width="60%"}
 knitr::include_graphics("./img/flowcharts/dae-gp.png")
 ```
 
@@ -296,7 +296,7 @@ After the training for $\hat{M}$ is stopped, the current state of $\hat{M}$ is f
 During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm described in figure \@ref(fig:daegp-flowchart) is during model building: We initialize $M_g$ with $\theta_{\hat{M}}$ before training it to learn the properties of $X_g$.
 
 
-```{r pt-daegp-flowchart, echo=FALSE, fig.cap="Pre-Trained DAE-GP Flowchart", out.height="90%", out.width="50%"}
+```{r pt-daegp-flowchart, echo=FALSE, fig.cap="Pre-Trained DAE-GP Flowchart", out.width="65%"}
 knitr::include_graphics("./img/flowcharts/pt-dae-gp.png")
 ```
 
@@ -309,7 +309,7 @@ If not stated otherwise, all experiments in this thesis use the hyperparameters 
 ```{r airfoil-fullRun-2hl-maxIndSize-params, echo=FALSE, message=FALSE, warning=FALSE}
 fig.pos="H"
 knitr::kable(
-  read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
+  read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params", sep = "?"),
   caption = "DAE-GP - Hyperparameter"
 )%>% row_spec(0,bold=TRUE )
 ```
@@ -335,18 +335,17 @@ knitr::kable(
 
 The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for the airfoil problem is summarized in table 2, the terminal set consists of the 5 input variables $x1,x2,x3,x4,x5$ and ephemeral random integers in the range of $[{}-5,..,5]$ [@dae-gp_2022_symreg].
 
-```{r airfoil-function-set, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+Besides studying the performance for the airfoil dataset, additional real world symbolic regressions experiments used the datasets[@machine_learning_repo] described in table \@ref(tab:full-run-realWorldSymReg-problems).
+
+```{r full-run-realWorldSymReg-problems, echo=FALSE, message=FALSE, warning=FALSE}
 fig.pos="H"
 knitr::kable(
-  read.csv("./tables/airfoil_function_set"),
-  caption="Airfoil - Function Set"
+  read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
+  caption="Real World Symbolic Regression Benchmark Problems"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-
-<!--- energy heating dataset -->
-
-# Results
+# Results 
 
 
 ## Effect on Generalisation
@@ -354,7 +353,7 @@ knitr::kable(
 
 To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
 
-To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus soley on the reconstruction error that is produced during the training of each the DAE-LSTM. The reconstruction error is measured for two separate populations, a training population $P_{train}$ that is used to train our DAE-LSTM as well as a hold-out validation population $P_{test}$. For the pre-trained DAE-GP two additional, separate populations $\hat{P}_{train}$ and  $\hat{P}_{test}$ are used exclusively for pre-training. 
+To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus soley on the reconstruction error that is produced during the training of each DAE-LSTM. The reconstruction error is measured for two separate populations, a training population $P_{train}$ that is used to train our DAE-LSTM as well as a hold-out validation population $P_{test}$. For the pre-trained DAE-GP two additional, separate populations $\hat{P}_{train}$ and  $\hat{P}_{test}$ are used exclusively for pre-training. 
 
 DAE-GP is tested in two different configurations: 
 
@@ -367,31 +366,46 @@ In general I expect that with a growing number of model parameters (either by ad
 
 Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will have an insignificant or even negative influence on small DAE-LSTM instances while improving the networks generalization ability with growing size.
 
+<!--- analyzing the results for variable number of neurons -->
+
+...
+
+```{r first-gen-airfoil-byNeurons, echo=FALSE, fig.cap="First Generation Median Training Error for variable number of hidden Neurons", out.width="90%"}
+knitr::include_graphics("./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3plots.png")
+```
 
 
-<!--- analyze results 1 hidden layer and variable number of hidden neurons -->
-
-![First Generation Median Training Error for variable number of hidden Neurons - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6plots.png)
 
 
 
 <!--- analyzing the results for variable number of layers -->
 
-![First Generation Median Training Error for variable number of hidden Layers - Airfoil](./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6plot.png)
+...
+
+```{r first-gen-airfoil-byLayers, echo=FALSE, fig.cap="First Generation Median Training Error for variable number of hidden Layers", out.width="90%"}
+knitr::include_graphics("./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots.png")
+```
 
 
 ## Effect on search performance
 
 
-After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. Again the Airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP [@dae-gp_2022_symreg], the parameters are described in table
-
-<!-- # TODO: Reformulate -->
+After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. The airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP.
 
 
 Regarding the hidden neurons, the dimension of each hidden layer, I used two different strategies: Regular DAE-GP uses the same strategy as described by earlier work (see [@dae-gp_2022_symreg] or [@dae-gp_2020_rtree]), the number of hidden neurons is dynamically set at each generation to the maximum length of all solutions inside the current training population. For pre-trained DAE-GP another strategy had to be used, I used a fixed number of hidden neurons for each run that is set equal to the maximum length of all individuals that are present in the initial pre-training population. I decided to take this aproach instead of using a fixed number of hidden neurons for the fact that it simplifies the adjustment of the parameter for later experiments on different problems. It should nonetheless be mentioned that this strategy does give pre-training on average more hidden neurons per layer resulting in a more complex network (since the pre-training population is much larger than the regular population, the chances for larger individuals inside it are also higher).
 
+Figure \@ref(fig:airfoil_median_fitness_30gens) shows both the mean and median of the best fitness for each generation on both the test and training set of the airfoil dataset. The results are aggregated for $10$ individuals runs per algorithm and also include regular GP as a benchmark. For all three algorithms an improvement in the best found fitness can be observed during the evolutionary search but the results show that DAE-GP based algorithms, on average, find solutions with much higher fitness as traditional GP.
 
-![Best Fitness over 30 Generations - Airfoil](./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png)
+The first interesting observation from this experiment is, that the pre-trained DAE-GP shows better performance than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behaviour.
+
+
+```{r airfoil_median_fitness_30gens, echo=FALSE, fig.cap="Best Fitness over 30 Generations - Airfoil", out.width="90%"}
+knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens.png")
+```
+
+
+
 
 
 
@@ -412,15 +426,9 @@ The experiments was repeated using the same setup with the only difference being
 
 <!-- Overview Real World SymReg  -->
 
-To gather more confidence in the previous results, the pre-training strategy for DAE-GP was tested for various real world symbolic regression problems taken from @machine_learning_repo. Are brief summary of the benchmark problems is given in table X
+To gather more confidence in the previous results, the pre-training strategy for DAE-GP was tested for three additional real world symbolic regression problems taken from @machine_learning_repo.^[see table \@ref(tab:full-run-realWorldSymReg-problems)]
 
-```{r full-run-realWorldSymReg-problems, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
-fig.pos="H"
-knitr::kable(
-  read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
-  caption="Overview - Real World Symbolic Regression Benchmark Problems"
-)%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
-```
+
 Table X summarizes the median best fitness achieved after running each algorithm for 10 runs using a population size of 500 individuals for 30 generations.^[P-Values are marked with asteriks (1,2,3) for ($\alpha$)-levels of $0.1$, $0.05$ and $0.01$]. The median best fitness over all 30 generations are visualized in figure X.
 
 

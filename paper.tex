@@ -322,7 +322,7 @@ This process is repeated until the termination criteria is met and DAE-GP return
 
 \begin{figure}[c]
 
-{\centering \includegraphics[width=0.5\linewidth,height=0.9\textheight]{./img/flowcharts/dae-gp} 
+{\centering \includegraphics[width=0.6\linewidth]{./img/flowcharts/dae-gp} 
 
 }
 
@@ -337,7 +337,7 @@ During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm
 
 \begin{figure}[c]
 
-{\centering \includegraphics[width=0.5\linewidth,height=0.9\textheight]{./img/flowcharts/pt-dae-gp} 
+{\centering \includegraphics[width=0.65\linewidth]{./img/flowcharts/pt-dae-gp} 
 
 }
 
@@ -357,31 +357,31 @@ If not stated otherwise, all experiments in this thesis use the hyperparameters 
 \hline
 \textbf{Hyperparameter} & \textbf{Value}\\
 \hline
-popSize & 500\\
+Population\_Size & 500\\
 \hline
-generations & 30\\
+Generations & 30\\
 \hline
-fitness & RMSE\\
+Fitness\_Metric & RMSE\\
 \hline
-TrainingMode & Convergence\\
+Training\_Mode & Convergence\\
 \hline
-SamplingSteps & 2\\
+Sampling\_Steps & 2\\
 \hline
-hiddenLayers & 2\\
+Selection\_Operator & Binary Tournament Selection\\
 \hline
-Selection & Binary Tournament Selection\\
+Corruption\_Operator & Levenshtein Edit\\
 \hline
-corruptionTechnique & Levenshtein Edit\\
+Denoising\_Edit\_Probability(training/sampling) & 0.05/0.95\\
 \hline
-edit\_prob(training/sampling) & 0.05/0.95\\
+Function\_Set & \{+ , - , * , aq\}\\
 \hline
-functionSet & \{+ ; - ; * ; aq\}\\
+Ephemeral\_Constants & [-5,..,5]\\
 \hline
-Pre-Training PopulationSize & 10000\\
+Pre-Training\_Population\_Size & 10000\\
 \hline
-Pre-Training Train/Test Split & 50\%\\
+Pre-Training\_Train/Test\_Split & 50\%\\
 \hline
-Pre-Training TrainingMode & Early Stopping\\
+Pre-Training\_Training\_Mode & Early Stopping\\
 \hline
 \end{tabular}
 \end{table}
@@ -420,21 +420,23 @@ output & y & Scaled sound pressure level & decibels\\
 
 The objective of the airfoil problem is to find a function that accurately predicts the output variable \(y\) by taking in a subset of the input variables \(x1,x2,x3,x4,x5\). The function set used by all DAE-GP variations for the airfoil problem is summarized in table 2, the terminal set consists of the 5 input variables \(x1,x2,x3,x4,x5\) and ephemeral random integers in the range of \([{}-5,..,5]\) {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]}.
 
+Besides studying the performance for the airfoil dataset, additional real world symbolic regressions experiments used the datasets{[}\protect\hyperlink{ref-machine_learning_repo}{2}{]} described in table \ref{tab:full-run-realWorldSymReg-problems}.
+
 \begin{table}[!h]
 
-\caption{\label{tab:airfoil-function-set}Airfoil - Function Set}
+\caption{\label{tab:full-run-realWorldSymReg-problems}Real World Symbolic Regression Benchmark Problems}
 \centering
-\begin{tabular}[t]{l|r}
+\begin{tabular}[t]{l|r|r}
 \hline
-\textbf{operator} & \textbf{arity}\\
+\textbf{Problem} & \textbf{Observations} & \textbf{Features}\\
 \hline
-addition & 2\\
+Airfoil & 1503 & 5\\
 \hline
-subtraction & 2\\
+Boston\_Housing & 506 & 13\\
 \hline
-multiplication & 2\\
+Energy\_Cooling & 768 & 8\\
 \hline
-analytic\_quotient & 2\\
+Concrete & 1030 & 8\\
 \hline
 \end{tabular}
 \end{table}
@@ -447,7 +449,7 @@ analytic\_quotient & 2\\
 
 To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
 
-To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus soley on the reconstruction error that is produced during the training of each the DAE-LSTM. The reconstruction error is measured for two separate populations, a training population \(P_{train}\) that is used to train our DAE-LSTM as well as a hold-out validation population \(P_{test}\). For the pre-trained DAE-GP two additional, separate populations \(\hat{P}_{train}\) and \(\hat{P}_{test}\) are used exclusively for pre-training.
+To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus soley on the reconstruction error that is produced during the training of each DAE-LSTM. The reconstruction error is measured for two separate populations, a training population \(P_{train}\) that is used to train our DAE-LSTM as well as a hold-out validation population \(P_{test}\). For the pre-trained DAE-GP two additional, separate populations \(\hat{P}_{train}\) and \(\hat{P}_{test}\) are used exclusively for pre-training.
 
 DAE-GP is tested in two different configurations:
 
@@ -465,16 +467,26 @@ In general I expect that with a growing number of model parameters (either by ad
 
 Based on the review of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{3}{]} I also expect that pre-training will have an insignificant or even negative influence on small DAE-LSTM instances while improving the networks generalization ability with growing size.
 
-\begin{figure}
-\centering
-\includegraphics{./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_neurons_6plots.png}
-\caption{First Generation Median Training Error for variable number of hidden Neurons - Airfoil}
+\ldots{}
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3plots} 
+
+}
+
+\caption{First Generation Median Training Error for variable number of hidden Neurons}\label{fig:first-gen-airfoil-byNeurons}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics{./img/airfoil_firstGen/airfoil_firstGen_mean_training_error_by_layers_6plot.png}
-\caption{First Generation Median Training Error for variable number of hidden Layers - Airfoil}
+\ldots{}
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.9\linewidth]{./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots} 
+
+}
+
+\caption{First Generation Median Training Error for variable number of hidden Layers}\label{fig:first-gen-airfoil-byLayers}
 \end{figure}
 
 \hypertarget{effect-on-search-performance}{%
@@ -512,26 +524,7 @@ The experiments was repeated using the same setup with the only difference being
 
 \ldots{}
 
-To gather more confidence in the previous results, the pre-training strategy for DAE-GP was tested for various real world symbolic regression problems taken from {[}\protect\hyperlink{ref-machine_learning_repo}{2}{]}. Are brief summary of the benchmark problems is given in table X
-
-\begin{table}[!h]
-
-\caption{\label{tab:full-run-realWorldSymReg-problems}Overview - Real World Symbolic Regression Benchmark Problems}
-\centering
-\begin{tabular}[t]{l|r|r}
-\hline
-\textbf{Problem} & \textbf{Observations} & \textbf{Features}\\
-\hline
-Airfoil & 1503 & 5\\
-\hline
-Boston\_Housing & 506 & 13\\
-\hline
-Energy\_Cooling & 768 & 8\\
-\hline
-Concrete & 1030 & 8\\
-\hline
-\end{tabular}
-\end{table}
+To gather more confidence in the previous results, the pre-training strategy for DAE-GP was tested for three additional real world symbolic regression problems taken from {[}\protect\hyperlink{ref-machine_learning_repo}{2}{]}.\footnote{see table \ref{tab:full-run-realWorldSymReg-problems}}
 
 Table X summarizes the median best fitness achieved after running each algorithm for 10 runs using a population size of 500 individuals for 30 generations.\footnote{P-Values are marked with asteriks (1,2,3) for (\(\alpha\))-levels of \(0.1\), \(0.05\) and \(0.01\)}. The median best fitness over all 30 generations are visualized in figure X.
 
