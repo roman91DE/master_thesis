@@ -15,8 +15,8 @@ title: |
   |
 date: "Date of Submission: `r Sys.Date()`"
 output:
-  pdf_document:
-    # keep_tex: true
+  bookdown::pdf_document2:
+    keep_tex: true
     extra_dependencies: ["float"]
     fig_caption: yes
     number_sections: true
@@ -41,9 +41,12 @@ library(kableExtra)
 library(magrittr)
 library(reticulate)
 
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.pos = "c",
+  fig.align="center"
+  )
 
-knitr::opts_chunk$set(echo = TRUE)
-#knitr::opts_chunk$set(fig.pos = "!H")
 
 reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 
@@ -57,7 +60,7 @@ print(f"Python Version: {version} \nPath: {executable}")
 ```
 
 
-```{bash recompile_results, echo=TRUE, eval=FALSE, include=FALSE}
+```{bash recompile-results, echo=TRUE, eval=FALSE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
@@ -124,7 +127,7 @@ echo Done recompiling Results, Plots, Diagrams, etc!
 \setcounter{page}{1}
 \tableofcontents
 \thispagestyle{empty}
-\newpage  
+\newpage
 \listoftables
 \listoffigures
 \thispagestyle{empty}
@@ -274,14 +277,14 @@ If this mechanism can be applied successfully it would benefit the performance o
 
 <!--- Explain algorithm and implementation of the pre-training strategy  -->
 
-The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in \@ref(fig:dae-gp-flowchart). 
+The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in \@ref(fig:daegp-flowchart).
 After setting the generation counter $g$ to $0$ and creating the initial population of solutions $P_0$, DAE-GP enters the main loop that checks if a termination criteria is satisfied (i.e. maximum number of generations or fitness evaluations is reached).
-For each generation $g$ the fitness of all new individuals in $P_g$ is evaluated. During model building, DAE-GP selects a subset $X_g$ of the current population that is used as training data for the DAE-LSTM model $M_g$ which is trained to learn the properties of $X_g$. 
-The trained model $M_g$ is then used for model sampling, partially mutated solutions from $P_G$ are propagated through $M_g$ to create a new population $P_{g+1}$. 
+For each generation $g$ the fitness of all new individuals in $P_g$ is evaluated. During model building, DAE-GP selects a subset $X_g$ of the current population that is used as training data for the DAE-LSTM model $M_g$ which is trained to learn the properties of $X_g$.
+The trained model $M_g$ is then used for model sampling, partially mutated solutions from $P_G$ are propagated through $M_g$ to create a new population $P_{g+1}$.
 This process is repeated until the termination criteria is met and DAE-GP returns the highest fitness solutions.
 
 
-```{r dae-gp-flowchart, echo=FALSE, fig.cap="Regular DAE-GP Flowchart", out.height="90%", out.width="50%"}
+```{r daegp-flowchart, echo=FALSE, fig.cap="Regular DAE-GP Flowchart", out.height="90%", out.width="50%"}
 knitr::include_graphics("./img/flowcharts/dae-gp.png")
 ```
 
@@ -314,7 +317,7 @@ To test pre-training in DAE-GP this thesis focuses on the domain of real-world s
 <!--- airfoil dataset -->
 The main experiments conducted in this thesis uses the NASA Airfoil Self-Noise Data Set which is part of the UCI machine learning repository [@machine_learning_repo]. The dataset consists of 5 input variables and 1 output variable that are listed in table 1.
 
-```{r airfoil_dataset_description, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r airfoil-dataset-description, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/airfoil_vars.csv"),
@@ -324,7 +327,7 @@ knitr::kable(
 
 The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for the airfoil problem is summarized in table 2, the terminal set consists of the 5 input variables $x1,x2,x3,x4,x5$ and ephemeral random integers in the range of $[{}-5,..,5]$ [@dae-gp_2022_symreg].
 
-```{r airfoil_function_set, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r airfoil-function-set, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/airfoil_function_set"),
@@ -374,7 +377,7 @@ Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will 
 
 After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. Again the Airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP [@dae-gp_2022_symreg], the parameters are described in table $A$
 
-```{r airfoil_fullRun_2hl_maxIndSize_params, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r airfoil-fullRun-2hl-maxIndSize-params, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params"),
@@ -408,7 +411,7 @@ The experiments was repeated using the same setup with the only difference being
 
 To gather more confidence in the previous results, the pre-training strategy for DAE-GP was tested for various real world symbolic regression problems taken from @machine_learning_repo. Are brief summary of the benchmark problems is given in table X
 
-```{r full_run_realWorldSymReg_problems, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r full-run-realWorldSymReg-problems, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
@@ -419,7 +422,7 @@ Table X summarizes the median best fitness achieved after running each algorithm
 
 
 
-```{r full_run_realWorldSymReg_fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r full-run-realWorldSymReg-fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -469,7 +472,7 @@ Next I studied the size of solutions based on using a pre-training strategy. Fig
 
 Table X summarizes the results of the statistical tests.
 
-```{r full_run_realWorldSymReg_best_solution_size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r full-run-realWorldSymReg-best-solution-size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -516,7 +519,7 @@ Another interesting metric to examine in EC based metaheuristics is the diversit
 
 Testing for statistical differences in the underlying distributions yields the P-Values listed in table X.
 
-```{r full_run_realWorldSymReg_popDiversity, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r full-run-realWorldSymReg-popDiversity, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -564,7 +567,7 @@ One important argument for using pre-training is the reduction of runtime and co
 
 ![Median Number of Training Epochs per Generation - Symbolic Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTrained.png){height=80%}
 
-```{r full_run_realWorldSymReg_epochsPerGen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r full-run-realWorldSymReg-epochsPerGen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
 library(dplyr)

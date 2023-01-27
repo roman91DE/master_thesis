@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Abstract}{3}{section.1}%
+\contentsline {section}{\numberline {2}Introduction}{3}{section.2}%
+\contentsline {section}{\numberline {3}Theoretical Foundations}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Denoising Autoencoder Genetic Programming}{3}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Evolutionary Computation}{3}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Genetic Programming}{4}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Estimation of Distribution Algorithms}{4}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Denoising Autoencoders}{4}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}Pre-Training}{5}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Pre-Training in DAE-GP}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Implementation}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Benchmark Problem}{9}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Results}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Effect on Generalisation}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Effect on search performance}{12}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Solution Size in Symbolic Regression}{20}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Population Diversity}{21}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Training epochs per Generation}{23}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Discussion}{24}{section.6}%
+\contentsline {section}{\numberline {7}Limitations and open Questions}{24}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Further Questions}{24}{subsection.7.1}%
+\contentsline {section}{References}{25}{section*.5}%
