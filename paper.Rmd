@@ -24,7 +24,7 @@ output:
       in_header: [header_files/settings.tex]
 indent: false
 fontsize: 11pt
-bibliography: ref/ref.bib
+bibliography: ./ref/ref.bib
 link-citations: true
 fig.width: 4in
 fig.height: 3in
@@ -57,7 +57,11 @@ print(f"Python Version: {version} \nPath: {executable}")
 ```
 
 
-```{bash recompile_results, include=FALSE, eval=FALSE}
+```{bash recompile_results, echo=TRUE, eval=FALSE, include=FALSE}
+
+# set eval to TRUE to recompile all results, plots etc.
+# Warning: This will take some time...
+
 
 # compile mermaid diagrams
 # ---
@@ -65,6 +69,11 @@ WIDTH=3200
 HEIGHT=2400
 THEME="neutral"
 BACKGROUND="white"
+
+if [ ! -d "./img/flowcharts" ]; then
+  mkdir -p "./img/flowcharts"
+fi
+
 
 for file in ./mermaid/*.mmd
 do
@@ -93,11 +102,17 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_maxIndSiz
 # concrete
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_fullRun_30gens/re_evaluate_concrete_2hl_maxIndSize_fullRun_30gens.sh
 
-# summarize csv files for full run experiments
+# summarize csv files and plots for full run experiments
 /Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_data.py
 
 # 2nd generation Pre-Training
-/Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/masterThesis/eda-gp-2020/experiments/2ndGenPT_airfoil_2hl_150hn_fullRun/re_evaluate_2ndGenPT_airfoil_2hl_150hn_fullRun.sh
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/2ndGenPT_airfoil_2hl_150hn_fullRun/re_evaluate_2ndGenPT_airfoil_2hl_150hn_fullRun.sh
+
+# create Plots from pstats (cProfile)
+JUPYTER="/Users/rmn/miniconda3/envs/dataScience/bin/jupyter"
+$JUPYTER nbconvert --to html --execute /Users/rmn/masterThesis/eda-gp-2020/cProfiler/eval.ipynb
+
+echo Done recompiling Results, Plots, Diagrams, etc!
 
 ```
 
@@ -129,7 +144,7 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_ful
 
 Denoising Autoencoder Genetic Programming (DAE-GP) is a novel variation of an genetic programming based Estimation of Distribution Algorithm (EDA-GP) that uses a denoising autoencoders long short-term memory network (DAE-LSTMs) as a probabilistic model to sample new candidate solutions [@dae-gp_2020_rtree].
 
-DAE-LSTMs are recurrent neural networks (RNNs) that can be trained in an unsupervised learning environment to minimize a reconstruction error for encoding input data into a compressed representation and subsequently decoding the compressed representation back to the input dimension. 
+DAE-LSTMs are artificial neural networks that can be trained in an unsupervised learning environment to minimize a reconstruction error for encoding input data into a compressed representation and subsequently decoding the compressed representation back to the input dimension. 
 In DAE-GP, DAE-LSTMs are trained with a subset of high-fitness solutions selected from a parent population with the aim to capture their promising qualities. 
 The resulting model is then used to sample new offspring solutions by propagating partially mutated solutions from the parent population through the DAE-LSTMS [@dae-gp_2020_rtree].
 In previous work DAE-GP has been shown to outperform GP for both a generalized version of the royal tree problem [@dae-gp_2020_rtree] as well as for a real-world symbolic regression problem [@dae-gp_2022_symreg]. 
@@ -137,10 +152,10 @@ In previous work DAE-GP has been shown to outperform GP for both a generalized v
 <!--- Problemstellung und Zielsetzung der Arbeit -->
 
 The DAE-GP algorithm first described by [@dae-gp_2020_rtree] trains a DAE-LSTMs for each generation $g$ of the search from scratch.
-@dae-gp_2022_symreg and @daegp_explore_exploit suggests the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the model quality of DAE-GP.
+@dae-gp_2022_symreg and @daegp_explore_exploit suggests the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the overall performance of the DAE-GP algorithm.
 The key idea is to pre-train an initial DAE-LSTM on a large population of candidate solutions and to use the pre-trained parameters of this initial model in each generation of the search as starting parameters for the current generation DAE-LSTM.
-This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence in generalization behavior and the overall quality of solutions found by DAE-GP. 
-The aim of this study is to answer the question if a pre-training strategy can help to improve generalization in DAE-GP and if so, analyze how this improved generalization ability benefits the overall performance of DAE-GP.
+This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence on overall quality of solutions found by DAE-GP and effects on runtime. 
+The aim of this study is to answer the question if a pre-training strategy can be used to improve DAE-GP and to study both positive and negative effects on overall performance.
 
 
 <!--- Gang der Untersuchung -->
@@ -194,20 +209,20 @@ AE were introduced by @ae_orig to compress high-dimensional data into lower-dime
 The AE is trained to reduce the reconstruction error between input and output data, after the training procedure is finished the network is able to reduce the dimensionality of input data to a compressed representation[@ae_orig].
 
 
-DAE was first introduced by @10.1145/1390156.1390294 as an improved AE with the ability to learn new representations of data that is especially robust to partially corrupted input data. DAE modifies the AE by using partially corrupted input data for the AE and training it to reconstruct the uncorrupted, original version of the input data.
+DAE was first introduced by @dae_orig2008 as an improved AE with the ability to learn new representations of data that is especially robust to partially corrupted input data. DAE modifies the AE by using partially corrupted input data for the AE and training it to reconstruct the uncorrupted, original version of the input data.
 
 Since the hidden representation of DAE captures the dependency structure of the input data it can therefore also be used to generate new solutions in the context of GAs [@harmless_overfitting_eda].
 
 DAE-GP builds upon the concept of using DAEs in EDAs described by @harmless_overfitting_eda and transfers the concept to the domain of GP. 
 The mutation and crossover operators of standard GP are replaced by sampling new solutions from a probabilistic model that is build by training a DAEs long short-term memory (LSTM) network on a subset of high fitness solutions from the current population [@dae-gp_2020_rtree]. 
 
-LSTMs are a variant of recurrent neural networks first introduced by @lstm_orig that can store learned information over en extended time period while avoiding the problem of vanishing and/or exploding gradients. Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps $T$ is equal to sum of the length of the input solution and the output solution [@dae-gp_2020_rtree].
+LSTMs are a variant of artificial neural networks first introduced by @lstm_orig that can store learned information over en extended time period while avoiding the problem of vanishing and/or exploding gradients. Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps $T$ is equal to sum of the length of the input solution and the output solution [@dae-gp_2020_rtree].
 
 
 ## Pre-Training
 
 
-Pre-Training describes the concept of initially training a neural network on a large dataset before using it to solve a more specific task. 
+Pre-Training describes the concept of initially training an artificial neural network on a large dataset before using it to solve a more specific task. 
 It is a commonly used strategy in deep architectures that has been shown to improve both the optimization process itself as well as the generalization behavior if compared to the standard approach of using randomly initialized parameters [@pmlr-v5-erhan09a].
 
 The strategy of pre-training artificial neural networks is based on the idea of transfer learning that aims at retaining previously learned knowledge from one task to re-use it for another task [@HAN2021225] [@survey_transfer_learning]. 
@@ -244,7 +259,7 @@ The probably most obvious motivation for using a pre-training strategy in DAE-GP
 
 Early research on pre-training for DAE by @pmlr-v5-erhan09a comes to the conclusion that besides adding robustness to models the strategy also results in improved generalization and better performing models. The authors describe that unsupervised pre-training behaves like a regulizer on DAE networks, the mean test error and it's variance are reduced for DAE networks that are initialized from pre-trained weights if compared to the same architectures that use random initialization.
 
-Another important finding by @pmlr-v5-erhan09a is that the positive effect of pre-training described above is dependent on both the depth of the network as well as the size of layers - while increasingly larger networks benefit increasingly more from pre-training the final performance of small architectures tends to be worse with pre-training than with randomized weight initialization. 
+Another important finding by @pmlr-v5-erhan09a is that the positive effect of pre-training is dependent on both the depth of the network as well as the size of layers - while increasingly larger networks benefit increasingly more from pre-training the final performance of small architectures tends to be worse with pre-training than with randomized weight initialization. 
 The authors find evidence that pre-training DAE is especially usefull for optimizing the parameters of the lower layers of the network. 
 
 Another motivation for introducing pre-training into DAE-GP is the prevalence of sampling error for small GP populations sizes.
@@ -259,13 +274,16 @@ If this mechanism can be applied successfully it would benefit the performance o
 
 <!--- Explain algorithm and implementation of the pre-training strategy  -->
 
-The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in figure §. 
+The DAE-GP algorithm, first described by @dae-gp_2020_rtree, is summarized as a flowchart in \@ref(fig:dae-gp-flowchart). 
 After setting the generation counter $g$ to $0$ and creating the initial population of solutions $P_0$, DAE-GP enters the main loop that checks if a termination criteria is satisfied (i.e. maximum number of generations or fitness evaluations is reached).
 For each generation $g$ the fitness of all new individuals in $P_g$ is evaluated. During model building, DAE-GP selects a subset $X_g$ of the current population that is used as training data for the DAE-LSTM model $M_g$ which is trained to learn the properties of $X_g$. 
 The trained model $M_g$ is then used for model sampling, partially mutated solutions from $P_G$ are propagated through $M_g$ to create a new population $P_{g+1}$. 
 This process is repeated until the termination criteria is met and DAE-GP returns the highest fitness solutions.
 
-![Flowchart - Regular DAE-GP](./img/flowcharts/dae-gp.png)
+
+```{r dae-gp-flowchart, echo=FALSE, fig.cap="Regular DAE-GP Flowchart", out.height="90%", out.width="50%"}
+knitr::include_graphics("./img/flowcharts/dae-gp.png")
+```
 
 
 The pre-training strategy implemented for all experiments in this thesis is visualized as another flowchart in figure §.
