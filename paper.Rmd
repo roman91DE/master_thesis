@@ -61,7 +61,7 @@ print(f"Python Version: {version} \nPath: {executable}")
 ```
 
 
-```{bash recompile-results, echo=TRUE, eval=TRUE, include=FALSE}
+```{bash recompile-results, echo=TRUE, eval=FALSE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
@@ -396,7 +396,7 @@ After closely examining the effect of pre-training on DAE-GPs generalization beh
 
 Regarding the hidden neurons, the dimension of each hidden layer, I used two different strategies: Regular DAE-GP uses the same strategy as described by earlier work (see [@dae-gp_2022_symreg] or [@dae-gp_2020_rtree]), the number of hidden neurons is dynamically set at each generation to the maximum length of all solutions inside the current training population. For pre-trained DAE-GP another strategy had to be used, I used a fixed number of hidden neurons for each run that is set equal to the maximum length of all individuals that are present in the initial pre-training population. I decided to take this aproach instead of using a fixed number of hidden neurons for the fact that it simplifies the adjustment of the parameter for later experiments on different problems. It should nonetheless be mentioned that this strategy does give pre-training on average more hidden neurons per layer resulting in a more complex network (since the pre-training population is much larger than the regular population, the chances for larger individuals inside it are also higher).
 
-### Airfoil Dateset - 2 hidden Layers
+### Airfoil Dataset - 2 Hidden Layers
 
 Figure \@ref(fig:airfoil-median-fitness-30gens) shows both the mean and median of the best fitness for each generation on both the test and training set of the airfoil dataset for using 2 hidden layers inside the DAE-LSTM networks. The results are aggregated for $10$ individuals runs per algorithm and also include regular GP as a benchmark. For all three algorithms an improvement in the best found fitness can be observed during the evolutionary search but the results show that DAE-GP based algorithms, on average, find solutions with much higher fitness as traditional GP.
 
@@ -412,16 +412,25 @@ The distribution of final fitness scores for pre-trained and regular DAE-GP are 
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png")
 ```
 
-Since previous work by @dae-gp_2022_symreg demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, was capable of producing solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \@ref(fig:airfoil-size-combined-30gens) shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.  
+Since previous work by @dae-gp_2022_symreg demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \@ref(fig:airfoil-size-combined-30gens) shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. Interestingly, the results also show that the pre-trained version of algorithm did produce smaller median size of the best solutions.
 
 ```{r airfoil-size-combined-30gens, echo=FALSE, fig.cap="Median Solution Size over 30 Generations - Airfoil (2HL)", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/size_combined_median.png")
 ```
 
 
+To conclude the first experiment, figure \@ref(fig:airfoil-popDiversity) shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a high level of over $0.9$. Again it can be observed, that pre-training shows a positive effect on the results by increasing population diversity in comparison to regular DAE-GP.
 
-<!-- PopDiversity -->
+```{r airfoil-popDiversity, echo=FALSE, fig.cap="Median Population Diversity over 30 Generations - Airfoil (2HL)", out.width="80%"}
+knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_popDiversity_byGens_levOnly.png")
+```
 
+
+### Airfoil Dataset - 1 Hidden Layer
+
+Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], I repeated the experiment with a single hidden layer. Based on the findings of @pmlr-v5-erhan09a, I expected that pre-training DAE-GP would lead to a worsening  
+
+To confirm the research by @pmlr-v5-erhan09a
 
 The experiments was repeated using the same setup with the only difference being a reduction from two hidden layers to 1 hidden layer.
 

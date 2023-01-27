@@ -523,7 +523,7 @@ The distribution of final fitness scores for pre-trained and regular DAE-GP are 
 \caption{Best Fitness after 30 Generations - Airfoil (2HL)}\label{fig:airfoil-distribution-fitness-30gens}
 \end{figure}
 
-Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, was capable of producing solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.
+Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. Interestingly, the results also show that the pre-trained version of algorithm did produce smaller median size of the best solutions.
 
 \begin{figure}[c]
 
@@ -532,6 +532,17 @@ Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demo
 }
 
 \caption{Median Solution Size over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-size-combined-30gens}
+\end{figure}
+
+To conclude the first experiment, figure \ref{fig:airfoil-popDiversity} shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a high level of over \(0.9\). Again it can be observed, that pre-training shows a positive effect on the results by increasing population diversity in comparison to regular DAE-GP.
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_popDiversity_byGens_levOnly} 
+
+}
+
+\caption{Median Population Diversity over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-popDiversity}
 \end{figure}
 
 The experiments was repeated using the same setup with the only difference being a reduction from two hidden layers to 1 hidden layer.
