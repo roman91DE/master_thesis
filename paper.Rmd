@@ -640,12 +640,30 @@ knitr::kable(
 
 # Alternative Pre-Training Strategies
 
-Since pre-trained thus far did not demonstrate significant benefits for DAE-GP, this chapter introduces two alternative pre-training strategies that are also tested for the airfoil dataset:
+Since pre-trained thus far did not demonstrate significant benefits for DAE-GP, this chapter describes two alternative pre-training strategies that are also tested for the airfoil dataset:
 
-* 2nd Generation Pre-Training
-* Grow Initialized Pre-Training
+## Second Generation Pre-Training
+
+One common observation in EC-based optimization algorithms is that the largest improvements in fitness are often occurring in the first generation of the search process. Second Generation Pre-Training tries to exploit this observation by shifting the pre-training phase from the start of the algorithm into the second generation with the aim to produce a pre-training Population $\hat{P}$ that more accurately captures the properties of the search problem. The basic idea is to run basic DAE-GP for the first generation without any interference, after completing the first generation, the pre-training population $\hat{P}$ is created by sampling the DAE-LSTM model $M_1$. The pre-training model $\hat{M}$ is then trained using $\hat{P}$, after finishing DAE-GP continues running and initializes each new DAE-LSTM model $M_g$ for $g\in{2,...,g_{max}}$ using the trainable parameters $\theta_{\hat{M}}$.
+
+## Grow-Initialized Pre-Training
+
+The pre-training implementation in previous experiments used ramped half and half initialization [@Koza1993GeneticP] to create $\hat{P}$, this leads to 50% of the population consisting of full grown trees. An alternative method of initializing $\hat{P}$ is to use the grow initialization method where solutions are not guaranteed to be full trees. This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of futher generations population where a lower percentage of full grown trees is to be expected. 
+
+## Results
+
+Figure \@ref(fig:altStrategies-Fitness) shows the median best fitness by generations for both alternative pre-training strategies as well as the results for standard DAE-GP and the standard Pre-Training implementation used in earlier exoeriments.
 
 
+```{r altStrategies-Fitness, echo=FALSE, fig.cap="Best Fitness over 30 Generations - Alternative Pre-Trategies - Airfoil", out.width="80%"}
+knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png")
+```
+
+Figure \@ref(fig:altStrategies-finalFitness) 
+
+```{r altStrategies-FitnessDistr, echo=FALSE, fig.cap="Best Fitness after 30 Generations - Alternative Pre-Trategies - Airfoil", out.width="80%"}
+knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only).png")
+```
 
 
 # Discussion

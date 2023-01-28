@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  24 JAN 2023 10:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  28 JAN 2023 15:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -657,6 +657,14 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \pgfphysicalheight=\dimen294
 \pgfphysicalwidth=\dimen295
 \pgfpages@shipoutbox=\box75
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks45
+\inpenc@posthook=\toks46
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -691,18 +699,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-12.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks45
-\inpenc@posthook=\toks46
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty (/
 usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty
@@ -836,9 +832,9 @@ ex
 (/usr/local/texlive/2022/texmf-dist/tex/generic/babel/locale/de/babel-german.te
 x))
 Package babel Info: Importing data for ngerman
-(babel)             from babel-de.ini. Reported on input line 117.
+(babel)             from babel-de.ini. Reported on input line 120.
 Package babel Info: Hyphen rules for 'ngerman' set to \l@ngerman
-(babel)             (\language34). Reported on input line 117.
+(babel)             (\language34). Reported on input line 120.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 (/usr/local/texlive/2022/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -846,6 +842,11 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count357
 )) (/usr/local/texlive/2022/texmf-dist/tex/latex/xurl/xurl.sty
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
+)
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+45.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count358
@@ -853,24 +854,24 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 ) (./slides.aux)
 \openout1 = `slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -879,14 +880,14 @@ LaTeX Font Info:    ... okay on input line 142.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(10.95pt, 342.29536pt, 10.95pt)
+* h-part:(L,W,R)=(10.88002pt, 342.43532pt, 10.88002pt)
 * v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
 * \paperwidth=364.19536pt
 * \paperheight=273.14662pt
-* \textwidth=342.29536pt
+* \textwidth=342.43532pt
 * \textheight=244.6939pt
-* \oddsidemargin=-61.31999pt
-* \evensidemargin=-61.31999pt
+* \oddsidemargin=-61.38997pt
+* \evensidemargin=-61.38997pt
 * \topmargin=-72.26999pt
 * \headheight=14.22636pt
 * \headsep=0.0pt
@@ -926,7 +927,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 142.
+Package hyperref Info: Link coloring OFF on input line 145.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -938,55 +939,55 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count365
 )
-LaTeX Info: Redefining \ref on input line 142.
-LaTeX Info: Redefining \pageref on input line 142.
-LaTeX Info: Redefining \nameref on input line 142.
+LaTeX Info: Redefining \ref on input line 145.
+LaTeX Info: Redefining \pageref on input line 145.
+LaTeX Info: Redefining \nameref on input line 145.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 142.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 145.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 142.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 145.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 142.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 145.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 142.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 145.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 142.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 145.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 142.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 142.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 142.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 145.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 142.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 142.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 142.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 145.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 142.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 142.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 142.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 145.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 142.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 142.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 145.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 142.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 145.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 142.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 142.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 142.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 142.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 142.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 145.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 142.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 145.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1012,12 +1013,12 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 142.
-Package microtype Info: Applying patch `item' on input line 142.
-Package microtype Info: Applying patch `toc' on input line 142.
-Package microtype Info: Applying patch `eqnum' on input line 142.
+LaTeX Info: Redefining \microtypecontext on input line 145.
+Package microtype Info: Applying patch `item' on input line 145.
+Package microtype Info: Applying patch `toc' on input line 145.
+Package microtype Info: Applying patch `eqnum' on input line 145.
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 142.
+Package microtype Warning: Unable to apply patch `footnote' on input line 145.
 
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -1025,7 +1026,7 @@ Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 142.
+LaTeX Info: Redefining \showhyphens on input line 145.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1036,7 +1037,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 (./slides.nav)
-Overfull \hbox (291.24937pt too wide) in paragraph at lines 142--142
+Overfull \hbox (291.24937pt too wide) in paragraph at lines 145--145
  [][][][]  
  []
 
@@ -1064,9 +1065,9 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 172.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 175.
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-172.
+175.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1075,34 +1076,34 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-72.
+75.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-172.
+175.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-172.
+175.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 172.
+(Font)              <10.95> on input line 175.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 172.
+(Font)              <8> on input line 175.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 172.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 172
+(Font)              <6> on input line 175.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 175
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 172
+LaTeX Font Info:    Trying to load font information for U+msb on input line 175
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1110,17 +1111,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 172.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 175.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 172.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 175.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 172.
+(Font)              <9> on input line 175.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 172.
+(Font)              <5> on input line 175.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 172.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 175.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 172.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 175.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1144,17 +1145,17 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 215.
+(Font)              <14.4> on input line 218.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 215.
+(Font)              <10> on input line 218.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 215.
+(Font)              <7> on input line 218.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 215.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 218.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 215.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 218.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 215.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 218.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1180,10 +1181,10 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 <./img/flowcharts/dae-gp.png, id=152, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 255.
-(pdftex.def)             Requested size: 171.14067pt x 234.17653pt.
+Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 258.
+(pdftex.def)             Requested size: 171.21005pt x 234.17653pt.
 
-Overfull \vbox (4.97672pt too high) detected at line 255
+Overfull \vbox (4.97672pt too high) detected at line 258
  []
 
 
@@ -1246,11 +1247,11 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 <./img/flowcharts/pt-dae-gp.png, id=268, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 376
+Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 379
 .
-(pdftex.def)             Requested size: 171.14618pt x 234.17236pt.
+(pdftex.def)             Requested size: 171.20915pt x 234.17236pt.
 
-Overfull \vbox (4.97255pt too high) detected at line 376
+Overfull \vbox (4.97255pt too high) detected at line 379
  []
 
 
@@ -1282,7 +1283,7 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 [21
 
 ]
-Overfull \vbox (7.32701pt too high) detected at line 469
+Overfull \vbox (126.87141pt too high) detected at line 484
  []
 
 
@@ -1300,8 +1301,8 @@ g Graphic file (type png)
 <use img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_fitness_byGens.png
 >
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/media
-n_fitness_byGens.png  used on input line 474.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+n_fitness_byGens.png  used on input line 489.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1317,8 +1318,8 @@ File: img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png Graphic f
 ile (type png)
 <use img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_bo
-xplot.png  used on input line 479.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+xplot.png  used on input line 494.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1334,8 +1335,8 @@ png Graphic file (type png)
 <use img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_best_Size_byGens.p
 ng>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/media
-n_best_Size_byGens.png  used on input line 484.
-(pdftex.def)             Requested size: 273.83487pt x 221.17635pt.
+n_best_Size_byGens.png  used on input line 499.
+(pdftex.def)             Requested size: 273.94514pt x 221.17635pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1352,8 +1353,8 @@ ns_levOnly_withGP.png Graphic file (type png)
 <use img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_popDiversity_byGen
 s_levOnly_withGP.png>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/media
-n_popDiversity_byGens_levOnly_withGP.png  used on input line 489.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+n_popDiversity_byGens_levOnly_withGP.png  used on input line 504.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1370,8 +1371,8 @@ g Graphic file (type png)
 <use img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_runtime.png
 >
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmar
-k/median_runtime.png  used on input line 494.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+k/median_runtime.png  used on input line 509.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1388,8 +1389,8 @@ pochs.png Graphic file (type png)
 <use img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_training_ep
 ochs.png>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmar
-k/median_training_epochs.png  used on input line 499.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+k/median_training_epochs.png  used on input line 514.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1406,8 +1407,8 @@ File: img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_sampleTime
 <use img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmark/median_sampleTime.
 png>
 Package pdftex.def Info: img/airfoil_2hl_maxIndSize_fullRun_30gens_TimeBenchmar
-k/median_sampleTime.png  used on input line 504.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+k/median_sampleTime.png  used on input line 519.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1430,8 +1431,8 @@ File: img/airfoil_1hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png Graph
 ic file (type png)
 <use img/airfoil_1hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png>
 Package pdftex.def Info: img/airfoil_1hl_maxIndSize_fullRun_30gens/median_fitne
-ss_byGens.png  used on input line 521.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+ss_byGens.png  used on input line 536.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1446,8 +1447,8 @@ File: img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png Graphic f
 ile (type png)
 <use img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png>
 Package pdftex.def Info: img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_bo
-xplot.png  used on input line 526.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+xplot.png  used on input line 541.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1462,8 +1463,8 @@ File: img/airfoil_1hl_maxIndSize_fullRun_30gens/median_Size_byGens.png Graphic
 file (type png)
 <use img/airfoil_1hl_maxIndSize_fullRun_30gens/median_Size_byGens.png>
 Package pdftex.def Info: img/airfoil_1hl_maxIndSize_fullRun_30gens/median_Size_
-byGens.png  used on input line 531.
-(pdftex.def)             Requested size: 273.83487pt x 221.17635pt.
+byGens.png  used on input line 546.
+(pdftex.def)             Requested size: 273.94514pt x 221.17635pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1492,8 +1493,8 @@ File: img/symbolicRegressionSummarized/median_fitness_byGens.png Graphic file (
 type png)
 <use img/symbolicRegressionSummarized/median_fitness_byGens.png>
 Package pdftex.def Info: img/symbolicRegressionSummarized/median_fitness_byGens
-.png  used on input line 573.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+.png  used on input line 588.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1502,47 +1503,47 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 [36
 
  <./img/symbolicRegressionSummarized/median_fitness_byGens.png>]
-Overfull \hbox (1.31808pt too wide) in paragraph at lines 615--615
+Overfull \hbox (1.30669pt too wide) in paragraph at lines 631--631
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
 
-Overfull \hbox (1.50679pt too wide) in paragraph at lines 615--615
+Overfull \hbox (1.49213pt too wide) in paragraph at lines 631--631
  []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
  []
 
 
-Overfull \hbox (1.31808pt too wide) in paragraph at lines 615--615
+Overfull \hbox (1.30669pt too wide) in paragraph at lines 631--631
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
 
-Overfull \hbox (21.23468pt too wide) in paragraph at lines 615--615
+Overfull \hbox (21.20702pt too wide) in paragraph at lines 631--631
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (1.31808pt too wide) in paragraph at lines 615--615
+Overfull \hbox (1.30669pt too wide) in paragraph at lines 631--631
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
 
-Overfull \hbox (19.54166pt too wide) in paragraph at lines 615--615
+Overfull \hbox (19.51399pt too wide) in paragraph at lines 631--631
  []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
 
-Overfull \hbox (1.31808pt too wide) in paragraph at lines 615--615
+Overfull \hbox (1.30669pt too wide) in paragraph at lines 631--631
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
 
-Overfull \hbox (1.50679pt too wide) in paragraph at lines 615--615
+Overfull \hbox (1.49213pt too wide) in paragraph at lines 631--631
  []|\T1/lmss/m/n/10.95 (-20) 0.02**| 
  []
 
 
-Overfull \hbox (1.31808pt too wide) in paragraph at lines 615--615
+Overfull \hbox (1.30669pt too wide) in paragraph at lines 631--631
  []|\T1/lmss/m/n/10.95 (-20) Train| 
  []
 
@@ -1560,8 +1561,8 @@ File: img/symbolicRegressionSummarized/median_bestSol_size_byGens.png Graphic f
 ile (type png)
 <use img/symbolicRegressionSummarized/median_bestSol_size_byGens.png>
 Package pdftex.def Info: img/symbolicRegressionSummarized/median_bestSol_size_b
-yGens.png  used on input line 620.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+yGens.png  used on input line 636.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1570,17 +1571,17 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 [38
 
  <./img/symbolicRegressionSummarized/median_bestSol_size_byGens.png>]
-Overfull \hbox (1.9741pt too wide) in paragraph at lines 654--654
+Overfull \hbox (1.95201pt too wide) in paragraph at lines 671--671
  []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
  []
 
 
-Overfull \hbox (11.5224pt too wide) in paragraph at lines 654--654
+Overfull \hbox (11.4911pt too wide) in paragraph at lines 671--671
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (9.82938pt too wide) in paragraph at lines 654--654
+Overfull \hbox (9.79808pt too wide) in paragraph at lines 671--671
  []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
@@ -1598,8 +1599,8 @@ File: img/symbolicRegressionSummarized/median_levDistance_byGen.png Graphic fil
 e (type png)
 <use img/symbolicRegressionSummarized/median_levDistance_byGen.png>
 Package pdftex.def Info: img/symbolicRegressionSummarized/median_levDistance_by
-Gen.png  used on input line 659.
-(pdftex.def)             Requested size: 256.7268pt x 208.16832pt.
+Gen.png  used on input line 676.
+(pdftex.def)             Requested size: 256.81944pt x 208.16832pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1608,37 +1609,37 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 [40
 
  <./img/symbolicRegressionSummarized/median_levDistance_byGen.png>]
-Overfull \hbox (1.37967pt too wide) in paragraph at lines 694--694
+Overfull \hbox (1.35728pt too wide) in paragraph at lines 712--712
  []\T1/lmss/m/n/10.95 (-20) Hid.Layers 
  []
 
 
-Overfull \hbox (1.29971pt too wide) in paragraph at lines 694--694
+Overfull \hbox (1.28291pt too wide) in paragraph at lines 712--712
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (10.67383pt too wide) in paragraph at lines 694--694
+Overfull \hbox (10.6421pt too wide) in paragraph at lines 712--712
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (1.29971pt too wide) in paragraph at lines 694--694
+Overfull \hbox (1.28291pt too wide) in paragraph at lines 712--712
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (8.9808pt too wide) in paragraph at lines 694--694
+Overfull \hbox (8.94908pt too wide) in paragraph at lines 712--712
  []|\T1/lmss/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
 
-Overfull \hbox (1.29971pt too wide) in paragraph at lines 694--694
+Overfull \hbox (1.28291pt too wide) in paragraph at lines 712--712
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
 
-Overfull \hbox (1.29971pt too wide) in paragraph at lines 694--694
+Overfull \hbox (1.28291pt too wide) in paragraph at lines 712--712
  []|\T1/lmss/m/n/10.95 (-20) 0.00***| 
  []
 
@@ -1656,8 +1657,8 @@ File: img/symbolicRegressionSummarized/median_epochsTrained.png Graphic file (t
 ype png)
 <use img/symbolicRegressionSummarized/median_epochsTrained.png>
 Package pdftex.def Info: img/symbolicRegressionSummarized/median_epochsTrained.
-png  used on input line 700.
-(pdftex.def)             Requested size: 256.7268pt x 208.16832pt.
+png  used on input line 718.
+(pdftex.def)             Requested size: 256.81944pt x 208.16832pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1666,12 +1667,12 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 [42
 
  <./img/symbolicRegressionSummarized/median_epochsTrained.png>]
-Overfull \hbox (11.94453pt too wide) in paragraph at lines 735--735
+Overfull \hbox (11.91344pt too wide) in paragraph at lines 754--754
  []|\T1/lmss/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (9.0593pt too wide) in paragraph at lines 735--735
+Overfull \hbox (9.0282pt too wide) in paragraph at lines 754--754
  []|\T1/lmss/m/n/10.95 (-20) Energy_Cooling| 
  []
 
@@ -1717,8 +1718,8 @@ File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png Gra
 phic file (type png)
 <use img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>
 Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fit
-ness_byGens.png  used on input line 793.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+ness_byGens.png  used on input line 812.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1734,8 +1735,8 @@ File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png
 <use img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Size_best_solution.png>
 
 Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_Siz
-e_best_solution.png  used on input line 798.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+e_best_solution.png  used on input line 817.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1750,8 +1751,8 @@ File: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png G
 raphic file (type png)
 <use img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev_div_overGens.png>
 Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_lev
-_div_overGens.png  used on input line 803.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+_div_overGens.png  used on input line 822.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1767,8 +1768,8 @@ g Graphic file (type png)
 <use img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epochs_trained_perGen.png
 >
 Package pdftex.def Info: img/PT_Strategies_airfoil_2hl_150hn_fullRun/mean_epoch
-s_trained_perGen.png  used on input line 808.
-(pdftex.def)             Requested size: 273.83266pt x 221.17636pt.
+s_trained_perGen.png  used on input line 827.
+(pdftex.def)             Requested size: 273.95618pt x 221.17636pt.
 
 Overfull \hbox (291.24937pt too wide) has occurred while \output is active
  [][][][]  
@@ -1840,13 +1841,13 @@ Overfull \hbox (291.24937pt too wide) has occurred while \output is active
 
 (./slides.aux) ) 
 Here is how much of TeX's memory you used:
- 28028 strings out of 478268
- 558159 string characters out of 5846348
- 841628 words of memory out of 5000000
- 45290 multiletter control sequences out of 15000+600000
- 572970 words of font info for 171 fonts, out of 8000000 for 9000
+ 28032 strings out of 478268
+ 558208 string characters out of 5846348
+ 840638 words of memory out of 5000000
+ 45291 multiletter control sequences out of 15000+600000
+ 573879 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,1003b,924s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,15n,122p,1003b,926s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
 c}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/
 texlive/2022/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/20
@@ -1856,7 +1857,7 @@ ype1/public/lm/lmss9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public
 /lm/lmssbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmss
 o10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsso9.pfb>
-Output written on slides.pdf (58 pages, 9378356 bytes).
+Output written on slides.pdf (58 pages, 9302887 bytes).
 PDF statistics:
  762 PDF objects out of 1000 (max. 8388607)
  567 compressed objects within 6 object streams
