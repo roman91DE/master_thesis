@@ -428,13 +428,18 @@ knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/medi
 
 ### Airfoil Dataset - 1 Hidden Layer
 
-Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], I repeated the experiment with a single hidden layer. Based on the findings of @pmlr-v5-erhan09a, I expected that pre-training DAE-GP would lead to a worsening  
+Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], I repeated the experiment with a single hidden layer. Based on the findings of @pmlr-v5-erhan09a, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \@ref(fig:airfoil-fitness-perGen) and \@ref(fig:airfoil-finalFitness) show the average best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on $10$ individual runs per algorithm. As expected it shows, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GG.
 
-To confirm the research by @pmlr-v5-erhan09a
 
-The experiments was repeated using the same setup with the only difference being a reduction from two hidden layers to 1 hidden layer.
+```{r airfoil-fitness-perGen, echo=FALSE, fig.cap="Fitness over 30 Generations - Airfoil (1HL)", out.width="80%"}
+knitr::include_graphics("./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png")
+```
 
-![Best Fitness over 30 Generations - 1 hidden Layer - Airfoil](./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png)
+```{r airfoil-finalFitness, echo=FALSE, fig.cap="Fitness after 30 Generations - Airfoil (1HL)", out.width="80%"}
+knitr::include_graphics("./img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png")
+```
+
+
 
 ...
 
