@@ -638,6 +638,16 @@ knitr::kable(
 ```
 
 
+# Alternative Pre-Training Strategies
+
+Since pre-trained thus far did not demonstrate significant benefits for DAE-GP, this chapter introduces two alternative pre-training strategies that are also tested for the airfoil dataset:
+
+* 2nd Generation Pre-Training
+* Grow Initialized Pre-Training
+
+
+
+
 # Discussion
 
 ...
