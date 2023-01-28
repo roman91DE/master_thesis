@@ -145,7 +145,7 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2023-01-27}
+\date{\vspace{-2.5em}Date of Submission: 2023-01-28}
 
 \begin{document}
 \maketitle
@@ -365,7 +365,9 @@ Fitness\_Metric & RMSE\\
 \hline
 Training\_Mode & Convergence\\
 \hline
-Sampling\_Steps & 2\\
+Sampling\_Steps & 1\\
+\hline
+Hidden\_Neurons & 150\\
 \hline
 Selection\_Operator & Binary Tournament Selection\\
 \hline
@@ -494,51 +496,46 @@ Based on the review of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{3}{]} I also 
 
 After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. The airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP.
 
-Regarding the hidden neurons, the dimension of each hidden layer, I used two different strategies: Regular DAE-GP uses the same strategy as described by earlier work (see {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} or {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{18}{]}), the number of hidden neurons is dynamically set at each generation to the maximum length of all solutions inside the current training population. For pre-trained DAE-GP another strategy had to be used, I used a fixed number of hidden neurons for each run that is set equal to the maximum length of all individuals that are present in the initial pre-training population. I decided to take this aproach instead of using a fixed number of hidden neurons for the fact that it simplifies the adjustment of the parameter for later experiments on different problems. It should nonetheless be mentioned that this strategy does give pre-training on average more hidden neurons per layer resulting in a more complex network (since the pre-training population is much larger than the regular population, the chances for larger individuals inside it are also higher).
-
-\hypertarget{airfoil-dataset---2-hidden-layers}{%
-\subsubsection{Airfoil Dataset - 2 Hidden Layers}\label{airfoil-dataset---2-hidden-layers}}
-
 Figure \ref{fig:airfoil-median-fitness-30gens} shows both the mean and median of the best fitness for each generation on both the test and training set of the airfoil dataset for using 2 hidden layers inside the DAE-LSTM networks. The results are aggregated for \(10\) individuals runs per algorithm and also include regular GP as a benchmark. For all three algorithms an improvement in the best found fitness can be observed during the evolutionary search but the results show that DAE-GP based algorithms, on average, find solutions with much higher fitness as traditional GP.
 
-The first interesting observation from this experiment is, that the pre-trained DAE-GP shows better mean and median performance than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behaviour.
+The first interesting observation from this experiment is, that the pre-trained DAE-GP shows slightly lower mean and median performance than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behaviour.
 
 \begin{figure}[c]
 
-{\centering \includegraphics[width=0.9\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/mean_median_fitness_byGens} 
+{\centering \includegraphics[width=0.9\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens} 
 
 }
 
 \caption{Best Fitness over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-median-fitness-30gens}
 \end{figure}
 
-The distribution of final fitness scores for pre-trained and regular DAE-GP are visualized as boxplots in figure \ref{fig:airfoil-distribution-fitness-30gens}. The distribution for pre-trained DAE-GP shows to be preferable to that of regular DAE-GP on both sets since it shows a lower median (med.) as well as less dispersion measured by the standard deviation (std.).
+The distribution of final fitness scores for pre-trained and regular DAE-GP are visualized as boxplots in figure \ref{fig:airfoil-distribution-fitness-30gens}. The distribution for regular DAE-GP shows to be preferable to that of pre-trained DAE-GP on both sets since it shows a lower median RMSE as well as less dispersion of the solutions measured by the standard deviation.
 
 \begin{figure}[c]
 
-{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens/final_fit_boxplot} 
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot} 
 
 }
 
 \caption{Best Fitness after 30 Generations - Airfoil (2HL)}\label{fig:airfoil-distribution-fitness-30gens}
 \end{figure}
 
-Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. Interestingly, the results also show that the pre-trained version of algorithm did produce smaller median size of the best solutions.
+Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. Regarding the size of the best solution per generation, the results show that the pre-trained version of algorithm did produce solutions with the same median size as traditional DAE-GP.
 
 \begin{figure}[c]
 
-{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens/size_combined_median} 
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median} 
 
 }
 
 \caption{Median Solution Size over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-size-combined-30gens}
 \end{figure}
 
-To conclude the first experiment, figure \ref{fig:airfoil-popDiversity} shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a high level of over \(0.9\). Again it can be observed, that pre-training shows a positive effect on the results by increasing population diversity in comparison to regular DAE-GP.
+To conclude the first experiment, figure \ref{fig:airfoil-popDiversity} shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a high level of over \(0.9\). Here it can be observed, that pre-training shows a positive effect on the results by increasing population diversity in comparison to regular DAE-GP.
 
 \begin{figure}[c]
 
-{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens_withGP/median_popDiversity_byGens_levOnly} 
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_levOnly} 
 
 }
 
@@ -823,10 +820,41 @@ Energy\_Cooling & 2 & 169.39 & \textbf{69.87} & 0.00*** & -0.90 \\
 concrete & 2 & 171.69 & \textbf{64.9} & 0.00*** & -0.92 \\
 \end{longtable}
 
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+\hypertarget{alternative-pre-training-strategies}{%
+\subsection{Alternative Pre-Training Strategies}\label{alternative-pre-training-strategies}}
 
-\ldots{}
+Since pre-trained thus far did not demonstrate significant benefits for DAE-GP, this chapter describes two alternative pre-training strategies, Second Generation Pre-Training and Grow-Initialized Pre-Training, that are also tested for the airfoil dataset.
+
+One common observation in EC-based optimization algorithms is that the largest improvements in fitness are often occurring in the first generation of the search process. Second Generation Pre-Training tries to exploit this observation by shifting the pre-training phase from the start of the algorithm into the second generation with the aim to produce a pre-training Population \(\hat{P}\) that more accurately captures the properties of the search problem. The basic idea is to run basic DAE-GP for the first generation without any interference, after completing the first generation, the pre-training population \(\hat{P}\) is created by sampling the DAE-LSTM model \(M_1\). The pre-training model \(\hat{M}\) is then trained using \(\hat{P}\), after finishing DAE-GP continues running and initializes each new DAE-LSTM model \(M_g\) for \(g\in{2,...,g_{max}}\) using the trainable parameters \(\theta_{\hat{M}}\).
+
+The pre-training implementation in previous experiments used ramped half and half initialization {[}\protect\hyperlink{ref-Koza1993GeneticP}{8}{]} to create \(\hat{P}\), this leads to 50\% of the population consisting of full grown trees. An alternative method of initializing \(\hat{P}\) is to use the grow initialization method where solutions are not guaranteed to be full trees. This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of futher generations population where a lower percentage of full grown trees is to be expected.
+
+Figure \ref{fig:altStrategies-Fitness} shows the median best fitness by generations for both alternative pre-training strategies as well as the results for standard DAE-GP and the standard Pre-Training implementation used in earlier experiments. Unfortunately, both alternative strategies do show a worse performance in fitness than both DAE-GP and standard pre-trained DAE-GP resulting in lower fitness.
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens} 
+
+}
+
+\caption{Best Fitness over 30 Generations - Alternative Pre-Trategies - Airfoil}\label{fig:altStrategies-Fitness}
+\end{figure}
+
+Figure \ref{fig:altStrategies-FitnessDistr} shows the distribution of best fitness achieved on the test set after running for 30 full generations. Both alternative second generation Pre-Training as well as grow-initialized Pre-Trainning show a much higher median RMSE (18.88/17.21) compared to standard pre-training (8.55) and regular DAE-GP (6.99). Also both approaches do not demonstrate any benefit on the dispersion of solutions found resulting in similiar standard deviations if compared to standard pre-training.
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)} 
+
+}
+
+\caption{Best Fitness after 30 Generations - Alternative Pre-Trategies - Airfoil}\label{fig:altStrategies-FitnessDistr}
+\end{figure}
+
+\hypertarget{conclusion-and-discussion}{%
+\section{Conclusion and Discussion}\label{conclusion-and-discussion}}
+
+The experiments conducted in this thesis did not find any significant benefits in using a pre-training strategy for using DAE-GP to solve real world symbolic regression problems.
 
 \hypertarget{limitations-and-open-questions}{%
 \section{Limitations and open Questions}\label{limitations-and-open-questions}}
