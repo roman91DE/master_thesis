@@ -531,7 +531,7 @@ Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demo
 \caption{Median Solution Size over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-size-combined-30gens}
 \end{figure}
 
-To conclude the first experiment, figure \ref{fig:airfoil-popDiversity} shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a high level of over \(0.9\). Here it can be observed, that pre-training shows a positive effect on the results by increasing population diversity in comparison to regular DAE-GP.
+To conclude the first experiment, figure \ref{fig:airfoil-popDiversity} shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a high level of over \(0.9\). Here it can be observed, that pre-training shows a positive effect by increasing population diversity in comparison to regular DAE-GP.
 
 \begin{figure}[c]
 
@@ -542,10 +542,7 @@ To conclude the first experiment, figure \ref{fig:airfoil-popDiversity} shows th
 \caption{Median Population Diversity over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-popDiversity}
 \end{figure}
 
-\hypertarget{airfoil-dataset---1-hidden-layer}{%
-\subsubsection{Airfoil Dataset - 1 Hidden Layer}\label{airfoil-dataset---1-hidden-layer}}
-
-Since previous research on DAE-GP used a single hidden layers for the airfoil dataset {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]}, I repeated the experiment with a single hidden layer. Based on the findings of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{3}{]}, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \ref{fig:airfoil-fitness-perGen} and \ref{fig:airfoil-finalFitness} show the average best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on \(10\) individual runs per algorithm. As expected it shows, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GG.
+Since previous research on DAE-GP used a single hidden layers for the airfoil dataset {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]}, I repeated the experiment with a single hidden layer. Based on the findings of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{3}{]}, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \ref{fig:airfoil-fitness-perGen} and \ref{fig:airfoil-finalFitness} shows the average best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on \(10\) individual runs per algorithm. As expected it shows, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GG.
 
 \begin{figure}[c]
 
@@ -823,9 +820,9 @@ concrete & 2 & 171.69 & \textbf{64.9} & 0.00*** & -0.92 \\
 \hypertarget{alternative-pre-training-strategies}{%
 \subsection{Alternative Pre-Training Strategies}\label{alternative-pre-training-strategies}}
 
-Since pre-trained thus far did not demonstrate significant benefits for DAE-GP, this chapter describes two alternative pre-training strategies, Second Generation Pre-Training and Grow-Initialized Pre-Training, that are also tested for the airfoil dataset.
+Since pre-trained thus far did not demonstrate significant benefits for DAE-GP, this section describes two alternative pre-training strategies, Second Generation Pre-Training and Grow-Initialized Pre-Training, that are also tested for the airfoil dataset.
 
-One common observation in EC-based optimization algorithms is that the largest improvements in fitness are often occurring in the first generation of the search process. Second Generation Pre-Training tries to exploit this observation by shifting the pre-training phase from the start of the algorithm into the second generation with the aim to produce a pre-training Population \(\hat{P}\) that more accurately captures the properties of the search problem. The basic idea is to run basic DAE-GP for the first generation without any interference, after completing the first generation, the pre-training population \(\hat{P}\) is created by sampling the DAE-LSTM model \(M_1\). The pre-training model \(\hat{M}\) is then trained using \(\hat{P}\), after finishing DAE-GP continues running and initializes each new DAE-LSTM model \(M_g\) for \(g\in{2,...,g_{max}}\) using the trainable parameters \(\theta_{\hat{M}}\).
+One common observation in GP-based optimization algorithms is that the largest improvements in fitness are often occurring in the first generation of the search process. Second Generation Pre-Training tries to exploit this observation by shifting the pre-training phase from the start of the algorithm into the second generation with the aim to produce a pre-training Population \(\hat{P}\) that more accurately captures the properties of the search problem. The basic idea is to run basic DAE-GP for the first generation without any interference, after completing the first generation, the pre-training population \(\hat{P}\) is created by sampling the DAE-LSTM model \(M_1\). The pre-training model \(\hat{M}\) is then trained using \(\hat{P}\), after finishing DAE-GP continues running and initializes each new DAE-LSTM model \(M_g\) for \(g\in{2,...,g_{max}}\) using the trainable parameters \(\theta_{\hat{M}}\).
 
 The pre-training implementation in previous experiments used ramped half and half initialization {[}\protect\hyperlink{ref-Koza1993GeneticP}{8}{]} to create \(\hat{P}\), this leads to 50\% of the population consisting of full grown trees. An alternative method of initializing \(\hat{P}\) is to use the grow initialization method where solutions are not guaranteed to be full trees. This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of futher generations population where a lower percentage of full grown trees is to be expected.
 

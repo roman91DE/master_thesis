@@ -13,7 +13,6 @@
 \contentsline {section}{\numberline {5}Results}{10}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Effect on Generalisation}{10}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Effect on search performance}{12}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Airfoil Dataset - 1 Hidden Layer}{16}{subsubsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.3}Solution Size in Symbolic Regression}{19}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Population Diversity}{20}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Training epochs per Generation}{22}{subsection.5.5}%
