@@ -351,7 +351,7 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-# Results Airfoil Dataset
+# Experiments
 
 
 ## Effect on Generalisation
@@ -366,7 +366,7 @@ DAE-GP is tested in two different configurations:
 * Variable number of hidden neurons (50, 100, 200) with a single hidden layer
 * Fixed number of hidden neurons (100) per hidden layer with variable number of hidden layers (1, 2, 3)
 
-For each configuration I tested traditional DAE-GP as well as a pre-trained DAE-GP resulting in 12 total sub experiments that were each based on 10 individual runs (total number of runs=$120$). To avoid creating biased results through the presence of sampling error inside the pre-training population (see @sampling_err_gp), the population size for the pre-training phase is chosen very high with the size of $\hat{P}$ =20000 where 50% of $\hat{P}$ is used for the training population $\hat{P}_{train}$ and the remaining 50% are used for the hold-out validation population $\hat{P}_{test}$. The training of DAE-LSTM uses a fixed number of 1000 epochs until termination and uses Adam optimization for gradient descent. The reason for using a high amount of 1000 fixed training epochs is to deliberately force the DAE-LSTM to overfit to the training data. 
+For each configuration I tested traditional DAE-GP as well as a pre-trained DAE-GP resulting in 12 total sub experiments that were each based on 10 individual runs (total number of runs=$120$). To avoid creating biased results through the presence of sampling error inside the pre-training population (see @sampling_err_gp), the population size for the pre-training phase is chosen very high with the size of $\hat{P}$ =10000 where 50% of $\hat{P}$ is used for the training population $\hat{P}_{train}$ and the remaining 50% are used for the hold-out validation population $\hat{P}_{test}$. The training of DAE-LSTM uses a fixed number of 1000 epochs until termination and uses Adam optimization for gradient descent. The reason for using a high amount of 1000 fixed training epochs is to deliberately force the DAE-LSTM to overfit to the training data. 
 
 In general I expect that with a growing number of model parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population $P_{train}$ resulting in a small reconstruction error for the training population and a large one for the validation population $P_{test}$. The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases [@weigend1994overfitting].
 
@@ -374,9 +374,9 @@ Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will 
 
 <!--- analyzing the results for variable number of neurons -->
 
-...
+Figure \@ref(fig:first-gen-airfoil-byNeurons) summarizes the median reconstruction error for a variable number of hidden neurons. As expected, increasing the number of hidden neurons leads to stronger overfitting to the training dataset which results in small training errors but growing testing errors. For the experiments run with 50 and 100 hidden neurons, a small benefit of using pre-training can be observed. Using only 50 hidden neurons leads to a smaller gap between training and testing error for the pre-trained DAE-LSTM. For 100 hidden neurons, regular DAE-GP not only starts to overfit to the training data earlier than pre-trained DAE-GP, also it can be seen that pre-trained DAE-GP starts to overfit at a lower reconstruction error which would result in a higher model performance if training strategies such as early stopping would be employed.
 
-```{r first-gen-airfoil-byNeurons, echo=FALSE, fig.cap="First Generation Median Training Error for variable number of hidden Neurons", out.width="90%"}
+```{r first-gen-airfoil-byNeurons, echo=FALSE, fig.cap="First Generation Median Reconstruction Error for variable number of hidden Neurons", out.width="90%"}
 knitr::include_graphics("./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3plots.png")
 ```
 
@@ -388,7 +388,7 @@ knitr::include_graphics("./img/airfoil_firstGen/airfoil_firstGen_median_training
 
 ...
 
-```{r first-gen-airfoil-byLayers, echo=FALSE, fig.cap="First Generation Median Training Error for variable number of hidden Layers", out.width="90%"}
+```{r first-gen-airfoil-byLayers, echo=FALSE, fig.cap="First Generation Median Reconstruction Error for variable number of hidden Layers", out.width="90%"}
 knitr::include_graphics("./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots.png")
 ```
 
