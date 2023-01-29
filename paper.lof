@@ -1,16 +1,16 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Regular DAE-GP Flowchart}}{7}{figure.1}%
 \contentsline {figure}{\numberline {2}{\ignorespaces Pre-Trained DAE-GP Flowchart}}{8}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces First Generation Median Training Error for variable number of hidden Neurons}}{11}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces First Generation Median Training Error for variable number of hidden Layers}}{12}{figure.4}%
+\contentsline {figure}{\numberline {3}{\ignorespaces First Generation Median Reconstruction Error for variable number of hidden Neurons}}{11}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces First Generation Median Reconstruction Error for variable number of hidden Layers}}{12}{figure.4}%
 \contentsline {figure}{\numberline {5}{\ignorespaces Best Fitness over 30 Generations - Airfoil (2HL)}}{13}{figure.5}%
 \contentsline {figure}{\numberline {6}{\ignorespaces Best Fitness after 30 Generations - Airfoil (2HL)}}{14}{figure.6}%
 \contentsline {figure}{\numberline {7}{\ignorespaces Median Solution Size over 30 Generations - Airfoil (2HL)}}{15}{figure.7}%
 \contentsline {figure}{\numberline {8}{\ignorespaces Median Population Diversity over 30 Generations - Airfoil (2HL)}}{16}{figure.8}%
 \contentsline {figure}{\numberline {9}{\ignorespaces Fitness over 30 Generations - Airfoil (1HL)}}{17}{figure.9}%
 \contentsline {figure}{\numberline {10}{\ignorespaces Fitness after 30 Generations - Airfoil (1HL)}}{18}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Median Best Fitness - Symbolic Regression}}{19}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Median Solution Size - Symbolic Regression}}{20}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Median Population Diversity over Generations}}{21}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Median Number of Training Epochs per Generation - Symbolic Regression}}{23}{figure.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Best Fitness over 30 Generations - Alternative Pre-Strategies - Airfoil}}{25}{figure.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Best Fitness on Test Set after 30 Generations - Alternative Pre-Trategies - Airfoil}}{26}{figure.16}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Best Fitness over 30 Generations - Alternative Pre-Strategies - Airfoil}}{19}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Best Fitness on Test Set after 30 Generations - Alternative Pre-Trategies - Airfoil}}{20}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Median Best Fitness - Symbolic Regression}}{22}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Median Solution Size - Symbolic Regression}}{23}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Median Population Diversity over Generations}}{24}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Median Number of Training Epochs per Generation - Symbolic Regression}}{25}{figure.16}%
