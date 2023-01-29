@@ -1,7 +1,6 @@
 ---
 title: |
   <center>Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming</center>
-  <center>Master Thesis - M.Sc. Business Education</center>
   <center>--------------------------------------------------------</center>
   <center>Student: Roman Höhn</center>
   <center>Date of Birth: 1991-04-14</center>
@@ -9,7 +8,7 @@ title: |
   <center>Student ID: 2712497</center>
   <center>Supervisor: David Wittenberg</center>
   <center>--------------------------------------------------------</center>
-  <center>Master Thesis</center>
+  <center>Master Thesis - M.Sc. Business Education</center>
   <center>FB 03: Chair of Business Administration and Computer Science</center>
   <center>Johannes Gutenberg University Mainz</center>
   |

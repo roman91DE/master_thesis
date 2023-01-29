@@ -145,7 +145,7 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2023-01-28}
+\date{\vspace{-2.5em}Date of Submission: 2023-01-29}
 
 \begin{document}
 \maketitle
@@ -443,8 +443,8 @@ Concrete & 1030 & 8\\
 \end{tabular}
 \end{table}
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+\hypertarget{results-airfoil-dataset}{%
+\section{Results Airfoil Dataset}\label{results-airfoil-dataset}}
 
 \hypertarget{effect-on-generalisation}{%
 \subsection{Effect on Generalisation}\label{effect-on-generalisation}}
@@ -491,8 +491,8 @@ Based on the review of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{3}{]} I also 
 \caption{First Generation Median Training Error for variable number of hidden Layers}\label{fig:first-gen-airfoil-byLayers}
 \end{figure}
 
-\hypertarget{effect-on-search-performance}{%
-\subsection{Effect on search performance}\label{effect-on-search-performance}}
+\hypertarget{effect-on-solution-quality}{%
+\subsection{Effect on solution quality}\label{effect-on-solution-quality}}
 
 After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. The airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP.
 
@@ -562,7 +562,13 @@ Since previous research on DAE-GP used a single hidden layers for the airfoil da
 \caption{Fitness after 30 Generations - Airfoil (1HL)}\label{fig:airfoil-finalFitness}
 \end{figure}
 
+\hypertarget{effect-on-runtime}{%
+\subsection{Effect on runtime}\label{effect-on-runtime}}
+
 \ldots{}
+
+\hypertarget{results-over-different-real-world-symbolic-regression-problems}{%
+\section{Results over different Real-World Symbolic Regression Problems}\label{results-over-different-real-world-symbolic-regression-problems}}
 
 To gather more confidence in the previous results, the pre-training strategy for DAE-GP was tested for three additional real world symbolic regression problems taken from {[}\protect\hyperlink{ref-machine_learning_repo}{2}{]}.\footnote{see table \ref{tab:full-run-realWorldSymReg-problems}}
 
