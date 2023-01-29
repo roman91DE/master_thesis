@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  29 JAN 2023 08:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  29 JAN 2023 09:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -490,8 +490,8 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 )) (/usr/local/texlive/2022/texmf-dist/tex/latex/xurl/xurl.sty
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 15
-0.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 14
+8.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -501,36 +501,36 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 ) (./paper.aux)
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 150.
-LaTeX Font Info:    ... okay on input line 150.
-LaTeX Info: Redefining \microtypecontext on input line 150.
-Package microtype Info: Applying patch `item' on input line 150.
-Package microtype Info: Applying patch `toc' on input line 150.
-Package microtype Info: Applying patch `eqnum' on input line 150.
-Package microtype Info: Applying patch `footnote' on input line 150.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Info: Redefining \microtypecontext on input line 148.
+Package microtype Info: Applying patch `item' on input line 148.
+Package microtype Info: Applying patch `toc' on input line 148.
+Package microtype Info: Applying patch `eqnum' on input line 148.
+Package microtype Info: Applying patch `footnote' on input line 148.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 150.
+LaTeX Info: Redefining \showhyphens on input line 148.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -592,7 +592,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 150.
+Package hyperref Info: Link coloring OFF on input line 148.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -604,43 +604,43 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count320
 )
-LaTeX Info: Redefining \ref on input line 150.
-LaTeX Info: Redefining \pageref on input line 150.
-LaTeX Info: Redefining \nameref on input line 150.
+LaTeX Info: Redefining \ref on input line 148.
+LaTeX Info: Redefining \pageref on input line 148.
+LaTeX Info: Redefining \nameref on input line 148.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-52.
+50.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-52.
+50.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-152.
+150.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-152.
+150.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 152.
+(Font)              <12> on input line 150.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 152.
+(Font)              <8> on input line 150.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 152.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 152
+(Font)              <6> on input line 150.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 150
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 152
+LaTeX Font Info:    Trying to load font information for U+msb on input line 150
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -665,7 +665,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.162 \newpage
+l.160 \newpage
                [1] (./paper.lot)
 \tf@lot=\write5
 \openout5 = `paper.lot'.
@@ -676,25 +676,25 @@ l.162 \newpage
 
 [2] [3]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-39.
+37.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [4] [5]
 <./img/flowcharts/dae-gp.png, id=201, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 325.
+Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 323.
 (pdftex.def)             Requested size: 281.86174pt x 372.95349pt.
 [6]
 <./img/flowcharts/pt-dae-gp.png, id=215, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
-Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 340
+Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 338
 .
 (pdftex.def)             Requested size: 305.33928pt x 479.39455pt.
 [7 <./img/flowcharts/dae-gp.png>] [8 <./img/flowcharts/pt-dae-gp.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-91.
+89.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -712,7 +712,7 @@ File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3
 plots.png>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
-g_error_by_neurons_3plots.png  used on input line 476.
+g_error_by_neurons_3plots.png  used on input line 474.
 (pdftex.def)             Requested size: 422.78331pt x 362.3857pt.
 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots
 .png, id=256, 1011.78pt x 867.24pt>
@@ -721,7 +721,7 @@ plots.png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3p
 lots.png>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
-g_error_by_layers_3plots.png  used on input line 487.
+g_error_by_layers_3plots.png  used on input line 485.
 (pdftex.def)             Requested size: 422.78331pt x 362.3857pt.
 [11 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3
 plots.png>]
@@ -732,7 +732,7 @@ png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.p
 ng>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_med
-ian_fitness_byGens.png  used on input line 505.
+ian_fitness_byGens.png  used on input line 503.
 (pdftex.def)             Requested size: 422.78331pt x 362.3857pt.
 [12 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3p
 lots.png>]
@@ -742,7 +742,7 @@ File: ./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png Graphic file
  (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxpl
-ot.png  used on input line 516.
+ot.png  used on input line 514.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [13 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.p
 ng>]
@@ -752,7 +752,7 @@ File: ./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png Graphic f
 ile (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_m
-edian.png  used on input line 527.
+edian.png  used on input line 525.
 (pdftex.def)             Requested size: 375.80615pt x 300.64493pt.
 [14 <./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png>]
 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_levOn
@@ -762,7 +762,7 @@ levOnly.png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_l
 evOnly.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_p
-opDiversity_byGens_levOnly.png  used on input line 538.
+opDiversity_byGens_levOnly.png  used on input line 536.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [15 <./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png>]
 <./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png, id
@@ -772,7 +772,7 @@ g Graphic file (type png)
 <use ./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png
 >
 Package pdftex.def Info: ./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_media
-n_fitness_byGens.png  used on input line 549.
+n_fitness_byGens.png  used on input line 547.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [16 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_l
 evOnly.png>]
@@ -782,21 +782,21 @@ File: ./img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png Graphic
  file (type png)
 <use ./img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png>
 Package pdftex.def Info: ./img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_
-boxplot.png  used on input line 558.
+boxplot.png  used on input line 556.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [17 <./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png
 >]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 573.
+(Font)              <9> on input line 571.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 573.
+(Font)              <5> on input line 571.
 
-Overfull \hbox (1.81479pt too wide) in paragraph at lines 628--628
+Overfull \hbox (1.81479pt too wide) in paragraph at lines 626--626
  []|\T1/lmr/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (0.83762pt too wide) in paragraph at lines 630--630
+Overfull \hbox (0.83762pt too wide) in paragraph at lines 628--628
  []|\T1/lmr/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
@@ -808,7 +808,7 @@ ess_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitne
 ss_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_fitness_byGens.png  used on input line 638.
+marized/median_fitness_byGens.png  used on input line 636.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_s
 ize_byGens.png, id=331, 1011.78pt x 867.24pt>
@@ -817,7 +817,7 @@ Sol_size_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestS
 ol_size_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_bestSol_size_byGens.png  used on input line 649.
+marized/median_bestSol_size_byGens.png  used on input line 647.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [19 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
 ian_fitness_byGens.png>] [20 </Users/rmn/masterThesis/master_thesis/img/symboli
@@ -829,7 +829,7 @@ istance_byGen.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDi
 stance_byGen.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_levDistance_byGen.png  used on input line 711.
+marized/median_levDistance_byGen.png  used on input line 709.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [21 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
 ian_levDistance_byGen.png>]
@@ -840,7 +840,7 @@ hsTrained.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoch
 sTrained.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_epochsTrained.png  used on input line 773.
+marized/median_epochsTrained.png  used on input line 771.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [22] [23 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarize
 d/median_epochsTrained.png>]
@@ -850,7 +850,7 @@ File: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png G
 raphic file (type png)
 <use ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>
 Package pdftex.def Info: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_f
-itness_byGens.png  used on input line 839.
+itness_byGens.png  used on input line 837.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [24]
 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only).png
@@ -860,103 +860,103 @@ File: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only
 <use ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)
 .png>
 Package pdftex.def Info: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fi
-t_boxplot(test_only).png  used on input line 850.
+t_boxplot(test_only).png  used on input line 848.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [25 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>] 
 [26 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)
 .png>]
-Underfull \hbox (badness 10000) in paragraph at lines 880--883
+Underfull \hbox (badness 10000) in paragraph at lines 878--881
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 884--887
+Underfull \hbox (badness 10000) in paragraph at lines 882--885
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 888--891
+Underfull \hbox (badness 10000) in paragraph at lines 886--889
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 892--895
+Underfull \hbox (badness 10000) in paragraph at lines 890--893
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 896--899
+Underfull \hbox (badness 10000) in paragraph at lines 894--897
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 900--903
+Underfull \hbox (badness 10000) in paragraph at lines 898--901
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 904--907
+Underfull \hbox (badness 10000) in paragraph at lines 902--905
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 908--911
+Underfull \hbox (badness 10000) in paragraph at lines 906--909
 
  []
 
 
-Underfull \hbox (badness 3713) in paragraph at lines 914--914
+Underfull \hbox (badness 3713) in paragraph at lines 912--912
 []\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
 rans-fer learn-ing.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 912--915
+Underfull \hbox (badness 10000) in paragraph at lines 910--913
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 916--919
+Underfull \hbox (badness 10000) in paragraph at lines 914--917
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 920--923
+Underfull \hbox (badness 10000) in paragraph at lines 918--921
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 924--927
+Underfull \hbox (badness 10000) in paragraph at lines 922--925
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--931
+Underfull \hbox (badness 10000) in paragraph at lines 926--929
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 932--935
+Underfull \hbox (badness 10000) in paragraph at lines 930--933
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 936--939
+Underfull \hbox (badness 10000) in paragraph at lines 934--937
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 940--943
+Underfull \hbox (badness 10000) in paragraph at lines 938--941
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 944--947
+Underfull \hbox (badness 10000) in paragraph at lines 942--945
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 948--951
+Underfull \hbox (badness 10000) in paragraph at lines 946--949
 
  []
 
@@ -964,7 +964,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 948--951
 Here is how much of TeX's memory you used:
  15963 strings out of 478268
  262366 string characters out of 5846348
- 591304 words of memory out of 5000000
+ 591302 words of memory out of 5000000
  33556 multiletter control sequences out of 15000+600000
  536862 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -986,7 +986,7 @@ mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb></us
 r/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022
 /texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (29 pages, 8605413 bytes).
+Output written on paper.pdf (29 pages, 8514270 bytes).
 PDF statistics:
  589 PDF objects out of 1000 (max. 8388607)
  489 compressed objects within 5 object streams

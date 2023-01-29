@@ -658,13 +658,13 @@ The pre-training implementation in previous experiments used ramped half and hal
 Figure \@ref(fig:altStrategies-Fitness) shows the median best fitness by generations for both alternative pre-training strategies as well as the results for standard DAE-GP and the standard Pre-Training implementation used in earlier experiments. Unfortunately, both alternative strategies do show a worse performance in fitness than both DAE-GP and standard pre-trained DAE-GP resulting in lower fitness.
 
 
-```{r altStrategies-Fitness, echo=FALSE, fig.cap="Best Fitness over 30 Generations - Alternative Pre-Trategies - Airfoil", out.width="80%"}
+```{r altStrategies-Fitness, echo=FALSE, fig.cap="Best Fitness over 30 Generations - Alternative Pre-Strategies - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png")
 ```
 
 Figure \@ref(fig:altStrategies-FitnessDistr) shows the distribution of best fitness achieved on the test set after running for 30 full generations. Both alternative second generation Pre-Training as well as grow-initialized Pre-Trainning show a much higher median RMSE (18.88/17.21) compared to standard pre-training (8.55) and regular DAE-GP (6.99). Also both approaches do not demonstrate any benefit on the dispersion of solutions found resulting in similiar standard deviations if compared to standard pre-training.
 
-```{r altStrategies-FitnessDistr, echo=FALSE, fig.cap="Best Fitness after 30 Generations - Alternative Pre-Trategies - Airfoil", out.width="80%"}
+```{r altStrategies-FitnessDistr, echo=FALSE, fig.cap="Best Fitness on Test Set after 30 Generations - Alternative Pre-Trategies - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only).png")
 ```
 
