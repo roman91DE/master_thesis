@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  29 JAN 2023 11:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  29 JAN 2023 12:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -718,28 +718,28 @@ lots.png>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
 g_error_by_layers_3plots.png  used on input line 464.
 (pdftex.def)             Requested size: 422.78331pt x 362.3857pt.
-[12 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3p
-lots.png>]
 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.png, 
-id=270, 1011.78pt x 867.24pt>
+id=262, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.
 png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.p
 ng>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_med
-ian_fitness_byGens.png  used on input line 482.
+ian_fitness_byGens.png  used on input line 478.
 (pdftex.def)             Requested size: 422.78331pt x 362.3857pt.
-<./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png, id=272, 1011.78p
+[12 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3p
+lots.png>]
+<./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png, id=271, 1011.78p
 t x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png Graphic file
  (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxpl
-ot.png  used on input line 493.
+ot.png  used on input line 491.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [13 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.p
 ng>]
-<./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png, id=280, 722.7
+<./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png, id=281, 722.7
 pt x 578.16pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png Graphic f
 ile (type png)
@@ -749,7 +749,7 @@ edian.png  used on input line 504.
 (pdftex.def)             Requested size: 375.80615pt x 300.64493pt.
 [14 <./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png>]
 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_levOn
-ly.png, id=287, 1011.78pt x 867.24pt>
+ly.png, id=288, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_
 levOnly.png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_l
@@ -759,7 +759,7 @@ opDiversity_byGens_levOnly.png  used on input line 515.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [15 <./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png>]
 <./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png, id
-=298, 1011.78pt x 867.24pt>
+=299, 1011.78pt x 867.24pt>
 File: ./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.pn
 g Graphic file (type png)
 <use ./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png
@@ -769,7 +769,7 @@ n_fitness_byGens.png  used on input line 526.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [16 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_l
 evOnly.png>]
-<./img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png, id=304, 101
+<./img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png, id=305, 101
 1.78pt x 867.24pt>
 File: ./img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png Graphic
  file (type png)
@@ -779,8 +779,8 @@ boxplot.png  used on input line 535.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [17 <./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png
 >] [18 <./img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png>]
-<./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png, id=31
-9, 1011.78pt x 867.24pt>
+<./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png, id=32
+0, 1011.78pt x 867.24pt>
 File: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png G
 raphic file (type png)
 <use ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>
@@ -788,7 +788,7 @@ Package pdftex.def Info: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_f
 itness_byGens.png  used on input line 555.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only).png
-, id=321, 1011.78pt x 867.24pt>
+, id=322, 1011.78pt x 867.24pt>
 File: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only
 ).png Graphic file (type png)
 <use ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)
@@ -813,7 +813,7 @@ Overfull \hbox (0.83762pt too wide) in paragraph at lines 657--657
  []
 
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_b
-yGens.png, id=337, 1011.78pt x 867.24pt>
+yGens.png, id=338, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitn
 ess_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitne
@@ -823,7 +823,7 @@ marized/median_fitness_byGens.png  used on input line 665.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [21]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_s
-ize_byGens.png, id=348, 1011.78pt x 867.24pt>
+ize_byGens.png, id=349, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_best
 Sol_size_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestS
@@ -835,7 +835,7 @@ marized/median_bestSol_size_byGens.png  used on input line 676.
 ian_fitness_byGens.png>] [23 </Users/rmn/masterThesis/master_thesis/img/symboli
 cRegressionSummarized/median_bestSol_size_byGens.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistan
-ce_byGen.png, id=361, 1011.78pt x 867.24pt>
+ce_byGen.png, id=362, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levD
 istance_byGen.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDi
@@ -846,7 +846,7 @@ marized/median_levDistance_byGen.png  used on input line 738.
 [24 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
 ian_levDistance_byGen.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTra
-ined.png, id=368, 1011.78pt x 867.24pt>
+ined.png, id=369, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoc
 hsTrained.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoch
@@ -977,10 +977,10 @@ mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb></us
 r/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022
 /texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (29 pages, 8511940 bytes).
+Output written on paper.pdf (29 pages, 8512260 bytes).
 PDF statistics:
- 586 PDF objects out of 1000 (max. 8388607)
- 486 compressed objects within 5 object streams
+ 587 PDF objects out of 1000 (max. 8388607)
+ 487 compressed objects within 5 object streams
  130 named destinations out of 1000 (max. 500000)
  37145 words of extra memory for PDF output out of 42996 (max. 10000000)
 
