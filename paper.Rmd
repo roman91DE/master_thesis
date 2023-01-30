@@ -458,6 +458,7 @@ knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit
 
 One important argument for using pre-training DAE-GP is that it might be a potential way to reduce the overall run-time of the algorithm by reducing the training time of each generations DAE-LSTM model. Especially in the context of optimization problems where solutions have to be found numerous times in a time efficient manner (e.g. Vehicle Routing in the Domain of Logistic Services), one major advantage of pre-training is that a pre-trained model can be re-used to optimize many instances of an optimization problem.
 
+Unfortunately, as shown in figure \@ref(fig:airfoil-runtime-total), for the experiment conducted on the airfoil dataset with 2 hidden layers a negative impact of pre-training can be observed for the DAE-GP runtime.  
 
 
 ```{r airfoil-runtime-total, echo=FALSE, fig.cap="Median Runtime - Airfoil", out.width="80%"}
