@@ -426,13 +426,13 @@ knitr::include_graphics("./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGe
 ```
 
 ```{r airfoil-finalFitness, echo=FALSE, fig.cap="Fitness after 30 Generations - Airfoil (1HL)", out.width="80%"}
-knitr::include_graphics("./img/airfoil_1hl_150hn_fullRun_30gens/final_fit_boxplot.png")
+knitr::include_graphics("./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png")
 ```
 
 
 ### Alternative Pre-Training Strategies
 
-Since pre-trained thus far did not demonstrate significant benefits for DAE-GP, this section describes two alternative pre-training strategies, Second Generation Pre-Training and  Grow-Initialized Pre-Training, that are also tested for the airfoil dataset.
+Since pre-training thus far did not demonstrate significant benefits for the quality of solutions found by DAE-GP, this section describes two alternative pre-training strategies, Second Generation Pre-Training and  Grow-Initialized Pre-Training, that are also tested for the airfoil dataset.
 
 One common observation in GP-based optimization algorithms is that the largest improvements in fitness are often occurring in the first generation of the search process. Second Generation Pre-Training tries to exploit this observation by shifting the pre-training phase from the start of the algorithm into the second generation with the aim to produce a pre-training Population $\hat{P}$ that more accurately captures the properties of the search problem. The basic idea is to run basic DAE-GP for the first generation without any interference, after completing the first generation, the pre-training population $\hat{P}$ is created by sampling the DAE-LSTM model $M_1$. The pre-training model $\hat{M}$ is then trained using $\hat{P}$, after finishing DAE-GP continues running and initializes each new DAE-LSTM model $M_g$ for $g\in{2,...,g_{max}}$ using the trainable parameters $\theta_{\hat{M}}$.
 
@@ -456,8 +456,9 @@ knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit
 
 ## Effect on runtime
 
+One important argument for using pre-training DAE-GP is that it might be a potential way to reduce the overall run-time of the algorithm by reducing the training time of each generations DAE-LSTM model. Especially in the context of optimization problems where solutions have to be found numerous times in a time efficient manner (e.g. Vehicle Routing in the Domain of Logistic Services), one major advantage of pre-training is that a pre-trained model can be re-used to optimize many instances of an optimization problem.
 
-<!-- describe total runtime, including/excluding pre-training time -->
+
 
 ```{r airfoil-runtime-total, echo=FALSE, fig.cap="Median Runtime - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png")
@@ -480,7 +481,6 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/me
 
 
 # Results over different Real-World Symbolic Regression Problems 
-
 
 
 To gather more confidence in the previous results, the pre-training strategy for DAE-GP was tested for three additional real world symbolic regression problems taken from @machine_learning_repo. Table \@ref(tab:full-run-realWorldSymReg-problems) briefly summarizes the benchmark problems.
