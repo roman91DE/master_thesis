@@ -143,7 +143,7 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2023-01-29}
+\date{\vspace{-2.5em}Date of Submission: 2023-01-30}
 
 \begin{document}
 \maketitle
@@ -573,7 +573,41 @@ Figure \ref{fig:altStrategies-FitnessDistr} shows the distribution of best fitne
 \hypertarget{effect-on-runtime}{%
 \subsection{Effect on runtime}\label{effect-on-runtime}}
 
-\ldots{}
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime} 
+
+}
+
+\caption{Median Runtime - Airfoil}\label{fig:airfoil-runtime-total}
+\end{figure}
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epochs} 
+
+}
+
+\caption{Median Number of Training Epochs per Generation - Airfoil}\label{fig:airfoil-trainingEpochs}
+\end{figure}
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime} 
+
+}
+
+\caption{Median Sampling Time per Generation - Airfoil}\label{fig:airfoil-SamplingTime}
+\end{figure}
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSampling} 
+
+}
+
+\caption{Median Runtime excluding Time for Sampling - Airfoil}\label{fig:airfoil-runtime-noSampling-total}
+\end{figure}
 
 \hypertarget{results-over-different-real-world-symbolic-regression-problems}{%
 \section{Results over different Real-World Symbolic Regression Problems}\label{results-over-different-real-world-symbolic-regression-problems}}

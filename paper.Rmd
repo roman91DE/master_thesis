@@ -416,20 +416,21 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_po
 ```
 
 
+### Reduced Number of Hidden Layers
+
 Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], I repeated the experiment with a single hidden layer. Based on the findings of @pmlr-v5-erhan09a, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \@ref(fig:airfoil-fitness-perGen) and \@ref(fig:airfoil-finalFitness) shows the average best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on $10$ individual runs per algorithm. As expected it shows, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GG.
 
-<!-- TODO: Change Path for Airfoil Single Layer to ...150hn... -->
 
 ```{r airfoil-fitness-perGen, echo=FALSE, fig.cap="Fitness over 30 Generations - Airfoil (1HL)", out.width="80%"}
-knitr::include_graphics("./img/airfoil_1hl_maxIndSize_fullRun_30gens/mean_median_fitness_byGens.png")
+knitr::include_graphics("./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png")
 ```
 
 ```{r airfoil-finalFitness, echo=FALSE, fig.cap="Fitness after 30 Generations - Airfoil (1HL)", out.width="80%"}
-knitr::include_graphics("./img/airfoil_1hl_maxIndSize_fullRun_30gens/final_fit_boxplot.png")
+knitr::include_graphics("./img/airfoil_1hl_150hn_fullRun_30gens/final_fit_boxplot.png")
 ```
 
 
-## Alternative Pre-Training Strategies
+### Alternative Pre-Training Strategies
 
 Since pre-trained thus far did not demonstrate significant benefits for DAE-GP, this section describes two alternative pre-training strategies, Second Generation Pre-Training and  Grow-Initialized Pre-Training, that are also tested for the airfoil dataset.
 
@@ -455,7 +456,27 @@ knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit
 
 ## Effect on runtime
 
-...
+
+<!-- describe total runtime, including/excluding pre-training time -->
+
+```{r airfoil-runtime-total, echo=FALSE, fig.cap="Median Runtime - Airfoil", out.width="80%"}
+knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png")
+```
+
+
+```{r airfoil-trainingEpochs, echo=FALSE, fig.cap="Median Number of Training Epochs per Generation - Airfoil", out.width="80%"}
+knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epochs.png")
+```
+
+```{r airfoil-SamplingTime, echo=FALSE, fig.cap="Median Sampling Time per Generation - Airfoil", out.width="80%"}
+knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png")
+```
+
+
+```{r airfoil-runtime-noSampling-total, echo=FALSE, fig.cap="Median Runtime excluding Time for Sampling - Airfoil", out.width="80%"}
+knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSampling.png")
+```
+
 
 
 # Results over different Real-World Symbolic Regression Problems 

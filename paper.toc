@@ -14,12 +14,12 @@
 \contentsline {subsection}{\numberline {5.1}Effect on Generalisation}{10}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Effect on solution quality}{12}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Alternative Pre-Training Strategies}{18}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Effect on runtime}{20}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Results over different Real-World Symbolic Regression Problems}{20}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Solution Size in Symbolic Regression}{22}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Population Diversity}{23}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Training epochs per Generation}{25}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Conclusion and Discussion}{26}{section.7}%
-\contentsline {section}{\numberline {8}Limitations and open Questions}{26}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Further Questions}{26}{subsection.8.1}%
-\contentsline {section}{References}{27}{section*.4}%
+\contentsline {subsection}{\numberline {5.4}Effect on runtime}{21}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Results over different Real-World Symbolic Regression Problems}{24}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Solution Size in Symbolic Regression}{26}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Population Diversity}{27}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Training epochs per Generation}{28}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Conclusion and Discussion}{29}{section.7}%
+\contentsline {section}{\numberline {8}Limitations and open Questions}{30}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Further Questions}{30}{subsection.8.1}%
+\contentsline {section}{References}{31}{section*.4}%

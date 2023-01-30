@@ -10,7 +10,11 @@
 \contentsline {figure}{\numberline {10}{\ignorespaces Fitness after 30 Generations - Airfoil (1HL)}}{18}{figure.10}%
 \contentsline {figure}{\numberline {11}{\ignorespaces Best Fitness over 30 Generations - Alternative Pre-Strategies - Airfoil}}{19}{figure.11}%
 \contentsline {figure}{\numberline {12}{\ignorespaces Best Fitness on Test Set after 30 Generations - Alternative Pre-Trategies - Airfoil}}{20}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Median Best Fitness - Symbolic Regression}}{22}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Median Solution Size - Symbolic Regression}}{23}{figure.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Median Population Diversity over Generations}}{24}{figure.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Median Number of Training Epochs per Generation - Symbolic Regression}}{25}{figure.16}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Median Runtime - Airfoil}}{21}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Median Number of Training Epochs per Generation - Airfoil}}{22}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Median Sampling Time per Generation - Airfoil}}{23}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Median Runtime excluding Time for Sampling - Airfoil}}{24}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Median Best Fitness - Symbolic Regression}}{25}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Median Solution Size - Symbolic Regression}}{26}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Median Population Diversity over Generations}}{27}{figure.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Median Number of Training Epochs per Generation - Symbolic Regression}}{29}{figure.20}%
