@@ -578,7 +578,7 @@ Figure \ref{fig:altStrategies-FitnessDistr} shows the distribution of best fitne
 
 One important argument for using pre-training with DAE-GP is that it might be a potential way to reduce the overall run-time of the algorithm by reducing the training time of each generation's DAE-LSTM model. Especially in the context of optimization problems where solutions have to be found numerous times in a time efficient manner (e.g.~Vehicle Routing in the Domain of Logistic Services), one major advantage of pre-training is that a pre-trained model can be re-used to optimize many instances of an optimization problem.
 
-Unfortunately, as shown in figure \ref{fig:airfoil-runtime-total}, for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median runtime of DAE-GP. If the time spend on pre-training is included into the total runtime, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of 2.897 from a median runtime of 5076.448 seconds for regular DAE-GP to 14706.47 seconds for the pre-trained algorithm. Even in the case where the time spend for pre-training is excluded from the total runtime, pre-training still increases the runtime of DAE-GP by a factor of 2.47 to 12536.89 seconds.
+Suprinsingly, as shown in figure \ref{fig:airfoil-runtime-total}, for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median runtime of DAE-GP. If the time spend on pre-training is included into the total runtime, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of 2.897 from a median runtime of 5076.448 seconds for regular DAE-GP to 14706.47 seconds for the pre-trained algorithm. Even in the case where the time spend for pre-training is excluded from the total runtime, pre-training still increases the runtime of DAE-GP by a factor of 2.47 to 12536.89 seconds.
 
 \begin{figure}[c]
 
@@ -589,6 +589,8 @@ Unfortunately, as shown in figure \ref{fig:airfoil-runtime-total}, for the exper
 \caption{Median Runtime - Airfoil}\label{fig:airfoil-runtime-total}
 \end{figure}
 
+To investigate the strong negative impact of pre-training on DAE-GP runtime, I first studied the influence of pre-training on the median number of training epochs that had to be spend at each generation for the training of the DAE-LSTM models \(M_g\). Figure \ref{fig:airfoil-trainingEpochs} shows that pre-training, as expected, strongly reduces the number of training epochs that had to be executed at each generation until the termination condition was reached. By reducing the number of training epochs, pre-training should therefore have positive benefit on the runtime of DAE-GP.
+
 \begin{figure}[c]
 
 {\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epochs} 
@@ -597,6 +599,8 @@ Unfortunately, as shown in figure \ref{fig:airfoil-runtime-total}, for the exper
 
 \caption{Median Number of Training Epochs per Generation - Airfoil}\label{fig:airfoil-trainingEpochs}
 \end{figure}
+
+If we look at another time consuming operation in DAE-GP, the creation of new individuals by sampling the DAE-LSTM model \(M_G\), we see one main reason for the large runtime increase by pre-training DAE-GP. Figure \ref{fig:airfoil-SamplingTime} shows the median sampling time spend during each generation of the search and it clearly shows that pre-training does strongly increase the time spent on model sampling in comparison to regular DAE-GP
 
 \begin{figure}[c]
 

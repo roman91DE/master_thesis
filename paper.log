@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  31 JAN 2023 10:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  31 JAN 2023 10:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -807,101 +807,96 @@ edian_runtime.png  used on input line 585.
 [20 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)
 .png>]
 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epochs.pn
-g, id=347, 1011.78pt x 867.24pt>
+g, id=348, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epoc
 hs.png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epoch
 s.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/m
-edian_training_epochs.png  used on input line 594.
+edian_training_epochs.png  used on input line 596.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [21 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png>]
 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png, id
-=353, 1011.78pt x 867.24pt>
+=355, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.pn
 g Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png
 >
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/m
-edian_sampleTime.png  used on input line 603.
+edian_sampleTime.png  used on input line 607.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [22 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epoch
 s.png>]
 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSam
-pling.png, id=359, 1011.78pt x 867.24pt>
+pling.png, id=361, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_witho
 utSampling.png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withou
 tSampling.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/m
-edian_runtime_withoutSampling.png  used on input line 612.
+edian_runtime_withoutSampling.png  used on input line 616.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 [23 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png
 >]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 643.
+(Font)              <9> on input line 647.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 643.
+(Font)              <5> on input line 647.
 
-Overfull \hbox (1.81479pt too wide) in paragraph at lines 696--696
+Overfull \hbox (1.81479pt too wide) in paragraph at lines 700--700
  []|\T1/lmr/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (0.83762pt too wide) in paragraph at lines 698--698
+Overfull \hbox (0.83762pt too wide) in paragraph at lines 702--702
  []|\T1/lmr/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
 [24 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withou
 tSampling.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_b
-yGens.png, id=381, 1011.78pt x 867.24pt>
+yGens.png, id=383, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitn
 ess_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitne
 ss_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_fitness_byGens.png  used on input line 706.
+marized/median_fitness_byGens.png  used on input line 710.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_s
-ize_byGens.png, id=382, 1011.78pt x 867.24pt>
+ize_byGens.png, id=384, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_best
 Sol_size_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestS
 ol_size_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_bestSol_size_byGens.png  used on input line 717.
+marized/median_bestSol_size_byGens.png  used on input line 721.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [25 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
 ian_fitness_byGens.png>] [26 </Users/rmn/masterThesis/master_thesis/img/symboli
 cRegressionSummarized/median_bestSol_size_byGens.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistan
-ce_byGen.png, id=395, 1011.78pt x 867.24pt>
+ce_byGen.png, id=397, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levD
 istance_byGen.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDi
 stance_byGen.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_levDistance_byGen.png  used on input line 779.
+marized/median_levDistance_byGen.png  used on input line 783.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [27 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
 ian_levDistance_byGen.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTra
-ined.png, id=401, 1011.78pt x 867.24pt>
+ined.png, id=403, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoc
 hsTrained.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoch
 sTrained.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_epochsTrained.png  used on input line 841.
+marized/median_epochsTrained.png  used on input line 845.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [28] [29 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarize
 d/median_epochsTrained.png>] [30]
-Underfull \hbox (badness 10000) in paragraph at lines 917--920
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 921--924
 
  []
@@ -937,14 +932,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 945--948
  []
 
 
-Underfull \hbox (badness 3713) in paragraph at lines 951--951
-[]\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
-rans-fer learn-ing.
+Underfull \hbox (badness 10000) in paragraph at lines 949--952
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--952
-
+Underfull \hbox (badness 3713) in paragraph at lines 955--955
+[]\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
+rans-fer learn-ing.
  []
 
 
@@ -982,13 +977,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 977--980
 
  []
 
-[31]
+
 Underfull \hbox (badness 10000) in paragraph at lines 981--984
 
  []
 
-
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 985--988
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 989--992
 
  []
 
@@ -1018,10 +1018,10 @@ mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb></us
 r/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022
 /texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (33 pages, 9671303 bytes).
+Output written on paper.pdf (33 pages, 9637578 bytes).
 PDF statistics:
- 630 PDF objects out of 1000 (max. 8388607)
- 517 compressed objects within 6 object streams
+ 632 PDF objects out of 1000 (max. 8388607)
+ 519 compressed objects within 6 object streams
  140 named destinations out of 1000 (max. 500000)
  37173 words of extra memory for PDF output out of 42996 (max. 10000000)
 
