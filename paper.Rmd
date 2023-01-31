@@ -467,7 +467,7 @@ One important argument for using pre-training with DAE-GP is that it might be a 
 
 REG_TIME <- 5076.448
 PT_TIME <- 14706.465
-PT_TIME_NOSAMPLE <- 12536.889
+PT_TIME_NOPT <- 12536.889
 
 REG_MEDIAN_EPOCHSTRAINED <- 122.0
 PT_MEDIAN_EPOCHSTRAINED <- 53.5
@@ -475,18 +475,21 @@ PT_MEDIAN_EPOCHSTRAINED <- 53.5
 REG_MEDIAN_SAMPLINGTIME <- 29.055806166997172
 PT_MEDIAN_SAMPLINGTIME <- 198.4502993219976
 
+REG_TIME_NOSAMLING <-  3550.276852743067
+PT_TIME_NOSAMPLING  <- 8705.007590330817
+PT_TIME_NOSAMPLING_NOPT  <- 6622.027293765
 
 
 ```
 
-Suprinsingly, as shown in figure \@ref(fig:airfoil-runtime-total), for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median runtime of DAE-GP. If the time spend on pre-training is included into the total runtime, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of `r round(PT_TIME / REG_TIME, 3)` from a median runtime of `r format(REG_TIME, scientific=F)` seconds for regular DAE-GP to `r format(PT_TIME, scientific=F)` seconds for the pre-trained algorithm. Even in the case where the time spend for pre-training is excluded from the total runtime, pre-training still increases the runtime of DAE-GP by a factor of `r round(PT_TIME_NOSAMPLE / REG_TIME, 3)` to `r format(PT_TIME_NOSAMPLE, scientific=F)` seconds.
+Suprinsingly, as shown in figure \@ref(fig:airfoil-runtime-total), for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median runtime of DAE-GP. If the time spend on pre-training is included into the total runtime, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of `r round(PT_TIME / REG_TIME, 3)` from a median runtime of `r format(REG_TIME, scientific=F)` seconds for regular DAE-GP to `r format(PT_TIME, scientific=F)` seconds for the pre-trained algorithm. Even in the case where the time spend for pre-training is excluded from the total runtime, pre-training still increases the runtime of DAE-GP by a factor of `r round( PT_TIME_NOPT / REG_TIME, 3)` to `r format(PT_TIME_NOPT, scientific=F)` seconds.
 
 
 ```{r airfoil-runtime-total, echo=FALSE, fig.cap="Median Runtime - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png")
 ```
 
-To investigate the strong negative impact of pre-training on DAE-GP runtime, I first studied the influence of pre-training on the median number of training epochs that had to be spend at each generation for the training of the DAE-LSTM models $M_g$. Figure \@ref(fig:airfoil-trainingEpochs) shows that pre-training, as expected, strongly reduces the number of training epochs that had to be executed at each generation until the termination condition was reached. By reducing the number of training epochs, pre-training should therefore have a positive benefit on the runtime of DAE-GP.
+To investigate the strong negative impact of pre-training on DAE-GP runtime, I first studied the influence of pre-training on the median number of training epochs that had to be spend at each generation for the training of the DAE-LSTM models $M_g$. Figure \@ref(fig:airfoil-trainingEpochs) shows that pre-training, as expected, strongly reduces the number of training epochs that had to be executed at each generation until the termination condition was reached. While regular DAE-GP trains for a median of `r format(REG_MEDIAN_EPOCHSTRAINED, scientific=F)` epochs at each generation, pre-training reduces the number of median training epochs by a factor of `r round(PT_MEDIAN_EPOCHSTRAINED / REG_MEDIAN_EPOCHSTRAINED, 3)` to `r format(PT_MEDIAN_EPOCHSTRAINED, scientific=F)` training epochs.
 
 
 ```{r airfoil-trainingEpochs, echo=FALSE, fig.cap="Median Number of Training Epochs per Generation - Airfoil", out.width="80%"}
@@ -494,17 +497,25 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/me
 ```
 
 
-If we look at another time consuming operation in DAE-GP, the creation of new individuals by sampling the DAE-LSTM model $M_G$, we see one main reason for the large runtime increase by pre-training DAE-GP. Figure \@ref(fig:airfoil-SamplingTime) shows the median sampling time spend during each generation of the search and it clearly demonstrates that pre-training does strongly increase the time spent on model sampling  in comparison to regular DAE-GP. The median time spend on sampling new individual for regular DAE-GP increases by a factor of `r round(PT_MEDIAN_SAMPLINGTIME / REG_MEDIAN_SAMPLINGTIME, 3)` from `r format(REG_MEDIAN_SAMPLINGTIME, scientific=F)` to `r format(REG_MEDIAN_SAMPLINGTIME, scientific=F)`
+If we look at another time consuming operation in DAE-GP, the creation of new individuals by sampling the DAE-LSTM model $M_G$, we see one main reason for the large runtime increase by pre-training DAE-GP. Figure \@ref(fig:airfoil-SamplingTime) shows the median sampling time spend during each generation of the search and it clearly demonstrates that pre-training does strongly increase the time spent on model sampling  in comparison to regular DAE-GP. The median time spend on sampling new individual for regular DAE-GP increases by a factor of `r round(PT_MEDIAN_SAMPLINGTIME / REG_MEDIAN_SAMPLINGTIME, 3)` from `r format(REG_MEDIAN_SAMPLINGTIME, scientific=F)` seconds to `r format(PT_MEDIAN_SAMPLINGTIME, scientific=F)` seconds.
 
 ```{r airfoil-SamplingTime, echo=FALSE, fig.cap="Median Sampling Time per Generation - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png")
 ```
+
+Suprisingly, even after correcting the runtime for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \@ref(fig:airfoil-runtime-noSampling-total). While traditional DAE-GP has a median runtime of `r format(REG_TIME_NOSAMLING, scientific=F)`, s
 
 
 ```{r airfoil-runtime-noSampling-total, echo=FALSE, fig.cap="Median Runtime excluding Time for Sampling - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSampling.png")
 ```
 
+
+
+
+<!-- REG_TIME_NOSAMLING <-  3550.276852743067 -->
+<!-- PT_TIME_NOSAMPLING  <- 8705.007590330817 -->
+<!-- PT_TIME_NOSAMPLING_NOPT  <- 6622.027293765 -->
 
 
 # Results over different Real-World Symbolic Regression Problems 
