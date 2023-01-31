@@ -480,6 +480,7 @@ PT_TIME_NOSAMPLING  <- 8705.007590330817
 PT_TIME_NOSAMPLING_NOPT  <- 6622.027293765
 
 
+
 ```
 
 Suprinsingly, as shown in figure \@ref(fig:airfoil-runtime-total), for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median runtime of DAE-GP. If the time spend on pre-training is included into the total runtime, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of `r round(PT_TIME / REG_TIME, 3)` from a median runtime of `r format(REG_TIME, scientific=F)` seconds for regular DAE-GP to `r format(PT_TIME, scientific=F)` seconds for the pre-trained algorithm. Even in the case where the time spend for pre-training is excluded from the total runtime, pre-training still increases the runtime of DAE-GP by a factor of `r round( PT_TIME_NOPT / REG_TIME, 3)` to `r format(PT_TIME_NOPT, scientific=F)` seconds.
@@ -503,19 +504,13 @@ If we look at another time consuming operation in DAE-GP, the creation of new in
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png")
 ```
 
-Suprisingly, even after correcting the runtime for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \@ref(fig:airfoil-runtime-noSampling-total). While traditional DAE-GP has a median runtime of `r format(REG_TIME_NOSAMLING, scientific=F)`, s
+Suprisingly, even after correcting the runtime for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \@ref(fig:airfoil-runtime-noSampling-total). While traditional DAE-GP has a median runtime without sampling time of `r format(REG_TIME_NOSAMLING, scientific=F)` seconds , the runtime of pre-trained DAE-GP, without time for samling and pre-training, still increases by a factor of `r round(PT_TIME_NOSAMPLING_NOPT / REG_TIME_NOSAMLING, 3)` to `r format(PT_TIME_NOSAMPLING_NOPT, scientific=F)` seconds. 
 
 
 ```{r airfoil-runtime-noSampling-total, echo=FALSE, fig.cap="Median Runtime excluding Time for Sampling - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSampling.png")
 ```
 
-
-
-
-<!-- REG_TIME_NOSAMLING <-  3550.276852743067 -->
-<!-- PT_TIME_NOSAMPLING  <- 8705.007590330817 -->
-<!-- PT_TIME_NOSAMPLING_NOPT  <- 6622.027293765 -->
 
 
 # Results over different Real-World Symbolic Regression Problems 
