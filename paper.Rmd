@@ -385,10 +385,10 @@ knitr::include_graphics("./img/airfoil_firstGen/airfoil_firstGen_median_training
 ## Effect on solution quality
 
 
-```{python read_runtime_vars, echo=FALSE}
+```{python read_solQual_vars, echo=FALSE}
 from json import load
 D_AIRFOIL_2hl = load(
-  open("/Users/rmn/github/master_thesis/data/airfoil_2hl_150hn_fullRun_30gens/summary.json", "r", encoding="utf-8")
+  open("/Users/rmn/github/master_thesis/data/airfoil_2hl_150hn_fullRun_30gens_withGP/summary.json", "r", encoding="utf-8")
   )
   
 D_AIRFOIL_1hl = load(
@@ -399,7 +399,7 @@ D_AIRFOIL_1hl = load(
 ```
 
 
-```{r runtime_vars, echo=FALSE}
+```{r solQual_vars, echo=FALSE}
 
 REG_TRAIN_MED_FF <- py$D_AIRFOIL_2hl$REG_TRAIN_MED_FF
 REG_TEST_MED_FF <- py$D_AIRFOIL_2hl$REG_TEST_MED_FF
@@ -413,6 +413,12 @@ PT_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$PT_TRAIN_STDD_FF
 PT_TEST_STDD_FF <- py$D_AIRFOIL_2hl$PT_TEST_STDD_FF
 GP_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$GP_TRAIN_STDD_FF
 GP_TEST_STDD_FF <- py$D_AIRFOIL_2hl$GP_TEST_STDD_FF
+
+
+REG_MED_BESTSIZE <- py$D_AIRFOIL_2hl$REG_MED_BESTSIZE
+PT_MED_BESTSIZE <- py$D_AIRFOIL_2hl$PT_MED_BESTSIZE
+GP_MED_BESTSIZE <- py$D_AIRFOIL_2hl$GP_MED_BESTSIZE
+
 
 REG_TRAIN_MED_FF_1HL <- py$D_AIRFOIL_1hl$REG_TRAIN_MED_FF
 REG_TEST_MED_FF_1HL <- py$D_AIRFOIL_1hl$REG_TEST_MED_FF
@@ -438,16 +444,18 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_medi
 
 Figure \@ref(fig:airfoil-median-fitness-30gens) shows both the mean and median of the best fitness for each generation on both the test and training set of the airfoil dataset for using 2 hidden layers inside the DAE-LSTM networks. The results are aggregated for $10$ individuals runs per algorithm and also include regular GP as a benchmark. For all three algorithms an improvement in the best found fitness can be observed during the evolutionary search but the results show that DAE-GP based algorithms, on average, find solutions with much higher fitness as traditional GP.
 
-The first interesting observation from this experiment is, that the pre-trained DAE-GP shows slightly lower mean RMSE of `r round(, 3)` (higher fitness) but a higher median RMSE (lower fitness) than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behavior.
+The first interesting observation from this experiment is, that the pre-trained DAE-GP shows slightly lower mean RMSE (higher fitness) but a higher median RMSE (lower fitness) than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behavior.
 
 ```{r airfoil-distribution-fitness-30gens, echo=FALSE, fig.cap="Best Fitness after 30 Generations - Airfoil (2HL)", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png")
 ```
 
-The distribution of final fitness scores for pre-trained and regular DAE-GP are visualized as boxplots in figure  \@ref(fig:airfoil-distribution-fitness-30gens). The distribution for regular DAE-GP shows to be preferable to that of pre-trained DAE-GP on both sets since it shows a lower median RMSE as well as less dispersion of the solutions measured by the standard deviation. An interesting observation from studying the distribution of final fitness scores for both algorithms is that while both algorithms have a very similiar interquartile range (similiar box shape), pre-trained DAE-GP has more extreme outliers for high RMSE which explains the slightly worse performance if looking at median best fitness present in figure \@ref(fig:airfoil-median-fitness-30gens).
+The distribution of final fitness scores for pre-trained and regular DAE-GP are visualized as boxplots in figure  \@ref(fig:airfoil-distribution-fitness-30gens). The distribution for regular DAE-GP shows to be preferable to that of pre-trained DAE-GP  since it shows a lower median RMSE of `r round(REG_TEST_MED_FF, 3)` for the test set (`r round(PT_TEST_MED_FF, 3)` for pre-trained DAE-GP) as well as less dispersion of the solutions measured by a standard deviation of `r round(REG_TEST_STDD_FF, 3)` (`r round(PT_TEST_STDD_FF, 3)` for pre-trained DAE-GP). For reference, the median final RMSE for the test set of standard GP is at `r round(GP_TEST_MED_FF, 3)` which is larger by a factor of `r round(GP_TEST_MED_FF / PT_TEST_MED_FF, 3)` if compared to pre-trained DAE-GP.
+
+An interesting observation from studying the distribution of final fitness scores for both algorithms is that while both algorithms have a very similiar interquartile range (similar box shape), pre-trained DAE-GP has more extreme outliers for high RMSE which explains the slightly worse performance if looking at median best fitness present in figure \@ref(fig:airfoil-median-fitness-30gens). 
 
 
-Since previous work by @dae-gp_2022_symreg demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \@ref(fig:airfoil-size-combined-30gens) shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. Regarding the size of the best solution per generation, the results show that the pre-trained version of algorithm did produce solutions with the same median size as traditional DAE-GP.
+Since previous work by @dae-gp_2022_symreg demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \@ref(fig:airfoil-size-combined-30gens) shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. Regarding the size of the best solution per generation, the results show that the pre-trained version of algorithm did produce solutions with the same median size as traditional DAE-GP. The median size 
 
 ```{r airfoil-size-combined-30gens, echo=FALSE, fig.cap="Median Solution Size over 30 Generations - Airfoil (2HL)", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png")
@@ -513,7 +521,7 @@ D_AIRFOIL_TIME = load(
 ```
 
 
-```{r runtime_vars, echo=FALSE}
+```{r runtime_vars, include=FALSE}
 
 REG_TIME <- py$D_AIRFOIL_TIME$REG_TIME
 PT_TIME <- py$D_AIRFOIL_TIME$PT_TIME
@@ -555,7 +563,7 @@ If we look at another time consuming operation in DAE-GP, the creation of new in
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png")
 ```
 
-Suprisingly, even after correcting the runtime for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \@ref(fig:airfoil-runtime-noSampling-total). While traditional DAE-GP has a median runtime without sampling time of `r format(REG_TIME_NOSAMLING, scientific=F)` seconds , the runtime of pre-trained DAE-GP, without time for samling and pre-training, still increases by a factor of `r round(PT_TIME_NOSAMPLING_NOPT / REG_TIME_NOSAMLING, 3)` to `r format(PT_TIME_NOSAMPLING_NOPT, scientific=F)` seconds. While investigating other reasons for the differences in runtime, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models ( `r format(REG_PRAMS, scientific=F)`).
+Suprisingly, even after correcting the runtime for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \@ref(fig:airfoil-runtime-noSampling-total). While traditional DAE-GP has a median runtime without sampling time of `r format(REG_TIME_NOSAMLING, scientific=F)` seconds , the runtime of pre-trained DAE-GP, without time for samling and pre-training, still increases by a factor of `r round(PT_TIME_NOSAMPLING_NOPT / REG_TIME_NOSAMLING, 3)` to `r format(PT_TIME_NOSAMPLING_NOPT, scientific=F)` seconds. While investigating other reasons for the differences in runtime, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models ( `r format(REG_PARAMS, scientific=F)`).
 
 
 ```{r airfoil-runtime-noSampling-total, echo=FALSE, fig.cap="Median Runtime excluding Time for Sampling - Airfoil", out.width="80%"}
