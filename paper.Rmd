@@ -385,6 +385,51 @@ knitr::include_graphics("./img/airfoil_firstGen/airfoil_firstGen_median_training
 ## Effect on solution quality
 
 
+```{python read_runtime_vars, echo=FALSE}
+from json import load
+D_AIRFOIL_2hl = load(
+  open("/Users/rmn/github/master_thesis/data/airfoil_2hl_150hn_fullRun_30gens/summary.json", "r", encoding="utf-8")
+  )
+  
+D_AIRFOIL_1hl = load(
+  open("/Users/rmn/github/master_thesis/data/airfoil_1hl_150hn_fullRun_30gens/summary.json", "r", encoding="utf-8")
+  )
+  
+
+```
+
+
+```{r runtime_vars, echo=FALSE}
+
+REG_TRAIN_MED_FF <- py$D_AIRFOIL_2hl$REG_TRAIN_MED_FF
+REG_TEST_MED_FF <- py$D_AIRFOIL_2hl$REG_TEST_MED_FF
+PT_TRAIN_MED_FF <- py$D_AIRFOIL_2hl$PT_TRAIN_MED_FF
+PT_TEST_MED_FF <- py$D_AIRFOIL_2hl$PT_TEST_MED_FF
+GP_TRAIN_MED_FF <- py$D_AIRFOIL_2hl$GP_TRAIN_MED_FF
+GP_TEST_MED_FF <- py$D_AIRFOIL_2hl$GP_TEST_MED_FF
+REG_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$REG_TRAIN_STDD_FF
+REG_TEST_STDD_FF <- py$D_AIRFOIL_2hl$REG_TEST_STDD_FF
+PT_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$PT_TRAIN_STDD_FF
+PT_TEST_STDD_FF <- py$D_AIRFOIL_2hl$PT_TEST_STDD_FF
+GP_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$GP_TRAIN_STDD_FF
+GP_TEST_STDD_FF <- py$D_AIRFOIL_2hl$GP_TEST_STDD_FF
+
+REG_TRAIN_MED_FF_1HL <- py$D_AIRFOIL_1hl$REG_TRAIN_MED_FF
+REG_TEST_MED_FF_1HL <- py$D_AIRFOIL_1hl$REG_TEST_MED_FF
+PT_TRAIN_MED_FF_1HL <- py$D_AIRFOIL_1hl$PT_TRAIN_MED_FF
+PT_TEST_MED_FF_1HL <- py$D_AIRFOIL_1hl$PT_TEST_MED_FF
+GP_TRAIN_MED_FF_1HL <- py$D_AIRFOIL_1hl$GP_TRAIN_MED_FF
+GP_TEST_MED_FF_1HL <- py$D_AIRFOIL_1hl$GP_TEST_MED_FF
+REG_TRAIN_STDD_FF_1HL <- py$D_AIRFOIL_1hl$REG_TRAIN_STDD_FF
+REG_TEST_STDD_FF_1HL <- py$D_AIRFOIL_1hl$REG_TEST_STDD_FF
+PT_TRAIN_STDD_FF_1HL <- py$D_AIRFOIL_1hl$PT_TRAIN_STDD_FF
+PT_TEST_STDD_FF_1HL <- py$D_AIRFOIL_1hl$PT_TEST_STDD_FF
+GP_TRAIN_STDD_FF_1HL <- py$D_AIRFOIL_1hl$GP_TRAIN_STDD_FF
+GP_TEST_STDD_FF_1HL <- py$D_AIRFOIL_1hl$GP_TEST_STDD_FF
+
+```
+
+
 After closely examining the effect of pre-training on DAE-GPs generalization behaviour another series of experiments is conducted to study how pre-training influences the overall search behaviour of DAE-GP. The airfoil problem was selected as a first benchmark problem to test pre-trained DAE-GP against traditional DAE-GP.
 
 ```{r airfoil-median-fitness-30gens, echo=FALSE, fig.cap="Best Fitness over 30 Generations - Airfoil (2HL)", out.width="90%"}
@@ -393,7 +438,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_medi
 
 Figure \@ref(fig:airfoil-median-fitness-30gens) shows both the mean and median of the best fitness for each generation on both the test and training set of the airfoil dataset for using 2 hidden layers inside the DAE-LSTM networks. The results are aggregated for $10$ individuals runs per algorithm and also include regular GP as a benchmark. For all three algorithms an improvement in the best found fitness can be observed during the evolutionary search but the results show that DAE-GP based algorithms, on average, find solutions with much higher fitness as traditional GP.
 
-The first interesting observation from this experiment is, that the pre-trained DAE-GP shows slightly lower mean RMSE (higher fitness) but a higher median RMSE (lower fitness) than regular DAE-GP for both the training and the testing set in overall fitness.Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behavior.
+The first interesting observation from this experiment is, that the pre-trained DAE-GP shows slightly lower mean RMSE of `r round(, 3)` (higher fitness) but a higher median RMSE (lower fitness) than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behavior.
 
 ```{r airfoil-distribution-fitness-30gens, echo=FALSE, fig.cap="Best Fitness after 30 Generations - Airfoil (2HL)", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png")
@@ -460,30 +505,36 @@ One important argument for using pre-training with DAE-GP is that it might be a 
 
 <!-- TODO: Disclaimer, Runtime is implementation dependant, no GPU use, etc... -->
 
+```{python read_runtime_vars, echo=FALSE}
+from json import load
+D_AIRFOIL_TIME = load(
+  open("/Users/rmn/github/master_thesis/data/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/summary.json", "r", encoding="utf-8")
+  )
+```
+
 
 ```{r runtime_vars, echo=FALSE}
 
-# Values are copied from file /eda-gp-2020/experiments/airfoil_2hl_150hn_fullRun_30gens/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark.ipynb
+REG_TIME <- py$D_AIRFOIL_TIME$REG_TIME
+PT_TIME <- py$D_AIRFOIL_TIME$PT_TIME
+PT_TIME_NOPT <- py$D_AIRFOIL_TIME$PT_TIME_NOPT
 
-REG_TIME <- 5076.448
-PT_TIME <- 14706.465
-PT_TIME_NOPT <- 12536.889
+REG_MEDIAN_EPOCHSTRAINED <- py$D_AIRFOIL_TIME$REG_MEDIAN_EPOCHSTRAINED
+PT_MEDIAN_EPOCHSTRAINED <- py$D_AIRFOIL_TIME$PT_MEDIAN_EPOCHSTRAINED
 
-REG_MEDIAN_EPOCHSTRAINED <- 122.0
-PT_MEDIAN_EPOCHSTRAINED <- 53.5
+REG_MEDIAN_SAMPLINGTIME <- py$D_AIRFOIL_TIME$REG_MEDIAN_SAMPLINGTIME
+PT_MEDIAN_SAMPLINGTIME <- py$D_AIRFOIL_TIME$PT_MEDIAN_SAMPLINGTIME
 
-REG_MEDIAN_SAMPLINGTIME <- 29.055806166997172
-PT_MEDIAN_SAMPLINGTIME <- 198.4502993219976
+REG_TIME_NOSAMLING <-  py$D_AIRFOIL_TIME$REG_TIME_NOSAMLING
+PT_TIME_NOSAMPLING  <- py$D_AIRFOIL_TIME$PT_TIME_NOSAMPLING
+PT_TIME_NOSAMPLING_NOPT  <- py$D_AIRFOIL_TIME$PT_TIME_NOSAMPLING_NOPT
 
-REG_TIME_NOSAMLING <-  3550.276852743067
-PT_TIME_NOSAMPLING  <- 8705.007590330817
-PT_TIME_NOSAMPLING_NOPT  <- 6622.027293765
-
-
+REG_PARAMS <- py$D_AIRFOIL_TIME$REG_PARAMS
+PT_PARAMS <- py$D_AIRFOIL_TIME$PT_PARAMS
 
 ```
 
-Suprinsingly, as shown in figure \@ref(fig:airfoil-runtime-total), for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median runtime of DAE-GP. If the time spend on pre-training is included into the total runtime, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of `r round(PT_TIME / REG_TIME, 3)` from a median runtime of `r format(REG_TIME, scientific=F)` seconds for regular DAE-GP to `r format(PT_TIME, scientific=F)` seconds for the pre-trained algorithm. Even in the case where the time spend for pre-training is excluded from the total runtime, pre-training still increases the runtime of DAE-GP by a factor of `r round( PT_TIME_NOPT / REG_TIME, 3)` to `r format(PT_TIME_NOPT, scientific=F)` seconds.
+Suprinsingly, as shown in figure \@ref(fig:airfoil-runtime-total), for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median runtime of DAE-GP. If the time spend on pre-training is included into the total runtime, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of `r round(PT_TIME / REG_TIME, 3)` from a median runtime of `r format(REG_TIME, scientific=F)` seconds for regular DAE-GP to `r format(PT_TIME, scientific=F)` seconds for the pre-trained algorithm. Even in the case where the time spend for pre-training is excluded from the total runtime, pre-training still increases the runtime of DAE-GP by a factor of `r round( PT_TIME_NOPT / REG_TIME, 3)` to `r format(PT_TIME_NOPT, scientific=F)` seconds. 
 
 
 ```{r airfoil-runtime-total, echo=FALSE, fig.cap="Median Runtime - Airfoil", out.width="80%"}
@@ -504,7 +555,7 @@ If we look at another time consuming operation in DAE-GP, the creation of new in
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png")
 ```
 
-Suprisingly, even after correcting the runtime for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \@ref(fig:airfoil-runtime-noSampling-total). While traditional DAE-GP has a median runtime without sampling time of `r format(REG_TIME_NOSAMLING, scientific=F)` seconds , the runtime of pre-trained DAE-GP, without time for samling and pre-training, still increases by a factor of `r round(PT_TIME_NOSAMPLING_NOPT / REG_TIME_NOSAMLING, 3)` to `r format(PT_TIME_NOSAMPLING_NOPT, scientific=F)` seconds. 
+Suprisingly, even after correcting the runtime for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \@ref(fig:airfoil-runtime-noSampling-total). While traditional DAE-GP has a median runtime without sampling time of `r format(REG_TIME_NOSAMLING, scientific=F)` seconds , the runtime of pre-trained DAE-GP, without time for samling and pre-training, still increases by a factor of `r round(PT_TIME_NOSAMPLING_NOPT / REG_TIME_NOSAMLING, 3)` to `r format(PT_TIME_NOSAMPLING_NOPT, scientific=F)` seconds. While investigating other reasons for the differences in runtime, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models ( `r format(REG_PRAMS, scientific=F)`).
 
 
 ```{r airfoil-runtime-noSampling-total, echo=FALSE, fig.cap="Median Runtime excluding Time for Sampling - Airfoil", out.width="80%"}
