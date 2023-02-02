@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  11pt,
+  12pt,
 ]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -495,7 +495,7 @@ The first interesting observation from this experiment is, that the pre-trained 
 \caption{Best Fitness after 30 Generations - Airfoil (2HL)}\label{fig:airfoil-distribution-fitness-30gens}
 \end{figure}
 
-The distribution of final fitness scores for pre-trained and regular DAE-GP are visualized as box plots in figure \ref{fig:airfoil-distribution-fitness-30gens}. The distribution for regular DAE-GP shows to be preferable to that of pre-trained DAE-GP since it shows a lower median RMSE of 6.991 for the test set (7.68 for pre-trained DAE-GP) as well as less dispersion of the solutions measured by a standard deviation of 11.989 (12.548 for pre-trained DAE-GP). For reference, the median final RMSE for the test set of standard GP is at 32.024 which is larger by a factor of 4.17 if compared to pre-trained DAE-GP.
+The distribution of final fitness scores for pre-trained and regular DAE-GP are visualized as box plots in figure \ref{fig:airfoil-distribution-fitness-30gens}. The distribution for regular DAE-GP shows to be preferable to that of pre-trained DAE-GP since it has a lower median RMSE of 6.991 for the test set (7.68 for pre-trained DAE-GP) as well as less dispersion of the solutions measured by a standard deviation of 11.989 (12.548 for pre-trained DAE-GP). For reference, the median final RMSE for the test set of standard GP is at 32.024 which is larger by a factor of 4.17 if compared to pre-trained DAE-GP.
 
 An interesting observation from studying the distribution of final fitness scores for both algorithms is that pre-trained DAE-GP has a smaller interquartile range and more extreme outliers for high RMSE which explains the slightly worse performance if looking at median best fitness present in figure \ref{fig:airfoil-median-fitness-30gens}.
 
@@ -580,7 +580,7 @@ Figure \ref{fig:altStrategies-FitnessDistr} shows the distribution of best fitne
 
 One important argument for using pre-training with DAE-GP is that it might be a potential way to reduce the overall run-time of the algorithm by reducing the training time of each generation's DAE-LSTM model. Especially in the context of optimization problems where solutions have to be found numerous times in a time efficient manner (e.g.~Vehicle Routing in the Domain of Logistic Services), one major advantage of pre-training is that a pre-trained model can be re-used to optimize many instances of an optimization problem.
 
-The run-time analysis in this chapter is based on experiments that were all executed on an Intel® Xeon® W-2245 Processor without the use of graphical processing unit (GPU) acceleration in the training of DAE-LSTM networks. Since the framework that was used is written in the ,comparatively slow, python programming language, the absolute run-time measurements are only of limited meaningfulness. Nonetheless, by analyzing the relative run-time differences between DAE-GP and it's pre-trained alternative, the influence of pre-training on DAE-GP run-time can be explored.
+The run-time analysis in this chapter is based on experiments that were all executed on an Intel® Xeon® W-2245 Processor without the use of graphical processing unit (GPU) acceleration in the training of DAE-LSTM networks. Since the framework that was used is written in the, comparatively slow, python programming language, the absolute run-time measurements are only of limited meaningfulness. Nonetheless, by analyzing the relative run-time differences between DAE-GP and it's pre-trained alternative, the influence of pre-training on DAE-GP run-time can be explored.
 
 Surprisingly, as shown in figure \ref{fig:airfoil-runtime-total}, for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median run-time of DAE-GP. If the time spend on pre-training is included into the total run-time, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of 3.121 from a median run-time of 4712.303 seconds for regular DAE-GP to 14706.47 seconds for the pre-trained algorithm. Even in the case where the time spend for pre-training is excluded from the total run-time, pre-training still increases the run-time of DAE-GP by a factor of 2.66 to 12536.89 seconds.
 
@@ -626,7 +626,7 @@ Surprisingly, even after correcting the run-time for both DAE-GP results by remo
 \caption{Median Runtime excluding Time for Sampling - Airfoil}\label{fig:airfoil-runtime-noSampling-total}
 \end{figure}
 
-While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=573473, Pre-trained DAE-GP=573473). After profiling a single run of DAE-GP and pre-trained DAE-GP my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training. Figure \ref{tab:full-run-realWorldSymReg-problems} shows the cumulative time spend for the 20 most expensive function calls. Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to \texttt{DAE\_LSTM.py:208(sample)}) than during model training (calls to \texttt{training.py:1303(fit)}). Secondly, it shows that internal error handling of the baseline neural network library ´keras´ (calls to \texttt{traceback\_utils.py:138\textbar{}50(error\_handler)}) takes up a comparatively larger amount of run time for pre-trained DAE-GP than for regular DAE-GP.
+While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=573473, Pre-trained DAE-GP=573473). After profiling a single run of DAE-GP and pre-trained DAE-GP my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training. Figure \ref{fig:airfoil-profiling} shows the cumulative time spend for the 20 most expensive function calls. Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to \texttt{DAE\_LSTM.py:208(sample)}) than during model training (calls to \texttt{training.py:1303(fit)}). Secondly, it shows that internal error handling of the baseline neural network library \texttt{keras} (calls to \texttt{traceback\_utils.py:138(error\_handler)} and \texttt{traceback\_utils.py:59(error\_handler)}) takes up a comparatively larger amount of run time for pre-trained DAE-GP than for regular DAE-GP.
 
 \begin{figure}[c]
 
@@ -640,7 +640,7 @@ While investigating other reasons for the differences in run-time, I verified th
 \hypertarget{results-over-different-real-world-symbolic-regression-problems}{%
 \section{Results over different Real-World Symbolic Regression Problems}\label{results-over-different-real-world-symbolic-regression-problems}}
 
-To gather more confidence in the previous results, the pre-training strategy for DAE-GP was tested for three additional real world symbolic regression problems taken from {[}\protect\hyperlink{ref-machine_learning_repo}{2}{]}. Table \ref{tab:full-run-realWorldSymReg-problems} briefly summarizes the benchmark problems.
+To gather more confidence in the previous results, the pre-training strategy for DAE-GP was applied for three additional real world symbolic regression problems taken from {[}\protect\hyperlink{ref-machine_learning_repo}{2}{]} and tested for statistically significant differences in the underlying distributions. Table \ref{tab:full-run-realWorldSymReg-problems} briefly summarizes the benchmark problems.
 
 \begin{table}[!h]
 

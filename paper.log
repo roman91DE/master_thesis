@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  2 FEB 2023 17:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  2 FEB 2023 18:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex
 /base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -577,12 +577,12 @@ e
 * \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
+* \marginparwidth=44.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -628,11 +628,11 @@ LaTeX Font Info:    Trying to load font information for OMX+lmex on input line
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 150.
+(Font)              <14.4> on input line 150.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 150.
+(Font)              <10> on input line 150.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 150.
+(Font)              <7> on input line 150.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 150
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -651,7 +651,11 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./pape
 r.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 4.
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 4.
 )
 \tf@toc=\write3
 \openout3 = `paper.toc'.
@@ -675,20 +679,20 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 37.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [4] [5]
-<./img/flowcharts/dae-gp.png, id=212, 757.83125pt x 1002.74625pt>
+) [4] [5] [6]
+<./img/flowcharts/dae-gp.png, id=222, 757.83125pt x 1002.74625pt>
 File: ./img/flowcharts/dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/dae-gp.png  used on input line 323.
 (pdftex.def)             Requested size: 281.86174pt x 372.95349pt.
-[6]
-<./img/flowcharts/pt-dae-gp.png, id=226, 1031.855pt x 1620.0525pt>
+[7]
+<./img/flowcharts/pt-dae-gp.png, id=231, 1031.855pt x 1620.0525pt>
 File: ./img/flowcharts/pt-dae-gp.png Graphic file (type png)
 <use ./img/flowcharts/pt-dae-gp.png>
 Package pdftex.def Info: ./img/flowcharts/pt-dae-gp.png  used on input line 338
 .
 (pdftex.def)             Requested size: 305.33928pt x 479.39455pt.
-[7 <./img/flowcharts/dae-gp.png>] [8 <./img/flowcharts/pt-dae-gp.png>]
+[8 <./img/flowcharts/dae-gp.png>] [9 <./img/flowcharts/pt-dae-gp.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
 89.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -697,9 +701,9 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9] [10]
+[10] [11]
 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3plot
-s.png, id=266, 1011.78pt x 867.24pt>
+s.png, id=270, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_
 3plots.png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3
@@ -707,10 +711,9 @@ plots.png>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
 g_error_by_neurons_3plots.png  used on input line 453.
 (pdftex.def)             Requested size: 422.78331pt x 362.3857pt.
-[11 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3
-plots.png>]
+[12]
 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3plots
-.png, id=273, 1011.78pt x 867.24pt>
+.png, id=278, 1011.78pt x 867.24pt>
 File: ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3
 plots.png Graphic file (type png)
 <use ./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3p
@@ -718,8 +721,10 @@ lots.png>
 Package pdftex.def Info: ./img/airfoil_firstGen/airfoil_firstGen_median_trainin
 g_error_by_layers_3plots.png  used on input line 464.
 (pdftex.def)             Requested size: 422.78331pt x 362.3857pt.
+[13 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_neurons_3
+plots.png>]
 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.png, 
-id=274, 1011.78pt x 867.24pt>
+id=284, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.
 png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.p
@@ -727,9 +732,9 @@ ng>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_med
 ian_fitness_byGens.png  used on input line 478.
 (pdftex.def)             Requested size: 422.78331pt x 362.3857pt.
-[12 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3p
+[14 <./img/airfoil_firstGen/airfoil_firstGen_median_training_error_by_layers_3p
 lots.png>]
-<./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png, id=283, 1011.78p
+<./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png, id=292, 1011.78p
 t x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png Graphic file
  (type png)
@@ -737,9 +742,9 @@ File: ./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png Graphic file
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxpl
 ot.png  used on input line 491.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
-[13 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.p
-ng>] [14 <./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png>]
-<./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png, id=299, 722.7
+[15 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.p
+ng>] [16 <./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png>]
+<./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png, id=308, 722.7
 pt x 578.16pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png Graphic f
 ile (type png)
@@ -748,7 +753,7 @@ Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_m
 edian.png  used on input line 506.
 (pdftex.def)             Requested size: 375.80615pt x 300.64493pt.
 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_levOn
-ly.png, id=301, 1011.78pt x 867.24pt>
+ly.png, id=310, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_
 levOnly.png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_l
@@ -756,8 +761,8 @@ evOnly.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_p
 opDiversity_byGens_levOnly.png  used on input line 517.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
-[15 <./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png>]
-<./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png, id=311, 1011.78
+[17 <./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png>]
+<./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png, id=320, 1011.78
 pt x 867.24pt>
 File: ./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png Graphic fil
 e (type png)
@@ -765,9 +770,9 @@ e (type png)
 Package pdftex.def Info: ./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byG
 ens.png  used on input line 531.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
-[16 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_l
+[18 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_l
 evOnly.png>]
-<./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png, id=318, 1011.78pt x 867.
+<./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png, id=328, 1011.78pt x 867.
 24pt>
 File: ./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png Graphic file (type p
 ng)
@@ -775,10 +780,10 @@ ng)
 Package pdftex.def Info: ./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png  
 used on input line 540.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
-[17 <./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png>] [18 <./img
+[19 <./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png>] [20 <./img
 /airfoil_1hl_150hn_30gens/final_fit_boxplot.png>]
-<./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png, id=33
-3, 1011.78pt x 867.24pt>
+<./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png, id=34
+2, 1011.78pt x 867.24pt>
 File: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png G
 raphic file (type png)
 <use ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>
@@ -786,7 +791,7 @@ Package pdftex.def Info: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_f
 itness_byGens.png  used on input line 560.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only).png
-, id=335, 1011.78pt x 867.24pt>
+, id=344, 1011.78pt x 867.24pt>
 File: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only
 ).png Graphic file (type png)
 <use ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)
@@ -794,11 +799,11 @@ File: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only
 Package pdftex.def Info: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fi
 t_boxplot(test_only).png  used on input line 571.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
-[19 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>] 
-[20 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)
+[21 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>] 
+[22 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)
 .png>]
-<./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png, id=34
-8, 1011.78pt x 867.24pt>
+<./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png, id=35
+7, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png G
 raphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png>
@@ -806,7 +811,7 @@ Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/m
 edian_runtime.png  used on input line 589.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epochs.pn
-g, id=350, 1011.78pt x 867.24pt>
+g, id=359, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epoc
 hs.png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epoch
@@ -814,9 +819,9 @@ s.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/m
 edian_training_epochs.png  used on input line 600.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
-[21 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png>]
+[23 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png>]
 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png, id
-=357, 1011.78pt x 867.24pt>
+=366, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.pn
 g Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png
@@ -824,10 +829,10 @@ g Graphic file (type png)
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/m
 edian_sampleTime.png  used on input line 611.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
-[22 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epoch
+[24 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epoch
 s.png>]
 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSam
-pling.png, id=364, 1011.78pt x 867.24pt>
+pling.png, id=374, 1011.78pt x 867.24pt>
 File: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_witho
 utSampling.png Graphic file (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withou
@@ -835,9 +840,9 @@ tSampling.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/m
 edian_runtime_withoutSampling.png  used on input line 622.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
-[23 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png
+[25 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png
 >]
-<./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png, id=371, 1011.78pt x 867.2
+<./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png, id=381, 1011.78pt x 867.2
 4pt>
 File: ./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png Graphic file (type pn
 g)
@@ -845,25 +850,22 @@ g)
 Package pdftex.def Info: ./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png  u
 sed on input line 633.
 (pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
-[24 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withou
+[26 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withou
 tSampling.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 664.
-LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 664.
-
-Overfull \hbox (1.81479pt too wide) in paragraph at lines 717--717
- []|\T1/lmr/m/n/10.95 (-20) Boston_Housing| 
+[27 <./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png>]
+Overfull \hbox (7.55217pt too wide) in paragraph at lines 717--717
+ []|\T1/lmr/m/n/12 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (0.83762pt too wide) in paragraph at lines 719--719
- []|\T1/lmr/m/n/10.95 (-20) Energy(Cooling)| 
+Overfull \hbox (6.47942pt too wide) in paragraph at lines 719--719
+ []|\T1/lmr/m/n/12 (-20) Energy(Cooling)| 
  []
 
-[25 <./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_b
-yGens.png, id=393, 1011.78pt x 867.24pt>
+yGens.png, id=396, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitn
 ess_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitne
@@ -871,8 +873,9 @@ ss_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
 marized/median_fitness_byGens.png  used on input line 727.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
+[28]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_s
-ize_byGens.png, id=394, 1011.78pt x 867.24pt>
+ize_byGens.png, id=407, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_best
 Sol_size_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestS
@@ -880,10 +883,10 @@ ol_size_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
 marized/median_bestSol_size_byGens.png  used on input line 738.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[26 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
+[29 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
 ian_fitness_byGens.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistan
-ce_byGen.png, id=401, 1011.78pt x 867.24pt>
+ce_byGen.png, id=414, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levD
 istance_byGen.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDi
@@ -891,11 +894,11 @@ stance_byGen.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
 marized/median_levDistance_byGen.png  used on input line 800.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[27 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
-ian_bestSol_size_byGens.png>] [28 </Users/rmn/masterThesis/master_thesis/img/sy
+[30 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
+ian_bestSol_size_byGens.png>] [31 </Users/rmn/masterThesis/master_thesis/img/sy
 mbolicRegressionSummarized/median_levDistance_byGen.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTra
-ined.png, id=413, 1011.78pt x 867.24pt>
+ined.png, id=428, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoc
 hsTrained.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoch
@@ -903,8 +906,8 @@ sTrained.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
 marized/median_epochsTrained.png  used on input line 862.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
-[29 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
-ian_epochsTrained.png>] [30]
+[32 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
+ian_epochsTrained.png>] [33]
 Underfull \hbox (badness 10000) in paragraph at lines 938--941
 
  []
@@ -930,8 +933,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 954--957
  []
 
 
+Underfull \hbox (badness 1248) in paragraph at lines 960--960
+[]\T1/lmr/m/n/12 (+20) G. E. Hin-ton and R. R. Salakhut-di-nov. 2006. Re-duc-in
+g the di-men-sion-
+ []
+
+
+Underfull \hbox (badness 2165) in paragraph at lines 960--960
+\T1/lmr/m/n/12 (+20) al-ity of data with neu-ral net-works. \T1/lmr/m/it/12 (+2
+0) Sci-ence \T1/lmr/m/n/12 (+20) 313, 5786 (2006), 504--507.
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 958--961
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 964--964
+[]\T1/lmr/m/n/12 (+20) Sepp Hochre-iter and Jür-gen Schmid-hu-ber. 1997. Long s
+hort-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 964--964
+\T1/lmr/m/n/12 (+20) term mem-ory. \T1/lmr/m/it/12 (+20) Neu-ral com-pu-ta-tion
+ \T1/lmr/m/n/12 (+20) 9, (De-cem-ber 1997), 1735--80.
  []
 
 
@@ -945,9 +972,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 966--969
  []
 
 
-Underfull \hbox (badness 3713) in paragraph at lines 972--972
-[]\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
-rans-fer learn-ing.
+Underfull \hbox (badness 1014) in paragraph at lines 972--972
+[]\T1/lmr/m/n/12 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on tran
+s-fer learn-ing.
  []
 
 
@@ -975,6 +1002,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 986--989
 
  []
 
+[34]
+Underfull \hbox (badness 1019) in paragraph at lines 992--992
+\T1/lmr/m/n/12 (+20) Ex-tract-ing and com-pos-ing ro-bust fea-tures with de-noi
+s-ing au-toen-coders. In
+ []
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 990--993
 
@@ -990,7 +1023,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 998--1001
 
  []
 
-[31]
+
 Underfull \hbox (badness 10000) in paragraph at lines 1002--1005
 
  []
@@ -1000,36 +1033,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 1006--1009
 
  []
 
-[32] (./paper.aux) ) 
+[35] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 16044 strings out of 478268
- 266557 string characters out of 5846348
- 592765 words of memory out of 5000000
- 33615 multiletter control sequences out of 15000+600000
- 537158 words of font info for 160 fonts, out of 8000000 for 9000
+ 16054 strings out of 478268
+ 266699 string characters out of 5846348
+ 592797 words of memory out of 5000000
+ 33625 multiletter control sequences out of 15000+600000
+ 541330 words of font info for 164 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,9n,77p,1247b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,9n,77p,1247b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-r
 m.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/us
 r/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texliv
 e/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/tex
 mf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts
-/type1/public/lm/lmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
-lic/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmm
-i10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2022/
-texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/
-fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1
-/public/lm/lmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/l
-mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/te
-xlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022
-/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (33 pages, 9833009 bytes).
+/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/pub
+lic/lm/lmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmm
+i12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/
+texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/
+fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/
+public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lm
+ri12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on paper.pdf (36 pages, 9780997 bytes).
 PDF statistics:
- 638 PDF objects out of 1000 (max. 8388607)
- 523 compressed objects within 6 object streams
- 141 named destinations out of 1000 (max. 500000)
- 37178 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 644 PDF objects out of 1000 (max. 8388607)
+ 530 compressed objects within 6 object streams
+ 144 named destinations out of 1000 (max. 500000)
+ 39226 words of extra memory for PDF output out of 42996 (max. 10000000)
 
