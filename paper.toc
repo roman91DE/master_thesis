@@ -21,6 +21,6 @@
 \contentsline {subsection}{\numberline {6.2}Population Diversity}{27}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Training epochs per Generation}{28}{subsection.6.3}%
 \contentsline {section}{\numberline {7}Conclusion and Discussion}{29}{section.7}%
-\contentsline {section}{\numberline {8}Limitations and open Questions}{30}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Further Questions}{30}{subsection.8.1}%
-\contentsline {section}{References}{31}{section*.4}%
+\contentsline {section}{\numberline {8}Limitations and open Questions}{29}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Further Questions}{29}{subsection.8.1}%
+\contentsline {section}{References}{30}{section*.4}%

@@ -45,18 +45,18 @@ BASE_TITLE="Symbolic Regression"
 
 
 RESULTS = {
-    "airfoil_1hl" : "/Users/rmn/github/master_thesis/data/airfoil_1hl_maxIndSize_fullRun_30gens",
-    "airfoil_2hl" : "/Users/rmn/github/master_thesis/data/airfoil_2hl_maxIndSize_fullRun_30gens",
-    "bostonHousing": "/Users/rmn/github/master_thesis/data/bostonHousing_2hl_maxIndSize_fullRun_30gens",
-    "energyCooling": "/Users/rmn/github/master_thesis/data/energyCooling_2hl_FullRun_30gens",
-    "concrete": "/Users/rmn/github/master_thesis/data/concrete_2hl_FullRun_30gens"
+    "airfoil_1hl" : "/Users/rmn/github/master_thesis/data/airfoil_1hl_150hn_fullRun_30gens",
+    "airfoil_2hl" : "/Users/rmn/github/master_thesis/data/airfoil_2hl_150hn_fullRun_30gens",
+    "bostonHousing": "/Users/rmn/github/master_thesis/data/bostonHousing_2hl_150hn_fullRun_30gens",
+    "energyCooling": "/Users/rmn/github/master_thesis/data/energyCooling_2hl_150hn_fullRun_30gens",
+    "concrete": "/Users/rmn/github/master_thesis/data/concrete_2hl_150hn_30gens"
 }
 
 RESULTS_2hl = {
-    "Airfoil" : "/Users/rmn/github/master_thesis/data/airfoil_2hl_maxIndSize_fullRun_30gens",
-    "BostonHousing": "/Users/rmn/github/master_thesis/data/bostonHousing_2hl_maxIndSize_fullRun_30gens",
-    "energyCooling": "/Users/rmn/github/master_thesis/data/energyCooling_2hl_FullRun_30gens",
-    "Concrete": "/Users/rmn/github/master_thesis/data/concrete_2hl_FullRun_30gens"
+    "Airfoil" :  "/Users/rmn/github/master_thesis/data/airfoil_2hl_150hn_fullRun_30gens",
+    "BostonHousing": "/Users/rmn/github/master_thesis/data/bostonHousing_2hl_150hn_fullRun_30gens",
+    "energyCooling": "/Users/rmn/github/master_thesis/data/energyCooling_2hl_150hn_fullRun_30gens",
+    "Concrete": "/Users/rmn/github/master_thesis/data/concrete_2hl_150hn_30gens"
 }
 
 
