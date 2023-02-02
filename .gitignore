@@ -8,6 +8,7 @@ private
 *.png
 
 !hoehn_kolloquium_foliensatz_final.pdf
+!paper.pdf
 
 # ignore knitter's temporary files
 ^(paper|slides).*\.(log|aux|lof|lot|tex|toc)$
