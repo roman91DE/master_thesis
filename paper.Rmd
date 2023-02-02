@@ -799,6 +799,14 @@ knitr::kable(
 
 # Conclusion and Discussion
 
+## Benefits of using Pre-Training
+
+The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in an increased population diversity measured by the normalized levenshtein edit distance. Increasing the population diversity can be an important mechanism in controlling the search behavior of population based metaheuristics and is especially useful for increasing the exploration of the search space of possible solutions [@QUELLE?]
+
+## Drawbacks of using Pre-Training
+
+
+
 The experiments conducted in this thesis did not find any significant benefits in using a pre-training strategy for using DAE-GP to solve real world symbolic regression problems.
 
 <!-- ## Vorteile -->
