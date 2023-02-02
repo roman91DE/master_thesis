@@ -520,6 +520,8 @@ knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit
 
 One important argument for using pre-training with DAE-GP is that it might be a potential way to reduce the overall run-time of the algorithm by reducing the training time of each generation's DAE-LSTM model. Especially in the context of optimization problems where solutions have to be found numerous times in a time efficient manner (e.g. Vehicle Routing in the Domain of Logistic Services), one major advantage of pre-training is that a pre-trained model can be re-used to optimize many instances of an optimization problem.
 
+The runtime analysis in this chapter is based on experiments that were all executed on an Intel® Xeon® W-2245 Processor without the use of graphical processing unit (GPU) acceleration in the training of DAE-LSTM networks. Since the framework that was used is written in the ,comparatively slow, python programming language, the absolute runtime measurements are only of limited 
+
 <!-- TODO: Disclaimer, Runtime is implementation dependant, no GPU use, etc... -->
 
 ```{python read_runtime_vars, echo=FALSE}
