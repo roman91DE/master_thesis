@@ -407,6 +407,7 @@ PT_TRAIN_MED_FF <- py$D_AIRFOIL_2hl$PT_TRAIN_MED_FF
 PT_TEST_MED_FF <- py$D_AIRFOIL_2hl$PT_TEST_MED_FF
 GP_TRAIN_MED_FF <- py$D_AIRFOIL_2hl$GP_TRAIN_MED_FF
 GP_TEST_MED_FF <- py$D_AIRFOIL_2hl$GP_TEST_MED_FF
+
 REG_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$REG_TRAIN_STDD_FF
 REG_TEST_STDD_FF <- py$D_AIRFOIL_2hl$REG_TEST_STDD_FF
 PT_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$PT_TRAIN_STDD_FF
@@ -414,12 +415,16 @@ PT_TEST_STDD_FF <- py$D_AIRFOIL_2hl$PT_TEST_STDD_FF
 GP_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$GP_TRAIN_STDD_FF
 GP_TEST_STDD_FF <- py$D_AIRFOIL_2hl$GP_TEST_STDD_FF
 
+REG_MED_BESTSIZE <- py$D_AIRFOIL_2hl$REG_MED_BEST_SIZE
+PT_MED_BESTSIZE <- py$D_AIRFOIL_2hl$PT_MED_BEST_SIZE
+GP_MED_BESTSIZE <- py$D_AIRFOIL_2hl$GP_MED_BEST_SIZE
 
-REG_MED_BESTSIZE <- py$D_AIRFOIL_2hl$REG_MED_BESTSIZE
-PT_MED_BESTSIZE <- py$D_AIRFOIL_2hl$PT_MED_BESTSIZE
-GP_MED_BESTSIZE <- py$D_AIRFOIL_2hl$GP_MED_BESTSIZE
 REG_MED_AVGSIZE <- py$D_AIRFOIL_2hl$REG_MED_AVG_SIZE
 PT_MED_AVGSIZE <- py$D_AIRFOIL_2hl$PT_MED_AVG_SIZE
+
+REG_MED_LEVDIV <- py$D_AIRFOIL_2hl$REG_MED_LEVDIV
+PT_MED_LEVDIV <- py$D_AIRFOIL_2hl$PT_MED_LEVDIV
+GP_MED_LEVDIV <- py$D_AIRFOIL_2hl$GP_MED_LEVDIV
 
 
 REG_TRAIN_MED_FF_1HL <- py$D_AIRFOIL_1hl$REG_TRAIN_MED_FF
@@ -454,10 +459,10 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplo
 
 The distribution of final fitness scores for pre-trained and regular DAE-GP are visualized as boxplots in figure  \@ref(fig:airfoil-distribution-fitness-30gens). The distribution for regular DAE-GP shows to be preferable to that of pre-trained DAE-GP  since it shows a lower median RMSE of `r round(REG_TEST_MED_FF, 3)` for the test set (`r round(PT_TEST_MED_FF, 3)` for pre-trained DAE-GP) as well as less dispersion of the solutions measured by a standard deviation of `r round(REG_TEST_STDD_FF, 3)` (`r round(PT_TEST_STDD_FF, 3)` for pre-trained DAE-GP). For reference, the median final RMSE for the test set of standard GP is at `r round(GP_TEST_MED_FF, 3)` which is larger by a factor of `r round(GP_TEST_MED_FF / PT_TEST_MED_FF, 3)` if compared to pre-trained DAE-GP.
 
-An interesting observation from studying the distribution of final fitness scores for both algorithms is that while both algorithms have a very similiar interquartile range (similar box shape), pre-trained DAE-GP has more extreme outliers for high RMSE which explains the slightly worse performance if looking at median best fitness present in figure \@ref(fig:airfoil-median-fitness-30gens). 
+An interesting observation from studying the distribution of final fitness scores for both algorithms is that pre-trained DAE-GP has a smaller interquartile range and more extreme outliers for high RMSE which explains the slightly worse performance if looking at median best fitness present in figure \@ref(fig:airfoil-median-fitness-30gens). 
 
 
-Since previous work by @dae-gp_2022_symreg demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size that regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \@ref(fig:airfoil-size-combined-30gens) shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. The median average size over all generations is `r round(REG_MED_AVGSIZE, 3)` for DAE-GP and `r round(PT_MED_AVGSIZE, 3)` for pre-trained DAE-GP. Regarding the size of the best solution per generation, the results show that the pre-trained version of algorithm did produce solutions with the same median size as traditional DAE-GP. The median size of the best solutions found after terminating the search is the same for both algorithms (DAE-GP: `r round(REG_MED_BESTSIZE, 3)`, Pre-Trained DAE-GP: `r round(PT_MED_BESTSIZE, 3)`)
+Since previous work by @dae-gp_2022_symreg demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size than regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \@ref(fig:airfoil-size-combined-30gens) shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. The median average size over all generations is `r round(REG_MED_AVGSIZE, 3)` for DAE-GP and `r round(PT_MED_AVGSIZE, 3)` for pre-trained DAE-GP. Regarding the size of the best solution per generation, the results show that the pre-trained version of algorithm did produce solutions with the same median size as traditional DAE-GP. The median size of the best solutions found after terminating the search is the same for both algorithms (DAE-GP: `r round(REG_MED_BESTSIZE, 3)`, Pre-Trained DAE-GP: `r round(PT_MED_BESTSIZE, 3)`)
 
 
 
@@ -466,7 +471,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_me
 ```
 
 
-To conclude the first experiment, figure \@ref(fig:airfoil-popDiversity) shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a high level of over $0.9$. Here it can be observed, that pre-training shows a positive effect by increasing population diversity in comparison to regular DAE-GP.
+To conclude the first experiment, figure \@ref(fig:airfoil-popDiversity) shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a higher level during the evolutionary search. Here it can be observed, that pre-training shows a positive effect by increasing population diversity in comparison to regular DAE-GP (Median over all generations for DAE-GP: `r round(REG_MED_LEVDIV, 3)`, Pre-Trained DAE-GP: `r round(PT_MED_LEVDIV, 3)`, Standard-GP `r round(GP_MED_LEVDIV, 3)`)
 
 ```{r airfoil-popDiversity, echo=FALSE, fig.cap="Median Population Diversity over 30 Generations - Airfoil (2HL)", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_levOnly.png")
@@ -475,7 +480,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_po
 
 ### Reduced Number of Hidden Layers
 
-Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], I repeated the experiment with a single hidden layer. Based on the findings of @pmlr-v5-erhan09a, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \@ref(fig:airfoil-fitness-perGen) and \@ref(fig:airfoil-finalFitness) shows the average best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on $10$ individual runs per algorithm. As expected it shows, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GG.
+Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], I repeated the experiment with a single hidden layer. Based on the findings of @pmlr-v5-erhan09a, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \@ref(fig:airfoil-fitness-perGen) and \@ref(fig:airfoil-finalFitness) shows the mean and median best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on $10$ individual runs per algorithm. As expected the results show, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GP. The median final RMSE for the test set of pre-trained DAE-GP increases by a factor of `r round(PT_TEST_MED_FF_1HL, 3)`
 
 
 ```{r airfoil-fitness-perGen, echo=FALSE, fig.cap="Fitness over 30 Generations - Airfoil (1HL)", out.width="80%"}
