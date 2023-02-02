@@ -480,7 +480,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_po
 
 ### Reduced Number of Hidden Layers
 
-Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], I repeated the experiment with a single hidden layer. Based on the findings of @pmlr-v5-erhan09a, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \@ref(fig:airfoil-fitness-perGen) and \@ref(fig:airfoil-finalFitness) shows the mean and median best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on $10$ individual runs per algorithm. As expected the results show, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GP. The median final RMSE for the test set of pre-trained DAE-GP increases by a factor of `r round(PT_TEST_MED_FF_1HL, 3)`
+Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], I repeated the experiment with a single hidden layer. Based on the findings of @pmlr-v5-erhan09a, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \@ref(fig:airfoil-fitness-perGen) and \@ref(fig:airfoil-finalFitness) shows the mean and median best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on $10$ individual runs per algorithm. As expected the results show, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GP. The median final RMSE for the test set of pre-trained DAE-GP increases by a factor of `r round(PT_TEST_MED_FF_1HL / REG_TEST_MED_FF_1HL, 3)` to `r round(PT_TEST_MED_FF_1HL , 3)` compared to regular DAE-GP with `r round(REG_TEST_MED_FF_1HL , 3)`.
 
 
 ```{r airfoil-fitness-perGen, echo=FALSE, fig.cap="Fitness over 30 Generations - Airfoil (1HL)", out.width="80%"}
@@ -496,7 +496,7 @@ knitr::include_graphics("./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png")
 
 Since pre-training thus far did not demonstrate significant benefits for the quality of solutions found by DAE-GP, this section describes two alternative pre-training strategies, Second Generation Pre-Training and  Grow-Initialized Pre-Training, that are also tested for the airfoil dataset.
 
-One common observation in GP-based optimization algorithms is that the largest improvements in fitness are often occurring in the first generation of the search process. Second Generation Pre-Training tries to exploit this observation by shifting the pre-training phase from the start of the algorithm into the second generation with the aim to produce a pre-training Population $\hat{P}$ that more accurately captures the properties of the search problem. The basic idea is to run basic DAE-GP for the first generation without any interference, after completing the first generation, the pre-training population $\hat{P}$ is created by sampling the DAE-LSTM model $M_1$. The pre-training model $\hat{M}$ is then trained using $\hat{P}$, after finishing DAE-GP continues running and initializes each new DAE-LSTM model $M_g$ for $g\in{2,...,g_{max}}$ using the trainable parameters $\theta_{\hat{M}}$.
+One common observation in GP-based optimization algorithms is that the largest improvements in fitness are often occurring in the first generation of the search process. Second Generation Pre-Training tries to exploit this observation by shifting the pre-training phase from the start of the algorithm into the second generation with the aim to produce a pre-training Population $\hat{P}$ that more accurately captures the properties of the search problem. The basic idea is to run regular DAE-GP for the first generation without any interference, after completing the first generation, the pre-training population $\hat{P}$ is created by sampling the DAE-LSTM model $M_1$. The pre-training model $\hat{M}$ is then trained using $\hat{P}$, after finishing DAE-GP continues running and initializes each new DAE-LSTM model $M_g$ for $g\in{2,...,g_{max}}$ using the trainable parameters $\theta_{\hat{M}}$.
 
 The pre-training implementation in previous experiments used ramped half and half initialization [@Koza1993GeneticP] to create $\hat{P}$, this leads to 50% of the population consisting of full grown trees. An alternative method of initializing $\hat{P}$ is to use the grow initialization method where solutions are not guaranteed to be full trees. This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of futher generations population where a lower percentage of full grown trees is to be expected. 
 
@@ -507,7 +507,7 @@ Figure \@ref(fig:altStrategies-Fitness) shows the median best fitness by generat
 knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png")
 ```
 
-Figure \@ref(fig:altStrategies-FitnessDistr) shows the distribution of best fitness achieved on the test set after running for 30 full generations. Both alternative second generation Pre-Training as well as grow-initialized Pre-Trainning show a much higher median RMSE (18.88/17.21) compared to standard pre-training (8.55) and regular DAE-GP (6.99). Also both approaches do not demonstrate any benefit on the dispersion of solutions found resulting in similiar standard deviations if compared to standard pre-training.
+Figure \@ref(fig:altStrategies-FitnessDistr) shows the distribution of best fitness achieved on the test set after running for 30 full generations. Both alternative second generation Pre-Training as well as grow-initialized Pre-Training show a much higher median RMSE (18.88/17.21) compared to standard pre-training (8.55) and regular DAE-GP (6.99). Also both approaches do not demonstrate any benefit on the dispersion of solutions found resulting in similiar standard deviations if compared to standard pre-training.
 
 ```{r altStrategies-FitnessDistr, echo=FALSE, fig.cap="Best Fitness on Test Set after 30 Generations - Alternative Pre-Trategies - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only).png")
@@ -530,7 +530,7 @@ D_AIRFOIL_TIME = load(
 ```
 
 
-```{r runtime_vars, include=FALSE}
+```{r runtime_vars, echo=FALSE}
 
 REG_TIME <- py$D_AIRFOIL_TIME$REG_TIME
 PT_TIME <- py$D_AIRFOIL_TIME$PT_TIME
@@ -546,8 +546,8 @@ REG_TIME_NOSAMLING <-  py$D_AIRFOIL_TIME$REG_TIME_NOSAMLING
 PT_TIME_NOSAMPLING  <- py$D_AIRFOIL_TIME$PT_TIME_NOSAMPLING
 PT_TIME_NOSAMPLING_NOPT  <- py$D_AIRFOIL_TIME$PT_TIME_NOSAMPLING_NOPT
 
-REG_PARAMS <- py$D_AIRFOIL_TIME$REG_PARAMS
-PT_PARAMS <- py$D_AIRFOIL_TIME$PT_PARAMS
+REG_PARAMS <- py$D_AIRFOIL_TIME$REG_TOTAL_PARAMS
+PT_PARAMS <- py$D_AIRFOIL_TIME$PT_TOTAL_PARAMS
 
 ```
 
@@ -572,7 +572,7 @@ If we look at another time consuming operation in DAE-GP, the creation of new in
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_sampleTime.png")
 ```
 
-Suprisingly, even after correcting the runtime for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \@ref(fig:airfoil-runtime-noSampling-total). While traditional DAE-GP has a median runtime without sampling time of `r format(REG_TIME_NOSAMLING, scientific=F)` seconds , the runtime of pre-trained DAE-GP, without time for samling and pre-training, still increases by a factor of `r round(PT_TIME_NOSAMPLING_NOPT / REG_TIME_NOSAMLING, 3)` to `r format(PT_TIME_NOSAMPLING_NOPT, scientific=F)` seconds. While investigating other reasons for the differences in runtime, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models ( `r format(REG_PARAMS, scientific=F)`).
+Suprisingly, even after correcting the runtime for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \@ref(fig:airfoil-runtime-noSampling-total). While traditional DAE-GP has a median runtime without sampling time of `r format(REG_TIME_NOSAMLING, scientific=F)` seconds , the runtime of pre-trained DAE-GP, without time for samling and pre-training, still increases by a factor of `r round(PT_TIME_NOSAMPLING_NOPT / REG_TIME_NOSAMLING, 3)` to `r format(PT_TIME_NOSAMPLING_NOPT, scientific=F)` seconds. While investigating other reasons for the differences in runtime, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=`r format(REG_PARAMS, scientific=F)`, Pre-trained DAE-GP=`r format(PT_PARAMS, scientific=F)`).
 
 
 ```{r airfoil-runtime-noSampling-total, echo=FALSE, fig.cap="Median Runtime excluding Time for Sampling - Airfoil", out.width="80%"}

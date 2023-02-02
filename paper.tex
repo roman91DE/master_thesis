@@ -510,7 +510,7 @@ Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]} demo
 \caption{Median Solution Size over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-size-combined-30gens}
 \end{figure}
 
-To conclude the first experiment, figure \ref{fig:airfoil-popDiversity} shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a high level of over \(0.9\). Here it can be observed, that pre-training shows a positive effect by increasing population diversity in comparison to regular DAE-GP (Median over all generations for DAE-GP: 0.861, Pre-Trained DAE-GP: 0.925, Standard-GP 0.705)
+To conclude the first experiment, figure \ref{fig:airfoil-popDiversity} shows the median population diversity measured by the normalized Levenshtein edit distance for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a higher level during the evolutionary search. Here it can be observed, that pre-training shows a positive effect by increasing population diversity in comparison to regular DAE-GP (Median over all generations for DAE-GP: 0.861, Pre-Trained DAE-GP: 0.925, Standard-GP 0.705)
 
 \begin{figure}[c]
 
@@ -524,7 +524,7 @@ To conclude the first experiment, figure \ref{fig:airfoil-popDiversity} shows th
 \hypertarget{reduced-number-of-hidden-layers}{%
 \subsubsection{Reduced Number of Hidden Layers}\label{reduced-number-of-hidden-layers}}
 
-Since previous research on DAE-GP used a single hidden layers for the airfoil dataset {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]}, I repeated the experiment with a single hidden layer. Based on the findings of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{3}{]}, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \ref{fig:airfoil-fitness-perGen} and \ref{fig:airfoil-finalFitness} shows the average best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on \(10\) individual runs per algorithm. As expected it shows, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GG.
+Since previous research on DAE-GP used a single hidden layers for the airfoil dataset {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]}, I repeated the experiment with a single hidden layer. Based on the findings of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{3}{]}, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \ref{fig:airfoil-fitness-perGen} and \ref{fig:airfoil-finalFitness} shows the mean and median best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on \(10\) individual runs per algorithm. As expected the results show, that for a small DAE-LSTM size pre-training negativley impacts the fitness of solution found by DAE-GP. The median final RMSE for the test set of pre-trained DAE-GP increases by a factor of 1.287 to 16.213 compared to regular DAE-GP with 12.594.
 
 \begin{figure}[c]
 
