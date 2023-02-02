@@ -339,7 +339,7 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for the airfoil problem is summarized in table 2, the terminal set consists of the 5 input variables $x1,x2,x3,x4,x5$ and ephemeral random integers in the range of $[{}-5,..,5]$ [@dae-gp_2022_symreg].
+The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for the airfoil problem is summarized in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params), the terminal set consists of the 5 input variables $x1,x2,x3,x4,x5$ and the ephemeral integer constants listed in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params)[@dae-gp_2022_symreg].
 
 
 
@@ -349,7 +349,7 @@ The objective of the airfoil problem is to find a function that accurately predi
 ## Effect on Generalisation
 
 
-To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
+To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
 
 To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus solely on the reconstruction error that is produced during the training of each DAE-LSTM. The reconstruction error is measured for two separate populations, a training population $P_{train}$ that is used to train our DAE-LSTM as well as a hold-out validation population $P_{test}$. For the pre-trained DAE-GP two additional, separate populations $\hat{P}_{train}$ and  $\hat{P}_{test}$ are used exclusively for pre-training. 
 
@@ -360,7 +360,7 @@ DAE-GP is tested in two different configurations:
 
 For each configuration I tested traditional DAE-GP as well as a pre-trained DAE-GP resulting in 12 total sub experiments that were each based on 10 individual runs (total number of runs=$120$). To avoid creating biased results through the presence of sampling error inside the pre-training population (see @sampling_err_gp), the population size for the pre-training phase is chosen very high with the size of $\hat{P}$ =10000 where 50% of $\hat{P}$ is used for the training population $\hat{P}_{train}$ and the remaining 50% are used for the hold-out validation population $\hat{P}_{test}$. The training of DAE-LSTM uses a fixed number of 1000 epochs until termination and uses Adam optimization for gradient descent. The reason for using a high amount of 1000 fixed training epochs is to deliberately force the DAE-LSTM to overfit to the training data. 
 
-In general I expect that with a growing number of model parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population $P_{train}$ resulting in a small reconstruction error for the training population and a large one for the validation population $P_{test}$. The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases [@weigend1994overfitting].
+In general I expect that with a growing number of trainable parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population $P_{train}$ resulting in a small reconstruction error for the training population and a large one for the validation population $P_{test}$. The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases [@weigend1994overfitting].
 
 Based on the review of [@pmlr-v5-erhan09a] I also expect that pre-training will have an insignificant or even negative influence on small DAE-LSTM instances while improving the networks generalization ability with growing size.
 
@@ -486,6 +486,8 @@ Since previous research on DAE-GP used a single hidden layers for the airfoil da
 ```{r airfoil-fitness-perGen, echo=FALSE, fig.cap="Fitness over 30 Generations - Airfoil (1HL)", out.width="80%"}
 knitr::include_graphics("./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png")
 ```
+... describe differences in distribution, interquartile range blablabla...
+
 
 ```{r airfoil-finalFitness, echo=FALSE, fig.cap="Fitness after 30 Generations - Airfoil (1HL)", out.width="80%"}
 knitr::include_graphics("./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png")
@@ -801,7 +803,9 @@ knitr::kable(
 
 ## Benefits of using Pre-Training
 
-The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in an increased population diversity measured by the normalized levenshtein edit distance. Increasing the population diversity can be an important mechanism in controlling the search behavior of population based metaheuristics and is especially useful for increasing the exploration of the search space of possible solutions [@QUELLE?]
+The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in an increased population diversity measured by the normalized levenshtein edit distance. Increasing the population diversity can be an important mechanism in controlling the search behavior of population based metaheuristics and is especially useful for increasing the exploration of the search space of possible solutions !QUELLE!.
+
+Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model. Even though pre-training increased the median totalrun-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might still be a possible way to lower the total 
 
 ## Drawbacks of using Pre-Training
 
