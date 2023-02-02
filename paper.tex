@@ -615,7 +615,7 @@ If we look at another time consuming operation in DAE-GP, the creation of new in
 \caption{Median Sampling Time per Generation - Airfoil}\label{fig:airfoil-SamplingTime}
 \end{figure}
 
-Surprisingly, even after correcting the run-time for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \ref{fig:airfoil-runtime-noSampling-total}. While traditional DAE-GP has a median run-time without sampling time of 3550.277 seconds , the run-time of pre-trained DAE-GP, without time for sampling and pre-training, still increases by a factor of 1.865 to 6622.027 seconds. While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=573473, Pre-trained DAE-GP=573473).
+Surprisingly, even after correcting the run-time for both DAE-GP results by removing the time spend during sampling, my implementation of pre-training for DAE-GP still on average takes more time to finish the search process as shown in figure \ref{fig:airfoil-runtime-noSampling-total}. While traditional DAE-GP has a median run-time without sampling time of 3550.277 seconds , the run-time of pre-trained DAE-GP, without time for sampling and pre-training, still increases by a factor of 1.865 to 6622.027 seconds.
 
 \begin{figure}[c]
 
@@ -624,6 +624,17 @@ Surprisingly, even after correcting the run-time for both DAE-GP results by remo
 }
 
 \caption{Median Runtime excluding Time for Sampling - Airfoil}\label{fig:airfoil-runtime-noSampling-total}
+\end{figure}
+
+While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=573473, Pre-trained DAE-GP=573473). After profiling a single run of DAE-GP and pre-trained DAE-GP my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training. Figure \ref{tab:full-run-realWorldSymReg-problems} shows the cumulative time spend for the 20 most expensive function calls. Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to \texttt{DAE\_LSTM.py:208(sample)}) than during model training (calls to \texttt{training.py:1303(fit)}). Secondly, it shows that internal error handling of the baseline neural network library ´keras´ (calls to \texttt{traceback\_utils.py:138\textbar{}50(error\_handler)}) takes up a comparatively larger amount of run time for pre-trained DAE-GP than for regular DAE-GP.
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar} 
+
+}
+
+\caption{Cumulative Time consumption by Function Calls (Top 20) - Airfoil}\label{fig:airfoil-profiling}
 \end{figure}
 
 \hypertarget{results-over-different-real-world-symbolic-regression-problems}{%

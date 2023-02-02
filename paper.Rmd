@@ -581,7 +581,11 @@ Surprisingly, even after correcting the run-time for both DAE-GP results by remo
 ```{r airfoil-runtime-noSampling-total, echo=FALSE, fig.cap="Median Runtime excluding Time for Sampling - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSampling.png")
 ```
-While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=`r format(REG_PARAMS, scientific=F)`, Pre-trained DAE-GP=`r format(PT_PARAMS, scientific=F)`). After profiling a single run of DAE-GP and pre-trained DAE-GP my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training. The results are  
+While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=`r format(REG_PARAMS, scientific=F)`, Pre-trained DAE-GP=`r format(PT_PARAMS, scientific=F)`). After profiling a single run of DAE-GP and pre-trained DAE-GP my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training. Figure  \@ref(tab:full-run-realWorldSymReg-problems) shows the cumulative time spend for the 20 most expensive function calls. Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to `DAE_LSTM.py:208(sample)`) than during model training (calls to `training.py:1303(fit)`). Secondly, it shows that internal error handling of the baseline neural network library ´keras´ (calls to `traceback_utils.py:138|50(error_handler)`) takes up a comparatively larger amount of run time for pre-trained DAE-GP than for regular DAE-GP.
+
+```{r airfoil-profiling, echo=FALSE, fig.cap="Cumulative Time consumption by Function Calls (Top 20) - Airfoil", out.width="80%"}
+knitr::include_graphics("./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png")
+```
 
 
 # Results over different Real-World Symbolic Regression Problems 
