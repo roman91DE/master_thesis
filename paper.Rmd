@@ -98,18 +98,16 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_2hl_150hn_fullRun_3
 
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_1hl_150hn_fullRun_30gens/re_evaluate_airfoil_1hl_150hn_30gen.sh
 
-# bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_1hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_1hl_maxIndSize_30gen.sh
 
-# bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_2hl_maxIndSize_fullRun_30gens/re_evaluate_airfoil_2hl_maxIndSize_30gen.sh
 
 # energy (cooling)
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_maxIndSize_fullRun_30gens/re_evaluate_energyCooling_2hl_maxIndSize_fullRun_30gens.sh
 
 # boston housing
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_maxIndSize_fullRun_30gens/re_evaluate_bostonHousing_2hl_maxIndSize_fullRun_30gens.sh
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_150hn_fullRun_30gens/re_evaluate_bostonHousing_2hl_150hn_fullRun_30gens.sh
 
 # concrete
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_maxIndSize_fullRun_30gens/re_evaluate_concrete_2hl_maxIndSize_fullRun_30gens.sh
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/concrete_2hl_150hn_fullRun_30gens/re_evaluate_concrete_2hl_150hn_fullRun_30gens.sh
 
 # summarize csv files and plots for full run experiments
 /Users/rmn/miniconda3/envs/dataScience/bin/python /Users/rmn/github/master_thesis/data/summarize_data.py
@@ -803,15 +801,15 @@ knitr::kable(
 
 ## Benefits of using Pre-Training
 
+<!-- add test results for statistical significance! -->
+
 The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in an increased population diversity measured by the normalized levenshtein edit distance. Increasing the population diversity can be an important mechanism in controlling the search behavior of population based metaheuristics and is especially useful for increasing the exploration of the search space of possible solutions !QUELLE!.
 
-Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model. Even though pre-training increased the median totalrun-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might still be a possible way to lower the total 
+Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model. Even though pre-training increased the median total run-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might be a possible way to lower the runtime of DAE-GP if further performance optimizations to the source code, especially during model sampling, can be achieved.
 
 ## Drawbacks of using Pre-Training
 
-
-
-The experiments conducted in this thesis did not find any significant benefits in using a pre-training strategy for using DAE-GP to solve real world symbolic regression problems.
+The experiments conducted in this thesis did not find any significant benefits on both solution quality as well as run-time for solving pre-training strategy for using DAE-GP to solve real world symbolic regression problems.
 
 <!-- ## Vorteile -->
 
