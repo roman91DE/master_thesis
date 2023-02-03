@@ -12,12 +12,12 @@
 \contentsline {subsection}{\numberline {4.1}Implementation}{7}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Benchmark Problem}{10}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Results for the Airfoil Dataset}{11}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Effect on Generalisation}{11}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Effect on solution quality}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.1}Influence on Generalisation}{11}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Influence on solution quality}{14}{subsection.5.2}%
 \contentsline {subsubsection}{\numberline {5.2.1}Dynamic Adjustment of Hidden Neurons}{18}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}Reduced Number of Hidden Layers}{20}{subsubsection.5.2.2}%
 \contentsline {subsubsection}{\numberline {5.2.3}Alternative Pre-Training Strategies}{22}{subsubsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.3}Effect on Run-Time}{24}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Influence on Run-Time}{24}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Results over different Real-World Symbolic Regression Problems}{29}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Solution Size in Symbolic Regression}{31}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Population Diversity}{33}{subsection.6.2}%

@@ -29,6 +29,8 @@ link-citations: true
 fig.width: 4in
 fig.height: 3in
 csl: csl/association-for-computing-machinery.csl
+urlcolor: blue
+linkcolor: blue
 #csl: csl/harvard-cite-them-right.csl
 #csl: csl/springer-science-reviews.csl
 include-before: '`\thispagestyle{empty} \newpage{}`{=latex}'
@@ -346,14 +348,14 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for the airfoil problem is summarized in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params), the terminal set consists of the 5 input variables $x1,x2,x3,x4,x5$ and the ephemeral integer constants listed in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params)[@dae-gp_2022_symreg].
+The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for symbolic regression is summarized in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params), the terminal set consists of the the input variables $x1,x2,x3,x4,x5$ and the ephemeral integer constants listed in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params)[@dae-gp_2022_symreg].
 
 
 
 # Results for the Airfoil Dataset
 
 
-## Effect on Generalisation
+## Influence on Generalisation
 
 
 To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
@@ -389,7 +391,7 @@ knitr::include_graphics("./img/airfoil_firstGen/airfoil_firstGen_median_training
 ```
 
 
-## Effect on solution quality
+## Influence on solution quality
 
 
 ```{python read_solQual_vars, echo=FALSE}
@@ -539,7 +541,7 @@ knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit
 
 
 
-## Effect on Run-Time
+## Influence on Run-Time
 
 One important argument for using pre-training with DAE-GP is that it might be a potential way to reduce the overall run-time of the algorithm by reducing the training time of each generation's DAE-LSTM model. Especially in the context of optimization problems where solutions have to be found numerous times in a time efficient manner (e.g. Vehicle Routing in the Domain of Logistic Services), one major advantage of pre-training is that a pre-trained model can be re-used to optimize many instances of an optimization problem.
 
@@ -827,7 +829,7 @@ knitr::kable(
 
 The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in an increased population diversity measured by the normalized levenshtein edit distance. Increasing the population diversity can be an important mechanism in controlling the search behavior of population based metaheuristics and is especially useful for increasing the exploration of the search space of possible solutions !QUELLE!.
 
-Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model. Even though pre-training increased the median total run-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might be a possible way to lower the run time of DAE-GP if further performance optimizations to the source code, especially during model sampling, can be achieved.
+Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model. Even though pre-training increased the median total run-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might be a possible way to lower the run time of DAE-GP if further performance optimizations, especially during model sampling, can be achieved.
 
 ## Disadvantages of using Pre-Training
 
@@ -842,7 +844,7 @@ Another disadvantage of using pre-training in DAE-GP is that, in my experiments,
 
 One major limitation for the experiments conducted during the reseach phase of this thesis has been the large computational effort for experimenting with DAE-GP. Since single runs for DAE-GP have a run-time of many hours, it was not possible for me to extend the experiments to larger population sizes or more generations. Also I did not perform an extended optimization of hyperparameters (e.g by using a grid search strategy) which might yield configurations that increase the benefits of pre-training. As described in subsection [Effect on Run-Time], sampling new solutions has been a large contributor to the large performance hit on run-time by using pre-training. It could be a worthwhile endevour to explore the main factors that increase sampling time for pre-trained DAE-GP to more efficiently exploit the benefits of pre-training like reducing the number of training epochs.
 
-Another limitation of this research is the software implementation used for all experiments. As briefly touched in the subsection [Effect on Run-Time], I found some evidence that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used `keras` library for deep neural networks. By optimizing the source code or even re-implementing it in a more performance-focused programming language (such as `C++` or `Rust`), large improvements to the pre-training strategy might be achievable.    
+Another limitation of this research is the software implementation used for all experiments. As briefly touched in the subsection [Influence on Run-Time], I found some evidence that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used `keras` library for deep neural networks. By optimizing the source code or even re-implementing it in a more performance-focused programming language (such as `C++` or `Rust`), large improvements to the pre-training strategy might be achievable.    
 
 Another possibility to improve the benefits of pre-training for DAE-GP is based on the findings of @pmlr-v5-erhan09a. Pre-Training has shown to be especially useful for the lower layers of DAEs so it could be worthwhile to further experiment with only adapting the weights for a subset of the hidden layers inside the DAE-LSTM networks to either reduce run-time or to improve on the quality of solutions found during the evolutionary search. 
 
