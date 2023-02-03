@@ -840,12 +840,12 @@ Another disadvantage of using pre-training in DAE-GP is that, in my experiments,
 
 ## Limitations and open Questions
 
-One major limitation for the experiments conducted during the reseach phase of this thesis has been the large computational effort for experimenting with DAE-GP. Since single runs for DAE-GP have a run-time of many hours, it was not possible for me to extend the experiments to larger population sizes or more generations. Also I did not perform an extended optimization of hyperparameters (e.g by using a grid search strategy) which might yield configurations that increase the benefits of pre-training. As described in subsection [Effect on Run-Time], sampling new solutions has been a large contributor to the large performance hit on run-time by using pre-training. It could be a worthwhile endevour to explore new strategies, that 
+One major limitation for the experiments conducted during the reseach phase of this thesis has been the large computational effort for experimenting with DAE-GP. Since single runs for DAE-GP have a run-time of many hours, it was not possible for me to extend the experiments to larger population sizes or more generations. Also I did not perform an extended optimization of hyperparameters (e.g by using a grid search strategy) which might yield configurations that increase the benefits of pre-training. As described in subsection [Effect on Run-Time], sampling new solutions has been a large contributor to the large performance hit on run-time by using pre-training. It could be a worthwhile endevour to explore the main factors that increase sampling time for pre-trained DAE-GP to more efficiently exploit the benefits of pre-training like reducing the number of training epochs.
 
+Another limitation of this research is the software implementation used for all experiments. As briefly touched in the subsection [Effect on Run-Time], I found some evidence that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used `keras` library for deep neural networks. By optimizing the source code or even re-implementing it in a more performance-focused programming language (such as `C++` or `Rust`), large improvements to the pre-training strategy might be achievable.    
 
-[@pmlr-v5-erhan09a]: Pre-Training effect especially useful for lower-level layers -> Only adapt weights from low layers or embed the pre-trained model?
+Another possibility to improve the benefits of pre-training for DAE-GP is based on the findings of @pmlr-v5-erhan09a. Pre-Training has shown to be especially useful for the lower layers of DAEs so it could be worthwhile to further experiment with only adapting the weights for a subset of the hidden layers inside the DAE-LSTM networks to either reduce run-time or to improve on the quality of solutions found during the evolutionary search. 
 
-Different pre-training strategies?
 
 
 \newpage  
