@@ -143,7 +143,7 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2023-02-02}
+\date{\vspace{-2.5em}Date of Submission: 2023-02-03}
 
 \begin{document}
 \maketitle
@@ -343,7 +343,7 @@ During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm
 \end{figure}
 
 One difficulty in the implementation of a pre-training strategy into DAE-GP has been the determination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{18}{]} uses a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
-For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM. To allow the sharing of the state of the pre-trained parameters \(\theta_{\hat{M}}\) from the pre-trained model \(\hat{M}\) to each \(M_g\) for \(g\in{1,...,g_{max}}\) I set the number of hidden neurons per hidden layer for all pre-trained runs statically to the maximum individual size inside the pre-training population \(\hat{P}_{train}\)
+For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM. To allow the sharing of the state of the pre-trained parameters \(\theta_{\hat{M}}\) from the pre-trained model \(\hat{M}\) to each \(M_g\) for \(g\in{1,...,g_{max}}\) the number of hidden neurons per hidden layer for all DAE-GP runs, pre-trained as well as regular, is statically set to a predefined value.
 
 If not stated otherwise, all experiments in this thesis use the hyperparameters listed in table \ref{tab:airfoil-fullRun-2hl-maxIndSize-params}.
 
@@ -418,7 +418,7 @@ output & y & Scaled sound pressure level & decibels\\
 \end{tabular}
 \end{table}
 
-The objective of the airfoil problem is to find a function that accurately predicts the output variable \(y\) by taking in a subset of the input variables \(x1,x2,x3,x4,x5\). The function set used by all DAE-GP variations for the airfoil problem is summarized in table 2, the terminal set consists of the 5 input variables \(x1,x2,x3,x4,x5\) and ephemeral random integers in the range of \([{}-5,..,5]\) {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]}.
+The objective of the airfoil problem is to find a function that accurately predicts the output variable \(y\) by taking in a subset of the input variables \(x1,x2,x3,x4,x5\). The function set used by all DAE-GP variations for the airfoil problem is summarized in \ref{tab:airfoil-fullRun-2hl-maxIndSize-params}, the terminal set consists of the 5 input variables \(x1,x2,x3,x4,x5\) and the ephemeral integer constants listed in \ref{tab:airfoil-fullRun-2hl-maxIndSize-params}{[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]}.
 
 \hypertarget{results-for-the-airfoil-dataset}{%
 \section{Results for the Airfoil Dataset}\label{results-for-the-airfoil-dataset}}
@@ -426,7 +426,7 @@ The objective of the airfoil problem is to find a function that accurately predi
 \hypertarget{effect-on-generalisation}{%
 \subsection{Effect on Generalisation}\label{effect-on-generalisation}}
 
-To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using and different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
+To gather a deeper understanding about the effect of pre-training DAE-LSTM in DAE-GP a series of experiments was conducted using the airfoil dataset for symbolic regression while using different parameter configurations for the number of hidden layers as well as the number of hidden neurons per hidden layer.
 
 To study generalization behavior this series of experiments is conducted using DAE-GP with only a single generation until the search terminates. I disregard the fitness of solutions found and focus solely on the reconstruction error that is produced during the training of each DAE-LSTM. The reconstruction error is measured for two separate populations, a training population \(P_{train}\) that is used to train our DAE-LSTM as well as a hold-out validation population \(P_{test}\). For the pre-trained DAE-GP two additional, separate populations \(\hat{P}_{train}\) and \(\hat{P}_{test}\) are used exclusively for pre-training.
 
@@ -442,7 +442,7 @@ DAE-GP is tested in two different configurations:
 
 For each configuration I tested traditional DAE-GP as well as a pre-trained DAE-GP resulting in 12 total sub experiments that were each based on 10 individual runs (total number of runs=\(120\)). To avoid creating biased results through the presence of sampling error inside the pre-training population (see {[}\protect\hyperlink{ref-sampling_err_gp}{13}{]}), the population size for the pre-training phase is chosen very high with the size of \(\hat{P}\) =10000 where 50\% of \(\hat{P}\) is used for the training population \(\hat{P}_{train}\) and the remaining 50\% are used for the hold-out validation population \(\hat{P}_{test}\). The training of DAE-LSTM uses a fixed number of 1000 epochs until termination and uses Adam optimization for gradient descent. The reason for using a high amount of 1000 fixed training epochs is to deliberately force the DAE-LSTM to overfit to the training data.
 
-In general I expect that with a growing number of model parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population \(P_{train}\) resulting in a small reconstruction error for the training population and a large one for the validation population \(P_{test}\). The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases {[}\protect\hyperlink{ref-weigend1994overfitting}{15}{]}.
+In general I expect that with a growing number of trainable parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population \(P_{train}\) resulting in a small reconstruction error for the training population and a large one for the validation population \(P_{test}\). The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases {[}\protect\hyperlink{ref-weigend1994overfitting}{15}{]}.
 
 Based on the review of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{3}{]} I also expect that pre-training will have an insignificant or even negative influence on small DAE-LSTM instances while improving the networks generalization ability with growing size.
 
@@ -521,6 +521,31 @@ Another interesting metric to examine in population-based optimization algorithm
 \caption{Median Population Diversity over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-popDiversity}
 \end{figure}
 
+\hypertarget{dynamic-adjustment-of-hidden-neurons}{%
+\subsubsection{Dynamic Adjustment of Hidden Neurons}\label{dynamic-adjustment-of-hidden-neurons}}
+
+To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks. For comparison, figure \ref{fig:airfoil-maxIndSize-params} shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{18}{]} and {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{17}{]}. Again, the experiments was based on \(10\) individual runs and otherwise used the same hyperparameters as the previous one. It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the depth of it's hidden layers to the current generations population which will further reduce the amount of training necessary and likely reduce the run-time of DAE-GP.
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams} 
+
+}
+
+\caption{Median Number of trainable Parameters over 30 Generations - Airfoil (2HL)}\label{fig:airfoil-maxIndSize-params}
+\end{figure}
+
+As expected, this reduction of hidden neurons by dynamic adjustment, does also result in a reduction of the fitness of solutions found. Figure \ref{fig:airfoil-maxIndSize-fitness} shows that pre-trained DAE-GP, with it's more complex DAE-LSTMs over the full 30 generations, does achieve a higher median fitness than regular DAE-GP with dynamic adjustment of hidden neurons. Pre-Training does therefore introduce a new Trade-Off decision into the adjustment of DAE-GP hyperparameters where the number of hidden neurons needs to be carefully selected since it positivly impacts solution quality but also increases the computational cost of DAE-LSTM training.
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens} 
+
+}
+
+\caption{Median Best Fitness over 30 Generations - Airfoil (2HL) with dynamic adjustment of regular DAE-GP}\label{fig:airfoil-maxIndSize-fitness}
+\end{figure}
+
 \hypertarget{reduced-number-of-hidden-layers}{%
 \subsubsection{Reduced Number of Hidden Layers}\label{reduced-number-of-hidden-layers}}
 
@@ -534,6 +559,8 @@ Since previous research on DAE-GP used a single hidden layers for the airfoil da
 
 \caption{Fitness over 30 Generations - Airfoil (1HL)}\label{fig:airfoil-fitness-perGen}
 \end{figure}
+
+\ldots{} describe differences in distribution, interquartile range blablabla\ldots{}
 
 \begin{figure}[c]
 
@@ -915,7 +942,19 @@ concrete & 2 & 171.69 & \textbf{64.9} & 0.00*** & -0.92 \\
 \hypertarget{conclusion-and-discussion}{%
 \section{Conclusion and Discussion}\label{conclusion-and-discussion}}
 
-The experiments conducted in this thesis did not find any significant benefits in using a pre-training strategy for using DAE-GP to solve real world symbolic regression problems.
+\hypertarget{benefits-of-using-pre-training}{%
+\subsection{Benefits of using Pre-Training}\label{benefits-of-using-pre-training}}
+
+The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in an increased population diversity measured by the normalized levenshtein edit distance. Increasing the population diversity can be an important mechanism in controlling the search behavior of population based metaheuristics and is especially useful for increasing the exploration of the search space of possible solutions !QUELLE!.
+
+Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model. Even though pre-training increased the median total run-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might be a possible way to lower the runtime of DAE-GP if further performance optimizations to the source code, especially during model sampling, can be achieved.
+
+\hypertarget{disadvantages-of-using-pre-training}{%
+\subsection{Disadvantages of using Pre-Training}\label{disadvantages-of-using-pre-training}}
+
+The experiments conducted in this thesis did not find any significant benefits on both solution quality as well as run-time for solving real world symbolic regression problems with pre-trained DAE-GP in comparison to regular DAE-GP.
+
+One major drawback of using pre-training with DAE-GP
 
 \hypertarget{limitations-and-open-questions}{%
 \section{Limitations and open Questions}\label{limitations-and-open-questions}}

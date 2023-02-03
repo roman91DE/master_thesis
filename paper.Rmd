@@ -486,10 +486,10 @@ To ensure a fair comparison between pre-trained and regular DAE-GP, the prior ex
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams.png")
 ```
 
-As expected, this reduction of hidden neurons by dynamic adjustment, does also result in a reduction of the fitness of solutions found. Figure \@ref(fig:airfoil-maxIndSize-fitness) shows that pre-trained DAE-GP does achieve a higher median fitness than regular DAE-GP with dynmaic adjustment of hidden neurons. 
+As expected, this reduction of hidden neurons by dynamic adjustment, does also result in a reduction of the fitness of solutions found. Figure \@ref(fig:airfoil-maxIndSize-fitness) shows that pre-trained DAE-GP, with it's more complex DAE-LSTMs over the full 30 generations, does achieve a higher median fitness than regular DAE-GP with dynamic adjustment of hidden neurons. Pre-Training does therefore introduce a new Trade-Off decision into the adjustment of DAE-GP hyperparameters where the number of hidden neurons needs to be carefully selected since it positivly impacts solution quality but also increases the computational cost of DAE-LSTM training.
 
 
-```{r airfoil-maxIndSize-fitness, echo=FALSE, fig.cap="Median Fitness over 30 Generations - Airfoil (2HL), dynamic adjustment of regular DAE-GP", out.width="80%"}
+```{r airfoil-maxIndSize-fitness, echo=FALSE, fig.cap="Median Best Fitness over 30 Generations - Airfoil (2HL) with dynamic adjustment of regular DAE-GP", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png")
 ```
 
