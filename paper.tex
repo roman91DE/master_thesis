@@ -223,6 +223,11 @@ GPs ability to optimize solutions for their structure as well as for their param
 The aim of Estimation of distribution algorithms (EDA) is to replace the standard variation operators used in GA by building probabilistic models that can capture complex dependencies between different decision variables of an optimization problem {[}\protect\hyperlink{ref-design_of_modern_heuristics}{12}{]}.
 EDAs use this probabilistic model to sample new offspring solutions inside an evolutionary search to replace crossover and/or mutation operators.
 
+\hypertarget{eda-gp}{%
+\subsubsection{EDA-GP}\label{eda-gp}}
+
+\ldots{} insert some smart stuff here\ldots{}
+
 \hypertarget{denoising-autoencoders}{%
 \subsubsection{Denoising Autoencoders}\label{denoising-autoencoders}}
 
@@ -954,7 +959,9 @@ Another significant benefit of using pre-training in DAE-GP is that it is highly
 
 The experiments conducted in this thesis did not find any significant benefits on both solution quality as well as run-time for solving real world symbolic regression problems with pre-trained DAE-GP in comparison to regular DAE-GP.
 
-One major drawback of using pre-training with DAE-GP
+As detailed in the subsection {[}\protect\hyperlink{ref-Dynamic}{\textbf{Dynamic?}} Adjustment of Hidden Neurons{]}, one major drawback of using pre-training with DAE-GP is the loss of the ability to dynamically adjust the number of hidden neurons to the maximum size of individuals inside the current generations population. This dynamic mechanism does reduce the computational resources necessary for training DAE-LSTM networks which is one of the most time consuming operations besides sampling new individuals.
+
+Another disadvantage
 
 \hypertarget{limitations-and-open-questions}{%
 \section{Limitations and open Questions}\label{limitations-and-open-questions}}

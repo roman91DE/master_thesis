@@ -5,7 +5,8 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Evolutionary Computation}{4}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Genetic Programming}{4}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Estimation of Distribution Algorithms}{4}{subsubsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.4}Denoising Autoencoders}{4}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.4}EDA-GP}{4}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Denoising Autoencoders}{4}{subsubsection.3.1.5}%
 \contentsline {subsection}{\numberline {3.2}Pre-Training}{5}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Pre-Training in DAE-GP}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Implementation}{7}{subsection.4.1}%
@@ -24,6 +25,6 @@
 \contentsline {section}{\numberline {7}Conclusion and Discussion}{35}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Benefits of using Pre-Training}{35}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Disadvantages of using Pre-Training}{35}{subsection.7.2}%
-\contentsline {section}{\numberline {8}Limitations and open Questions}{35}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Further Questions}{35}{subsection.8.1}%
-\contentsline {section}{References}{36}{section*.4}%
+\contentsline {section}{\numberline {8}Limitations and open Questions}{36}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Further Questions}{36}{subsection.8.1}%
+\contentsline {section}{References}{37}{section*.4}%

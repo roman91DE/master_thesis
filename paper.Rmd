@@ -836,19 +836,19 @@ Another significant benefit of using pre-training in DAE-GP is that it is highly
 
 The experiments conducted in this thesis did not find any significant benefits on both solution quality as well as run-time for solving real world symbolic regression problems with pre-trained DAE-GP in comparison to regular DAE-GP.
 
-One major drawback of using pre-training with DAE-GP
+As detailed in the subsection [Dynamic Adjustment of Hidden Neurons], one major drawback of using pre-training with DAE-GP is the loss of the ability to dynamically adjust the number of hidden neurons to the maximum size of individuals inside the current generations population. This dynamic mechanism does reduce the computational resources necessary for training DAE-LSTM networks which is one of the most time consuming operations besides sampling new individuals.
+
+Another disadvantage of pre-training in DAE-GP is that in order for it to show 
 
 <!-- ## Vorteile -->
 
 <!-- Der Einsatz von Pre-Training dient: -->
 
-<!-- * der Erhöhung der Populationsdiversität (mögliche Strategie zur Kontrolle des Explore/Exploit Verhaltens von DAE-GP?) -->
 
 <!-- * der Reduktion der Trainingsepochen pro Generation (Reduktion der Rechenleistung, insbesondere bei komplexen DAE-LSTM nützlich?) -->
 
 <!-- ## Nachteile -->
 
-<!-- * DAE-GP verliert durch Einsatz von Pre-Training die Möglichkeit die Anzahl künstlicher Neuronen pro verstecktem Layer anzupassen -->
 
 <!-- * Erhöhung der Rechenzeit/Ressourcen: DAE-LSTMs müssen ausreichend dimensioniert sein (2+ Hidden Layer), aktuelle Publikationen nutzen nur einen einzelnen Hidden Layer^[@dae-gp_2022_symreg] ^[@daegp_explore_exploit]. -->
 
