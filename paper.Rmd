@@ -205,6 +205,11 @@ GPs ability to optimize solutions for their structure as well as for their param
 The aim of Estimation of distribution algorithms (EDA) is to replace the standard variation operators used in GA by building probabilistic models that can capture complex dependencies between different decision variables of an optimization problem [@design_of_modern_heuristics]. 
 EDAs use this probabilistic model to sample new offspring solutions inside an evolutionary search to replace crossover and/or mutation operators. 
 
+
+### EDA-GP
+
+... insert some smart stuff here...
+
 ### Denoising Autoencoders
 
 One possible way of model building in EDA proposed by @harmless_overfitting_eda is to use denoising autoencoders (DAEs) as generative models to capture complex probability distributions of decision variables. 
