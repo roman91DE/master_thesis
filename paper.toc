@@ -25,6 +25,6 @@
 \contentsline {section}{\numberline {7}Conclusion and Discussion}{35}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Benefits of using Pre-Training}{35}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Disadvantages of using Pre-Training}{35}{subsection.7.2}%
-\contentsline {section}{\numberline {8}Limitations and open Questions}{36}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Further Questions}{36}{subsection.8.1}%
+\contentsline {subsection}{\numberline {7.3}Limitations}{36}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Further Questions}{36}{subsection.7.4}%
 \contentsline {section}{References}{37}{section*.4}%

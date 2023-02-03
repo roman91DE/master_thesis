@@ -5,6 +5,7 @@ Fitness_Metric?RMSE
 Training_Mode?Convergence
 Sampling_Steps?1
 Hidden_Neurons?150
+Hidden_Layer?2
 Selection_Operator?Binary Tournament Selection
 Corruption_Operator?Levenshtein Edit
 Denoising_Edit_Probability(training/sampling)?0.05/0.95

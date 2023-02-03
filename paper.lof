@@ -2,16 +2,16 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces Pre-Trained DAE-GP Flowchart}}{9}{figure.2}%
 \contentsline {figure}{\numberline {3}{\ignorespaces First Generation Median Reconstruction Error for variable number of hidden Neurons}}{13}{figure.3}%
 \contentsline {figure}{\numberline {4}{\ignorespaces First Generation Median Reconstruction Error for variable number of hidden Layers}}{14}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Best Fitness over 30 Generations - Airfoil (2HL)}}{15}{figure.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Best Fitness after 30 Generations - Airfoil (2HL)}}{16}{figure.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Median Solution Size over 30 Generations - Airfoil (2HL)}}{17}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Median Population Diversity over 30 Generations - Airfoil (2HL)}}{18}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Median Number of trainable Parameters over 30 Generations - Airfoil (2HL)}}{19}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Median Best Fitness over 30 Generations - Airfoil (2HL) with dynamic adjustment of regular DAE-GP}}{20}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Fitness over 30 Generations - Airfoil (1HL)}}{21}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Fitness after 30 Generations - Airfoil (1HL)}}{22}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Best Fitness over 30 Generations - Alternative Pre-Strategies - Airfoil}}{23}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Best Fitness on Test Set after 30 Generations - Alternative Pre-Trategies - Airfoil}}{24}{figure.14}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Best Fitness over 30 Generations - Airfoil}}{15}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Best Fitness after 30 Generations - Airfoil}}{16}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Median Solution Size over 30 Generations - Airfoil}}{17}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Median Population Diversity over 30 Generations - Airfoil}}{18}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Median Number of trainable Parameters over 30 Generations - Airfoil - Dynamic adjustment of regular DAE-GP}}{19}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Median Best Fitness over 30 Generations - Airfoil - Dynamic adjustment of regular DAE-GP}}{20}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Fitness over 30 Generations - Airfoil - Single Hidden Layer}}{21}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Fitness after 30 Generations - Airfoil - Single Hidden Layer}}{22}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Best Fitness over 30 Generations - Airfoil - Alternative Pre-Strategies }}{23}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Best Fitness on Test Set after 30 Generations - Airfoil - Alternative Pre-Trategies}}{24}{figure.14}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Median Runtime - Airfoil}}{25}{figure.15}%
 \contentsline {figure}{\numberline {16}{\ignorespaces Median Number of Training Epochs per Generation - Airfoil}}{26}{figure.16}%
 \contentsline {figure}{\numberline {17}{\ignorespaces Median Sampling Time per Generation - Airfoil}}{27}{figure.17}%
