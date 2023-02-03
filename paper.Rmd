@@ -23,7 +23,7 @@ output:
     includes:
       in_header: [header_files/settings.tex]
 indent: false
-fontsize: 12pt
+fontsize: 11pt
 bibliography: ./ref/ref.bib
 link-citations: true
 fig.width: 4in
@@ -31,6 +31,7 @@ fig.height: 3in
 csl: csl/association-for-computing-machinery.csl
 urlcolor: blue
 linkcolor: blue
+toccolor: blue
 #csl: csl/harvard-cite-them-right.csl
 #csl: csl/springer-science-reviews.csl
 include-before: '`\thispagestyle{empty} \newpage{}`{=latex}'
@@ -404,7 +405,6 @@ D_AIRFOIL_1hl = load(
   open("/Users/rmn/github/master_thesis/data/airfoil_1hl_150hn_fullRun_30gens/summary.json", "r", encoding="utf-8")
   )
   
-
 ```
 
 
@@ -487,7 +487,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_po
 ```
 ### Dynamic Adjustment of Hidden Neurons
 
-To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks. For comparison, figure \@ref(fig:airfoil-maxIndSize-params) shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in [@dae-gp_2020_rtree] and [@dae-gp_2022_symreg]. Again, the experiments was based on $10$ individual runs and otherwise used the same hyperparameters as the previous one. It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the depth of it's hidden layers to the current generations population which will further reduce the amount of training necessary and likely reduce the run-time of DAE-GP.
+To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks. For comparison, figure \@ref(fig:airfoil-maxIndSize-params) shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in [@dae-gp_2020_rtree] and [@dae-gp_2022_symreg]. Again, the experiments was based on $10$ individual runs and otherwise used the same hyperparameters as listed in table \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params). It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largley reduces the amount of training necessary and likely reduce the run-time of DAE-GP.
 
 ```{r airfoil-maxIndSize-params, echo=FALSE, fig.cap="Median Number of trainable Parameters over 30 Generations - Airfoil - Dynamic adjustment of regular DAE-GP", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams.png")
@@ -509,7 +509,11 @@ Since previous research on DAE-GP used a single hidden layers for the airfoil da
 ```{r airfoil-fitness-perGen, echo=FALSE, fig.cap="Fitness over 30 Generations - Airfoil - Single Hidden Layer", out.width="80%"}
 knitr::include_graphics("./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png")
 ```
-... describe differences in distribution, interquartile range blablabla...
+
+<!-- An interesting observation from studying the distribution of final fitness scores for both algorithms is that pre-trained DAE-GP has a smaller interquartile range and more extreme outliers for high RMSE which explains the slightly worse performance if looking at median best fitness present in figure \@ref(fig:airfoil-median-fitness-30gens).  -->
+
+Interestingly, figure \@ref(fig:airfoil-finalFitness) shows that the distribution of final fitness scores for pre-trained DAE-GP has a larger interquartile range than regular DAE-GP. This is opposed to the distributions of final fitness score that was measured for the same problem run with two hidden layers (see figure \@ref(fig:airfoil-distribution-fitness-30gens)). Otherwise, pre-trained DAE-GP again has more outliers for high RMSE than regular DAE-GP as seen in the previous experiment with 2 hidden layers.
+
 
 
 ```{r airfoil-finalFitness, echo=FALSE, fig.cap="Fitness after 30 Generations - Airfoil - Single Hidden Layer", out.width="80%"}
@@ -528,13 +532,13 @@ The pre-training implementation in previous experiments used ramped half and hal
 Figure \@ref(fig:altStrategies-Fitness) shows the median best fitness by generations for both alternative pre-training strategies as well as the results for standard DAE-GP and the standard Pre-Training implementation used in earlier experiments. Unfortunately, both alternative strategies do show a worse performance in fitness than both DAE-GP and standard pre-trained DAE-GP resulting in lower fitness.
 
 
-```{r altStrategies-Fitness, echo=FALSE, fig.cap="Best Fitness over 30 Generations - Airfoil - Alternative Pre-Strategies ", out.width="80%"}
+```{r altStrategies-Fitness, echo=FALSE, fig.cap="Best Fitness over 30 Generations - Airfoil - Alternative Pre-Training Strategies ", out.width="80%"}
 knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png")
 ```
 
 Figure \@ref(fig:altStrategies-FitnessDistr) shows the distribution of best fitness achieved on the test set after running for 30 full generations. Both alternative second generation Pre-Training as well as grow-initialized Pre-Training show a much higher median RMSE (18.88/17.21) compared to standard pre-training (8.55) and regular DAE-GP (6.99). Also both approaches do not demonstrate any benefit on the dispersion of solutions found resulting in similar standard deviations if compared to standard pre-training.
 
-```{r altStrategies-FitnessDistr, echo=FALSE, fig.cap="Best Fitness on Test Set after 30 Generations - Airfoil - Alternative Pre-Trategies", out.width="80%"}
+```{r altStrategies-FitnessDistr, echo=FALSE, fig.cap="Best Fitness on Test Set after 30 Generations - Airfoil - Alternative Pre-Training Strategies", out.width="80%"}
 knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only).png")
 ```
 
@@ -771,7 +775,6 @@ knitr::kable(
 ```
 
 
-
 ## Training epochs per Generation
 
 ...
@@ -819,8 +822,6 @@ knitr::kable(
 ```
 
 
-
-
 # Conclusion and Discussion
 
 ## Benefits of using Pre-Training
@@ -847,7 +848,6 @@ One major limitation for the experiments conducted during the reseach phase of t
 Another limitation of this research is the software implementation used for all experiments. As briefly touched in the subsection [Influence on Run-Time], I found some evidence that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used `keras` library for deep neural networks. By optimizing the source code or even re-implementing it in a more performance-focused programming language (such as `C++` or `Rust`), large improvements to the pre-training strategy might be achievable.    
 
 Another possibility to improve the benefits of pre-training for DAE-GP is based on the findings of @pmlr-v5-erhan09a. Pre-Training has shown to be especially useful for the lower layers of DAEs so it could be worthwhile to further experiment with only adapting the weights for a subset of the hidden layers inside the DAE-LSTM networks to either reduce run-time or to improve on the quality of solutions found during the evolutionary search. 
-
 
 
 \newpage  
