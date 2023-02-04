@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  3 FEB 2023 20:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.5)  4 FEB 2023 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -873,169 +873,184 @@ sed on input line 673.
 [26 <./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withou
 tSampling.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 704.
+(Font)              <9> on input line 703.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 704.
+(Font)              <5> on input line 703.
 
-Overfull \hbox (1.81479pt too wide) in paragraph at lines 757--757
+Overfull \hbox (1.81479pt too wide) in paragraph at lines 756--756
  []|\T1/lmr/m/n/10.95 (-20) Boston_Housing| 
  []
 
 
-Overfull \hbox (0.83762pt too wide) in paragraph at lines 759--759
+Overfull \hbox (0.83762pt too wide) in paragraph at lines 758--758
  []|\T1/lmr/m/n/10.95 (-20) Energy(Cooling)| 
  []
 
 [27 <./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_b
-yGens.png, id=430, 1011.78pt x 867.24pt>
+yGens.png, id=436, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitn
 ess_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitne
 ss_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_fitness_byGens.png  used on input line 767.
+marized/median_fitness_byGens.png  used on input line 766.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_s
-ize_byGens.png, id=431, 1011.78pt x 867.24pt>
+ize_byGens.png, id=437, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_best
 Sol_size_byGens.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestS
 ol_size_byGens.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_bestSol_size_byGens.png  used on input line 778.
+marized/median_bestSol_size_byGens.png  used on input line 777.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [28 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
 ian_fitness_byGens.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistan
-ce_byGen.png, id=438, 1011.78pt x 867.24pt>
+ce_byGen.png, id=444, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levD
 istance_byGen.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDi
 stance_byGen.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_levDistance_byGen.png  used on input line 840.
+marized/median_levDistance_byGen.png  used on input line 839.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [29 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
 ian_bestSol_size_byGens.png>] [30 </Users/rmn/masterThesis/master_thesis/img/sy
 mbolicRegressionSummarized/median_levDistance_byGen.png>]
 <~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTra
-ined.png, id=451, 1011.78pt x 867.24pt>
+ined.png, id=457, 1011.78pt x 867.24pt>
 File: ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoc
 hsTrained.png Graphic file (type png)
 <use ~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epoch
 sTrained.png>
 Package pdftex.def Info: ~/masterThesis/master_thesis/img/symbolicRegressionSum
-marized/median_epochsTrained.png  used on input line 902.
+marized/median_epochsTrained.png  used on input line 901.
 (pdftex.def)             Requested size: 469.76266pt x 402.65372pt.
 [31 </Users/rmn/masterThesis/master_thesis/img/symbolicRegressionSummarized/med
 ian_epochsTrained.png>] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 991--994
+Underfull \hbox (badness 10000) in paragraph at lines 990--993
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 995--998
+Underfull \hbox (badness 10000) in paragraph at lines 994--997
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 999--1002
+Underfull \hbox (badness 10000) in paragraph at lines 998--1001
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1003--1006
+Underfull \hbox (badness 10000) in paragraph at lines 1002--1005
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1007--1010
+Underfull \hbox (badness 10000) in paragraph at lines 1006--1009
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1011--1014
+Underfull \hbox (badness 10000) in paragraph at lines 1010--1013
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1015--1018
+Underfull \hbox (badness 10000) in paragraph at lines 1014--1017
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1019--1022
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1021
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1023--1026
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1025
 
  []
 
 
-Underfull \hbox (badness 3713) in paragraph at lines 1029--1029
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1029
+
+ []
+
+
+Underfull \hbox (badness 3713) in paragraph at lines 1032--1032
 []\T1/lmr/m/n/10.95 (+20) Sinno Jialin Pan and Qiang Yang. 2010. A sur-vey on t
 rans-fer learn-ing.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1030
+Underfull \hbox (badness 10000) in paragraph at lines 1030--1033
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1031--1034
+Underfull \hbox (badness 10000) in paragraph at lines 1034--1037
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1035--1038
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1041
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1039--1042
+Underfull \hbox (badness 10000) in paragraph at lines 1042--1045
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1043--1046
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1047--1050
+Underfull \hbox (badness 10000) in paragraph at lines 1046--1049
 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1051--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1053
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1055--1058
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1057
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1059--1062
+Underfull \hbox (badness 10000) in paragraph at lines 1058--1061
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1066
+Underfull \hbox (badness 10000) in paragraph at lines 1062--1065
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1066--1069
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1070--1073
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1074--1077
 
  []
 
 [35] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 16599 strings out of 478268
- 277029 string characters out of 5846348
- 624444 words of memory out of 5000000
- 34147 multiletter control sequences out of 15000+600000
+ 16603 strings out of 478268
+ 277091 string characters out of 5846348
+ 624521 words of memory out of 5000000
+ 34148 multiletter control sequences out of 15000+600000
  537223 words of font info for 160 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  74i,9n,77p,1247b,456s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1056,10 +1071,10 @@ mr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb></us
 r/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022
 /texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on paper.pdf (36 pages, 10479859 bytes).
+Output written on paper.pdf (36 pages, 10481007 bytes).
 PDF statistics:
- 699 PDF objects out of 1000 (max. 8388607)
- 577 compressed objects within 6 object streams
- 153 named destinations out of 1000 (max. 500000)
+ 707 PDF objects out of 1000 (max. 8388607)
+ 585 compressed objects within 6 object streams
+ 156 named destinations out of 1000 (max. 500000)
  37212 words of extra memory for PDF output out of 42996 (max. 10000000)
 

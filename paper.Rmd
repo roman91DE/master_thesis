@@ -339,7 +339,7 @@ The framework that was used to conduct all experiments of this thesis was provid
 To test pre-training in DAE-GP this thesis focuses on the domain of real-world symbolic regression problems. Symbolic Regression problems have been one of the first GP applications [@Koza1993GeneticP] and are an actively studied and highly relevant research area. The goal in symbolic regression is to find a mathematical model for a given set of data points [@10.1007/978-3-540-24621-3_22], in real-world symbolic regression these data points are sourced from real-world observations which in contrast to synthetic symbolic regression problem are more likely to contain random noise and bias. Another important challenge in solving real-world symbolic regression problems is the ability for a given model to generalize, we want the final model to show high accuracy in predicting outcomes for previously unseen cases.
 
 <!--- airfoil dataset -->
-The main experiments conducted in this thesis uses the NASA Airfoil Self-Noise Data Set which is part of the UCI machine learning repository [@machine_learning_repo]. The dataset consists of 5 input variables and 1 output variable that are listed in table \@ref(tab:airfoil-dataset-description).
+The main experiments conducted in this thesis uses the NASA Airfoil Self-Noise Data Set [@AIRFOIL_DATASET] that consists of 5 input variables and 1 output variable that are listed in table \@ref(tab:airfoil-dataset-description).
 
 ```{r airfoil-dataset-description, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 fig.pos="H"
@@ -621,13 +621,14 @@ knitr::include_graphics("./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png")
 # Results over different Real-World Symbolic Regression Problems 
 
 
-To gather more confidence in the previous results, the pre-training strategy for DAE-GP was applied for three additional real world symbolic regression problems taken from @machine_learning_repo and tested for statistically significant differences in the underlying distributions. Table \@ref(tab:full-run-realWorldSymReg-problems) briefly summarizes the benchmark problems.
+To gather more confidence in the previous results, the pre-training strategy for DAE-GP was applied for three additional real world symbolic regression problems and tested for statistically significant differences in the underlying distributions. Table \@ref(tab:full-run-realWorldSymReg-problems) briefly summarizes the benchmark problems.
 
 ```{r full-run-realWorldSymReg-problems, echo=FALSE, message=FALSE, warning=FALSE}
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/full_run_realWorldSymReg_problems.csv"),
-  caption="Real World Symbolic Regression Benchmark Problems"
+  caption="Real World Symbolic Regression Benchmark Problems",
+  format = "markdown"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
