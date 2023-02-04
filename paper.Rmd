@@ -23,17 +23,18 @@ output:
     includes:
       in_header: [header_files/settings.tex]
 indent: false
-fontsize: 11pt
+fontsize: 12pt
 bibliography: ./ref/ref.bib
 link-citations: true
 fig.width: 4in
 fig.height: 3in
 csl: csl/association-for-computing-machinery.csl
+# csl: csl/harvard-cite-them-right.csl
+# csl: csl/springer-science-reviews.csl
 urlcolor: blue
 linkcolor: blue
 toccolor: blue
-#csl: csl/harvard-cite-them-right.csl
-#csl: csl/springer-science-reviews.csl
+github-repo: https://github.com/roman91DE/master_thesis
 include-before: '`\thispagestyle{empty} \newpage{}`{=latex}'
 ---
 
@@ -50,7 +51,6 @@ knitr::opts_chunk$set(
   fig.align="center"
   )
 
-
 reticulate::use_python("/Users/rmn/miniconda3/envs/dataScience/bin/python")
 
 ```
@@ -63,7 +63,7 @@ print(f"Python Version: {version} \nPath: {executable}")
 ```
 
 
-```{bash recompile-results, echo=TRUE, eval=FALSE, include=FALSE}
+```{bash recompile-results, echo=TRUE, eval=TRUE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
@@ -326,7 +326,8 @@ If not stated otherwise, all experiments in this thesis use the hyperparameters 
 fig.pos="H"
 knitr::kable(
   read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params", sep = "?"),
-  caption = "DAE-GP - Hyperparameter"
+  caption = "DAE-GP - Hyperparameter",
+  format = "markdown"
 )%>% row_spec(0,bold=TRUE )
 ```
 
@@ -480,7 +481,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_me
 ```
 
 
-Another interesting metric to examine in population-based optimization algorithms is the diversity of the current generations population. Since individual solutions in DAE-GP are computer programs in the form of parse trees, I selected the normalized Levenshtein edit distance as my primary metric for tracking population diversity. Figure \@ref(fig:airfoil-popDiversity) shows the median population diversity for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a higher level during the evolutionary search. Here it can be observed, that pre-training shows a positive effect by increasing population diversity in comparison to regular DAE-GP (Median over all generations for DAE-GP: `r round(REG_MED_LEVDIV, 3)`, Pre-Trained DAE-GP: `r round(PT_MED_LEVDIV, 3)`, Standard-GP `r round(GP_MED_LEVDIV, 3)`)
+Another interesting metric to examine in population-based optimization algorithms is the diversity of the current generations population. Since individual solutions in DAE-GP are computer programs in the form of parse trees, I selected the normalized Levenshtein edit distance [@NormLevDistance] as my primary metric for tracking population diversity. Figure \@ref(fig:airfoil-popDiversity) shows the median population diversity for both DAE-GP algorithms and regular GP as a benchmark. While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a higher level during the evolutionary search. Here it can be observed, that pre-training shows a positive effect by increasing population diversity in comparison to regular DAE-GP (Median over all generations for DAE-GP: `r round(REG_MED_LEVDIV, 3)`, Pre-Trained DAE-GP: `r round(PT_MED_LEVDIV, 3)`, Standard-GP `r round(GP_MED_LEVDIV, 3)`)
 
 ```{r airfoil-popDiversity, echo=FALSE, fig.cap="Median Population Diversity over 30 Generations - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_levOnly.png")
@@ -621,7 +622,7 @@ knitr::include_graphics("./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png")
 # Results over different Real-World Symbolic Regression Problems 
 
 
-To gather more confidence in the previous results, the pre-training strategy for DAE-GP was applied for three additional real world symbolic regression problems and tested for statistically significant differences in the underlying distributions. Table \@ref(tab:full-run-realWorldSymReg-problems) briefly summarizes the benchmark problems.
+To gather more confidence in the previous results, I applied the pre-training strategy for DAE-GP to three additional real world symbolic regression problems. Table \@ref(tab:full-run-realWorldSymReg-problems) briefly summarizes the benchmark problems.
 
 ```{r full-run-realWorldSymReg-problems, echo=FALSE, message=FALSE, warning=FALSE}
 fig.pos="H"
@@ -631,21 +632,21 @@ knitr::kable(
   format = "markdown"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-To test for statistical differences between the distributions of results achieved by either pre-trained or regular DAE-GP, I selected the  
-nonparametric Mann-Whitney-U Test ([@mwu1], [@mwu2]) to test if the distribution .... Additionaly the effect strength of pre-training is computed by using Cliffs Delta[@Cliff1993DominanceSO].
+To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ([@mwu1], [@mwu2]) to test for differences in the distribution underlying the samples sourced from my experiments. Additionaly, I included the effect strength of pre-training as measured by Cliffs Delta [@Cliff1993DominanceSO] into the statistical analysis. Better median values (e.g. higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for $\alpha$ levels ($0.1$, $0.05$, $0.01$). 
+
+Note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection [Influence on Run-Time]), have not been analyzed for their total run-time. This is due to the fact, that experiments were run on different computers architectures which resulted in strongly biased results.   
 
 
-## Fitness
+## Influence on Fitness
 
 The results for the median best fitness over the evolutionary search are visualized in figure \@ref(fig:symReg-Fitness).
 
-```{r symReg-Fitness, echo=FALSE, fig.cap="Fitness over 30 Generations - Summary - Real World Symbolic Regression", out.width="80%"}
+```{r symReg-Fitness, echo=FALSE, fig.cap="Fitness over 30 Generations - Real World Symbolic Regression", out.width="90%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png")
 ```
 
 
-Table \@ref(tab:full-run-realWorldSymReg-fitness) summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests. Higher fitness values (lower RMSE) are printed bold and p-values are marked with asterisk (1,2,3) for $\alpha$ levels ($0.1$, $0.05$, $0.01$). 
-
+Table \@ref(tab:full-run-realWorldSymReg-fitness) summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests.
 
 
 ```{r full-run-realWorldSymReg-fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
@@ -683,19 +684,19 @@ knitr::kable(
  format = "markdown",
  col.names = col_names,
  align = "l",
- caption = "Median Best Fitness after 30 generations - Summary - Real World Symbolic Regression"
+ caption = "Median Best Fitness after 30 generations - Real World Symbolic Regression"
 ) %>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 
 ```
 
 
 
-## Solution Size
+## Influence on Solution Size
 
 Next I studied the size of solutions found during DAE-GP. Figure \@ref(fig:symReg-Size) shows the median size of the best solution per generation aggregated over all benchmark problems for symbolic regression.
 
 
-```{r symReg-Size, echo=FALSE, fig.cap="Size of the best Solution over 30 Generations - Summary - Real World Symbolic Regression", out.width="80%"}
+```{r symReg-Size, echo=FALSE, fig.cap="Size of the best Solution over 30 Generations - Real World Symbolic Regression", out.width="90%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png")
 ```
 
@@ -736,18 +737,22 @@ knitr::kable(
  format = "markdown",
  col.names = col_names,
  align = "l",
- caption = "Median Size of the best solution after 30 generations - Summary - Real World Symbolic Regression"
+ caption = "Median Size of the best solution after 30 generations - Real World Symbolic Regression"
 ) %>% row_spec(0,bold=FALSE) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
-## Population Diversity
+## Influence on Population Diversity
 
-...
-
-![Median Population Diversity over Generations](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistance_byGen.png){height=80%}
+Figure \@ref(fig:symReg-LevDiv) shows the median levenshtein edit distance as a metric for population diversity over the evolutionary search.
 
 
-Testing for statistical differences in the underlying distributions yields the P-Values listed in table X.
+```{r symReg-LevDiv, echo=FALSE, fig.cap="Population Diversity over 30 Generations - Real World Symbolic Regression", out.width="90%"}
+knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_levDistance_byGen.png")
+```
+
+
+
+The results of the statistical analysis is summarized in table \@ref(tab:full-run-realWorldSymReg-popDiversity).
 
 ```{r full-run-realWorldSymReg-popDiversity, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
@@ -765,11 +770,11 @@ df <- read.csv(
 df_bold <- df 
 
 for(i in 1:nrow(df)){
-  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
+  if(df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]){
     df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
     df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
     }
-  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
+  else if (df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]) {
     df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
   df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
   }
@@ -783,18 +788,27 @@ knitr::kable(
  format = "markdown",
  col.names = col_names,
  align = "l",
- caption = "Median Population Diversity over Generations - Symbolic Regression"
+ caption = "Median Population Diversity over 30 Generations - Symbolic Regression"
 ) %>% 
   kable_styling(latex_options = "scale_down", font_size = 7)
 
 ```
 
 
-## Training epochs per Generation
+## Influence on the number of Training epochs per Generation
 
-...
 
-![Median Number of Training Epochs per Generation - Symbolic Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTrained.png){height=80%}
+Figure \@ref(fig:symReg-EpochsPerGen) shows the median number of epochs spend on training each generations DAE-LSTM network until the termination criterion was satisfied.
+
+
+```{r symReg-EpochsPerGen, echo=FALSE, fig.cap="Training Epochs over 30 Generations - Real World Symbolic Regression", out.width="90%"}
+knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTrained.png")
+```
+
+
+
+The results of the statistical analysis is summarized in table \@ref(tab:full-run-realWorldSymReg-epochsPerGen).
+
 
 ```{r full-run-realWorldSymReg-epochsPerGen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
@@ -829,7 +843,7 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "c",
+ align = "l",
  caption = "Median Number of Training Epochs per Generation - Symbolic Regression"
 ) %>% 
   kable_styling(latex_options = "scale_down", font_size = 7)
