@@ -349,7 +349,7 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for symbolic regression is summarized in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params), the terminal set consists of the the input variables $x1,x2,x3,x4,x5$ and the ephemeral integer constants listed in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params)[@dae-gp_2022_symreg].
+The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for symbolic regression is summarized in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params), the terminal set consists of the the input variables $x1,x2,x3,x4,x5$ and the ephemeral integer constants listed in table \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params)[@dae-gp_2022_symreg].
 
 
 
@@ -631,10 +631,20 @@ knitr::kable(
   format = "markdown"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
+To test for statistical differences between the distributions of results achieved by either pre-trained or regular DAE-GP, I selected the  
+nonparametric Mann-Whitney-U Test ([@mwu1], [@mwu2]) to test if the distribution .... Additionaly the effect strength of pre-training is computed by using Cliffs Delta[@Cliff1993DominanceSO].
 
 
+## Fitness
 
-Table X summarizes the median best fitness achieved after running each algorithm for 10 runs using a population size of 500 individuals for 30 generations.^[P-Values are marked with asterisk (1,2,3) for ($\alpha$)-levels of $0.1$, $0.05$ and $0.01$]. The median best fitness over all 30 generations are visualized in figure X.
+The results for the median best fitness over the evolutionary search are visualized in figure \@ref(fig:symReg-Fitness).
+
+```{r symReg-Fitness, echo=FALSE, fig.cap="Fitness over 30 Generations - Summary - Real World Symbolic Regression", out.width="80%"}
+knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png")
+```
+
+
+Table \@ref(tab:full-run-realWorldSymReg-fitness) summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests. Higher fitness values (lower RMSE) are printed bold and p-values are marked with asterisk (1,2,3) for $\alpha$ levels ($0.1$, $0.05$, $0.01$). 
 
 
 
@@ -645,8 +655,8 @@ library(dplyr)
 
 # Create the data frame from csv
 df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv",
-  # "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",  -> Use this path to summarize by median
+  #"/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv",
+  "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",
   sep=",",
   colClasses = c("character", "numeric", "character", "numeric", "numeric", "character", "character")
 )
@@ -672,21 +682,25 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "c",
- caption = "Median Best Fitness - Symbolic Regression"
+ align = "l",
+ caption = "Median Best Fitness after 30 generations - Summary - Real World Symbolic Regression"
 ) %>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 
 ```
 
-![Median Best Fitness - Symbolic Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png){height=80%}
 
-## Solution Size in Symbolic Regression
 
-Next I studied the size of solutions based on using a pre-training strategy. Figure X shows the median size of the best solutions aggregated of all benchmark problems for symbolic regression
+## Solution Size
 
-![Median Solution Size - Symbolic Regression](~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png){height=80%}
+Next I studied the size of solutions found during DAE-GP. Figure \@ref(fig:symReg-Size) shows the median size of the best solution per generation aggregated over all benchmark problems for symbolic regression.
 
-Table X summarizes the results of the statistical tests.
+
+```{r symReg-Size, echo=FALSE, fig.cap="Size of the best Solution over 30 Generations - Summary - Real World Symbolic Regression", out.width="80%"}
+knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png")
+```
+
+
+Table \@ref(tab:full-run-realWorldSymReg-best-solution-size) shows the median size of the best solution after 30 generations and results for computing the statistical tests.
 
 ```{r full-run-realWorldSymReg-best-solution-size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
@@ -695,7 +709,7 @@ library(dplyr)
 
 # Create the data frame from csv
 df <- read.csv(
-  "/Users/rmn/github/master_thesis/data/summary_table_best_size_mean.csv",
+  "/Users/rmn/github/master_thesis/data/summary_table_best_size_median.csv",
   sep=",",
   colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
 )
@@ -722,7 +736,7 @@ knitr::kable(
  format = "markdown",
  col.names = col_names,
  align = "l",
- caption = "Median Solution Size - Symbolic Regression"
+ caption = "Median Size of the best solution after 30 generations - Summary - Real World Symbolic Regression"
 ) %>% row_spec(0,bold=FALSE) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
@@ -768,7 +782,7 @@ knitr::kable(
  df_bold,
  format = "markdown",
  col.names = col_names,
- align = "c",
+ align = "l",
  caption = "Median Population Diversity over Generations - Symbolic Regression"
 ) %>% 
   kable_styling(latex_options = "scale_down", font_size = 7)

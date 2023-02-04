@@ -17,7 +17,7 @@
 \contentsline {figure}{\numberline {17}{\ignorespaces Median Sampling Time per Generation - Airfoil}}{25}{figure.17}%
 \contentsline {figure}{\numberline {18}{\ignorespaces Median Runtime excluding Time for Sampling - Airfoil}}{26}{figure.18}%
 \contentsline {figure}{\numberline {19}{\ignorespaces Cumulative Time consumption by Function Calls (Top 20) - Airfoil}}{27}{figure.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Median Best Fitness - Symbolic Regression}}{28}{figure.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Median Solution Size - Symbolic Regression}}{29}{figure.21}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Fitness over 30 Generations - Summary - Real World Symbolic Regression}}{28}{figure.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Size of the best Solution over 30 Generations - Summary - Real World Symbolic Regression}}{29}{figure.21}%
 \contentsline {figure}{\numberline {22}{\ignorespaces Median Population Diversity over Generations}}{30}{figure.22}%
 \contentsline {figure}{\numberline {23}{\ignorespaces Median Number of Training Epochs per Generation - Symbolic Regression}}{31}{figure.23}%

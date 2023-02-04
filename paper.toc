@@ -19,9 +19,10 @@
 \contentsline {subsubsection}{\numberline {5.2.3}Alternative Pre-Training Strategies}{20}{subsubsection.5.2.3}%
 \contentsline {subsection}{\numberline {5.3}Influence on Run-Time}{22}{subsection.5.3}%
 \contentsline {section}{\numberline {6}Results over different Real-World Symbolic Regression Problems}{27}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Solution Size in Symbolic Regression}{29}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Population Diversity}{30}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Training epochs per Generation}{31}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.1}Fitness}{27}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Solution Size}{29}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Population Diversity}{29}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Training epochs per Generation}{31}{subsection.6.4}%
 \contentsline {section}{\numberline {7}Conclusion and Discussion}{32}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Benefits of using Pre-Training}{32}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Disadvantages of using Pre-Training}{32}{subsection.7.2}%

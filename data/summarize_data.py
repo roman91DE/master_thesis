@@ -437,7 +437,7 @@ fig.savefig(f"{IMG_PATH}/median_levDistance_byGen.png")
 PT_STRATEGIES_PATH = "/Users/rmn/github/master_thesis/data/PT_Strategies_airfoil_2hl_150hn_fullRun"
 
 FILES = {
-    "Norm._Levenshtein_Distance" : "lev_div_overGens.json",
+    "Norm._Levenshtein_Distance" : "lev_div_ovrGens.json",
     "Size_best_Solution" : "size_best_solution.json",
     "Fitness_lastGen" : "fitness_per_gen.json",
     "Training_Epochs" : "epochs_trained_perGen.json"
