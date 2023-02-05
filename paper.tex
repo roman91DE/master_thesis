@@ -148,7 +148,7 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2023-02-04}
+\date{\vspace{-2.5em}Date of Submission: 2023-02-05}
 
 \begin{document}
 \maketitle
@@ -356,12 +356,12 @@ During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm
 One difficulty in the implementation of a pre-training strategy into DAE-GP has been the determination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{25}{]} uses a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
 For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM. To allow the sharing of the state of the pre-trained parameters \(\theta_{\hat{M}}\) from the pre-trained model \(\hat{M}\) to each \(M_g\) for \(g\in{1,...,g_{max}}\) the number of hidden neurons per hidden layer for all DAE-GP runs, pre-trained as well as regular, is statically set to a predefined value.
 
-If not stated otherwise, all experiments in this thesis use the hyperparameters listed in table \ref{tab:airfoil-fullRun-2hl-maxIndSize-params}.
+If not stated otherwise, all experiments in this thesis use the GP hyperparameters listed in table \ref{tab:baseParams-GP} and the DAE-LSTM specific hyperparameters listed in table \ref{tab:baseParams-DAEGP}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5287}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4713}}@{}}
-\caption{\label{tab:airfoil-fullRun-2hl-maxIndSize-params}DAE-GP - Hyperparameter}\tabularnewline
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4225}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5775}}@{}}
+\caption{\label{tab:baseParams-GP}GP - Hyperparameter}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Hyperparameter
@@ -380,26 +380,53 @@ Value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Population\_Size & 500 \\
+Population Size & 500 \\
 Generations & 30 \\
-Fitness\_Metric & RMSE \\
-Training\_Mode & Convergence({[}\protect\hyperlink{ref-daegp_explore_exploit}{23}{]}) \\
-Reconstruction\_Error\_Metric & Multiclass\_Cross\_Entropy \\
-Learning\_Rate & 0.001 \\
-Batch\_Size & 0.1 \\
-Max\_Tree\_Depth & 17({[}\protect\hyperlink{ref-DEAP_JMLR2012}{6}{]}) \\
-loss function & \\
-Sampling\_Steps & 1 \\
-Hidden\_Neurons & 150 \\
-Hidden\_Layer & 2 \\
-Selection\_Operator & Binary Tournament Selection \\
-Corruption\_Operator & Levenshtein Edit({[}\protect\hyperlink{ref-daegp_explore_exploit}{23}{]}) \\
-Denoising\_Edit\_Probability(training/sampling) & 0.05/0.95 \\
-Function\_Set & \{+ , - , * , aq\} \\
-Ephemeral\_Constants & {[}-5,..,5{]} \\
-Pre-Training\_Population\_Size & 10000 \\
-Pre-Training\_Train/Test\_Split & 50\% \\
-Pre-Training\_Training\_Mode & Early Stopping \\
+Fitness Metric & Root Mean Squared Error (RMSE) \\
+Train/Test Split & 50:50 \\
+Maximum Tree Depth & 17({[}\protect\hyperlink{ref-DEAP_JMLR2012}{6}{]}) \\
+Initialization Algorithm & Ramped Half and Half ({[}\protect\hyperlink{ref-Koza1993GeneticP}{11}{]}) \\
+Mix/Max Initialization-Depth & 2/6 \\
+Selection Operator & Binary Tournament Selection \\
+Function Set & \{+ , - , * , aq\} \\
+Ephemeral Constants & {[}-5,..,5{]} \\
+Pre-Training Population Size & 10000 \\
+Pre-Training Train/Test Split & 50:50 \\
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5176}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.4824}}@{}}
+\caption{\label{tab:baseParams-DAEGP}DAE-LSTM - Hyperparameter}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Hyperparameter
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Hyperparameter
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Value
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Stopping Condition & Convergence({[}\protect\hyperlink{ref-daegp_explore_exploit}{23}{]}) \\
+Reconstruction Error Metric & Multiclass Cross Entropy \\
+Learning Rate & 0.001 \\
+Batch Size & 0.1 \\
+Sampling Steps & 1 \\
+Hidden Layer & 2 \\
+Hidden Neurons & 150 \\
+Corruption Operator & Levenshtein Edit({[}\protect\hyperlink{ref-daegp_explore_exploit}{23}{]}) \\
+Denoising Edit Probability (Model Building) & 0.05 \\
+Denoising Edit Probability (Model Sampling) & 0.95 \\
+Pre-Training Stopping Condition & Early Stopping \\
 \end{longtable}
 
 The framework that was used to conduct all experiments of this thesis was provided by the supervisor of this thesis David Wittenberg and uses the python programming language in conjunction with the baseline libraries \texttt{Keras} {[}\protect\hyperlink{ref-chollet2015keras}{2}{]} for deep neural networks and \texttt{deap} {[}\protect\hyperlink{ref-DEAP_JMLR2012}{6}{]} for evolutionary computation.
@@ -434,7 +461,7 @@ output & y & Scaled sound pressure level & decibels\\
 \end{tabular}
 \end{table}
 
-The objective of the airfoil problem is to find a function that accurately predicts the output variable \(y\) by taking in a subset of the input variables \(x1,x2,x3,x4,x5\). The function set used by all DAE-GP variations for symbolic regression is summarized in \ref{tab:airfoil-fullRun-2hl-maxIndSize-params}, the terminal set consists of the the input variables \(x1,x2,x3,x4,x5\) and the ephemeral integer constants listed in table \ref{tab:airfoil-fullRun-2hl-maxIndSize-params}{[}\protect\hyperlink{ref-dae-gp_2022_symreg}{24}{]}.
+The objective of the airfoil problem is to find a function that accurately predicts the output variable \(y\) by taking in a subset of the input variables \(x1,x2,x3,x4,x5\). The function set used by all DAE-GP variations for symbolic regression is summarized in tables \ref{tab:baseParams-GP} and , the terminal set consists of the the input variables \(x1,x2,x3,x4,x5\) and the ephemeral integer constants listed in table \ref{tab:baseParams-GP} {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{24}{]}.
 
 \hypertarget{results-for-the-airfoil-dataset}{%
 \section{Results for the Airfoil Dataset}\label{results-for-the-airfoil-dataset}}
@@ -540,7 +567,7 @@ Another interesting metric to examine in population-based optimization algorithm
 \hypertarget{dynamic-adjustment-of-hidden-neurons}{%
 \subsubsection{Dynamic Adjustment of Hidden Neurons}\label{dynamic-adjustment-of-hidden-neurons}}
 
-To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks. For comparison, figure \ref{fig:airfoil-maxIndSize-params} shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{25}{]} and {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{24}{]}. Again, the experiments was based on \(10\) individual runs and otherwise used the same hyperparameters as listed in table \ref{tab:airfoil-fullRun-2hl-maxIndSize-params}. It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largley reduces the amount of training necessary and likely reduce the run-time of DAE-GP.
+To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks. For comparison, figure \ref{fig:airfoil-maxIndSize-params} shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{25}{]} and {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{24}{]}. Again, the experiments was based on \(10\) individual runs and otherwise used the same hyperparameters as listed in tables \ref{tab:baseParams-GP} and \ref{tab:baseParams-DAEGP}. It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largley reduces the amount of training necessary and likely reduce the run-time of DAE-GP.
 
 \begin{figure}[c]
 

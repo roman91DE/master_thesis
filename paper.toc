@@ -10,7 +10,7 @@
 \contentsline {subsection}{\numberline {3.2}Pre-Training}{5}{subsection.3.2}%
 \contentsline {section}{\numberline {4}Pre-Training in DAE-GP}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Implementation}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Benchmark Problem}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Benchmark Problem}{11}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Results for the Airfoil Dataset}{11}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Influence on Generalisation}{11}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Influence on solution quality}{14}{subsection.5.2}%

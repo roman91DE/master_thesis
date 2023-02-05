@@ -63,7 +63,7 @@ print(f"Python Version: {version} \nPath: {executable}")
 ```
 
 
-```{bash recompile-results, echo=TRUE, eval=TRUE, include=FALSE}
+```{bash recompile-results, echo=TRUE, eval=FALSE, include=FALSE}
 
 # set eval to TRUE to recompile all results, plots etc.
 # Warning: This will take some time...
@@ -320,13 +320,22 @@ For a pre-training implementation, this strategy can not be easily adapted since
 
 
 
-If not stated otherwise, all experiments in this thesis use the hyperparameters listed in table \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params).
+If not stated otherwise, all experiments in this thesis use the GP hyperparameters listed in table \@ref(tab:baseParams-GP) and the DAE-LSTM specific hyperparameters listed in table \@ref(tab:baseParams-DAEGP).
 
-```{r airfoil-fullRun-2hl-maxIndSize-params, echo=FALSE, message=FALSE, warning=FALSE}
+```{r baseParams-GP, echo=FALSE, message=FALSE, warning=FALSE}
 fig.pos="H"
 knitr::kable(
-  read.csv("./tables/airfoil_fullRun_2hl_maxIndSize_params", sep = "?"),
-  caption = "DAE-GP - Hyperparameter",
+  read.csv("./tables/baseParams_GP", sep = "?"),
+  caption = "GP - Hyperparameter",
+  format = "markdown"
+)%>% row_spec(0,bold=TRUE )
+```
+
+```{r baseParams-DAEGP, echo=FALSE, message=FALSE, warning=FALSE}
+fig.pos="H"
+knitr::kable(
+  read.csv("./tables/baseParams_DAEGP", sep = "?"),
+  caption = "DAE-LSTM - Hyperparameter",
   format = "markdown"
 )%>% row_spec(0,bold=TRUE )
 ```
@@ -350,7 +359,7 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for symbolic regression is summarized in \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params), the terminal set consists of the the input variables $x1,x2,x3,x4,x5$ and the ephemeral integer constants listed in table \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params)[@dae-gp_2022_symreg].
+The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$. The function set used by all DAE-GP variations for symbolic regression is summarized in tables \@ref(tab:baseParams-GP) and , the terminal set consists of the the input variables $x1,x2,x3,x4,x5$ and the ephemeral integer constants listed in table \@ref(tab:baseParams-GP) [@dae-gp_2022_symreg].
 
 
 
@@ -488,7 +497,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_po
 ```
 ### Dynamic Adjustment of Hidden Neurons
 
-To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks. For comparison, figure \@ref(fig:airfoil-maxIndSize-params) shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in [@dae-gp_2020_rtree] and [@dae-gp_2022_symreg]. Again, the experiments was based on $10$ individual runs and otherwise used the same hyperparameters as listed in table \@ref(tab:airfoil-fullRun-2hl-maxIndSize-params). It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largley reduces the amount of training necessary and likely reduce the run-time of DAE-GP.
+To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks. For comparison, figure \@ref(fig:airfoil-maxIndSize-params) shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in [@dae-gp_2020_rtree] and [@dae-gp_2022_symreg]. Again, the experiments was based on $10$ individual runs and otherwise used the same hyperparameters as listed in tables \@ref(tab:baseParams-GP) and \@ref(tab:baseParams-DAEGP). It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largley reduces the amount of training necessary and likely reduce the run-time of DAE-GP.
 
 ```{r airfoil-maxIndSize-params, echo=FALSE, fig.cap="Median Number of trainable Parameters over 30 Generations - Airfoil - Dynamic adjustment of regular DAE-GP", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams.png")
