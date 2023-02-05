@@ -1,12 +1,13 @@
 Hyperparameter?Value
-Stopping Condition?Convergence(@daegp_explore_exploit)
+Stopping Condition?Convergence [@daegp_explore_exploit]
 Reconstruction Error Metric?Multiclass Cross Entropy
+Gradient Descent Algorithm? Adam Optimization [@Kingma2014AdamAM]
 Learning Rate?0.001
 Batch Size?0.1
 Sampling Steps?1
 Hidden Layer?2
 Hidden Neurons?150
-Corruption Operator?Levenshtein Edit(@daegp_explore_exploit)
+Corruption Operator?Levenshtein Edit [@daegp_explore_exploit]
 Denoising Edit Probability (Model Building)?0.05
 Denoising Edit Probability (Model Sampling)?0.95
 Pre-Training Stopping Condition?Early Stopping
