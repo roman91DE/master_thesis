@@ -23,7 +23,7 @@ output:
     includes:
       in_header: [header_files/settings.tex]
 indent: false
-fontsize: 12pt
+fontsize: 11pt
 bibliography: ./ref/ref.bib
 link-citations: true
 fig.width: 4in
@@ -339,7 +339,7 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE )
 ```
 
-The framework that was used to conduct all experiments of this thesis was provided by the supervisor of this thesis David Wittenberg and uses the python programming language in conjunction with the baseline libraries `Keras` [@chollet2015keras] for deep neural networks and `deap` [@DEAP_JMLR2012] for evolutionary computation.
+The framework that was used to run all experiments of this thesis was provided by the supervisor of this thesis David Wittenberg and uses the python programming language [@python3] in conjunction with the baseline libraries `Keras` [@chollet2015keras] for deep neural networks and `deap` [@DEAP_JMLR2012] for evolutionary computation. For data visualizations I used the python package `matplotlib` [@matplotlib], statistical analysis and evaluations were conducted using primarily the datscience libraries `numpy` [@numpy], `pandas` [@pandas], and 
 
 
 ## Benchmark Problem
@@ -619,7 +619,7 @@ Surprisingly, even after correcting the run-time for both DAE-GP results by remo
 ```{r airfoil-runtime-noSampling-total, echo=FALSE, fig.cap="Median Runtime excluding Time for Sampling - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSampling.png")
 ```
-While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=`r format(REG_PARAMS, scientific=F)`, Pre-trained DAE-GP=`r format(PT_PARAMS, scientific=F)`). After profiling a single run of DAE-GP and pre-trained DAE-GP my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training. Figure  \@ref(fig:airfoil-profiling) shows the cumulative time spend for the 20 most expensive function calls. Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to `DAE_LSTM.py:208(sample)`) than during model training (calls to `training.py:1303(fit)`). Secondly, it shows that internal error handling of the baseline neural network library `keras` (calls to `traceback_utils.py:138(error_handler)` and `traceback_utils.py:59(error_handler)`) takes up a comparatively larger amount of run time for pre-trained DAE-GP than for regular DAE-GP.
+While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=`r format(REG_PARAMS, scientific=F)`, Pre-trained DAE-GP=`r format(PT_PARAMS, scientific=F)`). After profiling a single run of DAE-GP and pre-trained DAE-GP using the python `cProfiler` module, my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training. Figure  \@ref(fig:airfoil-profiling) shows the cumulative time spend for the 20 most expensive function calls. Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to `DAE_LSTM.py:208(sample)`) than during model training (calls to `training.py:1303(fit)`). Secondly, it shows that internal error handling of the baseline neural network library `keras` (calls to `traceback_utils.py:138(error_handler)` and `traceback_utils.py:59(error_handler)`) takes up a comparatively larger amount of run time for pre-trained DAE-GP than for regular DAE-GP.
 
 ```{r airfoil-profiling, echo=FALSE, fig.cap="Cumulative Time consumption by Function Calls (Top 20) - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png")
@@ -741,7 +741,7 @@ for(i in 1:nrow(df)){
   }
 }
 # shorten column names
-col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
+col_names <- c("Problem", "Hidden Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
 
 
 knitr::kable(
@@ -792,7 +792,7 @@ for(i in 1:nrow(df)){
   }
 }
 # shorten column names
-col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
+col_names <- c("Problem", "Hidden Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
 
 
 knitr::kable(
@@ -848,7 +848,7 @@ for(i in 1:nrow(df)){
   }
 }
 # shorten column names
-col_names <- c("Problem", "Hid.Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
+col_names <- c("Problem", "Hidden Layers", "DAE-GP", "Pre-Trained", "P-Value", "Cliffs-Delta")
 
 
 knitr::kable(
@@ -924,11 +924,8 @@ knitr::kable(
 ::: {#refs}
 :::
 
+\newpage  
 
-<!--
-  EIDESSTAATLICHE ERKLAERUNG
-# II - Statutory Declaration {.unnumbered #II}
+# II - Statutory Declaration {.unnumbered #IV}
 
-![Statutory Declaration](./private/erklaerung.pdf)\
--->
-
+...hier einfügen...

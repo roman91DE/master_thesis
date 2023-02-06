@@ -4,7 +4,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  12pt,
+  11pt,
 ]{article}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -178,15 +178,15 @@ Johannes Gutenberg University Mainz}
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Denoising Autoencoder Genetic Programming (DAE-GP) is a novel variation of an genetic programming based Estimation of Distribution Algorithm (EDA-GP) that uses a denoising autoencoders long short-term memory network (DAE-LSTMs) as a probabilistic model to sample new candidate solutions {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]}.
+Denoising Autoencoder Genetic Programming (DAE-GP) is a novel variation of an genetic programming based Estimation of Distribution Algorithm (EDA-GP) that uses a denoising autoencoders long short-term memory network (DAE-LSTMs) as a probabilistic model to sample new candidate solutions {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]}.
 
 DAE-LSTMs are artificial neural networks that can be trained in an unsupervised learning environment to minimize a reconstruction error for encoding input data into a compressed representation and subsequently decoding the compressed representation back to the input dimension.
 In DAE-GP, DAE-LSTMs are trained with a subset of high-fitness solutions selected from a parent population with the aim to capture their promising qualities.
-The resulting model is then used to sample new offspring solutions by propagating partially mutated solutions from the parent population through the DAE-LSTMS {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]}.
-In previous work DAE-GP has been shown to outperform GP for both a generalized version of the royal tree problem {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]} as well as for a real-world symbolic regression problem {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{26}{]}.
+The resulting model is then used to sample new offspring solutions by propagating partially mutated solutions from the parent population through the DAE-LSTMS {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]}.
+In previous work DAE-GP has been shown to outperform GP for both a generalized version of the royal tree problem {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]} as well as for a real-world symbolic regression problem {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{27}{]}.
 
-The DAE-GP algorithm first described by {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]} trains a DAE-LSTMs for each generation \(g\) of the search from scratch.
-{[}\protect\hyperlink{ref-dae-gp_2022_symreg}{26}{]} and {[}\protect\hyperlink{ref-daegp_explore_exploit}{25}{]} suggests the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the overall performance of the DAE-GP algorithm.
+The DAE-GP algorithm first described by {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]} trains a DAE-LSTMs for each generation \(g\) of the search from scratch.
+{[}\protect\hyperlink{ref-dae-gp_2022_symreg}{27}{]} and {[}\protect\hyperlink{ref-daegp_explore_exploit}{26}{]} suggests the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the overall performance of the DAE-GP algorithm.
 The key idea is to pre-train an initial DAE-LSTM on a large population of candidate solutions and to use the pre-trained parameters of this initial model in each generation of the search as starting parameters for the current generation DAE-LSTM.
 This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence on overall quality of solutions found by DAE-GP and effects on run-time.
 The aim of this study is to answer the question if a pre-training strategy can be used to improve DAE-GP and to study both positive and negative effects on overall performance.
@@ -201,7 +201,7 @@ The aim of this study is to answer the question if a pre-training strategy can b
 \hypertarget{denoising-autoencoder-genetic-programming}{%
 \subsection{Denoising Autoencoder Genetic Programming}\label{denoising-autoencoder-genetic-programming}}
 
-DAE-GP is an EDA-GP algorithm that uses DAE-LSTM networks as a probabilistic model to sample new offspring solutions {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]}.
+DAE-GP is an EDA-GP algorithm that uses DAE-LSTM networks as a probabilistic model to sample new offspring solutions {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]}.
 
 \hypertarget{evolutionary-computation}{%
 \subsubsection{Evolutionary Computation}\label{evolutionary-computation}}
@@ -253,14 +253,14 @@ AE were introduced by {[}\protect\hyperlink{ref-ae_orig}{9}{]} to compress high-
 
 The AE is trained to reduce the reconstruction error between input and output data, after the training procedure is finished the network is able to reduce the dimensional of input data to a compressed representation{[}\protect\hyperlink{ref-ae_orig}{9}{]}.
 
-DAE was first introduced by {[}\protect\hyperlink{ref-dae_orig2008}{22}{]} as an improved AE with the ability to learn new representations of data that is especially robust to partially corrupted input data. DAE modifies the AE by using partially corrupted input data for the AE and training it to reconstruct the uncorrupted, original version of the input data.
+DAE was first introduced by {[}\protect\hyperlink{ref-dae_orig2008}{23}{]} as an improved AE with the ability to learn new representations of data that is especially robust to partially corrupted input data. DAE modifies the AE by using partially corrupted input data for the AE and training it to reconstruct the uncorrupted, original version of the input data.
 
 Since the hidden representation of DAE captures the dependency structure of the input data it can therefore also be used to generate new solutions in the context of GAs {[}\protect\hyperlink{ref-harmless_overfitting_eda}{18}{]}.
 
 DAE-GP builds upon the concept of using DAEs in EDAs described by {[}\protect\hyperlink{ref-harmless_overfitting_eda}{18}{]} and transfers the concept to the domain of GP.
-The mutation and crossover operators of standard GP are replaced by sampling new solutions from a probabilistic model that is build by training a DAEs long short-term memory (LSTM) network on a subset of high fitness solutions from the current population {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]}.
+The mutation and crossover operators of standard GP are replaced by sampling new solutions from a probabilistic model that is build by training a DAEs long short-term memory (LSTM) network on a subset of high fitness solutions from the current population {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]}.
 
-LSTMs are a variant of artificial neural networks first introduced by {[}\protect\hyperlink{ref-lstm_orig}{10}{]} that can store learned information over en extended time period while avoiding the problem of vanishing and/or exploding gradients. Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps \(T\) is equal to sum of the length of the input solution and the output solution {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]}.
+LSTMs are a variant of artificial neural networks first introduced by {[}\protect\hyperlink{ref-lstm_orig}{10}{]} that can store learned information over en extended time period while avoiding the problem of vanishing and/or exploding gradients. Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps \(T\) is equal to sum of the length of the input solution and the output solution {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]}.
 
 \hypertarget{pre-training}{%
 \subsection{Pre-Training}\label{pre-training}}
@@ -292,7 +292,7 @@ Some of the main motivations for using pre-training is the ability to reduce the
 \section{Pre-Training in DAE-GP}\label{pre-training-in-dae-gp}}
 
 The pre-training strategy used in this thesis is applied to the DAE-LSTM model \(M_g\) that are used in each DAE-GP generation \(g\) for \(g\in{1,...,g_{max}}\).
-Instead of initializing and optimizing each model from scratch as done in previous work (e.g. {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]} {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{26}{]}), a separate DAE-LSTM network \(\hat{M}\) will be trained on a large population of randomly initialized solutions.\\
+Instead of initializing and optimizing each model from scratch as done in previous work (e.g. {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]} {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{27}{]}), a separate DAE-LSTM network \(\hat{M}\) will be trained on a large population of randomly initialized solutions.\\
 The trainable parameters \(\theta_{\hat{M}}\) obtained after finishing the training procedure of \(\hat{M}\) are then used as the starting parameters for each following DAE-LSTM model \(M_g\) for \(g\in{1,...,g_{max}}\).
 
 The motivation for incorporating pre-training into DAE-GP is based on the following suspected mechanisms of improvement:
@@ -324,7 +324,7 @@ If this mechanism can be applied successfully it would benefit the performance o
 \hypertarget{implementation}{%
 \subsection{Implementation}\label{implementation}}
 
-The DAE-GP algorithm, first described by {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]}, is summarized as a flowchart in figure \ref{fig:daegp-flowchart}.
+The DAE-GP algorithm, first described by {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]}, is summarized as a flowchart in figure \ref{fig:daegp-flowchart}.
 After setting the generation counter \(g\) to \(0\) and creating the initial population of solutions \(P_0\), DAE-GP enters the main loop that checks if a termination criteria is satisfied (i.e.~maximum number of generations or fitness evaluations is reached).
 For each generation \(g\) the fitness of all new individuals in \(P_g\) is evaluated. During model building, DAE-GP selects a subset \(X_g\) of the current population that is used as training data for the DAE-LSTM model \(M_g\) which is trained to learn the properties of \(X_g\).
 The trained model \(M_g\) is then used for model sampling, partially mutated solutions from \(P_G\) are propagated through \(M_g\) to create a new population \(P_{g+1}\).
@@ -354,7 +354,7 @@ During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm
 \caption{Pre-Trained DAE-GP Flowchart}\label{fig:pt-daegp-flowchart}
 \end{figure}
 
-One difficulty in the implementation of a pre-training strategy into DAE-GP has been the determination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]} uses a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
+One difficulty in the implementation of a pre-training strategy into DAE-GP has been the determination of the number of hidden neurons in side the DAE-LSTMs hidden layers. The original description of DAE-GP {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]} uses a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
 For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM. To allow the sharing of the state of the pre-trained parameters \(\theta_{\hat{M}}\) from the pre-trained model \(\hat{M}\) to each \(M_g\) for \(g\in{1,...,g_{max}}\) the number of hidden neurons per hidden layer for all DAE-GP runs, pre-trained as well as regular, is statically set to a predefined value.
 
 If not stated otherwise, all experiments in this thesis use the GP hyperparameters listed in table \ref{tab:baseParams-GP} and the DAE-LSTM specific hyperparameters listed in table \ref{tab:baseParams-DAEGP}.
@@ -417,7 +417,7 @@ Value
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Stopping Condition & Convergence {[}\protect\hyperlink{ref-daegp_explore_exploit}{25}{]} \\
+Stopping Condition & Convergence {[}\protect\hyperlink{ref-daegp_explore_exploit}{26}{]} \\
 Reconstruction Error Metric & Multiclass Cross Entropy \\
 Gradient Descent Algorithm & Adam Optimization {[}\protect\hyperlink{ref-Kingma2014AdamAM}{11}{]} \\
 Learning Rate & 0.001 \\
@@ -425,7 +425,7 @@ Batch Size & 0.1 \\
 Sampling Steps & 1 \\
 Hidden Layer & 2 \\
 Hidden Neurons & 150 \\
-Corruption Operator & Levenshtein Edit {[}\protect\hyperlink{ref-daegp_explore_exploit}{25}{]} \\
+Corruption Operator & Levenshtein Edit {[}\protect\hyperlink{ref-daegp_explore_exploit}{26}{]} \\
 Denoising Edit Probability (Model Building) & 0.05 \\
 Denoising Edit Probability (Model Sampling) & 0.95 \\
 Pre-Training Stopping Condition & Early Stopping \\
@@ -463,7 +463,7 @@ output & y & Scaled sound pressure level & decibels\\
 \end{tabular}
 \end{table}
 
-The objective of the airfoil problem is to find a function that accurately predicts the output variable \(y\) by taking in a subset of the input variables \(x1,x2,x3,x4,x5\). The function set used by all DAE-GP variations for symbolic regression is summarized in tables \ref{tab:baseParams-GP} and , the terminal set consists of the the input variables \(x1,x2,x3,x4,x5\) and the ephemeral integer constants listed in table \ref{tab:baseParams-GP} {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{26}{]}.
+The objective of the airfoil problem is to find a function that accurately predicts the output variable \(y\) by taking in a subset of the input variables \(x1,x2,x3,x4,x5\). The function set used by all DAE-GP variations for symbolic regression is summarized in tables \ref{tab:baseParams-GP} and , the terminal set consists of the the input variables \(x1,x2,x3,x4,x5\) and the ephemeral integer constants listed in table \ref{tab:baseParams-GP} {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{27}{]}.
 
 \hypertarget{results-for-the-airfoil-dataset}{%
 \section{Results for the Airfoil Dataset}\label{results-for-the-airfoil-dataset}}
@@ -487,7 +487,7 @@ DAE-GP is tested in two different configurations:
 
 For each configuration I tested traditional DAE-GP as well as a pre-trained DAE-GP resulting in 12 total sub experiments that were each based on 10 individual runs (total number of runs=\(120\)). To avoid creating biased results through the presence of sampling error inside the pre-training population (see {[}\protect\hyperlink{ref-sampling_err_gp}{20}{]}), the population size for the pre-training phase is chosen very high with the size of \(\hat{P}\) =10000 where 50\% of \(\hat{P}\) is used for the training population \(\hat{P}_{train}\) and the remaining 50\% are used for the hold-out validation population \(\hat{P}_{test}\). The training of DAE-LSTM uses a fixed number of 1000 epochs until termination and uses Adam optimization for gradient descent. The reason for using a high amount of 1000 fixed training epochs is to deliberately force the DAE-LSTM to overfit to the training data.
 
-In general I expect that with a growing number of trainable parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population \(P_{train}\) resulting in a small reconstruction error for the training population and a large one for the validation population \(P_{test}\). The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases {[}\protect\hyperlink{ref-weigend1994overfitting}{23}{]}.
+In general I expect that with a growing number of trainable parameters (either by adding more hidden layers or more hidden neurons per layer) the DAE-LSTM will be more prone to overfit to the training population \(P_{train}\) resulting in a small reconstruction error for the training population and a large one for the validation population \(P_{test}\). The reason for this effect is that a larger network trained over an extended period of time (without the use of strategies like early stopping), has much more potential to learn noise from the training dataset than a smaller network, which is more likely to result in worsening performance for previously unseen cases {[}\protect\hyperlink{ref-weigend1994overfitting}{24}{]}.
 
 Based on the review of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{5}{]} I also expect that pre-training will have an insignificant or even negative influence on small DAE-LSTM instances while improving the networks generalization ability with growing size.
 
@@ -544,7 +544,7 @@ The distribution of final fitness scores for pre-trained and regular DAE-GP are 
 
 An interesting observation from studying the distribution of final fitness scores for both algorithms is that pre-trained DAE-GP has a smaller interquartile range and more extreme outliers for high RMSE which explains the slightly worse performance if looking at median best fitness present in figure \ref{fig:airfoil-median-fitness-30gens}.
 
-Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{26}{]} demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size than regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. The median average size over all generations is 1.536 for DAE-GP and 1.536 for pre-trained DAE-GP. Regarding the size of the best solution per generation, the results show that the pre-trained version of algorithm did produce solutions with the same median size as traditional DAE-GP. The median size of the best solutions found after terminating the search is the same for both algorithms (DAE-GP: 5, Pre-Trained DAE-GP: 5)
+Since previous work by {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{27}{]} demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size than regular GP, I also studied the influence of pre-training on the size of solutions found by DAE-GP. Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population. It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search. The median average size over all generations is 1.536 for DAE-GP and 1.536 for pre-trained DAE-GP. Regarding the size of the best solution per generation, the results show that the pre-trained version of algorithm did produce solutions with the same median size as traditional DAE-GP. The median size of the best solutions found after terminating the search is the same for both algorithms (DAE-GP: 5, Pre-Trained DAE-GP: 5)
 
 \begin{figure}[c]
 
@@ -569,7 +569,7 @@ Another interesting metric to examine in population-based optimization algorithm
 \hypertarget{dynamic-adjustment-of-hidden-neurons}{%
 \subsubsection{Dynamic Adjustment of Hidden Neurons}\label{dynamic-adjustment-of-hidden-neurons}}
 
-To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks. For comparison, figure \ref{fig:airfoil-maxIndSize-params} shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{27}{]} and {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{26}{]}. Again, the experiments was based on \(10\) individual runs and otherwise used the same hyperparameters as listed in tables \ref{tab:baseParams-GP} and \ref{tab:baseParams-DAEGP}. It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largely reduces the amount of training necessary and likely reduce the run-time of DAE-GP.
+To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks. For comparison, figure \ref{fig:airfoil-maxIndSize-params} shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{28}{]} and {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{27}{]}. Again, the experiments was based on \(10\) individual runs and otherwise used the same hyperparameters as listed in tables \ref{tab:baseParams-GP} and \ref{tab:baseParams-DAEGP}. It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largely reduces the amount of training necessary and likely reduce the run-time of DAE-GP.
 
 \begin{figure}[c]
 
@@ -594,7 +594,7 @@ As expected, this reduction of hidden neurons by dynamic adjustment, does also r
 \hypertarget{reduced-number-of-hidden-layers}{%
 \subsubsection{Reduced Number of Hidden Layers}\label{reduced-number-of-hidden-layers}}
 
-Since previous research on DAE-GP used a single hidden layers for the airfoil dataset {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{26}{]}, I repeated the experiment with a single hidden layer. Based on the findings of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{5}{]}, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \ref{fig:airfoil-fitness-perGen} and \ref{fig:airfoil-finalFitness} shows the mean and median best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on \(10\) individual runs per algorithm. As expected the results show, that for a small DAE-LSTM size pre-training negatively impacts the fitness of solution found by DAE-GP. The median final RMSE for the test set of pre-trained DAE-GP increases by a factor of 1.287 to 16.213 compared to regular DAE-GP with 12.594.
+Since previous research on DAE-GP used a single hidden layers for the airfoil dataset {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{27}{]}, I repeated the experiment with a single hidden layer. Based on the findings of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{5}{]}, I expected that pre-training DAE-GP would lead to a decrease in overall performance. Figures \ref{fig:airfoil-fitness-perGen} and \ref{fig:airfoil-finalFitness} shows the mean and median best fitness per generation as well as the distribution of final fitness scores after 30 generations. The results are, again, based on \(10\) individual runs per algorithm. As expected the results show, that for a small DAE-LSTM size pre-training negatively impacts the fitness of solution found by DAE-GP. The median final RMSE for the test set of pre-trained DAE-GP increases by a factor of 1.287 to 16.213 compared to regular DAE-GP with 12.594.
 
 \begin{figure}[c]
 
@@ -698,7 +698,7 @@ Surprisingly, even after correcting the run-time for both DAE-GP results by remo
 \caption{Median Runtime excluding Time for Sampling - Airfoil}\label{fig:airfoil-runtime-noSampling-total}
 \end{figure}
 
-While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=573473, Pre-trained DAE-GP=573473). After profiling a single run of DAE-GP and pre-trained DAE-GP my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training. Figure \ref{fig:airfoil-profiling} shows the cumulative time spend for the 20 most expensive function calls. Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to \texttt{DAE\_LSTM.py:208(sample)}) than during model training (calls to \texttt{training.py:1303(fit)}). Secondly, it shows that internal error handling of the baseline neural network library \texttt{keras} (calls to \texttt{traceback\_utils.py:138(error\_handler)} and \texttt{traceback\_utils.py:59(error\_handler)}) takes up a comparatively larger amount of run time for pre-trained DAE-GP than for regular DAE-GP.
+While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=573473, Pre-trained DAE-GP=573473). After profiling a single run of DAE-GP and pre-trained DAE-GP using the python \texttt{cProfiler} module {[}\protect\hyperlink{ref-python3}{22}{]}, my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training. Figure \ref{fig:airfoil-profiling} shows the cumulative time spend for the 20 most expensive function calls. Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to \texttt{DAE\_LSTM.py:208(sample)}) than during model training (calls to \texttt{training.py:1303(fit)}). Secondly, it shows that internal error handling of the baseline neural network library \texttt{keras} (calls to \texttt{traceback\_utils.py:138(error\_handler)} and \texttt{traceback\_utils.py:59(error\_handler)}) takes up a comparatively larger amount of run time for pre-trained DAE-GP than for regular DAE-GP.
 
 \begin{figure}[c]
 
@@ -729,10 +729,10 @@ Problem & Observations & Features & Source \\
 Airfoil & 1503 & 5 & {[}\protect\hyperlink{ref-AIRFOIL_DATASET}{1}{]} \\
 Boston\_Housing & 506 & 13 & {[}\protect\hyperlink{ref-BOSTON_HOUSING_DATASET}{8}{]} \\
 Energy\_Cooling & 768 & 8 & {[}\protect\hyperlink{ref-ENERGY_DATASET}{21}{]} \\
-Concrete & 1030 & 8 & {[}\protect\hyperlink{ref-CONCRETE_DATASET}{28}{]} \\
+Concrete & 1030 & 8 & {[}\protect\hyperlink{ref-CONCRETE_DATASET}{29}{]} \\
 \end{longtable}
 
-To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ({[}\protect\hyperlink{ref-mwu1}{24}{]}, {[}\protect\hyperlink{ref-mwu2}{14}{]}) to test for differences in the distribution underlying the samples sourced from my experiments. Additionally, I included the effect strength of pre-training as measured by Cliffs Delta {[}\protect\hyperlink{ref-Cliff1993DominanceSO}{3}{]} into the statistical analysis. Better median values (e.g.~higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for \(\alpha\) levels (\(0.1\), \(0.05\), \(0.01\)).
+To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ({[}\protect\hyperlink{ref-mwu1}{25}{]}, {[}\protect\hyperlink{ref-mwu2}{14}{]}) to test for differences in the distribution underlying the samples sourced from my experiments. Additionally, I included the effect strength of pre-training as measured by Cliffs Delta {[}\protect\hyperlink{ref-Cliff1993DominanceSO}{3}{]} into the statistical analysis. Better median values (e.g.~higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for \(\alpha\) levels (\(0.1\), \(0.05\), \(0.01\)).
 
 Note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection \protect\hyperlink{influence-on-run-time}{Influence on Run-Time}), have not been analyzed for their total run-time. This is due to the fact, that experiments were run on different computers architectures which resulted in strongly biased results.
 
@@ -837,18 +837,18 @@ Next I studied the size of solutions found during DAE-GP. Figure \ref{fig:symReg
 Table \ref{tab:full-run-realWorldSymReg-best-solution-size} shows the median size of the best solution after 30 generations and results for computing the statistical tests.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2388}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1642}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1045}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1791}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1194}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1940}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2286}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1714}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1143}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1857}}@{}}
 \caption{\label{tab:full-run-realWorldSymReg-best-solution-size}Median Size of the best solution after 30 generations - Real World Symbolic Regression}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Problem
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Hid.Layers
+Hidden Layers
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 DAE-GP
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -864,7 +864,7 @@ Cliffs-Delta
 \begin{minipage}[b]{\linewidth}\raggedright
 Problem
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Hid.Layers
+Hidden Layers
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 DAE-GP
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -902,18 +902,18 @@ Figure \ref{fig:symReg-LevDiv} shows the median levenshtein edit distance as a m
 The results of the statistical analysis is summarized in table \ref{tab:full-run-realWorldSymReg-popDiversity}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2388}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1642}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1045}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1791}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1194}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1940}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2286}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1714}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1143}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1857}}@{}}
 \caption{\label{tab:full-run-realWorldSymReg-popDiversity}Median Population Diversity over 30 Generations - Symbolic Regression}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Problem
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Hid.Layers
+Hidden Layers
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 DAE-GP
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -929,7 +929,7 @@ Cliffs-Delta
 \begin{minipage}[b]{\linewidth}\raggedright
 Problem
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Hid.Layers
+Hidden Layers
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 DAE-GP
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -967,18 +967,18 @@ Figure \ref{fig:symReg-EpochsPerGen} shows the median number of epochs spend on 
 The results of the statistical analysis is summarized in table \ref{tab:full-run-realWorldSymReg-epochsPerGen}.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2388}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1642}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1045}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1791}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1194}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1940}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2286}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1714}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1143}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1857}}@{}}
 \caption{\label{tab:full-run-realWorldSymReg-epochsPerGen}Median Number of Training Epochs per Generation - Symbolic Regression}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Problem
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Hid.Layers
+Hidden Layers
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 DAE-GP
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -994,7 +994,7 @@ Cliffs-Delta
 \begin{minipage}[b]{\linewidth}\raggedright
 Problem
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Hid.Layers
+Hidden Layers
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 DAE-GP
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -1032,7 +1032,7 @@ The experiments conducted in this thesis did not find any significant benefits o
 
 As detailed in the subsection \protect\hyperlink{dynamic-adjustment-of-hidden-neurons}{Dynamic Adjustment of Hidden Neurons}, one major drawback of using pre-training with DAE-GP is the loss of the ability to dynamically adjust the number of hidden neurons to the maximum size of individuals inside the current generations population. This dynamic mechanism does reduce the computational resources necessary for training DAE-LSTM networks which is one of the most time consuming operations besides sampling new individuals.
 
-Another disadvantage of using pre-training in DAE-GP is that, in my experiments, it required DAE-LSTM networks to use two hidden layers (see subsection \protect\hyperlink{reduced-number-of-hidden-layers}{Reduced Number of Hidden Layers}). For a single hidden layer, pre-training did show a negative impact on the median final fitness of solutions found as it was suggested by {[}\protect\hyperlink{ref-pmlr-v9-erhan10a}{4}{]}. Since current research on DAE-GP for real-world symbolic regression relies on a single hidden layer (see {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{26}{]}), pre-training does come with additional computational expenses for using deeper DAE-LSTMs.
+Another disadvantage of using pre-training in DAE-GP is that, in my experiments, it required DAE-LSTM networks to use two hidden layers (see subsection \protect\hyperlink{reduced-number-of-hidden-layers}{Reduced Number of Hidden Layers}). For a single hidden layer, pre-training did show a negative impact on the median final fitness of solutions found as it was suggested by {[}\protect\hyperlink{ref-pmlr-v9-erhan10a}{4}{]}. Since current research on DAE-GP for real-world symbolic regression relies on a single hidden layer (see {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{27}{]}), pre-training does come with additional computational expenses for using deeper DAE-LSTMs.
 
 \hypertarget{limitations-and-open-questions}{%
 \subsection{Limitations and open Questions}\label{limitations-and-open-questions}}
@@ -1075,7 +1075,7 @@ Meaning
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\(g\) & Current generation \\
+\(g_{n}\) & \(n\).th generation \\
 \(g_{max}\) & Maximum number of generations \\
 \(M_g\) & DAE-LSTM model for generation \(g\) \\
 \(\hat{M}\) & DAE-LSTM model for Pre-Training \\
@@ -1205,34 +1205,46 @@ AQ & Analytic Quotient \\
 \CSLLeftMargin{{[}21{]} }%
 \CSLRightInline{Athanasios Tsanas and Angeliki Xifara. 2012. Accurate quantitative estimation of energy performance of residential buildings using statistical machine learning tools. \emph{Energy and Buildings} 49, (June 2012), 560--567. DOI:https://doi.org/\href{https://doi.org/10.1016/j.enbuild.2012.03.003}{10.1016/j.enbuild.2012.03.003}}
 
-\leavevmode\vadjust pre{\hypertarget{ref-dae_orig2008}{}}%
+\leavevmode\vadjust pre{\hypertarget{ref-python3}{}}%
 \CSLLeftMargin{{[}22{]} }%
+\CSLRightInline{Guido Van Rossum and Fred L. Drake. 2009. \emph{Python 3 reference manual}. CreateSpace, Scotts Valley, CA.}
+
+\leavevmode\vadjust pre{\hypertarget{ref-dae_orig2008}{}}%
+\CSLLeftMargin{{[}23{]} }%
 \CSLRightInline{Pascal Vincent, Hugo Larochelle, Y. Bengio, and Pierre-Antoine Manzagol. 2008. Extracting and composing robust features with denoising autoencoders. In \emph{Proceedings of the 25th international conference on machine learning} (ICML '08), Association for Computing Machinery, New York, NY, USA, 1096--1103. DOI:https://doi.org/\href{https://doi.org/10.1145/1390156.1390294}{10.1145/1390156.1390294}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-weigend1994overfitting}{}}%
-\CSLLeftMargin{{[}23{]} }%
+\CSLLeftMargin{{[}24{]} }%
 \CSLRightInline{Andreas Weigend. 1994. On overfitting and the effective number of hidden units. In \emph{Proceedings of the 1993 connectionist models summer school}, 335--342.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-mwu1}{}}%
-\CSLLeftMargin{{[}24{]} }%
+\CSLLeftMargin{{[}25{]} }%
 \CSLRightInline{Frank. Wilcoxon. 1945. Individual comparisons by ranking methods. \emph{Biometrics} 1, (1945), 196--202.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-daegp_explore_exploit}{}}%
-\CSLLeftMargin{{[}25{]} }%
+\CSLLeftMargin{{[}26{]} }%
 \CSLRightInline{David Wittenberg. 2022. Using denoising autoencoder genetic programming to control exploration and exploitation in search. In \emph{Genetic programming}, Springer International Publishing, Cham, 102--117.}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dae-gp_2022_symreg}{}}%
-\CSLLeftMargin{{[}26{]} }%
+\CSLLeftMargin{{[}27{]} }%
 \CSLRightInline{David Wittenberg and Franz Rothlauf. 2022. Denoising autoencoder genetic programming for real-world symbolic regression. In \emph{Proceedings of the genetic and evolutionary computation conference companion} (GECCO '22), Association for Computing Machinery, New York, NY, USA, 612--614. DOI:https://doi.org/\href{https://doi.org/10.1145/3520304.3528921}{10.1145/3520304.3528921}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-dae-gp_2020_rtree}{}}%
-\CSLLeftMargin{{[}27{]} }%
+\CSLLeftMargin{{[}28{]} }%
 \CSLRightInline{David Wittenberg, Franz Rothlauf, and Dirk Schweim. 2020. DAE-GP: Denoising autoencoder LSTM networks as probabilistic models in estimation of distribution genetic programming. In \emph{Proceedings of the 2020 genetic and evolutionary computation conference} (GECCO '20), Association for Computing Machinery, New York, NY, USA, 1037--1045. DOI:https://doi.org/\href{https://doi.org/10.1145/3377930.3390180}{10.1145/3377930.3390180}}
 
 \leavevmode\vadjust pre{\hypertarget{ref-CONCRETE_DATASET}{}}%
-\CSLLeftMargin{{[}28{]} }%
+\CSLLeftMargin{{[}29{]} }%
 \CSLRightInline{I-Cheng Yeh. 1998. Modeling of strength of high-performance concrete using artificial neural networks.'' cement and concrete research, 28(12), 1797-1808. \emph{Cement and Concrete Research} 28, (December 1998), 1797--1808. DOI:https://doi.org/\href{https://doi.org/10.1016/S0008-8846(98)00165-3}{10.1016/S0008-8846(98)00165-3}}
 
 \end{CSLReferences}
+
+\newpage
+
+\hypertarget{IV}{%
+\section*{II - Statutory Declaration}\label{IV}}
+\addcontentsline{toc}{section}{II - Statutory Declaration}
+
+\ldots hier einfügen\ldots{}
 
 \end{document}

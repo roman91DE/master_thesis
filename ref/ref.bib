@@ -497,6 +497,73 @@ size = "7 pages",
 abstract = "We propose replacing the division operator used in genetic programming with an analytic quotient operator.We demonstrate that this analytic quotient operator systematically yields lower mean squared errors over a range of regression tasks, due principally to removing the discontinuities or singularities that can often result from using either protected or unprotected division. Further, the analytic quotient operator is differentiable. We also show that the new analytic quotient operator stabilises the variance of the intermediate quantities in the tree.",
 notes = "Discussion of NaN inf (IEEE754, 1985). Cites \cite{keijzer03}. Analytic Quotient AQ(x,y) = x/sqrt(1+y*y). Normal (single objective SOGP). MOGP used to limit bloat (cf \cite{langdon:book}). PCGP doi:10.1162/106365602760234117 Tested on six regression problems (do any of them have negative values?) 'using the AQ operator always yielded the smallest mean test errors' (sec 3). 'AQ yields the smallest standard deviation' (except one case, sec 3). 'correlation between low training error and low test error' (sec 4). Fig 3 uses log scales. Bloat shown in Table 12.
 Also known as \cite{6186815}",
-
+}
+@book{python3,
+ author = {Van Rossum, Guido and Drake, Fred L.},
+ title = {Python 3 Reference Manual},
+ year = {2009},
+ isbn = {1441412697},
+ publisher = {CreateSpace},
+ address = {Scotts Valley, CA}
+}
+@Article{matplotlib,
+  Author    = {Hunter, J. D.},
+  Title     = {Matplotlib: A 2D graphics environment},
+  Journal   = {Computing in Science \& Engineering},
+  Volume    = {9},
+  Number    = {3},
+  Pages     = {90--95},
+  abstract  = {Matplotlib is a 2D graphics package used for Python for
+  application development, interactive scripting, and publication-quality
+  image generation across user interfaces and operating systems.},
+  publisher = {IEEE COMPUTER SOC},
+  doi       = {10.1109/MCSE.2007.55},
+  year      = 2007
+}
+@Article{numpy,
+ title         = {Array programming with {NumPy}},
+ author        = {Charles R. Harris and K. Jarrod Millman and St{\'{e}}fan J.
+                 van der Walt and Ralf Gommers and Pauli Virtanen and David
+                 Cournapeau and Eric Wieser and Julian Taylor and Sebastian
+                 Berg and Nathaniel J. Smith and Robert Kern and Matti Picus
+                 and Stephan Hoyer and Marten H. van Kerkwijk and Matthew
+                 Brett and Allan Haldane and Jaime Fern{\'{a}}ndez del
+                 R{\'{i}}o and Mark Wiebe and Pearu Peterson and Pierre
+                 G{\'{e}}rard-Marchant and Kevin Sheppard and Tyler Reddy and
+                 Warren Weckesser and Hameer Abbasi and Christoph Gohlke and
+                 Travis E. Oliphant},
+ year          = {2020},
+ month         = sep,
+ journal       = {Nature},
+ volume        = {585},
+ number        = {7825},
+ pages         = {357--362},
+ doi           = {10.1038/s41586-020-2649-2},
+ publisher     = {Springer Science and Business Media {LLC}},
+ url           = {https://doi.org/10.1038/s41586-020-2649-2}
+}
+@software{pandas,
+    author       = {The pandas development team},
+    title        = {pandas-dev/pandas: Pandas},
+    month        = feb,
+    year         = 2020,
+    publisher    = {Zenodo},
+    version      = {latest},
+    doi          = {10.5281/zenodo.3509134},
+    url          = {https://doi.org/10.5281/zenodo.3509134}
+}
+@Article{ipython,
+  Author    = {P\'erez, Fernando and Granger, Brian E.},
+  Title     = {{IP}ython: a System for Interactive Scientific Computing},
+  Journal   = {Computing in Science and Engineering},
+  Volume    = {9},
+  Number    = {3},
+  Pages     = {21--29},
+  month     = may,
+  year      = 2007,
+  url       = "https://ipython.org",
+  ISSN      = "1521-9615",
+  doi       = {10.1109/MCSE.2007.53},
+  publisher = {IEEE Computer Society},
 }
 

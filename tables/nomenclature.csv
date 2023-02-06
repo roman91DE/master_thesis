@@ -1,5 +1,5 @@
 Symbol?Meaning
-$g$?Current generation
+$g_{n}$?$n$.th generation
 $g_{max}$?Maximum number of generations
 $M_g$?DAE-LSTM model for generation $g$
 $\hat{M}$?DAE-LSTM model for Pre-Training
