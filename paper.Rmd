@@ -648,12 +648,16 @@ Note that the results for the real world symbolic regression problems inside thi
 
 ## Influence on Fitness
 
-The results for the median best fitness over the evolutionary search are visualized in figure \@ref(fig:symReg-Fitness).
+The results for the median best fitness over the evolutionary search are visualized in figure \@ref(fig:symReg-Fitness). Figure \@ref(fig:symReg-Fitness-BoxPlots) shows the distribution of final fitness values on both the test and training set as boxplots.
 
 ```{r symReg-Fitness, echo=FALSE, fig.cap="Fitness over 30 Generations - Real World Symbolic Regression", out.width="90%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png")
 ```
 
+
+```{r symReg-Fitness-BoxPlots, echo=FALSE, fig.cap="Fitness after 30 Generations - Real World Symbolic Regression", out.width="90%"}
+knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/final_fitness_boxplot.png")
+```
 
 Table \@ref(tab:full-run-realWorldSymReg-fitness) summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests.
 

@@ -148,7 +148,7 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2023-02-05}
+\date{\vspace{-2.5em}Date of Submission: 2023-02-06}
 
 \begin{document}
 \maketitle
@@ -738,7 +738,7 @@ Note that the results for the real world symbolic regression problems inside thi
 \hypertarget{influence-on-fitness}{%
 \subsection{Influence on Fitness}\label{influence-on-fitness}}
 
-The results for the median best fitness over the evolutionary search are visualized in figure \ref{fig:symReg-Fitness}.
+The results for the median best fitness over the evolutionary search are visualized in figure \ref{fig:symReg-Fitness}. Figure \ref{fig:symReg-Fitness-BoxPlots} shows the distribution of final fitness values on both the test and training set as boxplots.
 
 \begin{figure}[c]
 
@@ -747,6 +747,15 @@ The results for the median best fitness over the evolutionary search are visuali
 }
 
 \caption{Fitness over 30 Generations - Real World Symbolic Regression}\label{fig:symReg-Fitness}
+\end{figure}
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.9\linewidth]{img/symbolicRegressionSummarized/final_fitness_boxplot} 
+
+}
+
+\caption{Fitness after 30 Generations - Real World Symbolic Regression}\label{fig:symReg-Fitness-BoxPlots}
 \end{figure}
 
 Table \ref{tab:full-run-realWorldSymReg-fitness} summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests.
@@ -804,10 +813,10 @@ Airfoil & 2 & Train & \textbf{7.0644} & 7.7109 & 0.62 & 0.14 \\
 & 2 & Test & \textbf{6.991} & 7.6799 & 0.91 & 0.04 \\
 Boston\_Housing & 2 & Train & \textbf{8.0217} & 8.0543 & 0.85 & 0.06 \\
 & 2 & Test & \textbf{7.9472} & 7.9683 & 0.79 & 0.08 \\
-Energy(Cooling) & 2 & Train & \textbf{4.449} & 4.4627 & 0.82 & 0.07 \\
-& 2 & Test & \textbf{4.6258} & 4.6297 & 0.96 & -0.03 \\
-Concrete & 2 & Train & \textbf{17.1299} & 17.9175 & 0.51 & 0.24 \\
-& 2 & Test & \textbf{17.1585} & 17.6584 & 0.68 & 0.16 \\
+Energy(Cooling) & 2 & Train & \textbf{4.449} & 4.4668 & 0.54 & 0.17 \\
+& 2 & Test & \textbf{4.6258} & 4.6429 & 0.76 & 0.09 \\
+Concrete & 2 & Train & 17.1299 & \textbf{16.9825} & 0.91 & -0.04 \\
+& 2 & Test & 17.1585 & \textbf{16.7413} & 0.62 & -0.14 \\
 \end{longtable}
 
 \hypertarget{influence-on-solution-size}{%
@@ -871,8 +880,8 @@ Cliffs-Delta
 Airfoil & 1 & \textbf{5} & 7 & 0.44 & 0.20 \\
 Airfoil & 2 & 5 & 5 & 0.97 & -0.02 \\
 Boston\_Housing & 2 & 3 & 3 & 0.37 & -0.20 \\
-Energy(Cooling) & 2 & 3 & 3 & 0.16 & -0.33 \\
-Concrete & 2 & 7 & \textbf{5} & 0.09* & -0.56 \\
+Energy(Cooling) & 2 & 3 & 3 & 0.21 & -0.28 \\
+Concrete & 2 & 7 & \textbf{5} & 0.21 & -0.33 \\
 \end{longtable}
 
 \hypertarget{influence-on-population-diversity}{%
@@ -937,7 +946,7 @@ Airfoil & 1 & 0.86 & \textbf{0.93} & 0.00*** & 0.93 \\
 Airfoil & 1 & 0.86 & \textbf{0.93} & 0.00*** & 0.93 \\
 Boston\_Housing & 1 & 0.88 & \textbf{0.95} & 0.00*** & 0.92 \\
 Energy(Cooling) & 1 & 0.87 & \textbf{0.94} & 0.00*** & 0.94 \\
-Concrete & 1 & 0.87 & \textbf{0.94} & 0.00*** & 0.94 \\
+Concrete & 1 & 0.87 & \textbf{0.94} & 0.00*** & 0.93 \\
 \end{longtable}
 
 \hypertarget{influence-on-the-number-of-training-epochs-per-generation}{%
@@ -1001,8 +1010,8 @@ Cliffs-Delta
 Airfoil & 1 & 143.49 & \textbf{64.66} & 0.00*** & -0.88 \\
 Airfoil & 2 & 143.83 & \textbf{61.22} & 0.00*** & -0.88 \\
 Boston\_Housing & 2 & 141.8 & \textbf{65.36} & 0.00*** & -0.87 \\
-Energy(Cooling) & 2 & 144.24 & \textbf{66.81} & 0.00*** & -0.93 \\
-Concrete & 2 & 139.2 & \textbf{64.21} & 0.00*** & -0.87 \\
+Energy(Cooling) & 2 & 144.24 & \textbf{66.7} & 0.00*** & -0.93 \\
+Concrete & 2 & 139.2 & \textbf{65.15} & 0.00*** & -0.87 \\
 \end{longtable}
 
 \hypertarget{conclusion-and-discussion}{%
