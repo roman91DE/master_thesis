@@ -2,5 +2,5 @@ Problem,Hidden_Layer,DAE-GP,Pre-Trained_DAE-GP,P_Value,Cliffs_Delta
 Airfoil,1,7.8,8.4,0.44,0.20
 Airfoil,2,13.2,8.6,0.97,-0.02
 Boston_Housing,2,4.6,3.8,0.37,-0.20
-Energy(Cooling),2,7.8,3.25,0.16,-0.33
-Concrete,2,9.2,5.0,0.09*,-0.56
+Energy(Cooling),2,7.8,3.6,0.21,-0.28
+Concrete,2,9.2,6.0,0.21,-0.33

@@ -481,3 +481,22 @@ numpages = {37}
   year={2014},
   volume={abs/1412.6980}
 }
+@Article{AQ,
+author = "Ji Ni and Russ H. Drieberg and Peter I. Rockett",
+title = "The Use of an Analytic Quotient Operator in Genetic Programming",
+journal = "IEEE Transactions on Evolutionary Computation",
+year = "2013",
+volume = "17",
+number = "1",
+pages = "146--152",
+month = feb,
+keywords = "genetic algorithms, genetic programming, analytic quotient, protected division, variance stabilisation",
+ISSN = "1089-778X",
+DOI = "doi:10.1109/TEVC.2012.2195319",
+size = "7 pages",
+abstract = "We propose replacing the division operator used in genetic programming with an analytic quotient operator.We demonstrate that this analytic quotient operator systematically yields lower mean squared errors over a range of regression tasks, due principally to removing the discontinuities or singularities that can often result from using either protected or unprotected division. Further, the analytic quotient operator is differentiable. We also show that the new analytic quotient operator stabilises the variance of the intermediate quantities in the tree.",
+notes = "Discussion of NaN inf (IEEE754, 1985). Cites \cite{keijzer03}. Analytic Quotient AQ(x,y) = x/sqrt(1+y*y). Normal (single objective SOGP). MOGP used to limit bloat (cf \cite{langdon:book}). PCGP doi:10.1162/106365602760234117 Tested on six regression problems (do any of them have negative values?) 'using the AQ operator always yielded the smallest mean test errors' (sec 3). 'AQ yields the smallest standard deviation' (except one case, sec 3). 'correlation between low training error and low test error' (sec 4). Fig 3 uses log scales. Bloat shown in Table 12.
+Also known as \cite{6186815}",
+
+}
+

@@ -157,6 +157,8 @@ for problem,path in RESULTS.items():
 with open("/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv", "w", encoding="utf-8") as f:
     f.write(csv_string)
 
+# over gens
+# ---
 
 fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=False, dpi=DPI, layout="constrained")
 fig.set_size_inches(14,12)
@@ -176,6 +178,62 @@ for (problem,path), ax in zip(RESULTS_2hl.items(), (ul, ur, dl, dr)):
 
 ur.legend(fontsize=MID)
 fig.savefig(f"{IMG_PATH}/median_fitness_byGens.png")
+
+# fitness boxplot
+# ----
+
+def last_fits(arr):
+    ret = []
+    for run in arr:
+        ret.append(run[-1])
+    return ret
+
+
+
+fig, ((ul, ur), (dl, dr)) = plt.subplots(nrows=2, ncols=2, sharex=False, sharey=False, dpi=DPI, layout="constrained")
+fig.set_size_inches(14,12)
+# fig.suptitle(f"{BASE_TITLE} - Median Best Fitness", fontsize=BIG)
+# fig.supxlabel("Generations", fontsize=MID)
+fig.supylabel("RMSE", fontsize=MID)
+
+for (problem,path), ax in zip(RESULTS_2hl.items(), (ul, ur, dl, dr)):
+
+    d = json.load(open(join(path, FILE_FULL_FITNESS_DATA),"r",encoding="utf-8"))
+    ax.set_title(problem, fontsize=MID)
+
+    LABELS = ["DAE-GP(Train)", "DAE-GP(Test)", "Pre-Trained(Train)", "Pre-Trained(Test)"]
+    X = [
+        last_fits(d["DAE-GP (train)"]),
+        last_fits(d["DAE-GP (test)"]),
+        last_fits(d["Pre-Trained (train)"]),
+        last_fits(d["Pre-Trained (test)"])
+    ]
+
+    # std_dev = np.std(X, 1)
+    # medians = np.median(X,1)
+
+    # fig.suptitle(f"{BASE_TITLE} - Best Fitness after 30 gens", fontsize=BIG)
+
+    bp_dict = ax.boxplot(
+        x=X,
+        labels=LABELS,
+
+    )
+    ax.grid()
+
+    # for i, line in enumerate(bp_dict['medians']):
+    #     x, y = line.get_xydata()[1]
+    #     text = ' med.={:.2f}\n std.={:.2f}'.format(medians[i], std_dev[i])
+    #     ax.annotate(text, xy=(x, y), fontsize=SMALL)
+
+    #ax.set_xticklabels(LABELS, fontsize=BIG)
+    
+
+#plt.setp(bp_dict['xticklabels'], fontsize=MID)
+#ur.legend(fontsize=MID)
+fig.savefig(f"{IMG_PATH}/final_fitness_boxplot.png")
+
+
 
 # Solution Size
 # ---

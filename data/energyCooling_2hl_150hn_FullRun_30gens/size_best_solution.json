@@ -1,1 +1,1 @@
-{"problem": "Energy(Cooling)", "hiddenLayer": 2, "DAE-GP": [3, 11, 17, 23, 3, 3, 3, 9, 3, 3], "Pre-Trained": [3, 3, 3, 5, 3, 3, 3, 3]}
+{"problem": "Energy(Cooling)", "hiddenLayer": 2, "DAE-GP": [3, 11, 17, 23, 3, 3, 3, 9, 3, 3], "Pre-Trained": [3, 3, 3, 3, 5, 3, 3, 3, 3, 7]}
