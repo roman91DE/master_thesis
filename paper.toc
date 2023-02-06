@@ -31,4 +31,4 @@
 \contentsline {subsection}{Symbols}{36}{section*.6}%
 \contentsline {subsection}{Abbreviations}{36}{section*.7}%
 \contentsline {section}{References}{37}{section*.8}%
-\contentsline {section}{II - Statutory Declaration}{39}{section*.9}%
+\contentsline {section}{Statutory Declaration}{40}{section*.9}%

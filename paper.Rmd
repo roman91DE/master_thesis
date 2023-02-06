@@ -339,7 +339,7 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE )
 ```
 
-The framework that was used to run all experiments of this thesis was provided by the supervisor of this thesis David Wittenberg and uses the python programming language [@python3] in conjunction with the baseline libraries `Keras` [@chollet2015keras] for deep neural networks and `deap` [@DEAP_JMLR2012] for evolutionary computation. For data visualizations I used the python package `matplotlib` [@matplotlib], statistical analysis and evaluations were conducted using primarily the datscience libraries `numpy` [@numpy], `pandas` [@pandas], and 
+The framework that was used to run all experiments of this thesis was provided by the supervisor of this thesis David Wittenberg and uses the python programming language [@python3] in conjunction with the baseline libraries `Keras` [@chollet2015keras] for deep neural networks and `deap` [@DEAP_JMLR2012] for evolutionary computation. For data visualizations I used the python package `matplotlib` [@matplotlib], statistical analysis and evaluations were conducted using primarily the data science libraries `scipy` [@scipy], `numpy` [@numpy], `pandas` [@pandas], and  `IPython` [@ipython].
 
 
 ## Benchmark Problem
@@ -469,7 +469,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_medi
 
 Figure \@ref(fig:airfoil-median-fitness-30gens) shows both the mean and median of the best fitness for each generation on both the test and training set of the airfoil dataset for using 2 hidden layers inside the DAE-LSTM networks. The results are aggregated for $10$ individuals runs per algorithm and also include regular GP as a benchmark. For all three algorithms an improvement in the best found fitness can be observed during the evolutionary search but the results show that DAE-GP based algorithms, on average, find solutions with much higher fitness as traditional GP.
 
-The first interesting observation from this experiment is, that the pre-trained DAE-GP shows slightly lower mean RMSE (higher fitness) but a higher median RMSE (lower fitness) than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behavior.
+The first interesting observation from this experiment is, that the pre-trained DAE-GP shows slightly lower mean RMSE (higher fitness) but a higher median RMSE (lower fitness) than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behavior. Another interesting observation from figure \@ref(fig:airfoil-median-fitness-30gens) is that pre-trained DAE-GP is faster at improving fitness than regular DAE-GP, this is especially true if only looking at the first 10 generations 
 
 ```{r airfoil-distribution-fitness-30gens, echo=FALSE, fig.cap="Best Fitness after 30 Generations - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png")
@@ -926,6 +926,6 @@ knitr::kable(
 
 \newpage  
 
-# II - Statutory Declaration {.unnumbered #IV}
+# Statutory Declaration {.unnumbered #IV}
 
 ...hier einfügen...
