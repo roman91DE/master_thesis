@@ -426,6 +426,13 @@ PT_TEST_MED_FF <- py$D_AIRFOIL_2hl$PT_TEST_MED_FF
 GP_TRAIN_MED_FF <- py$D_AIRFOIL_2hl$GP_TRAIN_MED_FF
 GP_TEST_MED_FF <- py$D_AIRFOIL_2hl$GP_TEST_MED_FF
 
+REG_TRAIN_MED_10F <- py$D_AIRFOIL_2hl$REG_TRAIN_MED_10F
+REG_TEST_MED_10F <- py$D_AIRFOIL_2hl$REG_TEST_MED_10F
+PT_TRAIN_MED_10F <- py$D_AIRFOIL_2hl$PT_TRAIN_MED_10F
+PT_TEST_MED_10F <- py$D_AIRFOIL_2hl$PT_TEST_MED_10F
+GP_TRAIN_MED_10F <- py$D_AIRFOIL_2hl$GP_TRAIN_MED_10F
+GP_TEST_MED_10F <- py$D_AIRFOIL_2hl$GP_TEST_MED_10F
+
 REG_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$REG_TRAIN_STDD_FF
 REG_TEST_STDD_FF <- py$D_AIRFOIL_2hl$REG_TEST_STDD_FF
 PT_TRAIN_STDD_FF <- py$D_AIRFOIL_2hl$PT_TRAIN_STDD_FF
@@ -458,6 +465,7 @@ PT_TEST_STDD_FF_1HL <- py$D_AIRFOIL_1hl$PT_TEST_STDD_FF
 GP_TRAIN_STDD_FF_1HL <- py$D_AIRFOIL_1hl$GP_TRAIN_STDD_FF
 GP_TEST_STDD_FF_1HL <- py$D_AIRFOIL_1hl$GP_TEST_STDD_FF
 
+
 ```
 
 
@@ -469,7 +477,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_medi
 
 Figure \@ref(fig:airfoil-median-fitness-30gens) shows both the mean and median of the best fitness for each generation on both the test and training set of the airfoil dataset for using 2 hidden layers inside the DAE-LSTM networks. The results are aggregated for $10$ individuals runs per algorithm and also include regular GP as a benchmark. For all three algorithms an improvement in the best found fitness can be observed during the evolutionary search but the results show that DAE-GP based algorithms, on average, find solutions with much higher fitness as traditional GP.
 
-The first interesting observation from this experiment is, that the pre-trained DAE-GP shows slightly lower mean RMSE (higher fitness) but a higher median RMSE (lower fitness) than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behavior. Another interesting observation from figure \@ref(fig:airfoil-median-fitness-30gens) is that pre-trained DAE-GP is faster at improving fitness than regular DAE-GP, this is especially true if only looking at the first 10 generations 
+The first interesting observation from this experiment is, that the pre-trained DAE-GP shows slightly lower mean RMSE (higher fitness) but a higher median RMSE (lower fitness) than regular DAE-GP for both the training and the testing set in overall fitness. Regarding the presence of overfitting, both DAE-GP variants show only a very small gap between the testing and training fitness which indicates a good generalization behavior. Another interesting observation from figure \@ref(fig:airfoil-median-fitness-30gens) is that pre-trained DAE-GP is faster at improving fitness than regular DAE-GP, this is especially true if only looking at the first 10 generations. The median best RMSE on the test set after 10 generations for pre-trained DAE-GP is `r round(PT_TEST_MED_10F, 3)` which is smaller by a factor of `r round( PT_TEST_MED_10F / REG_TEST_MED_10F, 3)` than regular DAE-GP with a median best RMSE of `r round( REG_TEST_MED_10F, 3)`
 
 ```{r airfoil-distribution-fitness-30gens, echo=FALSE, fig.cap="Best Fitness after 30 Generations - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/final_fit_boxplot.png")
@@ -755,7 +763,7 @@ knitr::kable(
 ```
 ## Influence on Population Diversity
 
-Figure \@ref(fig:symReg-LevDiv) shows the median levenshtein edit distance as a metric for population diversity over the evolutionary search.
+Figure \@ref(fig:symReg-LevDiv) shows the median levenshtein edit distance as a metric for population diversity over the evolutionary search. It clearly shows that pre-training does increase the population diversity for DAE-GP consistently for all tested benchmark problems.
 
 
 ```{r symReg-LevDiv, echo=FALSE, fig.cap="Population Diversity over 30 Generations - Real World Symbolic Regression", out.width="90%"}
