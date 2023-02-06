@@ -1,0 +1,14 @@
+Symbol?Meaning
+$g$?Current generation
+$g_{max}$?Maximum number of generations
+$M_g$?DAE-LSTM model for generation $g$
+$\hat{M}$?DAE-LSTM model for Pre-Training
+$\theta_{M}$?Trainable parameters of DAE-LSTM model $M$
+$P_g$?Population of generation $g$
+$\hat{P}$?Pre-Training Population
+$\hat{P}_{train}$?Pre-Training Population used for training DAE-LSTM model $\hat{M}$
+$\hat{P}_{test}$?Pre-Training Population used for validating DAE-LSTM model $\hat{M}$
+$X_{g}$?Selected Training Population for DAE-LSTM model $M$ in generation $g$ 
+
+
+
