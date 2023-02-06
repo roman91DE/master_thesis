@@ -144,8 +144,7 @@ echo Done recompiling Results, Plots, Diagrams, etc!
 
 <!--Markdown Text -->
 
-# Abstract
-
+# Abstract {.unnumbered #I}
 ...
 
 
@@ -894,9 +893,9 @@ Another possibility to improve the benefits of pre-training for DAE-GP is based 
 
 \newpage  
 
-# Nomenclature {.unnumbered #I}
+# Nomenclature {.unnumbered #II}
 
-## Symbols {.unnumbered #I}
+## Symbols {.unnumbered #IIa}
 
 ```{r Symbols, echo=FALSE, message=FALSE, warning=FALSE}
 fig.pos="H"
@@ -906,7 +905,7 @@ knitr::kable(
   format = "markdown"
 )%>% row_spec(0,bold=TRUE )
 ```
-## Abbreviations {.unnumbered #II}
+## Abbreviations {.unnumbered #IIb}
 
 ```{r abbreviations, echo=FALSE, message=FALSE, warning=FALSE}
 fig.pos="H"
@@ -920,7 +919,7 @@ knitr::kable(
 
 \newpage  
 
-# References {.unnumbered #II}
+# References {.unnumbered #III}
 
 ::: {#refs}
 :::
