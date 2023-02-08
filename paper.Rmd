@@ -653,24 +653,16 @@ knitr::kable(
 ```
 To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ([@mwu1], [@mwu2]) to test for differences in the distribution underlying the samples sourced from my experiments. Additionally, I included the effect strength of pre-training as measured by Cliffs Delta [@Cliff1993DominanceSO] into the statistical analysis. Better median values (e.g. higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for $\alpha$ levels ($0.1$, $0.05$, $0.01$). 
 
-Note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection [Influence on Run-Time]), have not been analyzed for their total run-time. This is due to the fact, that experiments were run on different computers architectures which resulted in strongly biased results.   
+Note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection [Influence on Run-Time]), have not been analyzed for their total run-time. This is due to the fact, that experiments were run on different computers architectures which would result in biased results.   
 
 
 ## Influence on Fitness
-
-The results for the median best fitness over the evolutionary search are visualized in figure \@ref(fig:symReg-Fitness). Figure \@ref(fig:symReg-Fitness-BoxPlots) shows the distribution of final fitness values on both the test and training set as box plots.
 
 ```{r symReg-Fitness, echo=FALSE, fig.cap="Fitness over 30 Generations - Real World Symbolic Regression", out.width="90%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_fitness_byGens.png")
 ```
 
-
-```{r symReg-Fitness-BoxPlots, echo=FALSE, fig.cap="Fitness after 30 Generations - Real World Symbolic Regression", out.width="90%"}
-knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/final_fitness_boxplot.png")
-```
-
-Table \@ref(tab:full-run-realWorldSymReg-fitness) summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests.
-
+The results for the median best fitness over the evolutionary search are visualized in figure \@ref(fig:symReg-Fitness). In general, pre-training and regular DAE-GP both are able to improve on the best fitness found over the evolutionary search. Looking at figure \@ref(fig:symReg-Fitness), it appears that no significant differences for the best fitness between both algorithms exist. Regular DAE-GP achieves a slightly lower RMSE on the test set for Airfoil, Boston Housing and the Energy Cooling dataset while pre-trained DAE-GP is slightly better for the Concrete dataset. 
 
 ```{r full-run-realWorldSymReg-fitness, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
@@ -678,24 +670,23 @@ library(kableExtra)
 library(dplyr)
 
 # Create the data frame from csv
-df <- read.csv(
-  #"/Users/rmn/github/master_thesis/data/summary_table_final_fit_mean.csv",
+df_symreg_fitness <- read.csv(
   "/Users/rmn/github/master_thesis/data/summary_table_final_fit_median.csv",
   sep=",",
   colClasses = c("character", "numeric", "character", "numeric", "numeric", "character", "character")
 )
 
 # Create a new dataframe with the modified values of the two columns,
-df_bold <- df 
+df_bold <- df_symreg_fitness 
 
-for(i in 1:nrow(df)){
-  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],4)))
-    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],4))
+for(i in 1:nrow(df_symreg_fitness)){
+  if(df_symreg_fitness[i, "DAE.GP"] < df_symreg_fitness[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df_symreg_fitness[i, "DAE.GP"],4)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df_symreg_fitness[i, "Pre.Trained_DAE.GP"],4))
     }
-  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],4)))
-  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],4))
+  else if (df_symreg_fitness[i, "DAE.GP"] > df_symreg_fitness[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df_symreg_fitness[i, "Pre.Trained_DAE.GP"],4)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df_symreg_fitness[i, "DAE.GP"],4))
   }
 }
 # shorten column names
@@ -711,6 +702,16 @@ knitr::kable(
 ) %>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 
 ```
+
+Table \@ref(tab:full-run-realWorldSymReg-fitness) summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests. As expected after reviewing figure \@ref(fig:symReg-Fitness), none of the differences in median best fitness are statistically significant and pre-training has only a very small, negligible effect strength for Cliff's Delta ranging between `r min(df_symreg_fitness$Cliffs_Delta)` and `r max(df_symreg_fitness$Cliffs_Delta)` [@Vargha2000ACA].
+
+Figure \@ref(fig:symReg-Fitness-BoxPlots) shows the distribution of final fitness values on both the test and training set as box plots. It shows that depending on the symbolic regression problem, the dispersion of fitness values is different for both DAE-GP variants. For example, a comparativley large span is visible for the airfoil problem while fitness scores for Energy Cooling are much more concentrated. The distribution are nontheless similar for both algorithms which does not suggest any meaningful differences between using pre-training and the distribution of final fitness scores.
+
+
+```{r symReg-Fitness-BoxPlots, echo=FALSE, fig.cap="Fitness after 30 Generations - Real World Symbolic Regression", out.width="90%"}
+knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/final_fitness_boxplot.png")
+```
+
 
 
 
