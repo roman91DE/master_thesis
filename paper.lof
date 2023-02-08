@@ -13,12 +13,13 @@
 \contentsline {figure}{\numberline {13}{\ignorespaces Best Fitness over 30 Generations - Airfoil - Alternative Pre-Training Strategies }}{22}{figure.13}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Best Fitness on Test Set after 30 Generations - Airfoil - Alternative Pre-Training Strategies}}{23}{figure.14}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Median Runtime - Airfoil}}{24}{figure.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Median Number of Training Epochs per Generation - Airfoil}}{25}{figure.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Median Sampling Time per Generation - Airfoil}}{26}{figure.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Median Runtime excluding Time for Sampling - Airfoil}}{27}{figure.18}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Cumulative Time consumption by Function Calls (Top 20) - Airfoil}}{28}{figure.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Fitness over 30 Generations - Real World Symbolic Regression}}{29}{figure.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Fitness after 30 Generations - Real World Symbolic Regression}}{30}{figure.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Size of the best Solution over 30 Generations - Real World Symbolic Regression}}{31}{figure.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Population Diversity over 30 Generations - Real World Symbolic Regression}}{32}{figure.23}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Training Epochs over 30 Generations - Real World Symbolic Regression}}{33}{figure.24}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Total Runtime Boxplot - Airfoil}}{25}{figure.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Median Number of Training Epochs per Generation - Airfoil}}{26}{figure.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Median Sampling Time per Generation - Airfoil}}{27}{figure.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Median Runtime excluding Time for Sampling - Airfoil}}{28}{figure.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Cumulative Time consumption by Function Calls (Top 20) - Airfoil}}{29}{figure.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Fitness over 30 Generations - Real World Symbolic Regression}}{30}{figure.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Fitness after 30 Generations - Real World Symbolic Regression}}{31}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Size of the best Solution over 30 Generations - Real World Symbolic Regression}}{32}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Population Diversity over 30 Generations - Real World Symbolic Regression}}{33}{figure.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Training Epochs over 30 Generations - Real World Symbolic Regression}}{34}{figure.25}%

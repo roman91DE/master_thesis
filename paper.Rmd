@@ -568,7 +568,6 @@ One important argument for using pre-training with DAE-GP is that it might be a 
 
 The run-time analysis in this chapter is based on experiments that were all executed on an Intel® Xeon® W-2245 Processor without the use of graphical processing unit (GPU) acceleration in the training of DAE-LSTM networks. Since the framework that was used is written in the, comparatively slow, python programming language, the absolute run-time measurements are only of limited meaningfulness. Nonetheless, by analyzing the relative run-time differences between DAE-GP and it's pre-trained alternative, the influence of pre-training on DAE-GP run-time can be explored.
 
-<!-- TODO: Disclaimer, Run-time is implementation dependent, no GPU use, etc... -->
 
 ```{python read_runtime_vars, echo=FALSE}
 from json import load
@@ -604,6 +603,11 @@ Surprisingly, as shown in figure \@ref(fig:airfoil-runtime-total), for the exper
 
 ```{r airfoil-runtime-total, echo=FALSE, fig.cap="Median Runtime - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png")
+```
+Figure \@ref(fig:airfoil-runtime-boxplot) shows the distribution of the total runtime for both DAE-GP variants. It shows that Pre-Training, besides largely increasing the median runtime, also leads to a higher dispersion which is shown by both a larger interquartile range as well as by a a standard deviation that increases by a factor of `r round(782.68 / 635.04, 3)` from 635,04 for regular DAE-GP to 782,68 for pre-trained DAE-GP. 
+
+```{r airfoil-runtime-boxplot, echo=FALSE, fig.cap="Total Runtime Boxplot - Airfoil", out.width="80%"}
+knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/total_runtime_distribution_boxplot.png")
 ```
 
 

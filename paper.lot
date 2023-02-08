@@ -1,10 +1,10 @@
 \contentsline {table}{\numberline {1}{GP - Hyperparameter}}{9}{table.1}%
 \contentsline {table}{\numberline {2}{DAE-LSTM - Hyperparameter}}{9}{table.2}%
 \contentsline {table}{\numberline {3}{\ignorespaces Airfoil - Dataset Description}}{10}{table.3}%
-\contentsline {table}{\numberline {4}{Real World Symbolic Regression Benchmark Problems}}{28}{table.4}%
-\contentsline {table}{\numberline {5}{Median Best Fitness after 30 generations - Real World Symbolic Regression}}{30}{table.5}%
-\contentsline {table}{\numberline {6}{Median Size of the best solution after 30 generations - Real World Symbolic Regression}}{32}{table.6}%
-\contentsline {table}{\numberline {7}{Median Population Diversity over 30 Generations - Symbolic Regression}}{33}{table.7}%
-\contentsline {table}{\numberline {8}{Median Number of Training Epochs per Generation - Symbolic Regression}}{34}{table.8}%
-\contentsline {table}{\numberline {9}{List of Mathematical Symbols}}{36}{table.9}%
-\contentsline {table}{\numberline {10}{List of Abbreviations}}{36}{table.10}%
+\contentsline {table}{\numberline {4}{Real World Symbolic Regression Benchmark Problems}}{29}{table.4}%
+\contentsline {table}{\numberline {5}{Median Best Fitness after 30 generations - Real World Symbolic Regression}}{31}{table.5}%
+\contentsline {table}{\numberline {6}{Median Size of the best solution after 30 generations - Real World Symbolic Regression}}{33}{table.6}%
+\contentsline {table}{\numberline {7}{Median Population Diversity over 30 Generations - Symbolic Regression}}{34}{table.7}%
+\contentsline {table}{\numberline {8}{Median Number of Training Epochs per Generation - Symbolic Regression}}{35}{table.8}%
+\contentsline {table}{\numberline {9}{List of Mathematical Symbols}}{37}{table.9}%
+\contentsline {table}{\numberline {10}{List of Abbreviations}}{37}{table.10}%

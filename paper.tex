@@ -148,7 +148,7 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2023-02-06}
+\date{\vspace{-2.5em}Date of Submission: 2023-02-08}
 
 \begin{document}
 \maketitle
@@ -665,6 +665,17 @@ Surprisingly, as shown in figure \ref{fig:airfoil-runtime-total}, for the experi
 \caption{Median Runtime - Airfoil}\label{fig:airfoil-runtime-total}
 \end{figure}
 
+Figure \ref{fig:airfoil-runtime-boxplot} shows the distribution of the total runtime for both DAE-GP variants. It shows that Pre-Training, besides largely increasing the median runtime, also leads to a higher dispersion which is shown by both a larger interquartile range as well as by a a standard deviation that increases by a factor of 1.232 from 635,04 for regular DAE-GP to 782,68 for pre-trained DAE-GP.
+
+\begin{figure}[c]
+
+{\centering \includegraphics[width=0.8\linewidth]{./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/total_runtime_distribution_boxplot} 
+
+}
+
+\caption{Total Runtime Boxplot - Airfoil}\label{fig:airfoil-runtime-boxplot}
+\end{figure}
+
 To investigate the strong negative impact of pre-training on DAE-GP run-time, I first studied the influence of pre-training on the median number of training epochs that had to be spend at each generation for the training of the DAE-LSTM models \(M_g\) (excluding the pre-training DAE-LSTM model \(\hat{M}\)). Figure \ref{fig:airfoil-trainingEpochs} shows that pre-training, as expected, strongly reduces the number of training epochs that had to be executed at each generation until the termination condition was reached. While regular DAE-GP trains for a median of 122 epochs at each generation, pre-training reduces the number of median training epochs by a factor of 0.439 to 53.5 training epochs.
 
 \begin{figure}[c]
@@ -888,7 +899,7 @@ Concrete & 2 & 7 & \textbf{5} & 0.21 & -0.33 \\
 \hypertarget{influence-on-population-diversity}{%
 \subsection{Influence on Population Diversity}\label{influence-on-population-diversity}}
 
-Figure \ref{fig:symReg-LevDiv} shows the median levenshtein edit distance as a metric for population diversity over the evolutionary search.
+Figure \ref{fig:symReg-LevDiv} shows the median levenshtein edit distance as a metric for population diversity over the evolutionary search. It clearly shows that pre-training does increase the population diversity for DAE-GP consistently for all tested benchmark problems.
 
 \begin{figure}[c]
 

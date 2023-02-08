@@ -18,17 +18,17 @@
 \contentsline {subsubsection}{\numberline {4.2.2}Reduced Number of Hidden Layers}{19}{subsubsection.4.2.2}%
 \contentsline {subsubsection}{\numberline {4.2.3}Alternative Pre-Training Strategies}{21}{subsubsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.3}Influence on Run-Time}{23}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Results over different Real-World Symbolic Regression Problems}{28}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Influence on Fitness}{29}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Influence on Solution Size}{31}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Influence on Population Diversity}{32}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Influence on the number of Training epochs per Generation}{33}{subsection.5.4}%
-\contentsline {section}{\numberline {6}Conclusion and Discussion}{34}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Benefits of using Pre-Training}{34}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Disadvantages of using Pre-Training}{34}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Limitations and open Questions}{35}{subsection.6.3}%
-\contentsline {section}{Nomenclature}{36}{section*.5}%
-\contentsline {subsection}{Symbols}{36}{section*.6}%
-\contentsline {subsection}{Abbreviations}{36}{section*.7}%
-\contentsline {section}{References}{37}{section*.8}%
-\contentsline {section}{Statutory Declaration}{40}{section*.9}%
+\contentsline {section}{\numberline {5}Results over different Real-World Symbolic Regression Problems}{29}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Influence on Fitness}{30}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Influence on Solution Size}{32}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Influence on Population Diversity}{33}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Influence on the number of Training epochs per Generation}{34}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Conclusion and Discussion}{35}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Benefits of using Pre-Training}{35}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Disadvantages of using Pre-Training}{35}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Limitations and open Questions}{36}{subsection.6.3}%
+\contentsline {section}{Nomenclature}{37}{section*.5}%
+\contentsline {subsection}{Symbols}{37}{section*.6}%
+\contentsline {subsection}{Abbreviations}{37}{section*.7}%
+\contentsline {section}{References}{38}{section*.8}%
+\contentsline {section}{Statutory Declaration}{41}{section*.9}%
