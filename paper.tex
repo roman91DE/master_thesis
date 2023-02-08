@@ -327,7 +327,7 @@ If this mechanism can be applied successfully it would benefit the performance o
 The DAE-GP algorithm, first described by {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{33}{]}, is summarized as a flowchart in figure \ref{fig:daegp-flowchart}.
 After setting the generation counter \(g\) to \(0\) and creating the initial population of solutions \(P_0\), DAE-GP enters the main loop that checks if a termination criteria is satisfied (i.e.~maximum number of generations or fitness evaluations is reached).
 For each generation \(g\) the fitness of all new individuals in \(P_g\) is evaluated. During model building, DAE-GP selects a subset \(X_g\) of the current population that is used as training data for the DAE-LSTM model \(M_g\) which is trained to learn the properties of \(X_g\).
-The trained model \(M_g\) is then used for model sampling, partially mutated solutions from \(P_G\) are propagated through \(M_g\) to create a new population \(P_{g+1}\).
+The trained model \(M_g\) is then used for model sampling, partially mutated solutions from \(P_g\) are propagated through \(M_g\) to create a new population \(P_{g+1}\).
 This process is repeated until the termination criteria is met and DAE-GP returns the highest fitness solutions.
 
 \begin{figure}[c]
@@ -687,7 +687,7 @@ To investigate the strong negative impact of pre-training on DAE-GP run-time, I 
 \caption{Median Number of Training Epochs per Generation - Airfoil}\label{fig:airfoil-trainingEpochs}
 \end{figure}
 
-If we look at another time consuming operation in DAE-GP, the creation of new individuals by sampling the DAE-LSTM model \(M_G\), we see one main reason for the large run-time increase by pre-training DAE-GP. Figure \ref{fig:airfoil-SamplingTime} shows the median sampling time spend during each generation of the search and it clearly demonstrates that pre-training does strongly increase the time spent on model sampling in comparison to regular DAE-GP. The median time spend on sampling new individual for regular DAE-GP increases by a factor of 6.83 from 29.05581 seconds to 198.4503 seconds.
+If we look at another time consuming operation in DAE-GP, the creation of new individuals by sampling the DAE-LSTM model \(M_g\), we see one main reason for the large run-time increase by pre-training DAE-GP. Figure \ref{fig:airfoil-SamplingTime} shows the median sampling time spend during each generation of the search and it clearly demonstrates that pre-training does strongly increase the time spent on model sampling in comparison to regular DAE-GP. The median time spend on sampling new individual for regular DAE-GP increases by a factor of 6.83 from 29.05581 seconds to 198.4503 seconds.
 
 \begin{figure}[c]
 
@@ -1276,6 +1276,6 @@ AQ & Analytic Quotient \\
 \section*{Statutory Declaration}\label{IV}}
 \addcontentsline{toc}{section}{Statutory Declaration}
 
-\ldots hier einfügen\ldots{}
+\begin{center}\includegraphics{private/statutory_declaration} \end{center}
 
 \end{document}

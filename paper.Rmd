@@ -465,7 +465,6 @@ PT_TEST_STDD_FF_1HL <- py$D_AIRFOIL_1hl$PT_TEST_STDD_FF
 GP_TRAIN_STDD_FF_1HL <- py$D_AIRFOIL_1hl$GP_TRAIN_STDD_FF
 GP_TEST_STDD_FF_1HL <- py$D_AIRFOIL_1hl$GP_TEST_STDD_FF
 
-<
 ```
 
 
@@ -940,4 +939,7 @@ knitr::kable(
 
 # Statutory Declaration {.unnumbered #IV}
 
-...hier einfügen...
+```{r statutory_declaration, echo=FALSE}
+knitr::include_graphics("~/masterThesis/master_thesis/private/statutory_declaration.pdf")
+```
+
