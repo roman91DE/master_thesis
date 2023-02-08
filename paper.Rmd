@@ -106,7 +106,7 @@ bash /Users/rmn/masterThesis/eda-gp-2020/experiments/airfoil_2hl_maxIndSize_full
 
 
 # energy (cooling)
-bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_maxIndSize_fullRun_30gens/re_evaluate_energyCooling_2hl_maxIndSize_fullRun_30gens.sh
+bash /Users/rmn/masterThesis/eda-gp-2020/experiments/energyCooling_2hl_150hn_fullRun_30gens/re_evaluate_energyCooling_2hl_150hn_fullRun_30gens.sh
 
 # boston housing
 bash /Users/rmn/masterThesis/eda-gp-2020/experiments/bostonHousing_2hl_150hn_fullRun_30gens/re_evaluate_bostonHousing_2hl_150hn_fullRun_30gens.sh

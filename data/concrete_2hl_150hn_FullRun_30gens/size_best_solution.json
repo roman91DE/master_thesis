@@ -1,1 +1,1 @@
-{"problem": "Concrete", "hiddenLayer": 2, "DAE-GP": [7, 7, 9, 31, 9, 5, 5, 9, 7, 3], "Pre-Trained": [7, 11, 5, 5, 5, 9, 5, 5, 3, 5]}
+{"problem": "Concrete", "hiddenLayer": 2, "DAE-GP": [5, 31, 9, 5, 9, 3, 7, 7, 7, 9], "Pre-Trained": [11, 5, 9, 5, 5, 7, 5, 5, 3, 5]}
