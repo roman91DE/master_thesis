@@ -743,9 +743,9 @@ Energy\_Cooling & 768 & 8 & {[}\protect\hyperlink{ref-ENERGY_DATASET}{25}{]} \\
 Concrete & 1030 & 8 & {[}\protect\hyperlink{ref-CONCRETE_DATASET}{35}{]} \\
 \end{longtable}
 
-To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ({[}\protect\hyperlink{ref-mwu1}{31}{]}, {[}\protect\hyperlink{ref-mwu2}{16}{]}) to test for differences in the distribution underlying the samples sourced from my experiments. Additionally, I included the effect strength of pre-training as measured by Cliffs Delta {[}\protect\hyperlink{ref-Cliff1993DominanceSO}{3}{]} into the statistical analysis. Better median values (e.g.~higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for \(\alpha\) levels (\(0.1\), \(0.05\), \(0.01\)).
+To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ({[}\protect\hyperlink{ref-mwu1}{31}{]}, {[}\protect\hyperlink{ref-mwu2}{16}{]}) to test for differences in the distribution underlying the samples sourced from my experiments. Additionally, I included the effect strength of pre-training as measured by Cliffs Delta {[}\protect\hyperlink{ref-Cliff1993DominanceSO}{3}{]} into the statistical analysis. Better median values (e.g.~higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for \(\alpha\) levels (\(0.1\), \(0.05\), \(0.01\)). Note that I included the results for the airfoil problem with a single hidden layer into the statistical evaluation which is not visualized during this chapter (see subsection \protect\hyperlink{reduced-number-of-hidden-layers}{Reduced Number of Hidden Layers}).
 
-Note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection \protect\hyperlink{influence-on-run-time}{Influence on Run-Time}), have not been analyzed for their total run-time. This is due to the fact, that experiments were run on different computers architectures which would result in biased results.
+Also note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection \protect\hyperlink{influence-on-run-time}{Influence on Run-Time}), have not been analyzed for their total run-time. This is due to the fact, that experiments were run on different computers architectures which would result in biased results.
 
 \hypertarget{influence-on-fitness}{%
 \subsection{Influence on Fitness}\label{influence-on-fitness}}
@@ -820,7 +820,9 @@ Concrete & 2 & Train & 17.1299 & \textbf{16.9825} & 0.91 & -0.04 \\
 & 2 & Test & 17.1585 & \textbf{16.7413} & 0.62 & -0.14 \\
 \end{longtable}
 
-Table \ref{tab:full-run-realWorldSymReg-fitness} summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests. As expected after reviewing figure \ref{fig:symReg-Fitness}, none of the differences in median best fitness are statistically significant and pre-training has only a very small, negligible effect strength for Cliff's Delta ranging between -0.04 and 0.17 {[}\protect\hyperlink{ref-Vargha2000ACA}{27}{]}.
+Table \ref{tab:full-run-realWorldSymReg-fitness} summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests.
+
+As expected after reviewing figure \ref{fig:symReg-Fitness}, none of the differences in median best fitness are statistically significant and pre-training has only a very small, negligible effect strength for Cliff's Delta ranging between -0.04 and 0.17 {[}\protect\hyperlink{ref-Vargha2000ACA}{27}{]}.
 
 Figure \ref{fig:symReg-Fitness-BoxPlots} shows the distribution of final fitness values on both the test and training set as box plots. It shows that depending on the symbolic regression problem, the dispersion of fitness values is different for both DAE-GP variants. For example, a comparativley large span is visible for the airfoil problem while fitness scores for Energy Cooling are much more concentrated. The distribution are nontheless similar for both algorithms which does not suggest any meaningful differences between using pre-training and the distribution of final fitness scores.
 
@@ -836,7 +838,7 @@ Figure \ref{fig:symReg-Fitness-BoxPlots} shows the distribution of final fitness
 \hypertarget{influence-on-solution-size}{%
 \subsection{Influence on Solution Size}\label{influence-on-solution-size}}
 
-Next I studied the size of solutions found during DAE-GP. Figure \ref{fig:symReg-Size} shows the median size of the best solution per generation aggregated over all benchmark problems for symbolic regression.
+Next I studied the size of solutions found during DAE-GP. Figure \ref{fig:symReg-Size} shows the median size of the best solution per generation aggregated over all benchmark problems for symbolic regression. Similiar to the previous results regarding the fitness of the best found solution, no significant differences in the size of the best found solution are visible between both DAE-GP variants.
 
 \begin{figure}[c]
 
@@ -846,8 +848,6 @@ Next I studied the size of solutions found during DAE-GP. Figure \ref{fig:symReg
 
 \caption{Size of the best Solution over 30 Generations - Real World Symbolic Regression}\label{fig:symReg-Size}
 \end{figure}
-
-Table \ref{tab:full-run-realWorldSymReg-best-solution-size} shows the median size of the best solution after 30 generations and results for computing the statistical tests.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2286}}
@@ -897,6 +897,8 @@ Boston\_Housing & 2 & 3 & 3 & 0.37 & -0.20 \\
 Energy(Cooling) & 2 & 3 & 3 & 0.21 & -0.28 \\
 Concrete & 2 & 7 & \textbf{5} & 0.21 & -0.33 \\
 \end{longtable}
+
+Table \ref{tab:full-run-realWorldSymReg-best-solution-size} shows the median size of the best solution after 30 generations and results for computing the statistical tests. For Airfoil, Boston Housing and Energy Cooling datasets, the median size of the best soultion are equal, only for the concrete dataset a smaller median size for pre-trained DAE-GP was achieved (pre-trained DAE-GP also showed a higher median best fitness for the concrete problem). The results of the Mann-Whitney U Test again show, that differences in the underlying distributions are not statistically significant which also shows in low effect strenghts of using pre-training on the size of the best found solutions (Cliff's Delta ranges from-0.02 to 0.20).
 
 \hypertarget{influence-on-population-diversity}{%
 \subsection{Influence on Population Diversity}\label{influence-on-population-diversity}}

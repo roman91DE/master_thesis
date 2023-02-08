@@ -651,9 +651,9 @@ knitr::kable(
   format = "markdown"
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
-To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ([@mwu1], [@mwu2]) to test for differences in the distribution underlying the samples sourced from my experiments. Additionally, I included the effect strength of pre-training as measured by Cliffs Delta [@Cliff1993DominanceSO] into the statistical analysis. Better median values (e.g. higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for $\alpha$ levels ($0.1$, $0.05$, $0.01$). 
+To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ([@mwu1], [@mwu2]) to test for differences in the distribution underlying the samples sourced from my experiments. Additionally, I included the effect strength of pre-training as measured by Cliffs Delta [@Cliff1993DominanceSO] into the statistical analysis. Better median values (e.g. higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for $\alpha$ levels ($0.1$, $0.05$, $0.01$). Note that I included the results for the airfoil problem with a single hidden layer into the statistical evaluation which is not visualized during this chapter (see subsection [Reduced Number of Hidden Layers]).
 
-Note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection [Influence on Run-Time]), have not been analyzed for their total run-time. This is due to the fact, that experiments were run on different computers architectures which would result in biased results.   
+Also note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection [Influence on Run-Time]), have not been analyzed for their total run-time. This is due to the fact, that experiments were run on different computers architectures which would result in biased results.   
 
 
 ## Influence on Fitness
@@ -703,7 +703,9 @@ knitr::kable(
 
 ```
 
-Table \@ref(tab:full-run-realWorldSymReg-fitness) summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests. As expected after reviewing figure \@ref(fig:symReg-Fitness), none of the differences in median best fitness are statistically significant and pre-training has only a very small, negligible effect strength for Cliff's Delta ranging between `r min(df_symreg_fitness$Cliffs_Delta)` and `r max(df_symreg_fitness$Cliffs_Delta)` [@Vargha2000ACA].
+Table \@ref(tab:full-run-realWorldSymReg-fitness) summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests.
+
+As expected after reviewing figure \@ref(fig:symReg-Fitness), none of the differences in median best fitness are statistically significant and pre-training has only a very small, negligible effect strength for Cliff's Delta ranging between `r min(df_symreg_fitness$Cliffs_Delta)` and `r max(df_symreg_fitness$Cliffs_Delta)` [@Vargha2000ACA].
 
 Figure \@ref(fig:symReg-Fitness-BoxPlots) shows the distribution of final fitness values on both the test and training set as box plots. It shows that depending on the symbolic regression problem, the dispersion of fitness values is different for both DAE-GP variants. For example, a comparativley large span is visible for the airfoil problem while fitness scores for Energy Cooling are much more concentrated. The distribution are nontheless similar for both algorithms which does not suggest any meaningful differences between using pre-training and the distribution of final fitness scores.
 
@@ -717,7 +719,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSumm
 
 ## Influence on Solution Size
 
-Next I studied the size of solutions found during DAE-GP. Figure \@ref(fig:symReg-Size) shows the median size of the best solution per generation aggregated over all benchmark problems for symbolic regression.
+Next I studied the size of solutions found during DAE-GP. Figure \@ref(fig:symReg-Size) shows the median size of the best solution per generation aggregated over all benchmark problems for symbolic regression. Similiar to the previous results regarding the fitness of the best found solution, no significant differences in the size of the best found solution are visible between both DAE-GP variants. 
 
 
 ```{r symReg-Size, echo=FALSE, fig.cap="Size of the best Solution over 30 Generations - Real World Symbolic Regression", out.width="90%"}
@@ -725,31 +727,29 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSumm
 ```
 
 
-Table \@ref(tab:full-run-realWorldSymReg-best-solution-size) shows the median size of the best solution after 30 generations and results for computing the statistical tests.
-
 ```{r full-run-realWorldSymReg-best-solution-size, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
 library(kableExtra)
 library(dplyr)
 
 # Create the data frame from csv
-df <- read.csv(
+df_size <- read.csv(
   "/Users/rmn/github/master_thesis/data/summary_table_best_size_median.csv",
   sep=",",
   colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
 )
 
 # Create a new dataframe with the modified values of the two columns,
-df_bold <- df 
+df_bold <- df_size 
 
-for(i in 1:nrow(df)){
-  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],4)))
-    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],4))
+for(i in 1:nrow(df_size)){
+  if(df_size[i, "DAE.GP"] < df_size[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df_size[i, "DAE.GP"],4)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df_size[i, "Pre.Trained_DAE.GP"],4))
     }
-  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],4)))
-  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],4))
+  else if (df_size[i, "DAE.GP"] > df_size[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df_size[i, "Pre.Trained_DAE.GP"],4)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df_size[i, "DAE.GP"],4))
   }
 }
 # shorten column names
@@ -765,6 +765,8 @@ knitr::kable(
 ) %>% row_spec(0,bold=FALSE) %>% kableExtra::kable_styling(latex_options = "hold_position", font_size = 7)
 
 ```
+Table \@ref(tab:full-run-realWorldSymReg-best-solution-size) shows the median size of the best solution after 30 generations and results for computing the statistical tests. For Airfoil, Boston Housing and Energy Cooling datasets, the median size of the best soultion are equal, only for the concrete dataset a smaller median size for pre-trained DAE-GP was achieved (pre-trained DAE-GP also showed a higher median best fitness for the concrete problem). The results of the Mann-Whitney U Test again show, that differences in the underlying distributions are not statistically significant which also shows in low effect strenghts of using pre-training on the size of the best found solutions (Cliff's Delta ranges from`r min(df_size$Cliffs_Delta)` to `r max(df_size$Cliffs_Delta)`).
+
 ## Influence on Population Diversity
 
 Figure \@ref(fig:symReg-LevDiv) shows the median levenshtein edit distance as a metric for population diversity over the evolutionary search. It clearly shows that pre-training does increase the population diversity for DAE-GP consistently for all tested benchmark problems.

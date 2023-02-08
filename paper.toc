@@ -21,12 +21,12 @@
 \contentsline {section}{\numberline {5}Results over different Real-World Symbolic Regression Problems}{29}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Influence on Fitness}{30}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Influence on Solution Size}{32}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Influence on Population Diversity}{33}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Influence on Population Diversity}{34}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Influence on the number of Training epochs per Generation}{35}{subsection.5.4}%
 \contentsline {section}{\numberline {6}Conclusion and Discussion}{36}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Benefits of using Pre-Training}{36}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Disadvantages of using Pre-Training}{36}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Limitations and open Questions}{36}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.3}Limitations and open Questions}{37}{subsection.6.3}%
 \contentsline {section}{Nomenclature}{38}{section*.5}%
 \contentsline {subsection}{Symbols}{38}{section*.6}%
 \contentsline {subsection}{Abbreviations}{38}{section*.7}%
