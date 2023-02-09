@@ -23,7 +23,7 @@ output:
     includes:
       in_header: [header_files/settings.tex]
 indent: false
-fontsize: 11pt
+fontsize: 12pt
 bibliography: ./ref/ref.bib
 link-citations: true
 fig.width: 4in
@@ -164,12 +164,6 @@ The key idea is to pre-train an initial DAE-LSTM on a large population of candid
 This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence on overall quality of solutions found by DAE-GP and effects on run-time.
 The aim of this study is to answer the question if a pre-training strategy can be used to improve DAE-GP and to study both positive and negative effects on overall performance.
 
-<!--- Gang der Untersuchung -->
-
-<!--- Describe experiments... -->
-
-...
-
 # Theoretical Foundations
 
 *This section describes the relevant concepts that are necessary for the understanding and classification of DAE-GP as well as the concept of pre-training in artificial neural networks*
@@ -201,10 +195,7 @@ GPs ability to optimize solutions for their structure as well as for their param
 
 The aim of Estimation of distribution algorithms (EDA) is to replace the standard variation operators used in GA by building probabilistic models that can capture complex dependencies between different decision variables of an optimization problem [@design_of_modern_heuristics].
 EDAs use this probabilistic model to sample new offspring solutions inside an evolutionary search to replace crossover and/or mutation operators.
-
-### EDA-GP
-
-... insert some smart stuff here...
+Even though a majority of EDA algorithms are designed to work with fixed length string representations as used in classical GAs, EDA algorithms have been researched an successfully applied to the domain of GP in various different research streams.
 
 ### Denoising Autoencoders
 
@@ -748,8 +739,8 @@ As expected after reviewing figure \@ref(fig:symReg-Fitness), none of the differ
 
 Figure \@ref(fig:symReg-Fitness-BoxPlots) shows the distribution of final fitness values on both the test and training set as box plots.
 It shows that depending on the symbolic regression problem, the dispersion of fitness values is different for both DAE-GP variants.
-For example, a comparativley large span is visible for the airfoil problem while fitness scores for Energy Cooling are much more concentrated.
-The distribution are nontheless similar for both algorithms which does not suggest any meaningful differences between using pre-training and the distribution of final fitness scores.
+For example, a comparatively large span is visible for the airfoil problem while fitness scores for Energy Cooling are much more concentrated.
+The distribution are nonetheless similar for both algorithms which does not suggest any meaningful differences between using pre-training and the distribution of final fitness scores.
 
 ```{r symReg-Fitness-BoxPlots, echo=FALSE, fig.cap="Fitness after 30 Generations - Real World Symbolic Regression", out.width="90%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/final_fitness_boxplot.png")
@@ -759,7 +750,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSumm
 
 Next I studied the size of solutions found during DAE-GP.
 Figure \@ref(fig:symReg-Size) shows the median size of the best solution per generation aggregated over all benchmark problems for symbolic regression.
-Similiar to the previous results regarding the fitness of the best found solution, no significant differences in the size of the best found solution are visible between both DAE-GP variants.
+Similar to the previous results regarding the fitness of the best found solution, no significant differences in the size of the best found solution are visible between both DAE-GP variants.
 
 ```{r symReg-Size, echo=FALSE, fig.cap="Size of the best Solution over 30 Generations - Real World Symbolic Regression", out.width="90%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_bestSol_size_byGens.png")
@@ -805,8 +796,8 @@ knitr::kable(
 ```
 
 Table \@ref(tab:full-run-realWorldSymReg-best-solution-size) shows the median size of the best solution after 30 generations and results for computing the statistical tests.
-For Airfoil, Boston Housing and Energy Cooling datasets, the median size of the best soultion are equal, only for the concrete dataset a smaller median size for pre-trained DAE-GP was achieved (pre-trained DAE-GP also showed a higher median best fitness for the concrete problem).
-The results of the Mann-Whitney U Test again show, that differences in the underlying distributions are not statistically significant which also shows in low effect strenghts of using pre-training on the size of the best found solutions (Cliff's Delta ranges from`r min(df_size$Cliffs_Delta)` to `r max(df_size$Cliffs_Delta)`).
+For Airfoil, Boston Housing and Energy Cooling data-sets, the median size of the best solution are equal, only for the concrete dataset a smaller median size for pre-trained DAE-GP was achieved (pre-trained DAE-GP also showed a higher median best fitness for the concrete problem).
+The results of the Mann-Whitney-U Test again show, that differences in the underlying distributions are not statistically significant which also shows in low effect strengths of using pre-training on the size of the best found solutions (Cliff's Delta ranges from`r min(df_size$Cliffs_Delta)` to `r max(df_size$Cliffs_Delta)`).
 
 ## Influence on Population Diversity
 
@@ -858,18 +849,18 @@ knitr::kable(
 ```
 
 The results of the statistical analysis is summarized in table \@ref(tab:full-run-realWorldSymReg-popDiversity).
-For all sub experiments, computing the Mann-Whitney U Test returns P-Values that are smaller than 0.01 which indicates a highly statistical significant difference in the distributions.
-Looking at the effect strength of pre-training on population diversity, it shows that pre-training does have a strong positive effect (Cliffs Delta ranges from \`r \`)in improving the levenshtein distance between individual solutions inside the population $P_g$
+For all sub experiments, computing the Mann-Whitney-U Test returns P-Values that are smaller than $0.01$ which indicates a highly statistically significant difference in the underlying distributions.
+Looking at the effect strength of pre-training, it shows that pre-training does have a strong positive effect (Cliff's Delta ranges from `r min(df_popDiv$Cliffs_Delta)` to `r max(df_popDiv$Cliffs_Delta)`) on population diversity inside the population.
+Pre-Training did increase the median normalized levenshtein distance over all generations and sub-experiments by a factor of `r round( median(df_popDiv$Pre.Trained_DAE.GP) / median(df_popDiv$DAE.GP) , 3)` from `r round(median(df_popDiv$DAE.GP) , 3)` to `r round(median(df_popDiv$Pre.Trained_DAE.GP) , 3)`.
 
 ## Influence on the number of Training epochs per Generation
 
-Figure \@ref(fig:symReg-EpochsPerGen) shows the median number of epochs spend on training each generations DAE-LSTM network until the termination criterion was satisfied.
+Finally, figure \@ref(fig:symReg-EpochsPerGen) shows the median number of epochs spend on training each generations DAE-LSTM network $M_g$ until the termination criterion was satisfied.
+Pre-Training shows to be very effective at reducing the number of training epochs in comparison to regular DAE-GP.
 
 ```{r symReg-EpochsPerGen, echo=FALSE, fig.cap="Training Epochs over 30 Generations - Real World Symbolic Regression", out.width="90%"}
 knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSummarized/median_epochsTrained.png")
 ```
-
-The results of the statistical analysis is summarized in table \@ref(tab:full-run-realWorldSymReg-epochsPerGen).
 
 ```{r full-run-realWorldSymReg-epochsPerGen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(knitr)
@@ -877,23 +868,23 @@ library(kableExtra)
 library(dplyr)
 
 # Create the data frame from csv
-df <- read.csv(
+df_epochs <- read.csv(
   "/Users/rmn/github/master_thesis/data/summary_table_mean_epochsTrained.csv",
   sep=",",
   colClasses = c("character", "numeric", "numeric", "numeric", "character", "character")
 )
 
 # Create a new dataframe with the modified values of the two columns,
-df_bold <- df 
+df_bold <- df_epochs 
 
-for(i in 1:nrow(df)){
-  if(df[i, "DAE.GP"] < df[i, "Pre.Trained_DAE.GP"]){
-    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "DAE.GP"],2)))
-    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df[i, "Pre.Trained_DAE.GP"],2))
+for(i in 1:nrow(df_epochs)){
+  if(df_epochs[i, "DAE.GP"] < df_epochs[i, "Pre.Trained_DAE.GP"]){
+    df_bold[i, "DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df_epochs[i, "DAE.GP"],2)))
+    df_bold[i, "Pre.Trained_DAE.GP"] <- as.character(round(df_epochs[i, "Pre.Trained_DAE.GP"],2))
     }
-  else if (df[i, "DAE.GP"] > df[i, "Pre.Trained_DAE.GP"]) {
-    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df[i, "Pre.Trained_DAE.GP"],2)))
-  df_bold[i, "DAE.GP"] <- as.character(round(df[i, "DAE.GP"],2))
+  else if (df_epochs[i, "DAE.GP"] > df_epochs[i, "Pre.Trained_DAE.GP"]) {
+    df_bold[i, "Pre.Trained_DAE.GP"] <- sub("^(.*)$", "**\\1**", as.character(round(df_epochs[i, "Pre.Trained_DAE.GP"],2)))
+  df_bold[i, "DAE.GP"] <- as.character(round(df_epochs[i, "DAE.GP"],2))
   }
 }
 # shorten column names
@@ -911,18 +902,21 @@ knitr::kable(
 
 ```
 
+Looking at the results of the statistical analysis summarized in table \@ref(tab:full-run-realWorldSymReg-epochsPerGen), computing the Mann-Whitney-U test does consistently return P-Values below $0.01$ for all experiments which proves the statistical significant differences in distributions.
+Analyzing the effect strength of pre-training on the number of training epochs shows values for Cliff's Delta in the range of `r min(df_epochs$Cliffs_Delta)` and `r max(df_epochs$Cliffs_Delta)` which indicates a very strong negative effect on the number of training epochs necessary at each generation of the search.
+Computing the median number of training epochs over all generations for all benchmark problems shows a total decrease by a factor of `r round( (median(df_epochs$Pre.Trained_DAE.GP) / median(df_epochs$DAE.GP)) , 2)` from `r round(median(df_epochs$DAE.GP), 2)` epochs for regular DAE-GP to `r round(median(df_epochs$Pre.Trained_DAE.GP), 2)` epochs for pre-trained DAE-GP.
+
 # Conclusion and Discussion
 
 ## Benefits of using Pre-Training
 
 <!-- add test results for statistical significance! -->
 
-The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in an increased population diversity measured by the normalized levenshtein edit distance.
-Increasing the population diversity can be an important mechanism in controlling the search behavior of population based meta heuristics and is especially useful for increasing the exploration of the search space of possible solutions !Q
-UELLE!.
+The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in a highly statistically significant increase in population diversity measured by the normalized levenshtein edit distance (see subsection [Influence on Population Diversity]).
+Increasing the population diversity can be an important mechanism in controlling the search behavior of evolutionary algorithms and is especially important for the global exploration of the search space and the avoidance of premature convergence of the search [@Sudholt2020].
 
-Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model.
-Even though pre-training increased the median total run-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might be a possible way to lower the run time of DAE-GP if further performance optimizations, especially during model sampling, can be achieved.
+Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model (see subsection [Influence on Population Diversity]).
+Even though pre-training increased the median total run-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might still be a possible way to lower the run time of DAE-GP if further performance optimizations, especially during model sampling, can be achieved.
 
 ## Disadvantages of using Pre-Training
 
