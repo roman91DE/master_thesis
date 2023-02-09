@@ -2,6 +2,7 @@
 .Rproj.user
 private
 .Rhistory
+.RData
 
 # ignore large files
 *.pdf
