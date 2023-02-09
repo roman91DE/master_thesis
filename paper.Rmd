@@ -23,7 +23,7 @@ output:
     includes:
       in_header: [header_files/settings.tex]
 indent: false
-fontsize: 12pt
+fontsize: 11pt
 bibliography: ./ref/ref.bib
 link-citations: true
 fig.width: 4in
@@ -686,7 +686,7 @@ Better median values (e.g. higher fitness) are printed bold and p-values are mar
 Note that I included the results for the airfoil problem with a single hidden layer into the statistical evaluation which is not visualized during this chapter (see subsection [Reduced Number of Hidden Layers]).
 
 Also note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection [Influence on Run-Time]), have not been analyzed for their total run-time.
-This is due to the fact, that experiments were run on different computers architectures which would result in biased results.
+This is due to the fact, that experiments were run on different computer architectures which would result in biased results.
 
 ## Influence on Fitness
 
