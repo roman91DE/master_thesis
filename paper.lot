@@ -1,10 +1,10 @@
-\contentsline {table}{\numberline {1}{GP - Hyperparameter}}{9}{table.1}%
-\contentsline {table}{\numberline {2}{DAE-LSTM - Hyperparameter}}{9}{table.2}%
-\contentsline {table}{\numberline {3}{\ignorespaces Airfoil - Dataset Description}}{10}{table.3}%
-\contentsline {table}{\numberline {4}{Real World Symbolic Regression Benchmark Problems}}{29}{table.4}%
-\contentsline {table}{\numberline {5}{Median Best Fitness after 30 generations - Real World Symbolic Regression}}{31}{table.5}%
-\contentsline {table}{\numberline {6}{Median Size of the best solution after 30 generations - Real World Symbolic Regression}}{33}{table.6}%
-\contentsline {table}{\numberline {7}{Median Population Diversity over 30 Generations - Symbolic Regression}}{34}{table.7}%
-\contentsline {table}{\numberline {8}{Median Number of Training Epochs per Generation - Symbolic Regression}}{36}{table.8}%
-\contentsline {table}{\numberline {9}{List of Mathematical Symbols}}{39}{table.9}%
-\contentsline {table}{\numberline {10}{List of Abbreviations}}{39}{table.10}%
+\contentsline {table}{\numberline {1}{GP - Hyperparameter}}{12}{table.1}%
+\contentsline {table}{\numberline {2}{DAE-LSTM - Hyperparameter}}{12}{table.2}%
+\contentsline {table}{\numberline {3}{\ignorespaces Airfoil - Dataset Description}}{13}{table.3}%
+\contentsline {table}{\numberline {4}{Real World Symbolic Regression Benchmark Problems}}{32}{table.4}%
+\contentsline {table}{\numberline {5}{Median Best Fitness after 30 generations - Real World Symbolic Regression}}{34}{table.5}%
+\contentsline {table}{\numberline {6}{Median Size of the best solution after 30 generations - Real World Symbolic Regression}}{36}{table.6}%
+\contentsline {table}{\numberline {7}{Median Population Diversity over 30 Generations - Symbolic Regression}}{38}{table.7}%
+\contentsline {table}{\numberline {8}{Median Number of Training Epochs per Generation - Symbolic Regression}}{39}{table.8}%
+\contentsline {table}{\numberline {9}{List of Mathematical Symbols}}{42}{table.9}%
+\contentsline {table}{\numberline {10}{List of Abbreviations}}{42}{table.10}%

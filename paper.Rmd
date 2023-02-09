@@ -143,7 +143,16 @@ echo Done recompiling Results, Plots, Diagrams, etc!
 
 # Abstract {#I .unnumbered}
 
-...
+Denoising Autoencoder Genetic Programming (DAE-GP) is an Estimation of Distribution Algorithm in the domain of Genetic Programming that uses Denoising Autoencoders Long Short-Term Memory Networks (DAE-LSTM) as probabilistic models for sampling new populations of solutions.
+This thesis investigates the possible benefits and downsides of using pre-training for the DAE-LSTM networks of DAE-GP for four real world symbolic regression problems.
+The Experiments conducted did show that pre-training can drastically reduce the number of training epochs that are necessary at each generation of the DAE-GP search while also increasing the diversity of the population.
+Unfortunately pre-training did not show any improvements for both final fitness and the final size of solutions while largley increasing the total run-time for DAE-GP.
+
+# Keywords {.unlisted .unnumbered}
+
+Genetic Programming, Estimation of Distribution Algorithms, Denoising Autoencoder Genetic Programming, Pre-Training, Long Short-Term Memory Networks, Symbolic Regression
+
+\newpage
 
 # Introduction
 
@@ -195,7 +204,7 @@ GPs ability to optimize solutions for their structure as well as for their param
 
 The aim of Estimation of distribution algorithms (EDA) is to replace the standard variation operators used in GA by building probabilistic models that can capture complex dependencies between different decision variables of an optimization problem [@design_of_modern_heuristics].
 EDAs use this probabilistic model to sample new offspring solutions inside an evolutionary search to replace crossover and/or mutation operators.
-Even though a majority of EDA algorithms are designed to work with fixed length string representations as used in classical GAs, EDA algorithms have been researched an successfully applied to the domain of GP in various different research streams.
+Even though a majority of EDA algorithms are designed to work with fixed length string representations as used in classical GAs, EDA algorithms have been researched an successfully applied to the domain of GP in various different research streams [@kim_probMod_GP].
 
 ### Denoising Autoencoders
 
@@ -235,10 +244,6 @@ Transfer learning traditionally follows a two phase approach:
 where source task and target task are usually similar but may differ in their feature space and the distribution of training data [@survey_transfer_learning].
 
 Some of the main motivations for using pre-training is the ability to reduce the need for large amounts of training data which can often be unavailable or too expensive to collect as well as an improved performance by either reducing the computational effort that is necessary to train a model to solve a specific task or by improving the models generalization ability.
-
-...describe different pre-training strategies, e.g. few shot, perpetual, re-using...
-
--- describe unsupervised vs supervised pre-training...
 
 # Pre-Training in DAE-GP
 
