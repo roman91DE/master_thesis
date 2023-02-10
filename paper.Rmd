@@ -146,7 +146,7 @@ echo Done recompiling Results, Plots, Diagrams, etc!
 Denoising Autoencoder Genetic Programming (DAE-GP) is an Estimation of Distribution Algorithm in the domain of Genetic Programming that uses Denoising Autoencoders Long Short-Term Memory Networks (DAE-LSTM) as probabilistic models for sampling new populations of solutions.
 This thesis investigates the possible benefits and downsides of using pre-training for the DAE-LSTM networks of DAE-GP for four real world symbolic regression problems.
 The Experiments conducted did show that pre-training can drastically reduce the number of training epochs that are necessary at each generation of the DAE-GP search while also increasing the diversity of the population.
-Unfortunately pre-training did not show any improvements for both final fitness and the final size of solutions while largley increasing the total run-time for DAE-GP.
+Unfortunately pre-training did not show any improvements for both final fitness and the final size of solutions while largely increasing the total run-time for DAE-GP.
 
 # Keywords {.unlisted .unnumbered}
 
@@ -560,21 +560,23 @@ Since pre-training thus far did not demonstrate significant benefits for the qua
 One common observation in GP-based optimization algorithms is that the largest improvements in fitness are often occurring in the first generation of the search process.
 Second Generation Pre-Training tries to exploit this observation by shifting the pre-training phase from the start of the algorithm into the second generation with the aim to produce a pre-training Population $\hat{P}$ that more accurately captures the properties of the search problem.
 The basic idea is to run regular DAE-GP for the first generation without any interference, after completing the first generation, the pre-training population $\hat{P}$ is created by sampling the DAE-LSTM model $M_1$.
-The pre-training model $\hat{M}$ is then trained using $\hat{P}$, after finishing DAE-GP continues running and initializes each new DAE-LSTM model $M_g$ for $g\in{2,...,g_{max}}$ using the trainable parameters $\theta_{\hat{M}}$.
+The pre-training model $\hat{M}$ is then trained using $\hat{P}$, after finishing, DAE-GP continues running and initializes each new DAE-LSTM model $M_g$ for $g\in{2,...,g_{max}}$ using the trainable parameters $\theta_{\hat{M}}$.
 
-The pre-training implementation in previous experiments used ramped half and half initialization [@Koza1993GeneticP] to create $\hat{P}$, this leads to 50% of the population consisting of full grown trees.
-An alternative method of initializing $\hat{P}$ is to use the grow initialization method where solutions are not guaranteed to be full trees.
+The second alternative pre-training strategy is based on the choice of an alternative initialization algorithm to create $\hat{P}$.
+The pre-training implementation in previous experiments used `ramped half and half` initialization [@Koza1993GeneticP] to create $\hat{P}$.
+Using ramped half and half leads to 50% of the population being initialized by the `full` method, where terminals are only inserted at the maximum allowed depth of a tree resulting in full trees.
+An alternative method of initializing $\hat{P}$ is to use the `grow` initialization method where solutions are not guaranteed to be full trees since every leaf above the maximum depth of a tree can also be a terminal expression.
 This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of further generations population where a lower percentage of full grown trees is to be expected.
 
 Figure \@ref(fig:altStrategies-Fitness) shows the median best fitness by generations for both alternative pre-training strategies as well as the results for standard DAE-GP and the standard Pre-Training implementation used in earlier experiments.
-Unfortunately, both alternative strategies do show a worse performance in fitness than both DAE-GP and standard pre-trained DAE-GP resulting in lower fitness.
+Unfortunately, both alternative strategies demonstrate an inferior performance in fitness compared to both regular DAE-GP and standard pre-trained DAE-GP resulting in lower fitness.
 
 ```{r altStrategies-Fitness, echo=FALSE, fig.cap="Best Fitness over 30 Generations - Airfoil - Alternative Pre-Training Strategies ", out.width="80%"}
 knitr::include_graphics("./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png")
 ```
 
-Figure \@ref(fig:altStrategies-FitnessDistr) shows the distribution of best fitness achieved on the test set after running for 30 full generations.
-Both alternative second generation Pre-Training as well as grow-initialized Pre-Training show a much higher median RMSE (18.88/17.21) compared to standard pre-training (8.55) and regular DAE-GP (6.99).
+Figure \@ref(fig:altStrategies-FitnessDistr) shows the distribution of best fitness scores achieved on the test set after running for 30 full generations.
+Both alternatives, second generation Pre-Training as well as grow-initialized Pre-Training, show a much higher median RMSE (18.88/17.21) compared to standard pre-training (8.55) and regular DAE-GP (6.99).
 Also both approaches do not demonstrate any benefit on the dispersion of solutions found resulting in similar standard deviations if compared to standard pre-training.
 
 ```{r altStrategies-FitnessDistr, echo=FALSE, fig.cap="Best Fitness on Test Set after 30 Generations - Airfoil - Alternative Pre-Training Strategies", out.width="80%"}
