@@ -14,3 +14,9 @@ Unfortunately pre-training did not show any improvements for both final fitness 
 ## Keywords
 
 Genetic Programming, Estimation of Distribution Algorithms, Denoising Autoencoder Genetic Programming, Pre-Training, Long Short-Term Memory Networks, Symbolic Regression
+
+## Documents available:
+
+Full Thesis: `paper.pdf` (RMarkdown Source File: paper.Rmd)
+
+PDF-Slide Show: `slides.pdf` (RMarkdown Source File: slides.Rmd)
