@@ -1,0 +1,33 @@
+\contentsline {section}{Abstract}{3}{section*.4}%
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {section}{\numberline {2}Theoretical Foundations}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Denoising Autoencoder Genetic Programming}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Evolutionary Computation}{4}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Genetic Programming}{5}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Estimation of Distribution Algorithms}{5}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Denoising Autoencoders}{5}{subsubsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.2}Pre-Training}{6}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Pre-Training in DAE-GP}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Implementation}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Benchmark Problem}{10}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Results for the Airfoil Dataset}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Influence on Generalisation}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Influence on solution quality}{14}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Dynamic Adjustment of Hidden Neurons}{18}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Reduced Number of Hidden Layers}{20}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Alternative Pre-Training Strategies}{22}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Influence on Run-Time}{24}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Results over different Real-World Symbolic Regression Problems}{30}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Influence on Fitness}{31}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Influence on Solution Size}{33}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Influence on Population Diversity}{35}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Influence on the number of Training epochs per Generation}{36}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Conclusion and Discussion}{38}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Benefits of using Pre-Training}{38}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Disadvantages of using Pre-Training}{38}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Limitations and open Questions}{38}{subsection.6.3}%
+\contentsline {section}{Nomenclature}{40}{section*.6}%
+\contentsline {subsection}{Symbols}{40}{section*.7}%
+\contentsline {subsection}{Abbreviations}{40}{section*.8}%
+\contentsline {section}{References}{41}{section*.9}%
+\contentsline {section}{Statutory Declaration}{44}{section*.10}%
