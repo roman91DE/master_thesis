@@ -742,7 +742,7 @@ knitr::kable(
 
 Table \@ref(tab:full-run-realWorldSymReg-fitness) summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests.
 
-As expected after reviewing figure \@ref(fig:symReg-Fitness), none of the differences in median best fitness are statistically significant and pre-training has only a very small, negligible effect strength for Cliff's Delta ranging between `r min(df_symreg_fitness$Cliffs_Delta)` and `r max(df_symreg_fitness$Cliffs_Delta)` [@Vargha2000ACA].
+As expected after reviewing figure \@ref(fig:symReg-Fitness), none of the differences in median best fitness are statistically significant and pre-training has only a very small, negligible effect strength for Cliff's Delta ranging between `r min(as.numeric(df_symreg_fitness$Cliffs_Delta))` and `r max(as.numeric(df_symreg_fitness$Cliffs_Delta))` [@Vargha2000ACA].
 
 Figure \@ref(fig:symReg-Fitness-BoxPlots) shows the distribution of final fitness values on both the test and training set as box plots.
 It shows that depending on the symbolic regression problem, the dispersion of fitness values is different for both DAE-GP variants.
@@ -804,7 +804,7 @@ knitr::kable(
 
 Table \@ref(tab:full-run-realWorldSymReg-best-solution-size) shows the median size of the best solution after 30 generations and results for computing the statistical tests.
 For Airfoil, Boston Housing and Energy Cooling data-sets, the median size of the best solution are equal, only for the concrete dataset a smaller median size for pre-trained DAE-GP was achieved (pre-trained DAE-GP also showed a higher median best fitness for the concrete problem).
-The results of the Mann-Whitney-U Test again show, that differences in the underlying distributions are not statistically significant which also shows in low effect strengths of using pre-training on the size of the best found solutions (Cliff's Delta ranges from`r min(df_size$Cliffs_Delta)` to `r max(df_size$Cliffs_Delta)`).
+The results of the Mann-Whitney-U Test again show, that differences in the underlying distributions are not statistically significant which also shows in low effect strengths of using pre-training on the size of the best found solutions (Cliff's Delta ranges from`r min(as.numeric(df_size$Cliffs_Delta))` to `r max(as.numeric(df_size$Cliffs_Delta))`).
 
 ## Influence on Population Diversity
 
@@ -857,7 +857,7 @@ knitr::kable(
 
 The results of the statistical analysis is summarized in table \@ref(tab:full-run-realWorldSymReg-popDiversity).
 For all sub experiments, computing the Mann-Whitney-U Test returns P-Values that are smaller than $0.01$ which indicates a highly statistically significant difference in the underlying distributions.
-Looking at the effect strength of pre-training, it shows that pre-training does have a strong positive effect (Cliff's Delta ranges from `r min(df_popDiv$Cliffs_Delta)` to `r max(df_popDiv$Cliffs_Delta)`) on population diversity inside the population.
+Looking at the effect strength of pre-training, it shows that pre-training does have a strong positive effect (Cliff's Delta ranges from `r min(as.numeric(df_popDiv$Cliffs_Delta))` to `r max(as.numeric(df_popDiv$Cliffs_Delta))`) on population diversity inside the population.
 Pre-Training did increase the median normalized levenshtein distance over all generations and sub-experiments by a factor of `r round( median(df_popDiv$Pre.Trained_DAE.GP) / median(df_popDiv$DAE.GP) , 3)` from `r round(median(df_popDiv$DAE.GP) , 3)` to `r round(median(df_popDiv$Pre.Trained_DAE.GP) , 3)`.
 
 ## Influence on the number of Training epochs per Generation
@@ -910,7 +910,7 @@ knitr::kable(
 ```
 
 Looking at the results of the statistical analysis summarized in table \@ref(tab:full-run-realWorldSymReg-epochsPerGen), computing the Mann-Whitney-U test does consistently return P-Values below $0.01$ for all experiments which proves the statistical significant differences in distributions.
-Analyzing the effect strength of pre-training on the number of training epochs shows values for Cliff's Delta in the range of `r min(df_epochs$Cliffs_Delta)` and `r max(df_epochs$Cliffs_Delta)` which indicates a very strong negative effect on the number of training epochs necessary at each generation of the search.
+Analyzing the effect strength of pre-training on the number of training epochs shows values for Cliff's Delta in the range of `r min(as.numeric(df_epochs$Cliffs_Delta))` and `r max(as.numeric(df_epochs$Cliffs_Delta))` which indicates a very strong negative effect on the number of training epochs necessary at each generation of the search.
 Computing the median number of training epochs over all generations for all benchmark problems shows a total decrease by a factor of `r round( (median(df_epochs$Pre.Trained_DAE.GP) / median(df_epochs$DAE.GP)) , 2)` from `r round(median(df_epochs$DAE.GP), 2)` epochs for regular DAE-GP to `r round(median(df_epochs$Pre.Trained_DAE.GP), 2)` epochs for pre-trained DAE-GP.
 
 # Conclusion and Discussion

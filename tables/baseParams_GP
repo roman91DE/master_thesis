@@ -5,7 +5,7 @@ Fitness Metric?Root Mean Squared Error (RMSE)
 Train/Test Split?50:50
 Maximum Tree Depth?17 [@Koza1993GeneticP]
 Initialization Algorithm?Ramped Half and Half [@Koza1993GeneticP]
-Mix/Max Initialization-Depth?2/6
+Min/Max Initialization-Depth?2/6
 Selection Operator?Binary Tournament Selection
 Function Set?{+ , - , * , AQ [@AQ]}
 Ephemeral Constants?[-5,..,5]

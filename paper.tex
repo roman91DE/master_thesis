@@ -176,7 +176,7 @@ Johannes Gutenberg University Mainz}
 Denoising Autoencoder Genetic Programming (DAE-GP) is an Estimation of Distribution Algorithm in the domain of Genetic Programming that uses Denoising Autoencoders Long Short-Term Memory Networks (DAE-LSTM) as probabilistic models for sampling new populations of solutions.
 This thesis investigates the possible benefits and downsides of using pre-training for the DAE-LSTM networks of DAE-GP for four real world symbolic regression problems.
 The Experiments conducted did show that pre-training can drastically reduce the number of training epochs that are necessary at each generation of the DAE-GP search while also increasing the diversity of the population.
-Unfortunately pre-training did not show any improvements for both final fitness and the final size of solutions while largley increasing the total run-time for DAE-GP.
+Unfortunately pre-training did not show any improvements for both final fitness and the final size of solutions while largely increasing the total run-time for DAE-GP.
 
 \hypertarget{keywords}{%
 \section*{Keywords}\label{keywords}}
@@ -395,7 +395,7 @@ Fitness Metric & Root Mean Squared Error (RMSE) \\
 Train/Test Split & 50:50 \\
 Maximum Tree Depth & 17 {[}\protect\hyperlink{ref-Koza1993GeneticP}{15}{]} \\
 Initialization Algorithm & Ramped Half and Half {[}\protect\hyperlink{ref-Koza1993GeneticP}{15}{]} \\
-Mix/Max Initialization-Depth & 2/6 \\
+Min/Max Initialization-Depth & 2/6 \\
 Selection Operator & Binary Tournament Selection \\
 Function Set & \{+ , - , * , AQ {[}\protect\hyperlink{ref-AQ}{18}{]}\} \\
 Ephemeral Constants & {[}-5,..,5{]} \\
@@ -913,7 +913,7 @@ Concrete & 2 & Train & 17.1299 & \textbf{16.9825} & 0.91 & -0.04 \\
 
 Table \ref{tab:full-run-realWorldSymReg-fitness} summarizes the results for the median best fitness achieved after 30 generations and shows the results of computing the statistical tests.
 
-As expected after reviewing figure \ref{fig:symReg-Fitness}, none of the differences in median best fitness are statistically significant and pre-training has only a very small, negligible effect strength for Cliff's Delta ranging between -0.04 and 0.17 {[}\protect\hyperlink{ref-Vargha2000ACA}{29}{]}.
+As expected after reviewing figure \ref{fig:symReg-Fitness}, none of the differences in median best fitness are statistically significant and pre-training has only a very small, negligible effect strength for Cliff's Delta ranging between -0.14 and 0.17 {[}\protect\hyperlink{ref-Vargha2000ACA}{29}{]}.
 
 Figure \ref{fig:symReg-Fitness-BoxPlots} shows the distribution of final fitness values on both the test and training set as box plots.
 It shows that depending on the symbolic regression problem, the dispersion of fitness values is different for both DAE-GP variants.
@@ -996,7 +996,7 @@ Concrete & 2 & 7 & \textbf{5} & 0.21 & -0.33 \\
 
 Table \ref{tab:full-run-realWorldSymReg-best-solution-size} shows the median size of the best solution after 30 generations and results for computing the statistical tests.
 For Airfoil, Boston Housing and Energy Cooling data-sets, the median size of the best solution are equal, only for the concrete dataset a smaller median size for pre-trained DAE-GP was achieved (pre-trained DAE-GP also showed a higher median best fitness for the concrete problem).
-The results of the Mann-Whitney-U Test again show, that differences in the underlying distributions are not statistically significant which also shows in low effect strengths of using pre-training on the size of the best found solutions (Cliff's Delta ranges from-0.02 to 0.20).
+The results of the Mann-Whitney-U Test again show, that differences in the underlying distributions are not statistically significant which also shows in low effect strengths of using pre-training on the size of the best found solutions (Cliff's Delta ranges from-0.33 to 0.2).
 
 \hypertarget{influence-on-population-diversity}{%
 \subsection{Influence on Population Diversity}\label{influence-on-population-diversity}}
@@ -1132,7 +1132,7 @@ Concrete & 2 & 139.2 & \textbf{65.15} & 0.00*** & -0.87 \\
 \end{longtable}
 
 Looking at the results of the statistical analysis summarized in table \ref{tab:full-run-realWorldSymReg-epochsPerGen}, computing the Mann-Whitney-U test does consistently return P-Values below \(0.01\) for all experiments which proves the statistical significant differences in distributions.
-Analyzing the effect strength of pre-training on the number of training epochs shows values for Cliff's Delta in the range of -0.87 and -0.93 which indicates a very strong negative effect on the number of training epochs necessary at each generation of the search.
+Analyzing the effect strength of pre-training on the number of training epochs shows values for Cliff's Delta in the range of -0.93 and -0.87 which indicates a very strong negative effect on the number of training epochs necessary at each generation of the search.
 Computing the median number of training epochs over all generations for all benchmark problems shows a total decrease by a factor of 0.45 from 143.49 epochs for regular DAE-GP to 65.15 epochs for pre-trained DAE-GP.
 
 \hypertarget{conclusion-and-discussion}{%
