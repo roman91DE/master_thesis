@@ -1,10 +1,8 @@
 # Master Thesis
 
-## Topic
+Topic: Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming
 
-Pre-Trained Denoising Autoencoders Long Short-Term Memory Networks as probabilistic Models for Estimation of Distribution Genetic Programming
-
-Institution: \* Johannes Gutenberg University Mainz \* FB03: Chair of Business Administration and Computer Science
+Institution: Johannes Gutenberg University Mainz, Chair of Business Administration and Computer Science (FB 03)
 
 ## Abstract
 
@@ -16,4 +14,3 @@ Unfortunately pre-training did not show any improvements for both final fitness 
 ## Keywords
 
 Genetic Programming, Estimation of Distribution Algorithms, Denoising Autoencoder Genetic Programming, Pre-Training, Long Short-Term Memory Networks, Symbolic Regression
-
