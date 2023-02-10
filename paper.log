@@ -755,4 +755,77 @@ ile (type png)
 <use ./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png>
 Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_m
 edian.png  used on input line 593.
-(pdftex.def)             Requested size: 375.80615pt x 300.64493pt
+(pdftex.def)             Requested size: 375.80615pt x 300.64493pt.
+<./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_levOn
+ly.png, id=369, 1011.78pt x 867.24pt>
+File: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_
+levOnly.png Graphic file (type png)
+<use ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_l
+evOnly.png>
+Package pdftex.def Info: ./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_p
+opDiversity_byGens_levOnly.png  used on input line 608.
+(pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
+[17 <./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png>]
+<./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams.png, id=381, 722.7
+pt x 578.16pt>
+File: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams.png Graphic f
+ile (type png)
+<use ./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams.png>
+Package pdftex.def Info: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableP
+arams.png  used on input line 625.
+(pdftex.def)             Requested size: 375.80615pt x 300.64493pt.
+[18 <./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_l
+evOnly.png>]
+<./img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png, id=390,
+ 1011.78pt x 867.24pt>
+File: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png Gra
+phic file (type png)
+<use ./img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png>
+Package pdftex.def Info: ./img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fit
+ness_byGens.png  used on input line 638.
+(pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
+[19 <./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams.png>]
+<./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png, id=400, 1011.78
+pt x 867.24pt>
+File: ./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png Graphic fil
+e (type png)
+<use ./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png>
+Package pdftex.def Info: ./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byG
+ens.png  used on input line 657.
+(pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
+[20 <./img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitness_byGens.png>]
+<./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png, id=409, 1011.78pt x 867.
+24pt>
+File: ./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png Graphic file (type p
+ng)
+<use ./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png>
+Package pdftex.def Info: ./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png  
+used on input line 670.
+(pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
+[21 <./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGens.png>] [22 <./img
+/airfoil_1hl_150hn_30gens/final_fit_boxplot.png>]
+<./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png, id=42
+3, 1011.78pt x 867.24pt>
+File: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png G
+raphic file (type png)
+<use ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>
+Package pdftex.def Info: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_f
+itness_byGens.png  used on input line 698.
+(pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
+<./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only).png
+, id=425, 1011.78pt x 867.24pt>
+File: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only
+).png Graphic file (type png)
+<use ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)
+.png>
+Package pdftex.def Info: ./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fi
+t_boxplot(test_only).png  used on input line 711.
+(pdftex.def)             Requested size: 375.80396pt x 322.11768pt.
+[23 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/median_fitness_byGens.png>] 
+[24 <./img/PT_Strategies_airfoil_2hl_150hn_fullRun/final_fit_boxplot(test_only)
+.png>]
+<./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png, id=44
+0, 1011.78pt x 867.24pt>
+File: ./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime.png G
+raphic file (type png)
+<use ./img/air
