@@ -145,7 +145,7 @@ echo Done recompiling Results, Plots, Diagrams, etc!
 
 Denoising Autoencoder Genetic Programming (DAE-GP) is an Estimation of Distribution Algorithm in the domain of Genetic Programming that uses Denoising Autoencoders Long Short-Term Memory Networks (DAE-LSTM) as probabilistic models for sampling new populations of solutions.
 This thesis investigates the possible benefits and downsides of using pre-training for the DAE-LSTM networks of DAE-GP for four real world symbolic regression problems.
-The Experiments conducted did show that pre-training can drastically reduce the number of training epochs that are necessary at each generation of the DAE-GP search while also increasing the diversity of the population.
+The experiments conducted did show that pre-training can drastically reduce the number of training epochs that are necessary at each generation of the DAE-GP search while also increasing the diversity of the population.
 Unfortunately pre-training did not show any improvements for both final fitness and the final size of solutions while largely increasing the total run-time for DAE-GP.
 
 # Keywords {.unlisted .unnumbered}
@@ -168,14 +168,14 @@ In previous work DAE-GP has been shown to outperform GP for both a generalized v
 <!--- Problemstellung und Zielsetzung der Arbeit -->
 
 The DAE-GP algorithm first described by [@dae-gp_2020_rtree] trains a DAE-LSTMs for each generation $g$ of the search from scratch.
-@dae-gp_2022_symreg and @daegp_explore_exploit suggests the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the overall performance of the DAE-GP algorithm.
+@dae-gp_2022_symreg and @daegp_explore_exploit suggest the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the overall performance of the DAE-GP algorithm.
 The key idea is to pre-train an initial DAE-LSTM on a large population of candidate solutions and to use the pre-trained parameters of this initial model in each generation of the search as starting parameters for the current generation DAE-LSTM.
 This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence on overall quality of solutions found by DAE-GP and effects on run-time.
 The aim of this study is to answer the question if a pre-training strategy can be used to improve DAE-GP and to study both positive and negative effects on overall performance.
 
 # Theoretical Foundations
 
-*This section describes the relevant concepts that are necessary for the understanding and classification of DAE-GP as well as the concept of pre-training in artificial neural networks*
+*This section describes the relevant concepts that are necessary for the understanding and classification of DAE-GP as well as the concept of pre-training in artificial neural networks.*
 
 ## Denoising Autoencoder Genetic Programming
 
@@ -187,9 +187,10 @@ As a variant of GP, DAE-GP can be classified as a meta-heuristic that belongs to
 EC based meta-heuristics are optimization methods that simulate the process of Darwinian evolution to search for high quality solutions by applying selection and variation operators to a population of candidate solutions.
 Examples of EC include genetic algorithms (GA), evolutionary strategies (ES) and GP.
 In EC, the quality of a solution is commonly measured as fitness and the time steps of the search are called generations.
-Another important concept in EC is the distinction between genotypes and phenotypes of solutions, the genotype contains the information that is necessary to construct the phenotype, the outer appearance of a particular solution on which we measure the overall quality of solutions.
+Another important concept in EC is the distinction between genotypes and phenotypes of solutions.
+The genotype contains the information that is necessary to construct the phenotype, the outer appearance of a particular solution on which we measure the overall quality of solutions.
 The representation of a solution is therefore defined by the mapping of genotypes to phenotypes [@design_of_modern_heuristics].
-Genetic operators, such as mutation or recombination are usually applied to the genotype of solutions.
+Genetic operators, such as mutation or recombination, are usually applied to the genotype of solutions.
 
 ### Genetic Programming
 
@@ -197,27 +198,28 @@ GP follows the same basic evolutionary principle of EC but searches for more gen
 The computer programs that are at the center of the evolutionary search in GP are commonly represented by tree structures at the level of their phenotype [@design_of_modern_heuristics].
 Since GP searches for high fitness computer programs that produce a desired output for some input, it can be applied to various different problem domains such as symbolic regression, automatic programming, or evolving game-playing strategies [@Koza1993GeneticP].
 An important quality of GP is the ability to search for solutions of variable length and structure.
-GP is an especially useful meta heuristic for problems where no a priori knowledge about the final form of good solutions is available.
-GPs ability to optimize solutions for their structure as well as for their parameters led to it being one of the most prevalent methods used for symbolic regression [@10.1007/978-3-540-24621-3_22].
+GP is an especially useful meta-heuristic for problems where no a priori knowledge about the final form of good solutions is available.
+GPs ability to optimize solutions for both their structure as well as for their parameters led to it being one of the most prevalent methods used for symbolic regression [@10.1007/978-3-540-24621-3_22].
 
 ### Estimation of Distribution Algorithms
 
-The aim of Estimation of distribution algorithms (EDA) is to replace the standard variation operators used in GA by building probabilistic models that can capture complex dependencies between different decision variables of an optimization problem [@design_of_modern_heuristics].
+The aim of estimation of distribution algorithms (EDA) is to replace the standard variation operators used in EC by building probabilistic models that can capture complex dependencies between different decision variables of an optimization problem [@design_of_modern_heuristics].
 EDAs use this probabilistic model to sample new offspring solutions inside an evolutionary search to replace crossover and/or mutation operators.
-Even though a majority of EDA algorithms are designed to work with fixed length string representations as used in classical GAs, EDA algorithms have been researched an successfully applied to the domain of GP in various different research streams [@kim_probMod_GP].
+Even though a majority of EDA algorithms are designed to work with fixed length string representations as used in classical GAs, EDA algorithms have been researched and successfully applied to the domain of GP in various different research streams [@kim_probMod_GP].
 
 ### Denoising Autoencoders
 
-One possible way of model building in EDA proposed by @harmless_overfitting_eda is to use denoising autoencoders (DAEs) as generative models to capture complex probability distributions of decision variables.
-DAE, a variation of the autoencoders (AE), are a widely used type of neural networks in the domain of unsupervised machine learning that maps $n$ input variables to $n$ output variables using a hidden representation.
+One possible way of model building in EDA proposed by @harmless_overfitting_eda is to use denoising autoencoders (DAE) as generative models to capture complex probability distributions of decision variables.
+DAE, a variation of the autoencoder (AE), is a widely used type of neural networks in the domain of unsupervised machine learning that maps $n$ input variables to $n$ output variables using a hidden representation.
 
 AE were introduced by @ae_orig to compress high-dimensional data into lower-dimensions.
 An AE consists of two different sub-units:
 
 -   Encoder $g(x)$: Encode input data to a smaller central layer $h$
--   Decoder $d(h)$: Decode and output the the encoded data back to its original dimension
+-   Decoder $d(h)$: Decode and output the encoded data back to its original dimension
 
-The AE is trained to reduce the reconstruction error between input and output data, after the training procedure is finished the network is able to reduce the dimensional of input data to a compressed representation[@ae_orig].
+The AE is trained to reduce the reconstruction error between input and output data.
+After the training procedure is finished the network is able to reduce the dimensionality of input data to a compressed representation[@ae_orig].
 
 DAE was first introduced by @dae_orig2008 as an improved AE with the ability to learn new representations of data that is especially robust to partially corrupted input data.
 DAE modifies the AE by using partially corrupted input data for the AE and training it to reconstruct the uncorrupted, original version of the input data.
@@ -227,8 +229,8 @@ Since the hidden representation of DAE captures the dependency structure of the 
 DAE-GP builds upon the concept of using DAEs in EDAs described by @harmless_overfitting_eda and transfers the concept to the domain of GP.
 The mutation and crossover operators of standard GP are replaced by sampling new solutions from a probabilistic model that is build by training a DAEs long short-term memory (LSTM) network on a subset of high fitness solutions from the current population [@dae-gp_2020_rtree].
 
-LSTMs are a variant of artificial neural networks first introduced by @lstm_orig that can store learned information over en extended time period while avoiding the problem of vanishing and/or exploding gradients.
-Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps $T$ is equal to sum of the length of the input solution and the output solution [@dae-gp_2020_rtree].
+LSTMs are a variant of artificial neural networks first introduced by @lstm_orig that can store learned information over en extended period of time while avoiding the problem of vanishing and/or exploding gradients.
+Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps $T$ is equal to the sum of the length of the input solution and the output solution [@dae-gp_2020_rtree].
 
 ## Pre-Training
 
