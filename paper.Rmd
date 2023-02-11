@@ -245,11 +245,12 @@ Transfer learning traditionally follows a two phase approach:
 
 where source task and target task are usually similar but may differ in their feature space and the distribution of training data [@survey_transfer_learning].
 
-Some of the main motivations for using pre-training is the ability to reduce the need for large amounts of training data which can often be unavailable or too expensive to collect as well as an improved performance by either reducing the computational effort that is necessary to train a model to solve a specific task or by improving the models generalization ability.
+One of the main benefits of using pre-training is the ability to reduce the need for large amounts of training data which can often be unavailable or too expensive to collect.
+Additionally, pre-training can lead to an improved performance by either reducing the computational effort that is necessary to train a model to solve a specific task or by improving the models generalization ability.
 
 # Pre-Training in DAE-GP
 
-The pre-training strategy used in this thesis is applied to the DAE-LSTM model $M_g$ that are used in each DAE-GP generation $g$ for $g\in{1,...,g_{max}}$.
+The pre-training strategy used in this thesis is applied to the DAE-LSTM models $M_g$ that are used in each DAE-GP generation $g$ for $g\in{1,...,g_{max}}$.
 Instead of initializing and optimizing each model from scratch as done in previous work (e.g. [@dae-gp_2020_rtree] [@dae-gp_2022_symreg]), a separate DAE-LSTM network $\hat{M}$ will be trained on a large population of randomly initialized solutions.\
 
 The trainable parameters $\theta_{\hat{M}}$ obtained after finishing the training procedure of $\hat{M}$ are then used as the starting parameters for each following DAE-LSTM model $M_g$ for $g\in{1,...,g_{max}}$.
@@ -260,10 +261,11 @@ The motivation for incorporating pre-training into DAE-GP is based on the follow
 2.  Reduce the need for large population sizes to avoid sampling error
 3.  Improve model robustness and generalization ability
 
-The probably most obvious motivation for using a pre-training strategy in DAE-GP is based on the fact, that initializing $M_g$ with pre-trained weights $\theta_{\hat{M}}$ is likely to reduce the amount of training epochs that are necessary until the point of training error convergence is reached.
+The probably most obvious motivation for using a pre-training strategy in DAE-GP is based on the fact that initializing $M_g$ with pre-trained weights $\theta_{\hat{M}}$ is likely to reduce the amount of training epochs that are necessary until the point of training error convergence is reached.
 
 Early research on pre-training for DAE by @pmlr-v5-erhan09a comes to the conclusion that besides adding robustness to models the strategy also results in improved generalization and better performing models.
-The authors describe that unsupervised pre-training behaves like a regularizer on DAE networks, the mean test error and it's variance are reduced for DAE networks that are initialized from pre-trained weights if compared to the same architectures that use random initialization.
+The authors describe that unsupervised pre-training behaves like a regularizer on DAE networks.
+The mean test error and its variance are reduced for DAE networks that are initialized from pre-trained weights if compared to the same architectures that use random initialization.
 
 Another important finding by @pmlr-v5-erhan09a is that the positive effect of pre-training is dependent on both the depth of the network as well as the size of layers - while increasingly larger networks benefit increasingly more from pre-training the final performance of small architectures tends to be worse with pre-training than with randomized weight initialization.
 The authors find evidence that pre-training DAE is especially useful for optimizing the parameters of the lower layers of the network.
@@ -271,7 +273,7 @@ The authors find evidence that pre-training DAE is especially useful for optimiz
 Another motivation for introducing pre-training into DAE-GP is the prevalence of sampling error for small GP populations sizes.
 [@sampling_err_gp] finds that sampling error, non-systematic errors that are caused by observing only a small subset of the statistical population, is a severe problem in the domain of GP since the initial population may not be a representative sample of all possible solutions.
 [@sampling_err_gp] also introduces a method for calculating optimal population sizes to minimize the presence of sampling error.
-Since DAE-LSTM of DAE-GP learns the properties of it's training population and reuses the acquired knowledge in the sampling procedure, using the parameters obtained from training $\hat{M}$ on a sufficiently large training population might reduce the need for large population sizes in the following generations of the search if $\hat{M}$ already implicitly captured the properties of a representative sample of solutions.
+Since DAE-LSTM of DAE-GP learns the properties of its training population and reuses the acquired knowledge in the sampling procedure, using the parameters obtained from training $\hat{M}$ on a sufficiently large training population might reduce the need for large population sizes in the following generations of the search if $\hat{M}$ already implicitly captured the properties of a representative sample of solutions.
 If this mechanism can be applied successfully it would benefit the performance of DAE-GP by increasing the population diversity (resulting in better solution quality) as well as by reducing the need for large population sizes which require computational resources.
 
 ## Implementation
@@ -299,7 +301,7 @@ During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm
 knitr::include_graphics("./img/flowcharts/pt-dae-gp.png")
 ```
 
-One difficulty in the implementation of a pre-training strategy into DAE-GP has been the determination of the number of hidden neurons in side the DAE-LSTMs hidden layers.
+One difficulty in the implementation of a pre-training strategy into DAE-GP has been the determination of the number of hidden neurons inside the DAE-LSTMs hidden layers.
 The original description of DAE-GP [@dae-gp_2020_rtree] uses a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
 For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM.
 To allow the sharing of the state of the pre-trained parameters $\theta_{\hat{M}}$ from the pre-trained model $\hat{M}$ to each $M_g$ for $g\in{1,...,g_{max}}$ the number of hidden neurons per hidden layer for all DAE-GP runs, pre-trained as well as regular, is statically set to a predefined value.
@@ -333,8 +335,9 @@ For data visualizations I used the python package `matplotlib` [@matplotlib], st
 
 To test pre-training in DAE-GP this thesis focuses on the domain of real-world symbolic regression problems.
 Symbolic Regression problems have been one of the first GP applications [@Koza1993GeneticP] and are an actively studied and highly relevant research area.
-The goal in symbolic regression is to find a mathematical model for a given set of data points [@10.1007/978-3-540-24621-3_22], in real-world symbolic regression these data points are sourced from real-world observations which in contrast to synthetic symbolic regression problem are more likely to contain random noise and bias.
-Another important challenge in solving real-world symbolic regression problems is the ability for a given model to generalize, we want the final model to show high accuracy in predicting outcomes for previously unseen cases.
+The goal in symbolic regression is to find a mathematical model for a given set of data points [@10.1007/978-3-540-24621-3_22].
+In real-world symbolic regression these data points are sourced from real-world observations which in contrast to synthetic symbolic regression problem are more likely to contain random noise and bias.
+An important challenge in solving real-world symbolic regression problems is the ability for a given model to generalize, we want the final model to show high accuracy in predicting outcomes for previously unseen cases.
 
 <!--- airfoil dataset -->
 
@@ -349,7 +352,8 @@ knitr::kable(
 ```
 
 The objective of the airfoil problem is to find a function that accurately predicts the output variable $y$ by taking in a subset of the input variables $x1,x2,x3,x4,x5$.
-The function set used by all DAE-GP variations for symbolic regression is summarized in tables \@ref(tab:baseParams-GP) and , the terminal set consists of the the input variables $x1,x2,x3,x4,x5$ and the ephemeral integer constants listed in table \@ref(tab:baseParams-GP) [@dae-gp_2022_symreg].
+The function set used by all DAE-GP variations for symbolic regression is summarized in tables \@ref(tab:baseParams-GP).
+The terminal set consists of the the input variables $x1,x2,x3,x4,x5$ and the ephemeral integer constants listed in table \@ref(tab:baseParams-GP) [@dae-gp_2022_symreg].
 
 # Results for the Airfoil Dataset
 
@@ -993,3 +997,4 @@ knitr::kable(
 ```{r statutory_declaration, echo=FALSE}
 knitr::include_graphics("~/masterThesis/master_thesis/private/statutory_declaration.pdf")
 ```
+
