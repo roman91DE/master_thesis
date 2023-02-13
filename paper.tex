@@ -148,7 +148,7 @@ FB 03: Chair of Business Administration and Computer Science
 
 Johannes Gutenberg University Mainz}
 \author{}
-\date{\vspace{-2.5em}Date of Submission: 2023-02-11}
+\date{\vspace{-2.5em}Date of Submission: 2023-02-13}
 
 \begin{document}
 \maketitle
@@ -175,7 +175,7 @@ Johannes Gutenberg University Mainz}
 
 Denoising Autoencoder Genetic Programming (DAE-GP) is an Estimation of Distribution Algorithm in the domain of Genetic Programming that uses Denoising Autoencoders Long Short-Term Memory Networks (DAE-LSTM) as probabilistic models for sampling new populations of solutions.
 This thesis investigates the possible benefits and downsides of using pre-training for the DAE-LSTM networks of DAE-GP for four real world symbolic regression problems.
-The Experiments conducted did show that pre-training can drastically reduce the number of training epochs that are necessary at each generation of the DAE-GP search while also increasing the diversity of the population.
+The experiments conducted did show that pre-training can drastically reduce the number of training epochs that are necessary at each generation of the DAE-GP search while also increasing the diversity of the population.
 Unfortunately pre-training did not show any improvements for both final fitness and the final size of solutions while largely increasing the total run-time for DAE-GP.
 
 \hypertarget{keywords}{%
@@ -196,7 +196,7 @@ The resulting model is then used to sample new offspring solutions by propagatin
 In previous work DAE-GP has been shown to outperform GP for both a generalized version of the royal tree problem {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{36}{]} as well as for a real-world symbolic regression problem {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{35}{]}.
 
 The DAE-GP algorithm first described by {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{36}{]} trains a DAE-LSTMs for each generation \(g\) of the search from scratch.
-{[}\protect\hyperlink{ref-dae-gp_2022_symreg}{35}{]} and {[}\protect\hyperlink{ref-daegp_explore_exploit}{34}{]} suggests the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the overall performance of the DAE-GP algorithm.
+{[}\protect\hyperlink{ref-dae-gp_2022_symreg}{35}{]} and {[}\protect\hyperlink{ref-daegp_explore_exploit}{34}{]} suggest the incorporation of a pre-training strategy into the evolutionary search as a possible way of improving the overall performance of the DAE-GP algorithm.
 The key idea is to pre-train an initial DAE-LSTM on a large population of candidate solutions and to use the pre-trained parameters of this initial model in each generation of the search as starting parameters for the current generation DAE-LSTM.
 This thesis studies the influence of using pre-trained DAE-LSTMs in DAE-GP for symbolic regression, especially looking at the influence on overall quality of solutions found by DAE-GP and effects on run-time.
 The aim of this study is to answer the question if a pre-training strategy can be used to improve DAE-GP and to study both positive and negative effects on overall performance.
@@ -204,7 +204,7 @@ The aim of this study is to answer the question if a pre-training strategy can b
 \hypertarget{theoretical-foundations}{%
 \section{Theoretical Foundations}\label{theoretical-foundations}}
 
-\emph{This section describes the relevant concepts that are necessary for the understanding and classification of DAE-GP as well as the concept of pre-training in artificial neural networks}
+\emph{This section describes the relevant concepts that are necessary for the understanding and classification of DAE-GP as well as the concept of pre-training in artificial neural networks.}
 
 \hypertarget{denoising-autoencoder-genetic-programming}{%
 \subsection{Denoising Autoencoder Genetic Programming}\label{denoising-autoencoder-genetic-programming}}
@@ -218,9 +218,10 @@ As a variant of GP, DAE-GP can be classified as a meta-heuristic that belongs to
 EC based meta-heuristics are optimization methods that simulate the process of Darwinian evolution to search for high quality solutions by applying selection and variation operators to a population of candidate solutions.
 Examples of EC include genetic algorithms (GA), evolutionary strategies (ES) and GP.
 In EC, the quality of a solution is commonly measured as fitness and the time steps of the search are called generations.
-Another important concept in EC is the distinction between genotypes and phenotypes of solutions, the genotype contains the information that is necessary to construct the phenotype, the outer appearance of a particular solution on which we measure the overall quality of solutions.
+Another important concept in EC is the distinction between genotypes and phenotypes of solutions.
+The genotype contains the information that is necessary to construct the phenotype, the outer appearance of a particular solution on which we measure the overall quality of solutions.
 The representation of a solution is therefore defined by the mapping of genotypes to phenotypes {[}\protect\hyperlink{ref-design_of_modern_heuristics}{23}{]}.
-Genetic operators, such as mutation or recombination are usually applied to the genotype of solutions.
+Genetic operators, such as mutation or recombination, are usually applied to the genotype of solutions.
 
 \hypertarget{genetic-programming}{%
 \subsubsection{Genetic Programming}\label{genetic-programming}}
@@ -229,21 +230,21 @@ GP follows the same basic evolutionary principle of EC but searches for more gen
 The computer programs that are at the center of the evolutionary search in GP are commonly represented by tree structures at the level of their phenotype {[}\protect\hyperlink{ref-design_of_modern_heuristics}{23}{]}.
 Since GP searches for high fitness computer programs that produce a desired output for some input, it can be applied to various different problem domains such as symbolic regression, automatic programming, or evolving game-playing strategies {[}\protect\hyperlink{ref-Koza1993GeneticP}{15}{]}.
 An important quality of GP is the ability to search for solutions of variable length and structure.
-GP is an especially useful meta heuristic for problems where no a priori knowledge about the final form of good solutions is available.
-GPs ability to optimize solutions for their structure as well as for their parameters led to it being one of the most prevalent methods used for symbolic regression {[}\protect\hyperlink{ref-10.1007ux2f978-3-540-24621-3_22}{20}{]}.
+GP is an especially useful meta-heuristic for problems where no a priori knowledge about the final form of good solutions is available.
+GPs ability to optimize solutions for both their structure as well as for their parameters led to it being one of the most prevalent methods used for symbolic regression {[}\protect\hyperlink{ref-10.1007ux2f978-3-540-24621-3_22}{20}{]}.
 
 \hypertarget{estimation-of-distribution-algorithms}{%
 \subsubsection{Estimation of Distribution Algorithms}\label{estimation-of-distribution-algorithms}}
 
-The aim of Estimation of distribution algorithms (EDA) is to replace the standard variation operators used in GA by building probabilistic models that can capture complex dependencies between different decision variables of an optimization problem {[}\protect\hyperlink{ref-design_of_modern_heuristics}{23}{]}.
+The aim of estimation of distribution algorithms (EDA) is to replace the standard variation operators used in EC by building probabilistic models that can capture complex dependencies between different decision variables of an optimization problem {[}\protect\hyperlink{ref-design_of_modern_heuristics}{23}{]}.
 EDAs use this probabilistic model to sample new offspring solutions inside an evolutionary search to replace crossover and/or mutation operators.
-Even though a majority of EDA algorithms are designed to work with fixed length string representations as used in classical GAs, EDA algorithms have been researched an successfully applied to the domain of GP in various different research streams {[}\protect\hyperlink{ref-kim_probMod_GP}{13}{]}.
+Even though a majority of EDA algorithms are designed to work with fixed length string representations as used in classical GAs, EDA algorithms have been researched and successfully applied to the domain of GP in various different research streams {[}\protect\hyperlink{ref-kim_probMod_GP}{13}{]}.
 
 \hypertarget{denoising-autoencoders}{%
 \subsubsection{Denoising Autoencoders}\label{denoising-autoencoders}}
 
-One possible way of model building in EDA proposed by {[}\protect\hyperlink{ref-harmless_overfitting_eda}{22}{]} is to use denoising autoencoders (DAEs) as generative models to capture complex probability distributions of decision variables.
-DAE, a variation of the autoencoders (AE), are a widely used type of neural networks in the domain of unsupervised machine learning that maps \(n\) input variables to \(n\) output variables using a hidden representation.
+One possible way of model building in EDA proposed by {[}\protect\hyperlink{ref-harmless_overfitting_eda}{22}{]} is to use denoising autoencoders (DAE) as generative models to capture complex probability distributions of decision variables.
+DAE, a variation of the autoencoder (AE), is a widely used type of neural networks in the domain of unsupervised machine learning that maps \(n\) input variables to \(n\) output variables using a hidden representation.
 
 AE were introduced by {[}\protect\hyperlink{ref-ae_orig}{10}{]} to compress high-dimensional data into lower-dimensions.
 An AE consists of two different sub-units:
@@ -253,10 +254,11 @@ An AE consists of two different sub-units:
 \item
   Encoder \(g(x)\): Encode input data to a smaller central layer \(h\)
 \item
-  Decoder \(d(h)\): Decode and output the the encoded data back to its original dimension
+  Decoder \(d(h)\): Decode and output the encoded data back to its original dimension
 \end{itemize}
 
-The AE is trained to reduce the reconstruction error between input and output data, after the training procedure is finished the network is able to reduce the dimensional of input data to a compressed representation{[}\protect\hyperlink{ref-ae_orig}{10}{]}.
+The AE is trained to reduce the reconstruction error between input and output data.
+After the training procedure is finished the network is able to reduce the dimensionality of input data to a compressed representation{[}\protect\hyperlink{ref-ae_orig}{10}{]}.
 
 DAE was first introduced by {[}\protect\hyperlink{ref-dae_orig2008}{30}{]} as an improved AE with the ability to learn new representations of data that is especially robust to partially corrupted input data.
 DAE modifies the AE by using partially corrupted input data for the AE and training it to reconstruct the uncorrupted, original version of the input data.
@@ -266,8 +268,8 @@ Since the hidden representation of DAE captures the dependency structure of the 
 DAE-GP builds upon the concept of using DAEs in EDAs described by {[}\protect\hyperlink{ref-harmless_overfitting_eda}{22}{]} and transfers the concept to the domain of GP.
 The mutation and crossover operators of standard GP are replaced by sampling new solutions from a probabilistic model that is build by training a DAEs long short-term memory (LSTM) network on a subset of high fitness solutions from the current population {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{36}{]}.
 
-LSTMs are a variant of artificial neural networks first introduced by {[}\protect\hyperlink{ref-lstm_orig}{11}{]} that can store learned information over en extended time period while avoiding the problem of vanishing and/or exploding gradients.
-Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps \(T\) is equal to sum of the length of the input solution and the output solution {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{36}{]}.
+LSTMs are a variant of artificial neural networks first introduced by {[}\protect\hyperlink{ref-lstm_orig}{11}{]} that can store learned information over en extended period of time while avoiding the problem of vanishing and/or exploding gradients.
+Since DAE-GP encodes candidate solutions as linear strings in prefix notation, the DAE in DAE-GP uses LSTMs for both encoding and decoding where the total amount of time steps \(T\) is equal to the sum of the length of the input solution and the output solution {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{36}{]}.
 
 \hypertarget{pre-training}{%
 \subsection{Pre-Training}\label{pre-training}}
@@ -289,12 +291,13 @@ Transfer learning traditionally follows a two phase approach:
 
 where source task and target task are usually similar but may differ in their feature space and the distribution of training data {[}\protect\hyperlink{ref-survey_transfer_learning}{19}{]}.
 
-Some of the main motivations for using pre-training is the ability to reduce the need for large amounts of training data which can often be unavailable or too expensive to collect as well as an improved performance by either reducing the computational effort that is necessary to train a model to solve a specific task or by improving the models generalization ability.
+One of the main benefits of using pre-training is the ability to reduce the need for large amounts of training data which can often be unavailable or too expensive to collect.
+Additionally, pre-training can lead to an improved performance by either reducing the computational effort that is necessary to train a model to solve a specific task or by improving the models generalization ability.
 
 \hypertarget{pre-training-in-dae-gp}{%
 \section{Pre-Training in DAE-GP}\label{pre-training-in-dae-gp}}
 
-The pre-training strategy used in this thesis is applied to the DAE-LSTM model \(M_g\) that are used in each DAE-GP generation \(g\) for \(g\in{1,...,g_{max}}\).
+The pre-training strategy used in this thesis is applied to the DAE-LSTM models \(M_g\) that are used in each DAE-GP generation \(g\) for \(g\in{1,...,g_{max}}\).
 Instead of initializing and optimizing each model from scratch as done in previous work (e.g. {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{36}{]} {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{35}{]}), a separate DAE-LSTM network \(\hat{M}\) will be trained on a large population of randomly initialized solutions.\\
 
 The trainable parameters \(\theta_{\hat{M}}\) obtained after finishing the training procedure of \(\hat{M}\) are then used as the starting parameters for each following DAE-LSTM model \(M_g\) for \(g\in{1,...,g_{max}}\).
@@ -312,10 +315,11 @@ The motivation for incorporating pre-training into DAE-GP is based on the follow
   Improve model robustness and generalization ability
 \end{enumerate}
 
-The probably most obvious motivation for using a pre-training strategy in DAE-GP is based on the fact, that initializing \(M_g\) with pre-trained weights \(\theta_{\hat{M}}\) is likely to reduce the amount of training epochs that are necessary until the point of training error convergence is reached.
+The probably most obvious motivation for using a pre-training strategy in DAE-GP is based on the fact that initializing \(M_g\) with pre-trained weights \(\theta_{\hat{M}}\) is likely to reduce the amount of training epochs that are necessary until the point of training error convergence is reached.
 
 Early research on pre-training for DAE by {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{5}{]} comes to the conclusion that besides adding robustness to models the strategy also results in improved generalization and better performing models.
-The authors describe that unsupervised pre-training behaves like a regularizer on DAE networks, the mean test error and it's variance are reduced for DAE networks that are initialized from pre-trained weights if compared to the same architectures that use random initialization.
+The authors describe that unsupervised pre-training behaves like a regularizer on DAE networks.
+The mean test error and its variance are reduced for DAE networks that are initialized from pre-trained weights if compared to the same architectures that use random initialization.
 
 Another important finding by {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{5}{]} is that the positive effect of pre-training is dependent on both the depth of the network as well as the size of layers - while increasingly larger networks benefit increasingly more from pre-training the final performance of small architectures tends to be worse with pre-training than with randomized weight initialization.
 The authors find evidence that pre-training DAE is especially useful for optimizing the parameters of the lower layers of the network.
@@ -323,7 +327,7 @@ The authors find evidence that pre-training DAE is especially useful for optimiz
 Another motivation for introducing pre-training into DAE-GP is the prevalence of sampling error for small GP populations sizes.
 {[}\protect\hyperlink{ref-sampling_err_gp}{24}{]} finds that sampling error, non-systematic errors that are caused by observing only a small subset of the statistical population, is a severe problem in the domain of GP since the initial population may not be a representative sample of all possible solutions.
 {[}\protect\hyperlink{ref-sampling_err_gp}{24}{]} also introduces a method for calculating optimal population sizes to minimize the presence of sampling error.
-Since DAE-LSTM of DAE-GP learns the properties of it's training population and reuses the acquired knowledge in the sampling procedure, using the parameters obtained from training \(\hat{M}\) on a sufficiently large training population might reduce the need for large population sizes in the following generations of the search if \(\hat{M}\) already implicitly captured the properties of a representative sample of solutions.
+Since DAE-LSTM of DAE-GP learns the properties of its training population and reuses the acquired knowledge in the sampling procedure, using the parameters obtained from training \(\hat{M}\) on a sufficiently large training population might reduce the need for large population sizes in the following generations of the search if \(\hat{M}\) already implicitly captured the properties of a representative sample of solutions.
 If this mechanism can be applied successfully it would benefit the performance of DAE-GP by increasing the population diversity (resulting in better solution quality) as well as by reducing the need for large population sizes which require computational resources.
 
 \hypertarget{implementation}{%
@@ -360,7 +364,7 @@ During the DAE-GP phase, the only difference to the traditional DAE-GP algorithm
 \caption{Pre-Trained DAE-GP Flowchart}\label{fig:pt-daegp-flowchart}
 \end{figure}
 
-One difficulty in the implementation of a pre-training strategy into DAE-GP has been the determination of the number of hidden neurons in side the DAE-LSTMs hidden layers.
+One difficulty in the implementation of a pre-training strategy into DAE-GP has been the determination of the number of hidden neurons inside the DAE-LSTMs hidden layers.
 The original description of DAE-GP {[}\protect\hyperlink{ref-dae-gp_2020_rtree}{36}{]} uses a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
 For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM.
 To allow the sharing of the state of the pre-trained parameters \(\theta_{\hat{M}}\) from the pre-trained model \(\hat{M}\) to each \(M_g\) for \(g\in{1,...,g_{max}}\) the number of hidden neurons per hidden layer for all DAE-GP runs, pre-trained as well as regular, is statically set to a predefined value.
@@ -447,8 +451,9 @@ For data visualizations I used the python package \texttt{matplotlib} {[}\protec
 
 To test pre-training in DAE-GP this thesis focuses on the domain of real-world symbolic regression problems.
 Symbolic Regression problems have been one of the first GP applications {[}\protect\hyperlink{ref-Koza1993GeneticP}{15}{]} and are an actively studied and highly relevant research area.
-The goal in symbolic regression is to find a mathematical model for a given set of data points {[}\protect\hyperlink{ref-10.1007ux2f978-3-540-24621-3_22}{20}{]}, in real-world symbolic regression these data points are sourced from real-world observations which in contrast to synthetic symbolic regression problem are more likely to contain random noise and bias.
-Another important challenge in solving real-world symbolic regression problems is the ability for a given model to generalize, we want the final model to show high accuracy in predicting outcomes for previously unseen cases.
+The goal in symbolic regression is to find a mathematical model for a given set of data points {[}\protect\hyperlink{ref-10.1007ux2f978-3-540-24621-3_22}{20}{]}.
+In real-world symbolic regression these data points are sourced from real-world observations which in contrast to synthetic symbolic regression problem are more likely to contain random noise and bias.
+An important challenge in solving real-world symbolic regression problems is the ability for a given model to generalize, we want the final model to show high accuracy in predicting outcomes for previously unseen cases.
 
 The main experiments conducted in this thesis uses the NASA Airfoil Self-Noise Data Set {[}\protect\hyperlink{ref-AIRFOIL_DATASET}{1}{]} that consists of 5 input variables and 1 output variable that are listed in table \ref{tab:airfoil-dataset-description}.
 
@@ -476,7 +481,8 @@ output & y & Scaled sound pressure level & decibels\\
 \end{table}
 
 The objective of the airfoil problem is to find a function that accurately predicts the output variable \(y\) by taking in a subset of the input variables \(x1,x2,x3,x4,x5\).
-The function set used by all DAE-GP variations for symbolic regression is summarized in tables \ref{tab:baseParams-GP} and , the terminal set consists of the the input variables \(x1,x2,x3,x4,x5\) and the ephemeral integer constants listed in table \ref{tab:baseParams-GP} {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{35}{]}.
+The function set used by all DAE-GP variations for symbolic regression is summarized in tables \ref{tab:baseParams-GP}.
+The terminal set consists of the the input variables \(x1,x2,x3,x4,x5\) and the ephemeral integer constants listed in table \ref{tab:baseParams-GP} {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{35}{]}.
 
 \hypertarget{results-for-the-airfoil-dataset}{%
 \section{Results for the Airfoil Dataset}\label{results-for-the-airfoil-dataset}}
@@ -630,7 +636,7 @@ It clearly shows that DAE-GP can strongly reduce the number of trainable paramet
 \end{figure}
 
 As expected, this reduction of hidden neurons by dynamic adjustment, does also result in a reduction of the fitness of solutions found.
-Figure \ref{fig:airfoil-maxIndSize-fitness} shows that pre-trained DAE-GP, with it's more complex DAE-LSTMs over the full 30 generations, does achieve a higher median fitness than regular DAE-GP with dynamic adjustment of hidden neurons.
+Figure \ref{fig:airfoil-maxIndSize-fitness} shows that pre-trained DAE-GP, with its more complex DAE-LSTMs over the full 30 generations, does achieve a higher median fitness than regular DAE-GP with dynamic adjustment of hidden neurons.
 Pre-Training does therefore introduce a new Trade-Off decision into the adjustment of DAE-GP hyperparameters where the number of hidden neurons needs to be carefully selected since it positively impacts solution quality but also increases the computational cost of DAE-LSTM training.
 
 \begin{figure}[c]
@@ -723,7 +729,7 @@ Especially in the context of optimization problems where solutions have to be fo
 
 The run-time analysis in this chapter is based on experiments that were all executed on an Intel® Xeon® W-2245 Processor without the use of graphical processing unit (GPU) acceleration in the training of DAE-LSTM networks.
 Since the framework that was used is written in the, comparatively slow, python programming language, the absolute run-time measurements are only of limited meaningfulness.
-Nonetheless, by analyzing the relative run-time differences between DAE-GP and it's pre-trained alternative, the influence of pre-training on DAE-GP run-time can be explored.
+Nonetheless, by analyzing the relative run-time differences between DAE-GP and its pre-trained alternative, the influence of pre-training on DAE-GP run-time can be explored.
 
 Surprisingly, as shown in figure \ref{fig:airfoil-runtime-total}, for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median run-time of DAE-GP.
 If the time spend on pre-training is included into the total run-time, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of 3.121 from a median run-time of 4712.303 seconds for regular DAE-GP to 14706.47 seconds for the pre-trained algorithm.
@@ -830,9 +836,9 @@ Concrete & 1030 & 8 & {[}\protect\hyperlink{ref-CONCRETE_DATASET}{37}{]} \\
 To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ({[}\protect\hyperlink{ref-mwu1}{33}{]}, {[}\protect\hyperlink{ref-mwu2}{17}{]}) to test for differences in the distribution underlying the samples sourced from my experiments.
 Additionally, I included the effect strength of pre-training as measured by Cliffs Delta {[}\protect\hyperlink{ref-Cliff1993DominanceSO}{3}{]} into the statistical analysis.
 Better median values (e.g.~higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for \(\alpha\) levels (\(0.1\), \(0.05\), \(0.01\)).
-Note that I included the results for the airfoil problem with a single hidden layer into the statistical evaluation which is not visualized during this chapter (see subsection \protect\hyperlink{reduced-number-of-hidden-layers}{Reduced Number of Hidden Layers}).
+Note that I included the results for the airfoil problem with a single hidden layer into the statistical evaluation which is not visualized during this chapter (see subsection \protect\hyperlink{reduced-number-of-hidden-layers-1}{Reduced Number of Hidden Layers}).
 
-Also note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection \protect\hyperlink{influence-on-run-time}{Influence on Run-Time}), have not been analyzed for their total run-time.
+Also note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection \protect\hyperlink{influence-on-run-time-1}{Influence on Run-Time}), have not been analyzed for their total run-time.
 This is due to the fact, that experiments were run on different computer architectures which would result in biased results.
 
 \hypertarget{influence-on-fitness}{%
@@ -1141,10 +1147,10 @@ Computing the median number of training epochs over all generations for all benc
 \hypertarget{benefits-of-using-pre-training}{%
 \subsection{Benefits of using Pre-Training}\label{benefits-of-using-pre-training}}
 
-The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in a highly statistically significant increase in population diversity measured by the normalized levenshtein edit distance (see subsection \protect\hyperlink{influence-on-population-diversity}{Influence on Population Diversity}).
+The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in a highly statistically significant increase in population diversity measured by the normalized levenshtein edit distance (see subsection \protect\hyperlink{influence-on-population-diversity-1}{Influence on Population Diversity}).
 Increasing the population diversity can be an important mechanism in controlling the search behavior of evolutionary algorithms and is especially important for the global exploration of the search space and the avoidance of premature convergence of the search {[}\protect\hyperlink{ref-Sudholt2020}{25}{]}.
 
-Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model (see subsection \protect\hyperlink{influence-on-population-diversity}{Influence on Population Diversity}).
+Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model (see subsection \protect\hyperlink{influence-on-population-diversity-1}{Influence on Population Diversity}).
 Even though pre-training increased the median total run-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might still be a possible way to lower the run time of DAE-GP if further performance optimizations, especially during model sampling, can be achieved.
 
 \hypertarget{disadvantages-of-using-pre-training}{%
@@ -1152,10 +1158,10 @@ Even though pre-training increased the median total run-time for the tested benc
 
 The experiments conducted in this thesis did not find any significant benefits on both solution quality as well as run-time for solving real world symbolic regression problems with pre-trained DAE-GP in comparison to regular DAE-GP.
 
-As detailed in the subsection \protect\hyperlink{dynamic-adjustment-of-hidden-neurons}{Dynamic Adjustment of Hidden Neurons}, one major drawback of using pre-training with DAE-GP is the loss of the ability to dynamically adjust the number of hidden neurons to the maximum size of individuals inside the current generations population.
+As detailed in the subsection \protect\hyperlink{dynamic-adjustment-of-hidden-neurons-1}{Dynamic Adjustment of Hidden Neurons}, one major drawback of using pre-training with DAE-GP is the loss of the ability to dynamically adjust the number of hidden neurons to the maximum size of individuals inside the current generations population.
 This dynamic mechanism does reduce the computational resources necessary for training DAE-LSTM networks which is one of the most time consuming operations besides sampling new individuals.
 
-Another disadvantage of using pre-training in DAE-GP is that, in my experiments, it required DAE-LSTM networks to use two hidden layers (see subsection \protect\hyperlink{reduced-number-of-hidden-layers}{Reduced Number of Hidden Layers}).
+Another disadvantage of using pre-training in DAE-GP is that, in my experiments, it required DAE-LSTM networks to use two hidden layers (see subsection \protect\hyperlink{reduced-number-of-hidden-layers-1}{Reduced Number of Hidden Layers}).
 For a single hidden layer, pre-training did show a negative impact on the median final fitness of solutions found as it was suggested by {[}\protect\hyperlink{ref-pmlr-v9-erhan10a}{4}{]}.
 Since current research on DAE-GP for real-world symbolic regression relies on a single hidden layer (see {[}\protect\hyperlink{ref-dae-gp_2022_symreg}{35}{]}), pre-training does come with additional computational expenses for using deeper DAE-LSTMs.
 
@@ -1165,11 +1171,11 @@ Since current research on DAE-GP for real-world symbolic regression relies on a 
 One major limitation for the experiments conducted during the research phase of this thesis has been the large computational effort for experimenting with DAE-GP.
 Since single runs for DAE-GP have a run-time of many hours, it was not possible for me to extend the experiments to larger population sizes or more generations.
 Also I did not perform an extended optimization of hyperparameters (e.g by using a grid search strategy) which might yield configurations that increase the benefits of pre-training.
-As described in subsection \protect\hyperlink{influence-on-run-time}{Influence on Run-Time}, sampling new solutions has been a large contributor to the large performance hit on run-time by using pre-training.
+As described in subsection \protect\hyperlink{influence-on-run-time-1}{Influence on Run-Time}, sampling new solutions has been a large contributor to the large performance hit on run-time by using pre-training.
 It could be a worthwhile endevour to explore the main factors that increase sampling time for pre-trained DAE-GP to more efficiently exploit the benefits of pre-training like reducing the number of training epochs.
 
 Another limitation of this research is the software implementation used for all experiments.
-As briefly touched in the subsection \protect\hyperlink{influence-on-run-time}{Influence on Run-Time}, I found some evidence that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used \texttt{keras} library for deep neural networks.
+As briefly touched in the subsection \protect\hyperlink{influence-on-run-time-1}{Influence on Run-Time}, I found some evidence that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used \texttt{keras} library for deep neural networks.
 By optimizing the source code or even re-implementing it in a more performance-focused programming language (such as \texttt{C++} or \texttt{Rust}), large improvements to the pre-training strategy might be achievable.
 
 Another possibility to improve the benefits of pre-training for DAE-GP is based on the findings of {[}\protect\hyperlink{ref-pmlr-v5-erhan09a}{5}{]}.

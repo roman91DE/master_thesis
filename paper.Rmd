@@ -529,7 +529,7 @@ knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainablePa
 ```
 
 As expected, this reduction of hidden neurons by dynamic adjustment, does also result in a reduction of the fitness of solutions found.
-Figure \@ref(fig:airfoil-maxIndSize-fitness) shows that pre-trained DAE-GP, with it's more complex DAE-LSTMs over the full 30 generations, does achieve a higher median fitness than regular DAE-GP with dynamic adjustment of hidden neurons.
+Figure \@ref(fig:airfoil-maxIndSize-fitness) shows that pre-trained DAE-GP, with its more complex DAE-LSTMs over the full 30 generations, does achieve a higher median fitness than regular DAE-GP with dynamic adjustment of hidden neurons.
 Pre-Training does therefore introduce a new Trade-Off decision into the adjustment of DAE-GP hyperparameters where the number of hidden neurons needs to be carefully selected since it positively impacts solution quality but also increases the computational cost of DAE-LSTM training.
 
 ```{r airfoil-maxIndSize-fitness, echo=FALSE, fig.cap="Median Best Fitness over 30 Generations - Airfoil - Dynamic adjustment of regular DAE-GP", out.width="80%"}
@@ -596,7 +596,7 @@ Especially in the context of optimization problems where solutions have to be fo
 
 The run-time analysis in this chapter is based on experiments that were all executed on an Intel® Xeon® W-2245 Processor without the use of graphical processing unit (GPU) acceleration in the training of DAE-LSTM networks.
 Since the framework that was used is written in the, comparatively slow, python programming language, the absolute run-time measurements are only of limited meaningfulness.
-Nonetheless, by analyzing the relative run-time differences between DAE-GP and it's pre-trained alternative, the influence of pre-training on DAE-GP run-time can be explored.
+Nonetheless, by analyzing the relative run-time differences between DAE-GP and its pre-trained alternative, the influence of pre-training on DAE-GP run-time can be explored.
 
 ```{python read_runtime_vars, echo=FALSE}
 from json import load
@@ -691,9 +691,9 @@ knitr::kable(
 To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ([@mwu1], [@mwu2]) to test for differences in the distribution underlying the samples sourced from my experiments.
 Additionally, I included the effect strength of pre-training as measured by Cliffs Delta [@Cliff1993DominanceSO] into the statistical analysis.
 Better median values (e.g. higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for $\alpha$ levels ($0.1$, $0.05$, $0.01$).
-Note that I included the results for the airfoil problem with a single hidden layer into the statistical evaluation which is not visualized during this chapter (see subsection [Reduced Number of Hidden Layers]).
+Note that I included the results for the airfoil problem with a single hidden layer into the statistical evaluation which is not visualized during this chapter (see subsection [Reduced Number of Hidden Layers](#reduced-number-of-hidden-layers-1)).
 
-Also note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection [Influence on Run-Time]), have not been analyzed for their total run-time.
+Also note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection [Influence on Run-Time](#influence-on-run-time-1)), have not been analyzed for their total run-time.
 This is due to the fact, that experiments were run on different computer architectures which would result in biased results.
 
 ## Influence on Fitness
@@ -925,20 +925,20 @@ Computing the median number of training epochs over all generations for all benc
 
 <!-- add test results for statistical significance! -->
 
-The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in a highly statistically significant increase in population diversity measured by the normalized levenshtein edit distance (see subsection [Influence on Population Diversity]).
+The experiments conducted in the scope of this master thesis did find that the implemented pre-training strategy resulted in a highly statistically significant increase in population diversity measured by the normalized levenshtein edit distance (see subsection [Influence on Population Diversity](#influence-on-population-diversity-1)).
 Increasing the population diversity can be an important mechanism in controlling the search behavior of evolutionary algorithms and is especially important for the global exploration of the search space and the avoidance of premature convergence of the search [@Sudholt2020].
 
-Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model (see subsection [Influence on Population Diversity]).
+Another significant benefit of using pre-training in DAE-GP is that it is highly efficient in decreasing the number of training epochs that are necessary to train each generations DAE-LSTM model (see subsection [Influence on Population Diversity](#influence-on-population-diversity-1)).
 Even though pre-training increased the median total run-time for the tested benchmark problem in combination with the chosen DAE-LSTM dimensions, reducing the number of training epochs might still be a possible way to lower the run time of DAE-GP if further performance optimizations, especially during model sampling, can be achieved.
 
 ## Disadvantages of using Pre-Training
 
 The experiments conducted in this thesis did not find any significant benefits on both solution quality as well as run-time for solving real world symbolic regression problems with pre-trained DAE-GP in comparison to regular DAE-GP.
 
-As detailed in the subsection [Dynamic Adjustment of Hidden Neurons], one major drawback of using pre-training with DAE-GP is the loss of the ability to dynamically adjust the number of hidden neurons to the maximum size of individuals inside the current generations population.
+As detailed in the subsection [Dynamic Adjustment of Hidden Neurons](#dynamic-adjustment-of-hidden-neurons-1), one major drawback of using pre-training with DAE-GP is the loss of the ability to dynamically adjust the number of hidden neurons to the maximum size of individuals inside the current generations population.
 This dynamic mechanism does reduce the computational resources necessary for training DAE-LSTM networks which is one of the most time consuming operations besides sampling new individuals.
 
-Another disadvantage of using pre-training in DAE-GP is that, in my experiments, it required DAE-LSTM networks to use two hidden layers (see subsection [Reduced Number of Hidden Layers]).
+Another disadvantage of using pre-training in DAE-GP is that, in my experiments, it required DAE-LSTM networks to use two hidden layers (see subsection [Reduced Number of Hidden Layers](#reduced-number-of-hidden-layers-1)).
 For a single hidden layer, pre-training did show a negative impact on the median final fitness of solutions found as it was suggested by [@pmlr-v9-erhan10a].
 Since current research on DAE-GP for real-world symbolic regression relies on a single hidden layer (see [@dae-gp_2022_symreg]), pre-training does come with additional computational expenses for using deeper DAE-LSTMs.
 
@@ -947,11 +947,11 @@ Since current research on DAE-GP for real-world symbolic regression relies on a 
 One major limitation for the experiments conducted during the research phase of this thesis has been the large computational effort for experimenting with DAE-GP.
 Since single runs for DAE-GP have a run-time of many hours, it was not possible for me to extend the experiments to larger population sizes or more generations.
 Also I did not perform an extended optimization of hyperparameters (e.g by using a grid search strategy) which might yield configurations that increase the benefits of pre-training.
-As described in subsection [Influence on Run-Time], sampling new solutions has been a large contributor to the large performance hit on run-time by using pre-training.
+As described in subsection [Influence on Run-Time](#influence-on-run-time-1), sampling new solutions has been a large contributor to the large performance hit on run-time by using pre-training.
 It could be a worthwhile endevour to explore the main factors that increase sampling time for pre-trained DAE-GP to more efficiently exploit the benefits of pre-training like reducing the number of training epochs.
 
 Another limitation of this research is the software implementation used for all experiments.
-As briefly touched in the subsection [Influence on Run-Time], I found some evidence that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used `keras` library for deep neural networks.
+As briefly touched in the subsection [Influence on Run-Time](#influence-on-run-time-1), I found some evidence that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used `keras` library for deep neural networks.
 By optimizing the source code or even re-implementing it in a more performance-focused programming language (such as `C++` or `Rust`), large improvements to the pre-training strategy might be achievable.
 
 Another possibility to improve the benefits of pre-training for DAE-GP is based on the findings of @pmlr-v5-erhan09a.
@@ -997,4 +997,3 @@ knitr::kable(
 ```{r statutory_declaration, echo=FALSE}
 knitr::include_graphics("~/masterThesis/master_thesis/private/statutory_declaration.pdf")
 ```
-
