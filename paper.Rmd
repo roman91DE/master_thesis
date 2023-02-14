@@ -497,8 +497,9 @@ For reference, the median final RMSE for the test set of standard GP is at `r ro
 An interesting observation from studying the distribution of final fitness scores for both algorithms is that pre-trained DAE-GP has a smaller interquartile range and more extreme outliers for high RMSE which explains the slightly worse performance if looking at median best fitness present in figure \@ref(fig:airfoil-median-fitness-30gens).
 
 Since previous work by @dae-gp_2022_symreg demonstrated that DAE-GP, for a given number of 10.000 fitness evaluations, is able to produce solutions that are much smaller in tree size than regular GP, the experiment also analyzed the influence of pre-training on the size of solutions found by DAE-GP.
+
 Figure \@ref(fig:airfoil-size-combined-30gens) shows the median of both the average size of individuals inside the population as well as the size of the currently best performing solution inside the population.
-It can be observed that both DAE-GP variants strongly reduce the average solutions size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.
+It can be observed that both DAE-GP variants strongly reduce the average solution size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.
 The median average size over all generations is `r round(REG_MED_AVGSIZE, 3)` for DAE-GP and `r round(PT_MED_AVGSIZE, 3)` for pre-trained DAE-GP.
 Regarding the size of the best solution per generation, the results show that the pre-trained version of algorithm did produce solutions with the same median size as traditional DAE-GP.
 The median size of the best solutions found after terminating the search is the same for both algorithms (DAE-GP: `r round(REG_MED_BESTSIZE, 3)`, Pre-Trained DAE-GP: `r round(PT_MED_BESTSIZE, 3)`)
@@ -508,10 +509,10 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_me
 ```
 
 Another interesting metric to examine in population-based optimization algorithms is the diversity of the current generations population.
-Since individual solutions in DAE-GP are computer programs in the form of parse trees, I selected the normalized Levenshtein edit distance [@NormLevDistance] as my primary metric for tracking population diversity.
+Since individual solutions in DAE-GP are computer programs in the form of parse trees, the normalized Levenshtein edit distance [@NormLevDistance] was selected as a metric for tracking population diversity.
 Figure \@ref(fig:airfoil-popDiversity) shows the median population diversity for both DAE-GP algorithms and regular GP as a benchmark.
 While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a higher level during the evolutionary search.
-Here it can be observed, that pre-training shows a positive effect by increasing population diversity in comparison to regular DAE-GP (Median over all generations for DAE-GP: `r round(REG_MED_LEVDIV, 3)`, Pre-Trained DAE-GP: `r round(PT_MED_LEVDIV, 3)`, Standard-GP `r round(GP_MED_LEVDIV, 3)`)
+Here it can be observed, that pre-training shows a positive effect by increasing population diversity in comparison to regular DAE-GP (Median over all generations for DAE-GP: `r round(REG_MED_LEVDIV, 3)`, Pre-Trained DAE-GP: `r round(PT_MED_LEVDIV, 3)`, Standard-GP `r round(GP_MED_LEVDIV, 3)`).
 
 ```{r airfoil-popDiversity, echo=FALSE, fig.cap="Median Population Diversity over 30 Generations - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_popDiversity_byGens_levOnly.png")
@@ -520,15 +521,15 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_po
 ### Dynamic Adjustment of Hidden Neurons
 
 To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks.
-For comparison, figure \@ref(fig:airfoil-maxIndSize-params) shows the total number of trainable parameters for each generation's DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in [@dae-gp_2020_rtree] and [@dae-gp_2022_symreg].
-Again, the experiments was based on $10$ individual runs and otherwise used the same hyperparameters as listed in tables \@ref(tab:baseParams-GP) and \@ref(tab:baseParams-DAEGP).
+For comparison, figure \@ref(fig:airfoil-maxIndSize-params) shows the total number of trainable parameters for each generations DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in [@dae-gp_2020_rtree] and [@dae-gp_2022_symreg].
+Again, the experiment was based on $10$ individual runs and otherwise used the same hyperparameters as listed in tables \@ref(tab:baseParams-GP) and \@ref(tab:baseParams-DAEGP).
 It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largely reduces the amount of training necessary and likely reduce the run-time of DAE-GP.
 
 ```{r airfoil-maxIndSize-params, echo=FALSE, fig.cap="Median Number of trainable Parameters over 30 Generations - Airfoil - Dynamic adjustment of regular DAE-GP", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams.png")
 ```
 
-As expected, this reduction of hidden neurons by dynamic adjustment, does also result in a reduction of the fitness of solutions found.
+As expected, the reduction of hidden neurons by dynamic adjustment does also result in a reduction of the fitness of solutions found.
 Figure \@ref(fig:airfoil-maxIndSize-fitness) shows that pre-trained DAE-GP, with its more complex DAE-LSTMs over the full 30 generations, does achieve a higher median fitness than regular DAE-GP with dynamic adjustment of hidden neurons.
 Pre-Training does therefore introduce a new Trade-Off decision into the adjustment of DAE-GP hyperparameters where the number of hidden neurons needs to be carefully selected since it positively impacts solution quality but also increases the computational cost of DAE-LSTM training.
 
@@ -538,9 +539,9 @@ knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/median_fitn
 
 ### Reduced Number of Hidden Layers
 
-Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], I repeated the experiment with a single hidden layer.
-Based on the findings of @pmlr-v5-erhan09a, I expected that pre-training DAE-GP would lead to a decrease in overall performance.
-Figures \@ref(fig:airfoil-fitness-perGen) and \@ref(fig:airfoil-finalFitness) shows the mean and median best fitness per generation as well as the distribution of final fitness scores after 30 generations.
+Since previous research on DAE-GP used a single hidden layers for the airfoil dataset [@dae-gp_2022_symreg], the experiment was repeated with a single hidden layer.
+Based on the findings of @pmlr-v5-erhan09a, it is to be expected that pre-training DAE-GP with a single hidden layer inside the DAE-LSTM networks leads to a decrease in overall performance.
+Figures \@ref(fig:airfoil-fitness-perGen) and \@ref(fig:airfoil-finalFitness) show the mean and median best fitness per generation as well as the distribution of final fitness scores after 30 generations.
 The results are, again, based on $10$ individual runs per algorithm.
 As expected the results show, that for a small DAE-LSTM size pre-training negatively impacts the fitness of solution found by DAE-GP.
 The median final RMSE for the test set of pre-trained DAE-GP increases by a factor of `r round(PT_TEST_MED_FF_1HL / REG_TEST_MED_FF_1HL, 3)` to `r round(PT_TEST_MED_FF_1HL , 3)` compared to regular DAE-GP with `r round(REG_TEST_MED_FF_1HL , 3)`.
@@ -552,8 +553,8 @@ knitr::include_graphics("./img/airfoil_1hl_150hn_30gens/mean_median_fitness_byGe
 <!-- An interesting observation from studying the distribution of final fitness scores for both algorithms is that pre-trained DAE-GP has a smaller interquartile range and more extreme outliers for high RMSE which explains the slightly worse performance if looking at median best fitness present in figure @ref(fig:airfoil-median-fitness-30gens).  -->
 
 Interestingly, figure \@ref(fig:airfoil-finalFitness) shows that the distribution of final fitness scores for pre-trained DAE-GP has a larger interquartile range than regular DAE-GP.
-This is opposed to the distributions of final fitness score that was measured for the same problem run with two hidden layers (see figure \@ref(fig:airfoil-distribution-fitness-30gens)).
-Otherwise, pre-trained DAE-GP again has more outliers for high RMSE than regular DAE-GP as seen in the previous experiment with 2 hidden layers.
+This is opposed to the distributions of final fitness scores that was measured for the same problem run with two hidden layers (see figure \@ref(fig:airfoil-distribution-fitness-30gens)).
+Otherwise, pre-trained DAE-GP again has more outliers for high RMSE than regular DAE-GP as seen in the previous experiment with two hidden layers.
 
 ```{r airfoil-finalFitness, echo=FALSE, fig.cap="Fitness after 30 Generations - Airfoil - Single Hidden Layer", out.width="80%"}
 knitr::include_graphics("./img/airfoil_1hl_150hn_30gens/final_fit_boxplot.png")
@@ -570,8 +571,8 @@ The pre-training model $\hat{M}$ is then trained using $\hat{P}$, after finishin
 
 The second alternative pre-training strategy is based on the choice of an alternative initialization algorithm to create $\hat{P}$.
 The pre-training implementation in previous experiments used `ramped half and half` initialization [@Koza1993GeneticP] to create $\hat{P}$.
-Using ramped half and half leads to 50% of the population being initialized by the `full` method, where terminals are only inserted at the maximum allowed depth of a tree resulting in full trees.
-An alternative method of initializing $\hat{P}$ is to use the `grow` initialization method where solutions are not guaranteed to be full trees since every leaf above the maximum depth of a tree can also be a terminal expression.
+Using `ramped half and half` leads to 50% of the population being initialized by the `full` method, where terminals are only inserted at the maximum allowed depth of a tree resulting in full trees.
+An alternative method of initializing $\hat{P}$ is to use the `grow` initialization method where solutions are not guaranteed to be full trees since every leaf below the maximum depth of a tree can also be a terminal expression.
 This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of further generations population where a lower percentage of full grown trees is to be expected.
 
 Figure \@ref(fig:altStrategies-Fitness) shows the median best fitness by generations for both alternative pre-training strategies as well as the results for standard DAE-GP and the standard Pre-Training implementation used in earlier experiments.
@@ -626,7 +627,7 @@ PT_PARAMS <- py$D_AIRFOIL_TIME$PT_TOTAL_PARAMS
 
 ```
 
-Surprisingly, as shown in figure \@ref(fig:airfoil-runtime-total), for the experiment conducted on the airfoil dataset with 2 hidden layers a strong negative impact of pre-training can be observed for the median run-time of DAE-GP.
+Surprisingly, as shown in figure \@ref(fig:airfoil-runtime-total), for the experiment conducted on the airfoil dataset with two hidden layers, a strong negative impact of pre-training can be observed for the median run-time of DAE-GP.
 If the time spend on pre-training is included into the total run-time, the median duration for pre-trained DAE-GP over all 10 runs increases by a factor of `r round(PT_TIME / REG_TIME, 3)` from a median run-time of `r format(REG_TIME, scientific=F)` seconds for regular DAE-GP to `r format(PT_TIME, scientific=F)` seconds for the pre-trained algorithm.
 Even in the case where the time spend for pre-training is excluded from the total run-time, pre-training still increases the run-time of DAE-GP by a factor of `r round( PT_TIME_NOPT / REG_TIME, 3)` to `r format(PT_TIME_NOPT, scientific=F)` seconds.
 
@@ -641,9 +642,9 @@ It shows that Pre-Training, besides largely increasing the median runtime, also 
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/total_runtime_distribution_boxplot.png")
 ```
 
-To investigate the strong negative impact of pre-training on DAE-GP run-time, I first studied the influence of pre-training on the median number of training epochs that had to be spend at each generation for the training of the DAE-LSTM models $M_g$ (excluding the pre-training DAE-LSTM model $\hat{M}$).
-Figure \@ref(fig:airfoil-trainingEpochs) shows that pre-training, as expected, strongly reduces the number of training epochs that had to be executed at each generation until the termination condition was reached.
-While regular DAE-GP trains for a median of `r format(REG_MEDIAN_EPOCHSTRAINED, scientific=F)` epochs at each generation, pre-training reduces the number of median training epochs by a factor of `r round(PT_MEDIAN_EPOCHSTRAINED / REG_MEDIAN_EPOCHSTRAINED, 3)` to `r format(PT_MEDIAN_EPOCHSTRAINED, scientific=F)` training epochs.
+To investigate the strong negative impact of pre-training on DAE-GP run-time, the influence of pre-training on the median number of training epochs that had to be spend at each generation for the training of the DAE-LSTM models $M_g$ (excluding the pre-training DAE-LSTM model $\hat{M}$) was studied.
+Figure \@ref(fig:airfoil-trainingEpochs) shows that pre-training, as expected, strongly reduces the number of training epochs that had to be executed at each generation until the termination condition was satisfied.
+While regular DAE-GP trained for a median of `r format(REG_MEDIAN_EPOCHSTRAINED, scientific=F)` epochs at each generation, pre-training reduces the number of median training epochs by a factor of `r round(PT_MEDIAN_EPOCHSTRAINED / REG_MEDIAN_EPOCHSTRAINED, 3)` to `r format(PT_MEDIAN_EPOCHSTRAINED, scientific=F)` training epochs.
 
 ```{r airfoil-trainingEpochs, echo=FALSE, fig.cap="Median Number of Training Epochs per Generation - Airfoil", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_training_epochs.png")
@@ -664,7 +665,7 @@ While traditional DAE-GP has a median run-time without sampling time of `r forma
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSampling.png")
 ```
 
-While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generations DAE-LSTMS models (total number of trainable parameters DAE-GP=`r format(REG_PARAMS, scientific=F)`, Pre-trained DAE-GP=`r format(PT_PARAMS, scientific=F)`).
+While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generation's DAE-LSTM model $M_g$ (total number of trainable parameters DAE-GP=`r format(REG_PARAMS, scientific=F)`, Pre-trained DAE-GP=`r format(PT_PARAMS, scientific=F)`).
 After profiling a single run of DAE-GP and pre-trained DAE-GP using the python `cProfiler` module, my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training.
 Figure \@ref(fig:airfoil-profiling) shows the cumulative time spend for the 20 most expensive function calls.
 Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to `DAE_LSTM.py:208(sample)`) than during model training (calls to `training.py:1303(fit)`).
