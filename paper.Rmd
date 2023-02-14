@@ -327,7 +327,7 @@ knitr::kable(
 ```
 
 The framework that was used to run all experiments of this thesis was provided by the supervisor of this thesis David Wittenberg and uses the python programming language [@python3] in conjunction with the baseline libraries `Keras` [@chollet2015keras] for deep neural networks and `deap` [@DEAP_JMLR2012] for evolutionary computation.
-For data visualizations I used the python package `matplotlib` [@matplotlib], statistical analysis and evaluations were conducted using primarily the data science libraries `scipy` [@scipy], `numpy` [@numpy], `pandas` [@pandas], and `IPython` [@ipython].
+For data visualizations the python package `matplotlib` [@matplotlib] was used, statistical analysis and evaluations were conducted using primarily the data science libraries `scipy` [@scipy], `numpy` [@numpy] and `pandas` [@pandas].
 
 ## Benchmark Problem
 
@@ -665,7 +665,7 @@ While traditional DAE-GP has a median run-time without sampling time of `r forma
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_TimeBenchmark/median_runtime_withoutSampling.png")
 ```
 
-While investigating other reasons for the differences in run-time, I verified that both DAE-GP variants use the exact same number of trainable parameters for each generation's DAE-LSTM model $M_g$ (total number of trainable parameters DAE-GP=`r format(REG_PARAMS, scientific=F)`, Pre-trained DAE-GP=`r format(PT_PARAMS, scientific=F)`).
+While investigating other reasons for the differences in run-time, it was verified that both DAE-GP variants use the exact same number of trainable parameters for each generation's DAE-LSTM model $M_g$ (total number of trainable parameters DAE-GP=`r format(REG_PARAMS, scientific=F)`, Pre-trained DAE-GP=`r format(PT_PARAMS, scientific=F)`).
 After profiling a single run of DAE-GP and pre-trained DAE-GP using the python `cProfiler` module, my best explanation for the remaining differences in run-time is an inefficiency in my implementation of pre-training.
 Figure \@ref(fig:airfoil-profiling) shows the cumulative time spend for the 20 most expensive function calls.
 Even though it is difficult to identify the exact reasons for the performance hit for pre-trained DAE-GP, it shows two interesting findings: Firstly, both algorithms spend relatively more time during model sampling (calls to `DAE_LSTM.py:208(sample)`) than during model training (calls to `training.py:1303(fit)`).
@@ -677,7 +677,7 @@ knitr::include_graphics("./img/Airfoil_RuntimeProfiling/cum_Runtime_HBar.png")
 
 # Results over different Real-World Symbolic Regression Problems
 
-To gather more confidence in the previous results, I applied the pre-training strategy for DAE-GP to three additional real world symbolic regression problems.
+To gather more confidence in the previous results, the pre-training strategy for DAE-GP was applied to three additional real world symbolic regression problems.
 Table \@ref(tab:full-run-realWorldSymReg-problems) briefly summarizes the benchmark problems.
 
 ```{r full-run-realWorldSymReg-problems, echo=FALSE, message=FALSE, warning=FALSE}
@@ -689,10 +689,10 @@ knitr::kable(
 )%>% row_spec(0,bold=TRUE ) %>% kableExtra::kable_styling(latex_options = "hold_position")
 ```
 
-To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, I selected the nonparametric Mann-Whitney-U Test ([@mwu1], [@mwu2]) to test for differences in the distribution underlying the samples sourced from my experiments.
-Additionally, I included the effect strength of pre-training as measured by Cliffs Delta [@Cliff1993DominanceSO] into the statistical analysis.
+To test for statistical differences of the results achieved by either pre-trained or regular DAE-GP, the nonparametric Mann-Whitney-U Test ([@mwu1], [@mwu2]) was selected to test for differences in the underlying distribution.
+Additionally, the effect strength of pre-training as measured by Cliffs Delta [@Cliff1993DominanceSO] was included into the statistical analysis.
 Better median values (e.g. higher fitness) are printed bold and p-values are marked with asterisk (1,2,3) for $\alpha$ levels ($0.1$, $0.05$, $0.01$).
-Note that I included the results for the airfoil problem with a single hidden layer into the statistical evaluation which is not visualized during this chapter (see subsection [Reduced Number of Hidden Layers](#reduced-number-of-hidden-layers-1)).
+Note that the results for the airfoil problem with a single hidden layer were also included into the statistical evaluation which is not visualized during this chapter (see subsection [Reduced Number of Hidden Layers](#reduced-number-of-hidden-layers-1)).
 
 Also note that the results for the real world symbolic regression problems inside this chapter, except for the airfoil problem (see subsection [Influence on Run-Time](#influence-on-run-time-1)), have not been analyzed for their total run-time.
 This is due to the fact, that experiments were run on different computer architectures which would result in biased results.
@@ -762,7 +762,7 @@ knitr::include_graphics("~/masterThesis/master_thesis/img/symbolicRegressionSumm
 
 ## Influence on Solution Size
 
-Next I studied the size of solutions found during DAE-GP.
+Next, the size of solutions found during DAE-GP was analyzed.
 Figure \@ref(fig:symReg-Size) shows the median size of the best solution per generation aggregated over all benchmark problems for symbolic regression.
 Similar to the previous results regarding the fitness of the best found solution, no significant differences in the size of the best found solution are visible between both DAE-GP variants.
 
@@ -946,13 +946,13 @@ Since current research on DAE-GP for real-world symbolic regression relies on a 
 ## Limitations and open Questions
 
 One major limitation for the experiments conducted during the research phase of this thesis has been the large computational effort for experimenting with DAE-GP.
-Since single runs for DAE-GP have a run-time of many hours, it was not possible for me to extend the experiments to larger population sizes or more generations.
-Also I did not perform an extended optimization of hyperparameters (e.g by using a grid search strategy) which might yield configurations that increase the benefits of pre-training.
+Since single runs for DAE-GP have a run-time of many hours, it was not possible to extend the experiments to larger population sizes or more generations.
+Also no extended optimization of hyperparameters (e.g by using a grid search strategy) have been performed which might yield configurations that increase the benefits of pre-training.
 As described in subsection [Influence on Run-Time](#influence-on-run-time-1), sampling new solutions has been a large contributor to the large performance hit on run-time by using pre-training.
 It could be a worthwhile endevour to explore the main factors that increase sampling time for pre-trained DAE-GP to more efficiently exploit the benefits of pre-training like reducing the number of training epochs.
 
 Another limitation of this research is the software implementation used for all experiments.
-As briefly touched in the subsection [Influence on Run-Time](#influence-on-run-time-1), I found some evidence that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used `keras` library for deep neural networks.
+As briefly touched in the subsection [Influence on Run-Time](#influence-on-run-time-1), some evidence was found that my implementation of pre-training suffered from increased run-time costs for internal error handling in the used `keras` library for deep neural networks.
 By optimizing the source code or even re-implementing it in a more performance-focused programming language (such as `C++` or `Rust`), large improvements to the pre-training strategy might be achievable.
 
 Another possibility to improve the benefits of pre-training for DAE-GP is based on the findings of @pmlr-v5-erhan09a.
