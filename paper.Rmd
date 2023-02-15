@@ -23,7 +23,7 @@ output:
     includes:
       in_header: [header_files/settings.tex]
 indent: false
-fontsize: 11pt
+fontsize: 12pt
 bibliography: ./ref/ref.bib
 link-citations: true
 fig.width: 4in
@@ -340,7 +340,7 @@ knitr::kable(
 ```
 
 The framework that was used to run all experiments of this thesis was provided by the supervisor of this thesis David Wittenberg and uses the python programming language [@python3] in conjunction with the baseline libraries `Keras` [@chollet2015keras] for deep neural networks and `deap` [@DEAP_JMLR2012] for evolutionary computation.
-For data visualizations the python package `matplotlib` [@matplotlib] was used, statistical analysis and evaluations were conducted using primarily the data science libraries `scipy` [@scipy], `numpy` [@numpy] and `pandas` [@pandas].
+For data visualizations the python package `matplotlib` [@matplotlib] was used, statistical analysis and evaluations were conducted using primarily the data science libraries `numpy` [@numpy], `scipy` [@scipy] and `pandas` [@pandas].
 
 ## Benchmark Problem
 
@@ -1010,6 +1010,6 @@ knitr::kable(
 
 # Statutory Declaration {#IV .unnumbered}
 
-```{r statutory_declaration, echo=FALSE}
+```{r statutory_declaration, echo=FALSE, fig.align = 'center', out.width='500px'}
 knitr::include_graphics("~/masterThesis/master_thesis/private/statutory_declaration_signed.pdf")
 ```
