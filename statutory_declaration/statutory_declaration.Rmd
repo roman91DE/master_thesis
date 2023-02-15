@@ -1,0 +1,40 @@
+---
+output: pdf_document
+pagestyle: empty
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Statutory Declaration
+
+I hereby assure that I have independently and without using sources or resources other than those indicated, written this paper.
+Directly quoted sentences or sentence parts are marked as citations, while other sources of inspiration, in terms of content and scope, are identified with references.
+The work has not been presented to any examination board in the same or a similar form and has not been published.
+It has not been used, even partially, for any other examination or academic achievement.
+I am aware of the regulations for ensuring good scientific practice in research and teaching, as well as the procedures for dealing with scientific misconduct.
+
+Place, Date:
+
+------------------------------------------------------------------------
+
+Signature:
+
+------------------------------------------------------------------------
+
+## Ehrenwörtliche Erklärung
+
+Ich versichere hiermit, dass ich die vorliegende Arbeit selbständig und ohne Benutzung anderer als der angegebenen Quellen und Hilfsmittel verfasst habe.
+Wörtlich übernommene Sätze oder Satzteile sind als Zitat belegt, andere Anlehnungen, hinsichtlich Aussage und Umfang, unter Quellenangabe kenntlich gemacht.
+Die Arbeit hat in gleicher oder ähnlicher Form noch keiner Prüfungsbehörde vorgelegen und ist nicht veröffentlicht.
+Sie wurde nicht, auch nicht auszugsweise, für eine andere Prüfungs- oder Studienleistung verwendet.
+Von der Ordnung zur Sicherung guter wissenschaftlicher Praxis in Forschung und Lehre und zum Verfahren zum Umgang mit wissenschaftlichem Fehlverhalten wurde Kenntnis genommen wurde.
+
+Ort, Datum:
+
+------------------------------------------------------------------------
+
+Unterschrift:
+
+------------------------------------------------------------------------

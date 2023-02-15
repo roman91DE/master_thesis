@@ -26,7 +26,8 @@
 \contentsline {subsection}{\numberline {6.1}Benefits of using Pre-Training}{38}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Disadvantages of using Pre-Training}{38}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Limitations and open Questions}{38}{subsection.6.3}%
-\contentsline {section}{Nomenclature}{40}{section*.6}%
-\contentsline {subsection}{Symbols}{40}{section*.7}%
-\contentsline {subsection}{Abbreviations}{40}{section*.8}%
-\contentsline {section}{References}{41}{section*.9}%
+\contentsline {section}{Nomenclature}{40}{section*.8}%
+\contentsline {subsection}{Symbols}{40}{section*.9}%
+\contentsline {subsection}{Abbreviations}{40}{section*.10}%
+\contentsline {section}{References}{41}{section*.11}%
+\contentsline {section}{Statutory Declaration}{44}{section*.12}%
