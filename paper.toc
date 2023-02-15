@@ -30,4 +30,3 @@
 \contentsline {subsection}{Symbols}{40}{section*.7}%
 \contentsline {subsection}{Abbreviations}{40}{section*.8}%
 \contentsline {section}{References}{41}{section*.9}%
-\contentsline {section}{Statutory Declaration}{44}{section*.10}%

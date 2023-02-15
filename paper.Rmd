@@ -149,6 +149,11 @@ The experiments conducted did show that pre-training can drastically reduce the 
 Another interesting finding was that pre-training also increases the levenshtein edit distance between individual solutions inside the population which is a metric for the diversity of a population.
 Unfortunately pre-training did not show any improvements for both final fitness and the final size of solutions while largely increasing the total run-time for DAE-GP.
 
+Denoising Autoencoder Genetic Programming (DAE-GP) ist ein Estimation of Distribution Algorithmus (EDA) aus dem Forschungfeld der genetischen Programmierung (GP).
+In DAE-GP werden Denoising Autoencoders Long Short-Term Memory Networks (DAE-LSTM) als probabilistische Modelle verwendet um neue Populationen von Lösungen im zu erzeugen.
+Diese Masterarbeit untersucht die Vor- und Nachteile des Einsatzes einer Pre-Training Strategie für die DAE-LSTM Netzwerke von DAE-GP an vier Daten für symbolische Regression.
+Die durchgefüh
+
 # Keywords {.unlisted .unnumbered}
 
 Genetic Programming, Estimation of Distribution Algorithms, Denoising Autoencoder Genetic Programming, Pre-Training, Long Short-Term Memory Networks, Symbolic Regression
