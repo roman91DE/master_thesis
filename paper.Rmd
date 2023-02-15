@@ -251,10 +251,10 @@ Additionally, pre-training can lead to an improved performance by either reducin
 
 # Pre-Training in DAE-GP
 
-The pre-training strategy used in this thesis is applied to the DAE-LSTM models $M_g$ that are used in each DAE-GP generation $g$ for $g\in{1,...,g_{max}}$.
+The pre-training strategy used in this thesis is applied to the DAE-LSTM models $M_g$ that are used in each DAE-GP generation $g$ for $g \in \{{x \mid x \text{ is a number and } 1 \leq x \leq g_{max}}\}$.
 Instead of initializing and optimizing each model from scratch as done in previous work (e.g. [@dae-gp_2020_rtree] [@dae-gp_2022_symreg]), a separate DAE-LSTM network $\hat{M}$ will be trained on a large population of randomly initialized solutions.\
 
-The trainable parameters $\theta_{\hat{M}}$ obtained after finishing the training procedure of $\hat{M}$ are then used as the starting parameters for each following DAE-LSTM model $M_g$ for $g\in{1,...,g_{max}}$.
+The trainable parameters $\theta_{\hat{M}}$ obtained after finishing the training procedure of $\hat{M}$ are then used as the starting parameters for each following DAE-LSTM model $M_g$.
 
 The motivation for incorporating pre-training into DAE-GP is based on the following suspected mechanisms of improvement:
 
@@ -305,7 +305,7 @@ knitr::include_graphics("./img/flowcharts/pt-dae-gp.png")
 One difficulty in the implementation of a pre-training strategy into DAE-GP has been the determination of the number of hidden neurons inside the DAE-LSTMs hidden layers.
 The original description of DAE-GP [@dae-gp_2020_rtree] uses a strategy where the number of hidden neurons for each hidden layer is dynamically set per generation to the maximum individual size inside the current population.
 For a pre-training implementation, this strategy can not be easily adapted since it leads to a changing number of neurons at each generation resulting in different dimensions of the DAE-LSTM.
-To allow the sharing of the state of the pre-trained parameters $\theta_{\hat{M}}$ from the pre-trained model $\hat{M}$ to each $M_g$ for $g\in{1,...,g_{max}}$ the number of hidden neurons per hidden layer for all DAE-GP runs, pre-trained as well as regular, is statically set to a predefined value.
+To allow the sharing of pre-trained parameters $\theta_{\hat{M}}$ from the pre-trained model $\hat{M}$ to each $M_g$, the number of hidden neurons per hidden layer for all DAE-GP runs, pre-trained as well as regular, is statically set to a predefined value.
 
 If not stated otherwise, all experiments in this thesis use the GP hyperparameters listed in table \@ref(tab:baseParams-GP) and the DAE-LSTM specific hyperparameters listed in table \@ref(tab:baseParams-DAEGP).
 
@@ -994,10 +994,12 @@ knitr::kable(
 ::: {#refs}
 :::
 
-\newpage
+<!-- \newpage -->
 
-# Statutory Declaration {#IV .unnumbered}
+<!-- # Statutory Declaration {#IV .unnumbered} -->
 
-```{r statutory_declaration, echo=FALSE}
-knitr::include_graphics("~/masterThesis/master_thesis/private/statutory_declaration.pdf")
-```
+<!-- ```{r statutory_declaration, echo=FALSE} -->
+
+<!-- knitr::include_graphics("~/masterThesis/master_thesis/private/statutory_declaration.pdf") -->
+
+<!-- ``` -->
