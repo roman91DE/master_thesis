@@ -523,7 +523,7 @@ The median size of the best solutions found after terminating the search is the 
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens/size_combined_median.png")
 ```
 
-Another interesting metric to examine in population-based optimization algorithms is the diversity of the current generations population.
+Another interesting metric to examine in population-based optimization algorithms is the population diversity over all generations of the search.
 Since individual solutions in DAE-GP are computer programs in the form of parse trees, the normalized Levenshtein edit distance [@NormLevDistance] was selected as a metric for tracking population diversity.
 Figure \@ref(fig:airfoil-popDiversity) shows the median population diversity for both DAE-GP algorithms and regular GP as a benchmark.
 While the population diversity steadily decreases over the generations for standard GP, DAE-GP variants strongly increase the population diversity in the first generations and keep them at a higher level during the evolutionary search.
@@ -538,7 +538,7 @@ knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/median_po
 To ensure a fair comparison between pre-trained and regular DAE-GP, the prior experiments used a static number of hidden neurons for each hidden Layer inside the DAE-LSTM networks.
 For comparison, figure \@ref(fig:airfoil-maxIndSize-params) shows the total number of trainable parameters for each generations DAE-LSTM of another experiment where regular DAE-GP was tested with dynamic adjustment of the number of hidden neurons as described in [@dae-gp_2020_rtree] and [@dae-gp_2022_symreg].
 Again, the experiment was based on $10$ individual runs and otherwise used the same hyperparameters as listed in tables \@ref(tab:baseParams-GP) and \@ref(tab:baseParams-DAEGP).
-It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largely reduces the amount of training necessary and likely reduce the run-time of DAE-GP.
+It clearly shows that DAE-GP can strongly reduce the number of trainable parameters by adjusting the number of hidden neurons per hidden layers to the current generations population which largely reduces the amount of training necessary and likely reduces the run-time of DAE-GP.
 
 ```{r airfoil-maxIndSize-params, echo=FALSE, fig.cap="Median Number of trainable Parameters over 30 Generations - Airfoil - Dynamic adjustment of regular DAE-GP", out.width="80%"}
 knitr::include_graphics("./img/airfoil_2hl_maxIndSize_fullRun_30gens/trainableParams.png")
@@ -582,13 +582,13 @@ Since pre-training thus far did not demonstrate significant benefits for the qua
 One common observation in GP-based optimization algorithms is that the largest improvements in fitness are often occurring in the first generation of the search process.
 Second Generation Pre-Training tries to exploit this observation by shifting the pre-training phase from the start of the algorithm into the second generation with the aim to produce a pre-training Population $\hat{P}$ that more accurately captures the properties of the search problem.
 The basic idea is to run regular DAE-GP for the first generation without any interference, after completing the first generation, the pre-training population $\hat{P}$ is created by sampling the DAE-LSTM model $M_1$.
-The pre-training model $\hat{M}$ is then trained using $\hat{P}$, after finishing, DAE-GP continues running and initializes each new DAE-LSTM model $M_g$ for $g\in{2,...,g_{max}}$ using the trainable parameters $\theta_{\hat{M}}$.
+The pre-training model $\hat{M}$ is then trained using $\hat{P}$, after finishing, DAE-GP continues running and initializes each new DAE-LSTM model $M_g$ for $g \in \{{x \mid x \text{ is a number and } 2 \leq x \leq g_{max}}\}$ using the trainable parameters $\theta_{\hat{M}}$.
 
 The second alternative pre-training strategy is based on the choice of an alternative initialization algorithm to create $\hat{P}$.
 The pre-training implementation in previous experiments used `ramped half and half` initialization [@Koza1993GeneticP] to create $\hat{P}$.
 Using `ramped half and half` leads to 50% of the population being initialized by the `full` method, where terminals are only inserted at the maximum allowed depth of a tree resulting in full trees.
 An alternative method of initializing $\hat{P}$ is to use the `grow` initialization method where solutions are not guaranteed to be full trees since every leaf below the maximum depth of a tree can also be a terminal expression.
-This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of further generations population where a lower percentage of full grown trees is to be expected.
+This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of further generation's populations where a lower percentage of full grown trees is to be expected.
 
 Figure \@ref(fig:altStrategies-Fitness) shows the median best fitness by generations for both alternative pre-training strategies as well as the results for standard DAE-GP and the standard Pre-Training implementation used in earlier experiments.
 Unfortunately, both alternative strategies demonstrate an inferior performance in fitness compared to both regular DAE-GP and standard pre-trained DAE-GP resulting in lower fitness.
@@ -884,7 +884,7 @@ Pre-Training did increase the median normalized levenshtein distance over all ge
 
 ## Influence on the number of Training epochs per Generation
 
-Finally, figure \@ref(fig:symReg-EpochsPerGen) shows the median number of epochs spend on training each generations DAE-LSTM network $M_g$ until the termination criterion was satisfied.
+Finally, figure \@ref(fig:symReg-EpochsPerGen) shows the median number of epochs spend on training each generation's DAE-LSTM network $M_g$ until the termination criterion was satisfied.
 Pre-Training shows to be very effective at reducing the number of training epochs in comparison to regular DAE-GP.
 
 ```{r symReg-EpochsPerGen, echo=FALSE, fig.cap="Training Epochs over 30 Generations - Real World Symbolic Regression", out.width="90%"}
