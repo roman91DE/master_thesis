@@ -491,7 +491,7 @@ After closely examining the effect of pre-training on DAE-GPs generalization beh
 knitr::include_graphics("./img/airfoil_2hl_150hn_fullRun_30gens_withGP/mean_median_fitness_byGens.png")
 ```
 
-Figure \@ref(fig:airfoil-median-fitness-30gens) shows both the mean and median the best fitness by generations for the airfoil dataset.
+Figure \@ref(fig:airfoil-median-fitness-30gens) shows both the mean and median best fitness by generations for the airfoil dataset.
 The results are aggregated for $10$ individuals runs per algorithm and also include regular GP as a benchmark.
 For all three algorithms an improvement in the best found fitness can be observed during the evolutionary search but the results show that DAE-GP based algorithms, on average, find solutions with much higher fitness as traditional GP.
 
