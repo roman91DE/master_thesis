@@ -127,7 +127,7 @@ echo Done recompiling Results, Plots, Diagrams, etc!
 
 <!-- LaTeX Setup -->
 
-\setcounter{page}{1}
+\setcounter{page}{2}
 
 <!-- \tableofcontents -->
 
@@ -135,6 +135,8 @@ echo Done recompiling Results, Plots, Diagrams, etc!
 \thispagestyle{empty}
 \newpage
 \listoftables
+\thispagestyle{empty}
+\newpage
 \listoffigures
 \thispagestyle{empty}
 \newpage
@@ -175,7 +177,7 @@ Denoising Autoencoder Genetic Programming (DAE-GP) is a novel variation of an ge
 
 DAE-LSTMs are artificial neural networks that can be trained in an unsupervised learning environment to minimize a reconstruction error for encoding input data into a compressed representation and subsequently decoding the compressed representation back to the input dimension.
 In DAE-GP, DAE-LSTMs are trained with a subset of high-fitness solutions selected from a parent population with the aim to capture their promising qualities.
-The resulting model is then used to sample new offspring solutions by propagating partially mutated solutions from the parent population through the DAE-LSTMS [@dae-gp_2020_rtree].
+The resulting model is then used to sample new offspring solutions by propagating partially mutated solutions from the parent population through the DAE-LSTM [@dae-gp_2020_rtree].
 In previous work DAE-GP has been shown to outperform GP for both a generalized version of the royal tree problem [@dae-gp_2020_rtree] as well as for a real-world symbolic regression problem [@dae-gp_2022_symreg].
 
 <!--- Problemstellung und Zielsetzung der Arbeit -->
@@ -1006,10 +1008,8 @@ knitr::kable(
 ::: {#refs}
 :::
 
-\newpage
-
 # Statutory Declaration {#IV .unnumbered}
 
 ```{r statutory_declaration, echo=FALSE, fig.align = 'center', out.width='500px'}
-knitr::include_graphics("~/masterThesis/master_thesis/private/statutory_declaration_signed.pdf")
+knitr::include_graphics("~/masterThesis/master_thesis/private/statGood.pdf")
 ```
