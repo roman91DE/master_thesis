@@ -182,7 +182,7 @@ Denoising Autoencoder Genetic Programming (DAE-GP) is an Estimation of Distribut
 This thesis investigates the possible benefits and downsides of using pre-training for the DAE-LSTM networks of DAE-GP for four real world symbolic regression problems.
 The experiments conducted did show that pre-training can drastically reduce the number of epochs that are necessary for the DAE-LSTM training at each generation of the DAE-GP search.
 Another interesting finding was that pre-training also increases the levenshtein edit distance between individual solutions inside the population which is a metric for the diversity of a population.
-Unfortunately pre-training did not show any improvements for both final fitness and the final size of solutions while largely increasing the total run-time for DAE-GP.
+Unfortunately, pre-training did not yield any improvements in the final fitness or size of solutions, despite significantly increasing the total run-time for DAE-GP.
 
 \hypertarget{Ib}{%
 \subsection*{Deutsch}\label{Ib}}
@@ -190,7 +190,7 @@ Unfortunately pre-training did not show any improvements for both final fitness 
 Denoising Autoencoder Genetic Programming (DAE-GP) ist ein Estimation of Distribution Algorithmus (EDA) aus dem Forschungfeld der genetischen Programmierung (GP).
 In DAE-GP werden Denoising Autoencoders Long Short-Term Memory Netzwerke (DAE-LSTM) als probabilistische Modelle verwendet um neue Populationen von Lösungen für eine evolutionäre Suche zu erzeugen.
 Diese Masterarbeit untersucht die Vor- und Nachteile des Einsatzes einer Pre-Training Strategie für die DAE-LSTM Netzwerke von DAE-GP an vier Datensätzen für symbolische Regression.
-Die durchgeführten Experimente haben gezeigt, dass Pre-Training die Anzahl von Trainingsepochen für die DAE-LSTM Netzwerke in jeder Generation statistisch signifikant reduzieren können.
+Die durchgeführten Experimente haben gezeigt, dass Pre-Training die Anzahl von Trainingsepochen für die DAE-LSTM Netzwerke in jeder Generation statistisch signifikant reduzieren konnte.
 Außerdem zeigt sich, dass Pre-Training die Levenshtein Editierdistanz, ein Maß für die Populationsdiversität, signifikant erhöhen konnte.
 Leider konnte Pre-Training die Qualität der jeweils besten gefundenen Lösungen, weder im Bezug auf ihre Fitness noch auf ihre Größe, verbessern.
 Auch führte Pre-Training in den durchgeführten Experimenten zu einer starken Erhöhung der Laufzeit des DAE-GP Algorithmus.
@@ -539,7 +539,7 @@ As expected, increasing the number of hidden neurons leads to stronger overfitti
 For the experiments run with 50 and 100 hidden neurons, a small benefit of using pre-training can be observed.
 Using only 50 hidden neurons leads to a smaller gap between training and testing error for the pre-trained DAE-LSTM.
 For 100 hidden neurons, regular DAE-GP not only starts to overfit to the training data earlier than pre-trained DAE-GP, also it can be seen that pre-trained DAE-GP starts to overfit at a lower reconstruction error which would result in a higher model performance if training strategies such as early stopping would be employed.
-Doubling the number of hidden neurons to 200 results in very strong overfitting behavior for both DAE-GP variants starting around the 200.th epoch.
+Doubling the number of hidden neurons to 200 results in very strong overfitting behavior for both DAE-GP variants starting around the 200th epoch.
 
 \begin{figure}[c]
 
@@ -553,7 +553,7 @@ Doubling the number of hidden neurons to 200 results in very strong overfitting 
 The results for the experiment with a varying number of hidden layers are summarized in figure \ref{fig:first-gen-airfoil-byLayers}.
 Again, it can be observed that by increasing the dimension of the DAE-LSTM network both algorithms increasingly overfit to the training data.
 While for a single hidden layer overfitting begins at around the 400th.
-epoch, doubling the number of hidden layers to two leads to both algorithms overfitting at around the 200.th epoch.
+epoch, doubling the number of hidden layers to two leads to both algorithms overfitting at around the 200th epoch.
 In general over all three sub experiments, both algorithms start to overfit after approximately the same number of epochs but pre-training leads to reaching the point of overfitting at a higher reconstruction error which would result in a inferior model performance if the early stopping training strategy would be used during model training.
 
 \begin{figure}[c]
@@ -610,7 +610,7 @@ Figure \ref{fig:airfoil-size-combined-30gens} shows the median of both the avera
 It can be observed that both DAE-GP variants strongly reduce the average solution size already in the first generations and that the average solution size inside the population constantly stays at this very low level for the rest of the search.
 The median average size over all generations is 1.536 for DAE-GP and 1.536 for pre-trained DAE-GP.
 Regarding the size of the best solution per generation, the results show that the pre-trained version of algorithm did produce solutions with the same median size as traditional DAE-GP.
-The median size of the best solutions found after terminating the search is the same for both algorithms (DAE-GP: 5, Pre-Trained DAE-GP: 5)
+The median size of the best solutions found after terminating the search is the same for both algorithms (DAE-GP: 5, Pre-Trained DAE-GP: 5).
 
 \begin{figure}[c]
 
@@ -712,7 +712,7 @@ The second alternative pre-training strategy is based on the choice of an altern
 The pre-training implementation in previous experiments used \texttt{ramped\ half\ and\ half} initialization {[}\protect\hyperlink{ref-Koza1993GeneticP}{15}{]} to create \(\hat{P}\).
 Using \texttt{ramped\ half\ and\ half} leads to 50\% of the population being initialized by the \texttt{full} method, where terminals are only inserted at the maximum allowed depth of a tree resulting in full trees.
 An alternative method of initializing \(\hat{P}\) is to use the \texttt{grow} initialization method where solutions are not guaranteed to be full trees since every leaf below the maximum depth of a tree can also be a terminal expression.
-This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of further generations population where a lower percentage of full grown trees is to be expected.
+This different structural composition of solutions inside the pre-training population might be another way to improve the pre-training strategy by training on a population that more closely resembles the structural properties of further generation's populations where a lower percentage of full grown trees is to be expected.
 
 Figure \ref{fig:altStrategies-Fitness} shows the median best fitness by generations for both alternative pre-training strategies as well as the results for standard DAE-GP and the standard Pre-Training implementation used in earlier experiments.
 Unfortunately, both alternative strategies demonstrate an inferior performance in fitness compared to both regular DAE-GP and standard pre-trained DAE-GP resulting in lower fitness.
@@ -1094,7 +1094,7 @@ Pre-Training did increase the median normalized levenshtein distance over all ge
 \hypertarget{influence-on-the-number-of-training-epochs-per-generation}{%
 \subsection{Influence on the number of Training epochs per Generation}\label{influence-on-the-number-of-training-epochs-per-generation}}
 
-Finally, figure \ref{fig:symReg-EpochsPerGen} shows the median number of epochs spend on training each generations DAE-LSTM network \(M_g\) until the termination criterion was satisfied.
+Finally, figure \ref{fig:symReg-EpochsPerGen} shows the median number of epochs spend on training each generation's DAE-LSTM network \(M_g\) until the termination criterion was satisfied.
 Pre-Training shows to be very effective at reducing the number of training epochs in comparison to regular DAE-GP.
 
 \begin{figure}[c]
